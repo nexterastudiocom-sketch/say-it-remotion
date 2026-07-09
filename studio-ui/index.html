@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Say It — Studio</title>
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <header class="bar">
+    <div class="brand"><span class="dot"></span> Say It · Studio</div>
+    <nav class="nav">
+      <a href="#/projects" data-route="projects">Projects</a>
+      <a href="#/config" data-route="config">Languages</a>
+      <a href="#/generate" data-route="generate">Generate</a>
+      <a href="#/editor" data-route="editor">Editor</a>
+      <a href="#/cover" data-route="cover">Cover</a>
+    </nav>
+    <div class="spacer"></div>
+    <div id="ctx" class="muted"></div>
+  </header>
+
+  <main id="page"></main>
+
+  <footer class="log hidden" id="logWrap">
+    <div class="log-head"><span>Console</span><button id="logClear" class="mini">clear</button></div>
+    <pre id="log"></pre>
+  </footer>
+  <audio id="audio"></audio>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

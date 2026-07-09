@@ -1,0 +1,28 @@
+{
+  "lessonId": "lesson-04",
+  "language": "fr",
+  "voiceId": "",
+  "segments": [
+    { "id": "title", "parts": [{ "text": "Leçon 4. Les verbes du quotidien.", "voice": "native" }] },
+    { "id": "vocab-1", "parts": [
+      { "text": "travailler.", "voice": "native" },
+      { "text": "In English: to work.", "voice": "en" },
+      { "text": "Répète : travailler.", "voice": "native" }
+    ] },
+    { "id": "buildup-1", "parts": [
+      { "text": "Je travaille.", "voice": "native" },
+      { "text": "Je travaille au Canada.", "voice": "native" },
+      { "text": "Je travaille au Canada avec mon équipe.", "voice": "native" },
+      { "text": "In English: I work in Canada with my team.", "voice": "en" }
+    ] },
+    { "id": "yourturn-1", "minSeconds": 10, "parts": [
+      { "text": "À toi ! Écris ta propre phrase. Utilise un autre sujet et parle de ta vie.", "voice": "native" }
+    ] },
+    { "id": "model-1", "parts": [
+      { "text": "Par exemple : nous travaillons à Toronto.", "voice": "native" },
+      { "text": "In English: we work in Toronto.", "voice": "en" },
+      { "text": "Compare avec ta phrase.", "voice": "native" }
+    ] },
+    { "id": "score", "parts": [{ "text": "Bravo ! Tu peux maintenant dire : je travaille au Canada.", "voice": "native" }] }
+  ]
+}

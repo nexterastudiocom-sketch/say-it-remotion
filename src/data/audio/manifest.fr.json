@@ -1,0 +1,30 @@
+{
+  "lessonId": "lesson-04",
+  "voiceId": "21m00Tcm4TlvDq8ikWAM",
+  "segments": {
+    "title": {
+      "audioSrc": "assets/audio/lesson-04/fr/title.mp3",
+      "durationInSeconds": 3.29
+    },
+    "vocab-1": {
+      "audioSrc": "assets/audio/lesson-04/fr/vocab-1.mp3",
+      "durationInSeconds": 4.75
+    },
+    "buildup-1": {
+      "audioSrc": "assets/audio/lesson-04/fr/buildup-1.mp3",
+      "durationInSeconds": 8.31
+    },
+    "yourturn-1": {
+      "audioSrc": "assets/audio/lesson-04/fr/yourturn-1.mp3",
+      "durationInSeconds": 10
+    },
+    "model-1": {
+      "audioSrc": "assets/audio/lesson-04/fr/model-1.mp3",
+      "durationInSeconds": 6.56
+    },
+    "score": {
+      "audioSrc": "assets/audio/lesson-04/fr/score.mp3",
+      "durationInSeconds": 4.07
+    }
+  }
+}

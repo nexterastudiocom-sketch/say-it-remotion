@@ -1,0 +1,8 @@
+node_modules/
+out/
+.DS_Store
+.env
+.env.local
+public/assets/audio/
+scripts/style-references/
+public/assets/covers/

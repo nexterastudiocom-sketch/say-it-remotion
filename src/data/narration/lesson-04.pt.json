@@ -1,0 +1,28 @@
+{
+  "lessonId": "lesson-04",
+  "language": "pt",
+  "voiceId": "",
+  "segments": [
+    { "id": "title", "parts": [{ "text": "Lição 4. Os verbos do dia a dia.", "voice": "native" }] },
+    { "id": "vocab-1", "parts": [
+      { "text": "trabalhar.", "voice": "native" },
+      { "text": "In English: to work.", "voice": "en" },
+      { "text": "Repete: trabalhar.", "voice": "native" }
+    ] },
+    { "id": "buildup-1", "parts": [
+      { "text": "Eu trabalho.", "voice": "native" },
+      { "text": "Eu trabalho no Canadá.", "voice": "native" },
+      { "text": "Eu trabalho no Canadá com a minha equipa.", "voice": "native" },
+      { "text": "In English: I work in Canada with my team.", "voice": "en" }
+    ] },
+    { "id": "yourturn-1", "minSeconds": 10, "parts": [
+      { "text": "É a tua vez! Escreve a tua própria frase. Usa outro sujeito e fala da tua vida.", "voice": "native" }
+    ] },
+    { "id": "model-1", "parts": [
+      { "text": "Por exemplo: nós trabalhamos em Toronto.", "voice": "native" },
+      { "text": "In English: we work in Toronto.", "voice": "en" },
+      { "text": "Compara com a tua frase.", "voice": "native" }
+    ] },
+    { "id": "score", "parts": [{ "text": "Parabéns! Agora consegues dizer: eu trabalho no Canadá.", "voice": "native" }] }
+  ]
+}

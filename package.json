@@ -1,0 +1,31 @@
+{
+  "name": "say-it-remotion",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson-FR out/lesson-fr.mp4",
+    "lesson": "node --env-file=.env scripts/build-lesson.mjs",
+    "lesson:script": "node --env-file=.env scripts/build-from-script.mjs",
+    "lesson:sent": "node scripts/parse-sent.mjs curriculum/lesson-01.sent.md lesson-01 && node --env-file=.env scripts/build-from-script.mjs",
+    "studio": "node --env-file=.env scripts/studio-server.mjs",
+    "audio": "node --env-file=.env scripts/generate-audio.mjs",
+    "images:anchors": "node --env-file=.env scripts/generate-anchors.mjs",
+    "images:style": "node --env-file=.env scripts/create-style.mjs",
+    "images": "node --env-file=.env scripts/generate-images.mjs",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.484",
+    "@remotion/google-fonts": "^4.0.484",
+    "music-metadata": "^11.13.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.484",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3",
+    "typescript": "5.5.4"
+  }
+}

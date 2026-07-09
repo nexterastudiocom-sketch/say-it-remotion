@@ -1,0 +1,17 @@
+{
+  "segments": {
+    "title": {
+      "imageSrc": "assets/images/lesson-04_title.png",
+      "imageSrcs": [
+        "assets/images/lesson-04_title.png"
+      ]
+    },
+    "vocab-1": {
+      "imageSrc": "assets/images/lesson-04_vocab-1_1.png",
+      "imageSrcs": [
+        "assets/images/lesson-04_vocab-1_1.png",
+        "assets/images/lesson-04_vocab-1_2.png"
+      ]
+    }
+  }
+}

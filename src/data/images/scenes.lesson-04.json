@@ -1,0 +1,10 @@
+{
+  "lessonId": "lesson-04",
+  "segments": [
+    { "id": "title", "scene": "a cheerful everyday-life montage: a person working, cooking, and walking through a bright little town" },
+    { "id": "vocab-1", "scenes": [
+      "a construction worker in a hard hat and hi-vis vest working on a building site, holding tools, action pose",
+      "a chef in a white uniform working in a restaurant kitchen, plating a dish, focused"
+    ] }
+  ]
+}

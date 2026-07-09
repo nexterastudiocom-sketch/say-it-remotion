@@ -1,0 +1,18 @@
+{
+  "name": "Lesson 1 — Dire bonjour",
+  "language": "fr",
+  "level": "A1",
+  "lessonId": "lesson-01",
+  "id": "p1783382538755",
+  "updatedAt": "2026-07-07T00:18:05.618Z",
+  "createdAt": "2026-07-07T00:02:18.755Z",
+  "cover": {
+    "language": "fr",
+    "level": "A1",
+    "line1": "Je",
+    "line2": "travaille",
+    "subtitle": "Talk about your job",
+    "imageSrc": "assets/images/lesson-01_vocab-2.png",
+    "src": "assets/covers/p1783382538755.png"
+  }
+}

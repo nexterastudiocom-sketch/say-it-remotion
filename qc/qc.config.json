@@ -1,0 +1,44 @@
+{
+  "_comment": "Say It — video QC rubric. Drives both the deterministic ffmpeg checks (exact, no judgment) and the Claude vision checks (judgment a diff can't make). Numbers here are calibrated to the ACTUAL renders in out/films (4K h264, ~4-5 Mbps, AAC 384k), not the aspirational 45 Mbps/20 min from the prototype. Edit thresholds here, not in the harness code.",
+
+  "technical_spec": {
+    "resolution": [3840, 2160],
+    "fps": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "min_video_bitrate_mbps": 2.5,
+    "audio_bitrate_kbps": 384,
+    "audio_bitrate_tolerance_kbps": 48,
+    "loudness_lufs_target": -14.0,
+    "loudness_tolerance": 1.0
+  },
+
+  "runtime": {
+    "_comment": "The strong check: render duration vs the sum of slide durations in this lesson's own JSON. That is the source of truth for THIS lesson, not a fixed target.",
+    "tolerance_pct": 5
+  },
+
+  "curriculum_rules": {
+    "forbidden_words_any_track": ["clear"],
+    "phase_labels": ["MEET", "ECHO", "BUILD", "MAKE IT YOURS", "RECALL", "RECAP"],
+    "target_voice_prefix": "fr",
+    "framing_allowances": ["bravo", "bienvenue"],
+    "_framing_note": "Words allowed in title/score framing that are not part of the taught set. They downgrade a vocabulary hit from FAIL to WARN instead of failing the gate — near-universal cognates."
+  },
+
+  "illustration_style": "European clean-line comic: bold, uniform-weight ink outlines, flat solid color fills, no gradient shading, no soft drop shadows, no photo-real rendering. Flag any frame that breaks from this.",
+
+  "typography": {
+    "headings": "Poppins",
+    "body": "Inter"
+  },
+
+  "frame_sampling": {
+    "_comment": "One frame per content slide, taken at the slide's midpoint. Sample times come from the lesson JSON timeline, so each frame is checked against the EXACT word/translation/phase that should be on screen at that moment.",
+    "skip_slide_types": ["title", "score"],
+    "frame_scale_width": 1280
+  },
+
+  "vision_check_model": "claude-sonnet-5",
+  "_vision_model_note": "Escalate hard cases to claude-opus-4-8 by editing this value."
+}

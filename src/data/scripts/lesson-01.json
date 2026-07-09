@@ -1,0 +1,3000 @@
+{
+  "lessonId": "lesson-01",
+  "language": "fr",
+  "segments": [
+    {
+      "title": "Opening — welcome & method",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Welcome to Say... It . in French — the course where you don't just hear French, you speak it. Starting right now.",
+          "tag": "warmly, welcoming",
+          "phase": null,
+          "line": 4
+        },
+        {
+          "pause": 1.5,
+          "phase": null,
+          "line": 5
+        },
+        {
+          "voice": "en_man",
+          "text": "Every lesson follows four steps: Meet a word, Echo it back out loud, Build it into a sentence, Make It Yours by writing your own. Let's start.",
+          "tag": "warm",
+          "phase": null,
+          "line": 6
+        },
+        {
+          "pause": 1,
+          "phase": null,
+          "line": 7
+        }
+      ]
+    },
+    {
+      "title": "Segment 1 · GOAL",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Today's goal: greet someone in French. Let's meet your first word.",
+          "tag": "bright",
+          "phase": null,
+          "line": 10
+        }
+      ]
+    },
+    {
+      "title": "Segment 2 · WORD — bonjour",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 13
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 14
+        },
+        {
+          "voice": "en_man",
+          "text": "Hello — or good morning.",
+          "tag": "warm",
+          "phase": "MEET",
+          "line": 15
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 16
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bon... jour.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 17
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 18
+        },
+        {
+          "voice": "en_man",
+          "text": "That \"on\" in the middle is nasal — let the air flow through your nose, not a hard N.",
+          "tag": "gently instructive",
+          "phase": "MEET",
+          "line": 19
+        },
+        {
+          "pause": 1.5,
+          "phase": "MEET",
+          "line": 20
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 21
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 22
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 23
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 24
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 25
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 26
+        },
+        {
+          "voice": "en_man",
+          "text": "One more time.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 27
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 28
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 29
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "title": "Segment 3 · WORD — salut",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 33
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 34
+        },
+        {
+          "voice": "en_man",
+          "text": "Hi — or bye. Casual, for friends, not your boss.",
+          "tag": "playful",
+          "phase": "MEET",
+          "line": 35
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 36
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Sa... lut",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 37
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 38
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 39
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 40
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 41
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 42
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 43
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 44
+        },
+        {
+          "voice": "en_man",
+          "text": "Again.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 45
+        },
+        {
+          "pause": 3,
+          "phase": "ECHO",
+          "line": 46
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 47
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "title": "Segment 4 · RECALL — bonjour vs salut",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Quick check before we go on. Which one greets your boss?",
+          "tag": "warm, curious",
+          "phase": "RECALL",
+          "line": 51
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 52
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 53
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 54
+        },
+        {
+          "voice": "en_woman",
+          "text": "And which one greets a friend?",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 55
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 56
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 57
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 58
+        },
+        {
+          "voice": "en_woman",
+          "text": "Good instinct — same idea, different company.",
+          "tag": "warm",
+          "phase": "RECALL",
+          "line": 59
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "title": "Segment 4b · CULTURE NOTE",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "A quick note on manners. In France, bonjour isn't optional — walk into a shop without saying it first, and even a simple question can come across as rude. Greet, then ask.",
+          "tag": "warm, conversational",
+          "phase": null,
+          "line": 63
+        },
+        {
+          "pause": 2.5,
+          "phase": null,
+          "line": 64
+        }
+      ]
+    },
+    {
+      "title": "Segment 5 · WORD — merci",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 67
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 68
+        },
+        {
+          "voice": "en_man",
+          "text": "Thank you.",
+          "tag": "warm, sincere",
+          "phase": "MEET",
+          "line": 69
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 70
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Mer... ci.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 71
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 72
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 73
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 74
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 75
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 76
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 77
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 78
+        },
+        {
+          "voice": "en_man",
+          "text": "One more.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 79
+        },
+        {
+          "pause": 3,
+          "phase": "ECHO",
+          "line": 80
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 81
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "title": "Segment 6 · WORD — s'il vous plaît",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 85
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 86
+        },
+        {
+          "voice": "en_man",
+          "text": "Please.",
+          "tag": "gently, encouraging",
+          "phase": "MEET",
+          "line": 87
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 88
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il... vous... plaît.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 89
+        },
+        {
+          "pause": 3,
+          "phase": "MEET",
+          "line": 90
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 91
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 92
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 93
+        },
+        {
+          "pause": 5,
+          "phase": "ECHO",
+          "line": 94
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 95
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 96
+        },
+        {
+          "voice": "en_man",
+          "text": "Once more — a little quicker this time.",
+          "tag": "bright",
+          "phase": "ECHO",
+          "line": 97
+        },
+        {
+          "pause": 3,
+          "phase": "ECHO",
+          "line": 98
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 99
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 100
+        },
+        {
+          "voice": "en_man",
+          "text": "Last time, nice and steady.",
+          "tag": "warm",
+          "phase": "ECHO",
+          "line": 101
+        },
+        {
+          "pause": 3,
+          "phase": "ECHO",
+          "line": 102
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 103
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "title": "Segment 7 · RECALL — merci, s'il vous plaît",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Two more — say the English first.",
+          "tag": "inviting",
+          "phase": "RECALL",
+          "line": 107
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 108
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 109
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 110
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 111
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 112
+        },
+        {
+          "voice": "en_woman",
+          "text": "Now flip it — English to French.",
+          "tag": "warm",
+          "phase": "RECALL",
+          "line": 113
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 114
+        },
+        {
+          "voice": "en_woman",
+          "text": "Please.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 115
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 116
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 117
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 118
+        },
+        {
+          "voice": "en_woman",
+          "text": "Thank you.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 119
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 120
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 121
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "title": "Segment 8 · WORD — oui / non",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 125
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 126
+        },
+        {
+          "voice": "en_man",
+          "text": "Yes, and no.",
+          "tag": "playful, bright",
+          "phase": "MEET",
+          "line": 127
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 128
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Oui... non.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 129
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 130
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 131
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 132
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 133
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 134
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 135
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 136
+        },
+        {
+          "voice": "en_man",
+          "text": "Once more, both together.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 137
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 138
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 139
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "title": "Segment 9 · WORD — au revoir",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 143
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 144
+        },
+        {
+          "voice": "en_man",
+          "text": "Goodbye.",
+          "tag": "warm",
+          "phase": "MEET",
+          "line": 145
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 146
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au... re... voir.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 147
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 148
+        },
+        {
+          "voice": "en_man",
+          "text": "Listen for that \"r\" — it comes from the back of your throat, not the front of your mouth like an English r.",
+          "tag": "gently instructive",
+          "phase": "MEET",
+          "line": 149
+        },
+        {
+          "pause": 1.5,
+          "phase": "MEET",
+          "line": 150
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 151
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 152
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 153
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 154
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 155
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 156
+        },
+        {
+          "voice": "en_man",
+          "text": "One more — really growl that r.",
+          "tag": "encouraging",
+          "phase": "ECHO",
+          "line": 157
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 158
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 159
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 160
+        },
+        {
+          "voice": "en_man",
+          "text": "Last time.",
+          "tag": "warm",
+          "phase": "ECHO",
+          "line": 161
+        },
+        {
+          "pause": 3,
+          "phase": "ECHO",
+          "line": 162
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 163
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 164
+        }
+      ]
+    },
+    {
+      "title": "Segment 10 · RECALL — everything so far",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Big check-in. I'll say a word in French — say the English out loud before I move on.",
+          "tag": "inviting",
+          "phase": "RECALL",
+          "line": 167
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 168
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 169
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 170
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 171
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 172
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 173
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 174
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 175
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 176
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 177
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 178
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 179
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 180
+        },
+        {
+          "voice": "en_woman",
+          "text": "Now the other way — I'll say the English, you say the French.",
+          "tag": "warm",
+          "phase": "RECALL",
+          "line": 181
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 182
+        },
+        {
+          "voice": "en_woman",
+          "text": "Hi — casual.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 183
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 184
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 185
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 186
+        },
+        {
+          "voice": "en_woman",
+          "text": "Please.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 187
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 188
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 189
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 190
+        },
+        {
+          "voice": "en_woman",
+          "text": "Yes, and no.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 191
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 192
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 193
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 194
+        },
+        {
+          "voice": "en_woman",
+          "text": "Goodbye.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 195
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 196
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 197
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 198
+        }
+      ]
+    },
+    {
+      "title": "Segment 11 · BUILD — Bonjour.",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Now we build a sentence, one piece at a time. We start here.",
+          "tag": "inviting",
+          "phase": "BUILD",
+          "line": 201
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 202
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 203
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 204
+        }
+      ]
+    },
+    {
+      "title": "Segment 12 · BUILD — Bonjour, madame.",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Add \"madame\" — a polite word for a woman.",
+          "tag": "bright",
+          "phase": "BUILD",
+          "line": 207
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 208
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, madame.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 209
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 210
+        }
+      ]
+    },
+    {
+      "title": "Segment 13 · BUILD — Bonjour, monsieur.",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Now swap it — \"monsieur\" for a man.",
+          "tag": "bright",
+          "phase": "BUILD",
+          "line": 213
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 214
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 215
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 216
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat both.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 217
+        },
+        {
+          "pause": 5,
+          "phase": "BUILD",
+          "line": 218
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Bonjour, monsieur.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 219
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 220
+        }
+      ]
+    },
+    {
+      "title": "Segment 14 · BUILD — Bonjour, madame. Merci !",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "One more piece — now it's a whole little exchange.",
+          "tag": "warm",
+          "phase": "BUILD",
+          "line": 223
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 224
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Merci !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 225
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 226
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat the whole sentence.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 227
+        },
+        {
+          "pause": 6,
+          "phase": "BUILD",
+          "line": 228
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Merci !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 229
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "title": "Segment 15 · BUILD — Bonjour, monsieur. Merci !",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Same piece, other person.",
+          "tag": "bright",
+          "phase": "BUILD",
+          "line": 233
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 234
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur. Merci !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 235
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 236
+        }
+      ]
+    },
+    {
+      "title": "Segment 16 · BUILD — Au revoir, madame. Merci !",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Now swap the first piece — arriving becomes leaving.",
+          "tag": "inviting",
+          "phase": "BUILD",
+          "line": 239
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 240
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir, madame. Merci !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 241
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 242
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat the whole thing.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 243
+        },
+        {
+          "pause": 6,
+          "phase": "BUILD",
+          "line": 244
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir, madame. Merci !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 245
+        },
+        {
+          "pause": 2,
+          "phase": "BUILD",
+          "line": 246
+        }
+      ]
+    },
+    {
+      "title": "Segment 17 · RECALL — say it back",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Before we add one more piece, you say a whole one. Arriving, to a woman, with thanks.",
+          "tag": "inviting",
+          "phase": "RECALL",
+          "line": 249
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 250
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Merci !",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 251
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 252
+        },
+        {
+          "voice": "en_woman",
+          "text": "Now leaving, to a man, with thanks.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 253
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 254
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir, monsieur. Merci !",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 255
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 256
+        }
+      ]
+    },
+    {
+      "title": "Segment 18 · SUBJECT — Bonsoir, monsieur.",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "This is good evening — bonjour's after-dark twin.",
+          "tag": "curious, inviting",
+          "phase": "MEET",
+          "line": 259
+        },
+        {
+          "pause": 1.5,
+          "phase": "MEET",
+          "line": 260
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 261
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 262
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bon... soir.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 263
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 264
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 265
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 266
+        },
+        {
+          "voice": "en_man",
+          "text": "And monsieur — sir, madame's counterpart, for a man. Say the whole thing.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 267
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 268
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir, monsieur.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 269
+        },
+        {
+          "pause": 4,
+          "phase": "BUILD",
+          "line": 270
+        }
+      ]
+    },
+    {
+      "title": "Segment 18b · CULTURE NOTE",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "One more note. The switch from bonjour to bonsoir isn't at a fixed hour — it's whenever it starts to feel like evening to the people around you. When in doubt, listen for which one they say first, and match it.",
+          "tag": "warm, conversational",
+          "phase": null,
+          "line": 273
+        },
+        {
+          "pause": 2.5,
+          "phase": null,
+          "line": 274
+        }
+      ]
+    },
+    {
+      "title": "Segment 19 · BUILD — Bonsoir, madame. Merci !",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Swap the person again.",
+          "tag": "warm",
+          "phase": "BUILD",
+          "line": 277
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 278
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. Merci !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 279
+        },
+        {
+          "pause": 4,
+          "phase": "BUILD",
+          "line": 280
+        }
+      ]
+    },
+    {
+      "title": "Segment 20 · MIX IT UP",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Let's mix everything you know into a few quick little scenes.",
+          "tag": "playful, inviting",
+          "phase": "BUILD",
+          "line": 283
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 284
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur. S'il vous plaît.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 285
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 286
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci, madame. Au revoir !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 287
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 288
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut ! Oui, merci.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 289
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 290
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir. Non, merci.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 291
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 292
+        },
+        {
+          "voice": "en_man",
+          "text": "Four tiny scenes — all words you already own.",
+          "tag": "warm",
+          "phase": "BUILD",
+          "line": 293
+        },
+        {
+          "pause": 1,
+          "phase": "BUILD",
+          "line": 294
+        }
+      ]
+    },
+    {
+      "title": "Segment 21 · MIX IT UP 2",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "A few more.",
+          "tag": "playful",
+          "phase": "BUILD",
+          "line": 297
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 298
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. S'il vous plaît.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 299
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 300
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Non, merci. Au revoir, monsieur.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 301
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 302
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut ! Merci.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 303
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 304
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur. Oui.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 305
+        },
+        {
+          "pause": 3.5,
+          "phase": "BUILD",
+          "line": 306
+        },
+        {
+          "voice": "en_man",
+          "text": "However you order them, they still work.",
+          "tag": "warm",
+          "phase": "BUILD",
+          "line": 307
+        },
+        {
+          "pause": 1,
+          "phase": "BUILD",
+          "line": 308
+        }
+      ]
+    },
+    {
+      "title": "Segment 21b · MIX IT UP 3",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "One last set, even faster.",
+          "tag": "bright",
+          "phase": "BUILD",
+          "line": 311
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 312
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Oui, merci.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 313
+        },
+        {
+          "pause": 2.5,
+          "phase": "BUILD",
+          "line": 314
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir, monsieur. Au revoir !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 315
+        },
+        {
+          "pause": 2.5,
+          "phase": "BUILD",
+          "line": 316
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut ! Non, merci.",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 317
+        },
+        {
+          "pause": 2.5,
+          "phase": "BUILD",
+          "line": 318
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît, madame. Merci !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 319
+        },
+        {
+          "pause": 2.5,
+          "phase": "BUILD",
+          "line": 320
+        },
+        {
+          "voice": "en_man",
+          "text": "Twelve little scenes now, and counting.",
+          "tag": "proud",
+          "phase": "BUILD",
+          "line": 321
+        },
+        {
+          "pause": 1,
+          "phase": "BUILD",
+          "line": 322
+        }
+      ]
+    },
+    {
+      "title": "Segment 22 · YOUR TURN",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Your turn. Morning or evening right now? That's your first word. Add madame or monsieur. Say it out loud, and write it down.",
+          "tag": "encouraging, warm",
+          "phase": "MAKE IT YOURS",
+          "line": 325
+        },
+        {
+          "pause": 15,
+          "phase": "MAKE IT YOURS",
+          "line": 326
+        }
+      ]
+    },
+    {
+      "title": "Segment 23 · MODEL",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Here's one example.",
+          "tag": "warm",
+          "phase": "MAKE IT YOURS",
+          "line": 329
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 330
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. Merci, au revoir !",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 331
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 332
+        },
+        {
+          "voice": "en_woman",
+          "text": "Good evening, ma'am. Thank you, goodbye! Give yourself a point for every piece you got right.",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 333
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 334
+        }
+      ]
+    },
+    {
+      "title": "Segment 23b · WRITING NOTE",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "Two spelling notes for when you write these down. S'il vous plaît has an apostrophe right after the S. And à bientôt carries two accent marks — a small slanted line over that first à, and a little hat over the o in bientôt.",
+          "tag": "warm, instructive",
+          "phase": null,
+          "line": 337
+        },
+        {
+          "pause": 2.5,
+          "phase": null,
+          "line": 338
+        }
+      ]
+    },
+    {
+      "title": "Segment 24 · YOUR TURN 2",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Let's try a different scene. This time you're leaving, not arriving. Say goodbye, thank them, and choose madame or monsieur.",
+          "tag": "warm, inviting",
+          "phase": "MAKE IT YOURS",
+          "line": 341
+        },
+        {
+          "pause": 15,
+          "phase": "MAKE IT YOURS",
+          "line": 342
+        }
+      ]
+    },
+    {
+      "title": "Segment 25 · MODEL 2",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Here's one way to say it.",
+          "tag": "warm",
+          "phase": "MAKE IT YOURS",
+          "line": 345
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 346
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci, monsieur. Au revoir !",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 347
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 348
+        },
+        {
+          "voice": "en_woman",
+          "text": "Thank you, sir. Goodbye! However you said it, that's a real French sentence, built by you.",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 349
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 350
+        }
+      ]
+    },
+    {
+      "title": "Segment 26 · WORD — pardon",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 353
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 354
+        },
+        {
+          "voice": "en_man",
+          "text": "Excuse me — or sorry. For bumping into someone, or interrupting politely.",
+          "tag": "warm, light",
+          "phase": "MEET",
+          "line": 355
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 356
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Par... don.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 357
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 358
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 359
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 360
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 361
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 362
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 363
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 364
+        },
+        {
+          "voice": "en_man",
+          "text": "One more time.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 365
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 366
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 367
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 368
+        }
+      ]
+    },
+    {
+      "title": "Segment 27 · WORD — à bientôt",
+      "beats": [
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 371
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 372
+        },
+        {
+          "voice": "en_man",
+          "text": "See you soon — for someone you'll actually see again.",
+          "tag": "warm",
+          "phase": "MEET",
+          "line": 373
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 374
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À... bien... tôt.",
+          "tag": "slowly",
+          "phase": "MEET",
+          "line": 375
+        },
+        {
+          "pause": 2,
+          "phase": "MEET",
+          "line": 376
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "MEET",
+          "line": 377
+        },
+        {
+          "pause": 1,
+          "phase": "MEET",
+          "line": 378
+        },
+        {
+          "voice": "en_man",
+          "text": "Repeat.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 379
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 380
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 381
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 382
+        },
+        {
+          "voice": "en_man",
+          "text": "Once more.",
+          "tag": "bright",
+          "phase": "ECHO",
+          "line": 383
+        },
+        {
+          "pause": 4.5,
+          "phase": "ECHO",
+          "line": 384
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 385
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 386
+        },
+        {
+          "voice": "en_man",
+          "text": "Last time.",
+          "tag": "warm",
+          "phase": "ECHO",
+          "line": 387
+        },
+        {
+          "pause": 3,
+          "phase": "ECHO",
+          "line": 388
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "ECHO",
+          "line": 389
+        },
+        {
+          "pause": 2.5,
+          "phase": "ECHO",
+          "line": 390
+        }
+      ]
+    },
+    {
+      "title": "Segment 28 · RECALL — pardon, à bientôt",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "These two are brand new — let's lock them in right away.",
+          "tag": "warm",
+          "phase": "RECALL",
+          "line": 393
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 394
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 395
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 396
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 397
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 398
+        },
+        {
+          "voice": "en_woman",
+          "text": "Now you say them. Excuse me, or sorry.",
+          "tag": "inviting",
+          "phase": "RECALL",
+          "line": 399
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 400
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 401
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 402
+        },
+        {
+          "voice": "en_woman",
+          "text": "See you soon.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 403
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 404
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 405
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 406
+        }
+      ]
+    },
+    {
+      "title": "Segment 28b · YOUR TURN 3",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "One more scene. You bump into someone by accident — apologize, then greet them.",
+          "tag": "warm, inviting",
+          "phase": "MAKE IT YOURS",
+          "line": 409
+        },
+        {
+          "pause": 15,
+          "phase": "MAKE IT YOURS",
+          "line": 410
+        }
+      ]
+    },
+    {
+      "title": "Segment 28c · MODEL 3",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Here's one way to say it.",
+          "tag": "warm",
+          "phase": "MAKE IT YOURS",
+          "line": 413
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 414
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon, madame ! Bonjour.",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 415
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 416
+        },
+        {
+          "voice": "en_woman",
+          "text": "Excuse me, ma'am! Hello. Three scenes now, three sentences — and none of them were mine.",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 417
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 418
+        }
+      ]
+    },
+    {
+      "title": "Segment 28d · LISTENING CHALLENGE",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "One more kind of check. I'll describe a moment — you say the word before I do.",
+          "tag": "playful, inviting",
+          "phase": "RECALL",
+          "line": 421
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 422
+        },
+        {
+          "voice": "en_woman",
+          "text": "Someone holds the door open for you.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 423
+        },
+        {
+          "pause": 3,
+          "phase": "RECALL",
+          "line": 424
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 425
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 426
+        },
+        {
+          "voice": "en_woman",
+          "text": "You step on someone's foot by accident.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 427
+        },
+        {
+          "pause": 3,
+          "phase": "RECALL",
+          "line": 428
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 429
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 430
+        },
+        {
+          "voice": "en_woman",
+          "text": "You're leaving a shop, and you'll be back again tomorrow.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 431
+        },
+        {
+          "pause": 3,
+          "phase": "RECALL",
+          "line": 432
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 433
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 434
+        },
+        {
+          "voice": "en_woman",
+          "text": "You want the waiter's attention, politely.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 435
+        },
+        {
+          "pause": 3,
+          "phase": "RECALL",
+          "line": 436
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 437
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 438
+        },
+        {
+          "voice": "en_woman",
+          "text": "Four real situations, four right answers — and every one came from you, not the screen.",
+          "tag": "warm, proud",
+          "phase": "RECALL",
+          "line": 439
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 440
+        }
+      ]
+    },
+    {
+      "title": "Segment 29 · CAPSTONE — the whole scene",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "One last scene — nearly everything you learned today, back to back.",
+          "tag": "warm, inviting",
+          "phase": "BUILD",
+          "line": 443
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 444
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon, monsieur ! Bonjour. S'il vous plaît... Merci ! Au revoir, à bientôt !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 445
+        },
+        {
+          "pause": 4,
+          "phase": "BUILD",
+          "line": 446
+        },
+        {
+          "voice": "en_man",
+          "text": "Excuse me, sir! Hello. Please... Thank you! Goodbye, see you soon! One little scene, seven of your words.",
+          "tag": "proud",
+          "phase": "BUILD",
+          "line": 447
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 448
+        }
+      ]
+    },
+    {
+      "title": "Segment 30 · CAPSTONE 2 — evening version",
+      "beats": [
+        {
+          "voice": "en_man",
+          "text": "One more scene, this time starting in the evening.",
+          "tag": "inviting",
+          "phase": "BUILD",
+          "line": 451
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 452
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame ! Pardon... Oui, s'il vous plaît. Merci ! À bientôt !",
+          "tag": "",
+          "phase": "BUILD",
+          "line": 453
+        },
+        {
+          "pause": 4,
+          "phase": "BUILD",
+          "line": 454
+        },
+        {
+          "voice": "en_man",
+          "text": "Good evening, ma'am! Excuse me... Yes, please. Thank you! See you soon! Same words, brand new scene.",
+          "tag": "proud",
+          "phase": "BUILD",
+          "line": 455
+        },
+        {
+          "pause": 1.5,
+          "phase": "BUILD",
+          "line": 456
+        }
+      ]
+    },
+    {
+      "title": "Segment 30b · YOUR TURN 4 — replying",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Last scenario. This time someone greets you first — imagine hearing \"Bonsoir, madame\" or \"Bonsoir, monsieur,\" whichever fits you. How do you reply, and how do you say goodbye when you leave?",
+          "tag": "warm, inviting",
+          "phase": "MAKE IT YOURS",
+          "line": 459
+        },
+        {
+          "pause": 15,
+          "phase": "MAKE IT YOURS",
+          "line": 460
+        }
+      ]
+    },
+    {
+      "title": "Segment 30c · MODEL 4",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Here's one reply.",
+          "tag": "warm",
+          "phase": "MAKE IT YOURS",
+          "line": 463
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 464
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir ! Merci. À bientôt !",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 465
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 466
+        },
+        {
+          "voice": "en_woman",
+          "text": "Good evening! Thanks. See you soon! Four scenes now — arriving, leaving, apologizing, and replying. All four directions, and all four were yours.",
+          "tag": "",
+          "phase": "MAKE IT YOURS",
+          "line": 467
+        },
+        {
+          "pause": 1.5,
+          "phase": "MAKE IT YOURS",
+          "line": 468
+        }
+      ]
+    },
+    {
+      "title": "Segment 31 · SPEED ROUND",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Speed round — twelve words, fast. Just say the English.",
+          "tag": "bright, playful",
+          "phase": "RECALL",
+          "line": 471
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 472
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 473
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 474
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 475
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 476
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 477
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 478
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 479
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 480
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 481
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 482
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 483
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 484
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Oui.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 485
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 486
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Non.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 487
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 488
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 489
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 490
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Madame.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 491
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 492
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Monsieur.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 493
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 494
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "tag": "",
+          "phase": "RECALL",
+          "line": 495
+        },
+        {
+          "pause": 2.5,
+          "phase": "RECALL",
+          "line": 496
+        },
+        {
+          "voice": "en_woman",
+          "text": "All twelve. You didn't just hear French today — you spoke it, over and over.",
+          "tag": "proud",
+          "phase": "RECALL",
+          "line": 497
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECALL",
+          "line": 498
+        }
+      ]
+    },
+    {
+      "title": "Segment 32 · RECAP",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Everything from today, back to back.",
+          "tag": "warm, proud",
+          "phase": "RECAP",
+          "line": 501
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 502
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour. Salut. Bonsoir. Au revoir. Merci. S'il vous plaît. Oui. Non. Pardon. Madame. Monsieur. À bientôt.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 503
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 504
+        },
+        {
+          "voice": "en_woman",
+          "text": "Twelve words — and you said every one of them yourself.",
+          "tag": "proud",
+          "phase": "RECAP",
+          "line": 505
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 506
+        },
+        {
+          "voice": "en_woman",
+          "text": "Last check — no French on screen, no help. Just you.",
+          "tag": "inviting",
+          "phase": "RECAP",
+          "line": 507
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 508
+        },
+        {
+          "voice": "en_woman",
+          "text": "Hello.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 509
+        },
+        {
+          "pause": 3,
+          "phase": "RECAP",
+          "line": 510
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 511
+        },
+        {
+          "pause": 1,
+          "phase": "RECAP",
+          "line": 512
+        },
+        {
+          "voice": "en_woman",
+          "text": "Thank you.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 513
+        },
+        {
+          "pause": 3,
+          "phase": "RECAP",
+          "line": 514
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 515
+        },
+        {
+          "pause": 1,
+          "phase": "RECAP",
+          "line": 516
+        },
+        {
+          "voice": "en_woman",
+          "text": "Please.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 517
+        },
+        {
+          "pause": 3,
+          "phase": "RECAP",
+          "line": 518
+        },
+        {
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 519
+        },
+        {
+          "pause": 1,
+          "phase": "RECAP",
+          "line": 520
+        },
+        {
+          "voice": "en_woman",
+          "text": "Goodbye.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 521
+        },
+        {
+          "pause": 3,
+          "phase": "RECAP",
+          "line": 522
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 523
+        },
+        {
+          "pause": 1,
+          "phase": "RECAP",
+          "line": 524
+        },
+        {
+          "voice": "en_woman",
+          "text": "Four for four. That's not luck — that's practice.",
+          "tag": "proud",
+          "phase": "RECAP",
+          "line": 525
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 526
+        },
+        {
+          "voice": "en_woman",
+          "text": "One last one, a bigger one. A whole sentence this time — \"Good evening, ma'am. Thank you, goodbye.\"",
+          "tag": "inviting",
+          "phase": "RECAP",
+          "line": 527
+        },
+        {
+          "pause": 6,
+          "phase": "RECAP",
+          "line": 528
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. Merci, au revoir !",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 529
+        },
+        {
+          "pause": 2,
+          "phase": "RECAP",
+          "line": 530
+        },
+        {
+          "voice": "en_woman",
+          "text": "You just produced a full French sentence from an English cue, with nothing on screen to lean on. That's the whole point of this course.",
+          "tag": "proud, warm",
+          "phase": "RECAP",
+          "line": 531
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 532
+        }
+      ]
+    },
+    {
+      "title": "Segment 33 · SCORECARD",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Quick scorecard for today. You met twelve words.",
+          "tag": "warm, proud",
+          "phase": "RECAP",
+          "line": 535
+        },
+        {
+          "pause": 2,
+          "phase": "RECAP",
+          "line": 536
+        },
+        {
+          "voice": "en_woman",
+          "text": "You built sentences, piece by piece, more than once.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 537
+        },
+        {
+          "pause": 2,
+          "phase": "RECAP",
+          "line": 538
+        },
+        {
+          "voice": "en_woman",
+          "text": "And you wrote sentences of your own, completely from scratch, four separate times.",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 539
+        },
+        {
+          "pause": 2,
+          "phase": "RECAP",
+          "line": 540
+        },
+        {
+          "voice": "en_woman",
+          "text": "That's a full lesson, done the right way — one word at a time, out loud.",
+          "tag": "proud",
+          "phase": "RECAP",
+          "line": 541
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 542
+        }
+      ]
+    },
+    {
+      "title": "Segment 34 · SUMMARY",
+      "beats": [
+        {
+          "voice": "en_woman",
+          "text": "Twelve words in the bank — twelve out of two hundred and thirty-five for A1.",
+          "tag": "excited, warm, celebratory",
+          "phase": "RECAP",
+          "line": 545
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 546
+        },
+        {
+          "voice": "fr_woman",
+          "text": "Bravo !",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 547
+        },
+        {
+          "pause": 1.5,
+          "phase": "RECAP",
+          "line": 548
+        },
+        {
+          "voice": "en_woman",
+          "text": "First lesson done. Next time: your name, and how you're doing. À bientôt.",
+          "tag": "warm",
+          "phase": "RECAP",
+          "line": 549
+        },
+        {
+          "pause": 1,
+          "phase": "RECAP",
+          "line": 550
+        },
+        {
+          "voice": "fr_woman",
+          "text": "À bientôt !",
+          "tag": "",
+          "phase": "RECAP",
+          "line": 551
+        }
+      ]
+    }
+  ]
+}

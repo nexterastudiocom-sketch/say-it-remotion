@@ -1,0 +1,28 @@
+{
+  "lessonId": "lesson-04",
+  "language": "de",
+  "voiceId": "",
+  "segments": [
+    { "id": "title", "parts": [{ "text": "Lektion 4. Verben für den Alltag.", "voice": "native" }] },
+    { "id": "vocab-1", "parts": [
+      { "text": "arbeiten.", "voice": "native" },
+      { "text": "In English: to work.", "voice": "en" },
+      { "text": "Wiederhole: arbeiten.", "voice": "native" }
+    ] },
+    { "id": "buildup-1", "parts": [
+      { "text": "Ich arbeite.", "voice": "native" },
+      { "text": "Ich arbeite in Kanada.", "voice": "native" },
+      { "text": "Ich arbeite in Kanada mit meinem Team.", "voice": "native" },
+      { "text": "In English: I work in Canada with my team.", "voice": "en" }
+    ] },
+    { "id": "yourturn-1", "minSeconds": 10, "parts": [
+      { "text": "Du bist dran! Schreib deinen eigenen Satz. Nimm ein anderes Subjekt und sprich über dein Leben.", "voice": "native" }
+    ] },
+    { "id": "model-1", "parts": [
+      { "text": "Zum Beispiel: wir arbeiten in Toronto.", "voice": "native" },
+      { "text": "In English: we work in Toronto.", "voice": "en" },
+      { "text": "Vergleiche mit deinem Satz.", "voice": "native" }
+    ] },
+    { "id": "score", "parts": [{ "text": "Super! Du kannst jetzt sagen: ich arbeite in Kanada.", "voice": "native" }] }
+  ]
+}

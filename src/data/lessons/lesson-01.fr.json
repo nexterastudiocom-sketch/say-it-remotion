@@ -1,0 +1,1995 @@
+{
+  "title": "Leçon 1 — Dire bonjour",
+  "language": "fr",
+  "ui": {
+    "repeat": "Répète"
+  },
+  "chrome": {
+    "lessonA": "Leçon 1",
+    "lessonB": "Dire bonjour",
+    "level": "A1",
+    "progressLabel": "Progression",
+    "wordUnit": "mots",
+    "wordsFrom": 0,
+    "wordsTo": 12,
+    "wordsTotal": 235
+  },
+  "slides": [
+    {
+      "id": "opening",
+      "type": "title",
+      "durationInSeconds": 27.33,
+      "kicker": "Say It · Français",
+      "titleLines": [
+        "Bienvenue !"
+      ],
+      "subtitle": "Learn to speak, not just read",
+      "methodLabels": [
+        "Meet",
+        "Echo",
+        "Build",
+        "Make It Yours"
+      ],
+      "imageSrc": "assets/images/lesson-01_title.png",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/opening_0.mp3",
+          "durationInSeconds": 9.33,
+          "phase": null,
+          "voice": "en_man",
+          "text": "Welcome to Say... It . in French — the course where you don't just hear French, you speak it. Starting right now.",
+          "line": 4
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": null
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/opening_1.mp3",
+          "durationInSeconds": 13.4,
+          "phase": null,
+          "voice": "en_man",
+          "text": "Every lesson follows four steps: Meet a word, Echo it back out loud, Build it into a sentence, Make It Yours by writing your own. Let's start.",
+          "line": 6
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": null
+        }
+      ]
+    },
+    {
+      "id": "title",
+      "type": "title",
+      "durationInSeconds": 4.6,
+      "kicker": "Leçon 1",
+      "titleLines": [
+        "Dire bonjour"
+      ],
+      "subtitle": "Lesson 1: Saying hello",
+      "imageSrc": "assets/images/lesson-01_title.png",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/title_0.mp3",
+          "durationInSeconds": 4.6,
+          "phase": null,
+          "voice": "en_man",
+          "text": "Today's goal: greet someone in French. Let's meet your first word.",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "id": "vocab-1",
+      "type": "vocab",
+      "durationInSeconds": 44.07,
+      "word": "bonjour",
+      "translation": "hello / good morning",
+      "phonetic": "bohn-ZHOOR",
+      "pos": "interj",
+      "imageSrc": "assets/images/lesson-01_vocab-1.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-1.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_0.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "line": 13
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_1.mp3",
+          "durationInSeconds": 2.43,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Hello — or good morning.",
+          "line": 15
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_2.mp3",
+          "durationInSeconds": 2.04,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bon... jour.",
+          "line": 17
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_3.mp3",
+          "durationInSeconds": 7.31,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "That \"on\" in the middle is nasal — let the air flow through your nose, not a hard N.",
+          "line": 19
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_4.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "line": 21
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_5.mp3",
+          "durationInSeconds": 1.96,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 23
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_6.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Bonjour",
+          "line": 25
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_7.mp3",
+          "durationInSeconds": 0.99,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "One more time.",
+          "line": 27
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_8.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "line": 29
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "vocab-2",
+      "type": "vocab",
+      "durationInSeconds": 35.22,
+      "word": "salut",
+      "translation": "hi / bye (informal)",
+      "phonetic": "sah-LU",
+      "pos": "interj",
+      "imageSrc": "assets/images/lesson-01_vocab-2.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-2.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_0.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "line": 33
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_1.mp3",
+          "durationInSeconds": 6.19,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Hi — or bye. Casual, for friends, not your boss.",
+          "line": 35
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_2.mp3",
+          "durationInSeconds": 1.72,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Sa... lut",
+          "line": 37
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_3.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "line": 39
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_4.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 41
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_5.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "line": 43
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_6.mp3",
+          "durationInSeconds": 1.65,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Again.",
+          "line": 45
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_7.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Salut.",
+          "line": 47
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "vocab-3",
+      "type": "vocab",
+      "durationInSeconds": 32.82,
+      "word": "merci",
+      "translation": "thank you",
+      "phonetic": "mehr-SEE",
+      "pos": "interj",
+      "imageSrc": "assets/images/lesson-01_vocab-3.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-3.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_0.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "line": 67
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_1.mp3",
+          "durationInSeconds": 3.08,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Thank you.",
+          "line": 69
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_2.mp3",
+          "durationInSeconds": 2.35,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Mer... ci.",
+          "line": 71
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_3.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "line": 73
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_4.mp3",
+          "durationInSeconds": 1.65,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 75
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_5.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "line": 77
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_6.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "One more.",
+          "line": 79
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-3_7.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "line": 81
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "vocab-4",
+      "type": "vocab",
+      "durationInSeconds": 43.7,
+      "word": "s'il vous plaît",
+      "translation": "please",
+      "phonetic": "seel voo PLEH",
+      "pos": "phrase",
+      "imageSrc": "assets/images/lesson-01_vocab-4.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-4.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_0.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "line": 85
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_1.mp3",
+          "durationInSeconds": 1.88,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Please.",
+          "line": 87
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_2.mp3",
+          "durationInSeconds": 2.69,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "S'il... vous... plaît.",
+          "line": 89
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_3.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "line": 91
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_4.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 93
+        },
+        {
+          "durationInSeconds": 5.3,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_5.mp3",
+          "durationInSeconds": 0.76,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "line": 95
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_6.mp3",
+          "durationInSeconds": 2.43,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Once more — a little quicker this time.",
+          "line": 97
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_7.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "line": 99
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_8.mp3",
+          "durationInSeconds": 2.12,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Last time, nice and steady.",
+          "line": 101
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-4_9.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "line": 103
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "vocab-5",
+      "type": "vocab",
+      "durationInSeconds": 36.47,
+      "word": "oui / non",
+      "translation": "yes / no",
+      "phonetic": "wee / nohn",
+      "pos": "mot",
+      "imageSrc": "assets/images/lesson-01_vocab-5.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-5.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_0.mp3",
+          "durationInSeconds": 1.31,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "line": 125
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_1.mp3",
+          "durationInSeconds": 1.72,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Yes, and no.",
+          "line": 127
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_2.mp3",
+          "durationInSeconds": 1.88,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Oui... non.",
+          "line": 129
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_3.mp3",
+          "durationInSeconds": 1.31,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "line": 131
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_4.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 133
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_5.mp3",
+          "durationInSeconds": 1.15,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "line": 135
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_6.mp3",
+          "durationInSeconds": 1.88,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Once more, both together.",
+          "line": 137
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-5_7.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Oui. Non.",
+          "line": 139
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "vocab-6",
+      "type": "vocab",
+      "durationInSeconds": 56.13,
+      "word": "au revoir",
+      "translation": "goodbye",
+      "phonetic": "oh ruh-VWAHR",
+      "pos": "phrase",
+      "imageSrc": "assets/images/lesson-01_vocab-6.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-6.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_0.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "line": 143
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_1.mp3",
+          "durationInSeconds": 3.16,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Goodbye.",
+          "line": 145
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_2.mp3",
+          "durationInSeconds": 1.96,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Au... re... voir.",
+          "line": 147
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_3.mp3",
+          "durationInSeconds": 8.36,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen for that \"r\" — it comes from the back of your throat, not the front of your mouth like an English r.",
+          "line": 149
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_4.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "line": 151
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_5.mp3",
+          "durationInSeconds": 2.04,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 153
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_6.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "line": 155
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_7.mp3",
+          "durationInSeconds": 2.85,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "One more — really growl that r.",
+          "line": 157
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_8.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "line": 159
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_9.mp3",
+          "durationInSeconds": 2.04,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Last time.",
+          "line": 161
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-6_10.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "line": 163
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "buildup-7",
+      "type": "buildup",
+      "durationInSeconds": 97.47,
+      "eyebrow": "On construit la phrase",
+      "steps": [
+        {
+          "base": "Bonjour."
+        },
+        {
+          "base": "Bonjour, madame."
+        },
+        {
+          "base": "Bonjour, madame. Merci !"
+        }
+      ],
+      "translation": "Hello, ma'am. Thank you!",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_0.mp3",
+          "durationInSeconds": 4.68,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Now we build a sentence, one piece at a time. We start here.",
+          "line": 201
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_1.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "line": 203
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_2.mp3",
+          "durationInSeconds": 3,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Add \"madame\" — a polite word for a woman.",
+          "line": 207
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_3.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame.",
+          "line": 209
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_4.mp3",
+          "durationInSeconds": 4.21,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Now swap it — \"monsieur\" for a man.",
+          "line": 213
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_5.mp3",
+          "durationInSeconds": 0.76,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur.",
+          "line": 215
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_6.mp3",
+          "durationInSeconds": 2.19,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Repeat both.",
+          "line": 217
+        },
+        {
+          "durationInSeconds": 5.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_7.mp3",
+          "durationInSeconds": 1.31,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Bonjour, monsieur.",
+          "line": 219
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_8.mp3",
+          "durationInSeconds": 3.24,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "One more piece — now it's a whole little exchange.",
+          "line": 223
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_9.mp3",
+          "durationInSeconds": 1.23,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Merci !",
+          "line": 225
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_10.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Repeat the whole sentence.",
+          "line": 227
+        },
+        {
+          "durationInSeconds": 6.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_11.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Merci !",
+          "line": 229
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_12.mp3",
+          "durationInSeconds": 1.96,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Same piece, other person.",
+          "line": 233
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_13.mp3",
+          "durationInSeconds": 1.31,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur. Merci !",
+          "line": 235
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_14.mp3",
+          "durationInSeconds": 3.71,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Now swap the first piece — arriving becomes leaving.",
+          "line": 239
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_15.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Au revoir, madame. Merci !",
+          "line": 241
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_16.mp3",
+          "durationInSeconds": 1.15,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Repeat the whole thing.",
+          "line": 243
+        },
+        {
+          "durationInSeconds": 6.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_17.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Au revoir, madame. Merci !",
+          "line": 245
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_18.mp3",
+          "durationInSeconds": 1.31,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Swap the person again.",
+          "line": 277
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/buildup-7_19.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. Merci !",
+          "line": 279
+        },
+        {
+          "durationInSeconds": 4.3,
+          "phase": "BUILD"
+        }
+      ]
+    },
+    {
+      "id": "subject-8",
+      "type": "buildup",
+      "durationInSeconds": 29.08,
+      "eyebrow": "On change",
+      "steps": [
+        {
+          "base": "Bonsoir, monsieur."
+        }
+      ],
+      "translation": "Good evening, sir.",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/subject-8_0.mp3",
+          "durationInSeconds": 3.79,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "This is good evening — bonjour's after-dark twin.",
+          "line": 259
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/subject-8_1.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bonsoir.",
+          "line": 261
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/subject-8_2.mp3",
+          "durationInSeconds": 1.65,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bon... soir.",
+          "line": 263
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/subject-8_3.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bonsoir.",
+          "line": 265
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/subject-8_4.mp3",
+          "durationInSeconds": 5.96,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "And monsieur — sir, madame's counterpart, for a man. Say the whole thing.",
+          "line": 267
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "BUILD"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/subject-8_5.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonsoir, monsieur.",
+          "line": 269
+        },
+        {
+          "durationInSeconds": 4.3,
+          "phase": "BUILD"
+        }
+      ]
+    },
+    {
+      "id": "yourturn-9",
+      "type": "yourturn",
+      "durationInSeconds": 27.89,
+      "cue": "À toi !",
+      "prompt": "Salue quelqu'un.",
+      "sub": "Écris et dis ta phrase. Utilise bonjour ou bonsoir",
+      "seconds": 10,
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/yourturn-9_0.mp3",
+          "durationInSeconds": 12.59,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Your turn. Morning or evening right now? That's your first word. Add madame or monsieur. Say it out loud, and write it down.",
+          "line": 325
+        },
+        {
+          "durationInSeconds": 15.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "model-10",
+      "type": "model",
+      "durationInSeconds": 16.93,
+      "eyebrow": "Exemple de réponse",
+      "highlight": "Bonsoir, madame. Merci, au revoir !",
+      "rest": "",
+      "compareNote": "Compare avec ta phrase.",
+      "translationEn": "Good evening, ma'am. Thank you, goodbye!",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_0.mp3",
+          "durationInSeconds": 1.23,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Here's one example.",
+          "line": 329
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_1.mp3",
+          "durationInSeconds": 1.8,
+          "phase": "MAKE IT YOURS",
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. Merci, au revoir !",
+          "line": 331
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_2.mp3",
+          "durationInSeconds": 7,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Good evening, ma'am. Thank you, goodbye! Give yourself a point for every piece you got right.",
+          "line": 333
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "yourturn-9",
+      "type": "yourturn",
+      "durationInSeconds": 26.85,
+      "cue": "À toi !",
+      "prompt": "Salue quelqu'un.",
+      "sub": "Écris et dis ta phrase. Utilise bonjour ou bonsoir",
+      "seconds": 10,
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/yourturn-9_0.mp3",
+          "durationInSeconds": 11.55,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Let's try a different scene. This time you're leaving, not arriving. Say goodbye, thank them, and choose madame or monsieur.",
+          "line": 341
+        },
+        {
+          "durationInSeconds": 15.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "model-10",
+      "type": "model",
+      "durationInSeconds": 18.48,
+      "eyebrow": "Exemple de réponse",
+      "highlight": "Bonsoir, madame. Merci, au revoir !",
+      "rest": "",
+      "compareNote": "Compare avec ta phrase.",
+      "translationEn": "Good evening, ma'am. Thank you, goodbye!",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_0.mp3",
+          "durationInSeconds": 1.57,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Here's one way to say it.",
+          "line": 345
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_1.mp3",
+          "durationInSeconds": 1.65,
+          "phase": "MAKE IT YOURS",
+          "voice": "fr_woman",
+          "text": "Merci, monsieur. Au revoir !",
+          "line": 347
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_2.mp3",
+          "durationInSeconds": 8.36,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Thank you, sir. Goodbye! However you said it, that's a real French sentence, built by you.",
+          "line": 349
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "vocab-11",
+      "type": "vocab",
+      "durationInSeconds": 39.84,
+      "word": "pardon",
+      "translation": "excuse me / sorry",
+      "phonetic": "par-DOHN",
+      "pos": "interj",
+      "imageSrc": "assets/images/lesson-01_vocab-11.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-11.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_0.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "line": 353
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_1.mp3",
+          "durationInSeconds": 7.24,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Excuse me — or sorry. For bumping into someone, or interrupting politely.",
+          "line": 355
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_2.mp3",
+          "durationInSeconds": 1.96,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Par... don.",
+          "line": 357
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_3.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "line": 359
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_4.mp3",
+          "durationInSeconds": 1.65,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 361
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_5.mp3",
+          "durationInSeconds": 0.99,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "line": 363
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_6.mp3",
+          "durationInSeconds": 2.04,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "One more time.",
+          "line": 365
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-11_7.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "Pardon.",
+          "line": 367
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "vocab-12",
+      "type": "vocab",
+      "durationInSeconds": 43.43,
+      "word": "à bientôt",
+      "translation": "see you soon",
+      "phonetic": "ah byan-TOH",
+      "pos": "phrase",
+      "imageSrc": "assets/images/lesson-01_vocab-12.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-12.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_0.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "line": 371
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_1.mp3",
+          "durationInSeconds": 3.16,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "See you soon — for someone you'll actually see again.",
+          "line": 373
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_2.mp3",
+          "durationInSeconds": 2.27,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "À... bien... tôt.",
+          "line": 375
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_3.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "line": 377
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_4.mp3",
+          "durationInSeconds": 2.04,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat.",
+          "line": 379
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_5.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "line": 381
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_6.mp3",
+          "durationInSeconds": 1.07,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Once more.",
+          "line": 383
+        },
+        {
+          "durationInSeconds": 4.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_7.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "line": 385
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_8.mp3",
+          "durationInSeconds": 0.99,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Last time.",
+          "line": 387
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "ECHO"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-12_9.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "À bientôt.",
+          "line": 389
+        },
+        {
+          "durationInSeconds": 2.8,
+          "phase": "ECHO"
+        }
+      ]
+    },
+    {
+      "id": "yourturn-9",
+      "type": "yourturn",
+      "durationInSeconds": 23.35,
+      "cue": "À toi !",
+      "prompt": "Salue quelqu'un.",
+      "sub": "Écris et dis ta phrase. Utilise bonjour ou bonsoir",
+      "seconds": 10,
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/yourturn-9_0.mp3",
+          "durationInSeconds": 8.05,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "One more scene. You bump into someone by accident — apologize, then greet them.",
+          "line": 409
+        },
+        {
+          "durationInSeconds": 15.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "model-10",
+      "type": "model",
+      "durationInSeconds": 19.02,
+      "eyebrow": "Exemple de réponse",
+      "highlight": "Bonsoir, madame. Merci, au revoir !",
+      "rest": "",
+      "compareNote": "Compare avec ta phrase.",
+      "translationEn": "Good evening, ma'am. Thank you, goodbye!",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_0.mp3",
+          "durationInSeconds": 1.8,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Here's one way to say it.",
+          "line": 413
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_1.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "MAKE IT YOURS",
+          "voice": "fr_woman",
+          "text": "Pardon, madame ! Bonjour.",
+          "line": 415
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_2.mp3",
+          "durationInSeconds": 8.91,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Excuse me, ma'am! Hello. Three scenes now, three sentences — and none of them were mine.",
+          "line": 417
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "yourturn-9",
+      "type": "yourturn",
+      "durationInSeconds": 31.1,
+      "cue": "À toi !",
+      "prompt": "Salue quelqu'un.",
+      "sub": "Écris et dis ta phrase. Utilise bonjour ou bonsoir",
+      "seconds": 10,
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/yourturn-9_0.mp3",
+          "durationInSeconds": 15.8,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Last scenario. This time someone greets you first — imagine hearing \"Bonsoir, madame\" or \"Bonsoir, monsieur,\" whichever fits you. How do you reply, and how do you say goodbye when you leave?",
+          "line": 459
+        },
+        {
+          "durationInSeconds": 15.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "model-10",
+      "type": "model",
+      "durationInSeconds": 23.91,
+      "eyebrow": "Exemple de réponse",
+      "highlight": "Bonsoir, madame. Merci, au revoir !",
+      "rest": "",
+      "compareNote": "Compare avec ta phrase.",
+      "translationEn": "Good evening, ma'am. Thank you, goodbye!",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_0.mp3",
+          "durationInSeconds": 1.41,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Here's one reply.",
+          "line": 463
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_1.mp3",
+          "durationInSeconds": 1.57,
+          "phase": "MAKE IT YOURS",
+          "voice": "fr_woman",
+          "text": "Bonsoir ! Merci. À bientôt !",
+          "line": 465
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/model-10_2.mp3",
+          "durationInSeconds": 14.03,
+          "phase": "MAKE IT YOURS",
+          "voice": "en_woman",
+          "text": "Good evening! Thanks. See you soon! Four scenes now — arriving, leaving, apologizing, and replying. All four directions, and all four were yours.",
+          "line": 467
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MAKE IT YOURS"
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "type": "recap",
+      "durationInSeconds": 97.57,
+      "eyebrow": "Récapitulatif",
+      "items": [
+        {
+          "word": "bonjour",
+          "translation": "hello / good morning"
+        },
+        {
+          "word": "salut",
+          "translation": "hi / bye (informal)"
+        },
+        {
+          "word": "merci",
+          "translation": "thank you"
+        },
+        {
+          "word": "s'il vous plaît",
+          "translation": "please"
+        },
+        {
+          "word": "oui / non",
+          "translation": "yes / no"
+        },
+        {
+          "word": "au revoir",
+          "translation": "goodbye"
+        },
+        {
+          "word": "pardon",
+          "translation": "excuse me / sorry"
+        },
+        {
+          "word": "à bientôt",
+          "translation": "see you soon"
+        }
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_0.mp3",
+          "durationInSeconds": 3,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Everything from today, back to back.",
+          "line": 501
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_1.mp3",
+          "durationInSeconds": 7,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "Bonjour. Salut. Bonsoir. Au revoir. Merci. S'il vous plaît. Oui. Non. Pardon. Madame. Monsieur. À bientôt.",
+          "line": 503
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_2.mp3",
+          "durationInSeconds": 4.52,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Twelve words — and you said every one of them yourself.",
+          "line": 505
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_3.mp3",
+          "durationInSeconds": 5.96,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Last check — no French on screen, no help. Just you.",
+          "line": 507
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_4.mp3",
+          "durationInSeconds": 1.15,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Hello.",
+          "line": 509
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_5.mp3",
+          "durationInSeconds": 0.76,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "line": 511
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_6.mp3",
+          "durationInSeconds": 1.15,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Thank you.",
+          "line": 513
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_7.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "Merci.",
+          "line": 515
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_8.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Please.",
+          "line": 517
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_9.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît.",
+          "line": 519
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_10.mp3",
+          "durationInSeconds": 0.68,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Goodbye.",
+          "line": 521
+        },
+        {
+          "durationInSeconds": 3.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_11.mp3",
+          "durationInSeconds": 0.52,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "Au revoir.",
+          "line": 523
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_12.mp3",
+          "durationInSeconds": 4.99,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Four for four. That's not luck — that's practice.",
+          "line": 525
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_13.mp3",
+          "durationInSeconds": 9.64,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "One last one, a bigger one. A whole sentence this time — \"Good evening, ma'am. Thank you, goodbye.\"",
+          "line": 527
+        },
+        {
+          "durationInSeconds": 6.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_14.mp3",
+          "durationInSeconds": 1.88,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. Merci, au revoir !",
+          "line": 529
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/recap_15.mp3",
+          "durationInSeconds": 9.56,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "You just produced a full French sentence from an English cue, with nothing on screen to lean on. That's the whole point of this course.",
+          "line": 531
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        }
+      ]
+    },
+    {
+      "id": "score",
+      "type": "score",
+      "durationInSeconds": 21.21,
+      "headline": "Bravo !",
+      "nowSayLead": "Tu peux maintenant dire :",
+      "nowSaySentence": "Tu peux dire bonjour !",
+      "stats": {
+        "wordsToday": "+12",
+        "wordsTodayLabel": "mots aujourd’hui",
+        "levelValue": "A1 · 12/235",
+        "levelLabel": "niveau",
+        "levelPct": 5,
+        "sentences": "1",
+        "sentencesLabel": "phrases écrites"
+      },
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/score_0.mp3",
+          "durationInSeconds": 5.56,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "Twelve words in the bank — twelve out of two hundred and thirty-five for A1.",
+          "line": 545
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/score_1.mp3",
+          "durationInSeconds": 0.91,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "Bravo !",
+          "line": 547
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/score_2.mp3",
+          "durationInSeconds": 7.24,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "First lesson done. Next time: your name, and how you're doing. À bientôt.",
+          "line": 549
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECAP"
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/score_3.mp3",
+          "durationInSeconds": 0.6,
+          "phase": "RECAP",
+          "voice": "fr_woman",
+          "text": "À bientôt !",
+          "line": 551
+        }
+      ]
+    }
+  ],
+  "overlays": []
+}

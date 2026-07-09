@@ -1,0 +1,82 @@
+{
+  "levels": [
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "C1",
+    "C2"
+  ],
+  "languages": {
+    "fr": {
+      "name": "French",
+      "slug": "french",
+      "accent": "#2E4FE0",
+      "tint": "#E7ECFE",
+      "spark": {
+        "ring": "#FFB020",
+        "chip": "#FF6B5E",
+        "dot": "#1FC7B6",
+        "badgeBg": "#FFB020",
+        "badgeFg": "#16181D",
+        "badgeDot": "#16181D"
+      }
+    },
+    "es": {
+      "name": "Spanish",
+      "slug": "spanish",
+      "accent": "#E14B3B",
+      "tint": "#FDEAE6",
+      "spark": {
+        "ring": "#FFC23D",
+        "chip": "#16B8C4",
+        "dot": "#7B5BE6",
+        "badgeBg": "#FFC23D",
+        "badgeFg": "#16181D",
+        "badgeDot": "#16181D"
+      }
+    },
+    "it": {
+      "name": "Italian",
+      "slug": "italian",
+      "accent": "#1FA66B",
+      "tint": "#E4F6EE",
+      "spark": {
+        "ring": "#FFB020",
+        "chip": "#FF6B5E",
+        "dot": "#3B9BFF",
+        "badgeBg": "#FFB020",
+        "badgeFg": "#16181D",
+        "badgeDot": "#16181D"
+      }
+    },
+    "pt": {
+      "name": "Portuguese",
+      "slug": "portuguese",
+      "accent": "#11998E",
+      "tint": "#E0F5F2",
+      "spark": {
+        "ring": "#FFC23D",
+        "chip": "#FF6B5E",
+        "dot": "#FF5DA2",
+        "badgeBg": "#FFC23D",
+        "badgeFg": "#16181D",
+        "badgeDot": "#16181D"
+      }
+    },
+    "de": {
+      "name": "German",
+      "slug": "german",
+      "accent": "#E0A100",
+      "tint": "#FBF1D6",
+      "spark": {
+        "ring": "#FF6B5E",
+        "chip": "#16B8C4",
+        "dot": "#3358E0",
+        "badgeBg": "#16181D",
+        "badgeFg": "#FFFFFF",
+        "badgeDot": "#FFC23D"
+      }
+    }
+  }
+}

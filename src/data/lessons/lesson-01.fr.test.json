@@ -1,0 +1,157 @@
+{
+  "title": "Leçon 1 — Dire bonjour",
+  "language": "fr",
+  "ui": {
+    "repeat": "Répète"
+  },
+  "chrome": {
+    "lessonA": "Leçon 1",
+    "lessonB": "Dire bonjour",
+    "level": "A1",
+    "progressLabel": "Progression",
+    "wordUnit": "mots",
+    "wordsFrom": 0,
+    "wordsTo": 12,
+    "wordsTotal": 235
+  },
+  "slides": [
+    {
+      "id": "opening",
+      "type": "title",
+      "durationInSeconds": 19.34,
+      "kicker": "Say It · Français",
+      "titleLines": [
+        "Bienvenue !"
+      ],
+      "subtitle": "Learn to speak, not just read",
+      "methodLabels": [
+        "Meet",
+        "Echo",
+        "Build",
+        "Make It Yours"
+      ],
+      "imageSrc": "assets/images/lesson-01_title.png",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/opening_0.mp3",
+          "durationInSeconds": 6.84
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/opening_1.mp3",
+          "durationInSeconds": 11
+        },
+        {
+          "durationInSeconds": 1.5
+        }
+      ]
+    },
+    {
+      "id": "title",
+      "type": "title",
+      "durationInSeconds": 11.37,
+      "kicker": "Leçon 1",
+      "titleLines": [
+        "Dire bonjour"
+      ],
+      "subtitle": "Lesson 1: Saying hello",
+      "imageSrc": "assets/images/lesson-01_title.png",
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/title_0.mp3",
+          "durationInSeconds": 7.63
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/title_1.mp3",
+          "durationInSeconds": 2.43
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/title_2.mp3",
+          "durationInSeconds": 1.31
+        }
+      ]
+    },
+    {
+      "id": "vocab-1",
+      "type": "vocab",
+      "durationInSeconds": 16.85,
+      "word": "bonjour",
+      "translation": "hello / good morning",
+      "phonetic": "bohn-ZHOOR",
+      "pos": "interj",
+      "imageSrc": "assets/images/lesson-01_vocab-1.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-1.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_0.mp3",
+          "durationInSeconds": 2.51
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_1.mp3",
+          "durationInSeconds": 1.96
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_2.mp3",
+          "durationInSeconds": 3.79
+        },
+        {
+          "durationInSeconds": 3.5
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_3.mp3",
+          "durationInSeconds": 0.91
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-1_4.mp3",
+          "durationInSeconds": 0.68
+        },
+        {
+          "durationInSeconds": 3.5
+        }
+      ]
+    },
+    {
+      "id": "vocab-2",
+      "type": "vocab",
+      "durationInSeconds": 22.15,
+      "word": "salut",
+      "translation": "hi / bye (informal)",
+      "phonetic": "sah-LU",
+      "pos": "interj",
+      "imageSrc": "assets/images/lesson-01_vocab-2.png",
+      "imageSrcs": [
+        "assets/images/lesson-01_vocab-2.png"
+      ],
+      "beats": [
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_0.mp3",
+          "durationInSeconds": 3.4
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_1.mp3",
+          "durationInSeconds": 2.19
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_2.mp3",
+          "durationInSeconds": 8.36
+        },
+        {
+          "durationInSeconds": 3.5
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_3.mp3",
+          "durationInSeconds": 0.68
+        },
+        {
+          "src": "assets/audio/lesson-01/fr/script/vocab-2_4.mp3",
+          "durationInSeconds": 0.52
+        },
+        {
+          "durationInSeconds": 3.5
+        }
+      ]
+    }
+  ],
+  "overlays": []
+}
