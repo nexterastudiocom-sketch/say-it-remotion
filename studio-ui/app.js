@@ -15,6 +15,7 @@ const currentProject = () => PROJECTS.find((p) => p.id === CURRENT) || null;
 async function boot() { CONFIG = await api('/api/config'); PROJECTS = await api('/api/projects'); route(); }
 window.addEventListener('hashchange', route);
 function route() {
+  if (fullPlayer) fullPlayer.stop(); // stop full-audio playback on navigation
   const r = (location.hash.replace('#/', '') || 'projects').split('?')[0];
   document.querySelectorAll('.nav a').forEach((a) => a.classList.toggle('on', a.dataset.route === r));
   showLog(r === 'editor');
@@ -210,13 +211,18 @@ async function Cover() {
 
 // ============================ EDITOR ============================
 let S = null;
+let playlist = []; // flat, in-order list of beats (clips + pauses) for full-audio preview
+let fullPlayer = null;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function Editor() {
   setCtx(); S = await api('/api/state');
   page.innerHTML = ''; const wrap = el('div', 'pg editor-pg');
   const head = el('div', 'pg-head');
   head.append(el('h2', null, `Editor — ${S.lesson.title || S.lessonId}`));
+  const full = el('button', 'btn', '▶ Full audio');
   const save = el('button', 'btn', 'Save transcript'); const build = el('button', 'btn primary', 'Build audio ▸'); const render = el('button', 'btn accent', 'Render video ▸');
-  head.append(save, build, render); wrap.append(head);
+  head.append(full, save, build, render); wrap.append(head);
+  full.onclick = () => playFull(full);
 
   const cols = el('div', 'ed-grid');
   const left = el('div', 'ed-col');
@@ -238,7 +244,7 @@ async function Editor() {
   render.onclick = () => { render.disabled = true; tabs.querySelectorAll('.tab')[2].click(); stream('/api/render', async (code) => { render.disabled = false; if (code === 0) { player.src = '/film/' + S.lessonId + '-studio.mp4?t=' + Date.now(); const p = currentProject(); if (p) { p.video = S.lessonId + '-studio.mp4'; await api('/api/project', p); } toast('Render complete'); } else toast('Render failed', true); }); };
 }
 function renderTimeline(box) {
-  box.innerHTML = '';
+  box.innerHTML = ''; playlist = [];
   for (const slide of S.lesson.slides || []) {
     const card = el('div', 'slide'); const h = el('div', 'slide-head');
     h.append(el('span', 'id', slide.id), el('span', 'type', slide.type));
@@ -247,7 +253,8 @@ function renderTimeline(box) {
     const beats = el('div', 'beats');
     for (const b of slide.beats || []) {
       const row = el('div', 'beat');
-      if (!b.src) { row.append(el('span', 'vchip pause', 'pause'), el('span', 'txt pausebeat', `silence · ${b.durationInSeconds}s${b.phase ? ' · ' + b.phase : ''}`)); beats.append(row); continue; }
+      if (!b.src) { row.append(el('span', 'vchip pause', 'pause'), el('span', 'txt pausebeat', `silence · ${b.durationInSeconds}s${b.phase ? ' · ' + b.phase : ''}`)); beats.append(row); playlist.push({ isPause: true, dur: b.durationInSeconds, row }); continue; }
+      playlist.push({ isPause: false, src: b.src, dur: b.durationInSeconds, row });
       const isFr = (b.voice || '').startsWith('fr');
       row.append(el('span', 'vchip ' + (isFr ? 'fr' : 'en'), b.voice.replace('_', '·')));
       const txt = el('div', 'txt'); if (b.phase) txt.append(el('div', 'ph', b.phase));
@@ -264,6 +271,37 @@ function renderTimeline(box) {
     card.append(beats); box.append(card);
   }
 }
+// Play the whole lesson's audio back-to-back with the real silent pauses, so you
+// can verify pacing before a full render. Uses the baked timeline (same as render).
+async function playFull(btn) {
+  if (fullPlayer) { fullPlayer.stop(); return; }
+  if (!playlist.length) return toast('Nothing to play — build the audio first', true);
+  const a = $('#audio');
+  let stopped = false, pending = null;
+  const clearHi = () => document.querySelectorAll('.beat.playing').forEach((r) => r.classList.remove('playing'));
+  const reset = () => { btn.textContent = '▶ Full audio'; btn.classList.remove('accent'); clearHi(); fullPlayer = null; };
+  fullPlayer = { stop() { stopped = true; a.pause(); if (pending) { const r = pending; pending = null; r(); } reset(); } };
+  btn.textContent = '⏹ Stop'; btn.classList.add('accent');
+
+  for (let i = 0; i < playlist.length && !stopped; i++) {
+    const p = playlist[i];
+    clearHi();
+    if (p.row) { p.row.classList.add('playing'); p.row.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+    if (p.isPause) {
+      await new Promise((r) => { pending = r; setTimeout(() => { if (pending) { pending = null; r(); } }, Math.round(p.dur * 1000)); });
+    } else {
+      await new Promise((r) => {
+        pending = r;
+        a.src = '/' + p.src + '?t=' + Date.now();
+        a.onended = () => { if (pending) { pending = null; r(); } };
+        a.onerror = () => { if (pending) { pending = null; r(); } };
+        a.play().catch(() => { if (pending) { pending = null; r(); } });
+      });
+    }
+  }
+  if (!stopped) reset();
+}
+
 function renderImages(box) {
   box.innerHTML = '';
   box.append(el('p', 'muted', 'One image per segment. Edit the description and regenerate — all images use the locked style (see Languages → Image style).'));
