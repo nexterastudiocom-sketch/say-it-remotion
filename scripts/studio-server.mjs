@@ -113,7 +113,7 @@ const server = http.createServer(async (req, res) => {
       return sseRun(res, NODE, ['-e', `
         const { execFileSync } = require('node:child_process');
         execFileSync(process.execPath, ['scripts/parse-sent.mjs', 'curriculum/${LID}.sent.md', '${LID}'], { stdio: 'inherit' });
-        execFileSync(process.execPath, ['scripts/build-from-script.mjs'], { stdio: 'inherit', env: process.env });
+        execFileSync(process.execPath, ['scripts/build-from-script.mjs', '--force'], { stdio: 'inherit', env: process.env });
       `]);
     }
 
