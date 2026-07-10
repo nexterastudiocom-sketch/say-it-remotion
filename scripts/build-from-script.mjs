@@ -33,11 +33,13 @@ const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
 // fr_woman). Map straight to the four ElevenLabs IDs — no guessing.
 // One French voice only (woman) — fr_man is mapped to her too. Both English
 // narrators are kept.
+// Project voice IDs are baked in as defaults so the pipeline works on any device
+// with just an API key; override via .env if you ever change voices.
 const VOICES = {
-  en_man: process.env.ELEVENLABS_VOICE_EN_MAN,
-  en_woman: process.env.ELEVENLABS_VOICE_EN_WOMAN,
-  fr_man: process.env.ELEVENLABS_VOICE_FR_WOMAN,
-  fr_woman: process.env.ELEVENLABS_VOICE_FR_WOMAN,
+  en_man: process.env.ELEVENLABS_VOICE_EN_MAN || '3TStB8f3X3To0Uj5R7RK',
+  en_woman: process.env.ELEVENLABS_VOICE_EN_WOMAN || 'ZqvIIuD5aI9JFejebHiH',
+  fr_man: process.env.ELEVENLABS_VOICE_FR_WOMAN || '5OnMHwgTFgvPVwE8jP6B', // single French voice (woman)
+  fr_woman: process.env.ELEVENLABS_VOICE_FR_WOMAN || '5OnMHwgTFgvPVwE8jP6B',
 };
 
 const GAP = 1.5; // silent breathing room inserted between two back-to-back clips
@@ -110,6 +112,7 @@ for (const e of entries) {
     // French voice is ALWAYS natural — strip delivery tags except a slow pass.
     let tag = b.tag;
     if (b.voice.startsWith('fr')) tag = /slow/i.test(tag || '') ? 'slowly' : '';
+    if (!/v3/.test(MODEL)) tag = ''; // audio tags ([warm] etc.) only work on eleven v3; v2 would SPEAK them
     const text = tag ? `[${tag}] ${b.text}` : b.text;
     if (noMedia) { outBeats.push({ durationInSeconds: +(wc(b.text) * 0.4 + 0.5).toFixed(2), phase: b.phase, voice: b.voice, text: b.text, line: b.line }); prevSpoken = true; i++; continue; }
     const rel = `assets/audio/${LID}/${LANG}/script/${s.id}_${i}.mp3`;

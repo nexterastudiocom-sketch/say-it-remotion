@@ -9,7 +9,7 @@ import path from 'node:path';
 import { parseFile } from 'music-metadata';
 
 const API_KEY = process.env.ELEVENLABS_API_KEY;
-const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_multilingual_v2';
+const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
 const FALLBACK = '21m00Tcm4TlvDq8ikWAM'; // Rachel (English, multilingual-capable)
 export const EN_VOICE = process.env.ELEVENLABS_VOICE_EN || FALLBACK;
 export const nativeVoice = (lang) =>
