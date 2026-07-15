@@ -182,8 +182,13 @@ const server = http.createServer(async (req, res) => {
 
     // ---- generate a new lesson transcript from words + sentences (Claude) ----
     if (p === '/api/generate-transcript' && req.method === 'POST') {
-      if (!hasAnthropicKey()) return sendJSON(res, { error: 'ANTHROPIC_API_KEY is not set — add it to .env.' }, 400);
       const { lessonNum, titleFr, titleEn, words, sentences } = await body(req);
+      // No Anthropic key → deterministic template generator (works from the words
+      // + sentences alone, no API). With a key → Claude drafts nicer prose.
+      if (!hasAnthropicKey()) {
+        const { buildTranscript } = await import('./gen-transcript.mjs');
+        return sendJSON(res, { ok: true, transcript: buildTranscript({ lessonNum, titleFr, titleEn, words, sentences }) });
+      }
       const sample = existsSync(SAMPLE) ? await readFile(SAMPLE, 'utf8') : '';
       const guidePath = path.join(ROOT, 'curriculum/TRANSCRIPT_AUTHORING_GUIDE.md');
       const guide = existsSync(guidePath) ? await readFile(guidePath, 'utf8') : '';

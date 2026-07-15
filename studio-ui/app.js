@@ -127,7 +127,7 @@ async function Generate() {
   setCtx();
   page.innerHTML = ''; const wrap = el('div', 'pg');
   wrap.append(el('h2', null, 'Generate a lesson transcript'));
-  wrap.append(el('p', 'muted', 'Give the words and sentences; Claude drafts the full transcript in your sample’s structure (edit the sample under Languages). Then review, tweak, and use it in the Editor.'));
+  wrap.append(el('p', 'muted', 'Give the words and sentences; it drafts the full transcript in the SOP structure. Works with no API key (template-based); add an ANTHROPIC_API_KEY to .env for richer Claude-written prose. Then review, tweak, and use it in the Editor.'));
   const f = el('div', 'form');
   const p = currentProject();
   const num = field(f, 'Lesson number', inputEl('text', p?.level ? '1' : '1'));
@@ -155,7 +155,7 @@ async function Generate() {
 
   gen.onclick = async () => {
     if (!words.value.trim()) return toast('Add some words first', true);
-    gen.disabled = true; gen.textContent = 'Generating… (Claude)';
+    gen.disabled = true; gen.textContent = 'Generating…';
     const r = await api('/api/generate-transcript', { lessonNum: num.value.trim() || '1', titleFr: tfr.value.trim(), titleEn: ten.value.trim(), words: words.value, sentences: sents.value });
     gen.disabled = false; gen.textContent = 'Generate transcript ⚙';
     if (r.error) return toast(r.error, true);
