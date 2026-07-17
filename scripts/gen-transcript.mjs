@@ -33,27 +33,38 @@ export function buildTranscript({ lessonNum = '1', titleFr = '', titleEn = '', w
   ENM(`[bright] Today's goal: ${titleEn || 'greet someone in French'}. Let's meet your first word.`);
 
   const done = [];
+  const ECHO_PROMPTS = ['Repeat.', 'One more time.', 'Last time — nice and steady.'];
   W.forEach((w, i) => {
     const [word, en, , tip] = w; // pronunciation (index 2) not spoken; kept for the card
+    const long = /\s/.test(word) || word.length > 6; // phrases + long words get a 3rd echo
     seg(`Segment ${n++} · WORD — ${word}`);
     FR(`${word}.`, 'MEET', 1);
     ENM(`[warm] ${en || word}.`, 'MEET', 2);
-    FR(`[slowly] ${word}.`, 'MEET', 2);
+    FR(`[slowly] ${word}.`, 'MEET', long ? 3 : 2);
     if (tip) ENM(`[gently instructive] ${tip}`, 'MEET', 1.5);
     FR(`${word}.`, 'MEET', 1);
-    ENM(`Repeat.`, 'ECHO', 4.5);
-    FR(`${word}.`, 'ECHO', 2.5);
-    ENM(`One more time.`, 'ECHO', 4.5);
-    FR(`${word}.`, 'ECHO', 2.5);
+    const echoes = long ? 3 : 2;
+    for (let e = 0; e < echoes; e++) {
+      ENM(ECHO_PROMPTS[e] || 'Once more.', 'ECHO', e === 0 ? (long ? 5 : 4.5) : 3);
+      FR(`${word}.`, 'ECHO', 2.5);
+    }
     done.push([word, en]);
-    // review after every 3 words (and again after the last)
-    if ((i + 1) % 3 === 0 || i === W.length - 1) {
-      const grp = done.slice(-((i % 3) + 1) || -3).length ? done.slice(-3) : done;
+    // pair review after every 2 new words (except right before the big recall)
+    if ((i + 1) % 2 === 0 && i !== W.length - 1) {
       seg(`Segment ${n++} · RECALL`);
       ENW(`[inviting] Quick check — say the English before I move on.`, 'RECALL', 1.5);
-      for (const [cw] of (i === W.length - 1 ? done : done.slice(-3))) FR(`${cw}.`, 'RECALL', 2.5);
+      for (const [cw] of done.slice(-2)) FR(`${cw}.`, 'RECALL', 2.5);
     }
   });
+
+  // big two-way review of everything before building sentences
+  if (done.length > 2) {
+    seg(`Segment ${n++} · RECALL — everything so far`);
+    ENW(`[inviting] Big check-in. I'll say each word — say the English out loud before I move on.`, 'RECALL', 1.5);
+    for (const [cw] of done) FR(`${cw}.`, 'RECALL', 2.5);
+    ENW(`[warm] Now the other way — I'll say the English, you say the French.`, 'RECALL', 1.5);
+    for (const [cw, ce] of done) { ENW(`${ce || cw}.`, 'RECALL', 2.5); FR(`${cw}.`, 'RECALL', 1.5); }
+  }
 
   S.forEach((s, i) => {
     const [sf, se] = s;

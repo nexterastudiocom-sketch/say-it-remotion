@@ -66,16 +66,26 @@ async function serveFile(req, res, abs) {
   createReadStream(abs).pipe(res);
 }
 
+// The currently-running job (build/render), so /api/cancel can stop it.
+let currentJob = null;
+// Kill a child AND its process group (Remotion spawns Chromium workers).
+function killJob(child) {
+  if (!child) return;
+  try { process.kill(-child.pid, 'SIGTERM'); } catch { try { child.kill('SIGKILL'); } catch {} }
+  setTimeout(() => { try { process.kill(-child.pid, 'SIGKILL'); } catch {} }, 1500);
+}
+
 // Run a child process, streaming its stdout/stderr to the client as SSE lines.
 function sseRun(res, cmd, args) {
   res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', Connection: 'keep-alive' });
   const send = (o) => res.write(`data: ${JSON.stringify(o)}\n\n`);
-  const child = spawn(cmd, args, { cwd: ROOT, env: process.env });
+  const child = spawn(cmd, args, { cwd: ROOT, env: process.env, detached: true }); // own process group → killable as a unit
+  currentJob = child;
   const pipe = (buf) => String(buf).split(/\r?\n/).filter(Boolean).forEach((line) => send({ line }));
   child.stdout.on('data', pipe);
   child.stderr.on('data', pipe);
-  child.on('close', (code) => { send({ done: true, code }); res.end(); });
-  res.on('close', () => child.kill());
+  child.on('close', (code) => { if (currentJob === child) currentJob = null; send({ done: true, code }); res.end(); });
+  res.on('close', () => killJob(child));
 }
 
 // Gather the editable state: transcript + baked slides/beats + image list.
@@ -107,6 +117,9 @@ const server = http.createServer(async (req, res) => {
       await writeFile(SENT, text);
       return sendJSON(res, { ok: true });
     }
+
+    // Cancel the running build/render job.
+    if (p === '/api/cancel') { const had = !!currentJob; killJob(currentJob); currentJob = null; return sendJSON(res, { ok: true, cancelled: had }); }
 
     // Full rebuild: parse the transcript, then (re)generate audio + bake timings.
     if (p === '/api/build') {

@@ -336,9 +336,17 @@ function renderImages(box) {
     right.append(ta, btn); card.append(img, right); box.append(card);
   }
 }
-function stream(url, onDone) { showLog(true); log(`\n$ ${url}`); const es = new EventSource(url);
-  es.onmessage = (e) => { const d = JSON.parse(e.data); if (d.line) log(d.line); if (d.done) { es.close(); log(`— done (exit ${d.code}) —`); onDone && onDone(d.code); } };
-  es.onerror = () => es.close(); }
+function stream(url, onDone) {
+  showLog(true); log(`\n$ ${url}`);
+  const es = new EventSource(url);
+  const cancelBtn = $('#logCancel');
+  let cancelled = false;
+  const done = (code) => { es.close(); cancelBtn.classList.add('hidden'); cancelBtn.onclick = null; };
+  cancelBtn.classList.remove('hidden');
+  cancelBtn.onclick = async () => { cancelled = true; try { await api('/api/cancel', {}); } catch {} es.close(); log('— cancelled —'); cancelBtn.classList.add('hidden'); onDone && onDone(-1); };
+  es.onmessage = (e) => { const d = JSON.parse(e.data); if (d.line) log(d.line); if (d.done) { done(); log(`— done (exit ${d.code}) —`); if (!cancelled) onDone && onDone(d.code); } };
+  es.onerror = () => done();
+}
 
 // ---- little form helpers ----
 function inputEl(type, val) { const i = el('input'); i.type = type; if (type === 'color') i.value = val; else i.placeholder = val, i.value = val; return i; }
