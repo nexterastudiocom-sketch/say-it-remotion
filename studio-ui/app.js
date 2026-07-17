@@ -221,8 +221,10 @@ async function Editor() {
   head.append(el('h2', null, `Editor — ${S.lesson.title || S.lessonId}`));
   const full = el('button', 'btn', '▶ Full audio');
   const save = el('button', 'btn', 'Save transcript'); const build = el('button', 'btn primary', 'Build audio ▸'); const render = el('button', 'btn accent', 'Render video ▸');
-  head.append(full, save, build, render); wrap.append(head);
+  const upload = el('button', 'btn', '☁ Upload');
+  head.append(full, save, build, render, upload); wrap.append(head);
   full.onclick = () => playFull(full);
+  upload.onclick = () => { upload.disabled = true; stream('/api/upload', (code) => { upload.disabled = false; toast(code === 0 ? 'Uploaded to cloud ☁' : 'Upload failed — is rclone set up?', code !== 0); }); };
 
   const cols = el('div', 'ed-grid');
   const left = el('div', 'ed-col');

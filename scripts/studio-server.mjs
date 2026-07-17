@@ -85,6 +85,11 @@ function sseRun(res, cmd, args) {
   child.stdout.on('data', pipe);
   child.stderr.on('data', pipe);
   child.on('close', (code) => { if (currentJob === child) currentJob = null; send({ done: true, code }); res.end(); });
+  child.on('error', (e) => {
+    if (currentJob === child) currentJob = null;
+    send({ line: e.code === 'ENOENT' ? `✗ command not found: ${cmd}` : `✗ ${e.message}` });
+    send({ done: true, code: -1 }); try { res.end(); } catch {}
+  });
   res.on('close', () => killJob(child));
 }
 
@@ -134,6 +139,15 @@ const server = http.createServer(async (req, res) => {
     if (p === '/api/render') {
       return sseRun(res, path.join(ROOT, 'node_modules/.bin/remotion'),
         ['render', 'src/index.ts', 'Lesson-01-FR', `out/films/${LID}-studio.mp4`]);
+    }
+
+    // Upload the rendered film to cloud storage (OneDrive/Drive/Dropbox) via rclone.
+    if (p === '/api/upload') {
+      const rel = `out/films/${LID}-studio.mp4`;
+      if (!existsSync(path.join(ROOT, rel))) return sendJSON(res, { error: 'No rendered video yet — render first.' }, 400);
+      const remote = process.env.RCLONE_REMOTE || 'onedrive';
+      const dest = process.env.RCLONE_DEST || 'Say It';
+      return sseRun(res, 'rclone', ['copyto', '--progress', path.join(ROOT, rel), `${remote}:${dest}/${LID}-studio.mp4`]);
     }
 
     // Regenerate ONE audio clip (ElevenLabs) in place; return its new duration.
