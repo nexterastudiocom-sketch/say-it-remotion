@@ -218,7 +218,9 @@ async function Editor() {
   setCtx(); S = await api('/api/state');
   page.innerHTML = ''; const wrap = el('div', 'pg editor-pg');
   const head = el('div', 'pg-head');
-  head.append(el('h2', null, `Editor — ${S.lesson.title || S.lessonId}`));
+  const hm = (S.transcript || '').match(/^#\s+(?:Lesson|Le[çc]on)\s*\d*\s*[—\-:]\s*(.+)$/im);
+  const lessonTitle = hm ? hm[1].replace(/\s*\(.+?\)\s*$/, '').trim() : (S.lesson.title || S.lessonId);
+  head.append(el('h2', null, `Editor — ${lessonTitle}`));
   const full = el('button', 'btn', '▶ Full audio');
   const save = el('button', 'btn', 'Save transcript'); const build = el('button', 'btn primary', 'Build audio ▸'); const render = el('button', 'btn accent', 'Render video ▸');
   const upload = el('button', 'btn', '☁ Upload');

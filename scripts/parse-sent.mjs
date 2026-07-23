@@ -19,6 +19,25 @@ const lessonId = process.argv[3] || 'lesson-01';
 const VMAP = { 'EN·MAN': 'en_man', 'EN·WOMAN': 'en_woman', 'FR·MAN': 'fr_man', 'FR·WOMAN': 'fr_woman' };
 const lines = (await readFile(mdPath, 'utf8')).split(/\r?\n/);
 
+// Optional lesson header: "# Lesson N — Titre français (English title)" — the
+// single source of truth for the lesson's on-screen title everywhere.
+let meta = null;
+for (const raw of lines) {
+  const t = raw.trim();
+  if (!t) continue;
+  if (t.startsWith('##')) break; // reached the segments with no header
+  if (t.startsWith('# ')) {
+    const mm = t.replace(/^#\s+/, '').match(/^(?:Lesson|Le[çc]on)\s*([0-9]+)?\s*[—\-:]\s*(.+)$/i);
+    if (mm) {
+      let titleFr = mm[2].trim(), titleEn = '';
+      const paren = titleFr.match(/^(.*?)\s*\((.+)\)\s*$/);
+      if (paren) { titleFr = paren[1].trim(); titleEn = paren[2].trim(); }
+      meta = { num: mm[1] ? Number(mm[1]) : null, titleFr, titleEn };
+    }
+    break;
+  }
+}
+
 const segments = [];
 let cur = null;
 for (let idx = 0; idx < lines.length; idx++) {
@@ -52,7 +71,7 @@ const withBeats = segments.filter((s) => s.beats.length);
 const outDir = path.join(ROOT, 'src/data/scripts');
 await mkdir(outDir, { recursive: true });
 const outPath = path.join(outDir, `${lessonId}.json`);
-await writeFile(outPath, JSON.stringify({ lessonId, language: 'fr', segments: withBeats }, null, 2) + '\n');
+await writeFile(outPath, JSON.stringify({ lessonId, language: 'fr', meta, segments: withBeats }, null, 2) + '\n');
 
 let en = 0, fr = 0, p = 0;
 for (const s of withBeats) for (const b of s.beats) b.pause != null ? p++ : b.voice.startsWith('en') ? en++ : fr++;

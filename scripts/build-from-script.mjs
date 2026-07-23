@@ -136,6 +136,18 @@ for (const e of entries) {
 }
 
 const lesson = { ...base, slides };
+
+// Title consistency: if the transcript declares "# Lesson N — Titre (English)",
+// make it the title everywhere — editor header, the video's header chrome, and
+// the intro title card. Otherwise keep the workbook's title.
+const meta = script.meta;
+if (meta && meta.titleFr) {
+  const num = meta.num ?? Number((base.chrome?.lessonA || '').match(/\d+/)?.[0]) ?? 1;
+  lesson.title = `Leçon ${num} — ${meta.titleFr}`;
+  lesson.chrome = { ...lesson.chrome, lessonA: `Leçon ${num}`, lessonB: meta.titleFr };
+  const title = lesson.slides.find((s) => s.type === 'title');
+  if (title) { title.kicker = `Leçon ${num}`; title.titleLines = [meta.titleFr]; if (meta.titleEn) title.subtitle = meta.titleEn; }
+}
 const outName = limit ? `${LID}.${LANG}.test.json` : `${LID}.${LANG}.json`;
 await writeFile(path.join(ROOT, 'src/data/lessons', outName), JSON.stringify(lesson, null, 2) + '\n');
 const total = slides.reduce((a, s) => a + s.durationInSeconds, 0);
