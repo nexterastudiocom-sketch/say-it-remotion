@@ -185,7 +185,7 @@ const server = http.createServer(async (req, res) => {
     // Regenerate ONE image (Recraft) for a segment; return its cache-busted url.
     if (p === '/api/image' && req.method === 'POST') {
       const { segment, scene } = await body(req);
-      const styleId = process.env.RECRAFT_STYLE_ID || undefined;
+      const styleId = process.env.RECRAFT_STYLE_ID || '82b9cd4a-3c6b-423b-a100-410c3c22d392';
       const rel = `assets/images/${LID}_${segment}.png`;
       const [u] = await generateImage({ prompt: scene, styleId, style: styleId ? undefined : 'digital_illustration', size: '1024x1024', n: 1 });
       await writeFile(path.join(ROOT, 'public', rel), Buffer.from(await (await fetch(u)).arrayBuffer()));
@@ -236,7 +236,7 @@ const server = http.createServer(async (req, res) => {
 
     // ---- image generation config (constant, locked style) ----
     if (p === '/api/image-config') return sendJSON(res, {
-      styleId: process.env.RECRAFT_STYLE_ID || '',
+      styleId: process.env.RECRAFT_STYLE_ID || '82b9cd4a-3c6b-423b-a100-410c3c22d392',
       baseStyle: process.env.RECRAFT_STYLE || 'digital_illustration',
       descriptor: STYLE_DESCRIPTOR,
     });

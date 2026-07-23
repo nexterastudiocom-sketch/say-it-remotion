@@ -21,7 +21,7 @@ import { STYLE_DESCRIPTOR } from './style-lock.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LESSON = process.argv[2] || 'lesson-04';
-const styleId = process.env.RECRAFT_STYLE_ID || undefined;
+const styleId = process.env.RECRAFT_STYLE_ID || '82b9cd4a-3c6b-423b-a100-410c3c22d392'; // locked house style (built-in default)
 const baseStyle = process.env.RECRAFT_STYLE || 'digital_illustration';
 
 const scenesPath = path.join(ROOT, 'src/data/images', `scenes.${LESSON}.json`);

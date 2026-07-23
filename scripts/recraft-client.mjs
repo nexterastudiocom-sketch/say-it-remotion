@@ -14,7 +14,7 @@ const BASE = 'https://external.api.recraft.ai/v1';
 
 const token = () => {
   const t = process.env.RECRAFT_API_TOKEN;
-  if (!t) throw new Error('Missing RECRAFT_API_TOKEN. See .env.example.');
+  if (!t) throw new Error('Missing RECRAFT_API_TOKEN — add your Recraft API key to .env (recraft.ai → profile → API). The style is built in; only this paid key is per-machine.');
   return t;
 };
 
