@@ -15,9 +15,13 @@ import path from 'node:path';
 
 const id = process.argv[2] || 'lesson-01';
 const P = paths(id);
-if (!existsSync(P.bakedLesson)) { console.error(`✗ no baked lesson: ${path.relative(ROOT, P.bakedLesson)}`); process.exit(1); }
+// Prefer the Method-baked lesson (Command 3) — it carries stage/level/rate/visual.
+const methodBaked = path.join(ROOT, `src/data/lessons/${id}.method.json`);
+const bakedPath = existsSync(methodBaked) ? methodBaked : P.bakedLesson;
+if (!existsSync(bakedPath)) { console.error(`✗ no baked lesson: ${path.relative(ROOT, bakedPath)}`); process.exit(1); }
 
-const lesson = await readJson(P.bakedLesson);
+const lesson = await readJson(bakedPath);
+const isMethod = !!lesson.method;
 const script = existsSync(P.script) ? await readJson(P.script) : { segments: [] };
 
 // line (in .sent.md) → segment title, so each beat knows its segment.
@@ -30,6 +34,15 @@ for (const seg of script.segments) for (const b of seg.beats || []) if (b.line !
 //  vocab:              the headword
 //  title/score/recap:  static content (not a single caption → not caption-checked)
 function onScreenFor(slide, beats, i, lastSpokenText) {
+  // Method-baked slides: French is shown ONLY below L3 (X-06 forbids it at L3+),
+  // so onScreenText is the spoken French when the beat is <L3, else blank. This
+  // is exactly what I-05 verifies against the render.
+  if (slide.stage) {
+    const b = beats[i] || {};
+    const lvl = b.level ?? -1;
+    const showsFr = !b.src ? false : (b.voice || '').startsWith('fr') && lvl >= 0 && lvl < 3;
+    return { text: showsFr ? b.text || '' : '', checkable: showsFr };
+  }
   if (slide.type === 'vocab') return { text: slide.word || '', checkable: true };
   if (slide.type === 'practice') {
     if (slide.kind === 'note') return { text: slide.note || slide.heading || '', checkable: false };
@@ -52,7 +65,7 @@ for (const slide of lesson.slides) {
     const start = cursor;
     const dur = b.durationInSeconds || 0;
     cursor += dur;
-    const isPause = !b.src;
+    const isPause = !b.voice; // a beat with no voice is a silent pause (src may be absent in --no-media)
     if (!isPause) lastSpokenText = b.text || lastSpokenText;
     const os = onScreenFor(slide, beats, i, lastSpokenText);
     const isFr = !!b.voice && b.voice.startsWith('fr');

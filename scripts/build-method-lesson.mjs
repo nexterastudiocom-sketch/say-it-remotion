@@ -1,0 +1,101 @@
+#!/usr/bin/env node
+// Baker (Command 3) — Method-grammar lesson .md → baked Remotion lesson JSON.
+// Parses via the reference engine (say_it_qc.py --emit-beats), groups beats into
+// slides by segment, carries the Method fields (stage/level/rate/visual) onto
+// every beat, and materializes scripted pauses as silent timeline gaps.
+//
+//   node scripts/build-method-lesson.mjs <id> [--no-media]
+//     --no-media : estimated durations, no ElevenLabs (free, structural)
+//
+// Reads  lessons/<id>.md (or lessons/golden/<id_>.md)
+// Writes src/data/lessons/<id>.method.json   (consumed by scripts/qa/manifest.mjs)
+
+import { writeFile, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { ttsClip, hasElevenKey } from './lib/eleven.mjs';
+import { parseFile } from 'music-metadata';
+
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const QA_PY = process.env.QA_PY || path.join(ROOT, '.venv-ocr/bin/python');
+const args = process.argv.slice(2);
+const id = args.find((a) => !a.startsWith('--')) || 'lesson-01';
+const noMedia = args.includes('--no-media');
+
+// FR rate → ElevenLabs speed hint (v3). very_slow/slow render slow so R-06 passes.
+const RATE_SPEED = { very_slow: 0.7, slow: 0.85, natural: 1.0, fast: 1.15 };
+const VOICES = {
+  'EN·MAN': process.env.ELEVENLABS_VOICE_EN_MAN || '3TStB8f3X3To0Uj5R7RK',
+  'EN·WOMAN': process.env.ELEVENLABS_VOICE_EN_WOMAN || 'ZqvIIuD5aI9JFejebHiH',
+  'FR·WOMAN': process.env.ELEVENLABS_VOICE_FR_WOMAN || '5OnMHwgTFgvPVwE8jP6B',
+  'FR·MAN': process.env.ELEVENLABS_VOICE_FR_MAN || 'j9RedbMRSNQ74PyikQwD',
+};
+const voiceKey = (v) => v.toLowerCase().replace('·', '_'); // FR·WOMAN → fr_woman
+const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
+
+// stage → a Remotion slide type (render components map from this; unbuilt stages
+// fall back to a generic 'method' slide that still carries all the data).
+const STAGE_TYPE = {
+  CAN_DO_GOAL: 'title', WARM_UP: 'practice', COLD_INPUT: 'dialogue', ITEM_BLOCK: 'vocab',
+  MICRO_RECALL: 'practice', FRAME_INTRO: 'buildbar', BUILD_LADDER: 'buildbar',
+  INPUT_RETURN: 'dialogue', MAKE_IT_YOURS: 'scenario', TRANSFER_TASK: 'transfer',
+  FLUENCY_ROUND: 'practice', CAN_DO_CHECK: 'score',
+};
+
+// ---- parse via the engine's --emit-beats ------------------------------------
+const tPaths = [`lessons/${id}.md`, `curriculum/${id}.md`, `lessons/golden/${id.replace('-', '_')}.md`];
+const transcript = tPaths.map((p) => path.join(ROOT, p)).find(existsSync);
+if (!transcript) { console.error(`✗ no Method-grammar transcript for ${id}`); process.exit(2); }
+if (!noMedia && !hasElevenKey()) { console.error('✗ ELEVENLABS_API_KEY not set (or use --no-media)'); process.exit(1); }
+
+const { execFileSync } = await import('node:child_process');
+const beatsPath = path.join(ROOT, `build/${id}/parsed-beats.json`);
+await mkdir(path.dirname(beatsPath), { recursive: true });
+execFileSync(QA_PY, [path.join(ROOT, 'qa/say_it_qc.py'), transcript, '--rules', path.join(ROOT, 'qa/say_it_rules.yaml'), '--emit-beats', beatsPath], { cwd: ROOT });
+const parsed = JSON.parse(await (await import('node:fs/promises')).readFile(beatsPath, 'utf8'));
+
+const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40);
+const wc = (s) => s.split(/\s+/).filter(Boolean).length;
+
+// ---- group beats by segment → slides ----------------------------------------
+const slides = [];
+let cur = null, clipN = 0;
+for (const b of parsed.beats) {
+  if (!cur || cur.segment !== b.segment) {
+    cur = { id: slug(b.segment) || `s${slides.length}`, type: STAGE_TYPE[b.stage] || 'method', stage: b.stage, segment: b.segment, visual: null, durationInSeconds: 0, beats: [] };
+    slides.push(cur);
+    clipN = 0;
+  }
+  if (b.visuals && b.visuals.length && !cur.visual) cur.visual = b.visuals.join(' ; ');
+  // spoken beat
+  const isFr = b.voice.startsWith('FR');
+  let dur;
+  if (noMedia) {
+    dur = isFr ? Math.max(0.4, b.est_audio_s) : +(wc(b.text) * 0.38 + 0.4).toFixed(2);
+    cur.beats.push({ durationInSeconds: +dur.toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
+  } else {
+    const rel = `assets/audio/${id}/method/${cur.id}_${clipN++}.mp3`;
+    const abs = path.join(ROOT, 'public', rel);
+    dur = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed: isFr ? RATE_SPEED[b.rate] : 1.0 }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
+    cur.beats.push({ src: rel, durationInSeconds: +Number(dur).toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
+  }
+  // scripted pause → silent gap beat
+  if (b.pause > 0) cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });
+}
+for (const s of slides) s.durationInSeconds = +s.beats.reduce((a, x) => a + x.durationInSeconds, 0).toFixed(2);
+
+const lesson = {
+  title: `Leçon ${parsed.meta.lesson} — ${(parsed.meta.can_do || '').replace(/^I can /, '').replace(/\.$/, '')}`,
+  language: parsed.meta.language || 'fr',
+  method: true,
+  meta: parsed.meta,
+  chrome: { lessonA: `Leçon ${parsed.meta.lesson}`, lessonB: 'Dire bonjour', level: parsed.meta.level, progressLabel: 'Progression', wordUnit: 'mots', wordsFrom: 0, wordsTo: (parsed.meta.items || []).length, wordsTotal: 235 },
+  ui: { repeat: 'À toi' },
+  slides,
+};
+const outRel = `src/data/lessons/${id}.method.json`;
+await writeFile(path.join(ROOT, outRel), JSON.stringify(lesson, null, 2) + '\n');
+const total = slides.reduce((a, s) => a + s.durationInSeconds, 0);
+console.log(`✓ ${outRel}  (${slides.length} slides, ${parsed.beats.length} beats → ${Math.floor(total / 60)}m${Math.round(total % 60)}s${noMedia ? ', --no-media' : ''})`);
+console.log(`  stages: ${[...new Set(slides.map((s) => s.stage))].join(', ')}`);

@@ -1,0 +1,5133 @@
+{
+  "title": "Leçon 1 — greet someone and take my leave, choosing the right formality and time of day",
+  "language": "fr",
+  "method": true,
+  "meta": {
+    "lesson": 1,
+    "language": "fr",
+    "level": "A1",
+    "class": "CALIBRATION",
+    "can_do": "I can greet someone and take my leave, choosing the right formality and time of day.",
+    "items": [
+      "bonjour",
+      "salut",
+      "merci",
+      "s'il vous plaît",
+      "oui",
+      "non",
+      "au revoir",
+      "pardon",
+      "à bientôt",
+      "madame",
+      "monsieur",
+      "bonsoir"
+    ],
+    "frame": "[greeting], [person]. [courtesy] !"
+  },
+  "chrome": {
+    "lessonA": "Leçon 1",
+    "lessonB": "Dire bonjour",
+    "level": "A1",
+    "progressLabel": "Progression",
+    "wordUnit": "mots",
+    "wordsFrom": 0,
+    "wordsTo": 12,
+    "wordsTotal": 235
+  },
+  "ui": {
+    "repeat": "À toi"
+  },
+  "slides": [
+    {
+      "id": "01-can-do-goal",
+      "type": "title",
+      "stage": "CAN_DO_GOAL",
+      "segment": "01 · CAN_DO_GOAL",
+      "visual": "GOAL CARD — \"Greet and take your leave\" · can-do text",
+      "durationInSeconds": 9.38,
+      "beats": [
+        {
+          "durationInSeconds": 8.38,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "By the end you can greet someone and take your leave, choosing the right formality and the right time of day.",
+          "level": 3,
+          "rate": null,
+          "stage": "CAN_DO_GOAL",
+          "visuals": [
+            "GOAL CARD — \"Greet and take your leave\" · can-do text"
+          ],
+          "line": 17
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "MEET",
+          "level": 3,
+          "stage": "CAN_DO_GOAL"
+        }
+      ]
+    },
+    {
+      "id": "02-warm-up",
+      "type": "practice",
+      "stage": "WARM_UP",
+      "segment": "02 · WARM_UP",
+      "visual": null,
+      "durationInSeconds": 8.62,
+      "beats": [
+        {
+          "durationInSeconds": 7.62,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "This is lesson one, so there is nothing to bring back yet. Just get ready to speak out loud.",
+          "level": 3,
+          "rate": null,
+          "stage": "WARM_UP",
+          "visuals": [],
+          "line": 21
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "WARM_UP"
+        }
+      ]
+    },
+    {
+      "id": "03-cold-input",
+      "type": "dialogue",
+      "stage": "COLD_INPUT",
+      "segment": "03 · COLD_INPUT",
+      "visual": null,
+      "durationInSeconds": 51.32,
+      "beats": [
+        {
+          "durationInSeconds": 8,
+          "phase": "INPUT",
+          "voice": "en_man",
+          "text": "Listen to two people meet and part. Understand what you can — you are not expected to catch every word.",
+          "level": 3,
+          "rate": null,
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 25
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 27
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Bonjour, madame.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 29
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît, monsieur.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 31
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Oui, madame. Merci.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 33
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Merci, monsieur. Au revoir.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 35
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Au revoir, madame.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 37
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Pardon, madame ! Bonsoir.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 39
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Bonsoir, monsieur. Pardon.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 41
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Salut !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 43
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Salut, madame ! Merci.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 45
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Au revoir, monsieur. À bientôt !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 47
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "À bientôt, madame.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 49
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Oui, s'il vous plaît. Merci.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 51
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Merci, madame. Bonsoir !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 53
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 6.48,
+          "phase": "INPUT",
+          "voice": "en_man",
+          "text": "One question: did they meet in the morning or the evening? Answer out loud, in English.",
+          "level": 3,
+          "rate": null,
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 55
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        },
+        {
+          "durationInSeconds": 5.34,
+          "phase": "INPUT",
+          "voice": "en_man",
+          "text": "Both — they greet with bonjour, then part with bonsoir as evening comes.",
+          "level": 3,
+          "rate": null,
+          "stage": "COLD_INPUT",
+          "visuals": [],
+          "line": 57
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "COLD_INPUT"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-bonjour",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · bonjour",
+      "visual": "WORD CARD — bonjour · [bohn-ZHOOR] · illustration: a person waving in daylight · MIC",
+      "durationInSeconds": 46.46,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — bonjour · [bohn-ZHOOR] · illustration: a person waving in daylight · MIC"
+          ],
+          "line": 62
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "bonjour",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 64
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.92,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Hello, or good morning.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 66
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bon... jour",
+          "level": 0,
+          "rate": "very_slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "SPLIT SYLLABLES — Bon... jour"
+          ],
+          "line": 69
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 6.48,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "The \"on\" is nasal — let the air flow through your nose, not a hard N.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 71
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "bonjour",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 73
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 75
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "bonjour",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 77
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "bonjour",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 79
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 81
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "bonjour",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 83
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.82,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"hello, or good morning\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 86
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "bonjour",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 88
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 90
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-salut",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · salut",
+      "visual": "WORD CARD — salut · [sa-LU] · illustration: two friends greeting casually · MIC",
+      "durationInSeconds": 46.08,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — salut · [sa-LU] · illustration: two friends greeting casually · MIC"
+          ],
+          "line": 95
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "salut",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 97
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.82,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Hi, or bye. Casual, for friends, not your boss.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 99
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Sa... lut",
+          "level": 0,
+          "rate": "very_slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "SPLIT SYLLABLES — Sa... lut"
+          ],
+          "line": 102
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "The final t is silent.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 104
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "salut",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 106
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 108
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "salut",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 110
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "salut",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 112
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 114
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "salut",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 116
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 5.72,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"hi, or bye. casual, for friends, not your boss\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 119
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "salut",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 121
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 123
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-merci",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · merci",
+      "visual": "WORD CARD — merci · [mair-SEE] · illustration: a hand receiving a gift · MIC",
+      "durationInSeconds": 43.04,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — merci · [mair-SEE] · illustration: a hand receiving a gift · MIC"
+          ],
+          "line": 128
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "merci",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 130
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.16,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Thank you.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 132
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Mer... ci",
+          "level": 0,
+          "rate": "very_slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "SPLIT SYLLABLES — Mer... ci"
+          ],
+          "line": 135
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 4.58,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Roll gently into the r from the back of the throat.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 137
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "merci",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 139
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 141
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "merci",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 143
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "merci",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 145
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 147
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "merci",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 149
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"thank you\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 152
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "merci",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 154
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 156
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-s-il-vous-pla-t",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · s'il vous plaît",
+      "visual": "WORD CARD — s'il vous plaît · [seel-voo-PLEH] · illustration: a polite request at a counter · MIC",
+      "durationInSeconds": 50.5,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — s'il vous plaît · [seel-voo-PLEH] · illustration: a polite request at a counter · MIC"
+          ],
+          "line": 161
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "s'il vous plaît",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 163
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.78,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Please.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 165
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 4.2,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Three words, one smooth phrase; the final t is silent.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 167
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "s'il vous plaît",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 169
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 171
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "s'il vous plaît",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 173
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "s'il vous plaît",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 175
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 177
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "s'il vous plaît",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 179
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"please\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 182
+        },
+        {
+          "durationInSeconds": 3.6,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "s'il vous plaît",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 184
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 186
+        },
+        {
+          "durationInSeconds": 2.9,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-oui",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · oui",
+      "visual": "WORD CARD — oui · [WEE] · illustration: a nod of agreement · MIC",
+      "durationInSeconds": 35.86,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — oui · [WEE] · illustration: a nod of agreement · MIC"
+          ],
+          "line": 191
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "oui",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 193
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.78,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Yes.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 195
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "One clean syllable, like the English \"we\".",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 197
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "oui",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 199
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 201
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "oui",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 203
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "oui",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 205
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 207
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "oui",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 209
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"yes\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 212
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "oui",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 214
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 216
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-non",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · non",
+      "visual": "WORD CARD — non · [NOHN] · illustration: a gentle shake of the head · MIC",
+      "durationInSeconds": 36.62,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — non · [NOHN] · illustration: a gentle shake of the head · MIC"
+          ],
+          "line": 221
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "non",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 223
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.78,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "No.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 225
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.82,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Nasal here too — the n is barely touched.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 227
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "non",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 229
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 231
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "non",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 233
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "non",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 235
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 237
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "non",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 239
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"no\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 242
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "non",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 244
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 246
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-au-revoir",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · au revoir",
+      "visual": "WORD CARD — au revoir · [oh-ruh-VWAHR] · illustration: a person leaving through a doorway · MIC",
+      "durationInSeconds": 46.16,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — au revoir · [oh-ruh-VWAHR] · illustration: a person leaving through a doorway · MIC"
+          ],
+          "line": 251
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "au revoir",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 253
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.78,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Goodbye.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 255
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 6.86,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "The r is uvular — from the back of the throat, not the tip of the tongue.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 257
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "au revoir",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 259
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 261
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "au revoir",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 263
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "au revoir",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 265
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 267
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "au revoir",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 269
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"goodbye\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 272
+        },
+        {
+          "durationInSeconds": 2.7,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "au revoir",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 274
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 276
+        },
+        {
+          "durationInSeconds": 2.2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-pardon",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · pardon",
+      "visual": "WORD CARD — pardon · [par-DOHN] · illustration: someone stepping aside politely · MIC",
+      "durationInSeconds": 43.8,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — pardon · [par-DOHN] · illustration: someone stepping aside politely · MIC"
+          ],
+          "line": 281
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "pardon",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 283
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.92,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Excuse me, or sorry.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 285
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Par... don",
+          "level": 0,
+          "rate": "very_slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "SPLIT SYLLABLES — Par... don"
+          ],
+          "line": 288
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.82,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Nasal on the \"on\"; useful for bumping into someone.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 290
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "pardon",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 292
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 294
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "pardon",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 296
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "pardon",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 298
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 300
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "pardon",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 302
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.82,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"excuse me, or sorry\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 305
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "pardon",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 307
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 309
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-bient-t",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · à bientôt",
+      "visual": "WORD CARD — à bientôt · [ah-byen-TOH] · illustration: a friendly wave goodbye · MIC",
+      "durationInSeconds": 45.02,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — à bientôt · [ah-byen-TOH] · illustration: a friendly wave goodbye · MIC"
+          ],
+          "line": 314
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "à bientôt",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 316
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "See you soon.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 318
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 4.2,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Two accent marks when you write it: à and ô.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 320
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "à bientôt",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 322
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 324
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "à bientôt",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 326
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "à bientôt",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 328
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 330
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "à bientôt",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 332
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"see you soon\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 335
+        },
+        {
+          "durationInSeconds": 2.7,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "à bientôt",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 337
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 339
+        },
+        {
+          "durationInSeconds": 2.2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-madame",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · madame",
+      "visual": "WORD CARD — madame · [ma-DAHM] · illustration: a woman being addressed politely · MIC",
+      "durationInSeconds": 42.24,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — madame · [ma-DAHM] · illustration: a woman being addressed politely · MIC"
+          ],
+          "line": 344
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "madame",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 346
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Ma’am — a polite word for a woman.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 348
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.92,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Stress the second syllable.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 350
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "madame",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 352
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 354
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "madame",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 356
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "madame",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 358
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 360
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "madame",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 362
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 5.34,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"ma’am — a polite word for a woman\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 365
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "madame",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 367
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 369
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-monsieur",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · monsieur",
+      "visual": "WORD CARD — monsieur · [muh-SYUH] · illustration: a man being addressed politely · MIC",
+      "durationInSeconds": 44.52,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — monsieur · [muh-SYUH] · illustration: a man being addressed politely · MIC"
+          ],
+          "line": 374
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "monsieur",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 376
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Sir — a polite word for a man.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 378
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 4.2,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Hardly any letters are sounded here — just say \"muh-SYUH\".",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 380
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "monsieur",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 382
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 384
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "monsieur",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 386
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "monsieur",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 388
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 390
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "monsieur",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 392
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 5.34,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"sir — a polite word for a man\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 395
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "monsieur",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 397
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 399
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "04-item-block-bonsoir",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "04 · ITEM_BLOCK · bonsoir",
+      "visual": "WORD CARD — bonsoir · [bohn-SWAHR] · illustration: a greeting under evening lights · MIC",
+      "durationInSeconds": 44.18,
+      "beats": [
+        {
+          "durationInSeconds": 2.3,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Listen. Don’t say anything yet.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "WORD CARD — bonsoir · [bohn-SWAHR] · illustration: a greeting under evening lights · MIC"
+          ],
+          "line": 404
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "bonsoir",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 406
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Good evening — the after-dark greeting.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 408
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "Bon... soir",
+          "level": 0,
+          "rate": "very_slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "SPLIT SYLLABLES — Bon... soir"
+          ],
+          "line": 411
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "MEET",
+          "voice": "en_man",
+          "text": "Same nasal \"on\" at the start.",
+          "level": 0,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 413
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "MEET",
+          "voice": "fr_woman",
+          "text": "bonsoir",
+          "level": 0,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 415
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "MEET",
+          "level": 0,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 1.54,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 417
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "bonsoir",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 419
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "bonsoir",
+          "level": 1,
+          "rate": "slow",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 421
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.44,
+          "phase": "ECHO",
+          "voice": "en_man",
+          "text": "Repeat after me — normal speed this time.",
+          "level": 1,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 423
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "ECHO",
+          "voice": "fr_woman",
+          "text": "bonsoir",
+          "level": 1,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 425
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "ECHO",
+          "level": 1,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 4.58,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn. Say \"good evening — the after-dark greeting\" in French.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "MIC — no text on screen"
+          ],
+          "line": 428
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "bonsoir",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 430
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "REPAIR",
+          "voice": "en_man",
+          "text": "Now you’ve heard it. Say it again.",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 432
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "REPAIR",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ]
+    },
+    {
+      "id": "05-micro-recall",
+      "type": "practice",
+      "stage": "MICRO_RECALL",
+      "segment": "05 · MICRO_RECALL",
+      "visual": null,
+      "durationInSeconds": 159.36,
+      "beats": [
+        {
+          "durationInSeconds": 4.2,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Quick check. I’ll say the French, you say the English.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 436
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "bonjour",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 438
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "salut",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 440
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "merci",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 442
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now the other way. Screen stays blank.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 444
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — hello, or good morning.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 446
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "bonjour",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 448
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 4.96,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — hi, or bye. casual, for friends, not your boss.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 450
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "salut",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 452
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 2.3,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — thank you.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 454
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "merci",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 456
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 4.2,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Quick check. I’ll say the French, you say the English.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 460
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "s'il vous plaît",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 462
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "oui",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 464
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.45,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "non",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 466
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now the other way. Screen stays blank.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 468
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.92,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — please.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 470
+        },
+        {
+          "durationInSeconds": 3.6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "s'il vous plaît",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 472
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.92,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — yes.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 474
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "oui",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 476
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.92,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — no.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 478
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "non",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 480
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 4.2,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Quick check. I’ll say the French, you say the English.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 484
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "au revoir",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 486
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "pardon",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 488
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.35,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "à bientôt",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 490
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now the other way. Screen stays blank.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 492
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 1.92,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — goodbye.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 494
+        },
+        {
+          "durationInSeconds": 2.7,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "au revoir",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 496
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — excuse me, or sorry.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 498
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "pardon",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 500
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — see you soon.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 502
+        },
+        {
+          "durationInSeconds": 2.7,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "à bientôt",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 504
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 4.2,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Quick check. I’ll say the French, you say the English.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 508
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "madame",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 510
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "monsieur",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 512
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.9,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "bonsoir",
+          "level": 3,
+          "rate": "slow",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 514
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now the other way. Screen stays blank.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 516
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 4.58,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — ma’am — a polite word for a woman.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 518
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "madame",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 520
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 4.58,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — sir — a polite word for a man.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 522
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "monsieur",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 524
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 3.82,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Now you — good evening — the after-dark greeting.",
+          "level": 3,
+          "rate": null,
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 526
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "bonsoir",
+          "level": 3,
+          "rate": "natural",
+          "stage": "MICRO_RECALL",
+          "visuals": [],
+          "line": 528
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "MICRO_RECALL"
+        }
+      ]
+    },
+    {
+      "id": "06-frame-intro",
+      "type": "buildbar",
+      "stage": "FRAME_INTRO",
+      "segment": "06 · FRAME_INTRO",
+      "visual": "CHUNK BAR — [ greeting ][ person ][ courtesy ] · empty slots",
+      "durationInSeconds": 7.86,
+      "beats": [
+        {
+          "durationInSeconds": 6.86,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Now a sentence with three slots: a greeting, then the person, then a courtesy. Greeting, person, courtesy.",
+          "level": 2,
+          "rate": null,
+          "stage": "FRAME_INTRO",
+          "visuals": [
+            "CHUNK BAR — [ greeting ][ person ][ courtesy ] · empty slots"
+          ],
+          "line": 533
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "BUILD",
+          "level": 2,
+          "stage": "FRAME_INTRO"
+        }
+      ]
+    },
+    {
+      "id": "07-build-ladder",
+      "type": "buildbar",
+      "stage": "BUILD_LADDER",
+      "segment": "07 · BUILD_LADDER",
+      "visual": "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (greeting)",
+      "durationInSeconds": 58.32,
+      "beats": [
+        {
+          "durationInSeconds": 0.9,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "level": 1,
+          "rate": "slow",
+          "stage": "BUILD_LADDER",
+          "visuals": [
+            "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (greeting)"
+          ],
+          "line": 539
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.16,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Your turn.",
+          "level": 2,
+          "rate": null,
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 541
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "BUILD",
+          "level": 2,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour.",
+          "level": 1,
+          "rate": "natural",
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 543
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame.",
+          "level": 1,
+          "rate": "slow",
+          "stage": "BUILD_LADDER",
+          "visuals": [
+            "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (person)"
+          ],
+          "line": 547
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.16,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Your turn.",
+          "level": 2,
+          "rate": null,
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 549
+        },
+        {
+          "durationInSeconds": 3,
+          "phase": "BUILD",
+          "level": 2,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame.",
+          "level": 1,
+          "rate": "natural",
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 551
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Your turn — you build it.",
+          "level": 2,
+          "rate": null,
+          "stage": "BUILD_LADDER",
+          "visuals": [
+            "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (person)"
+          ],
+          "line": 555
+        },
+        {
+          "durationInSeconds": 3,
+          "phase": "BUILD",
+          "level": 2,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur.",
+          "level": 1,
+          "rate": "natural",
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 557
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 2.7,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Merci !",
+          "level": 1,
+          "rate": "slow",
+          "stage": "BUILD_LADDER",
+          "visuals": [
+            "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (courtesy)"
+          ],
+          "line": 561
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.16,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Your turn.",
+          "level": 2,
+          "rate": null,
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 563
+        },
+        {
+          "durationInSeconds": 4.5,
+          "phase": "BUILD",
+          "level": 2,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonjour, madame. Merci !",
+          "level": 1,
+          "rate": "natural",
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 565
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Your turn — you build it.",
+          "level": 2,
+          "rate": null,
+          "stage": "BUILD_LADDER",
+          "visuals": [
+            "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (greeting)"
+          ],
+          "line": 569
+        },
+        {
+          "durationInSeconds": 4.5,
+          "phase": "BUILD",
+          "level": 2,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Bonsoir, madame. Merci !",
+          "level": 1,
+          "rate": "natural",
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 571
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 2.68,
+          "phase": "BUILD",
+          "voice": "en_man",
+          "text": "Your turn — you build it.",
+          "level": 4,
+          "rate": null,
+          "stage": "BUILD_LADDER",
+          "visuals": [
+            "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (greeting + person)"
+          ],
+          "line": 575
+        },
+        {
+          "durationInSeconds": 7.3,
+          "phase": "BUILD",
+          "level": 4,
+          "stage": "BUILD_LADDER"
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "BUILD",
+          "voice": "fr_woman",
+          "text": "Au revoir, monsieur. Merci !",
+          "level": 1,
+          "rate": "natural",
+          "stage": "BUILD_LADDER",
+          "visuals": [],
+          "line": 577
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "BUILD",
+          "level": 1,
+          "stage": "BUILD_LADDER"
+        }
+      ]
+    },
+    {
+      "id": "08-input-return",
+      "type": "dialogue",
+      "stage": "INPUT_RETURN",
+      "segment": "08 · INPUT_RETURN",
+      "visual": null,
+      "durationInSeconds": 36.36,
+      "beats": [
+        {
+          "durationInSeconds": 6.86,
+          "phase": "INPUT",
+          "voice": "en_man",
+          "text": "The same two people once more. Notice how much more you catch now than the first time.",
+          "level": 3,
+          "rate": null,
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 581
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Bonjour, monsieur.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 583
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.2,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Bonjour, madame.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 585
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "S'il vous plaît, monsieur.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 587
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Oui, madame. Merci.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 589
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Merci, monsieur. Au revoir.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 591
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Au revoir, madame.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 593
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Pardon, madame ! Bonsoir.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 595
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Bonsoir, monsieur. Pardon.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 597
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Salut !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 599
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Salut, madame ! Merci.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 601
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Au revoir, monsieur. À bientôt !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 603
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "À bientôt, madame.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 605
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "INPUT",
+          "voice": "fr_woman",
+          "text": "Oui, s'il vous plaît. Merci.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 607
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "INPUT",
+          "voice": "fr_man",
+          "text": "Merci, madame. Bonsoir !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 609
+        },
+        {
+          "durationInSeconds": 0.4,
+          "phase": "INPUT",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        }
+      ]
+    },
+    {
+      "id": "09-make-it-yours",
+      "type": "scenario",
+      "stage": "MAKE_IT_YOURS",
+      "segment": "09 · MAKE_IT_YOURS",
+      "visual": "SCENE — a scene at your own front door · WORD BANK: hello / good evening / ma’am / thank you · MIC",
+      "durationInSeconds": 95.62,
+      "beats": [
+        {
+          "durationInSeconds": 10.28,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "en_woman",
+          "text": "Morning or evening where you are right now? Greet a woman with the right word, and thank her. Say it out loud, then write it down.",
+          "level": 4,
+          "rate": null,
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [
+            "SCENE — a scene at your own front door · WORD BANK: hello / good evening / ma’am / thank you · MIC"
+          ],
+          "line": 615
+        },
+        {
+          "durationInSeconds": 12,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 6.48,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "en_woman",
+          "text": "Here is one way to say it. If yours differs but the pieces fit, it’s right.",
+          "level": 4,
+          "rate": null,
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [],
+          "line": 617
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "fr_man",
+          "text": "Bonjour, madame. Merci !",
+          "level": 4,
+          "rate": "natural",
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [],
+          "line": 619
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 10.28,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "en_woman",
+          "text": "You’re leaving a shop. Say goodbye to the man behind the counter, and that you’ll see him soon. Say it out loud, then write it down.",
+          "level": 4,
+          "rate": null,
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [
+            "SCENE — leaving a small shop · WORD BANK: goodbye / sir / see you soon · MIC"
+          ],
+          "line": 623
+        },
+        {
+          "durationInSeconds": 12,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 6.48,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "en_woman",
+          "text": "Here is one way to say it. If yours differs but the pieces fit, it’s right.",
+          "level": 4,
+          "rate": null,
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [],
+          "line": 625
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "fr_man",
+          "text": "Au revoir, monsieur. À bientôt !",
+          "level": 4,
+          "rate": "natural",
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [],
+          "line": 627
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 7.62,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "en_woman",
+          "text": "It’s evening. Greet a woman, then politely ask — with please. Say it out loud, then write it down.",
+          "level": 4,
+          "rate": null,
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [
+            "SCENE — an evening street · WORD BANK: good evening / ma’am / please · MIC"
+          ],
+          "line": 631
+        },
+        {
+          "durationInSeconds": 12,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 6.48,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "en_woman",
+          "text": "Here is one way to say it. If yours differs but the pieces fit, it’s right.",
+          "level": 4,
+          "rate": null,
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [],
+          "line": 633
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        },
+        {
+          "durationInSeconds": 2.4,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "fr_man",
+          "text": "Bonsoir, madame. S’il vous plaît.",
+          "level": 4,
+          "rate": "natural",
+          "stage": "MAKE_IT_YOURS",
+          "visuals": [],
+          "line": 635
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "MAKE_IT_YOURS",
+          "level": 4,
+          "stage": "MAKE_IT_YOURS"
+        }
+      ]
+    },
+    {
+      "id": "10-transfer-task",
+      "type": "transfer",
+      "stage": "TRANSFER_TASK",
+      "segment": "10 · TRANSFER_TASK",
+      "visual": "BLANK — no words, no word bank · MIC · timer",
+      "durationInSeconds": 25.16,
+      "beats": [
+        {
+          "durationInSeconds": 10.66,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "en_woman",
+          "text": "A fresh situation, nothing on the screen. At night, a stranger holds a door for you. Thank the gentleman, wish him a pleasant night, and part warmly.",
+          "level": 5,
+          "rate": null,
+          "stage": "TRANSFER_TASK",
+          "visuals": [
+            "BLANK — no words, no word bank · MIC · timer"
+          ],
+          "line": 640
+        },
+        {
+          "durationInSeconds": 10.8,
+          "phase": "MAKE_IT_YOURS",
+          "level": 5,
+          "stage": "TRANSFER_TASK"
+        },
+        {
+          "durationInSeconds": 2.7,
+          "phase": "MAKE_IT_YOURS",
+          "voice": "fr_man",
+          "text": "Merci, monsieur. Bonsoir, au revoir !",
+          "level": 5,
+          "rate": "natural",
+          "stage": "TRANSFER_TASK",
+          "visuals": [],
+          "line": 642
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "MAKE_IT_YOURS",
+          "level": 5,
+          "stage": "TRANSFER_TASK"
+        }
+      ]
+    },
+    {
+      "id": "11-fluency-round",
+      "type": "practice",
+      "stage": "FLUENCY_ROUND",
+      "segment": "11 · FLUENCY_ROUND",
+      "visual": null,
+      "durationInSeconds": 65.14,
+      "beats": [
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Pass 1. Same sentences, take your time.",
+          "level": 3,
+          "rate": null,
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 646
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 2.7,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour, madame. Merci !",
+          "level": 3,
+          "rate": "slow",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 648
+        },
+        {
+          "durationInSeconds": 5.4,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 3.15,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonsoir, monsieur. Au revoir !",
+          "level": 3,
+          "rate": "slow",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 650
+        },
+        {
+          "durationInSeconds": 6.3,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 2.25,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Pardon ! À bientôt.",
+          "level": 3,
+          "rate": "slow",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 652
+        },
+        {
+          "durationInSeconds": 4.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 3.06,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Pass 2. Same sentences, a little quicker.",
+          "level": 3,
+          "rate": null,
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 654
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour, madame. Merci !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 656
+        },
+        {
+          "durationInSeconds": 3.6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonsoir, monsieur. Au revoir !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 658
+        },
+        {
+          "durationInSeconds": 4.2,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Pardon ! À bientôt.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 660
+        },
+        {
+          "durationInSeconds": 3,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 3.82,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Pass 3. Same sentences, as fast as you can.",
+          "level": 3,
+          "rate": null,
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 662
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 1.8,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour, madame. Merci !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 664
+        },
+        {
+          "durationInSeconds": 2.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonsoir, monsieur. Au revoir !",
+          "level": 3,
+          "rate": "natural",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 666
+        },
+        {
+          "durationInSeconds": 2.9,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        },
+        {
+          "durationInSeconds": 1.5,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Pardon ! À bientôt.",
+          "level": 3,
+          "rate": "natural",
+          "stage": "FLUENCY_ROUND",
+          "visuals": [],
+          "line": 668
+        },
+        {
+          "durationInSeconds": 2.1,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "FLUENCY_ROUND"
+        }
+      ]
+    },
+    {
+      "id": "12-can-do-check",
+      "type": "score",
+      "stage": "CAN_DO_CHECK",
+      "segment": "12 · CAN_DO_CHECK",
+      "visual": "SCORECARD — capability, not word count · progress",
+      "durationInSeconds": 26.22,
+      "beats": [
+        {
+          "durationInSeconds": 9.52,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "The question from the start: can you greet someone and take your leave, choosing the right formality and time of day? Yes or no.",
+          "level": 3,
+          "rate": null,
+          "stage": "CAN_DO_CHECK",
+          "visuals": [
+            "SCORECARD — capability, not word count · progress"
+          ],
+          "line": 673
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "RECAP",
+          "level": 3,
+          "stage": "CAN_DO_CHECK"
+        },
+        {
+          "durationInSeconds": 7.24,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "You can now greet and take your leave, morning or evening, formally or casually. That’s the whole can-do.",
+          "level": 3,
+          "rate": null,
+          "stage": "CAN_DO_CHECK",
+          "visuals": [],
+          "line": 675
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECAP",
+          "level": 3,
+          "stage": "CAN_DO_CHECK"
+        },
+        {
+          "durationInSeconds": 6.86,
+          "phase": "RECAP",
+          "voice": "en_woman",
+          "text": "These twelve come back in your app in two days — say them, don’t just read them.",
+          "level": 3,
+          "rate": null,
+          "stage": "CAN_DO_CHECK",
+          "visuals": [],
+          "line": 677
+        },
+        {
+          "durationInSeconds": 0.8,
+          "phase": "RECAP",
+          "level": 3,
+          "stage": "CAN_DO_CHECK"
+        }
+      ]
+    }
+  ]
+}
