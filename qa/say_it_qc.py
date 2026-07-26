@@ -916,6 +916,7 @@ def main():
     ap.add_argument("--video")
     ap.add_argument("--json")
     ap.add_argument("--emit-vision-rubric")
+    ap.add_argument("--emit-beats", help="dump parsed beats + estimated timing as JSON (for the generator)")
     ap.add_argument("--promote-lexicon", action="store_true",
                     help="append this lesson's items to the curriculum file, "
                          "but only if Gate A passes")
@@ -928,6 +929,23 @@ def main():
     meta, beats = parse_transcript(Path(args.transcript))
     if not beats:
         sys.exit("no beats parsed — check the transcript format")
+
+    if args.emit_beats:
+        cfg = RULES["timing"]
+        t = 0.0
+        rows = []
+        for b in beats:
+            dur = est_audio(b.text, b.rate, cfg) if b.is_fr else len(b.text.split()) / 2.6
+            rows.append({**asdict(b), "est_audio_s": round(dur, 2),
+                         "t_start": round(t, 2), "t_end": round(t + dur, 2),
+                         "pause_mid": round(t + dur + b.pause / 2, 2)})
+            t += dur + b.pause
+        Path(args.emit_beats).write_text(json.dumps(
+            {"meta": meta, "beats": rows, "est_runtime_s": round(t, 1)},
+            ensure_ascii=False, indent=2), encoding="utf-8")
+        if not (args.json or args.video):
+            print(f"emitted {len(rows)} beats → {args.emit_beats}")
+            return
 
     findings, ctx = run_static(meta, beats, curriculum)
     agg, stats = run_aggregates(meta, beats, ctx)

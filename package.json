@@ -30,7 +30,9 @@
     "qa:i05": "node scripts/qa/gate-b-i05.mjs",
     "qa:rate": "node scripts/qa/gate-b-rate.mjs",
     "qa:s08": "node scripts/qa/gate-b-audio-identity.mjs",
-    "qa:i08": "node scripts/qa/gate-b-i08.mjs"
+    "qa:i08": "node scripts/qa/gate-b-i08.mjs",
+    "qa:author": "node scripts/qa/author.mjs",
+    "qa:pbeat": "node scripts/qa/pbeat.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",
