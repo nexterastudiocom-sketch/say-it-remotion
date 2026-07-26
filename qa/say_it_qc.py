@@ -17,6 +17,8 @@ Layers:
   L4  pedagogical aggregates       (always runs)
 """
 
+from __future__ import annotations  # allow `Beat | None` hints on Python 3.9
+
 import argparse
 import json
 import os
