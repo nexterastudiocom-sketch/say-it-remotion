@@ -13,6 +13,7 @@ import { BuildUpSlide } from './deck/slides/BuildUpSlide';
 import { YourTurnSlide } from './deck/slides/YourTurnSlide';
 import { ModelSlide } from './deck/slides/ModelSlide';
 import { RecapSlide } from './deck/slides/RecapSlide';
+import { PracticeSlide } from './deck/slides/PracticeSlide';
 import { ScoreSlide } from './deck/slides/ScoreSlide';
 import { FPS, getLessonDurationInFrames, Lesson, Overlay, Slide } from './deck/types';
 
@@ -64,6 +65,8 @@ const renderSlide = (slide: Slide, lesson: Lesson): React.ReactNode => {
       return <ModelSlide slide={slide} />;
     case 'recap':
       return <RecapSlide slide={slide} />;
+    case 'practice':
+      return <PracticeSlide slide={slide} />;
     case 'score':
       return <ScoreSlide slide={slide} />;
   }

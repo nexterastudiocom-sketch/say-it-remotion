@@ -80,6 +80,20 @@ export type RecapSlide = {
   items: { word: string; translation: string }[];
 };
 
+/** Practice / drill — the call-and-response segments (recall, mix-it-up, speed
+ *  round, capstone) and short culture/writing notes. Frame-aware: it reads its
+ *  own beats to show the English cue while the learner is prompted, then reveals
+ *  the French answer as it's spoken. A `note` kind instead shows one text card. */
+export type PracticeSlide = {
+  id: string;
+  type: 'practice';
+  durationInSeconds: number;
+  eyebrow: string; // localized label, e.g. "Rappel" / "En situation" / "Le sais-tu ?"
+  kind: 'recall' | 'mix' | 'speed' | 'capstone' | 'note' | 'build' | 'yourturn';
+  heading?: string; // optional short heading (English prompt intro)
+  note?: string; // for kind 'note' — the paragraph to display
+};
+
 /** Progress summary / score card with confetti + three stat blocks. */
 export type ScoreSlide = {
   id: string;
@@ -107,7 +121,7 @@ export type ScoreSlide = {
 // list of `beats`: audio clips and silent PAUSE gaps (learner speaks). A beat
 // with no `src` is a pause. The slide's durationInSeconds equals the sum of its
 // beat durations, so timing stays locked to the voice + scripted pauses.
-export type Beat = { src?: string; durationInSeconds: number; phase?: string; voice?: string };
+export type Beat = { src?: string; durationInSeconds: number; phase?: string; voice?: string; text?: string };
 export type SlideAudio = { audioSrc?: string; beats?: Beat[] };
 
 export type Slide = (
@@ -117,6 +131,7 @@ export type Slide = (
   | YourTurnSlide
   | ModelSlide
   | RecapSlide
+  | PracticeSlide
   | ScoreSlide
 ) &
   SlideAudio;

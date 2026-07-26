@@ -70,7 +70,10 @@ export const RemotionRoot: React.FC = () => (
       }}
     />
 
-    {/* Real lesson from the curriculum workbook (npm run lesson -- 1). */}
+    {/* Real lesson from the curriculum workbook (npm run lesson -- 1).
+        calculateMetadata derives the duration from the ACTUAL lesson prop, so the
+        generation loop can render any baked lesson (any length) via --props without
+        being truncated to lesson-01's default length. */}
     {(() => {
       const lesson = lesson01Fr as unknown as Lesson;
       return (
@@ -82,6 +85,9 @@ export const RemotionRoot: React.FC = () => (
           height={2160}
           durationInFrames={getFilmDurationInFrames(lesson)}
           defaultProps={{ lesson }}
+          calculateMetadata={({ props }) => ({
+            durationInFrames: getFilmDurationInFrames(props.lesson as unknown as Lesson),
+          })}
         />
       );
     })()}
