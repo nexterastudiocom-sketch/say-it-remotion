@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "note": "Central thresholds for the lesson→video generation loop. Edit here, not in code.",
+
+  "duration": { "minSeconds": 900, "maxSeconds": 1500, "targetSeconds": 1080,
+    "why": "15:00–25:00 inclusive; target 18:00. Measured from the RENDERED output." },
+
+  "video": { "width": 3840, "height": 2160, "fps": 30, "vcodec": "h264",
+    "acodec": "aac", "sampleRate": 48000, "channels": 2 },
+
+  "sync": { "toleranceSeconds": 0.15,
+    "why": "The timeline is derived from REAL audio-beat durations, so structural drift is ~0. This tolerance only guards render/encode rounding. A segment fails above it." },
+
+  "loudness": { "targetLufs": -14, "toleranceLufs": 1.5, "truePeakMaxDb": -1.0 },
+
+  "audio": { "minClipSeconds": 0.2, "silenceThresholdDb": -45,
+    "maxLeadingSilenceSeconds": 0.4, "maxTrailingSilenceSeconds": 0.7,
+    "why": "Trim only leading/trailing dead air; NEVER internal repetition pauses (those are intentional silent beats in the timeline)." },
+
+  "pauses": { "minRepeatSeconds": 2.0, "spokenMultiplier": 1.15,
+    "longPhraseWords": 4, "longPhraseExtraSeconds": 1.0, "difficultExtraSeconds": 0.5,
+    "byPhase": { "MEET": 1.0, "ECHO": 2.5, "RECALL": 2.5, "BUILD": 3.0, "MAKE IT YOURS": 10.0 } },
+
+  "blackFrame": { "maxSeconds": 0.5, "pixThreshold": 0.1, "blackThreshold": 0.98 },
+
+  "retries": { "perAsset": 3, "perLesson": 2,
+    "backoffMs": 2000, "backoffFactor": 2, "maxBackoffMs": 30000 },
+
+  "quality": {
+    "overallMin": 7.0,
+    "criticalDimensions": ["contentAccuracy", "pronunciationConfidence", "audioVisualSync", "brandConsistency"],
+    "rubric": "Each dimension scored 0–10. Deterministic where possible; subjective ones are flagged as such in the report.",
+    "dimensionMin": {
+      "contentAccuracy": 8, "pronunciationConfidence": 7, "voiceNaturalness": 6,
+      "audioCleanliness": 7, "audioVisualSync": 8, "educationalPacing": 6, "pauseAdequacy": 6,
+      "visualRelevance": 6, "visualQuality": 6, "brandConsistency": 7, "subtitleQuality": 6,
+      "thumbnailQuality": 6, "overallCoherence": 7
+    }
+  },
+
+  "pronunciation": { "enabled": "auto", "engine": "whisper", "minConfidence": 0.6, "maxLowFraction": 0.15,
+    "why": "auto = transcribe each FR clip and match it to the intended card text WHEN an STT backend is available (OPENAI_API_KEY, openai-whisper, or whisper.cpp). With no backend the gate is needs-review — UNVERIFIED, never a false pass. Set false to skip entirely; true to require a backend." },
+
+  "hardGates": ["sourceValid", "assetsPresent", "renderOk", "duration", "resolution", "fps",
+    "vcodec", "acodec", "audioPresent", "noBlackFrames", "loudness", "sync", "pronunciationVerified"],
+
+  "failurePolicy": "continue"
+}
