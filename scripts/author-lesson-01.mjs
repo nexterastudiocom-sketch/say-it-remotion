@@ -22,7 +22,7 @@ const ITEMS = [
   { fr: 'merci', gloss: 'Thank you.', phon: 'mair-SEE', note: 'Roll gently into the r from the back of the throat.', split: 'Mer... ci', img: 'a hand receiving a gift' },
   { fr: "s'il vous plaît", gloss: 'Please.', phon: 'seel-voo-PLEH', note: 'Three words, one smooth phrase; the final t is silent.', split: '', img: 'a polite request at a counter' },
   { fr: 'oui', gloss: 'Yes.', phon: 'WEE', note: 'One clean syllable, like the English "we".', split: '', img: 'a nod of agreement' },
-  { fr: 'non', gloss: 'No.', phon: 'NOHN', note: 'Nasal again — the n is barely touched.', split: '', img: 'a gentle shake of the head' },
+  { fr: 'non', gloss: 'No.', phon: 'NOHN', note: 'Nasal here too — the n is barely touched.', split: '', img: 'a gentle shake of the head' },
   { fr: 'au revoir', gloss: 'Goodbye.', phon: 'oh-ruh-VWAHR', note: 'The r is uvular — from the back of the throat, not the tip of the tongue.', split: '', img: 'a person leaving through a doorway' },
   { fr: 'pardon', gloss: 'Excuse me, or sorry.', phon: 'par-DOHN', note: 'Nasal on the "on"; useful for bumping into someone.', split: 'Par... don', img: 'someone stepping aside politely' },
   { fr: 'à bientôt', gloss: 'See you soon.', phon: 'ah-byen-TOH', note: 'Two accent marks when you write it: à and ô.', split: '', img: 'a friendly wave goodbye' },
@@ -69,15 +69,20 @@ beat('EN·MAN', 'MEET', 3, 'By the end you can greet someone and take your leave
 seg('02', 'WARM_UP');
 beat('EN·WOMAN', 'RECALL', 3, 'This is lesson one, so there is nothing to bring back yet. Just get ready to speak out loud.', '1.0');
 
-// 03 COLD_INPUT (dialogue: FR·WOMAN + FR·MAN, EN framing = EN·MAN). Only the 12 items.
+// Connected dialogue — used IDENTICALLY in COLD_INPUT (03) and INPUT_RETURN (08)
+// so S-08 holds. Only the 12 items; long enough for the A1 20–40s input band.
+const DIALOGUE = [
+  ['FR·WOMAN', 'Bonjour, monsieur.'], ['FR·MAN', 'Bonjour, madame.'],
+  ['FR·WOMAN', "S'il vous plaît, monsieur."], ['FR·MAN', 'Oui, madame. Merci.'],
+  ['FR·WOMAN', 'Merci, monsieur. Au revoir.'], ['FR·MAN', 'Au revoir, madame.'],
+  ['FR·MAN', 'Pardon, madame ! Bonsoir.'], ['FR·WOMAN', 'Bonsoir, monsieur. Pardon.'],
+  ['FR·WOMAN', 'Salut !'], ['FR·MAN', 'Salut, madame ! Merci.'],
+  ['FR·WOMAN', 'Au revoir, monsieur. À bientôt !'], ['FR·MAN', 'À bientôt, madame.'],
+  ['FR·WOMAN', "Oui, s'il vous plaît. Merci."], ['FR·MAN', 'Merci, madame. Bonsoir !'],
+];
 seg('03', 'COLD_INPUT');
 beat('EN·MAN', 'INPUT', 3, 'Listen to two people meet and part. Understand what you can — you are not expected to catch every word.', '0.8');
-for (const [v, t] of [
-  ['FR·WOMAN', 'Bonjour, monsieur.'], ['FR·MAN', 'Bonjour, madame.'],
-  ['FR·WOMAN', "S'il vous plaît... merci."], ['FR·MAN', 'Oui. Merci, madame.'],
-  ['FR·WOMAN', 'Pardon !'], ['FR·MAN', 'Bonsoir, madame.'],
-  ['FR·WOMAN', 'Bonsoir. Au revoir !'], ['FR·MAN', 'Au revoir. À bientôt !'],
-]) beat(v, 'INPUT', 3, t, '0.4', { rate: 'natural' });
+for (const [v, t] of DIALOGUE) beat(v, 'INPUT', 3, t, '0.4', { rate: 'natural' });
 beat('EN·MAN', 'INPUT', 3, 'One question: did they meet in the morning or the evening? Answer out loud, in English.', '1.2');
 beat('EN·MAN', 'INPUT', 3, 'Both — they greet with bonjour, then part with bonsoir as evening comes.', '0.8');
 
@@ -96,7 +101,7 @@ ITEMS.forEach((it) => {
   beat('EN·MAN', 'ECHO', 1, 'Repeat after me.', '0.6');
   beat('FR·WOMAN', 'ECHO', 1, it.fr, P('copy', it.fr), { rate: 'slow' });
   beat('FR·WOMAN', 'ECHO', 1, it.fr, P('copy', it.fr), { rate: 'slow' });
-  beat('EN·MAN', 'ECHO', 1, 'Again — normal speed.', '0.6');
+  beat('EN·MAN', 'ECHO', 1, 'Repeat after me — normal speed this time.', '0.6');
   beat('FR·WOMAN', 'ECHO', 1, it.fr, P('copy', it.fr), { rate: 'natural' });
   // PRODUCE L3
   img('MIC — no text on screen');
@@ -146,13 +151,8 @@ for (const b of build) {
 
 // 08 INPUT_RETURN — replay the Stage 03 dialogue, identical audio (same lines)
 seg('08', 'INPUT_RETURN');
-beat('EN·MAN', 'INPUT', 3, 'The same two people again. Notice how much more you catch now than the first time.', '0.8');
-for (const [v, t] of [
-  ['FR·WOMAN', 'Bonjour, monsieur.'], ['FR·MAN', 'Bonjour, madame.'],
-  ['FR·WOMAN', "S'il vous plaît... merci."], ['FR·MAN', 'Oui. Merci, madame.'],
-  ['FR·WOMAN', 'Pardon !'], ['FR·MAN', 'Bonsoir, madame.'],
-  ['FR·WOMAN', 'Bonsoir. Au revoir !'], ['FR·MAN', 'Au revoir. À bientôt !'],
-]) beat(v, 'INPUT', 3, t, '0.4', { rate: 'natural' });
+beat('EN·MAN', 'INPUT', 3, 'The same two people once more. Notice how much more you catch now than the first time.', '0.8');
+for (const [v, t] of DIALOGUE) beat(v, 'INPUT', 3, t, '0.4', { rate: 'natural' });
 
 // 09 MAKE_IT_YOURS (pair P) — 3 scenarios, L4, speak then write, ≥1 personalized, each with a model
 const scen = [

@@ -28,17 +28,29 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 0.4s
   FR·MAN [INPUT] [L3] → [rate: natural] Bonjour, madame.
     ⏸ PAUSE 0.4s
-  FR·WOMAN [INPUT] [L3] → [rate: natural] S'il vous plaît... merci.
+  FR·WOMAN [INPUT] [L3] → [rate: natural] S'il vous plaît, monsieur.
     ⏸ PAUSE 0.4s
-  FR·MAN [INPUT] [L3] → [rate: natural] Oui. Merci, madame.
+  FR·MAN [INPUT] [L3] → [rate: natural] Oui, madame. Merci.
     ⏸ PAUSE 0.4s
-  FR·WOMAN [INPUT] [L3] → [rate: natural] Pardon !
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Merci, monsieur. Au revoir.
     ⏸ PAUSE 0.4s
-  FR·MAN [INPUT] [L3] → [rate: natural] Bonsoir, madame.
+  FR·MAN [INPUT] [L3] → [rate: natural] Au revoir, madame.
     ⏸ PAUSE 0.4s
-  FR·WOMAN [INPUT] [L3] → [rate: natural] Bonsoir. Au revoir !
+  FR·MAN [INPUT] [L3] → [rate: natural] Pardon, madame ! Bonsoir.
     ⏸ PAUSE 0.4s
-  FR·MAN [INPUT] [L3] → [rate: natural] Au revoir. À bientôt !
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Bonsoir, monsieur. Pardon.
+    ⏸ PAUSE 0.4s
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Salut !
+    ⏸ PAUSE 0.4s
+  FR·MAN [INPUT] [L3] → [rate: natural] Salut, madame ! Merci.
+    ⏸ PAUSE 0.4s
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Au revoir, monsieur. À bientôt !
+    ⏸ PAUSE 0.4s
+  FR·MAN [INPUT] [L3] → [rate: natural] À bientôt, madame.
+    ⏸ PAUSE 0.4s
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Oui, s'il vous plaît. Merci.
+    ⏸ PAUSE 0.4s
+  FR·MAN [INPUT] [L3] → [rate: natural] Merci, madame. Bonsoir !
     ⏸ PAUSE 0.4s
   EN·MAN [INPUT] [L3] → One question: did they meet in the morning or the evening? Answer out loud, in English.
     ⏸ PAUSE 1.2s
@@ -66,7 +78,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] bonjour
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] bonjour
     ⏸ PAUSE 1.5s
@@ -99,7 +111,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] salut
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] salut
     ⏸ PAUSE 1.5s
@@ -132,7 +144,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] merci
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] merci
     ⏸ PAUSE 1.5s
@@ -162,7 +174,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 2.4s
   FR·WOMAN [ECHO] [L1] → [rate: slow] s'il vous plaît
     ⏸ PAUSE 2.4s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] s'il vous plaît
     ⏸ PAUSE 2.4s
@@ -192,7 +204,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] oui
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] oui
     ⏸ PAUSE 1.5s
@@ -212,7 +224,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   EN·MAN [MEET] [L0] → No.
     ⏸ PAUSE 0.8s
-  EN·MAN [MEET] [L0] → Nasal again — the n is barely touched.
+  EN·MAN [MEET] [L0] → Nasal here too — the n is barely touched.
     ⏸ PAUSE 0.8s
   FR·WOMAN [MEET] [L0] → [rate: slow] non
     ⏸ PAUSE 1.5s
@@ -222,7 +234,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] non
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] non
     ⏸ PAUSE 1.5s
@@ -252,7 +264,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.8s
   FR·WOMAN [ECHO] [L1] → [rate: slow] au revoir
     ⏸ PAUSE 1.8s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] au revoir
     ⏸ PAUSE 1.8s
@@ -285,7 +297,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] pardon
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] pardon
     ⏸ PAUSE 1.5s
@@ -315,7 +327,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.8s
   FR·WOMAN [ECHO] [L1] → [rate: slow] à bientôt
     ⏸ PAUSE 1.8s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] à bientôt
     ⏸ PAUSE 1.8s
@@ -345,7 +357,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] madame
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] madame
     ⏸ PAUSE 1.5s
@@ -375,7 +387,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] monsieur
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] monsieur
     ⏸ PAUSE 1.5s
@@ -408,7 +420,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.5s
   FR·WOMAN [ECHO] [L1] → [rate: slow] bonsoir
     ⏸ PAUSE 1.5s
-  EN·MAN [ECHO] [L1] → Again — normal speed.
+  EN·MAN [ECHO] [L1] → Repeat after me — normal speed this time.
     ⏸ PAUSE 0.6s
   FR·WOMAN [ECHO] [L1] → [rate: natural] bonsoir
     ⏸ PAUSE 1.5s
@@ -566,23 +578,35 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 1.0s
 
 ## 08 · INPUT_RETURN
-  EN·MAN [INPUT] [L3] → The same two people again. Notice how much more you catch now than the first time.
+  EN·MAN [INPUT] [L3] → The same two people once more. Notice how much more you catch now than the first time.
     ⏸ PAUSE 0.8s
   FR·WOMAN [INPUT] [L3] → [rate: natural] Bonjour, monsieur.
     ⏸ PAUSE 0.4s
   FR·MAN [INPUT] [L3] → [rate: natural] Bonjour, madame.
     ⏸ PAUSE 0.4s
-  FR·WOMAN [INPUT] [L3] → [rate: natural] S'il vous plaît... merci.
+  FR·WOMAN [INPUT] [L3] → [rate: natural] S'il vous plaît, monsieur.
     ⏸ PAUSE 0.4s
-  FR·MAN [INPUT] [L3] → [rate: natural] Oui. Merci, madame.
+  FR·MAN [INPUT] [L3] → [rate: natural] Oui, madame. Merci.
     ⏸ PAUSE 0.4s
-  FR·WOMAN [INPUT] [L3] → [rate: natural] Pardon !
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Merci, monsieur. Au revoir.
     ⏸ PAUSE 0.4s
-  FR·MAN [INPUT] [L3] → [rate: natural] Bonsoir, madame.
+  FR·MAN [INPUT] [L3] → [rate: natural] Au revoir, madame.
     ⏸ PAUSE 0.4s
-  FR·WOMAN [INPUT] [L3] → [rate: natural] Bonsoir. Au revoir !
+  FR·MAN [INPUT] [L3] → [rate: natural] Pardon, madame ! Bonsoir.
     ⏸ PAUSE 0.4s
-  FR·MAN [INPUT] [L3] → [rate: natural] Au revoir. À bientôt !
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Bonsoir, monsieur. Pardon.
+    ⏸ PAUSE 0.4s
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Salut !
+    ⏸ PAUSE 0.4s
+  FR·MAN [INPUT] [L3] → [rate: natural] Salut, madame ! Merci.
+    ⏸ PAUSE 0.4s
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Au revoir, monsieur. À bientôt !
+    ⏸ PAUSE 0.4s
+  FR·MAN [INPUT] [L3] → [rate: natural] À bientôt, madame.
+    ⏸ PAUSE 0.4s
+  FR·WOMAN [INPUT] [L3] → [rate: natural] Oui, s'il vous plaît. Merci.
+    ⏸ PAUSE 0.4s
+  FR·MAN [INPUT] [L3] → [rate: natural] Merci, madame. Bonsoir !
     ⏸ PAUSE 0.4s
 
 ## 09 · MAKE_IT_YOURS
