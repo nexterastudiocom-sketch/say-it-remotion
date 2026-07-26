@@ -1,0 +1,548 @@
+spec_version: "1.0"
+method_doc: "Say_It_Method_v1.md"
+
+severity_levels:
+  BLOCK: "Do not render. Fix before generation."
+  WARN:  "Render permitted, human review required."
+  INFO:  "Logged only."
+
+gates:
+  A:
+    name: "Gate A — pre-render"
+    blocks: "generation"
+    runs_on: "transcript only"
+    layers: [L0, L4]
+    owner: "Claude Code, same session, loop until exit 0"
+  B:
+    name: "Gate B — post-render"
+    blocks: "publication"
+    runs_on: "rendered mp4"
+    layers: [L1, L2, L3]
+    owner: "separate pass + human sign-off"
+
+layers:
+  L0: "Static transcript analysis. Deterministic, pre-render."
+  L1: "Container and technical. ffprobe/ffmpeg."
+  L2: "Audio-transcript alignment. ASR diffing, measured pause and rate."
+  L3: "Visual frame analysis. Vision model against 🖼 directives."
+  L4: "Pedagogical aggregates. Computed ratios across the whole lesson."
+
+approved_cues:
+  copy:    ["repeat after me"]
+  produce: ["your turn", "now you"]
+  listen:  ["listen"]
+
+forbidden_fr_filler:
+  - bravo
+  - voila
+  - voilà
+  - exactement
+  - parfait
+  - "tres bien"
+  - "très bien"
+  - "d'accord"
+  - super
+  - genial
+  - génial
+  - excellent
+  - bien
+  - oui bien sur
+  - "bien sûr"
+
+phases: [MEET, ECHO, PRODUCE, REPAIR, RECALL, BUILD, MAKE_IT_YOURS, RECAP, INPUT, NOTE]
+
+stages:
+  - CAN_DO_GOAL
+  - WARM_UP
+  - COLD_INPUT
+  - ITEM_BLOCK
+  - MICRO_RECALL
+  - FRAME_INTRO
+  - BUILD_LADDER
+  - INPUT_RETURN
+  - MAKE_IT_YOURS
+  - TRANSFER_TASK
+  - FLUENCY_ROUND
+  - CAN_DO_CHECK
+
+timing:
+  syllable_seconds: 0.30
+  rate_factor:
+    very_slow: 2.0
+    slow: 1.5
+    natural: 1.0
+    fast: 0.8
+  pause_multiplier:
+    copy: 2.0
+    read_aloud: 2.5
+    produce_meaning: 3.0
+    produce_situation: 3.5
+    produce_cold: 4.0
+  pause_floor:
+    copy: 1.5
+    read_aloud: 2.0
+    produce_meaning: 2.5
+    produce_situation: 3.0
+    produce_cold: 3.5
+  en_instruction_max: 1.2
+  note_pause: 1.2
+  confirm_pause_range: [0.8, 1.2]
+  written_pause: 12.0
+  written_pause_tolerance: 2.0
+  fluency_multipliers: [3.0, 2.0, 1.4]
+  total_pause_ratio: [0.35, 0.50]
+
+density:
+  A1_1_5:   {items: [10, 14], input_s: [20, 40],  frames: [1, 1], runtime_min: [18, 22]}
+  A1_6_15:  {items: [14, 18], input_s: [40, 60],  frames: [1, 2], runtime_min: [20, 24]}
+  A1_16_30: {items: [16, 20], input_s: [60, 90],  frames: [2, 2], runtime_min: [22, 26]}
+  A2:       {items: [20, 25], input_s: [90, 120], frames: [2, 3], runtime_min: [24, 28]}
+  B1:       {items: [25, 30], input_s: [120, 180],frames: [3, 3], runtime_min: [26, 32]}
+
+technical:
+  resolution: [3840, 2160]
+  fps: 30
+  video_codec: h264
+  video_bitrate_mbps: 45
+  audio_codec: aac
+  audio_bitrate_kbps: 384
+  loudness_lufs: -14.0
+  loudness_tolerance: 1.0
+  true_peak_max_dbtp: -1.0
+
+rules:
+
+  # ---------- STRUCTURE ----------
+  - id: S-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "All 12 stages present and in order"
+    fix: "Add the missing stage(s) as '## NN · STAGE_NAME' segments in canonical order."
+  - id: S-02
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every new item has MEET, ECHO, PRODUCE and REPAIR beats"
+    fix: "Add the missing phase beat inside that item's ITEM_BLOCK. Order is MEET, ECHO, PRODUCE, REPAIR."
+  - id: S-03
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Micro-recall occurs after every 3 or fewer new items"
+    params: {max_items_between_recall: 3}
+  - id: S-04
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every build step is HEAR-TRY-CONFIRM or TRY_FIRST-CONFIRM"
+    fix: "Restructure the step as HEAR (FR model) then TRY (EN cue + pause) then CONFIRM (FR model), or as TRY-FIRST then CONFIRM."
+  - id: S-05
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "At least 2 build steps are TRY-FIRST (cold)"
+    fix: "Convert a build step to TRY-FIRST by deleting the FR model that precedes its 'your turn' cue."
+    params: {min_try_first: 2}
+  - id: S-06
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Final build step swaps 2 or more slots"
+  - id: S-07
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Exactly one slot changes per build step except the final"
+  - id: S-08
+    layer: L2
+    gate: B
+    severity: BLOCK
+    title: "COLD_INPUT and INPUT_RETURN use identical audio"
+    method: hash
+    detail: >
+      Byte-compare the two extracted audio segments.
+  - id: S-09
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "At least 3 MAKE_IT_YOURS scenarios, all distinct"
+    fix: "Add '### scenario N' sub-headers under MAKE_IT_YOURS until there are at least three distinct situations."
+    params: {min_scenarios: 3}
+  - id: S-10
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "At least one MAKE_IT_YOURS is personalized to the learner"
+  - id: S-11
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "TRANSFER_TASK situation appears nowhere earlier in the lesson"
+    fix: "Rewrite the transfer situation so it does not reuse wording from earlier in the lesson."
+  - id: S-12
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "FLUENCY_ROUND contains no first appearances"
+    fix: "Remove the first-appearing item from FLUENCY_ROUND, or teach it earlier in an ITEM_BLOCK."
+  - id: S-13
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "No item appears in BUILD before its ITEM_BLOCK"
+    fix: "Move that item's ITEM_BLOCK above the BUILD_LADDER, or remove it from the build frame."
+  - id: S-14
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Can-Do stated at stage 01 and re-asked at stage 12"
+  - id: S-15
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Scorecard asserts capability, not raw word count"
+
+  # ---------- CUES ----------
+  - id: C-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "'Repeat after me' is followed by an FR model before the pause"
+    fix: "Move the FR model so it plays BEFORE the pause. The learner cannot copy silence."
+  - id: C-02
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "'Your turn' has no FR model of the target in the preceding beat"
+    fix: "Delete the FR model preceding the cue, or change the cue to 'repeat after me'."
+  - id: C-03
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every production pause is followed by an FR confirm (except REPAIR and written)"
+    fix: "Add an FR confirm beat immediately after the production pause."
+  - id: C-04
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Only approved cue phrases are used"
+  - id: C-05
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Cue phrase matches the beat support level"
+    fix: "Copy cues belong at L0/L1, produce cues at L2 and above. Change the cue or the level tag."
+
+  # ---------- VOCABULARY ----------
+  - id: V-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "All FR lemmas are within the cumulative allowed set"
+    fix: "Remove the word, or add it to this lesson's items and teach it in an ITEM_BLOCK."
+  - id: V-02
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "No affirmations or filler in FR unless explicitly taught"
+    fix: "Delete the affirmation. FR voices may not say Bravo, Voila, Parfait etc. unless taught as items."
+  - id: V-03
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "EN lines name French words only from the allowed set"
+  - id: V-04
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "COLD_INPUT uses only allowed_set(n-1) plus this lesson's new items"
+
+  # ---------- PAUSE ----------
+  - id: P-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Pause after an EN instruction does not exceed 1.2s"
+    fix: "Reduce to 1.2s or less. Silence after an English instruction is dead air."
+  - id: P-02
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every pause over 2.5s is a production pause"
+    fix: "Shorten the pause, or convert the beat into a real production beat with a cue and a confirm."
+  - id: P-03
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Production pause is at least the computed minimum"
+    fix: "Raise the pause to the computed value. It scales with the syllable count of what the learner must say."
+    params: {tolerance_s: 0.3}
+  - id: P-04
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Written production pause is 12s plus or minus 2"
+  - id: P-05
+    layer: L4
+    gate: A
+    severity: WARN
+    title: "Total pause time is 35 to 50 percent of runtime"
+  - id: P-06
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "No two consecutive pauses over 3s without an intervening voice line"
+  - id: P-07
+    layer: L2
+    gate: B
+    severity: WARN
+    title: "Rendered silence matches the specified pause within 0.4s"
+    method: ffmpeg
+    detail: >
+      silencedetect gives the measured gap table.
+    params: {tolerance_s: 0.4}
+
+  # ---------- RATE ----------
+  - id: R-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "First FR utterance of a new item is slow or very_slow"
+    fix: "Change to [rate: slow]. Never open a new item at natural speed."
+  - id: R-02
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Syllable-split beats are very_slow"
+    fix: "Change to [rate: very_slow]. Syllable splits exist to be slow."
+  - id: R-03
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "No natural rate before the third exposure of an item"
+    fix: "Add another slow exposure before this one, or change this beat to [rate: slow]."
+  - id: R-04
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Rate is monotonic within an item"
+  - id: R-05
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Multi-item recap lines run at slow"
+  - id: R-06
+    layer: L2
+    gate: B
+    severity: WARN
+    title: "Measured syllables per second matches the declared rate band"
+    method: asr
+    detail: >
+      Whisper word-level timestamps, then syllables per second.
+    params:
+      bands:
+        very_slow: [1.4, 2.4]
+        slow: [2.2, 3.4]
+        natural: [3.2, 4.6]
+        fast: [4.4, 6.0]
+
+  # ---------- SUPPORT LADDER ----------
+  - id: X-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every item reaches L3 or higher within its lesson"
+    fix: "Add a beat where the learner produces this item from an English or situational cue with no model."
+  - id: X-02
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "At least 30 percent of items reach L4"
+    fix: "Promote more items to L4 by adding situation-cued production beats."
+    params: {min_ratio: 0.30}
+  - id: X-03
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "At least one beat runs at L5"
+    fix: "Add a timed blank-screen production beat, normally the TRANSFER_TASK."
+  - id: X-04
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Support level decreases monotonically per item"
+    fix: "Remove the re-scaffolded beat, or move it into a different ladder."
+  - id: X-05
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Warm-up beats are L3 or higher"
+  - id: X-06
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "No on-screen French specified at L3 or above"
+    fix: "Remove the French from the visual directive. At L3+ the screen must not show the answer."
+
+  # ---------- VISUAL ----------
+  - id: I-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every MEET has a word card directive"
+    fix: "Add a '🖼 WORD CARD — <item> · <phonetic> · illustration: …' directive to that segment."
+  - id: I-02
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Every syllable-split beat has a split-syllable directive"
+  - id: I-03
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every build step has a chunk bar directive marking the changed chunk"
+    fix: "Add a chunk bar directive and mark the changed chunk with highlight, flip, slide or animate."
+  - id: I-04
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Every production pause has a mic indicator directive"
+    fix: "Add MIC to the visual directive for that segment."
+  - id: I-05
+    layer: L3
+    gate: B
+    severity: BLOCK
+    title: "No French text is rendered on screen during any L3+ pause"
+    method: ocr
+    detail: >
+      Deterministic string containment, not judgment. Sample the frame at paus
+      e_mid, OCR it, lowercase and strip accents, then substring-match against
+      allowed_set(n). Any hit is a BLOCK. Do NOT use a vision model.
+    fix: "Clear all French text from the screen for the duration of this pause."
+  - id: I-06
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Word banks list English glosses, not French"
+    fix: "Convert the word bank to English glosses."
+  - id: I-07
+    layer: L3
+    gate: B
+    severity: WARN
+    title: "Rendered frame matches the 🖼 directive at each cue point"
+    method: vision
+    detail: >
+      The only L3 check that needs a model. Everything else at this layer is O
+      CR or pixel arithmetic.
+  - id: I-08
+    layer: L3
+    gate: B
+    severity: WARN
+    title: "Progress indicator is present and monotonically increasing"
+    method: ocr
+    detail: >
+      Read the progress chip and assert it never decreases.
+
+  # ---------- VOICE ----------
+  - id: VO-01
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "EN·MAN on MEET/ECHO/BUILD, EN·WOMAN on RECALL/MAKE_IT_YOURS/RECAP"
+    fix: "Change the voice to match the stage's pair. Pair T is EN·MAN + FR·WOMAN, pair P is EN·WOMAN + FR·MAN."
+  - id: VO-02
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "FR·MAN appears only in COLD_INPUT and INPUT_RETURN"
+  - id: VO-03
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "FR and EN voices are never the same gender simultaneously"
+    fix: "Swap one voice so EN and FR are not the same gender inside this section."
+  - id: VO-04
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Voice pairs change only at section boundaries"
+
+  # ---------- TECHNICAL ----------
+  - id: T-01
+    layer: L1
+    gate: B
+    severity: BLOCK
+    title: "Resolution is 3840x2160"
+  - id: T-02
+    layer: L1
+    gate: B
+    severity: BLOCK
+    title: "Frame rate is 30fps constant"
+  - id: T-03
+    layer: L1
+    gate: B
+    severity: WARN
+    title: "Video bitrate is at least 45 Mbps H.264"
+  - id: T-04
+    layer: L1
+    gate: B
+    severity: WARN
+    title: "Audio is AAC at 384 kbps"
+  - id: T-05
+    layer: L1
+    gate: B
+    severity: BLOCK
+    title: "Integrated loudness is -14 LUFS plus or minus 1"
+  - id: T-06
+    layer: L1
+    gate: B
+    severity: BLOCK
+    title: "True peak does not exceed -1.0 dBTP"
+  - id: T-07
+    layer: L1
+    gate: B
+    severity: BLOCK
+    title: "No audio dropouts longer than 0.2s inside a voice line"
+  - id: T-08
+    layer: L1
+    gate: B
+    severity: WARN
+    title: "Runtime is within the density band for the level"
+
+  # ---------- PEDAGOGICAL AGGREGATES ----------
+  - id: A-01
+    layer: L4
+    gate: A
+    severity: WARN
+    title: "Production beats to copy beats ratio is at least 1.0"
+    fix: "Add production beats or remove copy repetitions until production meets or exceeds copy."
+    params: {min_ratio: 1.0}
+  - id: A-02
+    layer: L4
+    gate: A
+    severity: WARN
+    title: "At least 40 percent of beats run at L3 or above"
+    fix: "Raise support levels on existing beats, or add L3+ production beats."
+    params: {min_ratio: 0.40}
+  - id: A-03
+    layer: L4
+    gate: A
+    severity: WARN
+    title: "Connected French input seconds within the density band"
+  - id: A-04
+    layer: L4
+    gate: A
+    severity: INFO
+    title: "Item count within the density band for the level"
+  - id: A-05
+    layer: L4
+    gate: A
+    severity: WARN
+    title: "Every item carries at least one form note"
+    fix: "Add a one-sentence form note to that item's MEET phase."
+  - id: A-06
+    layer: L4
+    gate: A
+    severity: INFO
+    title: "At least one pragmatics or culture note is present"

@@ -6,3 +6,13 @@ out/
 public/assets/audio/
 scripts/style-references/
 public/assets/covers/
+
+# generation-loop runtime state (status/reports/manifests/logs) — root only,
+# NOT scripts/pipeline/ source
+/pipeline/
+
+# local whisper venv (faster-whisper) — machine-specific, large
+.venv-whisper/
+build/
+qa/*.json
+.venv-ocr/
