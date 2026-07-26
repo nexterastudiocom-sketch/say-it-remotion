@@ -24,7 +24,13 @@
     "qa:wpm": "node scripts/qa/gate-b-wpm.mjs",
     "qa:pron": "node scripts/qa/gate-b-pronunciation.mjs",
     "qa:av": "node scripts/qa/gate-b-av-sync.mjs",
-    "qa:gate-a-legacy": "node scripts/qa/gate-a-curriculum.mjs"
+    "qa:gate-a-legacy": "node scripts/qa/gate-a-curriculum.mjs",
+    "qa:gate-b": "node scripts/qa/gate-b.mjs",
+    "qa:technical": "node scripts/qa/gate-b-technical.mjs",
+    "qa:i05": "node scripts/qa/gate-b-i05.mjs",
+    "qa:rate": "node scripts/qa/gate-b-rate.mjs",
+    "qa:s08": "node scripts/qa/gate-b-audio-identity.mjs",
+    "qa:i08": "node scripts/qa/gate-b-i08.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",
