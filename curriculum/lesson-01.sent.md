@@ -290,7 +290,7 @@
     ⏸ PAUSE 3.5s  [BUILD]
   FR·WOMAN [BUILD]  →  Bonsoir. Non, merci.
     ⏸ PAUSE 3.5s  [BUILD]
-  EN·MAN   [BUILD]  →  [warm] Four tiny scenes — all words you already own.
+  EN·MAN   [BUILD]  →  [warm] All words you already know.
     ⏸ PAUSE 1s  [BUILD]
 
 ## Segment 21 · MIX IT UP 2
@@ -318,7 +318,7 @@
     ⏸ PAUSE 2.5s  [BUILD]
   FR·WOMAN [BUILD]  →  S'il vous plaît, madame. Merci !
     ⏸ PAUSE 2.5s  [BUILD]
-  EN·MAN   [BUILD]  →  [proud] Twelve little scenes now, and counting.
+  EN·MAN   [BUILD]  →  [proud] Nicely done.
     ⏸ PAUSE 1s  [BUILD]
 
 ## Segment 22 · YOUR TURN
@@ -330,7 +330,7 @@
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
   FR·WOMAN [MAKE IT YOURS]  →  Bonsoir, madame. Merci, au revoir !
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
-  EN·WOMAN [MAKE IT YOURS]  →  Good evening, ma'am. Thank you, goodbye! Give yourself a point for every piece you got right.
+  EN·WOMAN [MAKE IT YOURS]  →  Good evening, ma'am. Thank you, goodbye!
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
 
 ## Segment 23b · WRITING NOTE
@@ -346,7 +346,7 @@
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
   FR·WOMAN [MAKE IT YOURS]  →  Merci, monsieur. Au revoir !
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
-  EN·WOMAN [MAKE IT YOURS]  →  Thank you, sir. Goodbye! However you said it, that's a real French sentence, built by you.
+  EN·WOMAN [MAKE IT YOURS]  →  Thank you, sir. Goodbye!
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
 
 ## Segment 26 · WORD — pardon
@@ -414,7 +414,7 @@
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
   FR·WOMAN [MAKE IT YOURS]  →  Pardon, madame ! Bonjour.
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
-  EN·WOMAN [MAKE IT YOURS]  →  Excuse me, ma'am! Hello. Three scenes now, three sentences — and none of them were mine.
+  EN·WOMAN [MAKE IT YOURS]  →  Excuse me, ma'am! Hello.
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
 
 ## Segment 28d · LISTENING CHALLENGE
@@ -444,7 +444,7 @@
     ⏸ PAUSE 1.5s  [BUILD]
   FR·WOMAN [BUILD]  →  Pardon, monsieur ! Bonjour. S'il vous plaît... Merci ! Au revoir, à bientôt !
     ⏸ PAUSE 4s  [BUILD]
-  EN·MAN   [BUILD]  →  [proud] Excuse me, sir! Hello. Please... Thank you! Goodbye, see you soon! One little scene, seven of your words.
+  EN·MAN   [BUILD]  →  [proud] Excuse me, sir! Hello. Please... Thank you! Goodbye, see you soon!
     ⏸ PAUSE 1.5s  [BUILD]
 
 ## Segment 30 · CAPSTONE 2 — evening version
@@ -452,7 +452,7 @@
     ⏸ PAUSE 1.5s  [BUILD]
   FR·WOMAN [BUILD]  →  Bonsoir, madame ! Pardon... Oui, s'il vous plaît. Merci ! À bientôt !
     ⏸ PAUSE 4s  [BUILD]
-  EN·MAN   [BUILD]  →  [proud] Good evening, ma'am! Excuse me... Yes, please. Thank you! See you soon! Same words, brand new scene.
+  EN·MAN   [BUILD]  →  [proud] Good evening, ma'am! Excuse me... Yes, please. Thank you! See you soon!
     ⏸ PAUSE 1.5s  [BUILD]
 
 ## Segment 30b · YOUR TURN 4 — replying
@@ -464,7 +464,7 @@
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
   FR·WOMAN [MAKE IT YOURS]  →  Bonsoir ! Merci. À bientôt !
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
-  EN·WOMAN [MAKE IT YOURS]  →  Good evening! Thanks. See you soon! Four scenes now — arriving, leaving, apologizing, and replying. All four directions, and all four were yours.
+  EN·WOMAN [MAKE IT YOURS]  →  Good evening! Thanks. See you soon!
     ⏸ PAUSE 1.5s  [MAKE IT YOURS]
 
 ## Segment 31 · SPEED ROUND

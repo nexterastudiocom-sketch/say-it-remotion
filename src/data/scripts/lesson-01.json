@@ -1,6 +1,7 @@
 {
   "lessonId": "lesson-01",
   "language": "fr",
+  "meta": null,
   "segments": [
     {
       "title": "Opening — welcome & method",
@@ -1588,7 +1589,7 @@
         },
         {
           "voice": "en_man",
-          "text": "Four tiny scenes — all words you already own.",
+          "text": "All words you already know.",
           "tag": "warm",
           "phase": "BUILD",
           "line": 293
@@ -1742,7 +1743,7 @@
         },
         {
           "voice": "en_man",
-          "text": "Twelve little scenes now, and counting.",
+          "text": "Nicely done.",
           "tag": "proud",
           "phase": "BUILD",
           "line": 321
@@ -1800,7 +1801,7 @@
         },
         {
           "voice": "en_woman",
-          "text": "Good evening, ma'am. Thank you, goodbye! Give yourself a point for every piece you got right.",
+          "text": "Good evening, ma'am. Thank you, goodbye!",
           "tag": "",
           "phase": "MAKE IT YOURS",
           "line": 333
@@ -1875,7 +1876,7 @@
         },
         {
           "voice": "en_woman",
-          "text": "Thank you, sir. Goodbye! However you said it, that's a real French sentence, built by you.",
+          "text": "Thank you, sir. Goodbye!",
           "tag": "",
           "phase": "MAKE IT YOURS",
           "line": 349
@@ -2248,7 +2249,7 @@
         },
         {
           "voice": "en_woman",
-          "text": "Excuse me, ma'am! Hello. Three scenes now, three sentences — and none of them were mine.",
+          "text": "Excuse me, ma'am! Hello.",
           "tag": "",
           "phase": "MAKE IT YOURS",
           "line": 417
@@ -2414,7 +2415,7 @@
         },
         {
           "voice": "en_man",
-          "text": "Excuse me, sir! Hello. Please... Thank you! Goodbye, see you soon! One little scene, seven of your words.",
+          "text": "Excuse me, sir! Hello. Please... Thank you! Goodbye, see you soon!",
           "tag": "proud",
           "phase": "BUILD",
           "line": 447
@@ -2455,7 +2456,7 @@
         },
         {
           "voice": "en_man",
-          "text": "Good evening, ma'am! Excuse me... Yes, please. Thank you! See you soon! Same words, brand new scene.",
+          "text": "Good evening, ma'am! Excuse me... Yes, please. Thank you! See you soon!",
           "tag": "proud",
           "phase": "BUILD",
           "line": 455
@@ -2513,7 +2514,7 @@
         },
         {
           "voice": "en_woman",
-          "text": "Good evening! Thanks. See you soon! Four scenes now — arriving, leaving, apologizing, and replying. All four directions, and all four were yours.",
+          "text": "Good evening! Thanks. See you soon!",
           "tag": "",
           "phase": "MAKE IT YOURS",
           "line": 467
