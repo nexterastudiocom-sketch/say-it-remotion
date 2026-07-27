@@ -22,6 +22,9 @@ const args = process.argv.slice(2);
 const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
 const limit = args.includes('--limit') ? Number(args[args.indexOf('--limit') + 1]) : Infinity;
 const regen = args.includes('--regen');
+// --all regenerates EVERY entry regardless of status (e.g. a style change — rerun
+// the whole set through Recraft). Overwrites existing files in place.
+const all_flag = args.includes('--all');
 
 const regPath = path.join(ROOT, 'assets/images/registry.json');
 if (!existsSync(regPath)) { console.error('✗ no registry — run scripts/images/registry.mjs first'); process.exit(1); }
@@ -32,9 +35,20 @@ const all = [
   ...Object.entries(reg.items).map(([key, e]) => ({ cls: 'item', key, e })),
   ...Object.entries(reg.scenes).map(([key, e]) => ({ cls: 'scene', key, e })),
 ];
-const needs = (e) => e.status === 'pending' || (regen && e.status === 'rejected');
+const needs = (e) => all_flag || e.status === 'pending' || (regen && e.status === 'rejected');
 let queue = all.filter(({ key, e }) => needs(e) && (!only || key === only));
 queue = queue.slice(0, limit);
+
+// BRIEF RULE (locked): a brief must be a full SCENE description — setting, who is
+// in it, what they are doing — never a one/two-word label. Recraft needs a scene.
+// Refuse to spend a call on a stub so the rule can't silently regress.
+const MIN_BRIEF_WORDS = 8;
+const stubs = queue.filter(({ e }) => String(e.brief || '').trim().split(/\s+/).filter(Boolean).length < MIN_BRIEF_WORDS);
+if (stubs.length) {
+  console.error(`✗ ${stubs.length} brief(s) are too short — write a full scene description (≥${MIN_BRIEF_WORDS} words) in the registry first:`);
+  for (const { cls, key, e } of stubs) console.error(`    ${cls} ${key}: "${e.brief}"`);
+  process.exit(1);
+}
 
 if (!queue.length) { console.log('nothing to generate (all approved/generated).'); process.exit(0); }
 console.log(`▶ generating ${queue.length} image(s) in the locked style…`);

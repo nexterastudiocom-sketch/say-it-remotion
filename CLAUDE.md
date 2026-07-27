@@ -54,3 +54,15 @@ Specs `docs/` · rules+engine `qa/say_it_*` · gates `scripts/qa/` · golden les
 `lessons/golden/` · generator tooling `scripts/qa/{pbeat,author}.mjs`,
 `say_it_qc.py --emit-beats` · lexicon `state/lexicon.json` · runtime `build/`,`qa/*.json`
 (git-ignored).
+
+## Images (locked)
+
+- **The image style is LOCKED in `scripts/style-lock.mjs`** (`STYLE_DESCRIPTOR` is the
+  operative prompt; `STYLE_FULL`/`NEGATIVE` are the source of truth). Modern ligne
+  claire, Hergé; rich VARIED palette; flat tones; naturalistic adult anatomy + true-
+  to-life skin; no text/signage. Do not change it without the user's say-so.
+- **Every image brief is a full SCENE description** — setting, who, what they're
+  doing, mood — **never a 1–2 word label**. Enforced: `scripts/images/generate.mjs`
+  refuses briefs under 8 words. Registry briefs live in `assets/images/registry.json`.
+- Generate: `node --env-file=.env scripts/images/generate.mjs [--only <key>] [--all]`
+  (`--all` re-runs every entry, e.g. after a style change).

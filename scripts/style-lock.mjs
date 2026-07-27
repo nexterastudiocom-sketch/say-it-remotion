@@ -2,42 +2,50 @@
  * Style lock for "Say It" — European clean-line comic style.
  *
  * Used two ways:
- *   1. To generate the anchor images you hand-pick when training the Firefly
- *      Custom Model (via the Firefly web app).
+ *   1. To generate the anchor images you hand-pick when training the Firefly /
+ *      Recraft Custom Model.
  *   2. As a light reinforcement suffix on per-segment prompts (the Custom
  *      Model carries most of the weight; restating a few style words helps
  *      edge cases, and it's the only style signal until the model is trained).
+ *
+ * BRIEF RULE (non-negotiable): a per-image brief is ALWAYS a full scene
+ * description — setting, who is in it, what they are doing, mood — never one or
+ * two words. Recraft needs a scene, not a label.
  */
-// The full locked style, for reference / training a custom style_id. Too long for
-// Recraft's 1000-char prompt cap on its own, so per-image prompts use the
-// compressed STYLE_DESCRIPTOR below (which preserves the load-bearing cues).
-export const STYLE_FULL = `Modern ligne claire editorial illustration in the Hergé tradition, elevated with contemporary print craft.
-LINE: bold confident black ink contours on the focal subject, finer interior linework for detail, lightest weight on background elements. Clean deliberate strokes, no sketchiness, no wobble.
-COLOUR: vivid, bold, HIGHLY saturated high-contrast palette — punchy complementary colour pairings, deep rich darks against bright clean lights, maximum chroma. Every form rendered in TWO OR THREE FLAT TONES — a base colour plus a hard-edged shadow shape and optional highlight shape. Absolutely no gradients, no soft blending, no airbrush, no glow, nothing muted, pastel or washed out. The tones are separate flat shapes with crisp borders.
-DEPTH: three distinct planes — background environment, midground context, foreground subject. Each plane flatter and lighter in contrast than the one in front of it.
-TEXTURE: subtle halftone dot grain across the whole image, like offset lithography. Fine, even, unobtrusive.
-DETAIL: generous environmental detail — architecture, props, patterned clothing, set dressing that tells you where you are. Rich, never cluttered.
-CHARACTERS: expressive faces with defined brows, lashes, blush, and clear readable emotion. Dynamic gesture and posture. Warm, charming, alive.
-COMPOSITION: one dominant focal subject occupying 55-65% of the frame. Background supports it, never competes. Square 1:1.`;
+// The full locked style, verbatim source of truth / training text.
+export const STYLE_FULL = `Modern ligne claire editorial illustration, Hergé tradition, contemporary print craft.
 
-// Compressed to fit Recraft's 1000-char prompt cap. Keeps the load-bearing cues:
-// ligne claire, FLAT two/three-tone (no gradients), halftone grain, three planes,
-// detailed environment, one focal subject. Ends with the negative cues inline
-// (Recraft has no separate negative field on this endpoint), hardened against the
-// model's habit of stamping fake signage and a corner signature.
+COLOUR: rich, highly saturated, varied palette — never one or two hue families.
+
+DEPTH: three planes — background, midground, foreground subject. Each flatter and lower in contrast than the one in front.
+
+TEXTURE: subtle halftone, fine, even, unobtrusive.
+
+CHARACTERS: naturalistic adult anatomy, believable hands, natural stance and weight, mature face with subtle asymmetry, defined cheekbones, natural nose and lips, true-to-life eye spacing and skin tone. Defined brows and lashes, soft rosy blush. Calm readable emotion, understated believable gesture. Warm, alive.
+
+COMPOSITION: square 1:1`;
+
+// The locked NEGATIVE list (verbatim). Recraft's generations endpoint has no
+// separate negative field, so the load-bearing negatives are folded into the tail
+// of STYLE_DESCRIPTOR; this is kept for reference / training / a future endpoint.
+export const NEGATIVE =
+  'gradient, soft shading, airbrush, glow, painterly, 3D, photorealistic, muted, ' +
+  'desaturated, sparse, flat single-colour background, cartoonish proportions, ' +
+  'doll-like features, exaggerated anatomy, skin tone, expressions, overacted gestures, ' +
+  'text, letters, numbers, signage, logos, watermark';
+
+// Compressed to fit Recraft's 1000-char prompt cap alongside a full scene brief.
+// Keeps the load-bearing cues + the negatives inline (no separate negative field).
 export const STYLE_DESCRIPTOR =
-  'Modern ligne claire editorial illustration, Hergé tradition. Bold confident black ink ' +
-  'contours on the focal subject, finer interior linework, lightest lines on background. ' +
-  'Vivid, bold, HIGHLY saturated high-contrast palette — punchy complementary colours, deep ' +
-  'rich darks against bright clean lights, maximum chroma. Every form in just TWO or THREE FLAT ' +
-  'tones — base colour plus a hard-edged shadow shape and optional highlight — crisp borders, ' +
-  'absolutely no gradients, no soft shading, no airbrush, no glow, nothing muted or washed out. ' +
-  'Three flat depth planes, each lighter ' +
-  'behind. Subtle even halftone dot grain like offset lithography. Generous environmental ' +
-  'detail: architecture, props, set dressing. Expressive charming face, dynamic posture. ' +
-  'One dominant subject filling 55-65% of a square frame. Blank unlettered signs only. ' +
-  'No text, no letters, no words, no numbers, no shop names, no signage, no speech bubbles, ' +
-  'no logos, no signature, no watermark, not photorealistic, not painterly, not muted.';
+  'Modern ligne claire editorial illustration, Hergé tradition. Rich, highly saturated, VARIED ' +
+  'palette — never one or two hue families. Three flat depth planes, contrast falling with ' +
+  'distance. Subtle fine even halftone. Naturalistic adult anatomy, believable hands, natural ' +
+  'stance, mature face with subtle asymmetry, natural features, true-to-life skin tone, defined ' +
+  'brows and lashes, soft blush, calm understated emotion. Square 1:1. ' +
+  'NEGATIVE: gradient, soft shading, airbrush, glow, painterly, 3D, photorealistic, muted, ' +
+  'desaturated, sparse, flat single-colour background, cartoonish proportions, doll-like features, ' +
+  'exaggerated anatomy or skin tone, exaggerated or overacted expressions; no text, letters, ' +
+  'numbers, signage, logos or watermark.';
 
 // Build a per-image prompt within Recraft's 1000-char cap. If brief+style overflows,
 // the style is trimmed at a sentence boundary (the brief is never truncated).
