@@ -11,7 +11,10 @@ import { rules, finding, merge } from './gateb.mjs';
 
 const FR_VOWELS = new Set('aeiouyàâäéèêëîïôöùûüÿœæ');
 function frSyllables(text) {
-  let t = (text || '').toLowerCase().replace(/[^a-zà-öø-ÿ'’\s]/g, ' ').replace(/['’]/g, ' ');
+  // Elision joins, not splits: "s'il" is one syllable (s'il), not s + il. Drop the
+  // apostrophe so the leading consonant attaches to the next vowel ("s'il"→"sil"→1),
+  // instead of splitting into a token that floors to a phantom syllable.
+  let t = (text || '').toLowerCase().replace(/[^a-zà-öø-ÿ'’\s]/g, ' ').replace(/['’]/g, '');
   let total = 0;
   for (const w of t.split(/\s+/).filter(Boolean)) {
     let g = 0, prev = false;
@@ -36,9 +39,16 @@ const F = [];
 let checked = 0;
 for (const r of man.lines) {
   if (r.kind !== 'french' || !r.rateTag || !bands[r.rateTag]) continue;
+  // ASR only confirms the beat produced speech; it does NOT set the span. Whisper
+  // emits zero-width and clipped word boundaries (esp. on short isolated beats) that
+  // collapse the extremes to a fraction of the real duration and inflate syl/s wildly.
   const words = (asr.words || []).filter((w) => w.start >= r.videoStart - 0.2 && w.end <= r.videoEnd + 0.2);
   if (!words.length) continue;
-  const span = Math.max(0.2, words[words.length - 1].end - words[0].start);
+  // Measure over the placed audio clip span. durationSeconds is the trimmed clip length
+  // (TTS auto-trims leading/trailing silence, so it is the faithful speaking duration);
+  // subtract any deliberate mid-line pause so "..." beats aren't scored as slow speech.
+  const clip = typeof r.durationSeconds === 'number' ? r.durationSeconds : r.videoEnd - r.videoStart;
+  const span = Math.max(0.2, clip - (r.pauseMid || 0));
   const syl = frSyllables(r.intendedFrench);
   const sps = +(syl / span).toFixed(2);
   checked++;
