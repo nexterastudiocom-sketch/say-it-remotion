@@ -41,7 +41,7 @@
       "file": "assets/images/items/img_fr_oui_01.png",
       "brief": "An adult at a small café table nodding yes with a warm smile and an open agreeable hand gesture to a companion across the table, coffee cups between them, a cosy interior.",
       "gloss": "yes",
-      "status": "pending",
+      "status": "generated",
       "first_lesson": 1,
       "approved_at": null
     },
@@ -50,7 +50,7 @@
       "file": "assets/images/items/img_fr_non_01.png",
       "brief": "An adult politely shaking their head no with a gentle raised-hand declining gesture and a calm apologetic smile, standing at a market stall as a vendor offers an item.",
       "gloss": "no",
-      "status": "pending",
+      "status": "generated",
       "first_lesson": 1,
       "approved_at": null
     },
@@ -59,7 +59,7 @@
       "file": "assets/images/items/img_fr_au_revoir_01.png",
       "brief": "An adult standing in a doorway waving goodbye to a friend walking away down the street, a warm parting smile, townhouses, a lamppost and soft evening light behind them.",
       "gloss": "goodbye",
-      "status": "pending",
+      "status": "generated",
       "first_lesson": 1,
       "approved_at": null
     },
@@ -68,7 +68,7 @@
       "file": "assets/images/items/img_fr_madame_01.png",
       "brief": "A poised mature woman in a smart coat on a city street, meeting the viewer's eye with a calm friendly expression, shop windows and a tree-lined pavement behind her.",
       "gloss": "ma'am",
-      "status": "pending",
+      "status": "generated",
       "first_lesson": 1,
       "approved_at": null
     },
@@ -86,7 +86,7 @@
       "file": "assets/images/items/img_fr_bonsoir_01.png",
       "brief": "An adult greeting someone with a warm good-evening nod on a city street at dusk, glowing lit shop windows and warm lamplight around them, a deep evening-blue sky above.",
       "gloss": "good evening",
-      "status": "pending",
+      "status": "generated",
       "first_lesson": 1,
       "approved_at": null
     },
@@ -95,7 +95,7 @@
       "file": "assets/images/items/img_fr_pardon_01.png",
       "brief": "Two adults lightly bumping shoulders on a busy pavement, one turning with an apologetic raised hand and a sorry expression, the other understanding, city-street bustle around them.",
       "gloss": "excuse me / sorry",
-      "status": "pending",
+      "status": "generated",
       "first_lesson": 1,
       "approved_at": null
     },
@@ -104,7 +104,7 @@
       "file": "assets/images/items/img_fr_a_bientot_01.png",
       "brief": "An adult stepping out of a café doorway and glancing back with a friendly see-you-soon wave to someone at a table inside, a warm interior glow, bicycles and street outside.",
       "gloss": "see you soon",
-      "status": "pending",
+      "status": "generated",
       "first_lesson": 1,
       "approved_at": null
     }
@@ -127,7 +127,7 @@
       "gloss": "Culture note",
       "kind": "culture",
       "lesson": 1,
-      "status": "pending",
+      "status": "generated",
       "approved_at": null
     },
     "L01_scenario_1": {
@@ -137,7 +137,7 @@
       "gloss": "You walk into a bakery. A woman is behind the counter. Greet her using whichever greeting fits the time where you are right now, and thank her.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "pending",
+      "status": "generated",
       "approved_at": null
     },
     "L01_scenario_2": {
@@ -147,7 +147,7 @@
       "gloss": "You are leaving that same bakery and will be back tomorrow. Thank her and say goodbye in a way that means you will see her again.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "pending",
+      "status": "generated",
       "approved_at": null
     },
     "L01_scenario_3": {
@@ -157,7 +157,7 @@
       "gloss": "You bump into a man on the street by accident. Apologize, then greet him.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "pending",
+      "status": "generated",
       "approved_at": null
     },
     "L01_scenario_4": {
@@ -167,7 +167,7 @@
       "gloss": "Evening. You walk into a hotel and the man at the desk greets you first. Greet him back, ask for something politely, and thank him.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "pending",
+      "status": "generated",
       "approved_at": null
     },
     "L01_transfer": {
@@ -177,7 +177,7 @@
       "gloss": "A stranger holds an umbrella over you in the rain.",
       "kind": "transfer",
       "lesson": 1,
-      "status": "pending",
+      "status": "generated",
       "approved_at": null
     }
   }
