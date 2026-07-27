@@ -33,6 +33,24 @@ async function trimSilence(fileAbs) {
   finally { await rm(tmp, { force: true }); }
 }
 
+// Time-stretch a clip to `ratio`× its real speed (pitch preserved). Used to make
+// French play at a fraction of natural conversational speed for comprehension —
+// ElevenLabs' own speed param floors at 0.7, so anything slower is done here.
+// ffmpeg atempo only accepts 0.5–100, so ratios below 0.5 are chained.
+export async function atempoStretch(fileAbs, ratio) {
+  if (!FFMPEG || !ratio || Math.abs(ratio - 1) < 0.001) return;
+  const factors = [];
+  let r = ratio;
+  while (r < 0.5) { factors.push(0.5); r /= 0.5; }
+  factors.push(r);
+  const tmp = fileAbs.replace(/\.mp3$/i, '.tempo.mp3');
+  try {
+    execFileSync(FFMPEG, ['-y', '-hide_banner', '-nostats', '-i', fileAbs, '-af', factors.map((f) => `atempo=${f.toFixed(4)}`).join(','), tmp], { stdio: 'pipe' });
+    await writeFile(fileAbs, await readFile(tmp));
+  } catch { /* keep the original on any ffmpeg hiccup */ }
+  finally { await rm(tmp, { force: true }); }
+}
+
 const API_KEY = process.env.ELEVENLABS_API_KEY;
 const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
 const FALLBACK = '21m00Tcm4TlvDq8ikWAM'; // Rachel (English, multilingual-capable)
@@ -64,7 +82,7 @@ async function tts(text, voiceId, model = MODEL, speed = 1) {
  * retries once on Multilingual v2 with the tag stripped — so a lack of v3 access
  * degrades gracefully instead of aborting the whole lesson.
  */
-export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1 }) {
+export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1, atempo = 1 }) {
   await mkdir(path.dirname(outAbs), { recursive: true });
   let buf;
   try {
@@ -76,6 +94,9 @@ export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1 
   }
   await writeFile(outAbs, buf);
   await trimSilence(outAbs);
+  // Slow the clip to `atempo`× real speed (comprehension pacing) after trimming,
+  // so the reported duration reflects the stretched clip.
+  await atempoStretch(outAbs, atempo);
   const { format } = await parseFile(outAbs);
   return format.duration || 0;
 }

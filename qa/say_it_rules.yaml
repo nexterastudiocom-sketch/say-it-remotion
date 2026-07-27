@@ -66,12 +66,16 @@ stages:
   - CAN_DO_CHECK
 
 timing:
+  # syllable_seconds = per-syllable time at REAL conversational speed. French is
+  # delivered SLOWED for comprehension (see build-method-lesson RATE_ATEMPO), so
+  # rate_factor = 1 / (fraction of real speed): natural plays at 0.75x real, the
+  # slower tags near 0.5x. A syllable therefore takes longer than at real speed.
   syllable_seconds: 0.30
   rate_factor:
     very_slow: 2.0
-    slow: 1.5
-    natural: 1.0
-    fast: 0.8
+    slow: 1.82
+    natural: 1.33
+    fast: 1.18
   pause_multiplier:
     copy: 2.0
     read_aloud: 2.5
@@ -341,11 +345,15 @@ rules:
     detail: >
       Whisper word-level timestamps, then syllables per second.
     params:
+      # Bands are syllables/sec of the SLOWED French (RATE_ATEMPO applied): the
+      # real-speech band ~[3.2,4.6] scaled by each rate's fraction of real speed,
+      # plus tolerance for ASR timing noise. natural 0.75x, slow 0.55x,
+      # very_slow 0.5x, fast 0.85x.
       bands:
-        very_slow: [1.4, 2.4]
-        slow: [2.2, 3.4]
-        natural: [3.2, 4.6]
-        fast: [4.4, 6.0]
+        very_slow: [1.2, 2.2]
+        slow: [1.5, 2.7]
+        natural: [2.2, 3.6]
+        fast: [2.5, 4.1]
 
   # ---------- SUPPORT LADDER ----------
   - id: X-01

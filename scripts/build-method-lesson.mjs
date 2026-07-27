@@ -24,8 +24,11 @@ const args = process.argv.slice(2);
 const id = args.find((a) => !a.startsWith('--')) || 'lesson-01';
 const noMedia = args.includes('--no-media');
 
-// FR rate → ElevenLabs speed hint (v3). very_slow/slow render slow so R-06 passes.
-const RATE_SPEED = { very_slow: 0.7, slow: 0.85, natural: 1.0, fast: 1.15 };
+// FR rate → fraction of REAL (conversational) speed. French is generated at
+// ElevenLabs speed 1.0 (real normal) then time-stretched by atempo, because
+// learners need it slow: "normal" plays at 0.75× real, the slower tags near 0.5×.
+// (ElevenLabs' own speed param floors at 0.7, so the slowdown is done in ffmpeg.)
+const RATE_ATEMPO = { very_slow: 0.5, slow: 0.55, natural: 0.75, fast: 0.85 };
 const VOICES = {
   'EN·MAN': process.env.ELEVENLABS_VOICE_EN_MAN || 'uh5qBlKfjqFl7XXhFnJi',
   'EN·WOMAN': process.env.ELEVENLABS_VOICE_EN_WOMAN || 'Bn9xWp6PwkrqKRbq8cX2',
@@ -81,8 +84,10 @@ for (const b of parsed.beats) {
     dur = isFr ? Math.max(0.4, b.est_audio_s) : +(wc(b.text) * 0.38 + 0.4).toFixed(2);
     cur.beats.push({ durationInSeconds: +dur.toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
   } else {
-    const speed = isFr ? RATE_SPEED[b.rate] : 1.0;
-    const key = `${b.voice}|${b.rate || 'natural'}|${speed}|${b.text}`;
+    // French renders at real normal speed, then slows to RATE_ATEMPO×; English
+    // stays at normal. atempo is part of the cache key so a rate change re-bakes.
+    const atempo = isFr ? (RATE_ATEMPO[b.rate] ?? 0.75) : 1;
+    const key = `${b.voice}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`;
     let hit = clipCache.get(key);
     if (!hit) {
       // Stable, content-addressed name so the same utterance always resolves to
@@ -90,7 +95,7 @@ for (const b of parsed.beats) {
       const h = createHash('sha1').update(key).digest('hex').slice(0, 16);
       const rel = `assets/audio/${id}/method/${h}.mp3`;
       const abs = path.join(ROOT, 'public', rel);
-      const d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
+      const d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
       hit = { rel, dur: +Number(d).toFixed(2) };
       clipCache.set(key, hit);
       clipN++;
