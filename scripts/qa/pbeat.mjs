@@ -10,7 +10,9 @@ import { rules } from './gateb.mjs';
 
 const FR_VOWELS = new Set('aeiouyàâäéèêëîïôöùûüÿœæ');
 export function frSyllables(text) {
-  let t = (text || '').toLowerCase().replace(/[^a-zà-öø-ÿ'’\s]/g, ' ').replace(/['’]/g, ' ');
+  // Elision joins, not splits: "s'il" is one syllable (s'il), not s + il. Drop the
+  // apostrophe so the leading consonant attaches to the next vowel ("s'il"→"sil"→1).
+  let t = (text || '').toLowerCase().replace(/[^a-zà-öø-ÿ'’\s]/g, ' ').replace(/['’]/g, '');
   let total = 0;
   for (const w of t.split(/\s+/).filter(Boolean)) {
     let g = 0, prev = false;
@@ -49,10 +51,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       ['syllables Bonjour', frSyllables('Bonjour'), 2],
       ['syllables madame', frSyllables('madame'), 2],
       ['syllables au revoir', frSyllables('au revoir'), 3],
-      // P(copy) for "Bonjour" (2 syl): max(1.5, 2.0×(2×0.3)) = max(1.5,1.2)=1.5
-      ['P(copy) Bonjour', pBeat('copy', 'Bonjour', cfg), 1.5],
-      // P(produce_meaning) "Bonjour, madame." (4 syl): max(2.5, 3.0×(4×0.3))=max(2.5,3.6)=3.6
-      ['P(produce_meaning) "Bonjour, madame."', pBeat('produce_meaning', 'Bonjour, madame.', cfg), 3.6],
+      // P(copy) "Bonjour" (2 syl): max(1.5, 2.0×(2×0.30×1.33)) = max(1.5,1.60)=1.60
+      ['P(copy) Bonjour', pBeat('copy', 'Bonjour', cfg), 1.6],
+      // P(produce_meaning) single word "bonjour" (2 syl): floor-bound at 3.5
+      ['P(produce_meaning) bonjour (floor)', pBeat('produce_meaning', 'bonjour', cfg), 3.5],
+      // P(produce_meaning) "Bonjour, madame." (4 syl): max(3.5, 3.0×(4×0.30×1.33))=max(3.5,4.79)=4.79
+      ['P(produce_meaning) "Bonjour, madame."', pBeat('produce_meaning', 'Bonjour, madame.', cfg), 4.79],
       ['P(en_instruction)', pBeat('en_instruction', '', cfg), 1.2],
       ['P(written)', pBeat('written', '', cfg), 12],
     ];
