@@ -12,6 +12,7 @@
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ttsClip, hasElevenKey } from './lib/eleven.mjs';
@@ -59,6 +60,11 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g
 const wc = (s) => s.split(/\s+/).filter(Boolean).length;
 
 // ---- group beats by segment → slides ----------------------------------------
+// Content-addressed clip cache: an identical (voice·rate·text) utterance is
+// synthesized once and reused. This is what makes INPUT_RETURN replay the SAME
+// recording as COLD_INPUT (S-08 byte-identity) instead of a fresh take — and it
+// cuts the ElevenLabs call count for every repeated line.
+const clipCache = new Map(); // key → { rel, dur }
 const slides = [];
 let cur = null, clipN = 0;
 for (const b of parsed.beats) {
@@ -75,10 +81,22 @@ for (const b of parsed.beats) {
     dur = isFr ? Math.max(0.4, b.est_audio_s) : +(wc(b.text) * 0.38 + 0.4).toFixed(2);
     cur.beats.push({ durationInSeconds: +dur.toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
   } else {
-    const rel = `assets/audio/${id}/method/${cur.id}_${clipN++}.mp3`;
-    const abs = path.join(ROOT, 'public', rel);
-    dur = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed: isFr ? RATE_SPEED[b.rate] : 1.0 }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
-    cur.beats.push({ src: rel, durationInSeconds: +Number(dur).toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
+    const speed = isFr ? RATE_SPEED[b.rate] : 1.0;
+    const key = `${b.voice}|${b.rate || 'natural'}|${speed}|${b.text}`;
+    let hit = clipCache.get(key);
+    if (!hit) {
+      // Stable, content-addressed name so the same utterance always resolves to
+      // the same file regardless of which slide first emitted it.
+      const h = createHash('sha1').update(key).digest('hex').slice(0, 16);
+      const rel = `assets/audio/${id}/method/${h}.mp3`;
+      const abs = path.join(ROOT, 'public', rel);
+      const d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
+      hit = { rel, dur: +Number(d).toFixed(2) };
+      clipCache.set(key, hit);
+      clipN++;
+    }
+    dur = hit.dur;
+    cur.beats.push({ src: hit.rel, durationInSeconds: hit.dur, phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
   }
   // scripted pause → silent gap beat
   if (b.pause > 0) cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });

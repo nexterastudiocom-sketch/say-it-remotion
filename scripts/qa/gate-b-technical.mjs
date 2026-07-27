@@ -61,7 +61,11 @@ if (existsSync(P.manifest) && existsSync(asrPath)) {
   const GAP = 1.0; // CALIBRATE: spec floor 0.2; raised so natural TTS punctuation pauses ("Oui. Non.") aren't flagged as dropouts
   // Atomic taught utterances (≤4.5s) — long narration beats have natural clause
   // pauses that are not dropouts; the Method grammar keeps beats atomic anyway.
-  const inSpoken = (t) => man.lines.find((r) => r.kind !== 'pause' && r.audioAsset && r.durationSeconds <= 4.5 && t >= r.videoStart + 0.1 && t <= r.videoEnd - 0.1 && !/\.\.\.|…/.test(r.spokenText || ''));
+  // Scope to FRENCH lines only: the on-screen caption (X-06) and the P(beat)
+  // atomicity contract are target-language. English scaffolding cues ("Listen.
+  // … Don't say anything yet", "Now you — hi.") carry no synced caption, so a
+  // rhetorical pause at their period/em-dash is narration, not a dropout.
+  const inSpoken = (t) => man.lines.find((r) => r.kind === 'french' && r.audioAsset && r.durationSeconds <= 4.5 && t >= r.videoStart + 0.1 && t <= r.videoEnd - 0.1 && !/\.\.\.|…/.test(r.spokenText || ''));
   const w = (asr.words || []).filter((x) => x.end > x.start);
   for (let i = 1; i < w.length; i++) {
     const gap = w[i].start - w[i - 1].end;
