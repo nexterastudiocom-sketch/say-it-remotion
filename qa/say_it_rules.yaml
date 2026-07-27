@@ -82,12 +82,17 @@ timing:
     produce_meaning: 3.0
     produce_situation: 3.5
     produce_cold: 4.0
+  # Floors are the MINIMUM think-time on a production/question beat — the gap
+  # between the prompt and the answer. Short answers (a single word) are floor-
+  # bound, so these set how long the learner gets to produce before the reveal.
+  # Raised so questions give real answer time; multipliers unchanged so long
+  # sentences are governed by their length, not inflated.
   pause_floor:
     copy: 1.5
-    read_aloud: 2.0
-    produce_meaning: 2.5
-    produce_situation: 3.0
-    produce_cold: 3.5
+    read_aloud: 2.5
+    produce_meaning: 3.5
+    produce_situation: 4.0
+    produce_cold: 4.5
   en_instruction_max: 1.2
   note_pause: 1.2
   confirm_pause_range: [0.8, 1.2]
@@ -391,7 +396,13 @@ rules:
     gate: A
     severity: BLOCK
     title: "No on-screen French specified at L3 or above"
-    fix: "Remove the French from the visual directive. At L3+ the screen must not show the answer."
+    detail: >
+      Governs AUTHORED visual directives only. The runtime answer reveal — the
+      French word shown while it is being SPOKEN (the confirm/model) and held
+      through the post-reveal pause — is a renderer behaviour, not an on-screen
+      directive, and is not what this rule forbids. What L3+ must never show is
+      the answer as authored on-screen text during the retrieval gap itself.
+    fix: "Remove the French from the visual directive. At L3+ the screen must not show the answer before the learner has produced it."
 
   # ---------- VISUAL ----------
   - id: I-01
@@ -421,13 +432,18 @@ rules:
     layer: L3
     gate: B
     severity: BLOCK
-    title: "No French text is rendered on screen during any L3+ pause"
+    title: "No French text on screen during an L3+ retrieval gap (pre-answer)"
     method: ocr
     detail: >
-      Deterministic string containment, not judgment. Sample the frame at paus
-      e_mid, OCR it, lowercase and strip accents, then substring-match against
+      Deterministic string containment, not judgment. A retrieval gap is an L3+
+      pause the learner must produce into WITHOUT having just heard the French —
+      i.e. the nearest preceding voiced beat is English. Sample the frame at
+      pause_mid, OCR it, lowercase and strip accents, then substring-match against
       allowed_set(n). Any hit is a BLOCK. Do NOT use a vision model.
-    fix: "Clear all French text from the screen for the duration of this pause."
+      EXEMPT: a pause that FOLLOWS a French beat is the reveal/echo pause — the
+      answer was just spoken, so the word legitimately stays on screen. The
+      blackout guards recall-from-memory, not the reinforcement that follows it.
+    fix: "Clear all French text from the screen for the duration of the retrieval gap (before the answer is spoken)."
   - id: I-06
     layer: L0
     gate: A
@@ -497,6 +513,37 @@ rules:
     severity: WARN
     title: "The rendered frame for an item matches its registry image"
     fix: "Perceptual-hash the card region against the registry file."
+  - id: I-15
+    layer: L3
+    gate: B
+    method: vision
+    severity: WARN
+    title: "Instruction and word registers are visually distinct"
+    detail: >
+      Two registers, separable by STYLE and ZONE alone, independent of language:
+        • INSTRUCTION (what to do) — one static style (plain body font, grey,
+          smaller), one fixed zone (the band under the eyebrow). Never scales or
+          recolours. A target word quoted inside an instruction is lifted into
+          word styling (accent, bold) inline.
+        • WORD (the language to learn — the French word AND its English meaning) —
+          the prominent style (heavy display weight, accent colour for French /
+          near-ink for the meaning, large) in the centre hero zone.
+      The learner must always be able to tell, without reading, whether a line is
+      an instruction or a word.
+    fix: "Route the beat through the register matching its kind (instruction vs word/meaning); keep instructions in the static zone/style and words in the hero zone/style."
+  - id: I-16
+    layer: L3
+    gate: B
+    method: vision
+    severity: WARN
+    title: "The answer word is shown on screen when it is spoken (reveal)"
+    detail: >
+      Pairs with I-05. During the retrieval gap the word is hidden; the instant
+      the correct answer is SPOKEN (the confirm/model at L3+) the word appears in
+      the word register and is held through the post-reveal pause, so the learner
+      always sees the word they just heard. A blank screen at the moment of the
+      spoken answer is the defect.
+    fix: "Show the spoken French word in the word register while it is voiced and through the pause that follows it."
 
   # ---------- VOICE ----------
   - id: VO-01

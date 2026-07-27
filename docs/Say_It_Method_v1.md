@@ -147,9 +147,15 @@ The engine of the method. Every beat carries a support level.
 | **L0** | Yes | Word + phonetic + image + English | "Repeat after me" | Copy |
 | **L1** | Yes | Word only | "Repeat after me" | Copy |
 | **L2** | No | Word only | "Your turn" | Read aloud |
-| **L3** | No | None | English prompt | Produce from meaning |
-| **L4** | No | None | Situation described, target unnamed | Produce from context |
-| **L5** | No | None | Situation, timed, no word bank | Produce under pressure |
+| **L3** | No | None during recall · revealed on the spoken answer | English prompt | Produce from meaning |
+| **L4** | No | None during recall · revealed on the spoken answer | Situation described, target unnamed | Produce from context |
+| **L5** | No | None during recall · revealed on the spoken answer | Situation, timed, no word bank | Produce under pressure |
+
+> **The reveal.** "None" means *during the retrieval gap* — the silent pause where
+> the learner recalls unaided. The instant the correct answer is **spoken** (the
+> confirm/model), the word appears on screen in the word register and stays through
+> the short pause that follows, so the learner always sees the word they just
+> heard. The blackout guards recall-from-memory; it does not blank the reveal.
 
 ### 4.1 Ladder rules
 
@@ -169,9 +175,12 @@ X-04  Support never increases for an item WITHIN A LADDER.
       WARM_UP, COLD_INPUT, INPUT_RETURN and FLUENCY_ROUND are
       outside the ladders and exempt.
 X-05  Warm-up (stage 02) starts at L3 minimum — never re-teach.
-X-06  On-screen French is FORBIDDEN at L3 and above.
-      Displaying the answer during a retrieval pause destroys
-      the retrieval. This is the single most common render bug.
+X-06  On-screen French is FORBIDDEN at L3 and above DURING THE
+      RETRIEVAL GAP. Displaying the answer while the learner is
+      recalling destroys the retrieval — the single most common
+      render bug. The answer IS shown the instant it is spoken
+      (the reveal, see §4 "The reveal") and held through the pause
+      that follows; the ban is on pre-answer text, not the reveal.
 X-07  Chunk bars at L3+ display ENGLISH SLOT LABELS
       ([ greeting ][ person ][ courtesy ]), never the filled
       French. Below L3 they may show the French chunks.
@@ -181,6 +190,34 @@ X-07  Chunk bars at L3+ display ENGLISH SLOT LABELS
 ```
 
 X-06 is the rule most likely to be broken silently by the video pipeline, because a word card left on screen from a previous segment looks harmless. It isn't.
+
+### 4.2 Two registers on screen — instruction vs word
+
+Everything the learner sees belongs to exactly one of two **registers**, and the
+two must be separable by **style and screen zone alone**, without reading and
+regardless of which language the text happens to be in. A learner who cannot tell,
+at a glance, whether a line is telling them *what to do* or *giving them the
+language to learn* is being asked to parse instead of absorb.
+
+| | **Instruction register** | **Word register** |
+|---|---|---|
+| Carries | what to do / how to say it — "Listen", "Repeat after me", "Your turn", "Say it in French", pronunciation notes | the language itself — the **French word** and its **English meaning** |
+| Style | one **static** style: plain body font, grey, smaller. Never scales, never recolours. | **prominent**: heavy display weight, large — accent colour for the French word, near-ink for the English meaning |
+| Zone | a fixed band (under the eyebrow) | the centre hero zone |
+
+Two consequences:
+
+- **Language is not the signal — role is.** "hello / good morning" (the English
+  *meaning*) is a WORD, styled like one, in the word zone. "Say it in French" is an
+  INSTRUCTION even though it, too, is English. A target word **quoted inside** an
+  instruction — *Say "hello" in French* — is lifted into word styling (accent,
+  bold) inline, so the word is always the accent-coloured thing on screen.
+- **The reveal lives in the word register.** When the answer is spoken at L3+ (§4,
+  "The reveal"), it appears in the word zone in word styling — never as a line of
+  the instruction band.
+
+Enforced as I-15 (registers are distinct) and I-16 (the answer is shown on the
+spoken reveal); paired with I-05 (nothing shown during the recall gap).
 
 ---
 
@@ -281,7 +318,9 @@ Rule I-03 is why BUILD felt hollow in the v2 render. The learner was being told 
 
 ```
 syllables(text)  = count of vowel nuclei in the French text
-rate_factor      = { very_slow: 2.0, slow: 1.5, natural: 1.0, fast: 0.8 }
+rate_factor      = { very_slow: 2.0, slow: 1.82, natural: 1.33, fast: 1.18 }
+                   (French is delivered SLOWED for comprehension, so a syllable
+                    takes longer than at real speed — factor = 1 / fraction-of-real)
 
 est_audio(text, rate) = syllables(text) × 0.30s × rate_factor[rate]
 ```
@@ -296,13 +335,19 @@ P(beat):
   FR confirm beat            →  0.8 – 1.2s
 
   copy              (L0/L1)  →  max(1.5, 2.0 × est_audio)
-  read aloud        (L2)     →  max(2.0, 2.5 × est_audio)
-  produce_meaning   (L3)     →  max(2.5, 3.0 × est_audio)
-  produce_situation (L4)     →  max(3.0, 3.5 × est_audio)
-  produce_cold      (L5)     →  max(3.5, 4.0 × est_audio)
+  read aloud        (L2)     →  max(2.5, 2.5 × est_audio)
+  produce_meaning   (L3)     →  max(3.5, 3.0 × est_audio)
+  produce_situation (L4)     →  max(4.0, 3.5 × est_audio)
+  produce_cold      (L5)     →  max(4.5, 4.0 × est_audio)
   written production         →  12s
   fluency pass 1/2/3         →  3.0× / 2.0× / 1.4× est_audio
 ```
+
+The **floor** is the minimum think-time on a question — the gap between an
+instruction/prompt and the answer. Short answers (a single word) are floor-bound,
+so the floors govern how long the learner gets to produce before the reveal; they
+were raised (from 2.0 / 2.5 / 3.0 / 3.5) so a question gives real answer time. The
+multipliers are unchanged, so a long target is still paced by its own length.
 
 ### 7.3 Pause rules
 
@@ -437,9 +482,12 @@ I-01  Every MEET has a word card: item + phonetic + illustration.
 I-02  Every syllable-split beat has a split-syllable visual.
 I-03  Every BUILD step has a chunk bar with the changed chunk marked.
 I-04  Every production pause shows a mic indicator.
-I-05  L3+ beats show NO French text. (= X-06)
+I-05  L3+ retrieval gaps show NO French text (= X-06). The word
+      IS shown on the spoken reveal and held through the pause after.
 I-06  Every MAKE IT YOURS shows a scene illustration + word bank.
       The word bank lists ENGLISH glosses, not French.
+I-15  Instruction and word registers are visually distinct (§4.2).
+I-16  The answer word is shown on screen when it is spoken (reveal).
 ```
 
 ---
@@ -556,7 +604,7 @@ Machine-checkable. Every rule has an ID, a layer, and a severity.
 | X-04 | Support monotonically decreases per item, per ladder | BLOCK |
 | X-07 | Chunk bars at L3+ show English slot labels, not French | BLOCK |
 | X-05 | Warm-up beats are L3+ | BLOCK |
-| X-06 | No on-screen French at L3+ | BLOCK |
+| X-06 | No on-screen French at L3+ during the retrieval gap (reveal exempt) | BLOCK |
 
 ### Visual (I)
 
@@ -566,8 +614,10 @@ Machine-checkable. Every rule has an ID, a layer, and a severity.
 | I-02 | Every syllable-split has a split visual | WARN |
 | I-03 | Every build step has a chunk bar with the change marked | BLOCK |
 | I-04 | Every production pause shows a mic indicator | WARN |
-| I-05 | No French text rendered during L3+ pauses | BLOCK |
+| I-05 | No French text during an L3+ retrieval gap (reveal/echo pause exempt) | BLOCK |
 | I-06 | Word banks list English, not French | BLOCK |
+| I-15 | Instruction and word registers are visually distinct | WARN |
+| I-16 | The answer word is shown on screen when it is spoken (reveal) | WARN |
 
 ### Voice (VO)
 

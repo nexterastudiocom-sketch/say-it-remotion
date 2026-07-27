@@ -117,7 +117,7 @@ Without it, `allowed_set` collapses to the current lesson's own items, and V-01 
 
 **Rate (R-01 … R-05)** — every FR beat carries an explicit rate; first utterance of any new item is slow or very_slow; syllable splits are very_slow; no natural rate before the third exposure; rate monotonic within an item. Cold input and input return are exempt — connected input is heard at natural speed by design.
 
-**Support ladder (X-01 … X-07)** — every item reaches L3; 30% reach L4; at least one L5 beat; monotonic support within each ladder; warm-up at L3+; no French on screen at L3+; chunk bars at L3+ show English slot labels.
+**Support ladder (X-01 … X-07)** — every item reaches L3; 30% reach L4; at least one L5 beat; monotonic support within each ladder; warm-up at L3+; no French on screen at L3+ *during the retrieval gap* (the spoken reveal is shown); chunk bars at L3+ show English slot labels.
 
 **Visual authoring (I-01 … I-04, I-06)** — every MEET has a word card; every split has a split visual; every build step has a chunk bar that *marks the change*; every production pause has a mic indicator; word banks list English.
 
@@ -139,9 +139,10 @@ Transcribe the render, align to the transcript, then check three things the tran
 
 `--emit-vision-rubric` writes a cue-point file: timestamp, the beat's text, its support level, and the specific questions to ask a vision model at that frame. Sample the frame at `pause_mid` for retrieval checks and at `t_mid` for directive checks.
 
-- **I-05** — *"Is any French word or phrase visible anywhere on screen?"* asked at every L3+ pause. Fail if yes. This is the highest-value check in the whole system and the one most likely to fail silently, because a word card left up from the previous segment looks completely normal in a thumbnail.
+- **I-05** — *"Is any French word or phrase visible anywhere on screen?"* asked at every L3+ **retrieval gap** — a pause the learner produces into without having just heard the French (the nearest preceding voiced beat is English). Fail if yes. A pause that *follows* a French beat is the reveal/echo pause and is **exempt** — the answer was just spoken, so the word legitimately stays up. This is the highest-value check in the system and the one most likely to fail silently, because a word card left up from a previous segment looks completely normal in a thumbnail.
 - **I-07** — does the frame match its 🖼 directive?
 - **I-08** — is the progress indicator present and monotonically increasing?
+- **I-15 / I-16** — are the instruction and word registers visually distinct (§4.2 of the Method), and is the answer word shown on screen the moment it is spoken (the reveal)?
 
 ### L4 — Pedagogical aggregates
 

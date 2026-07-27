@@ -1,9 +1,16 @@
 #!/usr/bin/env node
-// GATE B · I-05 (L3) — NO French on screen during an L3+ retrieval pause. Standalone.
+// GATE B · I-05 (L3) — NO French on screen during an L3+ retrieval GAP. Standalone.
 //   node scripts/qa/gate-b-i05.mjs <video-id>
-// Highest-consequence check. For each pause whose beat is L3+, sample the frame
-// at pause_mid, OCR it (rapidocr), lowercase + strip accents, and substring-match
-// against allowed_set(n). ANY hit = BLOCK. Deterministic containment, not a model.
+// Highest-consequence check. For each L3+ pause that is a RETRIEVAL GAP — one the
+// learner must produce into WITHOUT having just heard the French (the nearest
+// preceding voiced beat is English) — sample the frame at pause_mid, OCR it
+// (rapidocr), lowercase + strip accents, and substring-match against
+// allowed_set(n). ANY hit = BLOCK. Deterministic containment, not a model.
+//
+// A pause that FOLLOWS a French beat is a post-reveal / echo pause: the answer has
+// just been spoken, so the word legitimately stays on screen (the reveal). Those
+// are NOT retrieval gaps and are not checked — the blackout guards recall-from-
+// memory, not the reinforcement that follows it.
 import { existsSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { paths, readJson, run, ffmpegStatic, REMOTION, ROOT } from './lib.mjs';
@@ -18,15 +25,19 @@ const Y = await rules();
 const man = await readJson(P.manifest);
 const allowed = [...await allowedSet(id)].map((s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')).filter((s) => s.length >= 2);
 
-// L3+ retrieval pauses: a pause beat whose own or preceding beat is level >= 3.
+// L3+ retrieval GAPS: a pause beat, level >= 3, whose nearest preceding VOICED
+// beat is English (an instruction/prompt). A pause after a French beat is the
+// post-reveal pause — the word may stay — so it is excluded.
 const events = [];
 for (let i = 0; i < man.lines.length; i++) {
   const r = man.lines[i];
   if (r.kind !== 'pause' || r.durationSeconds < 1.0) continue;
   const lvl = r.supportLevel ?? man.lines[i - 1]?.supportLevel ?? -1;
-  if (lvl >= 3 && r.pauseMid != null) events.push({ mid: r.pauseMid, line: r.sourceLine, lvl });
+  let p = i - 1; while (p >= 0 && man.lines[p].kind === 'pause') p--;
+  const afterFrench = p >= 0 && man.lines[p].kind === 'french';
+  if (lvl >= 3 && r.pauseMid != null && !afterFrench) events.push({ mid: r.pauseMid, line: r.sourceLine, lvl });
 }
-if (!events.length) { console.log('GATE B · I-05 — 0 L3+ pauses (needs Method-grammar [Ln] tags)'); await merge(id, ['I-05'], []); process.exit(0); }
+if (!events.length) { console.log('GATE B · I-05 — 0 L3+ retrieval gaps (needs Method-grammar [Ln] tags)'); await merge(id, ['I-05'], []); process.exit(0); }
 
 const ff = ffmpegStatic() || REMOTION; const ffPre = ff === REMOTION ? ['ffmpeg'] : [];
 const dir = path.join(ROOT, `build/${id}/frames-i05`); mkdirSync(dir, { recursive: true });

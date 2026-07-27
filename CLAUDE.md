@@ -8,7 +8,7 @@ Lessons are built to the **Say It Method** and gated by a two-gate QA system.
 - **`docs/Say_It_Method_v1.md`** — the method: 12 stages, Core/Build loops, support
   ladder (L0–L5), `P(beat)` pauses, rate algorithm, voice pairs, density.
 - **`docs/Say_It_QA_System_v1.md`** — the 5 layers + the **transcript grammar (Part II)**.
-- **`qa/say_it_rules.yaml`** — the 69-rule registry (the source of truth for checks).
+- **`qa/say_it_rules.yaml`** — the 77-rule registry (the source of truth for checks).
 - **`lessons/golden/lesson_01.md`** — the **reference example**. New lessons match its shape.
 
 ## Authoring a lesson (the loop — non-negotiable)
@@ -34,14 +34,17 @@ structure + P(beat) templated) — the pattern to reuse for new lessons.
   All 55 L0/L4 rules from the transcript. Exit 1 on any BLOCK.
 - **Gate B** (post-render) — `scripts/qa/gate-b.mjs` (+ standalone per-rule scripts).
   14 rules on the rendered mp4: technical (T), P-07, R-06, **I-05** (OCR — no French
-  during L3+ pauses, the highest-consequence check), S-08, I-08; I-07 uses the one
-  vision pass. Reads `build/<id>/manifest.json` for exact per-beat timing + tags.
+  during L3+ retrieval gaps — the reveal/echo pause after a spoken French answer is
+  exempt — the highest-consequence check), S-08, I-08; I-07 uses the one vision pass.
+  Reads `build/<id>/manifest.json` for exact per-beat timing + tags.
 
 ## Non-negotiables (also enforced by the gates)
 
 - FR voices say only `allowed_set(n)` (V-01) and **no filler** — bravo/voilà/parfait
   etc. are forbidden unless taught (V-02).
-- No on-screen French at L3+ (X-06/I-05). New-item first utterance is slow (R-01).
+- No on-screen French at L3+ *during the retrieval gap* (X-06/I-05); the word is
+  shown on the spoken reveal (I-16). Instruction vs word registers stay distinct
+  (I-15). New-item first utterance is slow (R-01).
 - Every item reaches L3, ≥1 beat at L5, monotonic support per ladder (X rules).
 - COLD_INPUT and INPUT_RETURN are the identical audio (S-08).
 
