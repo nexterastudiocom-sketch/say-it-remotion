@@ -6,6 +6,7 @@ import { LanguageCode, Lesson } from './deck/types';
 import { getSampleLesson } from './sampleLesson';
 import lesson01Fr from './data/lessons/lesson-01.fr.json';
 import lesson01FrTest from './data/lessons/lesson-01.fr.test.json';
+import lesson01Method from './data/lessons/lesson-01.method.json';
 import { LogoMotion } from './deck/LogoMotion';
 import { SubscribeMotion } from './deck/SubscribeMotion';
 import { Thumbnail, THUMB_W, THUMB_H } from './deck/Thumbnail';
@@ -88,6 +89,23 @@ export const RemotionRoot: React.FC = () => (
           calculateMetadata={({ props }) => ({
             durationInFrames: getFilmDurationInFrames(props.lesson as unknown as Lesson),
           })}
+        />
+      );
+    })()}
+
+    {/* Say It Method lesson (12 stages), baked from a workbook via the generator. */}
+    {(() => {
+      const lesson = lesson01Method as unknown as Lesson;
+      return (
+        <Composition
+          id="Lesson-01-Method"
+          component={LessonFilm}
+          fps={FPS}
+          width={3840}
+          height={2160}
+          durationInFrames={getFilmDurationInFrames(lesson)}
+          defaultProps={{ lesson }}
+          calculateMetadata={({ props }) => ({ durationInFrames: getFilmDurationInFrames(props.lesson as unknown as Lesson) })}
         />
       );
     })()}

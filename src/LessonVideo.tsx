@@ -14,6 +14,7 @@ import { YourTurnSlide } from './deck/slides/YourTurnSlide';
 import { ModelSlide } from './deck/slides/ModelSlide';
 import { RecapSlide } from './deck/slides/RecapSlide';
 import { PracticeSlide } from './deck/slides/PracticeSlide';
+import { MethodSlide } from './deck/slides/MethodSlide';
 import { ScoreSlide } from './deck/slides/ScoreSlide';
 import { FPS, getLessonDurationInFrames, Lesson, Overlay, Slide } from './deck/types';
 
@@ -52,6 +53,8 @@ const computePhaseSpans = (slides: Slide[]): PhaseSpan[] => {
 };
 
 const renderSlide = (slide: Slide, lesson: Lesson): React.ReactNode => {
+  // Say It Method slides carry a `stage` — one generic X-06-aware component.
+  if ((slide as { stage?: string }).stage) return <MethodSlide slide={slide as never} />;
   switch (slide.type) {
     case 'title':
       return <TitleSlide slide={slide} />;
