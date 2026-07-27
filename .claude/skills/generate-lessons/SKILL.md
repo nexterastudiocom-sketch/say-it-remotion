@@ -5,10 +5,36 @@ description: Run the resumable Say It lesson→video generation loop — inspect
 
 # Generate Say It lessons
 
-A resumable loop that turns the **authoritative curriculum** into a graded 4K
-lesson video: read source → plan → script/audio/images → render → thumbnail →
-**objective QC** → repair only what failed → manifest + report. It reuses the
-existing proven scripts; it does not reimplement them.
+A resumable loop that turns the **authoritative Excel curriculum** into a graded 4K
+lesson video through the **Method pipeline**:
+
+  Excel workbook → `author-from-excel` → **Gate A** (77-rule registry, say_it_qc)
+  → images (registry → generate LOCKED style → auto-approve) → `build-method-lesson`
+  (v2 FR audio, register, pauses) → render **Lesson-01-Method** (4K) → normalize
+  → **Gate B** (I-05, R-06, S-08, T-*, I-08, pronunciation) → report/publish.
+
+It reuses the proven Method scripts; it does not reimplement them.
+
+## Unattended policies (`config/pipeline.json → method`)
+
+The loop is **hands-off by default** — it never asks; it either completes or parks a
+lesson in `needs-review` with a reason. Flip any policy to add a human gate:
+
+- `warnPolicy: "proceed-report"` — Gate A/B **WARNs** are logged and the lesson
+  finishes as `completed-with-warnings` (set `halt-needs-review` to stop on any WARN).
+- `imageApproval: "auto"` — freshly generated images are marked `approved` (I-11), the
+  locked style is trusted (set `human` to stop at the contact sheet).
+- `gateABlock: "needs-review"` — a Gate A **BLOCK** is a real source problem; the
+  curriculum is authoritative, so the lesson halts (never auto-fabricated).
+- `visionChecks: "skip-unverified"` — I-07/I-15/I-16 are reported UNVERIFIED (no vision
+  backend in an unattended run), never a false pass.
+
+## Excel requirement (so the loop stays hands-off)
+
+For a clean unattended run the workbook must be complete — most critically an
+**`image_brief` column with a FULL SCENE description per item** (setting / who / action
+/ mood, ≥8 words). `generate.mjs` refuses stub briefs, and registry falls back to the
+gloss, so a missing `image_brief` → the lesson lands in `needs-review` (by design).
 
 ## Golden rules (do not violate)
 
@@ -125,5 +151,7 @@ seeded directly through the Drive tools in a Claude session.)
 - Validators (ffprobe/ffmpeg): `scripts/pipeline/validate.mjs`
 - Shared lib (status store, retries, hashing, logging): `scripts/pipeline/lib.mjs`
 - Runtime state: `pipeline/status|reports|manifests|logs/` (git-ignored)
-- Sources: `curriculum/<id>.sent.md` → `src/data/scripts/<id>.json` → `src/data/lessons/<id>.fr.json`
-- Outputs: `out/films/<id>-fr-final.mp4`, `public/assets/covers/<id>.png`
+- Sources: `curriculum/<id>.xlsx` → `lessons/<id>.md` → `src/data/lessons/<id>.method.json`
+  (a hand-authored `lessons/<id>.md` also works with no workbook)
+- QA: Gate A `scripts/qa/gate-a.mjs` (registry `qa/say_it_rules.yaml`) · Gate B `scripts/qa/gate-b.mjs`
+- Outputs: `out/films/<id>-method-final.mp4`, `public/assets/covers/<id>.png`

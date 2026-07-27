@@ -14,9 +14,10 @@
 //   status   [id]        Print the persistent queue/status.
 //   approve  <id>        Human sign-off gate: mark a passing lesson 'approved' for publish.
 //
-// Generation steps SHELL OUT to the existing, proven scripts (parse-sent →
-// build-from-script → generate-images → remotion render → remotion still). This
-// script owns orchestration, validation, retries, resumability, and reporting.
+// Generation steps SHELL OUT to the proven METHOD scripts (author-from-excel →
+// gate-a → images(registry/generate/approve) → build-method-lesson → remotion
+// render Lesson-01-Method → normalize → still). This script owns orchestration,
+// validation (Gate A + Gate B), retries, resumability, policies, and reporting.
 //
 // SAFETY: costly modes (one/range/resume/repair) require --yes, or they stop and
 // print the cost estimate. Nothing publishes to YouTube — 'approve' is the human gate.
@@ -46,38 +47,59 @@ function lessonRef(num) {
   const id = `lesson-${String(num).padStart(2, '0')}`;
   return {
     id, num,
-    sentMd: `curriculum/${id}.sent.md`,
-    scriptJson: `src/data/scripts/${id}.json`,
-    lessonJson: `src/data/lessons/${id}.fr.json`,
-    scenes: `src/data/scenes/${id}.json`,
-    composition: 'Lesson-01-FR', // any lesson renders here; duration scales via calculateMetadata
-    videoPath: `out/films/${id}-fr-final.mp4`,
+    workbook: `curriculum/${id}.xlsx`,             // authoritative Excel source (the Method input)
+    transcript: `lessons/${id}.md`,                // author-from-excel output (Method grammar)
+    lessonJson: `src/data/lessons/${id}.method.json`,
+    composition: 'Lesson-01-Method',              // any Method lesson renders here (calculateMetadata)
+    videoPath: `out/films/${id}-method-final.mp4`,
     coverPath: `public/assets/covers/${id}.png`,
   };
 }
-// The 'Lesson-01-FR' composition has calculateMetadata (Root.tsx), so passing a
-// baked lesson JSON via --props renders it at its OWN length — any lesson, any
-// duration, no truncation. That's why a single composition serves all lessons.
+// 'Lesson-01-Method' has calculateMetadata (Root.tsx), so passing a baked Method
+// lesson JSON via --props renders it at its OWN length — any lesson, any duration.
 
 async function discoverLessons() {
-  // Authoritative grouping comes from the workbook Lesson Map; for the foundation
-  // we enumerate lessons that actually have a transcript source on disk.
+  // A lesson is in play once its Excel workbook OR an authored transcript exists on
+  // disk. Never fabricated — no source, not discovered.
   const found = [];
   for (let n = 1; n <= 30; n++) {
     const r = lessonRef(n);
-    if (existsSync(path.join(ROOT, r.sentMd)) || existsSync(path.join(ROOT, r.scriptJson))) found.push(r);
+    if (existsSync(path.join(ROOT, r.workbook)) || existsSync(path.join(ROOT, r.transcript))) found.push(r);
   }
   return found;
+}
+
+// imageApproval=auto: the locked style is trusted, so mark every freshly-generated
+// registry image 'approved' (I-11) instead of stopping at a human contact sheet.
+async function approveImages() {
+  const regPath = path.join(ROOT, 'assets/images/registry.json');
+  if (!existsSync(regPath)) return 0;
+  const reg = JSON.parse(await readFile(path.join(ROOT, 'assets/images/registry.json'), 'utf8'));
+  let n = 0;
+  for (const grp of ['items', 'scenes']) for (const e of Object.values(reg[grp] || {})) if (e.status === 'generated') { e.status = 'approved'; e.approved_at = nowISO(); n++; }
+  const { writeFile: wf } = await import('node:fs/promises');
+  await wf(path.join(ROOT, 'assets/images/registry.json'), JSON.stringify(reg, null, 2) + '\n');
+  return n;
 }
 
 // =============================== validation ================================
 async function runValidations(ref, cfg, { final }) {
   const checks = [];
-  checks.push(...await V.validateSource(ref));
-  checks.push(...await V.validateAudioClips(ref, cfg));
-  checks.push(...await V.validateSync(ref, cfg));
-  checks.push(...await V.validatePronunciation(ref, cfg));
-  if (final) checks.push(...await V.validateFinal({ videoPath: ref.videoPath }, cfg));
+  const hasTranscript = existsSync(path.join(ROOT, ref.transcript));
+  checks.push(hasTranscript
+    ? { name: 'sourceValid', ok: true, status: 'pass', hardGate: true, detail: ref.transcript }
+    : { name: 'sourceValid', ok: false, status: 'needs-review', hardGate: true, detail: `no transcript ${ref.transcript}` });
+  if (final) {
+    // Technical gates (probe the real file) + the Method two-gate QA (A refresh + B on the render).
+    checks.push(...await V.validateFinal({ videoPath: ref.videoPath }, cfg));
+    checks.push(...await V.validateMethodGateB({ id: ref.id, videoPath: ref.videoPath }, cfg));
+  } else if (hasTranscript) {
+    // No render yet — run Gate A alone so `validate` still reports pre-render blocks.
+    const ga = await run('node', ['scripts/qa/gate-a.mjs', ref.id]);
+    checks.push(ga.code === 0
+      ? { name: 'gateA', ok: true, status: 'pass', hardGate: true, detail: 'no blocks' }
+      : { name: 'gateA', ok: false, status: 'fail', hardGate: true, detail: `Gate A blocks — see qa/${ref.id}.json` });
+  }
   return checks;
 }
 
@@ -113,58 +135,71 @@ async function step(name, fn, { dry }) {
 
 async function generateLesson(ref, cfg, { dry }) {
   const setStatus = (patch) => (dry ? null : writeStatus(ref.id, patch));
+  const strict = (cfg.method?.imageApproval || 'auto') === 'auto';
   await setStatus({ status: 'planning' });
 
-  // 1. parse transcript → script JSON (cheap, deterministic, no API)
-  await step('parse transcript', async () => {
-    const r = await run('node', ['scripts/parse-sent.mjs', ref.sentMd, ref.id]);
-    return { ok: r.code === 0, detail: r.code === 0 ? 'parsed' : r.stderr.trim() };
+  // 1. Excel → Method-grammar transcript (deterministic, no API). If there's no
+  //    workbook but a transcript already exists (hand-authored / prior run), use it.
+  await step('author transcript from Excel', async () => {
+    const hasWb = existsSync(path.join(ROOT, ref.workbook));
+    if (!hasWb) {
+      if (existsSync(path.join(ROOT, ref.transcript))) return { ok: true, detail: 'no workbook — using existing transcript' };
+      throw new Error(`no source: neither ${ref.workbook} nor ${ref.transcript}`);
+    }
+    const r = await run('node', ['scripts/author-from-excel.mjs', ref.workbook]);
+    return { ok: r.code === 0, detail: r.code === 0 ? 'authored' : r.stderr.trim() };
   }, { dry });
 
-  // 2. audio + bake timeline (COSTS ElevenLabs $) — retried with backoff
+  // 2. GATE A (pre-render) — the 77-rule registry via say_it_qc. A BLOCK is a real
+  //    source problem; the curriculum is authoritative, so we HALT (never fabricate).
+  //    WARNs are logged by Gate B validation, not blocking (config.method.warnPolicy).
+  await step('gate A (pre-render, 77 rules)', async () => {
+    const r = await run('node', ['scripts/qa/gate-a.mjs', ref.id]);
+    if (r.code !== 0) throw new Error(`Gate A BLOCK — see qa/${ref.id}.json (halting to needs-review)`);
+    return { ok: true, detail: 'no blocks' };
+  }, { dry });
+
+  // 3. images — registry from the workbook → generate the LOCKED style (scene briefs
+  //    come from the Excel image_brief column; a stub trips the ≥8-word guard and
+  //    surfaces as a failure) → AUTO-APPROVE (imageApproval=auto). Known items (I-10)
+  //    are reused, so usually only new items + this lesson's scenes generate.
+  await setStatus({ status: 'generating-images' });
+  await step('images (registry → generate → approve)', () => withRetry(async () => {
+    const reg = await run('node', ['scripts/images/registry.mjs', ref.workbook]);
+    if (reg.code !== 0) throw new Error('registry: ' + reg.stderr.trim());
+    const gen = await run('node', ['--env-file=.env', 'scripts/images/generate.mjs']);
+    if (gen.code !== 0) throw new Error('generate: ' + (gen.stderr.trim().split('\n').slice(-2).join(' ') || gen.stdout.trim().split('\n').slice(-2).join(' ')));
+    const approved = strict ? await approveImages() : 0;
+    return { ok: true, detail: strict ? `generated + ${approved} approved` : 'generated (awaiting human approval)' };
+  }, { tries: cfg.retries.perAsset, ...cfg.retries }, (i, e, d) => log(ref.id, 'retry-images', { i, msg: e.message, backoffMs: d })), { dry });
+
+  // 4. audio + bake timeline (COSTS ElevenLabs $; disk-cached clips reused) → .method.json.
+  //    SAYIT_IMAGES_STRICT ties the bake to approved-only images (I-11) when auto-approving.
   await setStatus({ status: 'generating-audio' });
-  await step('build audio + timeline', () => withRetry(async () => {
-    const r = await run('node', ['--env-file=.env', 'scripts/build-from-script.mjs'],
-      { env: { ...process.env } });
-    if (r.code !== 0) throw new Error(r.stderr.trim() || 'build-from-script failed');
+  await step('build audio + timeline (method)', () => withRetry(async () => {
+    const r = await run('node', ['--env-file=.env', 'scripts/build-method-lesson.mjs', ref.id],
+      { env: { ...process.env, SAYIT_IMAGES_STRICT: strict ? '1' : '0' } });
+    if (r.code !== 0) throw new Error(r.stderr.trim().split('\n').slice(-2).join(' ') || 'build-method-lesson failed');
     return { ok: true, detail: 'baked' };
   }, { tries: cfg.retries.perAsset, ...cfg.retries }, (i, e, d) => log(ref.id, 'retry-audio', { i, msg: e.message, backoffMs: d })), { dry });
 
-  // 2b. QA GATE A (pre-render) — emit build/<id>/manifest.json, then curriculum-check.
-  // Blocks the render on a HIGH-severity finding. This is the only QA touch to the loop.
-  await step('qa gate A (manifest + curriculum)', async () => {
-    const m = await run('node', ['scripts/qa/manifest.mjs', ref.id]);
-    if (m.code !== 0) throw new Error('manifest emit failed: ' + m.stderr.trim());
-    const g = await run('node', ['scripts/qa/gate-a-curriculum.mjs', ref.id]);
-    if (g.code === 3) throw new Error(`Gate A found HIGH-severity curriculum issues — render blocked. See qa/${ref.id}.json`);
-    return { ok: true, detail: 'manifest emitted, curriculum ok' };
-  }, { dry });
-
-  // 3. images (COSTS Recraft $) — only if scenes exist; otherwise reuse locked images
-  await setStatus({ status: 'generating-images' });
-  await step('generate images', async () => {
-    if (!existsSync(path.join(ROOT, ref.scenes))) return { ok: true, detail: 'no scenes file — reusing locked images' };
-    const r = await run('node', ['--env-file=.env', 'scripts/generate-images.mjs', ref.id]);
-    return { ok: r.code === 0, detail: r.code === 0 ? 'generated' : r.stderr.trim() };
-  }, { dry });
-
-  // 4. render (CPU-heavy) — pass the baked lesson JSON as props → raw file
+  // 5. render 4K (CPU-heavy) — the baked Method lesson JSON as props → raw file
   await setStatus({ status: 'rendering' });
   const rawPath = ref.videoPath.replace(/\.mp4$/, '.raw.mp4');
-  await step('render video', () => withRetry(async () => {
+  await step('render video (4K)', () => withRetry(async () => {
     const r = await run(REMOTION, ['render', 'src/index.ts', ref.composition, rawPath,
       `--props=${JSON.stringify({ lesson: JSON.parse(await readFile(path.join(ROOT, ref.lessonJson), 'utf8')) })}`]);
     if (r.code !== 0) throw new Error(r.stderr.trim().split('\n').slice(-3).join(' '));
     return { ok: true, detail: rawPath };
   }, { tries: cfg.retries.perLesson, ...cfg.retries }, (i, e) => log(ref.id, 'retry-render', { i, msg: e.message })), { dry });
 
-  // 4b. normalize loudness to the target LUFS → the final file (audio-only re-encode)
+  // 5b. normalize loudness to the target LUFS → the final file (audio-only re-encode)
   await step('normalize loudness', async () => {
     const { before, target } = await normalizeLoudness(path.join(ROOT, rawPath), path.join(ROOT, ref.videoPath), cfg);
     return { ok: true, detail: `${before} → ${target} LUFS` };
   }, { dry });
 
-  // 5. thumbnail (cheap still)
+  // 6. thumbnail (cheap still)
   await step('render thumbnail', async () => {
     const r = await run(REMOTION, ['still', 'src/index.ts', 'Thumbnail', ref.coverPath]);
     return { ok: r.code === 0, detail: r.code === 0 ? ref.coverPath : r.stderr.trim() };
@@ -183,7 +218,11 @@ async function processLesson(ref, cfg, { dry }) {
     await generateLesson(ref, cfg, { dry });
     report = await validateLesson(ref, cfg, { final: true });
     if (report.summary.status === 'pass') {
-      await writeStatus(ref.id, { status: 'completed' });
+      // All hard gates pass. Surface non-blocking WARNs (warnPolicy=proceed-report)
+      // as 'completed-with-warnings' so they're visible in status without stopping.
+      const wc = report.checks.find((c) => c.name === 'methodWarnings');
+      const withWarns = wc && /\d+ WARN/.test(wc.detail || '') && !/no warnings/.test(wc.detail || '');
+      await writeStatus(ref.id, { status: withWarns ? 'completed-with-warnings' : 'completed' });
       if (!flags.has('--no-publish')) await publishLesson(ref, { dry: false }).catch((e) => console.log('  ⚠ publish error:', e.message));
       break;
     }
@@ -192,8 +231,8 @@ async function processLesson(ref, cfg, { dry }) {
     if (attempt > cfg.retries.perLesson) { await writeStatus(ref.id, { status: 'needs-review', reason: 'retries exhausted' }); }
   }
   await writeManifest(ref.id, {
-    lessonId: ref.id, generatedAt: nowISO(), sources: { sentMd: ref.sentMd, scriptJson: ref.scriptJson },
-    sourceHash: await hashFiles([ref.sentMd, ref.scriptJson]),
+    lessonId: ref.id, generatedAt: nowISO(), sources: { workbook: ref.workbook, transcript: ref.transcript },
+    sourceHash: await hashFiles([ref.workbook, ref.transcript]),
     outputs: { video: ref.videoPath, cover: ref.coverPath, lessonJson: ref.lessonJson },
     report: `pipeline/reports/${ref.id}.report.json`,
     finalStatus: (await readStatus(ref.id))?.status,
@@ -272,7 +311,7 @@ async function main() {
     console.log(`\nDiscovered ${lessons.length} lesson source(s):`);
     for (const r of lessons) {
       const st = await readStatus(r.id);
-      const src = existsSync(path.join(ROOT, r.sentMd)) ? 'transcript' : 'script-json';
+      const src = existsSync(path.join(ROOT, r.workbook)) ? 'excel' : 'transcript';
       console.log(`  · ${r.id}  [${src}]  status=${st?.status || 'unstarted'}  video=${existsSync(path.join(ROOT, r.videoPath)) ? 'present' : '—'}`);
     }
     console.log(`\nModes: validate <id> · dry-run <id> · one <id> --yes · range <a> <b> --yes · resume --yes · repair <id> --yes · publish <id> · status · approve <id>\n`);
@@ -299,7 +338,7 @@ async function main() {
     const ref = lessonRef(Number(String(pos[0] || '1').replace(/\D/g, '')) || 1);
     console.log(`\nDRY-RUN ${ref.id} — steps that WOULD run (no generation):`);
     await processLesson(ref, cfg, { dry: true });
-    console.log(`\nSources expected:\n  ${ref.sentMd}\n  → ${ref.scriptJson} → ${ref.lessonJson}\nOutputs:\n  ${ref.videoPath}\n  ${ref.coverPath}\n`);
+    console.log(`\nSource expected:\n  ${ref.workbook}  →  ${ref.transcript}  →  ${ref.lessonJson}\nOutputs:\n  ${ref.videoPath}\n  ${ref.coverPath}\n`);
     return;
   }
 
@@ -332,7 +371,7 @@ async function main() {
     if (!costGuard(`generate lessons ${a}–${b}`)) return;
     for (let n = a; n <= b; n++) {
       const ref = lessonRef(n);
-      if (!existsSync(path.join(ROOT, ref.sentMd)) && !existsSync(path.join(ROOT, ref.scriptJson))) { console.log(`  skip ${ref.id} (no source)`); continue; }
+      if (!existsSync(path.join(ROOT, ref.workbook)) && !existsSync(path.join(ROOT, ref.transcript))) { console.log(`  skip ${ref.id} (no source)`); continue; }
       const res = await processLesson(ref, cfg, { dry: false });
       if (cfg.failurePolicy !== 'continue' && res.report?.summary.status === 'fail') break;
     }
@@ -343,7 +382,7 @@ async function main() {
     const pending = [];
     for (const r of lessons) {
       const st = await readStatus(r.id);
-      if (!st || !['completed', 'approved'].includes(st.status)) pending.push(r);
+      if (!st || !['completed', 'completed-with-warnings', 'approved'].includes(st.status)) pending.push(r);
     }
     if (!pending.length) { console.log('Nothing to resume — all discovered lessons are completed/approved.'); return; }
     console.log(`Resuming ${pending.length}: ${pending.map((r) => r.id).join(', ')}`);
@@ -373,7 +412,7 @@ async function main() {
     const ref = lessonRef(Number(String(pos[0] || '').replace(/\D/g, '')) || 0);
     const st = await readStatus(ref.id);
     if (!st) { console.error(`No status for ${ref.id}.`); process.exit(1); }
-    if (st.status !== 'completed') { console.error(`${ref.id} is '${st.status}', not 'completed'. Only a fully-passing lesson can be approved.`); process.exit(1); }
+    if (!['completed', 'completed-with-warnings'].includes(st.status)) { console.error(`${ref.id} is '${st.status}', not completed. Only a fully-passing lesson can be approved.`); process.exit(1); }
     await writeStatus(ref.id, { status: 'approved', approvedAt: nowISO() });
     console.log(`✓ ${ref.id} approved for publish. (Publishing itself remains a manual, human step — this loop never uploads to YouTube.)`);
     return;

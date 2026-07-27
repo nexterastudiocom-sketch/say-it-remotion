@@ -42,7 +42,20 @@
     "why": "auto = transcribe each FR clip and match it to the intended card text WHEN an STT backend is available (OPENAI_API_KEY, openai-whisper, or whisper.cpp). With no backend the gate is needs-review — UNVERIFIED, never a false pass. Set false to skip entirely; true to require a backend." },
 
   "hardGates": ["sourceValid", "assetsPresent", "renderOk", "duration", "resolution", "fps",
-    "vcodec", "acodec", "audioPresent", "noBlackFrames", "loudness", "sync", "pronunciationVerified"],
+    "vcodec", "acodec", "audioPresent", "noBlackFrames", "loudness", "sync", "pronunciationVerified",
+    "gateA", "gateBBlocks"],
+
+  "method": {
+    "note": "Policies for the UNATTENDED Method loop (Excel → graded video). Defaults are hands-off: the loop never asks, it either completes or parks a lesson in needs-review with a reason. Flip any of these to tighten the human gates.",
+    "warnPolicy": "proceed-report",
+    "warnPolicyOptions": "proceed-report = log Gate A/B WARNs and continue (lesson lands 'completed-with-warnings'); halt-needs-review = any WARN stops the lesson for a human.",
+    "imageApproval": "auto",
+    "imageApprovalOptions": "auto = the loop marks generated images approved (the locked style is trusted); human = stop at the contact sheet for sign-off.",
+    "gateABlock": "needs-review",
+    "gateABlockNote": "A Gate A BLOCK is a real source problem (the curriculum is authoritative — never auto-fabricate fixes). The lesson halts to needs-review with the findings.",
+    "visionChecks": "skip-unverified",
+    "visionChecksOptions": "skip-unverified = I-07/I-15/I-16 are reported UNVERIFIED, never a false pass (no vision backend in an unattended run); require = a vision backend must run them."
+  },
 
   "failurePolicy": "continue"
 }

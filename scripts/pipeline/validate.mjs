@@ -275,6 +275,41 @@ export async function validateFinal({ videoPath }, cfg) {
 
 const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
 
+// ---- Method two-gate QA — Gate A (77-rule registry) + Gate B (on the render) --
+// Runs the SAME gates the manual Method flow uses (scripts/qa/gate-b.mjs → I-05,
+// R-06, S-08, T-*, I-08, pronunciation; merged with Gate A findings in qa/<id>.json).
+// BLOCKs are hard gates; WARNs are policy-driven (config.method.warnPolicy).
+export async function validateMethodGateB({ id, videoPath }, cfg) {
+  const warnPolicy = cfg.method?.warnPolicy || 'proceed-report';
+  const vAbs = rel(videoPath);
+  if (!existsSync(vAbs)) return [review('gateBBlocks', `no render at ${videoPath} — Gate B unrun`, { hardGate: true })];
+  // Refresh Gate A (pre-render rules) into qa/<id>.json, then a fresh manifest, then
+  // the full Gate B suite on THIS video — so qa/<id>.json holds current A+B findings.
+  await run('node', ['scripts/qa/gate-a.mjs', id]);
+  const man = await run('node', ['scripts/qa/manifest.mjs', id]);
+  if (man.code !== 0) return [fail('gateBBlocks', 'manifest emit failed: ' + (man.stderr.trim().split('\n').pop() || ''), { hardGate: true })];
+  await run('node', ['scripts/qa/gate-b.mjs', id], { env: { ...process.env, SAYIT_QA_VIDEO: videoPath } });
+  const qaPath = path.join(ROOT, `qa/${id}.json`);
+  if (!existsSync(qaPath)) return [fail('gateBBlocks', `no qa/${id}.json after Gate B`, { hardGate: true })];
+  const F = (JSON.parse(await readFile(qaPath, 'utf8')).findings) || [];
+  const label = (f) => `${f.rule} (L${f.line ?? '?'}): ${f.issue}`;
+  const aBlocks = F.filter((f) => f.gate === 'A' && f.severity === 'BLOCK');
+  const bBlocks = F.filter((f) => f.gate === 'B' && f.severity === 'BLOCK');
+  const warns = F.filter((f) => f.severity === 'WARN');
+  const out = [];
+  out.push(aBlocks.length
+    ? fail('gateA', `${aBlocks.length} Gate A BLOCK(s)`, { hardGate: true, detail2: aBlocks.slice(0, 8).map(label) })
+    : ok('gateA', 'no Gate A blocks', { hardGate: true }));
+  out.push(bBlocks.length
+    ? fail('gateBBlocks', `${bBlocks.length} Gate B BLOCK(s)`, { hardGate: true, detail2: bBlocks.slice(0, 8).map(label) })
+    : ok('gateBBlocks', 'no Gate B blocks', { hardGate: true }));
+  if (warns.length) out.push(warnPolicy === 'halt-needs-review'
+    ? review('methodWarnings', `${warns.length} WARN(s) — human sign-off required (warnPolicy=halt)`, { hardGate: true, detail2: warns.slice(0, 12).map(label) })
+    : { name: 'methodWarnings', ok: true, status: 'pass', detail: `${warns.length} WARN(s) logged (proceed-report)`, detail2: warns.slice(0, 12).map(label) });
+  else out.push(ok('methodWarnings', 'no warnings'));
+  return out;
+}
+
 // Roll every hard gate into a single pass/needs-review/fail verdict.
 export function summarize(checks) {
   const gates = checks.filter((c) => c.hardGate);
