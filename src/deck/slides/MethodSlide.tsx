@@ -21,8 +21,8 @@ const STAGE_LABEL: Record<string, string> = {
   TRANSFER_TASK: 'Your turn', FLUENCY_ROUND: 'Fluency', CAN_DO_CHECK: 'You can now',
 };
 
-type Beat = { voice?: string; text?: string; level?: number; durationInSeconds: number; stage?: string; visuals?: string[]; imageSrc?: string };
-type SlideT = { stage?: string; visual?: string; imageSrc?: string; item?: string; beats?: Beat[] };
+type Beat = { voice?: string; text?: string; level?: number; durationInSeconds: number; stage?: string; visuals?: string[]; imageSrc?: string; wantsImage?: boolean };
+type SlideT = { stage?: string; visual?: string; imageSrc?: string; item?: string; beats?: Beat[]; wantsImage?: boolean };
 
 export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
   const frame = useCurrentFrame();
@@ -47,6 +47,9 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
 
   // The active picture: a per-beat image (recall/scenario) wins, else the slide's.
   const imgRel = spoken.imageSrc || active.imageSrc || slide.imageSrc;
+  // A slot that should carry an illustration but has none generated yet (out of
+  // image credits) → show a "No-Credit" placeholder rather than a bare card.
+  const wantsImg = spoken.wantsImage || active.wantsImage || slide.wantsImage;
   const pulse = 1 + 0.06 * Math.sin((frame / fps) * Math.PI * 2.2);
 
   // X-06 / I-12: French text only below L3; the picture stays at every level.
@@ -75,8 +78,8 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
           <p className="h1" style={{ color: 'var(--accent)', fontWeight: 800, ...reveal }}>{spoken.text}</p>
         ) : isEn ? (
           <p className="h2" style={{ color: 'var(--ink)', fontWeight: 600, maxWidth: 1700, lineHeight: 1.28, ...reveal }}>{spoken.text}</p>
-        ) : isFr && !wc && !imgRel ? (
-          // L3+ French spoken, no picture available → keep the screen honestly blank.
+        ) : isFr && !wc && !imgRel && !wantsImg ? (
+          // L3+ French spoken, no picture expected → keep the screen honestly blank.
           <p className="h1" style={{ color: 'var(--accent)', opacity: 0.28, fontWeight: 800 }}>• • •</p>
         ) : null}
 
@@ -93,6 +96,13 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
   const imgPanel = imgRel ? (
     <div style={{ width: 1180, height: 1180, flexShrink: 0, borderRadius: 40, overflow: 'hidden', boxShadow: '0 30px 90px rgba(0,0,0,0.18)', border: '3px solid rgba(0,0,0,0.06)', background: 'var(--tint)', ...fadeUp(frame, fps, 6) }}>
       <Img src={assetSrc(imgRel)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+    </div>
+  ) : wantsImg ? (
+    // Image intended but not generated yet (out of Recraft credits).
+    <div style={{ width: 1180, height: 1180, flexShrink: 0, borderRadius: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 24, background: 'var(--tint)', border: '4px dashed rgba(0,0,0,0.18)', ...fadeUp(frame, fps, 6) }}>
+      <span style={{ fontSize: 120 }}>🖼</span>
+      <span className="h2" style={{ color: 'var(--accent)', fontWeight: 800, letterSpacing: 1 }}>No-Credit</span>
+      <span className="body" style={{ opacity: 0.5 }}>image pending</span>
     </div>
   ) : null;
 

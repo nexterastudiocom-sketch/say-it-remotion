@@ -13,7 +13,7 @@
 // compressed STYLE_DESCRIPTOR below (which preserves the load-bearing cues).
 export const STYLE_FULL = `Modern ligne claire editorial illustration in the Hergé tradition, elevated with contemporary print craft.
 LINE: bold confident black ink contours on the focal subject, finer interior linework for detail, lightest weight on background elements. Clean deliberate strokes, no sketchiness, no wobble.
-COLOUR: rich saturated palette, high chroma. Every form rendered in TWO OR THREE FLAT TONES — a base colour plus a hard-edged shadow shape and optional highlight shape. Absolutely no gradients, no soft blending, no airbrush, no glow. The tones are separate flat shapes with crisp borders.
+COLOUR: vivid, bold, HIGHLY saturated high-contrast palette — punchy complementary colour pairings, deep rich darks against bright clean lights, maximum chroma. Every form rendered in TWO OR THREE FLAT TONES — a base colour plus a hard-edged shadow shape and optional highlight shape. Absolutely no gradients, no soft blending, no airbrush, no glow, nothing muted, pastel or washed out. The tones are separate flat shapes with crisp borders.
 DEPTH: three distinct planes — background environment, midground context, foreground subject. Each plane flatter and lighter in contrast than the one in front of it.
 TEXTURE: subtle halftone dot grain across the whole image, like offset lithography. Fine, even, unobtrusive.
 DETAIL: generous environmental detail — architecture, props, patterned clothing, set dressing that tells you where you are. Rich, never cluttered.
@@ -28,9 +28,11 @@ COMPOSITION: one dominant focal subject occupying 55-65% of the frame. Backgroun
 export const STYLE_DESCRIPTOR =
   'Modern ligne claire editorial illustration, Hergé tradition. Bold confident black ink ' +
   'contours on the focal subject, finer interior linework, lightest lines on background. ' +
-  'Rich saturated high-chroma palette; every form in just TWO or THREE FLAT tones — base ' +
-  'colour plus a hard-edged shadow shape and optional highlight — crisp borders, absolutely ' +
-  'no gradients, no soft shading, no airbrush, no glow. Three flat depth planes, each lighter ' +
+  'Vivid, bold, HIGHLY saturated high-contrast palette — punchy complementary colours, deep ' +
+  'rich darks against bright clean lights, maximum chroma. Every form in just TWO or THREE FLAT ' +
+  'tones — base colour plus a hard-edged shadow shape and optional highlight — crisp borders, ' +
+  'absolutely no gradients, no soft shading, no airbrush, no glow, nothing muted or washed out. ' +
+  'Three flat depth planes, each lighter ' +
   'behind. Subtle even halftone dot grain like offset lithography. Generous environmental ' +
   'detail: architecture, props, set dressing. Expressive charming face, dynamic posture. ' +
   'One dominant subject filling 55-65% of a square frame. Blank unlettered signs only. ' +

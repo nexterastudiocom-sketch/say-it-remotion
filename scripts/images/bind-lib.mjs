@@ -17,24 +17,30 @@ export async function bindImages(slides, lessonNum, ROOT, { strict = false } = {
   const itemImg = (fr) => fileOf(reg.items[fr]);
   const sceneImg = (setting) => fileOf(reg.scenes[`${Lkey}_${sslug(setting)}`]);
 
-  let bound = 0, scenarioSeen = 0;
+  // `wantsImage` marks a slot that SHOULD carry an illustration; when the file
+  // isn't generated yet the render shows a "No-Credit" placeholder there instead
+  // of silently dropping to the typographic card, so gaps are visible.
+  let bound = 0, wanted = 0, scenarioSeen = 0;
   for (const s of slides) {
     if (s.stage === 'ITEM_BLOCK') {
       const fr = String(s.segment).split('·').pop().trim();
+      s.wantsImage = true; s.item = fr; wanted++;
       const f = itemImg(fr);
-      if (f) { s.imageSrc = f; s.item = fr; s.imageId = reg.items[fr].image_id; bound++; }
+      if (f) { s.imageSrc = f; s.imageId = reg.items[fr].image_id; bound++; }
     } else if (s.stage === 'MICRO_RECALL') {
-      for (const b of s.beats || []) if (b.voice && b.voice.startsWith('fr')) { const f = itemImg(b.text); if (f) { b.imageSrc = f; bound++; } }
+      for (const b of s.beats || []) if (b.voice && b.voice.startsWith('fr')) { b.wantsImage = true; wanted++; const f = itemImg(b.text); if (f) { b.imageSrc = f; bound++; } }
     } else if (s.stage === 'COLD_INPUT' || s.stage === 'INPUT_RETURN') {
+      s.wantsImage = true; wanted++;
       const f = sceneImg('cold_dialogue'); if (f) { s.imageSrc = f; bound++; }
     } else if (s.stage === 'TRANSFER_TASK') {
+      s.wantsImage = true; wanted++;
       const f = sceneImg('transfer'); if (f) { s.imageSrc = f; bound++; }
     } else if (s.stage === 'MAKE_IT_YOURS') {
       for (const b of s.beats || []) {
         if (b.voice && b.voice.startsWith('en') && b.level === 4 && /say it out loud|say your reply/i.test(b.text || '')) scenarioSeen++;
-        const f = sceneImg(`scenario_${scenarioSeen}`); if (f && b.voice) { b.imageSrc = f; bound++; }
+        if (b.voice) { b.wantsImage = true; wanted++; const f = sceneImg(`scenario_${scenarioSeen}`); if (f) { b.imageSrc = f; bound++; } }
       }
     }
   }
-  return bound;
+  return { bound, wanted };
 }

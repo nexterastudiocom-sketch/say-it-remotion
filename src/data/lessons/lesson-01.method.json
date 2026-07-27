@@ -248,7 +248,8 @@
           "level": 3,
           "stage": "COLD_INPUT"
         }
-      ]
+      ],
+      "wantsImage": true
     },
     {
       "id": "04-item-block-bonjour",
@@ -497,8 +498,9 @@
           "stage": "ITEM_BLOCK"
         }
       ],
-      "imageSrc": "assets/images/items/img_fr_bonjour_01.png",
+      "wantsImage": true,
       "item": "bonjour",
+      "imageSrc": "assets/images/items/img_fr_bonjour_01.png",
       "imageId": "img_fr_bonjour_01"
     },
     {
@@ -748,8 +750,9 @@
           "stage": "ITEM_BLOCK"
         }
       ],
-      "imageSrc": "assets/images/items/img_fr_salut_01.png",
+      "wantsImage": true,
       "item": "salut",
+      "imageSrc": "assets/images/items/img_fr_salut_01.png",
       "imageId": "img_fr_salut_01"
     },
     {
@@ -999,8 +1002,9 @@
           "stage": "ITEM_BLOCK"
         }
       ],
-      "imageSrc": "assets/images/items/img_fr_merci_01.png",
+      "wantsImage": true,
       "item": "merci",
+      "imageSrc": "assets/images/items/img_fr_merci_01.png",
       "imageId": "img_fr_merci_01"
     },
     {
@@ -1249,7 +1253,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "s'il vous plaît"
     },
     {
       "id": "04-item-block-oui",
@@ -1497,7 +1503,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "oui"
     },
     {
       "id": "04-item-block-non",
@@ -1745,7 +1753,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "non"
     },
     {
       "id": "04-item-block-au-revoir",
@@ -2011,7 +2021,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "au revoir"
     },
     {
       "id": "04-item-block-madame",
@@ -2259,7 +2271,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "madame"
     },
     {
       "id": "04-item-block-monsieur",
@@ -2507,7 +2521,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "monsieur"
     },
     {
       "id": "04-item-block-bonsoir",
@@ -2755,7 +2771,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "bonsoir"
     },
     {
       "id": "04-item-block-pardon",
@@ -3003,7 +3021,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "pardon"
     },
     {
       "id": "04-item-block-bient-t",
@@ -3269,7 +3289,9 @@
           "level": 3,
           "stage": "ITEM_BLOCK"
         }
-      ]
+      ],
+      "wantsImage": true,
+      "item": "à bientôt"
     },
     {
       "id": "05-micro-recall",
@@ -3308,6 +3330,7 @@
           "stage": "MICRO_RECALL",
           "visuals": [],
           "line": 408,
+          "wantsImage": true,
           "imageSrc": "assets/images/items/img_fr_bonjour_01.png"
         },
         {
@@ -3327,6 +3350,7 @@
           "stage": "MICRO_RECALL",
           "visuals": [],
           "line": 410,
+          "wantsImage": true,
           "imageSrc": "assets/images/items/img_fr_salut_01.png"
         },
         {
@@ -3346,6 +3370,7 @@
           "stage": "MICRO_RECALL",
           "visuals": [],
           "line": 412,
+          "wantsImage": true,
           "imageSrc": "assets/images/items/img_fr_merci_01.png"
         },
         {
@@ -3401,6 +3426,7 @@
           "stage": "MICRO_RECALL",
           "visuals": [],
           "line": 418,
+          "wantsImage": true,
           "imageSrc": "assets/images/items/img_fr_bonjour_01.png"
         },
         {
@@ -3438,6 +3464,7 @@
           "stage": "MICRO_RECALL",
           "visuals": [],
           "line": 422,
+          "wantsImage": true,
           "imageSrc": "assets/images/items/img_fr_salut_01.png"
         },
         {
@@ -3475,6 +3502,7 @@
           "stage": "MICRO_RECALL",
           "visuals": [],
           "line": 426,
+          "wantsImage": true,
           "imageSrc": "assets/images/items/img_fr_merci_01.png"
         },
         {
@@ -3511,7 +3539,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 432
+          "line": 432,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3529,7 +3558,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 434
+          "line": 434,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3547,7 +3577,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 436
+          "line": 436,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3601,7 +3632,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 442
+          "line": 442,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -3637,7 +3669,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 446
+          "line": 446,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -3673,7 +3706,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 450
+          "line": 450,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -3709,7 +3743,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 456
+          "line": 456,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3727,7 +3762,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 458
+          "line": 458,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3745,7 +3781,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 460
+          "line": 460,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3799,7 +3836,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 466
+          "line": 466,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -3835,7 +3873,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 470
+          "line": 470,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -3871,7 +3910,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 474
+          "line": 474,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -3907,7 +3947,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 480
+          "line": 480,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3925,7 +3966,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 482
+          "line": 482,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3943,7 +3985,8 @@
           "rate": "slow",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 484
+          "line": 484,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 2,
@@ -3997,7 +4040,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 490
+          "line": 490,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -4033,7 +4077,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 494
+          "line": 494,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -4069,7 +4114,8 @@
           "rate": "natural",
           "stage": "MICRO_RECALL",
           "visuals": [],
-          "line": 498
+          "line": 498,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -4517,7 +4563,8 @@
           "level": 3,
           "stage": "INPUT_RETURN"
         }
-      ]
+      ],
+      "wantsImage": true
     },
     {
       "id": "09-make-it-yours",
@@ -4539,7 +4586,8 @@
           "visuals": [
             "SCENE — You walk into a bakery. A woman is behin · WORD BANK:  · MIC"
           ],
-          "line": 567
+          "line": 567,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 12,
@@ -4557,7 +4605,8 @@
           "rate": null,
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 569
+          "line": 569,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 0.8,
@@ -4575,7 +4624,8 @@
           "rate": "natural",
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 571
+          "line": 571,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -4595,7 +4645,8 @@
           "visuals": [
             "SCENE — You are leaving that same bakery and wil · WORD BANK:  · MIC"
           ],
-          "line": 575
+          "line": 575,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 12,
@@ -4613,7 +4664,8 @@
           "rate": null,
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 577
+          "line": 577,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 0.8,
@@ -4631,7 +4683,8 @@
           "rate": "natural",
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 579
+          "line": 579,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -4651,7 +4704,8 @@
           "visuals": [
             "SCENE — You bump into a man on the street by acc · WORD BANK:  · MIC"
           ],
-          "line": 583
+          "line": 583,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 12,
@@ -4669,7 +4723,8 @@
           "rate": null,
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 585
+          "line": 585,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 0.8,
@@ -4687,7 +4742,8 @@
           "rate": "natural",
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 587
+          "line": 587,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -4707,7 +4763,8 @@
           "visuals": [
             "SCENE — Evening. You walk into a hotel and the m · WORD BANK:  · MIC"
           ],
-          "line": 591
+          "line": 591,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 12,
@@ -4725,7 +4782,8 @@
           "rate": null,
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 593
+          "line": 593,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 0.8,
@@ -4743,7 +4801,8 @@
           "rate": "natural",
           "stage": "MAKE_IT_YOURS",
           "visuals": [],
-          "line": 595
+          "line": 595,
+          "wantsImage": true
         },
         {
           "durationInSeconds": 1,
@@ -4799,7 +4858,8 @@
           "level": 5,
           "stage": "TRANSFER_TASK"
         }
-      ]
+      ],
+      "wantsImage": true
     },
     {
       "id": "11-fluency-round",
