@@ -27,10 +27,10 @@ const noMedia = args.includes('--no-media');
 // FR rate → ElevenLabs speed hint (v3). very_slow/slow render slow so R-06 passes.
 const RATE_SPEED = { very_slow: 0.7, slow: 0.85, natural: 1.0, fast: 1.15 };
 const VOICES = {
-  'EN·MAN': process.env.ELEVENLABS_VOICE_EN_MAN || '3TStB8f3X3To0Uj5R7RK',
-  'EN·WOMAN': process.env.ELEVENLABS_VOICE_EN_WOMAN || 'ZqvIIuD5aI9JFejebHiH',
-  'FR·WOMAN': process.env.ELEVENLABS_VOICE_FR_WOMAN || '5OnMHwgTFgvPVwE8jP6B',
-  'FR·MAN': process.env.ELEVENLABS_VOICE_FR_MAN || 'j9RedbMRSNQ74PyikQwD',
+  'EN·MAN': process.env.ELEVENLABS_VOICE_EN_MAN || 'uh5qBlKfjqFl7XXhFnJi',
+  'EN·WOMAN': process.env.ELEVENLABS_VOICE_EN_WOMAN || 'Bn9xWp6PwkrqKRbq8cX2',
+  'FR·WOMAN': process.env.ELEVENLABS_VOICE_FR_WOMAN || 'Y54PWsHC8udAjARe8URQ',
+  'FR·MAN': process.env.ELEVENLABS_VOICE_FR_MAN || 'kKgyAHjGAbeWHCNd7qoC',
 };
 const voiceKey = (v) => v.toLowerCase().replace('·', '_'); // FR·WOMAN → fr_woman
 const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';

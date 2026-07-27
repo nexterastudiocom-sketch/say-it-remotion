@@ -36,10 +36,10 @@ const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
 // Project voice IDs are baked in as defaults so the pipeline works on any device
 // with just an API key; override via .env if you ever change voices.
 const VOICES = {
-  en_man: process.env.ELEVENLABS_VOICE_EN_MAN || '3TStB8f3X3To0Uj5R7RK',
-  en_woman: process.env.ELEVENLABS_VOICE_EN_WOMAN || 'ZqvIIuD5aI9JFejebHiH',
-  fr_man: process.env.ELEVENLABS_VOICE_FR_WOMAN || '5OnMHwgTFgvPVwE8jP6B', // single French voice (woman)
-  fr_woman: process.env.ELEVENLABS_VOICE_FR_WOMAN || '5OnMHwgTFgvPVwE8jP6B',
+  en_man: process.env.ELEVENLABS_VOICE_EN_MAN || 'uh5qBlKfjqFl7XXhFnJi',
+  en_woman: process.env.ELEVENLABS_VOICE_EN_WOMAN || 'Bn9xWp6PwkrqKRbq8cX2',
+  fr_man: process.env.ELEVENLABS_VOICE_FR_MAN || 'kKgyAHjGAbeWHCNd7qoC',
+  fr_woman: process.env.ELEVENLABS_VOICE_FR_WOMAN || 'Y54PWsHC8udAjARe8URQ',
 };
 
 const GAP = 1.5; // silent breathing room inserted between two back-to-back clips
