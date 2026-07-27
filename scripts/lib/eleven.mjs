@@ -5,8 +5,33 @@
 
 import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { parseFile } from 'music-metadata';
+
+const require = createRequire(import.meta.url);
+let FFMPEG = null;
+try { FFMPEG = require('ffmpeg-static'); } catch { /* trimming becomes a no-op */ }
+
+// ElevenLabs v3 occasionally pads a short clip with up to ~2s of trailing (or
+// leading) silence — especially when the line carries an audio tag. That dead
+// air inflates the beat duration and desyncs P(beat) timing, so trim near-silent
+// heads/tails from every clip, keeping a small 80ms cushion so nothing clips.
+async function trimSilence(fileAbs) {
+  if (!FFMPEG) return;
+  const tmp = fileAbs.replace(/\.mp3$/i, '.trim.mp3');
+  const th = '-40dB';
+  const filt =
+    `silenceremove=start_periods=1:start_silence=0.08:start_threshold=${th}:detection=peak,` +
+    `areverse,` +
+    `silenceremove=start_periods=1:start_silence=0.08:start_threshold=${th}:detection=peak,` +
+    `areverse`;
+  try {
+    execFileSync(FFMPEG, ['-y', '-hide_banner', '-nostats', '-i', fileAbs, '-af', filt, tmp], { stdio: 'pipe' });
+    await writeFile(fileAbs, await readFile(tmp));
+  } catch { /* leave the original clip untouched on any ffmpeg hiccup */ }
+  finally { await rm(tmp, { force: true }); }
+}
 
 const API_KEY = process.env.ELEVENLABS_API_KEY;
 const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
@@ -50,6 +75,7 @@ export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1 
     } else throw e;
   }
   await writeFile(outAbs, buf);
+  await trimSilence(outAbs);
   const { format } = await parseFile(outAbs);
   return format.duration || 0;
 }
