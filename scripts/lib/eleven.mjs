@@ -16,14 +16,17 @@ export const nativeVoice = (lang) =>
   process.env[`ELEVENLABS_VOICE_${lang.toUpperCase()}`] || process.env.ELEVENLABS_VOICE || FALLBACK;
 export const hasElevenKey = () => Boolean(API_KEY);
 
-async function tts(text, voiceId, model = MODEL) {
+async function tts(text, voiceId, model = MODEL, speed = 1) {
+  // ElevenLabs clamps speed to [0.7, 1.2]; the Method's rate tags map into that
+  // band (very_slow→0.7 … fast→1.2) so slow-input beats are actually slow.
+  const spd = Math.min(1.2, Math.max(0.7, speed || 1));
   const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`, {
     method: 'POST',
     headers: { 'xi-api-key': API_KEY, 'Content-Type': 'application/json', Accept: 'audio/mpeg' },
     body: JSON.stringify({
       text,
       model_id: model,
-      voice_settings: { stability: 0.5, similarity_boost: 0.8 },
+      voice_settings: { stability: 0.5, similarity_boost: 0.8, speed: spd },
     }),
   });
   if (!res.ok) throw new Error(`ElevenLabs ${res.status} — ${await res.text()}`);
@@ -36,14 +39,14 @@ async function tts(text, voiceId, model = MODEL) {
  * retries once on Multilingual v2 with the tag stripped — so a lack of v3 access
  * degrades gracefully instead of aborting the whole lesson.
  */
-export async function ttsClip({ text, voiceId, model = MODEL, outAbs }) {
+export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1 }) {
   await mkdir(path.dirname(outAbs), { recursive: true });
   let buf;
   try {
-    buf = await tts(text, voiceId, model);
+    buf = await tts(text, voiceId, model, speed);
   } catch (e) {
     if (/v3/.test(model)) {
-      buf = await tts(text.replace(/^\s*\[[^\]]*\]\s*/, ''), voiceId, 'eleven_multilingual_v2');
+      buf = await tts(text.replace(/^\s*\[[^\]]*\]\s*/, ''), voiceId, 'eleven_multilingual_v2', speed);
     } else throw e;
   }
   await writeFile(outAbs, buf);
