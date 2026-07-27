@@ -71,7 +71,11 @@ if (existsSync(P.manifest) && existsSync(asrPath)) {
     const gap = w[i].start - w[i - 1].end;
     if (gap <= GAP) continue;
     const b = inSpoken(w[i - 1].end + gap / 2); // gap sits inside one voice line
-    if (b && w[i].start <= b.videoEnd) F.push(finding(Y, 'T-07', b.sourceLine || 0, `${gap.toFixed(2)}s gap between words inside a voice line at ${w[i - 1].end.toFixed(1)}s ("${(b.spokenText || '').slice(0, 30)}")`, ''));
+    // A real intra-line dropout has BOTH words inside the voice line. A gap that
+    // straddles the beat boundary is not a dropout — it is the silence between two
+    // lines, often widened when ASR mis-transcribes a French dialogue turn as
+    // English and skips it entirely (leaving a phantom gap over a clean clip).
+    if (b && w[i - 1].end >= b.videoStart && w[i].start <= b.videoEnd) F.push(finding(Y, 'T-07', b.sourceLine || 0, `${gap.toFixed(2)}s gap between words inside a voice line at ${w[i - 1].end.toFixed(1)}s ("${(b.spokenText || '').slice(0, 30)}")`, ''));
   }
 } else if (existsSync(P.manifest)) {
   console.log('  (T-07 skipped — no build/' + id + '/asr.json; run scripts/qa/asr.mjs first)');
