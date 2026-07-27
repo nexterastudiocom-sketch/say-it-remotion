@@ -10,6 +10,17 @@ import lesson01Method from './data/lessons/lesson-01.method.json';
 import { LogoMotion } from './deck/LogoMotion';
 import { SubscribeMotion } from './deck/SubscribeMotion';
 import { Thumbnail, THUMB_W, THUMB_H } from './deck/Thumbnail';
+import { ShortVideo, SHORT_FPS, SHORT_FRAMES, ShortSpec } from './shorts/ShortVideo';
+
+// Placeholder spec — the shorts build script renders real ones via --props.
+const SAMPLE_SHORT_SPEC: ShortSpec = {
+  id: 'sample', type: 'MISTAKE', lesson: 'lesson-01',
+  hook: "You're saying bonjour wrong.",
+  targetFrench: 'bonjour', phonetic: 'bohn-ZHOOR', english: 'hello / good morning',
+  why: 'The on is nasal. Air through the nose, no hard N at the end.',
+  imageSrc: 'assets/images/items/img_fr_bonjour_01.png', revealAudioSrc: null,
+  accent: '#2E4FE0', tint: '#E7ECFE', safeZoneOverlay: false,
+};
 
 // One default composition per language channel. All five share the same
 // LessonFilm (intro → lesson → outro) and sample content; only the language
@@ -69,6 +80,18 @@ export const RemotionRoot: React.FC = () => (
         subtitle: 'Talk about your job',
         imageSrc: 'assets/images/lesson-01_vocab-1.png',
       }}
+    />
+
+    {/* Vertical Short (1080x1920). The shorts build script renders one per candidate
+        via --props; this default just makes it previewable in the studio. */}
+    <Composition
+      id="Short"
+      component={ShortVideo}
+      width={1080}
+      height={1920}
+      fps={SHORT_FPS}
+      durationInFrames={SHORT_FRAMES}
+      defaultProps={{ spec: SAMPLE_SHORT_SPEC }}
     />
 
     {/* Real lesson from the curriculum workbook (npm run lesson -- 1).

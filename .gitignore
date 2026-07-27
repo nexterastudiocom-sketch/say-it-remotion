@@ -20,3 +20,4 @@ qa/*.json
 # Shorts generated candidates (regenerable from manifests)
 shorts/**/candidates.json
 out/shorts/
+shorts/**/*.spec.json
