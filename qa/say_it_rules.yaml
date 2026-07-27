@@ -437,12 +437,17 @@ rules:
     detail: >
       Deterministic string containment, not judgment. A retrieval gap is an L3+
       pause the learner must produce into WITHOUT having just heard the French —
-      i.e. the nearest preceding voiced beat is English. Sample the frame at
-      pause_mid, OCR it, lowercase and strip accents, then substring-match against
-      allowed_set(n). Any hit is a BLOCK. Do NOT use a vision model.
-      EXEMPT: a pause that FOLLOWS a French beat is the reveal/echo pause — the
-      answer was just spoken, so the word legitimately stays on screen. The
-      blackout guards recall-from-memory, not the reinforcement that follows it.
+      i.e. the nearest preceding voiced beat is English — and in a RETRIEVAL STAGE
+      (WARM_UP, ITEM_BLOCK, MICRO_RECALL, BUILD_LADDER, MAKE_IT_YOURS, TRANSFER_TASK,
+      FLUENCY_ROUND). Sample the frame at pause_mid, OCR it, lowercase and strip
+      accents, then substring-match against allowed_set(n). Any hit is a BLOCK. Do
+      NOT use a vision model.
+      EXEMPT (French on screen is fine): a pause that FOLLOWS a French beat (the
+      reveal/echo pause — the answer was just spoken); and pauses OUTSIDE the
+      retrieval stages (COLD_INPUT/culture notes, FRAME_INTRO, INPUT_RETURN, the
+      goal/check bookends) where French is comprehensible INPUT, not a leaked answer.
+      Also note: the persistent header subtitle must never contain a taught word
+      (build-method-lesson sets it from meta.title, English/neutral).
     fix: "Clear all French text from the screen for the duration of the retrieval gap (before the answer is spoken)."
   - id: I-06
     layer: L0

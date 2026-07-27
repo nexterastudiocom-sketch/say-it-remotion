@@ -3,6 +3,7 @@ lesson: 1
 language: fr
 level: A1
 class: CALIBRATION
+title: "Greetings & goodbyes"
 can_do: "I can greet someone and take my leave, choosing the right formality and time of day."
 items: [bonjour, salut, merci, "s'il vous plaît", oui, non, "au revoir", madame, monsieur, bonsoir, pardon, "à bientôt"]
 frame: "[greeting], [person]. [courtesy] !"

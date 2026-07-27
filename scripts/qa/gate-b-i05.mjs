@@ -25,9 +25,15 @@ const Y = await rules();
 const man = await readJson(P.manifest);
 const allowed = [...await allowedSet(id)].map((s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')).filter((s) => s.length >= 2);
 
-// L3+ retrieval GAPS: a pause beat, level >= 3, whose nearest preceding VOICED
-// beat is English (an instruction/prompt). A pause after a French beat is the
-// post-reveal pause — the word may stay — so it is excluded.
+// Stages where the learner PRODUCES FROM MEMORY — the only place a visible French
+// word is a leaked answer. Elsewhere (COLD_INPUT/notes, FRAME_INTRO, INPUT_RETURN,
+// the goal/check bookends) French on screen is legitimate comprehensible INPUT, not
+// a retrieval, so it is not a blackout violation.
+const RETRIEVAL_STAGES = new Set(['WARM_UP', 'ITEM_BLOCK', 'MICRO_RECALL', 'BUILD_LADDER', 'MAKE_IT_YOURS', 'TRANSFER_TASK', 'FLUENCY_ROUND']);
+
+// L3+ retrieval GAPS: a pause beat, level >= 3, in a RETRIEVAL stage, whose nearest
+// preceding VOICED beat is English (an instruction/prompt). A pause after a French
+// beat is the post-reveal pause — the word may stay — so it is excluded.
 const events = [];
 for (let i = 0; i < man.lines.length; i++) {
   const r = man.lines[i];
@@ -35,7 +41,8 @@ for (let i = 0; i < man.lines.length; i++) {
   const lvl = r.supportLevel ?? man.lines[i - 1]?.supportLevel ?? -1;
   let p = i - 1; while (p >= 0 && man.lines[p].kind === 'pause') p--;
   const afterFrench = p >= 0 && man.lines[p].kind === 'french';
-  if (lvl >= 3 && r.pauseMid != null && !afterFrench) events.push({ mid: r.pauseMid, line: r.sourceLine, lvl });
+  const stage = r.stage ?? man.lines[p]?.stage;
+  if (lvl >= 3 && r.pauseMid != null && !afterFrench && RETRIEVAL_STAGES.has(stage)) events.push({ mid: r.pauseMid, line: r.sourceLine, lvl });
 }
 if (!events.length) { console.log('GATE B · I-05 — 0 L3+ retrieval gaps (needs Method-grammar [Ln] tags)'); await merge(id, ['I-05'], []); process.exit(0); }
 

@@ -76,6 +76,9 @@ const itemsList = items.map((i) => (i.fr.includes(' ') || i.fr.includes("'") ? `
 w('---');
 w(`lesson: ${num}`); w(`language: ${brief.language || 'fr'}`); w(`level: ${brief.level || 'A1'}`);
 w(`class: ${brief.class || 'CALIBRATION'}`);
+// Header subtitle — ENGLISH/neutral topic, never a taught French word (it is on
+// screen during retrieval; a taught word here leaks the answer, X-06/I-05).
+if (brief.lesson_title) w(`title: "${String(brief.lesson_title).replace(/"/g, "'")}"`);
 w(`can_do: "${(brief.can_do || '').replace(/"/g, "'")}"`);
 w(`items: [${itemsList}]`);
 w(`frame: "${(brief.frame || '').replace(/"/g, "'")}"`);

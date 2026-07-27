@@ -165,12 +165,17 @@ async function generateLesson(ref, cfg, { dry }) {
   //    are reused, so usually only new items + this lesson's scenes generate.
   await setStatus({ status: 'generating-images' });
   await step('images (registry → generate → approve)', () => withRetry(async () => {
-    const reg = await run('node', ['scripts/images/registry.mjs', ref.workbook]);
-    if (reg.code !== 0) throw new Error('registry: ' + reg.stderr.trim());
+    // With a workbook, upsert the registry from it; without one (existing transcript),
+    // reuse the registry already on disk. Then generate any pending, and auto-approve.
+    const hasWb = existsSync(path.join(ROOT, ref.workbook));
+    if (hasWb) {
+      const reg = await run('node', ['scripts/images/registry.mjs', ref.workbook]);
+      if (reg.code !== 0) throw new Error('registry: ' + reg.stderr.trim());
+    }
     const gen = await run('node', ['--env-file=.env', 'scripts/images/generate.mjs']);
     if (gen.code !== 0) throw new Error('generate: ' + (gen.stderr.trim().split('\n').slice(-2).join(' ') || gen.stdout.trim().split('\n').slice(-2).join(' ')));
     const approved = strict ? await approveImages() : 0;
-    return { ok: true, detail: strict ? `generated + ${approved} approved` : 'generated (awaiting human approval)' };
+    return { ok: true, detail: (hasWb ? 'registry + ' : 'existing registry, ') + (strict ? `generated + ${approved} approved` : 'generated (awaiting approval)') };
   }, { tries: cfg.retries.perAsset, ...cfg.retries }, (i, e, d) => log(ref.id, 'retry-images', { i, msg: e.message, backoffMs: d })), { dry });
 
   // 4. audio + bake timeline (COSTS ElevenLabs $; disk-cached clips reused) → .method.json.
@@ -187,8 +192,11 @@ async function generateLesson(ref, cfg, { dry }) {
   await setStatus({ status: 'rendering' });
   const rawPath = ref.videoPath.replace(/\.mp4$/, '.raw.mp4');
   await step('render video (4K)', () => withRetry(async () => {
+    // --timeout: the 4K first frame loads all images/fonts; Remotion's 30s default
+    // delayRender/seek timeout is too tight and aborts the initial component.
     const r = await run(REMOTION, ['render', 'src/index.ts', ref.composition, rawPath,
-      `--props=${JSON.stringify({ lesson: JSON.parse(await readFile(path.join(ROOT, ref.lessonJson), 'utf8')) })}`]);
+      `--props=${JSON.stringify({ lesson: JSON.parse(await readFile(path.join(ROOT, ref.lessonJson), 'utf8')) })}`,
+      '--timeout=120000']);
     if (r.code !== 0) throw new Error(r.stderr.trim().split('\n').slice(-3).join(' '));
     return { ok: true, detail: rawPath };
   }, { tries: cfg.retries.perLesson, ...cfg.retries }, (i, e) => log(ref.id, 'retry-render', { i, msg: e.message })), { dry });
@@ -206,29 +214,37 @@ async function generateLesson(ref, cfg, { dry }) {
   }, { dry });
 }
 
-// bounded generate → validate → repair loop
+// Single generate pass (per-step transient retries live inside generateLesson via
+// withRetry), then validate. A DETERMINISTIC gate failure (Gate A/B block, resolution,
+// sync…) → needs-review with the specifics; re-rendering the same inputs 4K would only
+// burn time and can't fix a content defect. A thrown step (source missing, render error
+// after retries) → needs-review too. Nothing crashes the loop.
 async function processLesson(ref, cfg, { dry }) {
   console.log(`\n━━ ${ref.id} ━━`);
-  const setStatus = (patch) => (dry ? null : writeStatus(ref.id, patch));
   if (dry) { await generateLesson(ref, cfg, { dry }); console.log('  (dry-run: skipping validation of unbuilt output)'); return { ref, dry: true }; }
-  await writeStatus(ref.id, { attempts: ((await readStatus(ref.id))?.attempts || 0) });
-  let report;
-  for (let attempt = 1; attempt <= cfg.retries.perLesson + 1; attempt++) {
-    await setStatus({ status: attempt === 1 ? 'generating-audio' : 'repairing', attempts: attempt });
-    await generateLesson(ref, cfg, { dry });
-    report = await validateLesson(ref, cfg, { final: true });
-    if (report.summary.status === 'pass') {
-      // All hard gates pass. Surface non-blocking WARNs (warnPolicy=proceed-report)
-      // as 'completed-with-warnings' so they're visible in status without stopping.
-      const wc = report.checks.find((c) => c.name === 'methodWarnings');
-      const withWarns = wc && /\d+ WARN/.test(wc.detail || '') && !/no warnings/.test(wc.detail || '');
-      await writeStatus(ref.id, { status: withWarns ? 'completed-with-warnings' : 'completed' });
-      if (!flags.has('--no-publish')) await publishLesson(ref, { dry: false }).catch((e) => console.log('  ⚠ publish error:', e.message));
-      break;
-    }
-    if (report.summary.status === 'needs-review') { await writeStatus(ref.id, { status: 'needs-review' }); break; }
-    log(ref.id, 'attempt-failed', { attempt, failed: report.summary.failed });
-    if (attempt > cfg.retries.perLesson) { await writeStatus(ref.id, { status: 'needs-review', reason: 'retries exhausted' }); }
+  await writeStatus(ref.id, { status: 'generating', attempts: ((await readStatus(ref.id))?.attempts || 0) + 1 });
+  let report = null;
+  try {
+    await generateLesson(ref, cfg, { dry: false });
+  } catch (e) {
+    const reason = (e.message || 'generation error').split('\n')[0].slice(0, 200);
+    await writeStatus(ref.id, { status: 'needs-review', reason });
+    console.log(`  ⚠ ${ref.id} → needs-review: ${reason}`);
+    await writeManifest(ref.id, { lessonId: ref.id, generatedAt: nowISO(), sources: { workbook: ref.workbook, transcript: ref.transcript }, finalStatus: 'needs-review', reason });
+    return { ref, report: null };
+  }
+  report = await validateLesson(ref, cfg, { final: true });
+  if (report.summary.status === 'pass') {
+    // All hard gates pass. Surface non-blocking WARNs (warnPolicy=proceed-report) as
+    // 'completed-with-warnings' so they're visible in status without stopping the loop.
+    const wc = report.checks.find((c) => c.name === 'methodWarnings');
+    const withWarns = wc && /\d+ WARN/.test(wc.detail || '') && !/no warnings/.test(wc.detail || '');
+    await writeStatus(ref.id, { status: withWarns ? 'completed-with-warnings' : 'completed' });
+    if (!flags.has('--no-publish')) await publishLesson(ref, { dry: false }).catch((e) => console.log('  ⚠ publish error:', e.message));
+  } else {
+    const reason = [...(report.summary.failed || []), ...(report.summary.needsReview || [])].join(', ') || report.summary.status;
+    await writeStatus(ref.id, { status: 'needs-review', reason });
+    log(ref.id, 'gate-failed', { failed: report.summary.failed, needsReview: report.summary.needsReview });
   }
   await writeManifest(ref.id, {
     lessonId: ref.id, generatedAt: nowISO(), sources: { workbook: ref.workbook, transcript: ref.transcript },

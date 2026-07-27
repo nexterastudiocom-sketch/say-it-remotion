@@ -5,108 +5,108 @@
       "file": "assets/images/items/img_fr_bonjour_01.png",
       "brief": "A cheerful adult raising a hand in a warm wave to a neighbour on a sunny morning city street, greeting them in passing, market awnings and a bakery behind, soft morning light.",
       "gloss": "hello / good morning",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "salut": {
       "image_id": "img_fr_salut_01",
       "file": "assets/images/items/img_fr_salut_01.png",
       "brief": "Two young friends meeting on a sunny city street corner, one raising a hand in a relaxed casual wave while the other grins back, backpacks on their shoulders and a bicycle leaning nearby, a café terrace behind them.",
       "gloss": "hi / bye, casual",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "merci": {
       "image_id": "img_fr_merci_01",
       "file": "assets/images/items/img_fr_merci_01.png",
       "brief": "A customer warmly receiving a coffee cup handed across a wooden café counter by a smiling barista, giving a grateful nod, shelves of cups and pastries in the background.",
       "gloss": "thank you",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "s'il vous plaît": {
       "image_id": "img_fr_s_il_vous_plait_01",
       "file": "assets/images/items/img_fr_s_il_vous_plait_01.png",
       "brief": "A polite customer at a colourful outdoor fruit-and-vegetable market stall, open hand gently gesturing as they ask the attentive vendor for produce, crates of bright fruit between them.",
       "gloss": "please",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "oui": {
       "image_id": "img_fr_oui_01",
       "file": "assets/images/items/img_fr_oui_01.png",
       "brief": "An adult at a small café table nodding yes with a warm smile and an open agreeable hand gesture to a companion across the table, coffee cups between them, a cosy interior.",
       "gloss": "yes",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "non": {
       "image_id": "img_fr_non_01",
       "file": "assets/images/items/img_fr_non_01.png",
       "brief": "An adult politely shaking their head no with a gentle raised-hand declining gesture and a calm apologetic smile, standing at a market stall as a vendor offers an item.",
       "gloss": "no",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "au revoir": {
       "image_id": "img_fr_au_revoir_01",
       "file": "assets/images/items/img_fr_au_revoir_01.png",
       "brief": "An adult standing in a doorway waving goodbye to a friend walking away down the street, a warm parting smile, townhouses, a lamppost and soft evening light behind them.",
       "gloss": "goodbye",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "madame": {
       "image_id": "img_fr_madame_01",
       "file": "assets/images/items/img_fr_madame_01.png",
       "brief": "A poised mature woman in a smart coat on a city street, meeting the viewer's eye with a calm friendly expression, shop windows and a tree-lined pavement behind her.",
       "gloss": "ma'am",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "monsieur": {
       "image_id": "img_fr_monsieur_01",
       "file": "assets/images/items/img_fr_monsieur_01.png",
       "brief": "A well-dressed mature man in a coat and scarf on a city street, a calm courteous expression, a café and townhouses behind him in warm afternoon light.",
       "gloss": "sir",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "bonsoir": {
       "image_id": "img_fr_bonsoir_01",
       "file": "assets/images/items/img_fr_bonsoir_01.png",
       "brief": "An adult greeting someone with a warm good-evening nod on a city street at dusk, glowing lit shop windows and warm lamplight around them, a deep evening-blue sky above.",
       "gloss": "good evening",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "pardon": {
       "image_id": "img_fr_pardon_01",
       "file": "assets/images/items/img_fr_pardon_01.png",
       "brief": "Two adults lightly bumping shoulders on a busy pavement, one turning with an apologetic raised hand and a sorry expression, the other understanding, city-street bustle around them.",
       "gloss": "excuse me / sorry",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "à bientôt": {
       "image_id": "img_fr_a_bientot_01",
       "file": "assets/images/items/img_fr_a_bientot_01.png",
       "brief": "An adult stepping out of a café doorway and glancing back with a friendly see-you-soon wave to someone at a table inside, a warm interior glow, bicycles and street outside.",
       "gloss": "see you soon",
-      "status": "generated",
+      "status": "approved",
       "first_lesson": 1,
-      "approved_at": null
+      "approved_at": "2026-07-27T19:11:49.475Z"
     }
   },
   "scenes": {
@@ -117,8 +117,8 @@
       "gloss": "Cold input dialogue (reused at input return)",
       "kind": "dialogue",
       "lesson": 1,
-      "status": "generated",
-      "approved_at": null
+      "status": "approved",
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "L01_culture": {
       "image_id": "img_fr_scene_l01_culture",
@@ -127,8 +127,8 @@
       "gloss": "Culture note",
       "kind": "culture",
       "lesson": 1,
-      "status": "generated",
-      "approved_at": null
+      "status": "approved",
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "L01_scenario_1": {
       "image_id": "img_fr_scene_l01_scenario_1",
@@ -137,8 +137,8 @@
       "gloss": "You walk into a bakery. A woman is behind the counter. Greet her using whichever greeting fits the time where you are right now, and thank her.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "generated",
-      "approved_at": null
+      "status": "approved",
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "L01_scenario_2": {
       "image_id": "img_fr_scene_l01_scenario_2",
@@ -147,8 +147,8 @@
       "gloss": "You are leaving that same bakery and will be back tomorrow. Thank her and say goodbye in a way that means you will see her again.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "generated",
-      "approved_at": null
+      "status": "approved",
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "L01_scenario_3": {
       "image_id": "img_fr_scene_l01_scenario_3",
@@ -157,8 +157,8 @@
       "gloss": "You bump into a man on the street by accident. Apologize, then greet him.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "generated",
-      "approved_at": null
+      "status": "approved",
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "L01_scenario_4": {
       "image_id": "img_fr_scene_l01_scenario_4",
@@ -167,8 +167,8 @@
       "gloss": "Evening. You walk into a hotel and the man at the desk greets you first. Greet him back, ask for something politely, and thank him.",
       "kind": "scenario",
       "lesson": 1,
-      "status": "generated",
-      "approved_at": null
+      "status": "approved",
+      "approved_at": "2026-07-27T19:11:49.475Z"
     },
     "L01_transfer": {
       "image_id": "img_fr_scene_l01_transfer",
@@ -177,8 +177,8 @@
       "gloss": "A stranger holds an umbrella over you in the rain.",
       "kind": "transfer",
       "lesson": 1,
-      "status": "generated",
-      "approved_at": null
+      "status": "approved",
+      "approved_at": "2026-07-27T19:11:49.475Z"
     }
   }
 }

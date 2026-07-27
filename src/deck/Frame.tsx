@@ -31,8 +31,7 @@ export const Frame: React.FC<{
           <Img className="lf-logo" src={assetSrc(monogramLogo(language))} alt="Say it" />
           <div className="lf-lesson">
             {chrome.lessonA}
-            <span className="sep">·</span>
-            {chrome.lessonB}
+            {chrome.lessonB ? (<><span className="sep">·</span>{chrome.lessonB}</>) : null}
           </div>
         </div>
         <div className="lf-level">{chrome.level}</div>

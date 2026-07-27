@@ -157,7 +157,10 @@ const lesson = {
   language: parsed.meta.language || 'fr',
   method: true,
   meta: parsed.meta,
-  chrome: { lessonA: `Leçon ${parsed.meta.lesson}`, lessonB: 'Dire bonjour', level: parsed.meta.level, progressLabel: 'Progression', wordUnit: 'mots', wordsFrom: 0, wordsTo: (parsed.meta.items || []).length, wordsTotal: 235 },
+  // Header subtitle (lessonB) is an ENGLISH/neutral topic from meta.title — it must
+  // NEVER contain a taught French word (X-06/I-05: the persistent header is on screen
+  // during retrieval; "Dire bonjour" leaked the answer). Empty → header shows just "Leçon N".
+  chrome: { lessonA: `Leçon ${parsed.meta.lesson}`, lessonB: parsed.meta.title || '', level: parsed.meta.level, progressLabel: 'Progression', wordUnit: 'mots', wordsFrom: 0, wordsTo: (parsed.meta.items || []).length, wordsTotal: 235 },
   ui: { repeat: 'À toi' },
   slides,
 };
