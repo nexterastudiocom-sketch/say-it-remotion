@@ -36,7 +36,13 @@ const VOICES = {
   'FR·MAN': process.env.ELEVENLABS_VOICE_FR_MAN || 'kKgyAHjGAbeWHCNd7qoC',
 };
 const voiceKey = (v) => v.toLowerCase().replace('·', '_'); // FR·WOMAN → fr_woman
-const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
+// French vocab must be spoken CLEANLY. The expressive v3 model intermittently
+// appends hums/filler after a word ("mmm", or whole tags like "C'est ça ?"), which
+// is wrong for single-word teaching. multilingual_v2 reads the text literally.
+// English narration keeps v3. Model is part of the clip cache key (below), so
+// switching it re-synthesizes only the affected voice.
+const MODEL_EN = process.env.ELEVENLABS_MODEL || 'eleven_v3';
+const MODEL_FR = process.env.ELEVENLABS_MODEL_FR || 'eleven_multilingual_v2';
 
 // stage → a Remotion slide type (render components map from this; unbuilt stages
 // fall back to a generic 'method' slide that still carries all the data).
@@ -100,8 +106,13 @@ for (const b of parsed.beats) {
   } else {
     // French renders at real normal speed, then slows to RATE_ATEMPO×; English
     // stays at normal. atempo is part of the cache key so a rate change re-bakes.
+    const model = isFr ? MODEL_FR : MODEL_EN;
     const atempo = isFr ? (RATE_ATEMPO[b.rate] ?? 0.75) : 1;
-    const key = `${b.voice}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`;
+    // Model is in the FR key only, so switching the French model re-synthesizes
+    // French while English keeps its existing (legacy-keyed) cached clips.
+    const key = isFr
+      ? `${b.voice}|${model}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`
+      : `${b.voice}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`;
     let hit = clipCache.get(key);
     if (!hit) {
       // Stable, content-addressed name so the same utterance always resolves to
@@ -109,15 +120,16 @@ for (const b of parsed.beats) {
       const h = createHash('sha1').update(key).digest('hex').slice(0, 16);
       const rel = `assets/audio/${id}/method/${h}.mp3`;
       const abs = path.join(ROOT, 'public', rel);
-      // Disk cache: the filename is content-addressed by (voice·rate·atempo·text),
+      // Disk cache: the filename is content-addressed by (voice·model·rate·atempo·text),
       // so an existing file IS this exact utterance. Reuse it instead of re-calling
       // ElevenLabs — a re-bake that only changed pauses (silent gaps) costs nothing
-      // and can't drift the audio (also keeps S-08 byte-identity intact).
+      // and can't drift the audio (also keeps S-08 byte-identity intact). Changing the
+      // French model changes the key, so only French clips re-synthesize.
       let d;
       if (existsSync(abs)) {
         d = (await parseFile(abs)).format.duration || 1;
       } else {
-        d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
+        d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
         clipN++;
       }
       hit = { rel, dur: +Number(d).toFixed(2) };
