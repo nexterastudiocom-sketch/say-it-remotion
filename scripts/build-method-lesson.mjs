@@ -62,6 +62,20 @@ const parsed = JSON.parse(await (await import('node:fs/promises')).readFile(beat
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40);
 const wc = (s) => s.split(/\s+/).filter(Boolean).length;
 
+// Two-register model (Method §4.2): every voiced beat is a WORD (the language —
+// French word or its English meaning) or an INSTRUCTION (what to do). French is
+// always a word; an English gloss with no procedural marker is a meaning, anything
+// procedural is an instruction. Baked onto the beat so the renderer + gates read
+// the role from data instead of re-deriving it.
+const INSTR_RE = /\b(listen|repeat|say|turn|now you|again|do ?n['’]?t|point|answer|ask|out loud|in french|in english|ready|one more|this time|your|nasal|nose|throat|tongue|silent|sound|air|stress|syllable|hear|heard)\b/i;
+const registerOf = (voice, text) => {
+  if (voice.startsWith('FR')) return 'word';
+  const s = (text || '').trim();
+  if (!s) return 'instruction';
+  if (INSTR_RE.test(s)) return 'instruction';
+  return s.split(/\s+/).filter(Boolean).length <= 6 ? 'meaning' : 'instruction';
+};
+
 // ---- group beats by segment → slides ----------------------------------------
 // Content-addressed clip cache: an identical (voice·rate·text) utterance is
 // synthesized once and reused. This is what makes INPUT_RETURN replay the SAME
@@ -82,7 +96,7 @@ for (const b of parsed.beats) {
   let dur;
   if (noMedia) {
     dur = isFr ? Math.max(0.4, b.est_audio_s) : +(wc(b.text) * 0.38 + 0.4).toFixed(2);
-    cur.beats.push({ durationInSeconds: +dur.toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
+    cur.beats.push({ durationInSeconds: +dur.toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, register: registerOf(b.voice, b.text), level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
   } else {
     // French renders at real normal speed, then slows to RATE_ATEMPO×; English
     // stays at normal. atempo is part of the cache key so a rate change re-bakes.
@@ -95,13 +109,22 @@ for (const b of parsed.beats) {
       const h = createHash('sha1').update(key).digest('hex').slice(0, 16);
       const rel = `assets/audio/${id}/method/${h}.mp3`;
       const abs = path.join(ROOT, 'public', rel);
-      const d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
+      // Disk cache: the filename is content-addressed by (voice·rate·atempo·text),
+      // so an existing file IS this exact utterance. Reuse it instead of re-calling
+      // ElevenLabs — a re-bake that only changed pauses (silent gaps) costs nothing
+      // and can't drift the audio (also keeps S-08 byte-identity intact).
+      let d;
+      if (existsSync(abs)) {
+        d = (await parseFile(abs)).format.duration || 1;
+      } else {
+        d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model: MODEL, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
+        clipN++;
+      }
       hit = { rel, dur: +Number(d).toFixed(2) };
       clipCache.set(key, hit);
-      clipN++;
     }
     dur = hit.dur;
-    cur.beats.push({ src: hit.rel, durationInSeconds: hit.dur, phase: b.phase, voice: voiceKey(b.voice), text: b.text, level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
+    cur.beats.push({ src: hit.rel, durationInSeconds: hit.dur, phase: b.phase, voice: voiceKey(b.voice), text: b.text, register: registerOf(b.voice, b.text), level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
   }
   // scripted pause → silent gap beat
   if (b.pause > 0) cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });
