@@ -11,6 +11,7 @@ import { LogoMotion } from './deck/LogoMotion';
 import { SubscribeMotion } from './deck/SubscribeMotion';
 import { Thumbnail, THUMB_W, THUMB_H } from './deck/Thumbnail';
 import { ShortVideo, SHORT_FPS, SHORT_FRAMES, ShortSpec } from './shorts/ShortVideo';
+import { HudCheck } from './design/HudCheck';
 
 // Placeholder spec — the shorts build script renders real ones via --props.
 const SAMPLE_SHORT_SPEC: ShortSpec = {
@@ -80,6 +81,17 @@ export const RemotionRoot: React.FC = () => (
         subtitle: 'Talk about your job',
         imageSrc: 'assets/images/lesson-01_vocab-1.png',
       }}
+    />
+
+    {/* Per-level HUD verification frame (3840x2160). Render a still per level. */}
+    <Composition
+      id="HudCheck"
+      component={HudCheck}
+      width={3840}
+      height={2160}
+      fps={FPS}
+      durationInFrames={1}
+      defaultProps={{ level: 'A1', language: 'French', learned: 7, total: 12 }}
     />
 
     {/* Vertical Short (1080x1920). The shorts build script renders one per candidate
