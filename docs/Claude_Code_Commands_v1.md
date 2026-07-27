@@ -247,3 +247,110 @@ Keep it under one page. Point at the specs, do not restate them.
 **Rule count is not progress.** Gate A going from one check to fifty-five means the first real lesson will fail loudly. That is the system working. Expect the first conformant lesson to take several iterations.
 
 **Calibrate before trusting.** The pause floors, the syllable-rate bands, and the 0.4s tolerance are derived from the method spec, not measured against your renders. Run Gate B against two or three videos you have actually watched and tune the thresholds to match what you noticed. Otherwise you get a flood of findings, stop reading them, and the gate becomes decoration.
+
+---
+
+## Command 6 · Image registry and review gate
+
+Run this before Command 4. The golden lesson should be generated with images already resolving.
+
+```
+Build an image registry so that every slide has an illustration, the same
+word always uses the same illustration, and I approve images before render.
+
+REGISTRY
+Create assets/images/registry.json:
+
+  {
+    "items": {
+      "bonjour": {
+        "image_id": "img_fr_bonjour_01",
+        "file": "assets/images/items/img_fr_bonjour_01.png",
+        "brief": "Person waving in a morning street",
+        "status": "pending",
+        "first_lesson": 1,
+        "approved_at": null
+      }
+    },
+    "scenes": {
+      "L01_bakery_counter": { ... same shape, plus "lesson": 1 }
+    }
+  }
+
+Two classes, two reuse rules:
+  items  — keyed by the French item. Reused across EVERY lesson, forever.
+           If bonjour has an image from lesson 1, lesson 9's warm-up uses
+           that same file. This builds a visual vocabulary the learner
+           recognizes, and it is why the key is the item and not the lesson.
+  scenes — keyed by lesson and setting. Not reused across lessons.
+
+RESOLUTION AT TRANSFER EMIT
+When the transcript emits a WORD CARD for item X, look X up in the registry
+and write its image_id. Do not generate. Do not invent a filename.
+If X is absent, create a pending entry from the image_brief column in the
+lesson workbook, then generate.
+
+Never generate a second image for an item that already has one. bonjour
+appears in MEET, ECHO, RECALL, BUILD and RECAP inside one lesson — all five
+resolve to one file. A second image for a known item is a bug.
+
+WHAT NEEDS AN IMAGE
+  every item                    -> item image, from Items.image_brief
+  every Make It Yours scenario  -> scene image
+  the culture note              -> scene image
+  the cold input dialogue       -> scene image, reused at input return
+  the transfer task             -> scene image
+Split-syllable cards, chunk bars, progress bars and the scorecard are
+typographic. They take no illustration.
+
+GENERATION
+Adobe Firefly Custom Model, existing Say It style: European clean-line
+comic, bold uniform-weight ink outlines, flat solid colour fills, no
+gradient shading. Per-language accent colour from the brand spec.
+
+Style consistency is the model's job. Identity consistency is the
+registry's job. Do not rely on the prompt to keep bonjour looking like
+bonjour across nine lessons — that is what the registry is for.
+
+CONTACT SHEET
+After generating, write build/<lesson-id>/contact_sheet.html: one tile per
+image showing thumbnail, item or scene name, English gloss, the brief it
+was generated from, current status, and every segment it will appear in.
+
+Sort pending first. Mark reused images clearly as "approved in lesson N,
+reused" and put them in a collapsed section — I should not re-review an
+image I already signed off.
+
+Each tile needs approve and reject controls that write back to
+registry.json. Reject takes a one-line note that becomes the regeneration
+brief.
+
+GATE A RULES
+Implement I-09 through I-13 from qa/say_it_rules.yaml:
+  I-09  every WORD CARD resolves to a registry entry
+  I-10  an item maps to exactly one image_id everywhere it appears
+  I-11  no image with status other than approved reaches render
+  I-12  WordCard mode is image_only at L3 and above
+  I-13  every scenario, culture note and dialogue stage has a scene image
+
+I-12 matters and is easy to get backwards. At L3 and above the French word
+and the phonetic must disappear, but the ILLUSTRATION stays. The picture
+cues the meaning; the learner supplies the French. It is the one visual
+that survives the L3 blackout, and it is the reason a retrieval beat is
+not just a black screen with a mic icon.
+
+Give WordCard a mode prop: full at L0 and L1, image_only at L3 and above.
+
+GATE B RULE
+I-14: perceptual-hash the card region of the rendered frame against the
+registry file. Catches the case where the render pipeline resolved a stale
+or wrong asset. WARN, not BLOCK.
+
+Do not change the generation loop beyond registry resolution at emit time.
+```
+
+### Why the registry rather than prompt consistency
+
+Firefly keeps the *style* consistent — line weight, palette, no shading. It cannot keep the *subject* consistent. Two generations from "person waving in a morning street" give two different people, and the learner reads that as two different words. The registry makes identity a lookup rather than a hope.
+
+The cross-lesson rule is the part worth not weakening. Keying on the item rather than the lesson means `merci` looks identical in lesson 1 and lesson 22, so by the time a learner reaches B1 the images are functioning as a recognition system of their own.

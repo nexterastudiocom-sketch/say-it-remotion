@@ -444,6 +444,52 @@ rules:
     detail: >
       Read the progress chip and assert it never decreases.
 
+  - id: I-09
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "Every WORD CARD resolves to an entry in the image registry"
+    fix: "Add the item to assets/images/registry.json and generate its image."
+  - id: I-10
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "An item maps to exactly one image_id everywhere it appears"
+    detail: >
+      bonjour appears in MEET, ECHO, RECALL, BUILD and RECAP. All of them
+      must resolve to the same image_id. A second image for a known item is
+      a registry bug, not a style choice.
+    fix: "Resolve every occurrence through the registry instead of generating per slide."
+  - id: I-11
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "No image with status other than approved reaches render"
+    fix: "Run the contact sheet review and approve or replace the pending images."
+  - id: I-12
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "WordCard mode is image_only at L3 and above"
+    detail: >
+      The illustration may stay on screen during retrieval; the French word
+      and phonetic may not. The picture cues meaning, the learner supplies
+      the French. This is the one visual that survives the L3 blackout.
+    fix: "Set mode: image_only on the WordCard for that beat."
+  - id: I-13
+    layer: L0
+    gate: A
+    severity: WARN
+    title: "Every scenario, culture note and dialogue stage has a scene image"
+    fix: "Add a scene image brief for that segment and register it."
+  - id: I-14
+    layer: L3
+    gate: B
+    method: hash
+    severity: WARN
+    title: "The rendered frame for an item matches its registry image"
+    fix: "Perceptual-hash the card region against the registry file."
+
   # ---------- VOICE ----------
   - id: VO-01
     layer: L0
