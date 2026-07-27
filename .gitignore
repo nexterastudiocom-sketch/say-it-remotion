@@ -16,3 +16,7 @@ public/assets/covers/
 build/
 qa/*.json
 .venv-ocr/
+
+# Shorts generated candidates (regenerable from manifests)
+shorts/**/candidates.json
+out/shorts/
