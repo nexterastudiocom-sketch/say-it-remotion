@@ -652,3 +652,119 @@ rules:
     gate: A
     severity: INFO
     title: "At least one pragmatics or culture note is present"
+
+  # ========== SHORTS (vertical short-form) — gate SH ==========
+  # Read-only derivatives of finished lessons. PZ = portrait/format foundations;
+  # SH = short-form retention + retrieval rules from the Shorts spec.
+  - id: PZ-01
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "Frame is exactly 1080x1920 (9:16 portrait)"
+    fix: "Render the short composition at 1080x1920."
+  - id: PZ-02
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "Frame rate is at least 30 fps"
+    fix: "Render at 30fps or higher."
+  - id: PZ-03
+    layer: SHORT
+    gate: SH
+    severity: WARN
+    title: "Speech true peak is at or below -3 dBTP"
+    fix: "Limit/normalize the speech bus so true peak ≤ -3 dBTP."
+  - id: PZ-04
+    layer: SHORT
+    gate: SH
+    severity: WARN
+    title: "Captions hold at least 1.5s and never exceed 2 lines"
+    fix: "Extend caption dwell to ≥1.5s and wrap to at most 2 lines."
+  - id: PZ-05
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "All text and key subject sit inside the safe zones"
+    detail: >
+      Middle 76% vertically, clear of the right 12% (YouTube UI covers bottom+right).
+    fix: "Move text/subject inside the safe zones (see the safe-zone overlay preview)."
+  - id: PZ-06
+    layer: SHORT
+    gate: SH
+    severity: WARN
+    title: "Music bed is ≤ -22 LUFS under speech and MUTED during REVEAL"
+    detail: >
+      The target French must be heard clean; music never competes with it.
+    fix: "Duck the bed to ≤ -22 LUFS under speech and cut it entirely through REVEAL."
+  - id: SH-01
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "Runtime is 18-30s"
+    fix: "Trim or pad beats so the short runs 18-30s (target 18-24)."
+  - id: SH-02
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "No branding in the first 3 seconds"
+    detail: >
+      No logo, brand card, or 'welcome to' before 3.0s. Branding at the front kills
+      retention — it goes at the end or nowhere.
+    fix: "Remove any logo/brand element from 0.0-3.0s."
+  - id: SH-03
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "No French on screen before REVEAL"
+    detail: >
+      Showing the French during HOOK/SETUP/GAP destroys the retrieval the short exists
+      to create. French text appears only from REVEAL onward. OCR check, like I-05.
+    fix: "Clear all French text before the REVEAL beat."
+  - id: SH-04
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "GAP is 3s and visually animated throughout"
+    detail: >
+      A static frame during the learner's turn is where people swipe. Fill it with a
+      countdown ring, mic pulse, or filling chunk bar — motion every frame.
+    fix: "Make the 3s GAP animate continuously (no static frame)."
+  - id: SH-05
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "Final frame matches the opening frame composition"
+    detail: >
+      A seamless loop multiplies counted views per viewer — matching composition and
+      colour so the last frame flows into the first.
+    fix: "Restate the hook at the end with the opening's composition/colour."
+  - id: SH-06
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "Hook text is readable with audio muted"
+    detail: >
+      Most viewers start muted. The 0.5-2.0s hook must state a question or stakes claim
+      as burned-in text, high-contrast, readable without sound.
+    fix: "Add burned-in high-contrast hook text stating the question/stakes."
+  - id: SH-07
+    layer: SHORT
+    gate: SH
+    severity: BLOCK
+    title: "All text inside safe zones"
+    fix: "Keep every caption inside the middle 76% vertical, clear of the right 12%."
+  - id: SH-08
+    layer: SHORT
+    gate: SH
+    severity: WARN
+    title: "Three hook variants exist (_h1 _h2 _h3)"
+    fix: "Render all three hook variants with identical bodies for A/B testing."
+  - id: SH-09
+    layer: SHORT
+    gate: SH
+    severity: WARN
+    title: "Source lessons are sampled weighted toward OLDER lessons"
+    detail: >
+      Shorts only from the newest lesson are marketing; weighting older material makes
+      them do cross-lesson spaced retrieval the long-form videos cannot.
+    fix: "Bias selection toward older lessons across the batch."
