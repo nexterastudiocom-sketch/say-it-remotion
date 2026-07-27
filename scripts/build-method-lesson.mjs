@@ -103,6 +103,15 @@ for (const b of parsed.beats) {
 }
 for (const s of slides) s.durationInSeconds = +s.beats.reduce((a, x) => a + x.durationInSeconds, 0).toFixed(2);
 
+// ---- image registry binding (Command 6) ------------------------------------
+// Resolve each slide/beat to its registry image (shared with scripts/images/bind.mjs
+// so a fresh bake and a post-hoc rebind stay identical). SAYIT_IMAGES_STRICT=1
+// requires approved-only (final render); otherwise 'generated' also renders.
+{
+  const { bindImages } = await import('./images/bind-lib.mjs');
+  await bindImages(slides, parsed.meta.lesson, ROOT, { strict: process.env.SAYIT_IMAGES_STRICT === '1' });
+}
+
 const lesson = {
   title: `Leçon ${parsed.meta.lesson} — ${(parsed.meta.can_do || '').replace(/^I can /, '').replace(/\.$/, '')}`,
   language: parsed.meta.language || 'fr',
