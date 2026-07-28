@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Img, interpolate, useCurrentFrame, useVideoConfig, spring } from 'remotion';
+import { AbsoluteFill, Audio, Img, Sequence, interpolate, useCurrentFrame, useVideoConfig, spring } from 'remotion';
 import { assetSrc } from '../assetSrc';
 
 // Vertical Short — 1080x1920, 20s (600f @30). Reads finished lesson assets only.
@@ -18,7 +18,9 @@ export type ShortSpec = {
   targetFrench: string; phonetic?: string | null; english?: string | null;
   why: string;
   imageSrc?: string | null;
-  revealAudioSrc?: string | null;
+  revealAudioSrc?: string | null;   // the target French, cut from the finished lesson
+  hookAudioSrc?: string | null;     // English hook voice-over (optional)
+  bedSrc?: string | null;           // music bed (optional): ducked under speech, CUT in REVEAL
   accent: string; tint: string;
   safeZoneOverlay?: boolean;
 };
@@ -129,8 +131,23 @@ export const ShortVideo: React.FC<{ spec: ShortSpec }> = ({ spec }) => {
         </div>
       ) : null}
 
+      {/* AUDIO — French (speech) at FLASH + REVEAL; English hook voice; music bed
+          ducked under speech and CUT entirely through REVEAL so the target is clean. */}
       {flashAudio ? <Audio src={assetSrc(spec.revealAudioSrc!)} /> : null}
       {revealAudio ? <Audio src={assetSrc(spec.revealAudioSrc!)} /> : null}
+      {spec.hookAudioSrc ? (
+        <Sequence from={Math.round(0.5 * fps)} durationInFrames={Math.round(2.2 * fps)}>
+          <Audio src={assetSrc(spec.hookAudioSrc)} />
+        </Sequence>
+      ) : null}
+      {spec.bedSrc ? (
+        <Audio src={assetSrc(spec.bedSrc)} loop volume={(f) => {
+          const tt = f / fps;
+          if (tt >= 10 && tt < 15) return 0;              // PZ-06: music muted during REVEAL
+          if ((tt >= 2 && tt < 3) || (tt >= 0.5 && tt < 2)) return 0.12; // ducked under FLASH/HOOK speech
+          return 0.26;                                     // bed level elsewhere (≈ -22 LUFS territory)
+        }} />
+      ) : null}
 
       {/* safe-zone overlay (preview only) */}
       {spec.safeZoneOverlay ? (
