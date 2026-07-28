@@ -124,7 +124,9 @@ async function processWorkbook(name) {
   log(`render ${HQ ? '4K' : '540p'}`);
   const outMp4 = path.join(ROOT, `out/${id}-method-540p.mp4`);
   // --props targets THIS lesson's baked JSON (the composition is generic LessonFilm).
-  sh(REMO, ['render', 'Lesson-01-Method', outMp4, `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`, ...(HQ ? ['--scale=1'] : ['--scale=0.25']), '--concurrency=6']);
+  // --timeout: fonts/images load over the network per frame; 30s (default) can be
+  // exceeded on a heavy frame. 180s is generous and prevents a stall from failing the run.
+  sh(REMO, ['render', 'Lesson-01-Method', outMp4, `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`, ...(HQ ? ['--scale=1'] : ['--scale=0.25']), '--concurrency=6', '--timeout=180000']);
   log('loudnorm');               sh('node', ['scripts/pipeline/normalize.mjs', outMp4, path.join(ROOT, `out/${id}-method-540p-norm.mp4`)]);
   log('thumbnail');              sh('node', ['scripts/thumbnail.mjs', id]);
 
