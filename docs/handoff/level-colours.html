@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Mosaic · Level badge colour update</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#F7F5F0;color:#16181D;font-family:'Hanken Grotesk',sans-serif;line-height:1.6;padding:56px 24px}
+  .wrap{max-width:920px;margin:0 auto}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A6FE0}
+  h1{font-family:'Rubik',sans-serif;font-weight:700;font-size:38px;letter-spacing:-.02em;margin:12px 0 8px}
+  h2{font-family:'Rubik',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.01em;margin:40px 0 12px}
+  p{max-width:70ch}
+  code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:#EAE7E0;padding:2px 6px;border-radius:6px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+  .cell{background:#fff;border:1px solid #E4E0D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px}
+  .pill{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;font-family:'Rubik',sans-serif;font-weight:600;font-size:24px;padding:9px 22px;border-radius:999px}
+  .tess{width:13px;height:13px;border-radius:4px}
+  .meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:#6B6862;line-height:1.7}
+  table{border-collapse:collapse;width:100%;margin-top:12px;font-size:14px}
+  th,td{text-align:left;padding:10px 14px;border-top:1px solid #E4E0D8}
+  th{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A857C}
+  .rule{background:#fff;border:1px solid #E4E0D8;border-left:4px solid #B56AE7;border-radius:12px;padding:18px 22px;margin:14px 0}
+</style>
+<div class="wrap">
+  <p class="eyebrow">Mosaic · design update</p>
+  <h1>The level badge uses a system-wide level colour, not the language accent.</h1>
+  <p>On every surface that shows a CEFR level (thumbnail pill, in-video HUD badge), the badge is coloured by the <strong>level</strong>, identically across all five channels. Only the language accent (block, tesserae, counter) stays per-channel. This makes the level legible at browse size regardless of which channel a video is on.</p>
+
+  <h2>The six level colours</h2>
+  <div class="grid">
+    <div class="cell"><span class="pill" style="background:#B56AE7;color:#14121A"><span class="tess" style="background:#14121A"></span>A1</span><span class="meta">A · purple · light<br>bg #B56AE7 · on #14121A</span></div>
+    <div class="cell"><span class="pill" style="background:#581584;color:#FFFFFF"><span class="tess" style="background:#FFFFFF"></span>A2</span><span class="meta">A · purple · deep<br>bg #581584 · on #FFFFFF</span></div>
+    <div class="cell"><span class="pill" style="background:#E76ABD;color:#14121A"><span class="tess" style="background:#14121A"></span>B1</span><span class="meta">B · magenta · light<br>bg #E76ABD · on #14121A</span></div>
+    <div class="cell"><span class="pill" style="background:#84155F;color:#FFFFFF"><span class="tess" style="background:#FFFFFF"></span>B2</span><span class="meta">B · magenta · deep<br>bg #84155F · on #FFFFFF</span></div>
+    <div class="cell"><span class="pill" style="background:#E76A83;color:#14121A"><span class="tess" style="background:#14121A"></span>C1</span><span class="meta">C · rose · light<br>bg #E76A83 · on #14121A</span></div>
+    <div class="cell"><span class="pill" style="background:#84152B;color:#FFFFFF"><span class="tess" style="background:#FFFFFF"></span>C2</span><span class="meta">C · rose · deep<br>bg #84152B · on #FFFFFF</span></div>
+  </div>
+  <p>Each band (A/B/C) has one hue; the <em>1</em>-level is the light tone (ink type + ink tessera), the <em>2</em>-level is the deep tone (white type + white tessera).</p>
+
+  <h2>What changes in the thumbnail template</h2>
+  <p>The level pill currently fills with the language accent (e.g. <code>#2E4FE0</code>) and white type. Replace with the level colour above — background <code>bg</code>, type + tessera <code>on</code> — keyed by the video's level, the same value on every channel.</p>
+  <div class="rule"><strong>This removes the “German inverts the badge” rule.</strong> That rule existed because the gold accent failed contrast on white. Level colours carry their own <code>on</code>-colour, so no per-channel exception is needed — every channel shows the same level badge.</div>
+
+  <h2>Token source</h2>
+  <table>
+    <tr><th>Token</th><th>bg (hex)</th><th>on (hex)</th></tr>
+    <tr><td>level.A1</td><td>#B56AE7</td><td>#14121A</td></tr>
+    <tr><td>level.A2</td><td>#581584</td><td>#FFFFFF</td></tr>
+    <tr><td>level.B1</td><td>#E76ABD</td><td>#14121A</td></tr>
+    <tr><td>level.B2</td><td>#84155F</td><td>#FFFFFF</td></tr>
+    <tr><td>level.C1</td><td>#E76A83</td><td>#14121A</td></tr>
+    <tr><td>level.C2</td><td>#84152B</td><td>#FFFFFF</td></tr>
+  </table>
+  <p class="meta" style="margin-top:18px">Implemented in the Remotion project: <code>src/design/tokens.json</code> (level tokens) · <code>src/deck/Thumbnail.tsx</code> and <code>src/design/LevelBadge.tsx</code> both read <code>levelToken(level)</code>.</p>
+</div>
