@@ -103,7 +103,10 @@ w(`lesson: ${num}`); w(`language: ${brief.language || 'fr'}`); w(`level: ${brief
 w(`class: ${brief.class || 'CALIBRATION'}`);
 // Header subtitle — ENGLISH/neutral topic, never a taught French word (it is on
 // screen during retrieval; a taught word here leaks the answer, X-06/I-05).
-if (brief.lesson_title) w(`title: "${String(brief.lesson_title).replace(/"/g, "'")}"`);
+// Always emit a title (topic) — from the workbook's lesson_title, else derived
+// from the can-do. Downstream (YouTube metadata, thumbnail) needs it non-empty.
+const lessonTitle = brief.lesson_title || (brief.can_do || '').replace(/^I can\s+/i, '').split(/[,;]/)[0].replace(/\.$/, '').trim() || `Lesson ${num}`;
+w(`title: "${String(lessonTitle).replace(/"/g, "'")}"`);
 w(`can_do: "${(brief.can_do || '').replace(/"/g, "'")}"`);
 w(`items: [${itemsList}]`);
 if (names.length) w(`names: [${names.map((n) => (/[^A-Za-z]/.test(n) ? `"${n}"` : n)).join(', ')}]`);

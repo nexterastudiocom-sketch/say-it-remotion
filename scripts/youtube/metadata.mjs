@@ -169,6 +169,13 @@ export function buildMetadata(lesson, overrides = {}, seoConfig = {}) {
   if (!Array.isArray(lesson.chapters)) throw new Error('buildMetadata: lesson.chapters[] is required');
   if (!Array.isArray(lesson.words)) throw new Error('buildMetadata: lesson.words[] is required');
 
+  // Topic fallback: some workbooks omit a lesson title, so derive it from the
+  // can-do ("I can order a coffee" → "Order a coffee") rather than crashing.
+  if (!lesson.meta.title) {
+    const cd = String(lesson.meta.can_do || '').replace(/^I can\s+/i, '').split(/[,;]/)[0].replace(/\.$/, '').trim();
+    lesson = { ...lesson, meta: { ...lesson.meta, title: (cd ? cd[0].toUpperCase() + cd.slice(1) : `Lesson ${lesson.meta.lesson || ''}`.trim()) } };
+  }
+
   const snippet = {
     title: buildTitle(lesson),
     description: buildDescription(lesson, seoConfig),
