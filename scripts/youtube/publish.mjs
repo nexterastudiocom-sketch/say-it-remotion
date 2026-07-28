@@ -51,6 +51,7 @@ function parseArgs(argv) {
     switch (a) {
       case '--lang': args.lang = next(); break;
       case '--lesson': args.lesson = Number(next()); break;
+      case '--id': args.id = next(); break; // explicit lesson id (loop passes the workbook basename)
       case '--privacy': args.privacy = next(); break;
       case '--schedule': args.schedule = next(); break;
       case '--metadata': args.metadata = next(); break;
@@ -118,8 +119,8 @@ function buildWords(meta, registry) {
   });
 }
 
-function resolveInputs(lang, lesson) {
-  const id = `lesson-${two(lesson)}`;
+function resolveInputs(lang, lesson, idOverride) {
+  const id = idOverride || `lesson-${two(lesson)}`;
   const paths = {
     id,
     methodJson: path.join(REPO_ROOT, 'src', 'data', 'lessons', `${id}.method.json`),
@@ -134,7 +135,7 @@ function resolveInputs(lang, lesson) {
 }
 
 function loadResolvedLesson(args) {
-  const P = resolveInputs(args.lang, args.lesson);
+  const P = resolveInputs(args.lang, args.lesson, args.id);
 
   if (!existsSync(P.methodJson)) fail(`Lesson JSON missing: ${P.methodJson}`);
   if (!existsSync(P.manifest)) fail(`Build manifest missing (needed for chapters): ${P.manifest}`);

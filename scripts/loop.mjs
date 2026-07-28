@@ -89,7 +89,7 @@ async function publish(id) {
   let ytTxt = path.join(ROOT, `out/${id}-youtube.txt`);
   try {
     const meta = JSON.parse(await readFile(path.join(ROOT, `src/data/lessons/${id}.method.json`), 'utf8')).meta || {};
-    sh('node', ['scripts/youtube/publish.mjs', '--lang', meta.language || 'fr', '--lesson', String(meta.lesson || Number(id.replace(/\D/g, '')) || 1), '--paste']);
+    sh('node', ['scripts/youtube/publish.mjs', '--lang', meta.language || 'fr', '--lesson', String(meta.lesson || Number(id.replace(/\D/g, '')) || 1), '--id', id, '--paste']);
   } catch (e) { console.log(`  (youtube metadata skipped: ${e.message})`); ytTxt = null; }
 
   log(`publish ${id} → ${lessonFolder}`);

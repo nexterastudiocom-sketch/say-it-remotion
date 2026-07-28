@@ -280,8 +280,9 @@ def multiword_tokens(text: str, allowed_multi):
     t = re.sub(r"\s*(?:\.\.\.|…)\s*", "", t)  # rejoin syllable splits: bon... jour → bonjour
     for item in sorted(allowed_multi, key=len, reverse=True):
         t = t.replace(item, " ")
-    t = re.sub(r"[^a-z' ]", " ", t)
-    return [w for w in t.split() if w and w != "'"]
+    t = re.sub(r"[^a-z'\- ]", " ", t)  # keep hyphens: dix-sept / peut-être are single tokens
+    t = re.sub(r"(?:^|(?<= ))-+|-+(?:(?= )|$)", " ", t)  # but drop stray leading/trailing dashes
+    return [w for w in t.split() if w and w != "'" and w != "-"]
 
 
 # ─────────────────────────────────────────────────────────────
