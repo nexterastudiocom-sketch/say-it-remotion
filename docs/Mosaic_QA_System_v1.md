@@ -1,7 +1,7 @@
-# Say It QA System
+# Mosaic QA System
 
-**Version 1.0** · Enforces `Say_It_Method_v1.md` (v1.1)
-Implementation: `say_it_qc.py` · Rule registry: `say_it_rules.yaml`
+**Version 1.0** · Enforces `Mosaic_Method_v1.md` (v1.1)
+Implementation: `mosaic_qc.py` · Rule registry: `mosaic_rules.yaml`
 
 Every lesson passes through five layers before publication. Layers 0 and 4 run on the transcript alone and gate generation. Layers 1–3 run on the rendered video and gate publication.
 
@@ -164,14 +164,14 @@ These are the design-verifiable subset of the research evaluation framework. A l
 pip install pyyaml --break-system-packages
 
 # authoring loop — run on every save
-python say_it_qc.py lesson_04.md --curriculum curriculum.yaml
+python mosaic_qc.py lesson_04.md --curriculum curriculum.yaml
 
 # pre-render gate
-python say_it_qc.py lesson_04.md --curriculum curriculum.yaml --json qa_pre.json
+python mosaic_qc.py lesson_04.md --curriculum curriculum.yaml --json qa_pre.json
 # exit 1 = do not render
 
 # post-render gate
-python say_it_qc.py lesson_04.md --curriculum curriculum.yaml \
+python mosaic_qc.py lesson_04.md --curriculum curriculum.yaml \
   --video out/lesson_04.mp4 \
   --emit-vision-rubric out/lesson_04_rubric.json \
   --json qa_post.json

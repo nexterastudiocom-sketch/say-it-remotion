@@ -148,7 +148,7 @@ export const RemotionRoot: React.FC = () => (
       );
     })()}
 
-    {/* Say It Method lesson (12 stages), baked from a workbook via the generator. */}
+    {/* Mosaic Method lesson (12 stages), baked from a workbook via the generator. */}
     {(() => {
       const lesson = lesson01Method as unknown as Lesson;
       return (

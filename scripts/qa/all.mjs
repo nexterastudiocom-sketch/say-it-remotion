@@ -3,7 +3,7 @@
 // Convenience only — every check below is ALSO a standalone script you can run alone.
 //
 //   node scripts/qa/all.mjs <video-id> [--gate-a-only] [--gate-b-only]
-//   SAYIT_QA_VIDEO=out/films/<id>-preview.mp4 node scripts/qa/all.mjs <id>   # test vs a preview
+//   MOSAIC_QA_VIDEO=out/films/<id>-preview.mp4 node scripts/qa/all.mjs <id>   # test vs a preview
 //
 // Exit 3 if any HIGH finding exists (so CI / the loop can block).
 
@@ -18,7 +18,7 @@ const steps = [];
 if (only !== 'b') steps.push(['manifest.mjs'], ['gate-a-curriculum.mjs']);
 if (only !== 'a') steps.push(['gate-b-pauses.mjs'], ['gate-b-wpm.mjs'], ['gate-b-pronunciation.mjs'], ['gate-b-av-sync.mjs']);
 
-console.log(`\n══ QA suite · ${id}${process.env.SAYIT_QA_VIDEO ? ` (video: ${process.env.SAYIT_QA_VIDEO})` : ''} ══\n`);
+console.log(`\n══ QA suite · ${id}${process.env.MOSAIC_QA_VIDEO ? ` (video: ${process.env.MOSAIC_QA_VIDEO})` : ''} ══\n`);
 for (const [script, ...args] of steps) {
   const r = await node(script, ...args);
   process.stdout.write(r.stdout);

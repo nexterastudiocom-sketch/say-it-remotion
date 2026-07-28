@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// GATE A — Say It Method, all 55 pre-render rules (layers L0 + L4).
+// GATE A — Mosaic Method, all 55 pre-render rules (layers L0 + L4).
 //
 //   node scripts/qa/gate-a.mjs <video-id> [--promote-lexicon] [--transcript <path>]
 //
-// Thin wrapper around the reference engine qa/say_it_qc.py: it loads the 69-rule
-// registry (qa/say_it_rules.yaml), parses the lesson transcript to the Method
+// Thin wrapper around the reference engine qa/mosaic_qc.py: it loads the 69-rule
+// registry (qa/mosaic_rules.yaml), parses the lesson transcript to the Method
 // grammar, runs every Gate-A rule, and writes qa/<id>.json in the shared schema
 // {gate, rule, severity, layer, line, issue, evidence, suggested_fix}. Exit 1 on
 // any BLOCK so the render step can gate. --promote-lexicon appends this lesson's
@@ -17,8 +17,8 @@ import { execFileSync } from 'node:child_process';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const PY = process.env.QA_PY || path.join(ROOT, '.venv-ocr/bin/python');
-const QC = path.join(ROOT, 'qa/say_it_qc.py');
-const RULES = path.join(ROOT, 'qa/say_it_rules.yaml');
+const QC = path.join(ROOT, 'qa/mosaic_qc.py');
+const RULES = path.join(ROOT, 'qa/mosaic_rules.yaml');
 const LEXICON = path.join(ROOT, 'state/lexicon.json');
 
 const args = process.argv.slice(2);

@@ -150,7 +150,7 @@ async function generateLesson(ref, cfg, { dry }) {
     return { ok: r.code === 0, detail: r.code === 0 ? 'authored' : r.stderr.trim() };
   }, { dry });
 
-  // 2. GATE A (pre-render) — the 77-rule registry via say_it_qc. A BLOCK is a real
+  // 2. GATE A (pre-render) — the 77-rule registry via mosaic_qc. A BLOCK is a real
   //    source problem; the curriculum is authoritative, so we HALT (never fabricate).
   //    WARNs are logged by Gate B validation, not blocking (config.method.warnPolicy).
   await step('gate A (pre-render, 77 rules)', async () => {
@@ -179,11 +179,11 @@ async function generateLesson(ref, cfg, { dry }) {
   }, { tries: cfg.retries.perAsset, ...cfg.retries }, (i, e, d) => log(ref.id, 'retry-images', { i, msg: e.message, backoffMs: d })), { dry });
 
   // 4. audio + bake timeline (COSTS ElevenLabs $; disk-cached clips reused) → .method.json.
-  //    SAYIT_IMAGES_STRICT ties the bake to approved-only images (I-11) when auto-approving.
+  //    MOSAIC_IMAGES_STRICT ties the bake to approved-only images (I-11) when auto-approving.
   await setStatus({ status: 'generating-audio' });
   await step('build audio + timeline (method)', () => withRetry(async () => {
     const r = await run('node', ['--env-file=.env', 'scripts/build-method-lesson.mjs', ref.id],
-      { env: { ...process.env, SAYIT_IMAGES_STRICT: strict ? '1' : '0' } });
+      { env: { ...process.env, MOSAIC_IMAGES_STRICT: strict ? '1' : '0' } });
     if (r.code !== 0) throw new Error(r.stderr.trim().split('\n').slice(-2).join(' ') || 'build-method-lesson failed');
     return { ok: true, detail: 'baked' };
   }, { tries: cfg.retries.perAsset, ...cfg.retries }, (i, e, d) => log(ref.id, 'retry-audio', { i, msg: e.message, backoffMs: d })), { dry });
@@ -261,8 +261,8 @@ async function processLesson(ref, cfg, { dry }) {
 // tools. Autonomous upload therefore goes through rclone (same pattern as the
 // existing OneDrive path). Configure once:
 //   rclone config           # create a remote named "gdrive" (Google Drive, OAuth)
-//   export SAYIT_GDRIVE_REMOTE=gdrive
-//   export SAYIT_GDRIVE_BASE="ClaudeAI/Youtube/French"   # optional; this is the default
+//   export MOSAIC_GDRIVE_REMOTE=gdrive
+//   export MOSAIC_GDRIVE_BASE="ClaudeAI/Youtube/French"   # optional; this is the default
 // Without a remote we still BUILD the bundle + stage the video locally and print
 // exactly what to upload — nothing is silently skipped.
 async function publishLesson(ref, { dry }) {
@@ -280,15 +280,15 @@ async function publishLesson(ref, { dry }) {
   console.log(`  ✓ bundle: ${bundle.zipRel} (${bundle.fileCount} files)`);
   console.log(`  ✓ staged: ${stageDir.replace(ROOT + '/', '')}${stagedVideo ? ' (incl. video)' : ' (video not rendered yet)'}`);
 
-  const remote = process.env.SAYIT_GDRIVE_REMOTE;
-  const base = process.env.SAYIT_GDRIVE_BASE || 'ClaudeAI/Youtube/French';
+  const remote = process.env.MOSAIC_GDRIVE_REMOTE;
+  const base = process.env.MOSAIC_GDRIVE_BASE || 'ClaudeAI/Youtube/French';
   // Resolve rclone robustly — $RCLONE_BIN, then PATH, then the stable ~/.local/bin
   // copy (survives nvm switching node versions). All read the same ~/.config/rclone.
   const rcloneBin = await resolveRclone();
   if (!remote || !rcloneBin) {
-    console.log(`\n  ⚠ Upload skipped — ${!rcloneBin ? 'rclone not found' : 'SAYIT_GDRIVE_REMOTE not set'}.`);
+    console.log(`\n  ⚠ Upload skipped — ${!rcloneBin ? 'rclone not found' : 'MOSAIC_GDRIVE_REMOTE not set'}.`);
     console.log(`    Everything to upload is staged in ${stageDir.replace(ROOT + '/', '')}.`);
-    console.log(`    Enable auto-upload: "rclone config" a Google Drive remote, then set SAYIT_GDRIVE_REMOTE=gdrive.`);
+    console.log(`    Enable auto-upload: "rclone config" a Google Drive remote, then set MOSAIC_GDRIVE_REMOTE=gdrive.`);
     return { uploaded: false, staged: stageDir };
   }
   const dest = `${remote}:${base}/${ref.id}`;
@@ -321,7 +321,7 @@ async function main() {
   const lessons = await discoverLessons();
 
   if (mode === 'inspect') {
-    console.log(`\nSay It — lesson→video loop  (pipeline config v${cfg.version})`);
+    console.log(`\nMosaic — lesson→video loop  (pipeline config v${cfg.version})`);
     console.log(`Gates: duration ${cfg.duration.minSeconds}-${cfg.duration.maxSeconds}s · ${cfg.video.width}x${cfg.video.height}@${cfg.video.fps} · ${cfg.video.vcodec}/${cfg.video.acodec} · loudness ${cfg.loudness.targetLufs}±${cfg.loudness.toleranceLufs} LUFS · sync ±${cfg.sync.toleranceSeconds}s`);
     console.log(`Pronunciation gate: ${cfg.pronunciation.enabled ? cfg.pronunciation.engine : 'DISABLED → needs-review (honest: unverified)'}`);
     console.log(`\nDiscovered ${lessons.length} lesson source(s):`);

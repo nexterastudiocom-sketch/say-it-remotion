@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Say It Method — QA harness
-Spec: Say_It_Method_v1.md · Rules: say_it_rules.yaml
+Mosaic Method — QA harness
+Spec: Mosaic_Method_v1.md · Rules: mosaic_rules.yaml
 
 Usage:
-  python say_it_qc.py lesson.md
-  python say_it_qc.py lesson.md --curriculum curriculum.yaml
-  python say_it_qc.py lesson.md --video out.mp4 --json report.json
-  python say_it_qc.py lesson.md --emit-vision-rubric rubric.json
+  python mosaic_qc.py lesson.md
+  python mosaic_qc.py lesson.md --curriculum curriculum.yaml
+  python mosaic_qc.py lesson.md --video out.mp4 --json report.json
+  python mosaic_qc.py lesson.md --emit-vision-rubric rubric.json
 
 Layers:
   L0  static transcript analysis   (always runs)
@@ -911,7 +911,7 @@ def main():
     global RULES
     ap = argparse.ArgumentParser()
     ap.add_argument("transcript")
-    ap.add_argument("--rules", default=str(Path(__file__).with_name("say_it_rules.yaml")))
+    ap.add_argument("--rules", default=str(Path(__file__).with_name("mosaic_rules.yaml")))
     ap.add_argument("--curriculum")
     ap.add_argument("--video")
     ap.add_argument("--json")

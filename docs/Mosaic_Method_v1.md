@@ -1,9 +1,9 @@
-# The Say It Method
+# The Mosaic Method
 
 **Version 1.1 · Canonical specification**
-Applies to: all Say It language channels (FR, ES, IT, PT, DE) and the Say It companion app.
+Applies to: all Mosaic language channels (FR, ES, IT, PT, DE) and the Mosaic companion app.
 
-This document is the single source of truth for how a Say It lesson is designed, authored, rendered, and quality-checked. Every lesson is written against Part II–VI and validated against the rule table in Part VII.
+This document is the single source of truth for how a Mosaic lesson is designed, authored, rendered, and quality-checked. Every lesson is written against Part II–VI and validated against the rule table in Part VII.
 
 ---
 
@@ -11,7 +11,7 @@ This document is the single source of truth for how a Say It lesson is designed,
 
 ### 1.1 The claim
 
-Recognition is not production. A learner who can pick "hello" from four options when shown *bonjour* has not learned to greet anyone. The Say It Method is built on the position that the unit of learning is **an utterance the learner produced themselves, unaided, from meaning.**
+Recognition is not production. A learner who can pick "hello" from four options when shown *bonjour* has not learned to greet anyone. The Mosaic Method is built on the position that the unit of learning is **an utterance the learner produced themselves, unaided, from meaning.**
 
 Everything in this spec exists to move items up the support ladder (§4) until the learner produces them cold.
 

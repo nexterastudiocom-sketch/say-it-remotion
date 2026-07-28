@@ -1,7 +1,7 @@
 import '../fonts';
 import React from 'react';
 import { AbsoluteFill, Img, interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
-import { SayItLogo, DotAnim } from './SayItLogo';
+import { MosaicLogo, DotAnim } from './MosaicLogo';
 import { IntroBackground } from './IntroBackground';
 import { assetSrc } from '../assetSrc';
 import { LANGUAGES, monogramLogo } from './theme';
@@ -55,7 +55,7 @@ const Monogram: React.FC<{ language: LanguageCode; cx: number; cy: number; s: nu
 
 const FullLogo: React.FC<{ accent: string; dot: DotAnim; opacity: number }> = ({ accent, dot, opacity }) => (
   <div style={{ position: 'absolute', left: BIG.x, top: BIG.y, width: LOGO_W, height: LOGO_H, opacity }}>
-    <SayItLogo accent={accent} dot={dot} style={{ width: '100%', height: '100%', display: 'block' }} />
+    <MosaicLogo accent={accent} dot={dot} style={{ width: '100%', height: '100%', display: 'block' }} />
   </div>
 );
 

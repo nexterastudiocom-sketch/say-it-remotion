@@ -1,4 +1,4 @@
-// Content model for the Say It lesson template.
+// Content model for the Mosaic lesson template.
 //
 // A lesson is an ordered list of slides. Each slide carries its own
 // durationInSeconds so that — once ElevenLabs narration is wired — the

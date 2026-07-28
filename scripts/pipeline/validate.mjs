@@ -288,7 +288,7 @@ export async function validateMethodGateB({ id, videoPath }, cfg) {
   await run('node', ['scripts/qa/gate-a.mjs', id]);
   const man = await run('node', ['scripts/qa/manifest.mjs', id]);
   if (man.code !== 0) return [fail('gateBBlocks', 'manifest emit failed: ' + (man.stderr.trim().split('\n').pop() || ''), { hardGate: true })];
-  await run('node', ['scripts/qa/gate-b.mjs', id], { env: { ...process.env, SAYIT_QA_VIDEO: videoPath } });
+  await run('node', ['scripts/qa/gate-b.mjs', id], { env: { ...process.env, MOSAIC_QA_VIDEO: videoPath } });
   const qaPath = path.join(ROOT, `qa/${id}.json`);
   if (!existsSync(qaPath)) return [fail('gateBBlocks', `no qa/${id}.json after Gate B`, { hardGate: true })];
   const F = (JSON.parse(await readFile(qaPath, 'utf8')).findings) || [];

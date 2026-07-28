@@ -1,0 +1,34 @@
+{
+  "id": "lesson-01_word_of_day_1",
+  "type": "WORD_OF_DAY",
+  "lesson": "lesson-01",
+  "level": "A1",
+  "title": "French word of the day: bonjour",
+  "description": "bonjour — hello / good morning — Full lesson: [lesson-01]",
+  "hashtags": [
+    "#LearnFrench",
+    "#A1French",
+    "#bonjour"
+  ],
+  "thumbnailFrom": "CARD",
+  "variants": {
+    "h1": {
+      "file": "out/shorts/lesson-01_word_of_day_1_h1.mp4",
+      "thumb": "out/shorts/lesson-01_word_of_day_1_h1.thumb.png",
+      "hook": "French word of the day",
+      "hasVoice": false
+    },
+    "h2": {
+      "file": "out/shorts/lesson-01_word_of_day_1_h2.mp4",
+      "thumb": "out/shorts/lesson-01_word_of_day_1_h2.thumb.png",
+      "hook": "Your French word today",
+      "hasVoice": false
+    },
+    "h3": {
+      "file": "out/shorts/lesson-01_word_of_day_1_h3.mp4",
+      "thumb": "out/shorts/lesson-01_word_of_day_1_h3.thumb.png",
+      "hook": "Learn this French word",
+      "hasVoice": false
+    }
+  }
+}

@@ -24,7 +24,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const REMOTION = path.join(ROOT, 'node_modules/.bin/remotion');
 const TAIL_PAD = 0.6;
 const LANG = 'fr';
-const WORKBOOK = path.join(ROOT, 'curriculum/Say_It_A1_French_Curriculum.xlsx');
+const WORKBOOK = path.join(ROOT, 'curriculum/Mosaic_A1_French_Curriculum.xlsx');
 
 const args = process.argv.slice(2);
 const lessonNum = Number(args.find((a) => /^\d+$/.test(a)) || 1);

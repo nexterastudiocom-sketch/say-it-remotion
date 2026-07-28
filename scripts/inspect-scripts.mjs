@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const wb = XLSX.readFile(path.join(ROOT, 'curriculum/Say_It_A1_French_Curriculum.xlsx'));
+const wb = XLSX.readFile(path.join(ROOT, 'curriculum/Mosaic_A1_French_Curriculum.xlsx'));
 const rows = XLSX.utils.sheet_to_json(wb.Sheets['4 · Lesson Scripts'], { defval: '' });
 
 // Distinct segment types + counts

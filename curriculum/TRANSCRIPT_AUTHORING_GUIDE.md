@@ -1,4 +1,4 @@
-# Say It — Transcript Authoring Guide
+# Mosaic — Transcript Authoring Guide
 
 How to write a lesson transcript the pipeline can turn straight into a 4K film.
 Save each lesson as `curriculum/lesson-XX.sent.md`, then run it (see **Running** at the end).

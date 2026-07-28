@@ -1,4 +1,4 @@
-// Say It — local control panel server.
+// Mosaic — local control panel server.
 // Runs on your Mac; drives the existing pipeline (parse-sent → build-from-script
 // → Remotion render) plus per-clip ElevenLabs and per-image Recraft regeneration.
 // No cloud, no new deps — Node's built-in http + the scripts already here.
@@ -146,7 +146,7 @@ const server = http.createServer(async (req, res) => {
       const rel = `out/films/${LID}-studio.mp4`;
       if (!existsSync(path.join(ROOT, rel))) return sendJSON(res, { error: 'No rendered video yet — render first.' }, 400);
       const remote = process.env.RCLONE_REMOTE || 'onedrive';
-      const dest = process.env.RCLONE_DEST || 'Say It';
+      const dest = process.env.RCLONE_DEST || 'Mosaic';
       return sseRun(res, 'rclone', ['copyto', '--progress', path.join(ROOT, rel), `${remote}:${dest}/${LID}-studio.mp4`]);
     }
 
@@ -220,7 +220,7 @@ const server = http.createServer(async (req, res) => {
       const guidePath = path.join(ROOT, 'curriculum/TRANSCRIPT_AUTHORING_GUIDE.md');
       const guide = existsSync(guidePath) ? await readFile(guidePath, 'utf8') : '';
       const system =
-        `You write "Say It" language-lesson transcripts in the exact "sent to ElevenLabs" format. ` +
+        `You write "Mosaic" language-lesson transcripts in the exact "sent to ElevenLabs" format. ` +
         `Follow this authoring guide precisely:\n\n${guide}\n\n` +
         `Output ONLY the transcript (starting with "# Lesson"). No preamble, no explanation, no code fences.`;
       const user =
@@ -287,4 +287,4 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => console.log(`\n  Say It studio → http://localhost:${PORT}\n`));
+server.listen(PORT, () => console.log(`\n  Mosaic studio → http://localhost:${PORT}\n`));

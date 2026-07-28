@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Emit the GOLDEN lesson — lesson_01.md "Dire bonjour" — to full Say It Method
-// conformance (docs/Say_It_Method_v1.md + grammar Part II). Content is authored
+// Emit the GOLDEN lesson — lesson_01.md "Dire bonjour" — to full Mosaic Method
+// conformance (docs/Mosaic_Method_v1.md + grammar Part II). Content is authored
 // as data; structure follows the Core Loop / Build Loop templates and EVERY
 // pause is computed with P(beat). Re-run to regenerate. Gate A iterates on it.
 //
@@ -56,8 +56,8 @@ w(`items: [bonjour, salut, merci, "s'il vous plaît", oui, non, au revoir, pardo
 w('frame: "[greeting], [person]. [courtesy] !"');
 w('---');
 w();
-w('<!-- GOLDEN LESSON · reference example for all future Say It lesson generation.');
-w('     Authored to Say_It_Method_v1.md. Every pause is computed via P(beat).');
+w('<!-- GOLDEN LESSON · reference example for all future Mosaic lesson generation.');
+w('     Authored to Mosaic_Method_v1.md. Every pause is computed via P(beat).');
 w('     Regenerate with: node scripts/author-lesson-01.mjs -->');
 
 // 01 CAN_DO_GOAL (pair T: EN·MAN + FR·WOMAN)

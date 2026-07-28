@@ -47,8 +47,8 @@ rclone lsd gdrive:ClaudeAI/Youtube/French     # should list your lesson folders
 
 Add these to your shell (e.g. `~/.zshrc`) or prefix a command with them:
 ```bash
-export SAYIT_GDRIVE_REMOTE=gdrive
-# SAYIT_GDRIVE_BASE defaults to "ClaudeAI/Youtube/French" — only set to override
+export MOSAIC_GDRIVE_REMOTE=gdrive
+# MOSAIC_GDRIVE_BASE defaults to "ClaudeAI/Youtube/French" — only set to override
 ```
 
 ## 4. Upload

@@ -49,7 +49,7 @@ Markup key: *[bracketed italics]* = Eleven v3 audio tag (start of line, one or t
 🖼 **ON-SCREEN:** Warm greeting scene — two people meeting on a sunlit street, one mid-wave, a small "Bonjour !" speech-bubble accent. A greeting lesson opens on a greeting, not a generic intro slide.
 
 **NARRATOR (EN · MAN)** *[warmly, welcoming]*
-"Welcome to Say It French — the course where you don't just hear French, you speak it. Starting right now."
+"Welcome to Mosaic French — the course where you don't just hear French, you speak it. Starting right now."
 
 🖼 **ON-SCREEN:** Four labels appear one at a time, left to right, each with a small icon, timed to land as each word is spoken: MEET (spark) → ECHO (speech bubble) → BUILD (blocks) → MAKE IT YOURS (pencil). All four stay on screen together once named.
 

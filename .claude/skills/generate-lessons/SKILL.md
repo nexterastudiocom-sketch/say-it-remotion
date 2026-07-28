@@ -1,14 +1,14 @@
 ---
 name: generate-lessons
-description: Run the resumable Say It lesson→video generation loop — inspect, validate, dry-run, generate one/range, resume, repair, and approve French (then ES/IT/PT/DE) A1 lessons from the authoritative curriculum. Use when the user wants to build, re-build, validate, or check the status of lesson videos.
+description: Run the resumable Mosaic lesson→video generation loop — inspect, validate, dry-run, generate one/range, resume, repair, and approve French (then ES/IT/PT/DE) A1 lessons from the authoritative curriculum. Use when the user wants to build, re-build, validate, or check the status of lesson videos.
 ---
 
-# Generate Say It lessons
+# Generate Mosaic lessons
 
 A resumable loop that turns the **authoritative Excel curriculum** into a graded 4K
 lesson video through the **Method pipeline**:
 
-  Excel workbook → `author-from-excel` → **Gate A** (77-rule registry, say_it_qc)
+  Excel workbook → `author-from-excel` → **Gate A** (77-rule registry, mosaic_qc)
   → images (registry → generate LOCKED style → auto-approve) → `build-method-lesson`
   (v2 FR audio, register, pauses) → render **Lesson-01-Method** (4K) → normalize
   → **Gate B** (I-05, R-06, S-08, T-*, I-08, pronunciation) → report/publish.
@@ -135,8 +135,8 @@ tools, and a 185 MB 4K video can't go through them anyway. One-time setup:
 ```
 brew install rclone          # or https://rclone.org/downloads/
 rclone config                # create a Google Drive remote named e.g. "gdrive"
-export SAYIT_GDRIVE_REMOTE=gdrive
-export SAYIT_GDRIVE_BASE="ClaudeAI/Youtube/French"   # optional; this is the default
+export MOSAIC_GDRIVE_REMOTE=gdrive
+export MOSAIC_GDRIVE_BASE="ClaudeAI/Youtube/French"   # optional; this is the default
 ```
 
 Without rclone the bundle + video are still built and staged in
@@ -153,5 +153,5 @@ seeded directly through the Drive tools in a Claude session.)
 - Runtime state: `pipeline/status|reports|manifests|logs/` (git-ignored)
 - Sources: `curriculum/<id>.xlsx` → `lessons/<id>.md` → `src/data/lessons/<id>.method.json`
   (a hand-authored `lessons/<id>.md` also works with no workbook)
-- QA: Gate A `scripts/qa/gate-a.mjs` (registry `qa/say_it_rules.yaml`) · Gate B `scripts/qa/gate-b.mjs`
+- QA: Gate A `scripts/qa/gate-a.mjs` (registry `qa/mosaic_rules.yaml`) · Gate B `scripts/qa/gate-b.mjs`
 - Outputs: `out/films/<id>-method-final.mp4`, `public/assets/covers/<id>.png`

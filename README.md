@@ -1,6 +1,6 @@
-# Say It — Video Pipeline (Remotion starter)
+# Mosaic — Video Pipeline (Remotion starter)
 
-This is a working starter for the "Say It" video pipeline: spine-driven lesson
+This is a working starter for the "Mosaic" video pipeline: spine-driven lesson
 data in, a fully rendered 4K lesson video out — built so that ad hoc edits
 ("add a picture at 2:35") can be handled by asking Claude Code directly,
 with no separate app in between.

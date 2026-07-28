@@ -78,7 +78,7 @@ for (const slide of lesson.slides) {
       practiceKind: slide.type === 'practice' ? slide.kind : null,
       onScreenLabel: slide.eyebrow || slide.kicker || null,
       phase: b.phase || null,
-      // Say It Method declared fields (Gate B reads these; populated by the
+      // Mosaic Method declared fields (Gate B reads these; populated by the
       // new-grammar generator — null on old-grammar lessons).
       stage: slide.stage || b.stage || null,
       supportLevel: Number.isInteger(b.level) ? b.level : (b.level ?? null),

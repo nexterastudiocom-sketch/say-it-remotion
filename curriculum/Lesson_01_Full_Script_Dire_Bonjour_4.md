@@ -42,7 +42,7 @@ Markup key: *[bracketed italics]* = Eleven v3 audio tag. Ellipses inside a line 
 🖼 **ON-SCREEN:** Warm greeting scene — two people meeting on a sunlit street, one mid-wave.
 
 **NARRATOR (EN · MAN)** *[warmly, welcoming]*
-"Welcome to Say It French — the course where you don't just hear French, you speak it. Starting right now."
+"Welcome to Mosaic French — the course where you don't just hear French, you speak it. Starting right now."
 
 🖼 **ON-SCREEN:** Four labels appear one at a time, big font, each with a small icon, timed to land as each word is spoken: MEET → ECHO → BUILD → MAKE IT YOURS. All four stay on screen together once named — this is the key these badges will use all lesson.
 

@@ -53,7 +53,7 @@ const computePhaseSpans = (slides: Slide[]): PhaseSpan[] => {
 };
 
 const renderSlide = (slide: Slide, lesson: Lesson): React.ReactNode => {
-  // Say It Method slides carry a `stage` — one generic X-06-aware component.
+  // Mosaic Method slides carry a `stage` — one generic X-06-aware component.
   if ((slide as { stage?: string }).stage) return <MethodSlide slide={slide as never} />;
   switch (slide.type) {
     case 'title':

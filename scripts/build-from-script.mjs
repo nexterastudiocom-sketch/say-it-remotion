@@ -60,7 +60,7 @@ const prevByText = new Map();
 for (const s of base.slides) for (const b of s.beats || []) if (b.src && b.text) prevByText.set(`${b.voice}\t${b.text}`, b.src);
 const vocabByWord = Object.fromEntries(base.slides.filter((s) => s.type === 'vocab').map((s) => [s.word, s]));
 
-const openingSlide = () => ({ id: 'opening', type: 'title', durationInSeconds: 0, kicker: 'Say It · Français', titleLines: ['Bienvenue !'], subtitle: 'Learn to speak, not just read', methodLabels: ['Meet', 'Echo', 'Build', 'Make It Yours'], imageSrc: byId['title']?.imageSrc });
+const openingSlide = () => ({ id: 'opening', type: 'title', durationInSeconds: 0, kicker: 'Mosaic · Français', titleLines: ['Bienvenue !'], subtitle: 'Learn to speak, not just read', methodLabels: ['Meet', 'Echo', 'Build', 'Make It Yours'], imageSrc: byId['title']?.imageSrc });
 const recallMidSlide = (items) => ({ id: 'recall-mid', type: 'recap', durationInSeconds: 0, eyebrow: 'Rappel express', items });
 
 // ---- map script segments → slide entries (visuals + beats), in script order --

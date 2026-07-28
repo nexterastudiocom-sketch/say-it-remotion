@@ -1,5 +1,5 @@
 /**
- * Style lock for "Say It" — European clean-line comic style.
+ * Style lock for "Mosaic" — European clean-line comic style.
  *
  * Used two ways:
  *   1. To generate the anchor images you hand-pick when training the Firefly /

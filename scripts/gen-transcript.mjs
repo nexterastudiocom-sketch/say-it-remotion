@@ -25,7 +25,7 @@ export function buildTranscript({ lessonNum = '1', titleFr = '', titleEn = '', w
   out.push(`Model: eleven_v3. Auto-generated draft — review and edit freely.`);
 
   seg('Opening — welcome & method');
-  ENM(`[warmly, welcoming] Welcome to Say It French — the course where you don't just hear French, you speak it. Starting right now.`, null, 1.5);
+  ENM(`[warmly, welcoming] Welcome to Mosaic French — the course where you don't just hear French, you speak it. Starting right now.`, null, 1.5);
   ENM(`[warm] Every lesson follows four steps: Meet a word, Echo it back out loud, Build it into a sentence, Make It Yours by writing your own. Let's start.`, null, 1);
 
   let n = 1;

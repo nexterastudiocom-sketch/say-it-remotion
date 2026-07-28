@@ -45,14 +45,20 @@
       "stage": "CAN_DO_GOAL",
       "segment": "01 · CAN_DO_GOAL",
       "visual": "GOAL CARD — can-do text",
-      "durationInSeconds": 6.02,
+      "durationInSeconds": 7.87,
       "beats": [
         {
-          "src": "assets/audio/lesson-01/method/5e45c83623400c1c.mp3",
-          "durationInSeconds": 5.02,
+          "durationInSeconds": 1.2,
+          "phase": "MEET",
+          "level": 3,
+          "stage": "CAN_DO_GOAL"
+        },
+        {
+          "src": "assets/audio/lesson-01/method/57d94d7814835d13.mp3",
+          "durationInSeconds": 5.67,
           "phase": "MEET",
           "voice": "en_man",
-          "text": "By the end you can greet someone and take my leave, choosing the right formality and time of day.",
+          "text": "Here's the goal: greet people in French, and say goodbye — the right way for the moment.",
           "register": "instruction",
           "level": 3,
           "rate": null,
@@ -105,7 +111,7 @@
       "stage": "COLD_INPUT",
       "segment": "03 · COLD_INPUT",
       "visual": null,
-      "durationInSeconds": 28.46,
+      "durationInSeconds": 27.5,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/e72d46017147f481.mp3",
@@ -127,8 +133,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/lesson-01/method/db3bdefa8d2b65c5.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/c8226834b22fe35d.mp3",
+          "durationInSeconds": 1.33,
           "phase": "INPUT",
           "voice": "fr_woman",
           "text": "Bonjour, monsieur.",
@@ -146,8 +152,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/lesson-01/method/1ca12c65d84e996f.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/2b89c24c630295ff.mp3",
+          "durationInSeconds": 0.99,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, madame.",
@@ -165,8 +171,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/lesson-01/method/85b352609ca8a1cf.mp3",
-          "durationInSeconds": 2.27,
+          "src": "assets/audio/lesson-01/method/50e05775219663f0.mp3",
+          "durationInSeconds": 1.7,
           "phase": "INPUT",
           "voice": "fr_woman",
           "text": "S'il vous plaît... merci.",
@@ -184,8 +190,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/lesson-01/method/1e60f674a1a5cf59.mp3",
-          "durationInSeconds": 1.62,
+          "src": "assets/audio/lesson-01/method/5e452391691cf5d5.mp3",
+          "durationInSeconds": 1.38,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Merci, madame. À bientôt !",
@@ -203,8 +209,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/lesson-01/method/d943f48c6811d687.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/lesson-01/method/a3adf47e7821a6e0.mp3",
+          "durationInSeconds": 1.04,
           "phase": "INPUT",
           "voice": "fr_woman",
           "text": "Au revoir !",
@@ -269,7 +275,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · bonjour",
       "visual": "WORD CARD — bonjour · [bohn-ZHOOR] · illustration: hello / good morning · MIC",
-      "durationInSeconds": 41.38,
+      "durationInSeconds": 40.48,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -293,8 +299,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/b11dcd4226173830.mp3",
-          "durationInSeconds": 1.23,
+          "src": "assets/audio/lesson-01/method/da88639ca73ecc85.mp3",
+          "durationInSeconds": 0.99,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "bonjour",
@@ -350,8 +356,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/b11dcd4226173830.mp3",
-          "durationInSeconds": 1.23,
+          "src": "assets/audio/lesson-01/method/da88639ca73ecc85.mp3",
+          "durationInSeconds": 0.99,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "bonjour",
@@ -388,8 +394,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/b11dcd4226173830.mp3",
-          "durationInSeconds": 1.23,
+          "src": "assets/audio/lesson-01/method/da88639ca73ecc85.mp3",
+          "durationInSeconds": 0.99,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bonjour",
@@ -407,8 +413,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/b11dcd4226173830.mp3",
-          "durationInSeconds": 1.23,
+          "src": "assets/audio/lesson-01/method/da88639ca73ecc85.mp3",
+          "durationInSeconds": 0.99,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bonjour",
@@ -445,8 +451,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/4057acbfa45a1b28.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/lesson-01/method/4caeb169a52311e5.mp3",
+          "durationInSeconds": 0.89,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bonjour",
@@ -485,8 +491,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/4057acbfa45a1b28.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/lesson-01/method/4caeb169a52311e5.mp3",
+          "durationInSeconds": 0.89,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "bonjour",
@@ -534,7 +540,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · salut",
       "visual": "WORD CARD — salut · [sa-LOO] · illustration: hi / bye, casual · MIC",
-      "durationInSeconds": 37.07,
+      "durationInSeconds": 37.39,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -558,7 +564,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/052d7913f5731e14.mp3",
+          "src": "assets/audio/lesson-01/method/361bd177668d846f.mp3",
           "durationInSeconds": 0.78,
           "phase": "MEET",
           "voice": "fr_woman",
@@ -615,7 +621,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/052d7913f5731e14.mp3",
+          "src": "assets/audio/lesson-01/method/361bd177668d846f.mp3",
           "durationInSeconds": 0.78,
           "phase": "MEET",
           "voice": "fr_woman",
@@ -653,7 +659,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/052d7913f5731e14.mp3",
+          "src": "assets/audio/lesson-01/method/361bd177668d846f.mp3",
           "durationInSeconds": 0.78,
           "phase": "ECHO",
           "voice": "fr_woman",
@@ -672,7 +678,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/052d7913f5731e14.mp3",
+          "src": "assets/audio/lesson-01/method/361bd177668d846f.mp3",
           "durationInSeconds": 0.78,
           "phase": "ECHO",
           "voice": "fr_woman",
@@ -710,8 +716,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/367588ce57a6965a.mp3",
-          "durationInSeconds": 0.57,
+          "src": "assets/audio/lesson-01/method/a708ab48fa60b503.mp3",
+          "durationInSeconds": 0.73,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "salut",
@@ -750,8 +756,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/367588ce57a6965a.mp3",
-          "durationInSeconds": 0.57,
+          "src": "assets/audio/lesson-01/method/a708ab48fa60b503.mp3",
+          "durationInSeconds": 0.73,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "salut",
@@ -799,7 +805,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · merci",
       "visual": "WORD CARD — merci · [mair-SEE] · illustration: thank you · MIC",
-      "durationInSeconds": 36.68,
+      "durationInSeconds": 36.58,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -823,8 +829,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9f9e67cb06c4f5d7.mp3",
-          "durationInSeconds": 0.89,
+          "src": "assets/audio/lesson-01/method/24cb3566e92e16c3.mp3",
+          "durationInSeconds": 0.97,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "merci",
@@ -880,8 +886,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9f9e67cb06c4f5d7.mp3",
-          "durationInSeconds": 0.89,
+          "src": "assets/audio/lesson-01/method/24cb3566e92e16c3.mp3",
+          "durationInSeconds": 0.97,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "merci",
@@ -918,8 +924,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9f9e67cb06c4f5d7.mp3",
-          "durationInSeconds": 0.89,
+          "src": "assets/audio/lesson-01/method/24cb3566e92e16c3.mp3",
+          "durationInSeconds": 0.97,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "merci",
@@ -937,8 +943,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9f9e67cb06c4f5d7.mp3",
-          "durationInSeconds": 0.89,
+          "src": "assets/audio/lesson-01/method/24cb3566e92e16c3.mp3",
+          "durationInSeconds": 0.97,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "merci",
@@ -975,8 +981,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/4e1f0ab5b7c414ca.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/lesson-01/method/e136b64dd493ffe2.mp3",
+          "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "merci",
@@ -1015,8 +1021,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/4e1f0ab5b7c414ca.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/lesson-01/method/e136b64dd493ffe2.mp3",
+          "durationInSeconds": 0.65,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "merci",
@@ -1064,7 +1070,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · s'il vous plaît",
       "visual": "WORD CARD — s'il vous plaît · [seel voo PLEH] · illustration: please · MIC",
-      "durationInSeconds": 46.51,
+      "durationInSeconds": 44.53,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -1088,8 +1094,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/8c7f3b0195a67db4.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/lesson-01/method/ec8a7ad93348ab5b.mp3",
+          "durationInSeconds": 1.23,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "s'il vous plaît",
@@ -1145,8 +1151,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/8c7f3b0195a67db4.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/lesson-01/method/ec8a7ad93348ab5b.mp3",
+          "durationInSeconds": 1.23,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "s'il vous plaît",
@@ -1183,8 +1189,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/8c7f3b0195a67db4.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/lesson-01/method/ec8a7ad93348ab5b.mp3",
+          "durationInSeconds": 1.23,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "s'il vous plaît",
@@ -1202,8 +1208,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/8c7f3b0195a67db4.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/lesson-01/method/ec8a7ad93348ab5b.mp3",
+          "durationInSeconds": 1.23,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "s'il vous plaît",
@@ -1240,8 +1246,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/461c6a53a6194daa.mp3",
-          "durationInSeconds": 1.25,
+          "src": "assets/audio/lesson-01/method/5f378d15aed47607.mp3",
+          "durationInSeconds": 0.78,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "s'il vous plaît",
@@ -1280,8 +1286,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/461c6a53a6194daa.mp3",
-          "durationInSeconds": 1.25,
+          "src": "assets/audio/lesson-01/method/5f378d15aed47607.mp3",
+          "durationInSeconds": 0.78,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "s'il vous plaît",
@@ -1329,7 +1335,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · oui",
       "visual": "WORD CARD — oui · [wee] · illustration: yes · MIC",
-      "durationInSeconds": 34.21,
+      "durationInSeconds": 34.11,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -1353,8 +1359,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ef0d6f85b78162d8.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/5e57db4370ca412f.mp3",
+          "durationInSeconds": 0.6,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "oui",
@@ -1410,8 +1416,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ef0d6f85b78162d8.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/5e57db4370ca412f.mp3",
+          "durationInSeconds": 0.6,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "oui",
@@ -1448,8 +1454,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ef0d6f85b78162d8.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/5e57db4370ca412f.mp3",
+          "durationInSeconds": 0.6,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "oui",
@@ -1467,8 +1473,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ef0d6f85b78162d8.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/5e57db4370ca412f.mp3",
+          "durationInSeconds": 0.6,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "oui",
@@ -1505,8 +1511,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ceb2ced60028b90e.mp3",
-          "durationInSeconds": 0.44,
+          "src": "assets/audio/lesson-01/method/98d3dc9ead0d5a65.mp3",
+          "durationInSeconds": 0.55,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "oui",
@@ -1545,8 +1551,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ceb2ced60028b90e.mp3",
-          "durationInSeconds": 0.44,
+          "src": "assets/audio/lesson-01/method/98d3dc9ead0d5a65.mp3",
+          "durationInSeconds": 0.55,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "oui",
@@ -1594,7 +1600,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · non",
       "visual": "WORD CARD — non · [nohn] · illustration: no · MIC",
-      "durationInSeconds": 36,
+      "durationInSeconds": 34.68,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -1618,8 +1624,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ddd5fafb4f32c34e.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/03fd1027e2198944.mp3",
+          "durationInSeconds": 0.78,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "non",
@@ -1675,8 +1681,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ddd5fafb4f32c34e.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/03fd1027e2198944.mp3",
+          "durationInSeconds": 0.78,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "non",
@@ -1713,8 +1719,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ddd5fafb4f32c34e.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/03fd1027e2198944.mp3",
+          "durationInSeconds": 0.78,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "non",
@@ -1732,8 +1738,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ddd5fafb4f32c34e.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/03fd1027e2198944.mp3",
+          "durationInSeconds": 0.78,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "non",
@@ -1770,8 +1776,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/db0ae7ea6a5a3bc9.mp3",
-          "durationInSeconds": 0.84,
+          "src": "assets/audio/lesson-01/method/50f83bab88a256a4.mp3",
+          "durationInSeconds": 0.44,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "non",
@@ -1810,8 +1816,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/db0ae7ea6a5a3bc9.mp3",
-          "durationInSeconds": 0.84,
+          "src": "assets/audio/lesson-01/method/50f83bab88a256a4.mp3",
+          "durationInSeconds": 0.44,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "non",
@@ -1859,7 +1865,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · au revoir",
       "visual": "WORD CARD — au revoir · [oh ruh-VWAHR] · illustration: goodbye · MIC",
-      "durationInSeconds": 45.52,
+      "durationInSeconds": 44.39,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -1883,8 +1889,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/74aaa19c93dc6e75.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/ea5b8aa5ffa539cd.mp3",
+          "durationInSeconds": 1.07,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -1940,8 +1946,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/74aaa19c93dc6e75.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/ea5b8aa5ffa539cd.mp3",
+          "durationInSeconds": 1.07,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -1978,8 +1984,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/5e09602935b6f737.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/8e837fee12635a55.mp3",
+          "durationInSeconds": 1.18,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "au",
@@ -1997,8 +2003,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/f351afd0445467a9.mp3",
-          "durationInSeconds": 1.7,
+          "src": "assets/audio/lesson-01/method/de0a556abd1cfdaf.mp3",
+          "durationInSeconds": 1.15,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -2016,8 +2022,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/74aaa19c93dc6e75.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/ea5b8aa5ffa539cd.mp3",
+          "durationInSeconds": 1.07,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -2054,8 +2060,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/8bb2f5327ab11870.mp3",
-          "durationInSeconds": 1.02,
+          "src": "assets/audio/lesson-01/method/c93ea88fdea7c110.mp3",
+          "durationInSeconds": 0.76,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -2094,8 +2100,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/8bb2f5327ab11870.mp3",
-          "durationInSeconds": 1.02,
+          "src": "assets/audio/lesson-01/method/c93ea88fdea7c110.mp3",
+          "durationInSeconds": 0.76,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -2143,7 +2149,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · madame",
       "visual": "WORD CARD — madame · [ma-DAM] · illustration: ma'am · MIC",
-      "durationInSeconds": 37.22,
+      "durationInSeconds": 36.18,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -2167,8 +2173,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/6554eca1877193e9.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/lesson-01/method/3d4cb1866d0b743a.mp3",
+          "durationInSeconds": 1.02,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "madame",
@@ -2224,8 +2230,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/6554eca1877193e9.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/lesson-01/method/3d4cb1866d0b743a.mp3",
+          "durationInSeconds": 1.02,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "madame",
@@ -2262,8 +2268,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/6554eca1877193e9.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/lesson-01/method/3d4cb1866d0b743a.mp3",
+          "durationInSeconds": 1.02,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "madame",
@@ -2281,8 +2287,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/6554eca1877193e9.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/lesson-01/method/3d4cb1866d0b743a.mp3",
+          "durationInSeconds": 1.02,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "madame",
@@ -2319,8 +2325,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/1dde4d94a9c0a9cd.mp3",
-          "durationInSeconds": 1.02,
+          "src": "assets/audio/lesson-01/method/491d31010d1761fb.mp3",
+          "durationInSeconds": 0.76,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "madame",
@@ -2359,8 +2365,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/1dde4d94a9c0a9cd.mp3",
-          "durationInSeconds": 1.02,
+          "src": "assets/audio/lesson-01/method/491d31010d1761fb.mp3",
+          "durationInSeconds": 0.76,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "madame",
@@ -2408,7 +2414,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · monsieur",
       "visual": "WORD CARD — monsieur · [muh-SYUH] · illustration: sir · MIC",
-      "durationInSeconds": 40.07,
+      "durationInSeconds": 38.77,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -2432,8 +2438,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ee1bcb02144f6227.mp3",
-          "durationInSeconds": 1.28,
+          "src": "assets/audio/lesson-01/method/7cbf934bcbd3eea6.mp3",
+          "durationInSeconds": 0.97,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "monsieur",
@@ -2489,8 +2495,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ee1bcb02144f6227.mp3",
-          "durationInSeconds": 1.28,
+          "src": "assets/audio/lesson-01/method/7cbf934bcbd3eea6.mp3",
+          "durationInSeconds": 0.97,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "monsieur",
@@ -2527,8 +2533,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ee1bcb02144f6227.mp3",
-          "durationInSeconds": 1.28,
+          "src": "assets/audio/lesson-01/method/7cbf934bcbd3eea6.mp3",
+          "durationInSeconds": 0.97,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "monsieur",
@@ -2546,8 +2552,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ee1bcb02144f6227.mp3",
-          "durationInSeconds": 1.28,
+          "src": "assets/audio/lesson-01/method/7cbf934bcbd3eea6.mp3",
+          "durationInSeconds": 0.97,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "monsieur",
@@ -2584,8 +2590,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ce4bbfd87aed72c2.mp3",
-          "durationInSeconds": 0.97,
+          "src": "assets/audio/lesson-01/method/f09b671588617cd1.mp3",
+          "durationInSeconds": 0.94,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "monsieur",
@@ -2624,8 +2630,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/ce4bbfd87aed72c2.mp3",
-          "durationInSeconds": 0.97,
+          "src": "assets/audio/lesson-01/method/f09b671588617cd1.mp3",
+          "durationInSeconds": 0.94,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "monsieur",
@@ -2673,7 +2679,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · bonsoir",
       "visual": "WORD CARD — bonsoir · [bohn-SWAHR] · illustration: good evening · MIC",
-      "durationInSeconds": 40.27,
+      "durationInSeconds": 37.15,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -2697,8 +2703,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/534dac2aeeaeef6a.mp3",
-          "durationInSeconds": 1.38,
+          "src": "assets/audio/lesson-01/method/f532a22f4df17d7f.mp3",
+          "durationInSeconds": 0.73,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "bonsoir",
@@ -2754,8 +2760,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/534dac2aeeaeef6a.mp3",
-          "durationInSeconds": 1.38,
+          "src": "assets/audio/lesson-01/method/f532a22f4df17d7f.mp3",
+          "durationInSeconds": 0.73,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "bonsoir",
@@ -2792,8 +2798,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/534dac2aeeaeef6a.mp3",
-          "durationInSeconds": 1.38,
+          "src": "assets/audio/lesson-01/method/f532a22f4df17d7f.mp3",
+          "durationInSeconds": 0.73,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bonsoir",
@@ -2811,8 +2817,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/534dac2aeeaeef6a.mp3",
-          "durationInSeconds": 1.38,
+          "src": "assets/audio/lesson-01/method/f532a22f4df17d7f.mp3",
+          "durationInSeconds": 0.73,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bonsoir",
@@ -2849,8 +2855,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/836d26ef181af94e.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/6fc7c45d4ce6ed67.mp3",
+          "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bonsoir",
@@ -2889,8 +2895,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/836d26ef181af94e.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/6fc7c45d4ce6ed67.mp3",
+          "durationInSeconds": 0.65,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "bonsoir",
@@ -2938,7 +2944,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · pardon",
       "visual": "WORD CARD — pardon · [par-DOHN] · illustration: excuse me / sorry · MIC",
-      "durationInSeconds": 38.18,
+      "durationInSeconds": 37.96,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -2962,8 +2968,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9a001754f1635a4c.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/f01232db93e92784.mp3",
+          "durationInSeconds": 0.65,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "pardon",
@@ -3019,8 +3025,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9a001754f1635a4c.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/f01232db93e92784.mp3",
+          "durationInSeconds": 0.65,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "pardon",
@@ -3057,8 +3063,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9a001754f1635a4c.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/f01232db93e92784.mp3",
+          "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "pardon",
@@ -3076,8 +3082,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/9a001754f1635a4c.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/f01232db93e92784.mp3",
+          "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "pardon",
@@ -3114,8 +3120,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/61016c0930791d53.mp3",
-          "durationInSeconds": 0.73,
+          "src": "assets/audio/lesson-01/method/4f4b9ca812c74ca3.mp3",
+          "durationInSeconds": 0.68,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "pardon",
@@ -3154,8 +3160,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/61016c0930791d53.mp3",
-          "durationInSeconds": 0.73,
+          "src": "assets/audio/lesson-01/method/4f4b9ca812c74ca3.mp3",
+          "durationInSeconds": 0.68,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "pardon",
@@ -3203,7 +3209,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · à bientôt",
       "visual": "WORD CARD — à bientôt · [ah byan-TOH] · illustration: see you soon · MIC",
-      "durationInSeconds": 47.44,
+      "durationInSeconds": 45.29,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -3227,8 +3233,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/1adc843c5a4325d3.mp3",
-          "durationInSeconds": 1.25,
+          "src": "assets/audio/lesson-01/method/274178ed25bbf14f.mp3",
+          "durationInSeconds": 0.86,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "à bientôt",
@@ -3284,8 +3290,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/1adc843c5a4325d3.mp3",
-          "durationInSeconds": 1.25,
+          "src": "assets/audio/lesson-01/method/274178ed25bbf14f.mp3",
+          "durationInSeconds": 0.86,
           "phase": "MEET",
           "voice": "fr_woman",
           "text": "à bientôt",
@@ -3322,8 +3328,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/8bac43224a2deee7.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/lesson-01/method/b85e334ebb11583a.mp3",
+          "durationInSeconds": 0.42,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "à",
@@ -3341,8 +3347,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/510d688eb49ea239.mp3",
-          "durationInSeconds": 1.44,
+          "src": "assets/audio/lesson-01/method/7cdcdf98afcf333b.mp3",
+          "durationInSeconds": 1.07,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "à bientôt",
@@ -3360,8 +3366,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/1adc843c5a4325d3.mp3",
-          "durationInSeconds": 1.25,
+          "src": "assets/audio/lesson-01/method/274178ed25bbf14f.mp3",
+          "durationInSeconds": 0.86,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "à bientôt",
@@ -3398,8 +3404,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/94f7afe025e9c793.mp3",
-          "durationInSeconds": 1.23,
+          "src": "assets/audio/lesson-01/method/5f4d87707b944923.mp3",
+          "durationInSeconds": 1.04,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "à bientôt",
@@ -3438,8 +3444,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/lesson-01/method/94f7afe025e9c793.mp3",
-          "durationInSeconds": 1.23,
+          "src": "assets/audio/lesson-01/method/5f4d87707b944923.mp3",
+          "durationInSeconds": 1.04,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "à bientôt",
@@ -3487,7 +3493,7 @@
       "stage": "MICRO_RECALL",
       "segment": "05 · MICRO_RECALL",
       "visual": null,
-      "durationInSeconds": 153.57,
+      "durationInSeconds": 150.34,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/9483e81b3da72d1e.mp3",
@@ -3509,8 +3515,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/73761aa19ff8c165.mp3",
-          "durationInSeconds": 0.89,
+          "src": "assets/audio/lesson-01/method/3853734c25d4d366.mp3",
+          "durationInSeconds": 0.91,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "bonjour",
@@ -3530,8 +3536,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/044b4dbb598d3e95.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/dc6495ab3f09d889.mp3",
+          "durationInSeconds": 0.63,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "salut",
@@ -3551,8 +3557,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/a657c856cc62250b.mp3",
-          "durationInSeconds": 0.94,
+          "src": "assets/audio/lesson-01/method/14a4312f20aac728.mp3",
+          "durationInSeconds": 0.73,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "merci",
@@ -3610,8 +3616,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/8e51e4c3eead2d9a.mp3",
-          "durationInSeconds": 0.63,
+          "src": "assets/audio/lesson-01/method/a13780f8d7d7779a.mp3",
+          "durationInSeconds": 0.78,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "bonjour",
@@ -3650,8 +3656,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/a2e8407d344e3789.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/lesson-01/method/ca57afb16e12ab1b.mp3",
+          "durationInSeconds": 0.65,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "salut",
@@ -3690,8 +3696,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/1b80845c46f5c866.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/lesson-01/method/c35a2559a866b5a9.mp3",
+          "durationInSeconds": 0.6,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "merci",
@@ -3730,8 +3736,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/417c8ad34890d186.mp3",
-          "durationInSeconds": 1.04,
+          "src": "assets/audio/lesson-01/method/94f8b300354bc316.mp3",
+          "durationInSeconds": 0.86,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -3751,8 +3757,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/8549dac4a1c529c6.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/lesson-01/method/eb9fa653c54ee1fa.mp3",
+          "durationInSeconds": 0.44,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "oui",
@@ -3772,8 +3778,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/718991b675625ec8.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/lesson-01/method/262f4147618f40f6.mp3",
+          "durationInSeconds": 0.78,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "non",
@@ -3831,7 +3837,7 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/fcfa9636d54a17bd.mp3",
+          "src": "assets/audio/lesson-01/method/8522ae3706f841db.mp3",
           "durationInSeconds": 0.81,
           "phase": "RECALL",
           "voice": "fr_man",
@@ -3871,8 +3877,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/a614f614395796a2.mp3",
-          "durationInSeconds": 0.39,
+          "src": "assets/audio/lesson-01/method/bc92a459f64592cb.mp3",
+          "durationInSeconds": 0.37,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "oui",
@@ -3911,8 +3917,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/4d2b0df2d088dc0f.mp3",
-          "durationInSeconds": 0.94,
+          "src": "assets/audio/lesson-01/method/3f0bcd8a02c41e7c.mp3",
+          "durationInSeconds": 0.65,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "non",
@@ -3951,8 +3957,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/9151fb9c41629510.mp3",
-          "durationInSeconds": 1.2,
+          "src": "assets/audio/lesson-01/method/efc64966fb0549e2.mp3",
+          "durationInSeconds": 0.89,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "au revoir",
@@ -3972,8 +3978,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/4c0042d7c12fc6cf.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/f39c66819dd9bd6b.mp3",
+          "durationInSeconds": 0.76,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "madame",
@@ -3993,8 +3999,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/82ca639cbf427286.mp3",
-          "durationInSeconds": 0.89,
+          "src": "assets/audio/lesson-01/method/02d734223fe6c2a9.mp3",
+          "durationInSeconds": 0.86,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "monsieur",
@@ -4052,8 +4058,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/2a328bfd3d9f4e7e.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/lesson-01/method/5699e90a412cf4c9.mp3",
+          "durationInSeconds": 0.99,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "au revoir",
@@ -4092,8 +4098,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/0dc2ebec17cc1517.mp3",
-          "durationInSeconds": 0.99,
+          "src": "assets/audio/lesson-01/method/89c73ceaa8607ef6.mp3",
+          "durationInSeconds": 0.68,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "madame",
@@ -4132,8 +4138,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/bf8b23f01494cc8d.mp3",
-          "durationInSeconds": 0.81,
+          "src": "assets/audio/lesson-01/method/8a0fb5d21583371a.mp3",
+          "durationInSeconds": 0.68,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "monsieur",
@@ -4172,8 +4178,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/a01edf929f0b07aa.mp3",
-          "durationInSeconds": 1.1,
+          "src": "assets/audio/lesson-01/method/070537510bfff35e.mp3",
+          "durationInSeconds": 0.84,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "bonsoir",
@@ -4193,8 +4199,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/e460feb2d529c74f.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/lesson-01/method/8e260f7f02582702.mp3",
+          "durationInSeconds": 0.73,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "pardon",
@@ -4214,8 +4220,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/60e48454c5e3c819.mp3",
-          "durationInSeconds": 1.28,
+          "src": "assets/audio/lesson-01/method/cb86c2e49794e5f7.mp3",
+          "durationInSeconds": 0.78,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "à bientôt",
@@ -4273,8 +4279,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/cc632dc1e8195aac.mp3",
-          "durationInSeconds": 0.97,
+          "src": "assets/audio/lesson-01/method/992dab19dc13bfdf.mp3",
+          "durationInSeconds": 0.71,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "bonsoir",
@@ -4313,8 +4319,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/20a39983300e7601.mp3",
-          "durationInSeconds": 0.63,
+          "src": "assets/audio/lesson-01/method/06f64835b72bc267.mp3",
+          "durationInSeconds": 0.6,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "pardon",
@@ -4353,8 +4359,8 @@
           "stage": "MICRO_RECALL"
         },
         {
-          "src": "assets/audio/lesson-01/method/2091913ce58453fd.mp3",
-          "durationInSeconds": 0.76,
+          "src": "assets/audio/lesson-01/method/4bc3d5bdb0a88504.mp3",
+          "durationInSeconds": 0.73,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "à bientôt",
@@ -4412,11 +4418,11 @@
       "stage": "BUILD_LADDER",
       "segment": "07 · BUILD_LADDER",
       "visual": "CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (greeting)",
-      "durationInSeconds": 61.92,
+      "durationInSeconds": 60.02,
       "beats": [
         {
-          "src": "assets/audio/lesson-01/method/bf7544fce1c224bf.mp3",
-          "durationInSeconds": 1.02,
+          "src": "assets/audio/lesson-01/method/6b9f606ae8310751.mp3",
+          "durationInSeconds": 1.12,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonjour.",
@@ -4455,8 +4461,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/15c0f6f4af4c6556.mp3",
-          "durationInSeconds": 0.68,
+          "src": "assets/audio/lesson-01/method/b467c3ded6ae800a.mp3",
+          "durationInSeconds": 0.73,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonjour.",
@@ -4474,8 +4480,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/fefc5171f610f925.mp3",
-          "durationInSeconds": 1.52,
+          "src": "assets/audio/lesson-01/method/747984c68251ffb5.mp3",
+          "durationInSeconds": 1.25,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonjour, madame.",
@@ -4514,8 +4520,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/8af45d50676bd984.mp3",
-          "durationInSeconds": 1.33,
+          "src": "assets/audio/lesson-01/method/309a12476b18946b.mp3",
+          "durationInSeconds": 1.18,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonjour, madame.",
@@ -4554,8 +4560,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/db3bdefa8d2b65c5.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/c8226834b22fe35d.mp3",
+          "durationInSeconds": 1.33,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonjour, monsieur.",
@@ -4573,8 +4579,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/92a7a5c18f8f274c.mp3",
-          "durationInSeconds": 2.95,
+          "src": "assets/audio/lesson-01/method/99e90a8af55e7297.mp3",
+          "durationInSeconds": 2.01,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonjour, madame. Merci !",
@@ -4613,8 +4619,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/b0252fde6f9194e9.mp3",
-          "durationInSeconds": 2.09,
+          "src": "assets/audio/lesson-01/method/9b7d5bb5e931ee6c.mp3",
+          "durationInSeconds": 1.91,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonjour, madame. Merci !",
@@ -4653,8 +4659,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/1c6758b271dbd2ce.mp3",
-          "durationInSeconds": 2.12,
+          "src": "assets/audio/lesson-01/method/7f2dbc752ab3bcbe.mp3",
+          "durationInSeconds": 1.96,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Au revoir, madame. Merci !",
@@ -4693,8 +4699,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/lesson-01/method/d93310938030ccb0.mp3",
-          "durationInSeconds": 2.22,
+          "src": "assets/audio/lesson-01/method/2cdc856ae7d6571b.mp3",
+          "durationInSeconds": 1.72,
           "phase": "BUILD",
           "voice": "fr_woman",
           "text": "Bonsoir, monsieur. Merci !",
@@ -4719,7 +4725,7 @@
       "stage": "INPUT_RETURN",
       "segment": "08 · INPUT_RETURN",
       "visual": null,
-      "durationInSeconds": 14.48,
+      "durationInSeconds": 13.52,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/9c6e4c8de34797da.mp3",
@@ -4741,8 +4747,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/lesson-01/method/db3bdefa8d2b65c5.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/c8226834b22fe35d.mp3",
+          "durationInSeconds": 1.33,
           "phase": "INPUT",
           "voice": "fr_woman",
           "text": "Bonjour, monsieur.",
@@ -4760,8 +4766,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/lesson-01/method/1ca12c65d84e996f.mp3",
-          "durationInSeconds": 1.18,
+          "src": "assets/audio/lesson-01/method/2b89c24c630295ff.mp3",
+          "durationInSeconds": 0.99,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, madame.",
@@ -4779,8 +4785,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/lesson-01/method/85b352609ca8a1cf.mp3",
-          "durationInSeconds": 2.27,
+          "src": "assets/audio/lesson-01/method/50e05775219663f0.mp3",
+          "durationInSeconds": 1.7,
           "phase": "INPUT",
           "voice": "fr_woman",
           "text": "S'il vous plaît... merci.",
@@ -4798,8 +4804,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/lesson-01/method/1e60f674a1a5cf59.mp3",
-          "durationInSeconds": 1.62,
+          "src": "assets/audio/lesson-01/method/5e452391691cf5d5.mp3",
+          "durationInSeconds": 1.38,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Merci, madame. À bientôt !",
@@ -4817,8 +4823,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/lesson-01/method/d943f48c6811d687.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/lesson-01/method/a3adf47e7821a6e0.mp3",
+          "durationInSeconds": 1.04,
           "phase": "INPUT",
           "voice": "fr_woman",
           "text": "Au revoir !",
@@ -4845,7 +4851,7 @@
       "stage": "MAKE_IT_YOURS",
       "segment": "09 · MAKE_IT_YOURS",
       "visual": "SCENE — You walk into a bakery. A woman is behin · WORD BANK:  · MIC",
-      "durationInSeconds": 135.55,
+      "durationInSeconds": 134.71,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/5d3063cc9e4ffba2.mp3",
@@ -4892,8 +4898,8 @@
           "stage": "MAKE_IT_YOURS"
         },
         {
-          "src": "assets/audio/lesson-01/method/597ffb6bb06c5b0c.mp3",
-          "durationInSeconds": 1.59,
+          "src": "assets/audio/lesson-01/method/38fad09c8c066d35.mp3",
+          "durationInSeconds": 1.38,
           "phase": "MAKE_IT_YOURS",
           "voice": "fr_man",
           "text": "Bonjour, madame. Merci !",
@@ -4957,8 +4963,8 @@
           "stage": "MAKE_IT_YOURS"
         },
         {
-          "src": "assets/audio/lesson-01/method/1e60f674a1a5cf59.mp3",
-          "durationInSeconds": 1.62,
+          "src": "assets/audio/lesson-01/method/5e452391691cf5d5.mp3",
+          "durationInSeconds": 1.38,
           "phase": "MAKE_IT_YOURS",
           "voice": "fr_man",
           "text": "Merci, madame. À bientôt !",
@@ -5022,8 +5028,8 @@
           "stage": "MAKE_IT_YOURS"
         },
         {
-          "src": "assets/audio/lesson-01/method/eb61c0695e2dd673.mp3",
-          "durationInSeconds": 1.57,
+          "src": "assets/audio/lesson-01/method/92e9f684fe984b29.mp3",
+          "durationInSeconds": 1.78,
           "phase": "MAKE_IT_YOURS",
           "voice": "fr_man",
           "text": "Pardon, monsieur ! Bonjour.",
@@ -5087,8 +5093,8 @@
           "stage": "MAKE_IT_YOURS"
         },
         {
-          "src": "assets/audio/lesson-01/method/377559a92e92878e.mp3",
-          "durationInSeconds": 2.59,
+          "src": "assets/audio/lesson-01/method/bd43bf655660fb33.mp3",
+          "durationInSeconds": 1.99,
           "phase": "MAKE_IT_YOURS",
           "voice": "fr_man",
           "text": "Bonsoir, monsieur. S'il vous plaît. Merci !",
@@ -5115,7 +5121,7 @@
       "stage": "TRANSFER_TASK",
       "segment": "10 · TRANSFER_TASK",
       "visual": "BLANK — no words, no word bank · MIC · timer",
-      "durationInSeconds": 13.91,
+      "durationInSeconds": 13.85,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/0d1a4bf6b3ada335.mp3",
@@ -5139,8 +5145,8 @@
           "stage": "TRANSFER_TASK"
         },
         {
-          "src": "assets/audio/lesson-01/method/435e3151e03d95ac.mp3",
-          "durationInSeconds": 1.1,
+          "src": "assets/audio/lesson-01/method/c96e8a46dd73fb81.mp3",
+          "durationInSeconds": 1.04,
           "phase": "MAKE_IT_YOURS",
           "voice": "fr_man",
           "text": "Merci, madame.",
@@ -5167,7 +5173,7 @@
       "stage": "FLUENCY_ROUND",
       "segment": "11 · FLUENCY_ROUND",
       "visual": null,
-      "durationInSeconds": 76.16,
+      "durationInSeconds": 73.08,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/f86482ea213c530f.mp3",
@@ -5189,8 +5195,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/36e8e7bc12afb247.mp3",
-          "durationInSeconds": 2.19,
+          "src": "assets/audio/lesson-01/method/f861bf05f9382d6d.mp3",
+          "durationInSeconds": 1.67,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Merci !",
@@ -5208,8 +5214,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/1fe1e586bbf96a52.mp3",
-          "durationInSeconds": 3,
+          "src": "assets/audio/lesson-01/method/bdf19cae78909dd0.mp3",
+          "durationInSeconds": 1.7,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonsoir, monsieur. Au revoir !",
@@ -5227,8 +5233,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/8ca6fdd523d9a76b.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/lesson-01/method/919364eda4086f66.mp3",
+          "durationInSeconds": 1.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Pardon ! À bientôt.",
@@ -5265,8 +5271,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/597ffb6bb06c5b0c.mp3",
-          "durationInSeconds": 1.59,
+          "src": "assets/audio/lesson-01/method/38fad09c8c066d35.mp3",
+          "durationInSeconds": 1.38,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Merci !",
@@ -5284,8 +5290,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/16492efa9cbe7d47.mp3",
-          "durationInSeconds": 1.83,
+          "src": "assets/audio/lesson-01/method/4b654c355763b055.mp3",
+          "durationInSeconds": 1.67,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonsoir, monsieur. Au revoir !",
@@ -5303,8 +5309,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/a1c8b17f508ef1bc.mp3",
-          "durationInSeconds": 1.41,
+          "src": "assets/audio/lesson-01/method/4a98b4acfc569e68.mp3",
+          "durationInSeconds": 1.28,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Pardon ! À bientôt.",
@@ -5341,8 +5347,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/597ffb6bb06c5b0c.mp3",
-          "durationInSeconds": 1.59,
+          "src": "assets/audio/lesson-01/method/38fad09c8c066d35.mp3",
+          "durationInSeconds": 1.38,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Merci !",
@@ -5360,8 +5366,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/16492efa9cbe7d47.mp3",
-          "durationInSeconds": 1.83,
+          "src": "assets/audio/lesson-01/method/4b654c355763b055.mp3",
+          "durationInSeconds": 1.67,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonsoir, monsieur. Au revoir !",
@@ -5379,8 +5385,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/lesson-01/method/a1c8b17f508ef1bc.mp3",
-          "durationInSeconds": 1.41,
+          "src": "assets/audio/lesson-01/method/4a98b4acfc569e68.mp3",
+          "durationInSeconds": 1.28,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Pardon ! À bientôt.",

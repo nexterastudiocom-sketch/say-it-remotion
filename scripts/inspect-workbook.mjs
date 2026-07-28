@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const file = process.argv[2] || path.join(ROOT, 'curriculum/Say_It_A1_French_Curriculum.xlsx');
+const file = process.argv[2] || path.join(ROOT, 'curriculum/Mosaic_A1_French_Curriculum.xlsx');
 const wb = XLSX.readFile(file);
 
 console.log(`Workbook: ${path.basename(file)}`);

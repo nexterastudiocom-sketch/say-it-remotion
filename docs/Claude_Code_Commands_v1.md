@@ -1,15 +1,15 @@
 # Claude Code · command pack
 
-**Purpose:** upgrade an existing Gate A / Gate B QA system and its video generator to the Say It Method.
+**Purpose:** upgrade an existing Gate A / Gate B QA system and its video generator to the Mosaic Method.
 **Assumes:** Gate A, Gate B, `manifest.json` emit, and `state/lexicon.json` already exist in the repo.
 
 Reference files to place in the repo before starting:
 
 ```
-docs/Say_It_Method_v1.md          the method spec (v1.1)
-docs/Say_It_QA_System_v1.md       layer + grammar reference
-qa/say_it_rules.yaml              69-rule registry, gate-tagged
-qa/say_it_qc.py                   reference implementation of Gate A
+docs/Mosaic_Method_v1.md          the method spec (v1.1)
+docs/Mosaic_QA_System_v1.md       layer + grammar reference
+qa/mosaic_rules.yaml              69-rule registry, gate-tagged
+qa/mosaic_qc.py                   reference implementation of Gate A
 ```
 
 Run the commands in order. Do not skip command 0.
@@ -30,7 +30,7 @@ Report back, as a table and nothing else:
   5. Which of these already exist: ffmpeg silencedetect pass, whisper
      word-timestamp pass, French ASR round-trip, frame OCR pass.
 
-Then read docs/Say_It_Method_v1.md and qa/say_it_rules.yaml.
+Then read docs/Mosaic_Method_v1.md and qa/mosaic_rules.yaml.
 
 Tell me which of the 69 rules my current system ALREADY covers, which are
 new, and which conflict with what I have. Do not write code yet.
@@ -50,14 +50,14 @@ authoring signals the rules need: support-level tags, rate tags, cue
 phrasing, phase tags, and visual directives. Keep the manifest read for
 asset and timing rules only.
 
-The transcript grammar is defined in docs/Say_It_QA_System_v1.md Part II.
+The transcript grammar is defined in docs/Mosaic_QA_System_v1.md Part II.
 Implement the parser to that grammar exactly. Reject any transcript that
 does not parse — do not attempt a lenient fallback.
 
 RULES
-Load qa/say_it_rules.yaml at runtime. Do not hardcode rules in Python.
+Load qa/mosaic_rules.yaml at runtime. Do not hardcode rules in Python.
 Implement every rule where gate == A (55 rules, layers L0 and L4).
-qa/say_it_qc.py is a working reference implementation — port from it
+qa/mosaic_qc.py is a working reference implementation — port from it
 rather than reimplementing, but keep my existing CLI and file layout.
 
 KEEP my existing curriculum-check. It becomes rule V-01. Its lexicon file
@@ -74,7 +74,7 @@ number already present.
 OUTPUT
 Write qa/<video-id>.json with one record per finding:
   {gate, rule, severity, layer, line, issue, evidence, suggested_fix}
-suggested_fix comes from the `fix` field in say_it_rules.yaml. This field
+suggested_fix comes from the `fix` field in mosaic_rules.yaml. This field
 is what the authoring agent reads to repair its own output, so it must be
 populated, not blank.
 
@@ -90,7 +90,7 @@ Upgrade Gate B. Adapt the existing ffmpeg and whisper passes.
 
 Gate B stays deterministic. Exactly ONE check in this gate may use a model.
 Everything else is measurement. Implement the 14 rules where gate == B in
-qa/say_it_rules.yaml; each rule carries a `method` field telling you which
+qa/mosaic_rules.yaml; each rule carries a `method` field telling you which
 mechanism to use.
 
 CHANGE 1 — replace vision with OCR for the screen check (rule I-05)
@@ -139,7 +139,7 @@ Change how lessons are authored. Do not refactor the generation loop beyond
 what is listed here.
 
 TRANSCRIPT FORMAT
-Lessons are now authored to the grammar in docs/Say_It_QA_System_v1.md
+Lessons are now authored to the grammar in docs/Mosaic_QA_System_v1.md
 Part II. Required and non-optional:
   - YAML front matter: lesson, language, level, class, can_do, items, frame
   - '## NN · STAGE_NAME' segments, all twelve stages, in canonical order
@@ -153,7 +153,7 @@ Missing [Ln] tags silently disable an entire rule family rather than
 erroring. Treat a missing level tag as a generation bug, not a warning.
 
 LESSON STRUCTURE
-The twelve stages and their algorithms are in docs/Say_It_Method_v1.md
+The twelve stages and their algorithms are in docs/Mosaic_Method_v1.md
 Part III. Four things are new versus what I generate today:
   - COLD_INPUT and INPUT_RETURN: the same connected dialogue played once
     before teaching and once after, identical audio both times.
@@ -165,7 +165,7 @@ Part III. Four things are new versus what I generate today:
 
 TIMING
 Pauses are computed, never chosen by feel. Use the P(beat) function in
-docs/Say_It_Method_v1.md Part VII. The pause after an English instruction
+docs/Mosaic_Method_v1.md Part VII. The pause after an English instruction
 is at most 1.2s; production pauses scale with the syllable count of what
 the learner has to say.
 
@@ -209,8 +209,8 @@ A conformant example is worth more to a code agent than the prose spec. Generate
 ```
 Write CLAUDE.md at the repo root. It must state:
 
-  - Lessons are authored to docs/Say_It_Method_v1.md and the grammar in
-    docs/Say_It_QA_System_v1.md Part II.
+  - Lessons are authored to docs/Mosaic_Method_v1.md and the grammar in
+    docs/Mosaic_QA_System_v1.md Part II.
   - lessons/golden/lesson_01.md is the reference example. Match its shape.
   - After writing any transcript: run Gate A, fix every BLOCK using
     suggested_fix, re-run, repeat until exit 0. Max 5 iterations.
@@ -304,7 +304,7 @@ Split-syllable cards, chunk bars, progress bars and the scorecard are
 typographic. They take no illustration.
 
 GENERATION
-Adobe Firefly Custom Model, existing Say It style: European clean-line
+Adobe Firefly Custom Model, existing Mosaic style: European clean-line
 comic, bold uniform-weight ink outlines, flat solid colour fills, no
 gradient shading. Per-language accent colour from the brand spec.
 
@@ -326,7 +326,7 @@ registry.json. Reject takes a one-line note that becomes the regeneration
 brief.
 
 GATE A RULES
-Implement I-09 through I-13 from qa/say_it_rules.yaml:
+Implement I-09 through I-13 from qa/mosaic_rules.yaml:
   I-09  every WORD CARD resolves to a registry entry
   I-10  an item maps to exactly one image_id everywhere it appears
   I-11  no image with status other than approved reaches render

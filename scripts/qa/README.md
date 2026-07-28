@@ -15,7 +15,7 @@ state/lexicon.json         ← cumulative words/phrases taught in videos 1..N (G
 - **Script text:** `curriculum/<id>.sent.md` → parsed `src/data/scripts/<id>.json` (has source `line`)
 - **Timing + on-screen text:** baked `src/data/lessons/<id>.fr.json` (beats: `{src,durationInSeconds,phase,voice,text}`)
 - **Render offset:** the film prepends a 4.5 s intro (`INTRO_FRAMES=135`), so **video time = 4.5 s + cumulative beat time**. The manifest bakes this in.
-- **Render:** `out/films/<id>-fr-final.mp4` (override with `SAYIT_QA_VIDEO=…` to test a preview).
+- **Render:** `out/films/<id>-fr-final.mp4` (override with `MOSAIC_QA_VIDEO=…` to test a preview).
 
 ## Manifest (emitted in the generation step)
 
@@ -60,7 +60,7 @@ npm run qa:pron -- lesson-01
 npm run qa:av -- lesson-01
 npm run qa -- lesson-01                    # or: the whole suite + summary
 # test against a fast preview instead of the 4K final:
-SAYIT_QA_VIDEO=out/films/lesson-01-preview.mp4 npm run qa -- lesson-01
+MOSAIC_QA_VIDEO=out/films/lesson-01-preview.mp4 npm run qa -- lesson-01
 ```
 
 ## Tooling (local, no Homebrew)

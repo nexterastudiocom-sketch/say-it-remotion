@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// author-from-excel — read a Say It lesson workbook (.xlsx) and emit the
+// author-from-excel — read a Mosaic lesson workbook (.xlsx) and emit the
 // conformant Method-grammar transcript (lessons/<id>.md). Same structure and
 // P(beat) timing as the golden lesson; content comes entirely from the sheets.
 //

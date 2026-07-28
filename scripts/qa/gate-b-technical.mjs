@@ -2,9 +2,9 @@
 // GATE B · technical  (L1, rules T-01…T-08)  — standalone
 //
 //   node scripts/qa/gate-b-technical.mjs <video-id>
-//   SAYIT_QA_VIDEO=out/films/<id>-preview.mp4 node scripts/qa/gate-b-technical.mjs <id>
+//   MOSAIC_QA_VIDEO=out/films/<id>-preview.mp4 node scripts/qa/gate-b-technical.mjs <id>
 //
-// Deterministic container/technical checks from say_it_rules.yaml `technical:`.
+// Deterministic container/technical checks from mosaic_rules.yaml `technical:`.
 // Probes with the bundled ffprobe; loudness + dropout via ffmpeg-static.
 
 import { existsSync } from 'node:fs';

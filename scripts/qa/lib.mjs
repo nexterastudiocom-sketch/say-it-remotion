@@ -24,13 +24,13 @@ export function ffmpegStatic() {
 }
 export const WHISPER_PY = process.env.WHISPER_PY || path.join(ROOT, '.venv-whisper/bin/python');
 
-// Per-video paths. SAYIT_QA_VIDEO overrides the render under test (e.g. to run
+// Per-video paths. MOSAIC_QA_VIDEO overrides the render under test (e.g. to run
 // the gates against a fast preview before the final 4K exists).
 export const paths = (id) => ({
   bakedLesson: path.join(ROOT, `src/data/lessons/${id}.fr.json`),
   script: path.join(ROOT, `src/data/scripts/${id}.json`),
   sentMd: path.join(ROOT, `curriculum/${id}.sent.md`),
-  video: process.env.SAYIT_QA_VIDEO ? path.resolve(ROOT, process.env.SAYIT_QA_VIDEO) : path.join(ROOT, `out/films/${id}-fr-final.mp4`),
+  video: process.env.MOSAIC_QA_VIDEO ? path.resolve(ROOT, process.env.MOSAIC_QA_VIDEO) : path.join(ROOT, `out/films/${id}-fr-final.mp4`),
   manifest: path.join(ROOT, `build/${id}/manifest.json`),
   qa: path.join(ROOT, `qa/${id}.json`),
   lexicon: path.join(ROOT, 'state/lexicon.json'),

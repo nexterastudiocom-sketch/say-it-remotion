@@ -50,7 +50,7 @@ export async function buildBundle(lessonId) {
     lessonId, title: lesson.title, builtAt: nowISO(),
     sourceHash: await hashFiles([`curriculum/${lessonId}.sent.md`, `src/data/scripts/${lessonId}.json`]),
     fileCount: present.length, missing,
-    reload: `Unzip at the repo root (say-it-remotion/), then run "npm run studio" and open ${lessonId}.`,
+    reload: `Unzip at the repo root (mosaic-remotion/), then run "npm run studio" and open ${lessonId}.`,
     entryPoints: {
       transcript: `curriculum/${lessonId}.sent.md`,
       timeline: lessonRel,
@@ -61,9 +61,9 @@ export async function buildBundle(lessonId) {
   await writeFile(path.join(ROOT, manifestRel), JSON.stringify(manifest, null, 2) + '\n');
   const readmeRel = `pipeline/publish/${lessonId}/README.txt`;
   await writeFile(path.join(ROOT, readmeRel),
-    `Say It — ${lesson.title}\n\nThis archive is a complete, re-editable project for one lesson.\n\n` +
+    `Mosaic — ${lesson.title}\n\nThis archive is a complete, re-editable project for one lesson.\n\n` +
     `TO RELOAD ON ANY MACHINE:\n` +
-    `  1. Clone/open the say-it-remotion repo.\n` +
+    `  1. Clone/open the mosaic-remotion repo.\n` +
     `  2. Unzip ${lessonId}-project.zip at the repo ROOT (paths are preserved).\n` +
     `  3. Add your .env (ELEVENLABS + RECRAFT keys) — secrets are NOT in this bundle.\n` +
     `  4. npm run studio   → open "${lessonId}" to edit transcript / rebuild audio / re-render.\n\n` +

@@ -1,14 +1,14 @@
-# Say It — project guide for Claude
+# Mosaic — project guide for Claude
 
 Multilingual language-learning videos (Remotion, 4K/30fps). French A1 first.
-Lessons are built to the **Say It Method** and gated by a two-gate QA system.
+Lessons are built to the **Mosaic Method** and gated by a two-gate QA system.
 
 ## Read these first (do not restate them — follow them)
 
-- **`docs/Say_It_Method_v1.md`** — the method: 12 stages, Core/Build loops, support
+- **`docs/Mosaic_Method_v1.md`** — the method: 12 stages, Core/Build loops, support
   ladder (L0–L5), `P(beat)` pauses, rate algorithm, voice pairs, density.
-- **`docs/Say_It_QA_System_v1.md`** — the 5 layers + the **transcript grammar (Part II)**.
-- **`qa/say_it_rules.yaml`** — the 77-rule registry (the source of truth for checks).
+- **`docs/Mosaic_QA_System_v1.md`** — the 5 layers + the **transcript grammar (Part II)**.
+- **`qa/mosaic_rules.yaml`** — the 77-rule registry (the source of truth for checks).
 - **`lessons/golden/lesson_01.md`** — the **reference example**. New lessons match its shape.
 
 ## Authoring a lesson (the loop — non-negotiable)
@@ -30,7 +30,7 @@ structure + P(beat) templated) — the pattern to reuse for new lessons.
 
 ## The two gates
 
-- **Gate A** (pre-render, blocks render) — `say_it_qc.py` via `scripts/qa/gate-a.mjs`.
+- **Gate A** (pre-render, blocks render) — `mosaic_qc.py` via `scripts/qa/gate-a.mjs`.
   All 55 L0/L4 rules from the transcript. Exit 1 on any BLOCK.
 - **Gate B** (post-render) — `scripts/qa/gate-b.mjs` (+ standalone per-rule scripts).
   14 rules on the rendered mp4: technical (T), P-07, R-06, **I-05** (OCR — no French
@@ -50,9 +50,9 @@ structure + P(beat) templated) — the pattern to reuse for new lessons.
 
 ## Where things are
 
-Specs `docs/` · rules+engine `qa/say_it_*` · gates `scripts/qa/` · golden lesson
+Specs `docs/` · rules+engine `qa/mosaic_*` · gates `scripts/qa/` · golden lesson
 `lessons/golden/` · generator tooling `scripts/qa/{pbeat,author}.mjs`,
-`say_it_qc.py --emit-beats` · lexicon `state/lexicon.json` · runtime `build/`,`qa/*.json`
+`mosaic_qc.py --emit-beats` · lexicon `state/lexicon.json` · runtime `build/`,`qa/*.json`
 (git-ignored).
 
 ## Images (locked)

@@ -20,7 +20,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const xlsxPath = process.argv[2] || path.join(ROOT, 'docs/templates/Say_It_Lesson_Input_Template.xlsx');
+const xlsxPath = process.argv[2] || path.join(ROOT, 'docs/templates/Mosaic_Lesson_Input_Template.xlsx');
 if (!existsSync(xlsxPath)) { console.error(`✗ no workbook: ${xlsxPath}`); process.exit(2); }
 
 const slug = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 40);

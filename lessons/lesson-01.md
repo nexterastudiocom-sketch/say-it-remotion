@@ -9,7 +9,7 @@ items: [bonjour, salut, merci, "s'il vous plaît", oui, non, "au revoir", madame
 frame: "[greeting], [person]. [courtesy] !"
 ---
 
-<!-- Generated from Say_It_Lesson_Input_Template.xlsx by scripts/author-from-excel.mjs.
+<!-- Generated from Mosaic_Lesson_Input_Template.xlsx by scripts/author-from-excel.mjs.
      Method grammar; pauses computed via P(beat). Do not hand-edit — edit the workbook. -->
 
 ## 01 · CAN_DO_GOAL

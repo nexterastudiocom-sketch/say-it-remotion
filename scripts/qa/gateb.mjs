@@ -1,5 +1,5 @@
-// Shared Gate B helpers: rule metadata from say_it_rules.yaml, engine-schema
-// findings, and merging into the same qa/<id>.json that Gate A (say_it_qc.py)
+// Shared Gate B helpers: rule metadata from mosaic_rules.yaml, engine-schema
+// findings, and merging into the same qa/<id>.json that Gate A (mosaic_qc.py)
 // writes. Gate B stays deterministic; findings match {gate, rule, severity,
 // layer, line, issue, evidence, suggested_fix}.
 
@@ -14,8 +14,8 @@ let _rules = null;
 export async function rules() {
   if (_rules) return _rules;
   const r = await run(QA_PY, ['-c',
-    'import yaml,json,sys; print(json.dumps(yaml.safe_load(open("qa/say_it_rules.yaml"))))']);
-  if (r.code !== 0) throw new Error('could not load say_it_rules.yaml (pyyaml missing?): ' + r.stderr.trim());
+    'import yaml,json,sys; print(json.dumps(yaml.safe_load(open("qa/mosaic_rules.yaml"))))']);
+  if (r.code !== 0) throw new Error('could not load mosaic_rules.yaml (pyyaml missing?): ' + r.stderr.trim());
   const y = JSON.parse(r.stdout);
   y._byId = Object.fromEntries((y.rules || []).map((x) => [x.id, x]));
   _rules = y;

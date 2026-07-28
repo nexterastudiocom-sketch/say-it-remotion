@@ -115,7 +115,7 @@ export const SubscribeLowerThird: React.FC<{ language: LanguageCode }> = ({ lang
         {/* Channel name */}
         <div style={{ marginRight: 20 }}>
           <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 58, color: '#16181D', lineHeight: 1.05 }}>
-            Say It
+            Mosaic
           </div>
           <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 38, color: '#5C5F66', marginTop: 6 }}>
             {NATIVE[language]} · A1

@@ -48,7 +48,7 @@ Three kinds of markup:
 > 🎙️ **VOICE PAIR A — TEACHING** · French voice = Woman · English voice = Man
 
 **NARRATOR (EN · MAN)** *[warmly, welcoming]*
-"Welcome to Say It French — the course where you don't just hear French, you speak it. And I mean starting right now, in this very first lesson."
+"Welcome to Mosaic French — the course where you don't just hear French, you speak it. And I mean starting right now, in this very first lesson."
 
 **NARRATOR (EN · MAN)** *[warm, explaining]*
 "Here's how every lesson works, so you know exactly what to expect. Four steps, every time. First, Meet — I'll show you a word: what it means, and how it sounds. Second, Echo — you say it back, out loud, in your own voice. That part is never optional, and it's the whole point of this method: hearing a word is not the same as being able to say it. Third, Build — instead of dumping a whole sentence on you at once, we grow one sentence a single piece at a time, so by the end it feels obvious, not memorized. And fourth, Make It Yours — you write and speak your own sentence, about your own life, not mine."

@@ -8,8 +8,8 @@ items: [bonjour, salut, merci, "s'il vous plaît", oui, non, au revoir, pardon, 
 frame: "[greeting], [person]. [courtesy] !"
 ---
 
-<!-- GOLDEN LESSON · reference example for all future Say It lesson generation.
-     Authored to Say_It_Method_v1.md. Every pause is computed via P(beat).
+<!-- GOLDEN LESSON · reference example for all future Mosaic lesson generation.
+     Authored to Mosaic_Method_v1.md. Every pause is computed via P(beat).
      Regenerate with: node scripts/author-lesson-01.mjs -->
 
 ## 01 · CAN_DO_GOAL

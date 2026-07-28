@@ -1,11 +1,11 @@
 #!/bin/bash
-# Say It Studio — one-click setup & launch.
+# Mosaic Studio — one-click setup & launch.
 # Double-click this file on macOS. First time: right-click → Open (to bypass Gatekeeper).
 # It installs Node if needed, installs dependencies, and opens the Studio in your browser.
 set -e
 cd "$(dirname "$0")"
 echo "════════════════════════════════════════════"
-echo "  Say It Studio  ·  $(pwd)"
+echo "  Mosaic Studio  ·  $(pwd)"
 echo "════════════════════════════════════════════"
 
 # 1) Node (install via nvm if missing) --------------------------------------

@@ -1,5 +1,5 @@
 spec_version: "1.0"
-method_doc: "Say_It_Method_v1.md"
+method_doc: "Mosaic_Method_v1.md"
 
 severity_levels:
   BLOCK: "Do not render. Fix before generation."

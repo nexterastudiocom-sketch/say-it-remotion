@@ -19,7 +19,7 @@ export type DotAnim = {
   rotate?: number;
 };
 
-export const SayItLogo: React.FC<{
+export const MosaicLogo: React.FC<{
   accent: string;
   ink?: string;
   dot: DotAnim;
@@ -30,7 +30,7 @@ export const SayItLogo: React.FC<{
     viewBox="-6.4 -22.2 260.9 140.6"
     xmlns="http://www.w3.org/2000/svg"
     role="img"
-    aria-label="Say It"
+    aria-label="Mosaic"
     style={style}
     className={className}
   >

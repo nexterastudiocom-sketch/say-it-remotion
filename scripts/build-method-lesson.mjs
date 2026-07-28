@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Baker (Command 3) — Method-grammar lesson .md → baked Remotion lesson JSON.
-// Parses via the reference engine (say_it_qc.py --emit-beats), groups beats into
+// Parses via the reference engine (mosaic_qc.py --emit-beats), groups beats into
 // slides by segment, carries the Method fields (stage/level/rate/visual) onto
 // every beat, and materializes scripted pauses as silent timeline gaps.
 //
@@ -63,7 +63,7 @@ if (!noMedia && !hasElevenKey()) { console.error('✗ ELEVENLABS_API_KEY not set
 const { execFileSync } = await import('node:child_process');
 const beatsPath = path.join(ROOT, `build/${id}/parsed-beats.json`);
 await mkdir(path.dirname(beatsPath), { recursive: true });
-execFileSync(QA_PY, [path.join(ROOT, 'qa/say_it_qc.py'), transcript, '--rules', path.join(ROOT, 'qa/say_it_rules.yaml'), '--emit-beats', beatsPath], { cwd: ROOT });
+execFileSync(QA_PY, [path.join(ROOT, 'qa/mosaic_qc.py'), transcript, '--rules', path.join(ROOT, 'qa/mosaic_rules.yaml'), '--emit-beats', beatsPath], { cwd: ROOT });
 const parsed = JSON.parse(await (await import('node:fs/promises')).readFile(beatsPath, 'utf8'));
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40);
@@ -150,11 +150,11 @@ for (const s of slides) s.durationInSeconds = +s.beats.reduce((a, x) => a + x.du
 
 // ---- image registry binding (Command 6) ------------------------------------
 // Resolve each slide/beat to its registry image (shared with scripts/images/bind.mjs
-// so a fresh bake and a post-hoc rebind stay identical). SAYIT_IMAGES_STRICT=1
+// so a fresh bake and a post-hoc rebind stay identical). MOSAIC_IMAGES_STRICT=1
 // requires approved-only (final render); otherwise 'generated' also renders.
 {
   const { bindImages } = await import('./images/bind-lib.mjs');
-  await bindImages(slides, parsed.meta.lesson, ROOT, { strict: process.env.SAYIT_IMAGES_STRICT === '1' });
+  await bindImages(slides, parsed.meta.lesson, ROOT, { strict: process.env.MOSAIC_IMAGES_STRICT === '1' });
 }
 
 const lesson = {

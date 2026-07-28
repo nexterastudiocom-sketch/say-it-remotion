@@ -44,7 +44,7 @@ for (const id of ids) for (const mf of await metaFiles(id)) {
 
 function esc(s) { return String(s || '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
-const html = `<!doctype html><html><head><meta charset="utf-8"><title>Say It · Shorts preview</title>
+const html = `<!doctype html><html><head><meta charset="utf-8"><title>Mosaic · Shorts preview</title>
 <style>
   :root{color-scheme:dark}
   body{margin:0;background:#0E1116;color:#F2F2F2;font:15px/1.4 -apple-system,Inter,system-ui,sans-serif}
@@ -65,7 +65,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><title>Say It · 
   code{background:#222833;padding:2px 8px;border-radius:6px;color:#cbd3df}
   .desc{color:#7f8794}
 </style></head><body>
-<h1>Say It · Shorts preview</h1>
+<h1>Mosaic · Shorts preview</h1>
 <div class="sub">${cards.length} short(s) · muted autoplay + loop — this is the sound-off first impression viewers get.</div>
 <div class="grid">${cards.join('\n')}</div>
 </body></html>`;

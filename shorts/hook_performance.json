@@ -1,0 +1,62 @@
+{
+  "note": "Log 3s-retention per hook variant per short type; the generator learns which hook style wins.",
+  "byType": {
+    "WORD_OF_DAY": {
+      "winner": null,
+      "samples": 0
+    }
+  },
+  "shorts": {
+    "lesson-01_word_of_day_1": {
+      "type": "WORD_OF_DAY",
+      "variants": {
+        "h1": {
+          "hook": "French word of the day",
+          "retention3s": null
+        },
+        "h2": {
+          "hook": "Your French word today",
+          "retention3s": null
+        },
+        "h3": {
+          "hook": "Learn this French word",
+          "retention3s": null
+        }
+      }
+    },
+    "lesson-01_word_of_day_2": {
+      "type": "WORD_OF_DAY",
+      "variants": {
+        "h1": {
+          "hook": "French word of the day",
+          "retention3s": null
+        },
+        "h2": {
+          "hook": "Your French word today",
+          "retention3s": null
+        },
+        "h3": {
+          "hook": "Learn this French word",
+          "retention3s": null
+        }
+      }
+    },
+    "lesson-01_word_of_day_3": {
+      "type": "WORD_OF_DAY",
+      "variants": {
+        "h1": {
+          "hook": "French word of the day",
+          "retention3s": null
+        },
+        "h2": {
+          "hook": "Your French word today",
+          "retention3s": null
+        },
+        "h3": {
+          "hook": "Learn this French word",
+          "retention3s": null
+        }
+      }
+    }
+  }
+}

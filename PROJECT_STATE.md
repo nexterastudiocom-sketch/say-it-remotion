@@ -1,7 +1,7 @@
-# Say It — Project State & Handoff
+# Mosaic — Project State & Handoff
 
 Read this first when opening the project on a new machine (or in a fresh Claude Code session).
-This is the "Say It" multilingual language-learning YouTube pipeline (French A1 first).
+This is the "Mosaic" multilingual language-learning YouTube pipeline (French A1 first).
 
 ## What it is
 Remotion (React/TS) renders 4K lesson videos. A local **studio** web app drives the whole
@@ -49,12 +49,12 @@ Authoring format spec: **`curriculum/TRANSCRIPT_AUTHORING_GUIDE.md`** (hand this
 - **Voices:** one French voice (woman) — `fr_man` is mapped to her; both English narrators kept. Model `eleven_v3`.
 - **Two hard rules:** never the bare word **"clear"** in an audio tag (causes a cough/strain); the **French voice speaks only taught vocabulary** (no praise/filler).
 - **Timing** is driven by the real audio length; pauses are explicit `⏸ PAUSE` lines in the transcript.
-- Full detail lives in the Claude Code memory file `say-it-remotion.md` (see below).
+- Full detail lives in the Claude Code memory file `mosaic-remotion.md` (see below).
 
 ## Carrying the AI memory (optional but recommended)
 On the OLD machine, the durable project knowledge is in a memory file. Copy it to the new machine's
 Claude Code memory directory so a fresh session already "knows" this project:
-- File: `~/.claude/projects/<project-dir-slug>/memory/say-it-remotion.md` (+ the `MEMORY.md` index line).
+- File: `~/.claude/projects/<project-dir-slug>/memory/mosaic-remotion.md` (+ the `MEMORY.md` index line).
 - On the new machine it lives under the same `~/.claude/projects/.../memory/` path, keyed by the
   directory you open Claude Code in.
 

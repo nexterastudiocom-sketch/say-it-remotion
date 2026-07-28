@@ -1,5 +1,5 @@
 {
-  "_comment": "Say It — video QC rubric. Drives both the deterministic ffmpeg checks (exact, no judgment) and the Claude vision checks (judgment a diff can't make). Numbers here are calibrated to the ACTUAL renders in out/films (4K h264, ~4-5 Mbps, AAC 384k), not the aspirational 45 Mbps/20 min from the prototype. Edit thresholds here, not in the harness code.",
+  "_comment": "Mosaic — video QC rubric. Drives both the deterministic ffmpeg checks (exact, no judgment) and the Claude vision checks (judgment a diff can't make). Numbers here are calibrated to the ACTUAL renders in out/films (4K h264, ~4-5 Mbps, AAC 384k), not the aspirational 45 Mbps/20 min from the prototype. Edit thresholds here, not in the harness code.",
 
   "technical_spec": {
     "resolution": [3840, 2160],

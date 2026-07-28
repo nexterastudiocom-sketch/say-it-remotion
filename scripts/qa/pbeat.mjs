@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// P(beat) — the Say It Method pause algorithm (Method spec Part VII).
+// P(beat) — the Mosaic Method pause algorithm (Method spec Part VII).
 // Pauses are COMPUTED, never chosen by feel. The generator/author uses this to
 // set every production pause so Gate A rule P-03 passes.
 //
