@@ -32,12 +32,15 @@
     "qa:s08": "node scripts/qa/gate-b-audio-identity.mjs",
     "qa:i08": "node scripts/qa/gate-b-i08.mjs",
     "qa:author": "node scripts/qa/author.mjs",
-    "qa:pbeat": "node scripts/qa/pbeat.mjs"
+    "qa:pbeat": "node scripts/qa/pbeat.mjs",
+    "publish:yt": "node scripts/youtube/publish.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",
     "@remotion/google-fonts": "^4.0.484",
+    "dotenv": "^17.4.2",
     "ffmpeg-static": "^5.3.0",
+    "googleapis": "^173.0.0",
     "music-metadata": "^11.13.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

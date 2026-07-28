@@ -21,3 +21,8 @@ qa/*.json
 shorts/**/candidates.json
 out/shorts/
 shorts/**/*.spec.json
+
+# YouTube uploader — secrets, OAuth client, and idempotency ledger
+secrets/
+out/publish-log.json
+client_secret*.json

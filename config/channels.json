@@ -1,0 +1,42 @@
+{
+  "fr": {
+    "channelId": "",
+    "playlists": { "A1": "" },
+    "defaultLanguage": "en",
+    "defaultAudioLanguage": "en",
+    "accentColor": "#2E4FE0",
+    "appUrl": "https://mosaic.app/fr"
+  },
+  "es": {
+    "channelId": "",
+    "playlists": { "A1": "" },
+    "defaultLanguage": "en",
+    "defaultAudioLanguage": "en",
+    "accentColor": "#E14B3B",
+    "appUrl": "https://mosaic.app/es"
+  },
+  "it": {
+    "channelId": "",
+    "playlists": { "A1": "" },
+    "defaultLanguage": "en",
+    "defaultAudioLanguage": "en",
+    "accentColor": "#1FA66B",
+    "appUrl": "https://mosaic.app/it"
+  },
+  "pt": {
+    "channelId": "",
+    "playlists": { "A1": "" },
+    "defaultLanguage": "en",
+    "defaultAudioLanguage": "en",
+    "accentColor": "#11998E",
+    "appUrl": "https://mosaic.app/pt"
+  },
+  "de": {
+    "channelId": "",
+    "playlists": { "A1": "" },
+    "defaultLanguage": "en",
+    "defaultAudioLanguage": "en",
+    "accentColor": "#E0A100",
+    "appUrl": "https://mosaic.app/de"
+  }
+}
