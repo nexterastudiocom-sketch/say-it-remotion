@@ -55,6 +55,7 @@ function parseArgs(argv) {
       case '--schedule': args.schedule = next(); break;
       case '--metadata': args.metadata = next(); break;
       case '--dry-run': args.dryRun = true; break;
+      case '--paste': args.paste = true; break; // write out/<id>-youtube.txt (copy-paste for manual upload)
       case '--skip-qc': args.skipQc = true; break;
       default:
         if (a.startsWith('--')) throw new Error(`Unknown flag: ${a}`);
@@ -249,6 +250,29 @@ async function main() {
   if (args.dryRun) {
     printDryRun(resource, lesson);
     console.log('✓ Dry run complete. Metadata is valid. No API calls were made.\n');
+    process.exit(0);
+  }
+
+  // --paste: write a copy-paste-ready text file for MANUAL YouTube upload. No API
+  // calls, no credentials. Title / full description (chapters + words baked in) / tags.
+  if (args.paste) {
+    const s = resource.snippet;
+    const txt = [
+      `Mosaic — ${P.id} · YouTube metadata (copy-paste for manual upload)`,
+      '='.repeat(72), '',
+      `TITLE  (${s.title.length}/100)`, '-'.repeat(40), s.title, '',
+      'DESCRIPTION  (paste whole block — chapters give YouTube its timestamps)', '-'.repeat(40),
+      s.description, '',
+      `TAGS  (${s.tags.join(',').length}/500 · paste comma-separated)`, '-'.repeat(40),
+      s.tags.join(', '), '',
+      'FIELDS', '-'.repeat(40),
+      `Category: Education (27)   ·   Made for kids: No   ·   Altered/synthetic content: Yes`,
+      `Language: ${s.defaultLanguage}   ·   Privacy: unlisted/private until reviewed`, '',
+    ].join('\n');
+    const outTxt = path.join(REPO_ROOT, 'out', `${P.id}-youtube.txt`);
+    mkdirSync(path.dirname(outTxt), { recursive: true });
+    writeFileSync(outTxt, txt, 'utf8');
+    console.log(`✓ wrote ${path.relative(REPO_ROOT, outTxt)}  (title ${s.title.length}/100, ${s.tags.length} tags)`);
     process.exit(0);
   }
 

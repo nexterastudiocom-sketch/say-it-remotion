@@ -81,10 +81,18 @@ async function publish(id) {
   ].filter((p) => p && existsSync(path.join(ROOT, p)));
   sh('zip', ['-r', '-q', zip, ...inZip]);
 
+  // Copy-paste YouTube metadata for MANUAL upload (title/description/tags).
+  let ytTxt = path.join(ROOT, `out/${id}-youtube.txt`);
+  try {
+    const meta = JSON.parse(await readFile(path.join(ROOT, `src/data/lessons/${id}.method.json`), 'utf8')).meta || {};
+    sh('node', ['scripts/youtube/publish.mjs', '--lang', meta.language || 'fr', '--lesson', String(meta.lesson || Number(id.replace(/\D/g, '')) || 1), '--paste']);
+  } catch (e) { console.log(`  (youtube metadata skipped: ${e.message})`); ytTxt = null; }
+
   log(`publish ${id} → ${lessonFolder}`);
   rclone(['copyto', noteLocal, `${lessonFolder}/VIDEO-PATH.txt`]);
   rclone(['copyto', zip, `${lessonFolder}/${id}-bundle.zip`]);
   if (existsSync(thumb)) rclone(['copyto', thumb, `${lessonFolder}/${id}-thumbnail.png`]);
+  if (ytTxt && existsSync(ytTxt)) rclone(['copyto', ytTxt, `${lessonFolder}/${id}-youtube.txt`]);
 }
 
 // -- full pipeline for one workbook -------------------------------------------
