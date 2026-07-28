@@ -14,7 +14,7 @@ frame: "[greeting], [person]. [courtesy] !"
 
 ## 01 · CAN_DO_GOAL
   🖼 GOAL CARD — can-do text
-  EN·MAN [MEET] [L3] → By the end you can greet someone and take my leave, choosing the right formality and time of day.
+  EN·MAN [MEET] [L3] → Here's the goal: greet people in French, and say goodbye — the right way for the moment.
     ⏸ PAUSE 1.0s
 
 ## 02 · WARM_UP

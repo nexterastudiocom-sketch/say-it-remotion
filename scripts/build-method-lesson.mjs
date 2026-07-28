@@ -28,7 +28,8 @@ const noMedia = args.includes('--no-media');
 // ElevenLabs speed 1.0 (real normal) then time-stretched by atempo, because
 // learners need it slow: "normal" plays at 0.75× real, the slower tags near 0.5×.
 // (ElevenLabs' own speed param floors at 0.7, so the slowdown is done in ffmpeg.)
-const RATE_ATEMPO = { very_slow: 0.5, slow: 0.55, natural: 0.75, fast: 0.85 };
+// FR woman ran too slow — nudged up: normal 0.75→0.85 (+0.1), the slower tags +0.2.
+const RATE_ATEMPO = { very_slow: 0.7, slow: 0.75, natural: 0.85, fast: 0.95 };
 const VOICES = {
   'EN·MAN': process.env.ELEVENLABS_VOICE_EN_MAN || 'uh5qBlKfjqFl7XXhFnJi',
   'EN·WOMAN': process.env.ELEVENLABS_VOICE_EN_WOMAN || 'Bn9xWp6PwkrqKRbq8cX2',
@@ -141,6 +142,10 @@ for (const b of parsed.beats) {
   // scripted pause → silent gap beat
   if (b.pause > 0) cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });
 }
+// Leading pause — a beat of silence before the first word (after the intro logo),
+// so the goal card lands and settles before the narration starts.
+const first = slides[0];
+if (first?.beats?.length) first.beats.unshift({ durationInSeconds: 1.2, phase: first.beats[0].phase, level: first.beats[0].level, stage: first.stage });
 for (const s of slides) s.durationInSeconds = +s.beats.reduce((a, x) => a + x.durationInSeconds, 0).toFixed(2);
 
 // ---- image registry binding (Command 6) ------------------------------------
