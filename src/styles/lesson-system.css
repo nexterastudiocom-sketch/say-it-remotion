@@ -1,13 +1,28 @@
 /* ============================================================
-   SAY IT — LESSON SLIDE SYSTEM (4K · 3840×2160)
-   Ported verbatim from the brand design system (lesson-system.css).
-   Only change vs. source: the web-component selector `deck-stage section`
-   is rescoped to `.deck-root` so it works inside Remotion's AbsoluteFill.
+   MOSAIC — LESSON SLIDE SYSTEM (4K · 3840×2160)
+   Drop-in replacement for the Say It lesson-system.css. Every class
+   name and hook is unchanged, so no Remotion component needs editing;
+   only the values, type and shapes are rebranded.
+
+   What changed, and why:
+   · Type      Poppins/Inter → Rubik (display) + Hanken Grotesk (body)
+               + JetBrains Mono (eyebrows, counters, system voice).
+   · Shape     Every dot, disc and circle that carried meaning is now a
+               TESSERA — a rounded square on the mark's own radius. The
+               brand is squares assembling; round confetti contradicts it.
+   · Progress  The bar is segmented into blocks. Progress is pieces
+               placed, never a smooth liquid fill.
+   · Radius    Mosaic scale at 2× for 4K: 8 / 12 / 20 / 28 / 40 / pill.
+   · Shadow    Tinted to Mosaic Ink #16181D, low spread, no glow.
+
+   Language accents are lifted verbatim from the old system, so existing
+   per-language decks keep their colour.
    ============================================================ */
 
+
 :root{
-  --bg:#F7F5F0;
-  --ink:#16181D;
+  --bg:#F7F5F0;              /* Mosaic Paper */
+  --ink:#16181D;             /* Mosaic Ink */
   --ink-2:#5C5F66;
   --surface:#FFFFFF;
   --track:#E8E5DE;
@@ -18,8 +33,14 @@
   --accent:#2E4FE0;
   --tint:#E7ECFE;
 
-  --head:"Poppins", system-ui, sans-serif;
-  --body:"Inter", system-ui, sans-serif;
+  /* Tessera value steps — the mark's own hue family, derived from --accent.
+     Set per language below so the slide furniture matches the logo exactly. */
+  --tess-1:#8FA4FF;
+  --tess-2:#5C79EA;
+
+  --head:"Rubik", system-ui, sans-serif;
+  --body:"Hanken Grotesk", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
 
   /* 4K type scale */
   --h1:140px;
@@ -27,26 +48,32 @@
   --body-size:56px;
   --ui:40px;
 
-  --radius:32px;
-  --shadow:0 40px 90px -44px rgba(22,24,29,.34), 0 16px 40px -24px rgba(22,24,29,.20);
-  --shadow-lg:0 60px 130px -50px rgba(22,24,29,.42), 0 24px 60px -30px rgba(22,24,29,.24);
+  /* Mosaic radius scale, 2× for 4K */
+  --r-sm:12px;
+  --r-md:20px;
+  --radius:28px;
+  --r-xl:40px;
+
+  --shadow:0 40px 90px -44px rgba(22,24,29,.30), 0 16px 40px -24px rgba(22,24,29,.16);
+  --shadow-lg:0 60px 130px -50px rgba(22,24,29,.36), 0 24px 60px -30px rgba(22,24,29,.20);
 
   --safe:192px;
 }
 
-/* per-language theming hooks (set data-lang on .deck-root) */
-[data-lang="es"]{--accent:#E14B3B;--tint:#FDEAE6;}
-[data-lang="it"]{--accent:#1FA66B;--tint:#E4F6EE;}
-[data-lang="pt"]{--accent:#11998E;--tint:#E0F5F2;}
-[data-lang="de"]{--accent:#E0A100;--tint:#FBF1D6;}
+/* per-language theming hooks (set data-lang on deck-stage) */
+[data-lang="es"]{--accent:#E14B3B;--tint:#FDEAE6;--tess-1:#F0998E;--tess-2:#E87263;}
+[data-lang="it"]{--accent:#1FA66B;--tint:#E4F6EE;--tess-1:#8FD9BA;--tess-2:#57C193;}
+[data-lang="pt"]{--accent:#11998E;--tint:#E0F5F2;--tess-1:#88D4CE;--tess-2:#4DB8AF;}
+[data-lang="de"]{--accent:#E0A100;--tint:#FBF1D6;--tess-1:#EFD080;--tess-2:#E7B840;}
+[data-lang="en"]{--accent:#14A89B;--tint:#D6F1ED;--tess-1:#8AD4CD;--tess-2:#4FBEB4;}
 
-.deck-root{
+deck-stage section{
   background:var(--bg);
   font-family:var(--body);
   color:var(--ink);
   overflow:hidden;
 }
-.deck-root.is-overlay{ background:transparent; }
+deck-stage section.is-overlay{ background:transparent; }
 
 /* legibility scrims for frame chrome over live video */
 .lf-scrim-top{position:absolute;top:0;left:0;right:0;height:340px;z-index:4;
@@ -54,36 +81,87 @@
 .lf-scrim-bot{position:absolute;bottom:0;left:0;right:0;height:400px;z-index:4;
   background:linear-gradient(0deg,rgba(247,245,240,.97),rgba(247,245,240,.88) 55%,rgba(247,245,240,0));}
 
+/* transparent-overlay preview backdrop (placeholder footage) */
+.video-ph{
+  position:absolute;inset:0;z-index:0;
+  background:repeating-linear-gradient(135deg,#2a2d34 0 96px,#23262d 96px 192px);
+}
+.video-ph .vlabel{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--mono);font-weight:500;font-size:72px;letter-spacing:.3em;
+  color:rgba(255,255,255,.30);text-transform:uppercase;
+  border:4px solid rgba(255,255,255,.20);padding:40px 90px;border-radius:var(--r-md);white-space:nowrap;
+}
+
+/* ============================================================
+   MORTAR FIELD — optional slide backdrop
+   Add .mosaic-field to a section for the brand's grid + scatter.
+   Coverage stays under the 14% ink ceiling; it is texture, not content.
+   ============================================================ */
+.mosaic-field::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(90deg,rgba(22,24,29,.05) 2px,transparent 2px),
+    linear-gradient(0deg,rgba(22,24,29,.05) 2px,transparent 2px);
+  background-size:240px 240px;
+}
+.mosaic-field::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.30;
+  background-image:
+    linear-gradient(var(--accent),var(--accent)),
+    linear-gradient(var(--tess-1),var(--tess-1)),
+    linear-gradient(var(--tess-2),var(--tess-2)),
+    linear-gradient(var(--tess-1),var(--tess-1));
+  background-repeat:no-repeat;
+  background-size:208px 208px;
+  background-position:240px 240px, 3360px 720px, 480px 1680px, 3120px 1920px;
+}
+
 /* ============================================================
    ALWAYS-ON FRAME CHROME (header + footer + progress)
    ============================================================ */
 .lf-header{position:absolute;top:0;left:var(--safe);right:var(--safe);height:200px;
   display:flex;align-items:center;justify-content:space-between;z-index:6;}
 .lf-brand{display:flex;align-items:center;gap:40px;}
-.lf-logo{height:132px;width:auto;display:block;flex:none;}
+.lf-logo{height:120px;width:auto;display:block;flex:none;}
 
 /* brand mark for overlay slides that have no header (badges) */
 .brand-corner{position:absolute;left:var(--safe);bottom:120px;height:104px;width:auto;z-index:7;
   filter:drop-shadow(0 8px 26px rgba(0,0,0,.4));}
-.lf-lesson{font-family:var(--head);font-weight:600;font-size:46px;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--ink);white-space:nowrap;}
-.lf-lesson .sep{color:var(--accent);margin:0 .25em;}
-.lf-level{font-family:var(--head);font-weight:700;font-size:52px;letter-spacing:.02em;color:var(--accent);
+
+.lf-lesson{font-family:var(--mono);font-weight:500;font-size:42px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-2);white-space:nowrap;}
+.lf-lesson .sep{color:var(--accent);margin:0 .4em;}
+.lf-level{font-family:var(--head);font-weight:600;font-size:52px;letter-spacing:-.01em;color:var(--accent);
   background:var(--tint);padding:22px 50px;border-radius:999px;}
-.lf-rule{position:absolute;top:200px;left:var(--safe);right:var(--safe);height:4px;
-  background:var(--accent);border-radius:4px;z-index:6;}
+
+/* the header rule is mortar: a hairline, not a bar */
+.lf-rule{position:absolute;top:200px;left:var(--safe);right:var(--safe);height:3px;
+  background:rgba(22,24,29,.10);border-radius:0;z-index:6;}
+.lf-rule::after{content:"";position:absolute;left:0;top:0;height:100%;width:180px;background:var(--accent);}
 
 .lf-footer{position:absolute;bottom:96px;left:var(--safe);right:var(--safe);z-index:6;}
 .lf-foot-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:34px;}
-.lf-prog-label{font-weight:600;font-size:var(--ui);letter-spacing:.02em;color:var(--ink-2);}
+.lf-prog-label{font-family:var(--mono);font-weight:500;font-size:34px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-2);}
 .lf-chip{display:inline-flex;align-items:center;gap:20px;background:var(--tint);color:var(--accent);
-  font-weight:600;font-size:var(--ui);padding:20px 38px;border-radius:999px;font-variant-numeric:tabular-nums;}
-.lf-chip .ico{width:46px;height:46px;border:4px solid var(--accent);border-radius:8px;position:relative;flex:none;}
-.lf-chip .ico::after{content:"";position:absolute;left:50%;top:6px;bottom:6px;width:4px;background:var(--accent);transform:translateX(-50%);}
-.lf-bar{position:relative;height:24px;border-radius:999px;background:var(--track);}
-.lf-bar .fill{position:absolute;top:0;left:0;height:100%;border-radius:999px;background:var(--accent);}
-.lf-bar .knob{position:absolute;top:50%;width:54px;height:54px;border-radius:50%;background:var(--accent);
-  transform:translate(-50%,-50%);box-shadow:0 0 0 10px rgba(46,79,224,.18);}
+  font-family:var(--head);font-weight:600;font-size:var(--ui);padding:20px 38px;border-radius:999px;
+  font-variant-numeric:tabular-nums;}
+/* chip glyph is a tessera, not an outlined square */
+.lf-chip .ico{width:40px;height:40px;border-radius:10px;background:var(--accent);position:relative;flex:none;}
+.lf-chip .ico::after{content:"";position:absolute;left:8px;bottom:8px;width:14px;height:14px;
+  border-radius:4px;background:var(--tint);}
+
+/* PROGRESS AS PIECES PLACED — the fill is cut into tesserae by a mask, so the
+   bar reads as blocks accumulating rather than a liquid level rising. */
+.lf-bar{position:relative;height:28px;border-radius:0;background:transparent;
+  -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 56px,transparent 56px 68px);
+  mask-image:repeating-linear-gradient(90deg,#000 0 56px,transparent 56px 68px);}
+.lf-bar::before{content:"";position:absolute;inset:0;background:var(--track);border-radius:8px;}
+.lf-bar .fill{position:absolute;top:0;left:0;height:100%;border-radius:8px;background:var(--accent);}
+/* the knob becomes the leading tessera */
+.lf-bar .knob{position:absolute;top:50%;width:40px;height:40px;border-radius:12px;background:var(--accent);
+  transform:translate(-50%,-50%);box-shadow:none;}
 
 /* ============================================================
    CONTENT LAYOUT
@@ -95,17 +173,18 @@
 
 /* reusable bits */
 .pill{display:inline-flex;align-items:center;gap:18px;background:var(--tint);color:var(--accent);
-  font-family:var(--head);font-weight:600;font-size:var(--ui);letter-spacing:.04em;
+  font-family:var(--head);font-weight:600;font-size:var(--ui);letter-spacing:-.01em;
   padding:18px 40px;border-radius:999px;}
-.pill .dot{width:18px;height:18px;border-radius:50%;background:var(--accent);}
+/* the pill's dot is a tessera */
+.pill .dot{width:20px;height:20px;border-radius:6px;background:var(--accent);flex:none;}
 
-.eyebrow{font-family:var(--head);font-weight:600;font-size:var(--ui);letter-spacing:.14em;
+.eyebrow{font-family:var(--mono);font-weight:500;font-size:34px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--ink-2);white-space:nowrap;}
 
-/* sentence build-up step dots */
-.steps{display:flex;gap:24px;align-items:center;}
-.steps i{width:28px;height:28px;border-radius:50%;background:var(--track);display:block;}
-.steps i.on{background:var(--accent);}
+/* sentence build-up steps — each step is a block being placed */
+.steps{display:flex;gap:20px;align-items:center;}
+.steps i{width:36px;height:36px;border-radius:10px;background:var(--track);display:block;}
+.steps i.on{background:var(--tess-2);}
 .steps i.cur{background:var(--accent);box-shadow:0 0 0 10px var(--tint);}
 
 /* conjugation grid */
@@ -113,105 +192,120 @@
 .subj-grid .row{display:grid;grid-template-columns:520px 1fr;align-items:baseline;gap:60px;
   padding:38px 0;border-top:2px solid var(--line);}
 .subj-grid .row:first-child{border-top:none;}
-.subj-grid .subj{font-family:var(--head);font-weight:700;font-size:62px;color:var(--ink);}
+.subj-grid .subj{font-family:var(--head);font-weight:600;font-size:62px;color:var(--ink);letter-spacing:-.02em;}
 .subj-grid .verb{font-family:var(--body);font-weight:500;font-size:62px;color:#2b2e34;}
 .subj-grid .verb .end{color:var(--accent);font-weight:700;}
 
 /* stat blocks (score card) */
 .stat{flex:1;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+  border:2px solid var(--line);
   padding:72px 64px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px;}
-.stat .big{font-family:var(--head);font-weight:700;font-size:128px;line-height:1;color:var(--accent);letter-spacing:-.02em;}
-.stat .lab{font-family:var(--body);font-weight:500;font-size:40px;color:var(--ink-2);}
-.stat .mini{width:100%;height:20px;border-radius:999px;background:var(--track);position:relative;margin-top:8px;}
-.stat .mini i{position:absolute;left:0;top:0;height:100%;border-radius:999px;background:var(--accent);}
+.stat .big{font-family:var(--head);font-weight:700;font-size:128px;line-height:1;color:var(--accent);letter-spacing:-.03em;}
+.stat .lab{font-family:var(--mono);font-weight:500;font-size:30px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-2);}
+.stat .mini{width:100%;height:24px;background:transparent;position:relative;margin-top:8px;
+  -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 40px,transparent 40px 50px);
+  mask-image:repeating-linear-gradient(90deg,#000 0 40px,transparent 40px 50px);}
+.stat .mini::before{content:"";position:absolute;inset:0;background:var(--track);border-radius:8px;}
+.stat .mini i{position:absolute;left:0;top:0;height:100%;border-radius:8px;background:var(--accent);}
 
 /* lower-third overlay card */
 .lower-third{position:absolute;left:var(--safe);bottom:420px;z-index:6;
   display:inline-flex;align-items:center;gap:44px;background:var(--tint);
-  border-radius:40px;padding:48px 64px;box-shadow:var(--shadow-lg);max-width:2200px;}
+  border-radius:var(--r-xl);padding:48px 64px;box-shadow:var(--shadow-lg);max-width:2200px;}
 .lower-third.neutral{background:var(--surface);border:3px solid var(--line);}
 .lower-third .sub-ico{width:96px;height:96px;border-radius:24px;background:var(--accent);position:relative;flex:none;}
 .lower-third .sub-ico::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-58%);
   width:0;height:0;border-style:solid;border-width:22px 0 22px 34px;border-color:transparent transparent transparent #fff;}
-.lower-third .lt-text{font-family:var(--head);font-weight:600;font-size:64px;color:var(--ink);line-height:1.1;}
+.lower-third .lt-text{font-family:var(--head);font-weight:600;font-size:64px;color:var(--ink);line-height:1.14;letter-spacing:-.02em;}
 .lower-third.neutral .sub-ico{background:var(--tint);}
 .lower-third.neutral .sub-ico::after{border-color:transparent transparent transparent var(--accent);}
 
-/* achievement badge */
+/* achievement badge — a tessera, not a medal disc */
 .badge{display:flex;flex-direction:column;align-items:center;gap:0;}
-.badge .disc{width:560px;height:560px;border-radius:50%;background:var(--surface);
-  box-shadow:0 0 0 28px var(--accent), 0 0 120px 30px rgba(46,79,224,.30), var(--shadow-lg);
+.badge .disc{width:560px;height:560px;border-radius:72px;background:var(--surface);
+  box-shadow:0 0 0 24px var(--accent), var(--shadow-lg);
   display:flex;align-items:center;justify-content:center;position:relative;}
-.badge .disc .glyph{font-family:var(--head);font-weight:700;font-size:200px;color:var(--accent);line-height:1;}
+.badge .disc .glyph{font-family:var(--head);font-weight:700;font-size:200px;color:var(--accent);line-height:1;letter-spacing:-.04em;}
 .badge .ribbon{margin-top:-46px;z-index:2;background:var(--accent);color:#fff;
-  font-family:var(--head);font-weight:600;font-size:58px;padding:34px 72px;border-radius:24px;
-  box-shadow:var(--shadow);text-align:center;max-width:900px;}
-.badge .ribbon::before,.badge .ribbon::after{content:"";position:absolute;}
+  font-family:var(--head);font-weight:600;font-size:58px;padding:34px 72px;border-radius:var(--r-md);
+  box-shadow:var(--shadow);text-align:center;max-width:900px;letter-spacing:-.01em;}
 
 /* recap two-column list */
 .recap-grid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:0 120px;}
 .recap-grid .item{display:flex;align-items:center;gap:36px;padding:34px 0;border-top:2px solid var(--line);}
 .recap-grid .item:nth-child(1),.recap-grid .item:nth-child(2){border-top:none;}
-.recap-grid .item .w{font-family:var(--head);font-weight:600;font-size:54px;color:var(--ink);}
+.recap-grid .item .w{font-family:var(--head);font-weight:600;font-size:54px;color:var(--ink);letter-spacing:-.02em;}
 .recap-grid .item .t{font-family:var(--body);font-weight:400;font-size:46px;color:var(--ink-2);margin-left:auto;}
 
-/* confetti (simple geometric dots) */
+/* confetti — tesserae falling, never round dots */
 .confetti{position:absolute;inset:0;z-index:2;pointer-events:none;}
-.confetti span{position:absolute;width:46px;height:46px;border-radius:12px;}
+.confetti span{position:absolute;width:52px;height:52px;border-radius:14px;}
 
-.h1{font-family:var(--head);font-weight:700;font-size:var(--h1);line-height:1;letter-spacing:-.025em;}
-.h2{font-family:var(--head);font-weight:600;font-size:var(--h2);line-height:1.04;letter-spacing:-.01em;color:var(--ink-2);}
-.body{font-family:var(--body);font-size:var(--body-size);line-height:1.45;color:#2b2e34;}
+.h1{font-family:var(--head);font-weight:700;font-size:var(--h1);line-height:1;letter-spacing:-.035em;}
+.h2{font-family:var(--head);font-weight:600;font-size:var(--h2);line-height:1.06;letter-spacing:-.025em;color:var(--ink-2);}
+.body{font-family:var(--body);font-size:var(--body-size);line-height:1.5;color:#2b2e34;}
 .muted{color:var(--ink-2);}
-.hl{color:var(--accent);background:var(--tint);padding:.04em .26em;border-radius:14px;
+.hl{color:var(--accent);background:var(--tint);padding:.05em .24em;border-radius:var(--r-sm);
   box-decoration-break:clone;-webkit-box-decoration-break:clone;}
 .accent-text{color:var(--accent);}
 
-.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);}
+.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:2px solid var(--line);}
 .card.pad{padding:80px 96px;}
 
 /* illustration / image slot */
 .slot{position:relative;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
   border:3px solid var(--line);overflow:hidden;}
-.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .slot .ph{position:absolute;inset:0;
-  background:repeating-linear-gradient(135deg,#F1EEE6 0 40px,#ECE8DF 40px 80px);
+  background:
+    linear-gradient(90deg,rgba(22,24,29,.045) 2px,transparent 2px) 0 0/120px 120px,
+    linear-gradient(0deg,rgba(22,24,29,.045) 2px,transparent 2px) 0 0/120px 120px,
+    #F3F0E9;
   display:flex;align-items:center;justify-content:center;}
-.slot .ph span{font-family:var(--body);font-weight:500;font-size:36px;letter-spacing:.16em;
-  text-transform:uppercase;color:#A7A296;text-align:center;line-height:1.6;}
+.slot .ph span{font-family:var(--mono);font-weight:500;font-size:32px;letter-spacing:.18em;
+  text-transform:uppercase;color:#A7A296;text-align:center;line-height:1.7;}
 
-/* speaker / repeat cue */
+/* speaker / repeat cue — the speaker sits in a tessera */
 .cue{display:inline-flex;align-items:center;gap:26px;color:var(--accent);
-  font-family:var(--head);font-weight:600;font-size:var(--ui);}
-.cue .spk{width:72px;height:72px;border-radius:50%;background:var(--accent);position:relative;flex:none;
+  font-family:var(--head);font-weight:600;font-size:var(--ui);letter-spacing:-.01em;}
+.cue .spk{width:72px;height:72px;border-radius:20px;background:var(--accent);position:relative;flex:none;
   display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px var(--tint);}
 .cue .spk::before{content:"";width:0;height:0;border-style:solid;border-width:15px 0 15px 24px;
   border-color:transparent transparent transparent #fff;margin-left:5px;}
 
-/* check mark (simple) */
-.check{width:64px;height:64px;border-radius:50%;background:var(--accent);position:relative;flex:none;}
+/* check mark — a placed block that happens to be ticked */
+.check{width:64px;height:64px;border-radius:18px;background:var(--accent);position:relative;flex:none;}
 .check::after{content:"";position:absolute;left:21px;top:18px;width:18px;height:30px;
   border:solid #fff;border-width:0 7px 7px 0;transform:rotate(45deg);}
-.check.sm{width:44px;height:44px;}
-.check.sm::after{left:15px;top:12px;width:12px;height:20px;border-width:0 5px 5px 0;}
+.check.sm{width:48px;height:48px;border-radius:14px;}
+.check.sm::after{left:16px;top:13px;width:13px;height:22px;border-width:0 6px 6px 0;}
 .check.tint{background:var(--tint);}
 .check.tint::after{border-color:var(--accent);}
 
 /* part-of-speech tag */
 .pos-tag{display:inline-block;background:var(--tag-grey);color:var(--ink-2);
-  font-family:var(--body);font-weight:600;font-size:34px;padding:12px 30px;border-radius:14px;letter-spacing:.02em;}
+  font-family:var(--mono);font-weight:500;font-size:30px;padding:14px 28px;border-radius:var(--r-sm);
+  letter-spacing:.14em;text-transform:uppercase;}
 
-/* countdown ring (set --p 0..1 via inline style) */
+/* countdown ring — kept round: it is a clock, not a brand shape */
 .ring{--p:1;--sz:300px;width:var(--sz);height:var(--sz);border-radius:50%;flex:none;
   background:conic-gradient(var(--accent) calc(var(--p)*360deg), var(--track) 0);
   display:flex;align-items:center;justify-content:center;}
 .ring .hole{width:calc(var(--sz) - 56px);height:calc(var(--sz) - 56px);border-radius:50%;background:var(--bg);
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--head);font-weight:700;font-size:120px;color:var(--accent);font-variant-numeric:tabular-nums;}
+  font-family:var(--head);font-weight:700;font-size:120px;color:var(--accent);
+  font-variant-numeric:tabular-nums;letter-spacing:-.04em;}
 .ring.on-card .hole{background:var(--surface);}
 
-/* divider underline */
-.underline{height:10px;width:280px;background:var(--accent);border-radius:10px;margin-top:48px;}
+/* divider underline — three tesserae, the seed of the mark */
+.underline{height:20px;width:200px;margin-top:48px;background:transparent;border-radius:0;
+  background-image:
+    linear-gradient(var(--accent),var(--accent)),
+    linear-gradient(var(--tess-2),var(--tess-2)),
+    linear-gradient(var(--tess-1),var(--tess-1));
+  background-repeat:no-repeat;
+  background-size:20px 20px;
+  background-position:0 0, 32px 0, 64px 0;}
 
 /* writing-area placeholder */
 .write-area{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);

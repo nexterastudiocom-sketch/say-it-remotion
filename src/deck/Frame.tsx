@@ -35,7 +35,7 @@ export const Frame: React.FC<{
     <>
       <div className="lf-header">
         <div className="lf-brand">
-          <Img className="lf-logo" src={assetSrc(monogramLogo(language))} alt="Say it" />
+          <Img className="lf-logo" src={assetSrc(monogramLogo(language))} alt="Mosaic" />
           <div className="lf-lesson">
             {chrome.lessonA}
             {chrome.lessonB ? (<><span className="sep">·</span>{chrome.lessonB}</>) : null}

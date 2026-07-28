@@ -77,7 +77,7 @@ export const PracticeSlide: React.FC<{ slide: PracticeSlideData & { beats?: Beat
         <div style={{ minHeight: 360, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 44 }}>
           {/* What was just spoken — French big (lesson content), English as a prompt. */}
           {spokenIsFr ? (
-            <p className="h1" style={{ color: 'var(--accent)', fontWeight: 800, ...reveal }}>
+            <p className="h1" style={{ color: 'var(--accent)', fontWeight: 700, ...reveal }}>
               {spoken.text}
             </p>
           ) : spokenIsEn ? (
@@ -89,10 +89,10 @@ export const PracticeSlide: React.FC<{ slide: PracticeSlideData & { beats?: Beat
           {/* Learner's turn — countdown timer + English label. */}
           {isResponsePause ? (
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 30 }}>
-              <span style={{ width: 96, height: 96, borderRadius: '50%', background: 'var(--accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 52, boxShadow: '0 12px 40px rgba(0,0,0,0.22)', transform: `scale(${pulse})` }}>
+              <span style={{ width: 96, height: 96, borderRadius: 26, background: 'var(--accent)', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 52, boxShadow: '0 12px 40px rgba(0,0,0,0.22)', transform: `scale(${pulse})` }}>
                 {remaining}
               </span>
-              <span className="h2" style={{ color: 'var(--accent)', fontWeight: 800 }}>Your turn</span>
+              <span className="h2" style={{ color: 'var(--accent)', fontWeight: 700 }}>Your turn</span>
             </div>
           ) : null}
         </div>

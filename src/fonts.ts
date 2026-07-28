@@ -1,11 +1,13 @@
 // Deterministic font loading for render + studio.
-// The design system uses Poppins (headings) and Inter (body); loading them
-// through @remotion/google-fonts registers the real "Poppins"/"Inter" families
-// that lesson-system.css references, and makes Remotion wait for them before
-// capturing frames (no FOUT / wrong-metrics flashes in the render).
-import { loadFont as loadPoppins } from '@remotion/google-fonts/Poppins';
-import { loadFont as loadInter } from '@remotion/google-fonts/Inter';
+// The Mosaic design system uses Rubik (display/headings), Hanken Grotesk (body)
+// and JetBrains Mono (eyebrows, counters, system voice). Loading them through
+// @remotion/google-fonts registers the real families that lesson-system.css
+// references and makes Remotion wait for them before capturing frames (no FOUT /
+// wrong-metrics flashes). Replaces the network @import in the stylesheet.
+import { loadFont as loadRubik } from '@remotion/google-fonts/Rubik';
+import { loadFont as loadHanken } from '@remotion/google-fonts/HankenGrotesk';
+import { loadFont as loadMono } from '@remotion/google-fonts/JetBrainsMono';
 
-loadPoppins('normal', { weights: ['500', '600', '700'] });
-loadInter('normal', { weights: ['400', '500', '600', '700'] });
-loadInter('italic', { weights: ['400', '500'] });
+loadRubik('normal', { weights: ['400', '500', '600', '700'] });
+loadHanken('normal', { weights: ['400', '500', '600', '700'] });
+loadMono('normal', { weights: ['400', '500'] });

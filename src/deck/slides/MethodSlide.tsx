@@ -57,7 +57,7 @@ const renderInstruction = (text: string): React.ReactNode =>
     .split(/([“"„][^”"“]+[”"])/)
     .map((p, i) =>
       /^[“"„]/.test(p)
-        ? <span key={i} style={{ color: 'var(--accent)', fontWeight: 800 }}>{p.replace(/[“”"„]/g, '')}</span>
+        ? <span key={i} style={{ color: 'var(--accent)', fontWeight: 700 }}>{p.replace(/[“”"„]/g, '')}</span>
         : <React.Fragment key={i}>{p}</React.Fragment>
     );
 
@@ -115,9 +115,9 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
     <div style={{ minHeight: 168, display: 'flex', alignItems: 'center', ...fadeUp(frame, fps) }}>
       {instruction ? (
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 32, maxWidth: 1720,
-          background: 'rgba(255,255,255,0.72)', borderLeft: '10px solid var(--accent)',
-          borderRadius: 20, padding: '30px 48px' }}>
-          <span style={{ flex: 'none', width: 66, height: 66, borderRadius: '50%', background: 'var(--tint)',
+          background: 'var(--surface)', border: '2px solid var(--line)',
+          borderRadius: 28, padding: '30px 48px', boxShadow: 'var(--shadow)' }}>
+          <span style={{ flex: 'none', width: 66, height: 66, borderRadius: 18, background: 'var(--tint)',
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ width: 0, height: 0, borderStyle: 'solid', borderWidth: '15px 0 15px 24px',
               borderColor: 'transparent transparent transparent var(--accent)', marginLeft: 6 }} />
@@ -140,25 +140,29 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
       <div style={{ minHeight: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22 }}>
         {wc ? (
           <div style={{ ...fadeUp(frame, fps, 4) }}>
-            <p style={{ fontFamily: 'var(--head)', fontWeight: 800, fontSize: 176, lineHeight: 1,
+            <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 176, lineHeight: 1,
               letterSpacing: '-0.02em', color: 'var(--accent)' }}>{wc[1].trim()}</p>
             <p style={{ fontFamily: 'var(--body)', fontWeight: 500, fontSize: 54, marginTop: 14,
               letterSpacing: 2, color: 'var(--ink-2)' }}>[{wc[2].trim()}]</p>
           </div>
         ) : showFrWord ? (
-          <p style={{ fontFamily: 'var(--head)', fontWeight: 800, fontSize: 176, lineHeight: 1,
+          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 176, lineHeight: 1,
             letterSpacing: '-0.02em', color: 'var(--accent)', ...reveal }}>{spoken.text}</p>
         ) : isEnMeaning ? (
           <p style={{ fontFamily: 'var(--head)', fontWeight: 600, fontSize: 88, lineHeight: 1.12,
             color: 'var(--ink)', maxWidth: 1720, ...reveal }}>{spoken.text}</p>
         ) : isFr && !imgRel && !wantsImg ? (
-          <p style={{ fontFamily: 'var(--head)', fontWeight: 800, fontSize: 176, color: 'var(--accent)', opacity: 0.22 }}>• • •</p>
+          <div style={{ display: 'flex', gap: 24, opacity: 0.28 }}>
+            {[0, 1, 2].map((i) => (
+              <span key={i} style={{ width: 72, height: 72, borderRadius: 20, background: 'var(--accent)' }} />
+            ))}
+          </div>
         ) : null}
 
         {isResponse ? (
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 30, marginTop: 8 }}>
-            <span style={{ width: 96, height: 96, borderRadius: '50%', background: 'var(--accent)', color: '#fff',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 52,
+            <span style={{ width: 96, height: 96, borderRadius: 26, background: 'var(--accent)', color: '#fff',
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 52,
               transform: `scale(${pulse})`, boxShadow: '0 12px 40px rgba(0,0,0,0.22)' }}>{remaining}</span>
             <span style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 72, color: 'var(--accent)' }}>Your turn</span>
           </div>
@@ -168,13 +172,15 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
   );
 
   const imgPanel = imgRel ? (
-    <div style={{ width: 1180, height: 1180, flexShrink: 0, borderRadius: 40, overflow: 'hidden', boxShadow: '0 30px 90px rgba(0,0,0,0.18)', border: '3px solid rgba(0,0,0,0.06)', background: 'var(--tint)', ...fadeUp(frame, fps, 6) }}>
+    <div style={{ width: 1180, height: 1180, flexShrink: 0, borderRadius: 28, overflow: 'hidden', boxShadow: '0 30px 90px rgba(0,0,0,0.18)', border: '3px solid rgba(0,0,0,0.06)', background: 'var(--tint)', ...fadeUp(frame, fps, 6) }}>
       <Img src={assetSrc(imgRel)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
     </div>
   ) : wantsImg ? (
-    <div style={{ width: 1180, height: 1180, flexShrink: 0, borderRadius: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 24, background: 'var(--tint)', border: '4px dashed rgba(0,0,0,0.18)', ...fadeUp(frame, fps, 6) }}>
-      <span style={{ fontSize: 120 }}>🖼</span>
-      <span className="h2" style={{ color: 'var(--accent)', fontWeight: 800, letterSpacing: 1 }}>No-Credit</span>
+    <div style={{ width: 1180, height: 1180, flexShrink: 0, borderRadius: 28, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 24, background: 'var(--tint)', border: '4px dashed rgba(0,0,0,0.18)', ...fadeUp(frame, fps, 6) }}>
+      <span style={{ width: 200, height: 200, borderRadius: 28, background: 'var(--surface)', border: '3px solid var(--line)',
+        backgroundImage: 'linear-gradient(90deg,rgba(22,24,29,.05) 2px,transparent 2px),linear-gradient(0deg,rgba(22,24,29,.05) 2px,transparent 2px)',
+        backgroundSize: '50px 50px' }} />
+      <span className="h2" style={{ color: 'var(--accent)', fontWeight: 700, letterSpacing: '-0.02em' }}>Image</span>
       <span className="body" style={{ opacity: 0.5 }}>image pending</span>
     </div>
   ) : null;

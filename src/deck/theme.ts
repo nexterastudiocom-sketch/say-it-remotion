@@ -28,5 +28,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageTheme> = Object.fromEntries
   ])
 ) as Record<LanguageCode, LanguageTheme>;
 
-export const monogramLogo = (code: LanguageCode) => `assets/logo/monogram-${LANGUAGES[code].slug}.png`;
+// Mosaic mark, keyed by language code (mark-fr.svg …). Tonal variant for the
+// header on Paper/Bone grounds; reverse variants exist for Ink grounds.
+export const monogramLogo = (code: LanguageCode) => `assets/logo/mark-${code}.svg`;
 export const horizontalLogo = (code: LanguageCode) => `assets/logo/horizontal-${LANGUAGES[code].slug}.png`;
