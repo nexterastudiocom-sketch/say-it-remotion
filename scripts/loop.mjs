@@ -115,10 +115,11 @@ async function processWorkbook(name) {
   // must therefore run in order (the intake is alphabetical: L01, L02, …).
   log('Gate A + promote');       sh('node', ['scripts/qa/gate-a.mjs', id, '--promote-lexicon']);
   log('registry');               sh('node', ['scripts/images/registry.mjs', localWb]);
-  log('images: generate + bind'); try { sh('node', ['scripts/images/generate.mjs']); } catch { console.log('  (generation skipped/failed — placeholders will show)'); }
-  sh('node', ['scripts/images/bind.mjs', id]);
+  log('images: generate');       try { sh('node', ['scripts/images/generate.mjs']); } catch { console.log('  (generation skipped/failed — placeholders will show)'); }
   log(`bake audio ${id}`);       sh('node', ['scripts/build-method-lesson.mjs', id]);
-  sh('node', ['scripts/images/bind.mjs', id]); // rebind after bake rebuilt the JSON
+  // Bind AFTER the bake — bind attaches registry images to the baked JSON, which
+  // only exists once build-method-lesson has written it.
+  log('bind images');            sh('node', ['scripts/images/bind.mjs', id]);
   log('manifest');               sh('node', ['scripts/qa/manifest.mjs', id]);
   log(`render ${HQ ? '4K' : '540p'}`);
   const outMp4 = path.join(ROOT, `out/${id}-method-540p.mp4`);
