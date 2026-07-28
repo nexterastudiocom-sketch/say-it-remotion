@@ -57,17 +57,21 @@ for (const mf of metas) {
     p.fps >= 30 ? ok('PZ-02 fps≥30') : block('PZ-02', `${p.fps.toFixed(1)}fps < 30`);
     (p.dur >= 18 && p.dur <= 30) ? ok('SH-01 runtime 18-30s') : block('SH-01', `${p.dur.toFixed(1)}s outside 18-30`);
   }
-  // extract GAP (8/9.5s), open (0.2s), close (19.7s) frames for OCR + diffs
+  // The learner-turn phase differs by format: a hidden GAP (hook shorts, 8/9.5s) vs
+  // the "repeat" mic-pulse (WORD_OF_DAY, 10/11.5s, word intentionally on screen).
+  const isWord = m.type === 'WORD_OF_DAY';
+  const [gt1, gt2] = isWord ? [10, 11.5] : [8, 9.5];
   const g1 = `${tmp}/${m.id}_g1.png`, g2 = `${tmp}/${m.id}_g2.png`, op = `${tmp}/${m.id}_op.png`, cl = `${tmp}/${m.id}_cl.png`;
-  // open/close sampled at the true loop seam (frame 0 vs last) — NOT 0.2s, which
-  // catches the JOLT flash bloom and would falsely read as "differs".
-  for (const [t, out] of [[8, g1], [9.5, g2], [0.0, op], [19.93, cl]]) await ff(['-y', '-ss', String(t), '-i', f0, '-frames:v', '1', out]);
-  const chk = await run(OCR_PY, [path.join(ROOT, 'scripts/shorts/frames_check.py'), g1, g2, op, cl, g1, '--', ...allowed]);
+  // open/close at the true loop seam (frame 0 vs last), not 0.2s (a transient).
+  for (const [t, out] of [[gt1, g1], [gt2, g2], [0.0, op], [19.93, cl]]) await ff(['-y', '-ss', String(t), '-i', f0, '-frames:v', '1', out]);
+  // OCR only matters for the hidden-retrieval format; WORD_OF_DAY shows the word on purpose.
+  const chk = await run(OCR_PY, [path.join(ROOT, 'scripts/shorts/frames_check.py'), g1, g2, op, cl, g1, '--', ...(isWord ? [] : allowed)]);
   let a = {}; try { a = JSON.parse(chk.out.trim().split('\n').pop()); } catch {}
-  // SH-03: no French on screen during the GAP (before REVEAL)
-  a.gapFrenchHit ? block('SH-03', `French "${a.gapFrenchHit}" visible in GAP`) : ok('SH-03 no French before REVEAL');
-  // SH-04: GAP animated
-  a.gapAnimated === true ? ok('SH-04 GAP animated') : (a.gapAnimated === false ? block('SH-04', 'GAP frames identical (static)') : warn('SH-04', 'could not verify motion'));
+  // SH-03: no French before REVEAL — N/A for the teach format (word is the content)
+  isWord ? ok('SH-03 word shown throughout (teach format) · N/A')
+    : (a.gapFrenchHit ? block('SH-03', `French "${a.gapFrenchHit}" visible in GAP`) : ok('SH-03 no French before REVEAL'));
+  // SH-04: the learner-turn phase animates (mic pulse / countdown)
+  a.gapAnimated === true ? ok(isWord ? 'SH-04 repeat phase animated' : 'SH-04 GAP animated') : (a.gapAnimated === false ? block('SH-04', `${isWord ? 'repeat' : 'GAP'} frames identical (static)`) : warn('SH-04', 'could not verify motion'));
   // SH-05: loop match
   a.loopMatch === true ? ok('SH-05 loop matches opening') : (a.loopMatch === false ? warn('SH-05', 'open/close differ') : warn('SH-05', 'could not verify'));
   // PZ-03: speech peak ≤ -3 dBTP — needs full ffmpeg (volumedetect isn't in the minimal build)

@@ -64,34 +64,43 @@ function mineLesson(id, manifest, meta) {
   const frClip = {};  // item -> a natural-rate french beat {videoStart, videoEnd, text}
   const phonetic = {};
 
-  // First pass: per-item gloss, phonetic, and a clean FR clip for FLASH/REVEAL.
+  const frSlow = {};      // slow FR clip per item
+  const meaningClip = {}; // the English gloss ("hello / good morning") clip per item
+  // First pass: per-item gloss, phonetic, and clean FR clips (normal + slow) + meaning.
   for (const r of lines) {
     const item = itemOf(r.slideId);
     if (!item) continue;
     if (r.visual && !phonetic[item]) { const p = phoneticFromVisual(r.visual); if (p) phonetic[item] = p; }
-    if (r.kind === 'english' && r.phase === 'MEET' && /\//.test(r.spokenText || '') && !glossOf[item]) glossOf[item] = r.spokenText.replace(/\.$/, '').trim();
-    if (r.kind === 'french' && norm(r.intendedFrench) === norm(item) && (r.rateTag === 'natural' || !frClip[item]))
-      frClip[item] = { videoStart: r.videoStart, videoEnd: r.videoEnd, rate: r.rateTag };
+    if (r.kind === 'english' && r.phase === 'MEET' && /\//.test(r.spokenText || '')) {
+      if (!glossOf[item]) glossOf[item] = r.spokenText.replace(/\.$/, '').trim();
+      if (!meaningClip[item]) meaningClip[item] = { videoStart: r.videoStart, videoEnd: r.videoEnd };
+    }
+    if (r.kind === 'french' && norm(r.intendedFrench) === norm(item)) {
+      if (r.rateTag === 'natural' && !frClip[item]) frClip[item] = { videoStart: r.videoStart, videoEnd: r.videoEnd, rate: r.rateTag };
+      else if (!frClip[item]) frClip[item] = { videoStart: r.videoStart, videoEnd: r.videoEnd, rate: r.rateTag };
+      if ((r.rateTag === 'slow' || r.rateTag === 'very_slow') && !frSlow[item]) frSlow[item] = { videoStart: r.videoStart, videoEnd: r.videoEnd, rate: r.rateTag };
+    }
   }
 
   const out = [];
   const clipFor = (item) => frClip[item] || null;
 
-  // ---- MISTAKE — a form_note (the ONE hardest thing) in an ITEM_BLOCK ----------
-  for (const r of lines) {
-    if (r.stage !== 'ITEM_BLOCK' || r.kind !== 'english' || r.phase !== 'MEET') continue;
-    const t = (r.spokenText || '').trim();
-    if (!t || BOILERPLATE.has(t.toLowerCase()) || /\//.test(t) || t.split(/\s+/).length <= 4) continue;
-    const item = itemOf(r.slideId);
-    if (!item) continue;
+  // ---- WORD OF THE DAY — teach one item like the lesson does: say it (normal),
+  //      show meaning + picture, hear it slow, repeat, hear it normal again. The
+  //      primary Short format. Highest appeal: a clean, complete micro-lesson.
+  for (const item of items) {
+    const normal = frClip[item];
+    if (!normal) continue;
     out.push({
-      type: 'MISTAKE', item,
-      score: 90 + (nasal(t) ? 4 : 0),
-      why: t,
-      hookSeeds: [`You're saying ${item} wrong.`, `Most people botch this French word.`, `${item} — you're probably mispronouncing it.`],
-      title: `Stop saying ${item} wrong`,
+      type: 'WORD_OF_DAY', item,
+      score: 92,
+      why: `${item} — ${glossOf[item] || ''}`.trim(),
+      hookSeeds: ['French word of the day', 'Your French word today', 'Learn this French word'],
+      title: `French word of the day: ${item}`,
       target: { french: item, phonetic: phonetic[item] || null, english: glossOf[item] || null },
-      clip: clipFor(item), source: { stage: r.stage, sourceLine: r.sourceLine, at: r.videoStart },
+      clip: normal,                                   // back-compat (thumbnail/single clip)
+      clips: { normal, slow: frSlow[item] || normal, meaning: meaningClip[item] || null },
+      source: { stage: 'ITEM_BLOCK', item },
     });
   }
 

@@ -81,50 +81,62 @@ const perfPath = path.join(ROOT, 'shorts/hook_performance.json');
 const perf = existsSync(perfPath) ? JSON.parse(await readFile(perfPath, 'utf8')) : { note: 'Log 3s-retention per hook variant per short type; the generator learns which hook style wins.', byType: {}, shorts: {} };
 
 await mkdir(path.join(ROOT, 'out/shorts'), { recursive: true });
+async function cutClip(candId, name, clip) {
+  if (!clip || clip.videoStart == null) return null;
+  const rel = `assets/shorts/${candId}/${name}.mp3`;
+  const abs = path.join(ROOT, 'public', rel);
+  await mkdir(path.dirname(abs), { recursive: true });
+  const r = await run(REMOTION, ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y',
+    '-ss', String(Math.max(0, clip.videoStart - 0.08)), '-to', String(clip.videoEnd + 0.08),
+    '-i', video, '-vn', '-c:a', 'libmp3lame', '-q:a', '2', abs]);
+  return r.code === 0 ? rel : null;
+}
 let built = 0;
 for (const c of chosen) {
-  // 1. cut the target French once (shared across variants)
-  let revealAudioSrc = null;
-  if (c.clip?.videoStart != null) {
-    const rel = `assets/shorts/${c.id}/reveal.mp3`;
-    const abs = path.join(ROOT, 'public', rel);
-    await mkdir(path.dirname(abs), { recursive: true });
-    const r = await run(REMOTION, ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y',
-      '-ss', String(Math.max(0, c.clip.videoStart - 0.08)), '-to', String(c.clip.videoEnd + 0.08),
-      '-i', video, '-vn', '-c:a', 'libmp3lame', '-q:a', '2', abs]);
-    if (r.code === 0) revealAudioSrc = rel;
-  }
   const t = c.target || {};
   const topic = (t.french || c.item || '').split('/')[0].trim();
+  const isWord = c.type === 'WORD_OF_DAY';
   const meta_ = {
     id: c.id, type: c.type, lesson: id, level,
     title: clamp(c.title || c.hookSeeds[0], 45),
     description: `${c.why?.slice(0, 90) || c.hookSeeds[0]} — Full lesson: [${id}]`,
     hashtags: [tag('Learn' + langName), tag(level + langName), tag(topic || c.type)].slice(0, 3),
-    thumbnailFrom: 'REVEAL',
+    thumbnailFrom: isWord ? 'CARD' : 'REVEAL',
     variants: {},
   };
 
+  // clips: WORD_OF_DAY needs normal/slow/meaning; the hook formats need one reveal clip.
+  const normal = isWord ? await cutClip(c.id, 'normal', c.clips?.normal) : null;
+  const slow = isWord ? await cutClip(c.id, 'slow', c.clips?.slow) : null;
+  const meaning = isWord ? await cutClip(c.id, 'meaning', c.clips?.meaning) : null;
+  const revealAudioSrc = isWord ? null : await cutClip(c.id, 'reveal', c.clip);
+
   for (const v of variants) {
     const vi = v === 'h2' ? 1 : v === 'h3' ? 2 : 0;
-    const hook = (c.hookSeeds || [])[vi] || c.hookSeeds?.[0] || c.why;
-    const hookAudioSrc = await hookVoice(c.id, v, hook);
-    const spec = {
-      id: c.id, type: c.type, lesson: id, hook,
-      targetFrench: t.french || c.item || '', phonetic: t.phonetic || null, english: t.english || null,
-      why: c.why, imageSrc: imageFor(t.french || c.item), revealAudioSrc, hookAudioSrc, bedSrc: bedRel,
-      accent: theme.accent, tint: theme.tint, safeZoneOverlay: overlay,
-    };
+    const opener = (c.hookSeeds || [])[vi] || c.hookSeeds?.[0] || c.why;
     const outRel = `out/shorts/${c.id}_${v}.mp4`;
-    process.stdout.write(`  ▶ ${c.id}_${v} (${c.type}) "${clamp(hook, 34)}"${hookAudioSrc ? ' +voice' : ''} … `);
-    const r = await run(REMOTION, ['render', 'src/index.ts', 'Short', outRel, `--props=${JSON.stringify({ spec })}`, `--scale=${scale}`, '--timeout=120000', '--log=error']);
+    let comp, spec;
+    if (isWord) {
+      spec = { id: c.id, lesson: id, targetFrench: t.french || c.item || '', phonetic: t.phonetic || null, english: t.english || null,
+        imageSrc: imageFor(t.french || c.item), normalAudioSrc: normal, slowAudioSrc: slow, meaningAudioSrc: meaning,
+        opener, accent: theme.accent, tint: theme.tint, safeZoneOverlay: overlay };
+      comp = 'WordShort';
+    } else {
+      const hookAudioSrc = await hookVoice(c.id, v, opener);
+      spec = { id: c.id, type: c.type, lesson: id, hook: opener, targetFrench: t.french || c.item || '', phonetic: t.phonetic || null, english: t.english || null,
+        why: c.why, imageSrc: imageFor(t.french || c.item), revealAudioSrc, hookAudioSrc, bedSrc: bedRel,
+        accent: theme.accent, tint: theme.tint, safeZoneOverlay: overlay };
+      comp = 'Short';
+    }
+    process.stdout.write(`  ▶ ${c.id}_${v} (${c.type}) "${clamp(opener, 34)}" … `);
+    const r = await run(REMOTION, ['render', 'src/index.ts', comp, outRel, `--props=${JSON.stringify({ spec })}`, `--scale=${scale}`, '--timeout=120000', '--log=error']);
     if (r.code !== 0) { console.log(`✗\n${r.err.trim().split('\n').slice(-2).join('\n')}`); continue; }
-    // REVEAL thumbnail (~12s), not from HOOK
+    // thumbnail — the card is always up in WORD_OF_DAY (grab ~3s); REVEAL frame otherwise (~12s)
     const thumb = `out/shorts/${c.id}_${v}.thumb.png`;
-    await run(REMOTION, ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-ss', '12', '-i', outRel, '-frames:v', '1', '-q:v', '2', thumb]);
-    meta_.variants[v] = { file: outRel, thumb, hook, hasVoice: Boolean(hookAudioSrc) };
+    await run(REMOTION, ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-ss', isWord ? '3' : '12', '-i', outRel, '-frames:v', '1', '-q:v', '2', thumb]);
+    meta_.variants[v] = { file: outRel, thumb, hook: opener, hasVoice: !isWord && Boolean(spec.hookAudioSrc) };
     perf.shorts[c.id] ||= { type: c.type, variants: {} };
-    perf.shorts[c.id].variants[v] ||= { hook, retention3s: null };
+    perf.shorts[c.id].variants[v] ||= { hook: opener, retention3s: null };
     perf.byType[c.type] ||= { winner: null, samples: 0 };
     built++;
     console.log('✓');

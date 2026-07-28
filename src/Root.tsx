@@ -11,7 +11,15 @@ import { LogoMotion } from './deck/LogoMotion';
 import { SubscribeMotion } from './deck/SubscribeMotion';
 import { Thumbnail, THUMB_W, THUMB_H } from './deck/Thumbnail';
 import { ShortVideo, SHORT_FPS, SHORT_FRAMES, ShortSpec } from './shorts/ShortVideo';
+import { WordShort, WORD_FPS, WORD_FRAMES, WordSpec } from './shorts/WordShort';
 import { HudCheck } from './design/HudCheck';
+
+const SAMPLE_WORD_SPEC: WordSpec = {
+  id: 'sample', lesson: 'lesson-01', targetFrench: 'bonjour', phonetic: 'bohn-ZHOOR',
+  english: 'hello / good morning', imageSrc: 'assets/images/items/img_fr_bonjour_01.png',
+  normalAudioSrc: null, slowAudioSrc: null, meaningAudioSrc: null,
+  opener: 'French word of the day', accent: '#2E4FE0', tint: '#E7ECFE', safeZoneOverlay: false,
+};
 
 // Placeholder spec — the shorts build script renders real ones via --props.
 const SAMPLE_SHORT_SPEC: ShortSpec = {
@@ -81,6 +89,17 @@ export const RemotionRoot: React.FC = () => (
         subtitle: 'Talk about your job',
         imageSrc: 'assets/images/lesson-01_vocab-1.png',
       }}
+    />
+
+    {/* "Word of the day" Short (1080x1920) — a teach micro-lesson. */}
+    <Composition
+      id="WordShort"
+      component={WordShort}
+      width={1080}
+      height={1920}
+      fps={WORD_FPS}
+      durationInFrames={WORD_FRAMES}
+      defaultProps={{ spec: SAMPLE_WORD_SPEC }}
     />
 
     {/* Per-level HUD verification frame (3840x2160). Render a still per level. */}
