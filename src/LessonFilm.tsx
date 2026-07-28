@@ -1,13 +1,13 @@
 import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
 import { LessonVideo } from './LessonVideo';
-import { LogoMotion } from './deck/LogoMotion';
 import { IntroVideo, INTRO_VIDEO_FRAMES } from './deck/IntroVideo';
+import { OutroVideo, OUTRO_VIDEO_FRAMES } from './deck/OutroVideo';
 import { SubscribeLowerThird, SUB_FRAMES } from './deck/SubscribeMotion';
 import { Lesson, getLessonDurationInFrames } from './deck/types';
 
 export const INTRO_FRAMES = INTRO_VIDEO_FRAMES; // brand intro video (10.27s) + its synced audio
-export const OUTRO_FRAMES = 90; // 3s
+export const OUTRO_FRAMES = OUTRO_VIDEO_FRAMES; // brand outro end-card (9.97s) + its audio bed
 
 export const getFilmDurationInFrames = (lesson: Lesson) =>
   INTRO_FRAMES + getLessonDurationInFrames(lesson) + OUTRO_FRAMES;
@@ -28,7 +28,7 @@ export const LessonFilm: React.FC<{ lesson: Lesson }> = ({ lesson }) => {
         <SubscribeLowerThird language={lesson.language} />
       </Sequence>
       <Sequence from={INTRO_FRAMES + lessonFrames} durationInFrames={OUTRO_FRAMES}>
-        <LogoMotion language={lesson.language} mode="outro" />
+        <OutroVideo language={lesson.language} />
       </Sequence>
     </AbsoluteFill>
   );
