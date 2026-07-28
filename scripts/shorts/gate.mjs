@@ -11,9 +11,12 @@ import { existsSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import ffmpegStatic from 'ffmpeg-static';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const REMOTION = path.join(ROOT, 'node_modules/.bin/remotion');
+// Full ffmpeg (volumedetect isn't in the minimal remotion build) for the speech-peak check.
+const FULLFF = process.env.FFMPEG_BIN || (ffmpegStatic && existsSync(ffmpegStatic) ? ffmpegStatic : null);
 const OCR_PY = path.join(ROOT, '.venv-ocr/bin/python');
 const id = process.argv[2] || 'lesson-01';
 

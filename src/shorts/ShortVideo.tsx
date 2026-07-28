@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Img, Sequence, interpolate, useCurrentFrame, useVideoConfig, spring } from 'remotion';
+import { AbsoluteFill, Audio, Img, Sequence, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import { assetSrc } from '../assetSrc';
 
 // Vertical Short — 1080x1920, 20s (600f @30). Reads finished lesson assets only.
@@ -61,8 +61,9 @@ export const ShortVideo: React.FC<{ spec: ShortSpec }> = ({ spec }) => {
   const b = beat(t);
   const accent = spec.accent, tint = spec.tint;
 
-  const jolt = spring({ frame, fps, config: { damping: 14, stiffness: 120 } });
-  const imgScale = 1 + 0.02 * Math.sin((frame / fps) * Math.PI * 1.4);
+  // Period-locked breathe: 3 whole cycles over the clip so scale at frame 0 ≈ frame
+  // (last), keeping the loop seamless (SH-05).
+  const imgScale = 1 + 0.015 * Math.sin((frame / SHORT_FRAMES) * Math.PI * 2 * 3);
 
   const flashAudio = b === 'FLASH' && spec.revealAudioSrc;
   const revealAudio = t >= 10 && t < 12.5 && spec.revealAudioSrc;
@@ -78,13 +79,14 @@ export const ShortVideo: React.FC<{ spec: ShortSpec }> = ({ spec }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: '#F7F5F0', overflow: 'hidden' }}>
       {/* lesson-cream background (matches the long-form videos); accent/tint used for brand marks */}
-      {/* JOLT colour-snap */}
-      <AbsoluteFill style={{ backgroundColor: accent, opacity: interpolate(t, [0, 0.45, 0.65], [1, 1, 0], { extrapolateRight: 'clamp' }) }} />
+      {/* JOLT colour-snap — blooms just AFTER frame 0 (0 at t=0 and by 0.4s) so the
+          opening frame stays cream and matches the LOOP's closing frame (SH-05). */}
+      <AbsoluteFill style={{ backgroundColor: accent, opacity: interpolate(t, [0, 0.12, 0.4], [0, 0.85, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) }} />
 
       {/* IMAGE — fixed lower-centre card, never moves (only a subtle breathe + JOLT punch-in) */}
       {spec.imageSrc ? (
         <div style={{
-          position: 'absolute', left: '50%', top: IMG.top, transform: `translateX(-50%) scale(${(0.7 + 0.3 * jolt) * imgScale})`,
+          position: 'absolute', left: '50%', top: IMG.top, transform: `translateX(-50%) scale(${imgScale})`,
           width: IMG.size, height: IMG.size, borderRadius: 44, overflow: 'hidden', opacity: imgDim,
           boxShadow: '0 30px 90px rgba(0,0,0,0.28)', border: '6px solid rgba(255,255,255,0.85)',
         }}>

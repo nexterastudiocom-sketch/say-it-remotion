@@ -9,12 +9,14 @@ import sys, json
 
 def load(p):
     from PIL import Image
-    return Image.open(p).convert('RGB').resize((108, 192))
+    return Image.open(p).convert('RGB').resize((216, 384))
 
-def meandiff(a, b):
+def changed_fraction(a, b, thr=60):
+    # fraction of pixels that changed appreciably — robust to a small moving region
+    # (a countdown ring + digit) that a whole-frame MEAN would wash out.
     pa, pb = list(a.getdata()), list(b.getdata())
-    tot = sum(abs(x[0]-y[0])+abs(x[1]-y[1])+abs(x[2]-y[2]) for x, y in zip(pa, pb))
-    return tot / (len(pa) * 3 * 255)   # 0..1
+    ch = sum(1 for x, y in zip(pa, pb) if abs(x[0]-y[0])+abs(x[1]-y[1])+abs(x[2]-y[2]) > thr)
+    return ch / len(pa)
 
 args = sys.argv[1:]
 sep = args.index('--')
@@ -23,8 +25,8 @@ allowed = [w.lower() for w in args[sep+1:] if len(w) >= 2]
 
 out = {'gapFrenchHit': None, 'gapAnimated': None, 'loopMatch': None}
 try:
-    out['gapAnimated'] = meandiff(load(gap1), load(gap2)) > 0.01
-    out['loopMatch'] = meandiff(load(open_), load(close_)) < 0.06
+    out['gapAnimated'] = changed_fraction(load(gap1), load(gap2)) > 0.002  # any real motion
+    out['loopMatch'] = changed_fraction(load(open_), load(close_)) < 0.03  # open ≈ close
 except Exception as e:
     out['error'] = f'diff: {e}'
 
