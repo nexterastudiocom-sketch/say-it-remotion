@@ -27,6 +27,8 @@ const RCLONE = process.env.RCLONE || `${process.env.HOME}/.local/bin/rclone`;
 const REMO = path.join(ROOT, 'node_modules/.bin/remotion');
 const args = process.argv.slice(2);
 const HQ = args.includes('--hq');
+const MATCH = args.includes('--match') ? new RegExp(args[args.indexOf('--match') + 1]) : null;
+const LIMIT = args.includes('--limit') ? Number(args[args.indexOf('--limit') + 1]) : Infinity;
 
 const sh = (cmd, a, opts = {}) => execFileSync(cmd, a, { cwd: ROOT, stdio: 'inherit', ...opts });
 const shOut = (cmd, a) => execFileSync(cmd, a, { cwd: ROOT, encoding: 'utf8' });
@@ -36,7 +38,9 @@ const log = (m) => console.log(`\n▶ ${m}`);
 // -- intake listing -----------------------------------------------------------
 function intakeWorkbooks() {
   const out = rclone(['lsf', INTAKE, '--files-only'], true);
-  return out.split('\n').map((s) => s.trim()).filter((s) => /\.xlsx$/i.test(s) && !/-done\.xlsx$/i.test(s));
+  let list = out.split('\n').map((s) => s.trim()).filter((s) => /\.xlsx$/i.test(s) && !/-done\.xlsx$/i.test(s));
+  if (MATCH) list = list.filter((s) => MATCH.test(s));
+  return list.slice(0, LIMIT);
 }
 
 if (args.includes('--list')) {
@@ -102,13 +106,10 @@ async function processWorkbook(name) {
   log(`download ${name}`);
   rclone(['copyto', `${INTAKE}/${name}`, localWb]);
 
-  const wb = XLSX.readFile(localWb);
-  const brief = {};
-  for (const r of XLSX.utils.sheet_to_json(wb.Sheets['Lesson_Brief'], { header: 1, defval: '' }))
-    if (r[0] && r[1] && r[0] !== 'Field') brief[String(r[0]).trim()] = String(r[1]).trim();
-  const id = `lesson-${String(Number(brief.lesson) || 1).padStart(2, '0')}`;
+  // Lesson id = the workbook filename (minus .xlsx) — named exactly as in Excel.
+  const id = name.replace(/\.xlsx$/i, '');
 
-  log(`author ${id}`);           sh('node', ['scripts/author-from-excel.mjs', localWb]);
+  log(`author ${id}`);           sh('node', ['scripts/author-from-excel.mjs', localWb], { env: { ...process.env, MOSAIC_LESSON_ID: id } });
   log('Gate A');                 sh('node', ['scripts/qa/gate-a.mjs', id]); // exits non-zero on BLOCK → loop stops
   log('registry');               sh('node', ['scripts/images/registry.mjs', localWb]);
   log('images: generate + bind'); try { sh('node', ['scripts/images/generate.mjs']); } catch { console.log('  (generation skipped/failed — placeholders will show)'); }
@@ -118,7 +119,8 @@ async function processWorkbook(name) {
   log('manifest');               sh('node', ['scripts/qa/manifest.mjs', id]);
   log(`render ${HQ ? '4K' : '540p'}`);
   const outMp4 = path.join(ROOT, `out/${id}-method-540p.mp4`);
-  sh(REMO, ['render', 'Lesson-01-Method', outMp4, ...(HQ ? ['--scale=1'] : ['--scale=0.25']), '--concurrency=6']);
+  // --props targets THIS lesson's baked JSON (the composition is generic LessonFilm).
+  sh(REMO, ['render', 'Lesson-01-Method', outMp4, `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`, ...(HQ ? ['--scale=1'] : ['--scale=0.25']), '--concurrency=6']);
   log('loudnorm');               sh('node', ['scripts/pipeline/normalize.mjs', outMp4, path.join(ROOT, `out/${id}-method-540p-norm.mp4`)]);
   log('thumbnail');              sh('node', ['scripts/thumbnail.mjs', id]);
 

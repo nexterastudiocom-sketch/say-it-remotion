@@ -48,7 +48,10 @@ const scenarios = J('Scenarios').filter((r) => r.n).map((r) => ({
   model: miyModel[String(r.model_sentence_id).trim()] || '',
 }));
 const num = Number(brief.lesson) || 1;
-const id = `lesson-${String(num).padStart(2, '0')}`;
+// Lesson id = the workbook filename (minus .xlsx), so the lesson is named exactly
+// as in Excel and A1/A2/B1 with the same number never collide. Env MOSAIC_LESSON_ID
+// can override (the loop passes the intake filename).
+const id = (process.env.MOSAIC_LESSON_ID || path.basename(xlsxPath).replace(/\.xlsx$/i, '')).trim();
 
 // A form note that names ANOTHER item trips X-04's substring check (a mention is
 // not a support level). Neutralize other-item names to their English gloss.
