@@ -10,4 +10,5 @@ import { loadFont as loadMono } from '@remotion/google-fonts/JetBrainsMono';
 
 loadRubik('normal', { weights: ['400', '500', '600', '700'] });
 loadHanken('normal', { weights: ['400', '500', '600', '700'] });
+loadHanken('italic', { weights: ['400', '500'] });
 loadMono('normal', { weights: ['400', '500'] });
