@@ -131,6 +131,10 @@ for (const c of chosen) {
     process.stdout.write(`  ▶ ${c.id}_${v} (${c.type}) "${clamp(opener, 34)}" … `);
     const r = await run(REMOTION, ['render', 'src/index.ts', comp, outRel, `--props=${JSON.stringify({ spec })}`, `--scale=${scale}`, '--timeout=120000', '--log=error']);
     if (r.code !== 0) { console.log(`✗\n${r.err.trim().split('\n').slice(-2).join('\n')}`); continue; }
+    // Master audio: cap true peak ≤ -3 dBTP (PZ-03) — audio-only re-encode, video copied.
+    const tmpN = outRel.replace(/\.mp4$/, '.norm.mp4');
+    const nz = await run(REMOTION, ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', outRel, '-map', '0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', '-af', 'loudnorm=I=-16:TP=-3:LRA=11', tmpN]);
+    if (nz.code === 0) await run('mv', [tmpN, outRel]);
     // thumbnail — the card is always up in WORD_OF_DAY (grab ~3s); REVEAL frame otherwise (~12s)
     const thumb = `out/shorts/${c.id}_${v}.thumb.png`;
     await run(REMOTION, ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-ss', isWord ? '3' : '12', '-i', outRel, '-frames:v', '1', '-q:v', '2', thumb]);
