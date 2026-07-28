@@ -59,7 +59,9 @@ for (const mf of metas) {
   }
   // extract GAP (8/9.5s), open (0.2s), close (19.7s) frames for OCR + diffs
   const g1 = `${tmp}/${m.id}_g1.png`, g2 = `${tmp}/${m.id}_g2.png`, op = `${tmp}/${m.id}_op.png`, cl = `${tmp}/${m.id}_cl.png`;
-  for (const [t, out] of [[8, g1], [9.5, g2], [0.2, op], [19.7, cl]]) await ff(['-y', '-ss', String(t), '-i', f0, '-frames:v', '1', out]);
+  // open/close sampled at the true loop seam (frame 0 vs last) — NOT 0.2s, which
+  // catches the JOLT flash bloom and would falsely read as "differs".
+  for (const [t, out] of [[8, g1], [9.5, g2], [0.0, op], [19.93, cl]]) await ff(['-y', '-ss', String(t), '-i', f0, '-frames:v', '1', out]);
   const chk = await run(OCR_PY, [path.join(ROOT, 'scripts/shorts/frames_check.py'), g1, g2, op, cl, g1, '--', ...allowed]);
   let a = {}; try { a = JSON.parse(chk.out.trim().split('\n').pop()); } catch {}
   // SH-03: no French on screen during the GAP (before REVEAL)
@@ -68,10 +70,13 @@ for (const mf of metas) {
   a.gapAnimated === true ? ok('SH-04 GAP animated') : (a.gapAnimated === false ? block('SH-04', 'GAP frames identical (static)') : warn('SH-04', 'could not verify motion'));
   // SH-05: loop match
   a.loopMatch === true ? ok('SH-05 loop matches opening') : (a.loopMatch === false ? warn('SH-05', 'open/close differ') : warn('SH-05', 'could not verify'));
-  // PZ-03: speech peak ≤ -3 dBTP (measure max volume of the file)
-  const vol = await run(REMOTION, ['ffmpeg', '-hide_banner', '-nostats', '-i', f0, '-af', 'volumedetect', '-f', 'null', '-']);
-  const mp = vol.err.match(/max_volume:\s*(-?[\d.]+) dB/); const peak = mp ? +mp[1] : null;
-  peak == null ? warn('PZ-03', 'no peak measured') : (peak <= -3 ? ok(`PZ-03 peak ${peak}dB ≤ -3`) : warn('PZ-03', `peak ${peak}dB > -3`));
+  // PZ-03: speech peak ≤ -3 dBTP — needs full ffmpeg (volumedetect isn't in the minimal build)
+  if (!FULLFF) warn('PZ-03', 'full ffmpeg unavailable for peak');
+  else {
+    const vol = await run(FULLFF, ['-hide_banner', '-nostats', '-i', path.join(ROOT, f0), '-af', 'volumedetect', '-f', 'null', '-']);
+    const mp = vol.err.match(/max_volume:\s*(-?[\d.]+) dB/); const peak = mp ? +mp[1] : null;
+    peak == null ? warn('PZ-03', 'no peak measured') : (peak <= -3 ? ok(`PZ-03 peak ${peak}dB ≤ -3`) : warn('PZ-03', `peak ${peak}dB > -3`));
+  }
   // structurally enforced by the composition
   ok('SH-06 hook burned-in (readable muted) · by design');
   ok('SH-07/PZ-05 text inside safe zones · by design');
