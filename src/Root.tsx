@@ -8,6 +8,7 @@ import lesson01Fr from './data/lessons/lesson-01.fr.json';
 import lesson01FrTest from './data/lessons/lesson-01.fr.test.json';
 import lesson01Method from './data/lessons/lesson-01.method.json';
 import { LogoMotion } from './deck/LogoMotion';
+import { IntroVideo, INTRO_VIDEO_FRAMES } from './deck/IntroVideo';
 import { SubscribeMotion } from './deck/SubscribeMotion';
 import { Thumbnail, THUMB_W, THUMB_H } from './deck/Thumbnail';
 import { ShortVideo, SHORT_FPS, SHORT_FRAMES, ShortSpec } from './shorts/ShortVideo';
@@ -47,12 +48,12 @@ export const RemotionRoot: React.FC = () => (
     {/* Standalone brand-motion previews (also embedded in every LessonFilm). */}
     <Composition
       id="Intro"
-      component={LogoMotion}
+      component={IntroVideo}
       fps={FPS}
       width={3840}
       height={2160}
-      durationInFrames={135}
-      defaultProps={{ language: 'fr' as LanguageCode, mode: 'intro' as const }}
+      durationInFrames={INTRO_VIDEO_FRAMES}
+      defaultProps={{ language: 'fr' as LanguageCode }}
     />
     <Composition
       id="Outro"

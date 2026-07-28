@@ -2,10 +2,11 @@ import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
 import { LessonVideo } from './LessonVideo';
 import { LogoMotion } from './deck/LogoMotion';
+import { IntroVideo, INTRO_VIDEO_FRAMES } from './deck/IntroVideo';
 import { SubscribeLowerThird, SUB_FRAMES } from './deck/SubscribeMotion';
 import { Lesson, getLessonDurationInFrames } from './deck/types';
 
-export const INTRO_FRAMES = 135; // 4.5s (wordmark → monogram → corner, with a hold)
+export const INTRO_FRAMES = INTRO_VIDEO_FRAMES; // brand intro video (10.27s) + its synced audio
 export const OUTRO_FRAMES = 90; // 3s
 
 export const getFilmDurationInFrames = (lesson: Lesson) =>
@@ -17,7 +18,7 @@ export const LessonFilm: React.FC<{ lesson: Lesson }> = ({ lesson }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: '#F7F5F0' }}>
       <Sequence durationInFrames={INTRO_FRAMES}>
-        <LogoMotion language={lesson.language} mode="intro" />
+        <IntroVideo language={lesson.language} />
       </Sequence>
       <Sequence from={INTRO_FRAMES} durationInFrames={lessonFrames}>
         <LessonVideo lesson={lesson} />
