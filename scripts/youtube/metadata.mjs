@@ -59,7 +59,12 @@ function buildTitle(lesson) {
   const L = langName(meta.language);
   const nn = two(meta.lesson);
   const n = meta.items.length;
-  return `${L} for Beginners #${nn} — ${meta.title} | Speak ${n} Words (${meta.level})`;
+  const mk = (topic) => `${L} for Beginners #${nn} — ${topic} | Speak ${n} Words (${meta.level})`;
+  // Cap at YouTube's 100. If the topic is long (derived from a verbose can-do),
+  // trim it at a word boundary so the whole title fits rather than throwing.
+  let topic = String(meta.title).trim();
+  while (mk(topic).length > 100 && topic.includes(' ')) topic = topic.slice(0, topic.lastIndexOf(' ')).replace(/[\s,;:–-]+$/, '');
+  return mk(topic).slice(0, 100);
 }
 
 function buildDescription(lesson, seoConfig) {
