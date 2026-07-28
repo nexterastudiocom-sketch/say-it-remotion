@@ -20,7 +20,8 @@ const items = meta.items || [];
 const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
 const line1 = cap((items[0] || 'Bonjour').toString());
 const line2 = items[1] ? `${items[1]}…` : '…';
-const subtitle = cap((meta.can_do || 'Speak from day one').replace(/^I can\s+/i, '').replace(/\.$/, '').trim());
+// One short clause only (design: the sub-line never wraps past two lines).
+const subtitle = cap((meta.can_do || 'Speak from day one').replace(/^I can\s+/i, '').split(/[,;]/)[0].replace(/\.$/, '').trim());
 const level = meta.level || 'A1';
 const language = meta.language || 'fr';
 
