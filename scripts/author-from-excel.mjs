@@ -16,6 +16,9 @@ import { frSyllables, pBeat, timing } from './qa/pbeat.mjs';
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const cfg = await timing();
 const P = (role, text, opts) => pBeat(role, text, cfg, opts).toFixed(1);
+// Copy beats ("say it with me") are NOT production — P-02 blocks any pause >2.5s.
+// Multi-word items (comme ci comme ça) compute longer, so cap the copy pause.
+const Pcopy = (text) => Math.min(2.4, pBeat('copy', text, cfg)).toFixed(1);
 const xlsxPath = process.argv[2];
 if (!xlsxPath) { console.error('usage: node scripts/author-from-excel.mjs <workbook.xlsx>'); process.exit(2); }
 
@@ -25,8 +28,11 @@ const J = (n) => XLSX.utils.sheet_to_json(wb.Sheets[n], { defval: '' });
 const brief = {};
 for (const r of XLSX.utils.sheet_to_json(wb.Sheets['Lesson_Brief'], { header: 1, defval: '' }))
   if (r[0] && r[1] && r[0] !== 'Field') brief[String(r[0]).trim()] = String(r[1]).trim();
+// Strip a trailing gender marker like "enchanté(e)" → "enchanté" so the item is
+// one clean token that matches everywhere (V-01 tokenises on the parens otherwise).
+const stripGender = (s) => String(s).replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
 const items = J('Items').filter((r) => r.fr).map((r) => ({
-  fr: String(r.fr).trim(), gloss: String(r.en).trim(), phon: String(r.phonetic).trim(),
+  fr: stripGender(r.fr), gloss: String(r.en).trim(), phon: String(r.phonetic).trim(),
   note: String(r.form_note || r['form_note (the ONE hardest thing)'] || '').trim(),
   level: Number(String(r.target_level).replace(/\D/g, '')) || 3,
   chunked: /^y/i.test(String(r.chunked_echo)),
@@ -47,6 +53,22 @@ const scenarios = J('Scenarios').filter((r) => r.n).map((r) => ({
   bank: String(r['word_bank (English glosses)'] || r.word_bank || '').trim(),
   model: miyModel[String(r.model_sentence_id).trim()] || '',
 }));
+// Proper names in the dialogue/scenarios (Chloé, Marc …) are not vocabulary, so
+// they'd trip V-01. Collect capitalised, non-sentence-initial tokens that aren't
+// common French words and declare them as `names:` so V-01 allows them.
+const FR_STOP = new Set(['je', 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'ils', 'elles', 'et', 'ça', 'va', 'bien', 'comment', 'oui', 'non', 'merci', 'bonjour', 'bonsoir', 'salut', 'madame', 'monsieur', 'pardon', 'le', 'la', 'les', 'un', 'une', 'de', 'du', 'des', 'à', 'au', 'est', 'ce', 'me', 'te', 'se', 'moi', 'toi', 'revoir', 'appelle', 'enchanté', 'enchantée', 'comme', 'ci', 'plaît', "s'il", 'ne', 'pas', 'très', 'aussi', 'alors', 'mais', 'ou', 'où', 'qui', 'que', 'quoi']);
+const extractNames = (texts) => {
+  const names = new Set();
+  for (const t of texts) for (const seg of String(t).split(/[.!?—:;]/)) {
+    seg.trim().split(/\s+/).forEach((w, i) => {
+      const c = w.replace(/[^A-Za-zÀ-ÿ'’-]/g, '');
+      if (i > 0 && /^[A-ZÀ-Ÿ][a-zà-ÿ]+$/.test(c) && !FR_STOP.has(c.toLowerCase())) names.add(c);
+    });
+  }
+  return [...names];
+};
+const names = extractNames([...dialogue.map((d) => d[1]), ...scenarios.map((s) => s.situation), ...scenarios.map((s) => s.model)]);
+
 const num = Number(brief.lesson) || 1;
 // Lesson id = the workbook filename (minus .xlsx), so the lesson is named exactly
 // as in Excel and A1/A2/B1 with the same number never collide. Env MOSAIC_LESSON_ID
@@ -84,6 +106,7 @@ w(`class: ${brief.class || 'CALIBRATION'}`);
 if (brief.lesson_title) w(`title: "${String(brief.lesson_title).replace(/"/g, "'")}"`);
 w(`can_do: "${(brief.can_do || '').replace(/"/g, "'")}"`);
 w(`items: [${itemsList}]`);
+if (names.length) w(`names: [${names.map((n) => (/[^A-Za-z]/.test(n) ? `"${n}"` : n)).join(', ')}]`);
 w(`frame: "${(brief.frame || '').replace(/"/g, "'")}"`);
 w('---'); w();
 w(`<!-- Generated from ${path.basename(xlsxPath)} by scripts/author-from-excel.mjs.`);
@@ -110,23 +133,23 @@ for (const it of items) {
   seg('04', 'ITEM_BLOCK', it.fr);
   img(`WORD CARD — ${it.fr} · [${it.phon}] · illustration: ${it.gloss} · MIC`);
   beat('EN·MAN', 'MEET', 0, 'Listen. Don’t say anything yet.', '0.6');
-  beat('FR·WOMAN', 'MEET', 0, it.fr, P('copy', it.fr), { rate: 'slow' });
+  beat('FR·WOMAN', 'MEET', 0, it.fr, Pcopy(it.fr), { rate: 'slow' });
   beat('EN·MAN', 'MEET', 0, it.gloss + '.', '0.8');
   if (it.note) beat('EN·MAN', 'MEET', 0, neutralize(it.note, it.fr), '0.8');
-  beat('FR·WOMAN', 'MEET', 0, it.fr, P('copy', it.fr), { rate: 'slow' });
+  beat('FR·WOMAN', 'MEET', 0, it.fr, Pcopy(it.fr), { rate: 'slow' });
   // ECHO — chunked for long items, else simple
   beat('EN·MAN', 'ECHO', 1, 'Repeat after me.', '0.6');
   if (it.chunked && !it.fr.includes("'")) {
     const words = it.fr.split(/\s+/);
     let acc = '';
-    for (const wd of words) { acc = (acc ? acc + ' ' : '') + wd; beat('FR·WOMAN', 'ECHO', 1, acc, P('copy', acc), { rate: 'very_slow' }); }
-    beat('FR·WOMAN', 'ECHO', 1, it.fr, P('copy', it.fr), { rate: 'slow' });
+    for (const wd of words) { acc = (acc ? acc + ' ' : '') + wd; beat('FR·WOMAN', 'ECHO', 1, acc, Pcopy(acc), { rate: 'very_slow' }); }
+    beat('FR·WOMAN', 'ECHO', 1, it.fr, Pcopy(it.fr), { rate: 'slow' });
   } else {
-    beat('FR·WOMAN', 'ECHO', 1, it.fr, P('copy', it.fr), { rate: 'slow' });
-    beat('FR·WOMAN', 'ECHO', 1, it.fr, P('copy', it.fr), { rate: 'slow' });
+    beat('FR·WOMAN', 'ECHO', 1, it.fr, Pcopy(it.fr), { rate: 'slow' });
+    beat('FR·WOMAN', 'ECHO', 1, it.fr, Pcopy(it.fr), { rate: 'slow' });
   }
   beat('EN·MAN', 'ECHO', 1, 'Repeat after me — normal speed this time.', '0.6');
-  beat('FR·WOMAN', 'ECHO', 1, it.fr, P('copy', it.fr), { rate: 'natural' });
+  beat('FR·WOMAN', 'ECHO', 1, it.fr, Pcopy(it.fr), { rate: 'natural' });
   img('MIC — no text on screen');
   beat('EN·MAN', 'PRODUCE', 3, `Your turn. Say "${it.gloss.split('/')[0].trim()}" in French.`, P('produce_meaning', it.fr));
   beat('FR·WOMAN', 'PRODUCE', 3, it.fr, '1.0', { rate: 'natural', extra: ['[confirm]'] });

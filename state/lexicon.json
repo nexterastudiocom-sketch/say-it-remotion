@@ -1,4 +1,16 @@
-{
-  "_note": "allowed_set(n) source for Gate A rule V-01. lessons.<n> = items taught in lesson n. Only --promote-lexicon writes here, and only after Gate A passes with zero BLOCK.",
-  "lessons": {}
-}
+_note: allowed_set(n) source for Gate A rule V-01. lessons.<n> = items taught in lesson
+  n. Only --promote-lexicon writes here, and only after Gate A passes with zero BLOCK.
+lessons:
+  1:
+  - bonjour
+  - salut
+  - merci
+  - s'il vous plaît
+  - oui
+  - non
+  - au revoir
+  - madame
+  - monsieur
+  - bonsoir
+  - pardon
+  - à bientôt

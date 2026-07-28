@@ -110,7 +110,10 @@ async function processWorkbook(name) {
   const id = name.replace(/\.xlsx$/i, '');
 
   log(`author ${id}`);           sh('node', ['scripts/author-from-excel.mjs', localWb], { env: { ...process.env, MOSAIC_LESSON_ID: id } });
-  log('Gate A');                 sh('node', ['scripts/qa/gate-a.mjs', id]); // exits non-zero on BLOCK → loop stops
+  // Gate A gates (exit≠0 on BLOCK → loop stops) AND promotes this lesson's words to
+  // the lexicon on pass, so the NEXT lesson's V-01 allowed-set includes them. Lessons
+  // must therefore run in order (the intake is alphabetical: L01, L02, …).
+  log('Gate A + promote');       sh('node', ['scripts/qa/gate-a.mjs', id, '--promote-lexicon']);
   log('registry');               sh('node', ['scripts/images/registry.mjs', localWb]);
   log('images: generate + bind'); try { sh('node', ['scripts/images/generate.mjs']); } catch { console.log('  (generation skipped/failed — placeholders will show)'); }
   sh('node', ['scripts/images/bind.mjs', id]);

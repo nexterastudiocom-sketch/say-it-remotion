@@ -300,6 +300,9 @@ def run_static(meta, beats, curriculum):
     lesson_n = int(meta.get("lesson", 1))
 
     allowed = set(items)
+    # Proper names declared in the lesson (dialogue characters etc.) are not
+    # vocabulary to teach, so they are always allowed by V-01 but never taught.
+    allowed |= {norm(x) for x in (meta.get("names") or [])}
     if curriculum:
         for k, v in (curriculum.get("lessons") or {}).items():
             if int(k) <= lesson_n:
@@ -480,7 +483,7 @@ def run_static(meta, beats, curriculum):
             elif tok not in allowed_single:
                 add("V-01", f"'{tok}' not in allowed set", b.line, b.text[:60])
         if b.stage == "COLD_INPUT" and curriculum:
-            ok = prior | set(items)
+            ok = prior | set(items) | {norm(x) for x in (meta.get("names") or [])}
             ok_single = {w for a in ok for w in a.replace("'", " ").split()}
             for tok in multiword_tokens(b.text, allowed_multi):
                 if tok not in ok_single:
@@ -542,7 +545,8 @@ def run_static(meta, beats, curriculum):
         if b.stage in INPUT_STAGES:
             continue  # connected input is heard at natural speed by design
         key = norm(b.text)
-        item = next((it for it in items if it in key), key)
+        # Longest match wins so a "très bien" line is credited to "très bien", not "bien".
+        item = max((it for it in items if it in key), key=len, default=key)
         exposure[item] = exposure.get(item, 0) + 1
         n = exposure[item]
         if n == 1 and b.rate not in ("slow", "very_slow"):
@@ -560,17 +564,20 @@ def run_static(meta, beats, curriculum):
             add("R-05", f"multi-item recap line at {b.rate}, should be slow", b.line)
 
     # ---------- X rules ----------
+    # Items present in a beat's text, dropping any that is a substring of a longer
+    # present item (so "bien" is not credited with a "très bien" beat — both are
+    # legit items; the longer, more specific one wins).
+    def items_in(text):
+        t = norm(text)
+        present = [it for it in items if it in t]
+        return [it for it in present if not any(o != it and it in o for o in present)]
+
     reached = {}
     for b in beats:
         if b.level < 0:
             continue
-        key = None
-        for it in items:
-            if it in norm(b.text):
-                key = it
-                break
-        if key:
-            reached[key] = max(reached.get(key, -1), b.level)
+        for it in items_in(b.text):
+            reached[it] = max(reached.get(it, -1), b.level)
     for it in items:
         if reached.get(it, -1) < 3:
             add("X-01", f"'{it}' never reaches L3 (max L{reached.get(it, -1)})")
@@ -597,13 +604,12 @@ def run_static(meta, beats, curriculum):
         ladder = LADDER.get(b.stage)
         if b.level < 0 or not ladder:
             continue
-        for it in items:
-            if it in norm(b.text):
-                seq = per_item_hist.setdefault((it, ladder), [])
-                if seq and b.level < seq[-1]:
-                    add("X-04", f"'{it}' support increased L{seq[-1]} → L{b.level} "
-                                f"within the {ladder} ladder", b.line)
-                seq.append(b.level)
+        for it in items_in(b.text):
+            seq = per_item_hist.setdefault((it, ladder), [])
+            if seq and b.level < seq[-1]:
+                add("X-04", f"'{it}' support increased L{seq[-1]} → L{b.level} "
+                            f"within the {ladder} ladder", b.line)
+            seq.append(b.level)
 
     # ---------- I rules ----------
     for b in beats:
