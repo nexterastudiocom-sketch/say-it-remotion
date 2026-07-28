@@ -3,6 +3,7 @@ import React from 'react';
 import { AbsoluteFill, Img } from 'remotion';
 import { assetSrc } from '../assetSrc';
 import { LANGUAGES, monogramLogo } from './theme';
+import { levelToken } from '../design/tokens';
 import { LanguageCode } from './types';
 
 export const THUMB_W = 1280;
@@ -40,8 +41,10 @@ const PAPER = '#F7F5F0';
 export const Thumbnail: React.FC<ThumbnailProps> = ({ language, level, line1, line2, subtitle, imageSrc }) => {
   const accent = LANGUAGES[language].accent;
   const [tessLight, tessSoft] = TESSERAE[language] ?? TESSERAE.fr;
-  const invert = language === 'de'; // ink type + ink tessera on the badge
-  const badgeFg = invert ? INK : '#FFFFFF';
+  // Level badge uses the SYSTEM-WIDE level colour (same in every channel), not the
+  // language accent — per-CEFR: A purple, B magenta, C rose; light 1-levels take
+  // ink type, deep 2-levels take white. From src/design/tokens.json.
+  const lv = levelToken(level);
 
   return (
     <AbsoluteFill style={{ background: PAPER, fontFamily: "'Rubik', sans-serif", overflow: 'hidden' }}>
@@ -72,9 +75,9 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({ language, level, line1, li
       {/* content column */}
       <div style={{ position: 'absolute', left: 64, top: 150, bottom: 64, width: 600, display: 'flex', flexDirection: 'column',
         justifyContent: 'center', gap: 28, zIndex: 20 }}>
-        <span style={{ alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: 14, background: accent,
-          color: badgeFg, fontWeight: 600, fontSize: 32, letterSpacing: '0.01em', padding: '12px 30px', borderRadius: 999 }}>
-          <span style={{ width: 16, height: 16, borderRadius: 5, background: badgeFg }} />
+        <span style={{ alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: 14, background: lv.hex,
+          color: lv.on, fontWeight: 600, fontSize: 32, letterSpacing: '0.01em', padding: '12px 30px', borderRadius: 999 }}>
+          <span style={{ width: 16, height: 16, borderRadius: 5, background: lv.on }} />
           {level}
         </span>
         <p style={{ fontWeight: 700, fontSize: 124, lineHeight: 0.94, letterSpacing: '-0.04em', color: INK, margin: 0 }}>
