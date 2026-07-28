@@ -570,7 +570,11 @@ def run_static(meta, beats, curriculum):
     # legit items; the longer, more specific one wins).
     def items_in(text):
         t = norm(text)
-        present = [it for it in items if it in t]
+        # Whole-word match (boundary excludes letters AND hyphens) so a short item
+        # like "un"/"six" is not credited inside "aucun"/"dix-sept". Then drop any
+        # item that is a substring of a longer PRESENT item (bien ⊂ très bien).
+        present = [it for it in items
+                   if re.search(r"(?<![a-z-])" + re.escape(it) + r"(?![a-z-])", t)]
         return [it for it in present if not any(o != it and it in o for o in present)]
 
     reached = {}
