@@ -2,6 +2,7 @@ import React from 'react';
 import { hud } from './tokens';
 import { LevelBadge } from './LevelBadge';
 import { WordCounter } from './WordCounter';
+import { CumulativeCounter } from './CumulativeCounter';
 
 // Persistent bottom-right cluster: the words-learned counter (language accent)
 // beside the level badge (level colour), composed in tokens.hud.order and anchored
@@ -16,13 +17,15 @@ const anchorStyle = (anchor: string): React.CSSProperties => {
   } as React.CSSProperties;
 };
 
-export const LessonHud: React.FC<{ level: string; language: string; learned: number; total: number }> = ({ level, language, learned, total }) => {
+export const LessonHud: React.FC<{ level: string; language: string; learned: number; total: number; cumulative?: number }> = ({ level, language, learned, total, cumulative }) => {
   const parts: Record<string, React.ReactNode> = {
     wordCounter: <WordCounter key="wordCounter" language={language} learned={learned} total={total} />,
     levelBadge: <LevelBadge key="levelBadge" level={level} />,
   };
   return (
     <div style={{ ...anchorStyle(hud.anchor), display: 'flex', flexDirection: 'row', alignItems: 'center', gap: hud.wordCounter.gapToBadge }}>
+      {/* whole-course running total (ghost) precedes the token-ordered cluster */}
+      {cumulative != null ? <CumulativeCounter language={language} count={cumulative} /> : null}
       {hud.order.map((k) => parts[k])}
     </div>
   );

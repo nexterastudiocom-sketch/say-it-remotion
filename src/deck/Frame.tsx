@@ -20,11 +20,16 @@ export const Frame: React.FC<{
 }> = ({ chrome, language, learnedMarks = [] }) => {
   const frame = useCurrentFrame();
 
-  let learned = chrome.wordsFrom;
+  // learnedMarks carry the CUMULATIVE (cross-course) count; the HUD counter is
+  // PER-LESSON, so it resets each lesson — words learned in THIS lesson out of this
+  // lesson's own total (wordsTo − wordsFrom), not a running whole-course tally.
+  let cumulative = chrome.wordsFrom;
   for (const m of learnedMarks) {
-    if (frame >= m.from) learned = m.count;
+    if (frame >= m.from) cumulative = m.count;
     else break;
   }
+  const learned = Math.max(0, cumulative - chrome.wordsFrom);
+  const total = Math.max(1, chrome.wordsTo - chrome.wordsFrom);
 
   return (
     <>
@@ -45,7 +50,8 @@ export const Frame: React.FC<{
         level={chrome.level}
         language={LANGUAGES[language].englishName}
         learned={learned}
-        total={chrome.wordsTo}
+        total={total}
+        cumulative={cumulative}
       />
     </>
   );

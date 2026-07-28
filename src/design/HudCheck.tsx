@@ -7,7 +7,7 @@ import { levelToken } from './tokens';
 // A 3840x2160 verification frame: the persistent HUD in its real corner position,
 // plus a blown-up badge and the token facts, so a per-level still can be eyeballed.
 // Reserved levels (C1/C2) must render even with no lessons for them yet.
-export const HudCheck: React.FC<{ level: string; language: string; learned: number; total: number }> = ({ level, language, learned, total }) => {
+export const HudCheck: React.FC<{ level: string; language: string; learned: number; total: number; cumulative?: number }> = ({ level, language, learned, total, cumulative }) => {
   const tk = levelToken(level);
   return (
     <AbsoluteFill style={{ backgroundColor: '#F7F5F0', fontFamily: '"Inter", system-ui, sans-serif' }}>
@@ -19,7 +19,7 @@ export const HudCheck: React.FC<{ level: string; language: string; learned: numb
         <div style={{ fontSize: 44, opacity: 0.7, marginTop: 16 }}>fill {tk.hex} · on {tk.on} · hue {tk.hue}° · lang {language}</div>
       </div>
       {/* the real persistent HUD, real size, real corner */}
-      <LessonHud level={level} language={language} learned={learned} total={total} />
+      <LessonHud level={level} language={language} learned={learned} total={total} cumulative={cumulative} />
     </AbsoluteFill>
   );
 };
