@@ -51,6 +51,21 @@ export async function atempoStretch(fileAbs, ratio) {
   finally { await rm(tmp, { force: true }); }
 }
 
+// Normalize ONE clip to a fixed loudness so every voice sits at the same level.
+// ElevenLabs voices vary wildly (FR·MAN measured −26 LUFS vs EN·WOMAN −14.6) and a
+// whole-video loudnorm only fixes the average, not per-speaker balance. Single-pass
+// loudnorm per clip evens the speakers before the final master pass.
+export async function loudnormClip(fileAbs, targetI = -16) {
+  if (!FFMPEG) return;
+  const tmp = fileAbs.replace(/\.mp3$/i, '.ln.mp3');
+  try {
+    execFileSync(FFMPEG, ['-y', '-hide_banner', '-nostats', '-i', fileAbs,
+      '-af', `loudnorm=I=${targetI}:TP=-1.5:LRA=11`, tmp], { stdio: 'pipe' });
+    await writeFile(fileAbs, await readFile(tmp));
+  } catch { /* keep the original on any ffmpeg hiccup */ }
+  finally { await rm(tmp, { force: true }); }
+}
+
 const API_KEY = process.env.ELEVENLABS_API_KEY;
 const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_v3';
 const FALLBACK = '21m00Tcm4TlvDq8ikWAM'; // Rachel (English, multilingual-capable)
@@ -97,6 +112,8 @@ export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1,
   // Slow the clip to `atempo`× real speed (comprehension pacing) after trimming,
   // so the reported duration reflects the stretched clip.
   await atempoStretch(outAbs, atempo);
+  // Even every speaker to one loudness (fixes the FR·MAN-too-quiet inconsistency).
+  await loudnormClip(outAbs);
   const { format } = await parseFile(outAbs);
   return format.duration || 0;
 }
