@@ -120,6 +120,9 @@ async function processWorkbook(name) {
   // Bind AFTER the bake — bind attaches registry images to the baked JSON, which
   // only exists once build-method-lesson has written it.
   log('bind images');            sh('node', ['scripts/images/bind.mjs', id]);
+  // Per-speaker loudness gate — fails the build if any voice drifts from the
+  // others (the whole-video −14 pass can't catch per-speaker imbalance).
+  log('loudness balance');       sh('node', ['scripts/qa/loudness-balance.mjs', id]);
   log('manifest');               sh('node', ['scripts/qa/manifest.mjs', id]);
   log(`render ${HQ ? '4K' : '540p'}`);
   const outMp4 = path.join(ROOT, `out/${id}-method-540p.mp4`);
