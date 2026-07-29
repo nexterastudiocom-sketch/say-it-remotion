@@ -139,6 +139,12 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+def _compose_ok(tok, allowed):
+    """A token is allowed if it's directly in the set, OR it's a hyphen compound
+    whose every part is allowed (vingt-cinq = vingt + cinq, both taught)."""
+    return tok in allowed or ("-" in tok and all(p in allowed for p in tok.split("-") if p))
+
+
 # ─────────────────────────────────────────────────────────────
 # Parser
 # ─────────────────────────────────────────────────────────────
@@ -481,13 +487,13 @@ def run_static(meta, beats, curriculum):
         for tok in multiword_tokens(b.text, allowed_multi):
             if tok in filler and tok not in allowed_single:
                 add("V-02", f"forbidden FR filler '{tok}'", b.line, b.text[:60])
-            elif tok not in allowed_single:
+            elif not _compose_ok(tok, allowed_single):
                 add("V-01", f"'{tok}' not in allowed set", b.line, b.text[:60])
         if b.stage == "COLD_INPUT" and curriculum:
             ok = prior | set(items) | {norm(x) for x in (meta.get("names") or [])}
             ok_single = {w for a in ok for w in a.replace("'", " ").split()}
             for tok in multiword_tokens(b.text, allowed_multi):
-                if tok not in ok_single:
+                if not _compose_ok(tok, ok_single):
                     add("V-04", f"COLD_INPUT uses out-of-scope '{tok}'", b.line)
 
     # ---------- P rules ----------
@@ -552,7 +558,10 @@ def run_static(meta, beats, curriculum):
         n = exposure[item]
         if n == 1 and b.rate not in ("slow", "very_slow"):
             add("R-01", f"first utterance of '{item}' at {b.rate}", b.line)
-        if "..." in b.text or "…" in b.text:
+        # A syllable split has the ellipsis TOUCHING a word (bon... jour); a free-
+        # standing "..." with spaces both sides is a slot placeholder (j'ai ... ans)
+        # to be spoken normally, not a split — only the former must be very_slow.
+        if re.search(r"\S(?:\.\.\.|…)|(?:\.\.\.|…)\S", b.text):
             if b.rate != "very_slow":
                 add("R-02", f"syllable-split line at {b.rate}, must be very_slow", b.line)
         if b.rate == "natural" and n < 3 and b.stage in ("ITEM_BLOCK",):
@@ -686,7 +695,9 @@ def run_static(meta, beats, curriculum):
 
 def _looks_french(s: str, vocab) -> bool:
     prefix = s.upper().split(":")[0]
-    if "ILLUSTRATION" in prefix:
+    # ILLUSTRATION (word cards) and CHUNK BAR (build slots) are English-label specs;
+    # the parenthesised chunk mark is renderer metadata, not on-screen French.
+    if "ILLUSTRATION" in prefix or "CHUNK BAR" in prefix:
         return False
     # A SCENE directive's situation prompt is ENGLISH by design (target not named);
     # only its WORD BANK, which must be English glosses, can leak French. Scan just
