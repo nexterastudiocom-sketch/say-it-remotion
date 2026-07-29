@@ -166,7 +166,7 @@ for (let g = 0; g < items.length; g += 3) {
   beat('EN·WOMAN', 'RECALL', 3, 'Quick check. I’ll say the French, you say the English.', '0.8');
   for (const c of chunk) beat('FR·MAN', 'RECALL', 3, c.fr, '2.0', { rate: 'slow' });
   beat('EN·WOMAN', 'RECALL', 3, 'Now the other way. Screen stays blank.', '0.8');
-  for (const c of chunk) { beat('EN·WOMAN', 'RECALL', 3, `Now you — ${c.gloss.split('/')[0].trim()}.`, P('produce_meaning', c.fr)); beat('FR·MAN', 'RECALL', 3, c.fr, '1.0', { rate: 'natural', extra: ['[confirm]'] }); }
+  for (const c of chunk) { beat('EN·WOMAN', 'RECALL', 3, `Your turn — ${c.gloss.split('/')[0].trim()}.`, P('produce_meaning', c.fr)); beat('FR·MAN', 'RECALL', 3, c.fr, '1.0', { rate: 'natural', extra: ['[confirm]'] }); }
 }
 
 // 06 FRAME_INTRO
