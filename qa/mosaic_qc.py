@@ -481,6 +481,18 @@ def run_static(meta, beats, curriculum):
 
     # ---------- V rules ----------
     filler = {norm(f) for f in RULES["forbidden_fr_filler"]}
+    # V-07: the English voice must NEVER say a taught French word (it mispronounces
+    # it — "pardon" read as English is jarringly wrong). Cognates whose own English
+    # gloss is the same token are exempt (that word IS English too).
+    gloss_by_item = {norm(i): norm(g) for i, g in zip(meta.get("items", []), meta.get("_glosses", []))} if meta.get("_glosses") else {}
+    fr_words = {w for it in items for w in (it.split() if " " in it else [it]) if len(w) > 2}
+    for b in beats:
+        if not b.is_en or not b.text:
+            continue
+        t = norm(b.text)
+        for fw in fr_words:
+            if re.search(r"(?<![a-z-])" + re.escape(fw) + r"(?![a-z-])", t) and gloss_by_item.get(fw) != fw:
+                add("V-07", f"English voice says the French word '{fw}'", b.line, b.text[:60])
     for b in beats:
         if not b.is_fr:
             continue

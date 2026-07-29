@@ -84,6 +84,16 @@ const neutralize = (note, self) => {
     t = t.replace(new RegExp(`\\b${esc(o.fr)}\\b`, 'gi'), o.gloss.split('/')[0].trim());
   return t;
 };
+// RULE: the English voice must NEVER say a French word (it mispronounces it and
+// it's jarring). Any EN beat text (culture note, comprehension, glosses) has EVERY
+// taught French item replaced by its English gloss. Pronunciation tips stay tips
+// ("the on is nasal"), never a repeat of the word.
+const enSafe = (text) => {
+  let t = String(text);
+  for (const o of items.slice().sort((a, b) => b.fr.length - a.fr.length))
+    t = t.replace(new RegExp(`\\b${esc(o.fr)}\\b`, 'gi'), o.gloss.split('/')[0].trim());
+  return t;
+};
 
 // ---- emit ------------------------------------------------------------------
 const out = [];
@@ -128,8 +138,8 @@ const dlg = () => { for (const [v, t] of dialogue) beat(v, 'INPUT', 3, t, '0.4',
 seg('03', 'COLD_INPUT');
 beat('EN·MAN', 'INPUT', 3, 'Listen to two people meet and part. Understand what you can.', '0.8');
 dlg();
-if (brief.comprehension_q) beat('EN·MAN', 'INPUT', 3, `${brief.comprehension_q} Answer out loud, in English.`, '1.2');
-if (brief.culture_note) beat('EN·MAN', 'NOTE', 3, brief.culture_note, '1.2');
+if (brief.comprehension_q) beat('EN·MAN', 'INPUT', 3, `${enSafe(brief.comprehension_q)} Answer out loud, in English.`, '1.2');
+if (brief.culture_note) beat('EN·MAN', 'NOTE', 3, enSafe(brief.culture_note), '1.2');
 
 // 04 ITEM_BLOCKS
 for (const it of items) {
@@ -138,7 +148,7 @@ for (const it of items) {
   beat('EN·MAN', 'MEET', 0, 'Listen. Don’t say anything yet.', '0.6');
   beat('FR·WOMAN', 'MEET', 0, it.fr, Pcopy(it.fr), { rate: 'slow' });
   beat('EN·MAN', 'MEET', 0, it.gloss + '.', '0.8');
-  if (it.note) beat('EN·MAN', 'MEET', 0, neutralize(it.note, it.fr), '0.8');
+  if (it.note) beat('EN·MAN', 'MEET', 0, enSafe(it.note), '0.8');
   beat('FR·WOMAN', 'MEET', 0, it.fr, Pcopy(it.fr), { rate: 'slow' });
   // ECHO — chunked for long items, else simple
   beat('EN·MAN', 'ECHO', 1, 'Repeat after me.', '0.6');
