@@ -119,6 +119,9 @@ const lessonTitle = brief.lesson_title || (brief.can_do || '').replace(/^I can\s
 w(`title: "${String(lessonTitle).replace(/"/g, "'")}"`);
 w(`can_do: "${(brief.can_do || '').replace(/"/g, "'")}"`);
 w(`items: [${itemsList}]`);
+// English glosses (first sense) — lets the QA engine exempt cognates from V-07
+// (an item whose gloss IS the same word, e.g. "pardon", is a real English word).
+w(`glosses: [${items.map((i) => `"${i.gloss.split('/')[0].trim().replace(/"/g, "'")}"`).join(', ')}]`);
 if (names.length) w(`names: [${names.map((n) => (/[^A-Za-z]/.test(n) ? `"${n}"` : n)).join(', ')}]`);
 w(`frame: "${(brief.frame || '').replace(/"/g, "'")}"`);
 w('---'); w();
@@ -225,7 +228,10 @@ for (const pass of [1, 2, 3]) {
 
 // 12 CAN_DO_CHECK
 seg('12', 'CAN_DO_CHECK'); img('SCORECARD — capability, not word count · progress');
-if (brief.writing_note) beat('EN·WOMAN', 'NOTE', 3, brief.writing_note, '1.2');
+// The writing note is about French SPELLING (apostrophes, accents), so it can't be
+// enSafe'd without becoming nonsense — and the English voice must never say French.
+// So it is NOT spoken; it lives on screen as a card instead.
+if (brief.writing_note) img(`WRITING NOTE — ${brief.writing_note}`);
 beat('EN·WOMAN', 'RECAP', 3, `The question from the start: can you ${(brief.can_do || '').replace(/^I can /i, '').replace(/\.$/, '')}? Yes or no.`, '1.0');
 beat('EN·WOMAN', 'RECAP', 3, `You can now ${(brief.can_do || '').replace(/^I can /i, '').replace(/\.$/, '')}.`, '0.8');
 beat('EN·WOMAN', 'RECAP', 3, `These ${items.length} come back in your app in two days — say them, don’t just read them.`, '0.8');

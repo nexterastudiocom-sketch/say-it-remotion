@@ -267,6 +267,13 @@ rules:
     severity: BLOCK
     title: "COLD_INPUT uses only allowed_set(n-1) plus this lesson's new items"
 
+  - id: V-07
+    layer: L0
+    gate: A
+    severity: BLOCK
+    title: "The English voice never says a taught French word"
+    fix: "Replace the French word in the English line with its English gloss (the English voice mispronounces French). Cognates whose gloss is the same word are exempt."
+
   # ---------- PAUSE ----------
   - id: P-01
     layer: L0

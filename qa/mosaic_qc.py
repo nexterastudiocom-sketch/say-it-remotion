@@ -484,7 +484,7 @@ def run_static(meta, beats, curriculum):
     # V-07: the English voice must NEVER say a taught French word (it mispronounces
     # it — "pardon" read as English is jarringly wrong). Cognates whose own English
     # gloss is the same token are exempt (that word IS English too).
-    gloss_by_item = {norm(i): norm(g) for i, g in zip(meta.get("items", []), meta.get("_glosses", []))} if meta.get("_glosses") else {}
+    gloss_by_item = {norm(i): norm(g) for i, g in zip(meta.get("items", []), meta.get("glosses", []))} if meta.get("glosses") else {}
     fr_words = {w for it in items for w in (it.split() if " " in it else [it]) if len(w) > 2}
     for b in beats:
         if not b.is_en or not b.text:
@@ -709,7 +709,7 @@ def _looks_french(s: str, vocab) -> bool:
     prefix = s.upper().split(":")[0]
     # ILLUSTRATION (word cards) and CHUNK BAR (build slots) are English-label specs;
     # the parenthesised chunk mark is renderer metadata, not on-screen French.
-    if "ILLUSTRATION" in prefix or "CHUNK BAR" in prefix:
+    if "ILLUSTRATION" in prefix or "CHUNK BAR" in prefix or "WRITING NOTE" in prefix:
         return False
     # A SCENE directive's situation prompt is ENGLISH by design (target not named);
     # only its WORD BANK, which must be English glosses, can leak French. Scan just
