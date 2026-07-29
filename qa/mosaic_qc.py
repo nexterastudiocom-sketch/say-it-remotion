@@ -685,9 +685,20 @@ def run_static(meta, beats, curriculum):
 
 
 def _looks_french(s: str, vocab) -> bool:
-    toks = set(re.findall(r"[a-zà-öø-ÿ']+", norm(s)))
+    prefix = s.upper().split(":")[0]
+    if "ILLUSTRATION" in prefix:
+        return False
+    # A SCENE directive's situation prompt is ENGLISH by design (target not named);
+    # only its WORD BANK, which must be English glosses, can leak French. Scan just
+    # the bank so an English situation sharing a cognate with a taught word (e.g.
+    # "correct") doesn't false-trip X-06/I-06.
+    check = s
+    if "SCENE" in prefix:
+        m = re.search(r"WORD BANK:\s*(.*?)(?:·|$)", s, re.I)
+        check = m.group(1) if m else ""
+    toks = set(re.findall(r"[a-zà-öø-ÿ']+", norm(check)))
     hits = toks & {v for v in vocab if len(v) > 2}
-    return len(hits) >= 1 and "ILLUSTRATION" not in s.upper().split(":")[0]
+    return len(hits) >= 1
 
 
 def run_aggregates(meta, beats, ctx):
