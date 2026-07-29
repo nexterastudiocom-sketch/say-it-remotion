@@ -130,7 +130,18 @@ async function processWorkbook(name) {
   // --timeout: fonts/images load over the network per frame; 30s (default) can be
   // exceeded on a heavy frame. 180s is generous and prevents a stall from failing the run.
   sh(REMO, ['render', 'Lesson-01-Method', outMp4, `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`, ...(HQ ? ['--scale=1'] : ['--scale=0.25']), '--concurrency=4', '--timeout=300000']);
-  log('loudnorm');               sh('node', ['scripts/pipeline/normalize.mjs', outMp4, path.join(ROOT, `out/${id}-method-540p-norm.mp4`)]);
+  const normMp4 = path.join(ROOT, `out/${id}-method-540p-norm.mp4`);
+  log('loudnorm');               sh('node', ['scripts/pipeline/normalize.mjs', outMp4, normMp4]);
+  // Gate B — POST-render audio/content checks (pronunciation round-trip, AV-sync,
+  // input-return identity, rate). Runs whisper on the render (~2-3 min). T-01
+  // (resolution) and T-05 (loudness) BLOCK at 540p by design, so they're tolerated
+  // in the preview batch; any OTHER Gate-B block stops the loop (do not publish).
+  log('Gate B (audio/content)');
+  try { execFileSync('node', ['scripts/qa/gate-b.mjs', id], { cwd: ROOT, stdio: 'inherit', env: { ...process.env, MOSAIC_QA_VIDEO: normMp4 } }); } catch { /* exit 1 on any block — inspect below */ }
+  const gbDoc = existsSync(path.join(ROOT, `qa/${id}.json`)) ? JSON.parse(await readFile(path.join(ROOT, `qa/${id}.json`), 'utf8')) : { findings: [] };
+  const gbBlocks = (gbDoc.findings || []).filter((f) => f.severity === 'BLOCK' && !['T-01', 'T-05'].includes(f.rule));
+  if (gbBlocks.length) throw new Error(`Gate B blocks (${[...new Set(gbBlocks.map((f) => f.rule))].join(', ')}) — do not publish ${id}`);
+
   log('thumbnail');              sh('node', ['scripts/thumbnail.mjs', id]);
 
   await publish(id);
