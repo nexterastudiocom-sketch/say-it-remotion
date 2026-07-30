@@ -97,11 +97,15 @@ w();
 w(`<!-- Generated from ${path.basename(xlsxPath)} by scripts/author-v2.mjs (method v2, full reschedule).`);
 w(`     Drill order = expanding-interval spacing engine. Pauses recomputed from measured audio. -->`);
 
+// Dialogue voice is fixed per speaker so the SAME line always resolves to the SAME
+// cached clip across cold-open, checkpoints and close (S-08 byte-identity).
+const dlgVoice = (sp) => (String(sp)[0] === 'A' ? 'FR·WOMAN' : 'FR·MAN');
+
 // 1) COLD OPEN — the target dialogue at natural speed, no pauses (8-12s hook).
 section('COLD_INPUT', 'cold open — hear the goal');
 img('SCENE — two people meet and part');
 beat('EN·MAN', 'INPUT', 3, 'Listen — this is where you are headed. Just take it in.', '0.6');
-for (const [sp, line] of dialogue) beat(sp[0] === 'A' || /woman|fem|a/i.test(sp) ? 'FR·WOMAN' : 'FR·MAN', 'INPUT', 3, line, '0.3', { rate: 'natural' });
+for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'INPUT', 3, line, '0.3', { rate: 'natural' });
 
 // 2) PREVIEW — each new item once, micro-gap spacing, no response slots.
 section('ITEM_BLOCK', 'preview — the new words');
@@ -129,7 +133,8 @@ for (const appt of bySlot) {
     section('INPUT_RETURN', `checkpoint ${cpDone} — the whole exchange, twice`);
     for (let pass = 1; pass <= 2; pass++) {
       beat('EN·WOMAN', 'RECALL', 3, pass === 1 ? 'The whole conversation. Listen, then say each line back.' : 'Again — say it with them.', '0.6');
-      for (const [sp, line] of dialogue) beat(sp[0] === 'A' ? 'FR·WOMAN' : 'FR·MAN', 'RECALL', 3, line, '2.0', { rate: pass === 1 ? 'slow' : 'natural', extra: ['[confirm]'] });
+      // Same voice + natural rate as the cold open → byte-identical clips (S-08).
+      for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'RECALL', 3, line, '2.0', { rate: 'natural', extra: ['[confirm]'] });
     }
     section('MICRO_RECALL', 'drills — graduated recall');
   }
@@ -167,7 +172,7 @@ if (fluency.length) {
 // 6) CLOSE — the dialogue once more, unassisted.
 section('CAN_DO_CHECK', 'close — you can do this now');
 beat('EN·WOMAN', 'RECALL', 3, 'Last time. The whole exchange — say each line before they do.', '0.8');
-for (const [sp, line] of dialogue) beat(sp[0] === 'A' ? 'FR·WOMAN' : 'FR·MAN', 'RECALL', 3, line, '2.0', { rate: 'natural', extra: ['[confirm]'] });
+for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'RECALL', 3, line, '2.0', { rate: 'natural', extra: ['[confirm]'] });
 
 // ---- write ------------------------------------------------------------------
 await mkdir(path.join(ROOT, 'lessons'), { recursive: true });
