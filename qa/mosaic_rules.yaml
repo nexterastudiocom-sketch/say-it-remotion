@@ -100,6 +100,19 @@ timing:
   written_pause_tolerance: 2.0
   fluency_multipliers: [3.0, 2.0, 1.4]
   total_pause_ratio: [0.35, 0.50]
+  # HYBRID production pause (method v2). The learner pause on a produced phrase is
+  # computed from the MEASURED duration of the model clip that follows (never an
+  # estimate): time to say it back (beginners speak slower than the native model)
+  # plus a fixed think buffer, clamped. Applied by build-method-lesson.mjs to the
+  # PRODUCE/RECALL/BUILD → FR-confirm slots; other roles keep the estAudio formula.
+  hybrid_pause:
+    say_back_mult: 1.3          # learner reproduces at ~1.3x the native model length
+    think_s: 1.0                # fixed retrieval/initiation buffer
+    floor_s: 2.0                # hard floor — even a one-word answer needs ~2s (measured)
+    ceiling_s: 4.5              # cap — longer dead air kills retention (measured p90)
+    opening_multiplier: 1.35    # first slots run longer; learner is coldest at the start
+    opening_ramp_fraction: 0.17 # multiplier decays 1.35 -> 1.00 across the first 17%
+    new_item_bonus: 1.15        # a first-appearance item gets a longer pause than a review
 
 density:
   A1_1_5:   {items: [10, 14], input_s: [20, 40],  frames: [1, 1], runtime_min: [18, 22]}

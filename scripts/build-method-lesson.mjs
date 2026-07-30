@@ -89,63 +89,106 @@ const registerOf = (voice, text) => {
 // recording as COLD_INPUT (S-08 byte-identity) instead of a fresh take — and it
 // cuts the ElevenLabs call count for every repeated line.
 const clipCache = new Map(); // key → { rel, dur }
+let clipN = 0;
+
+// Bake-or-read one spoken beat's clip, content-addressed + cached → { rel, dur }.
+// Same (voice·model·rate·atempo·text) utterance is synthesized once and reused, so
+// look-ahead measuring an answer clip here costs nothing when the loop reaches it.
+async function clipFor(b) {
+  const isFr = b.voice.startsWith('FR');
+  if (noMedia) {
+    const dur = isFr ? Math.max(0.4, b.est_audio_s) : +(wc(b.text) * 0.38 + 0.4).toFixed(2);
+    return { rel: null, dur: +dur.toFixed(2) };
+  }
+  const model = isFr ? MODEL_FR : MODEL_EN;
+  const atempo = isFr ? (RATE_ATEMPO[b.rate] ?? 0.75) : 1;
+  const key = isFr
+    ? `${b.voice}|${model}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`
+    : `${b.voice}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`;
+  let hit = clipCache.get(key);
+  if (!hit) {
+    const h = createHash('sha1').update(key).digest('hex').slice(0, 16);
+    const rel = `assets/audio/${id}/method/${h}.mp3`;
+    const abs = path.join(ROOT, 'public', rel);
+    let d;
+    if (existsSync(abs)) d = (await parseFile(abs)).format.duration || 1;
+    else { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1)); clipN++; }
+    hit = { rel, dur: +Number(d).toFixed(2) };
+    clipCache.set(key, hit);
+  }
+  return hit;
+}
+
+// ---- HYBRID production pause (method v2) -------------------------------------
+// The learner pause on a produced phrase is derived from the MEASURED duration of
+// the model clip that immediately follows (the confirm), never a syllable estimate:
+//   pause = clamp(floor, model_dur * say_back_mult + think, ceiling)
+// A production slot is a PRODUCE/RECALL/BUILD beat whose pause is followed by the FR
+// phrase the learner must say. "Say the English" / "produce your own" slots have no
+// single model clip, so they keep the authored estAudio pause.
+const { timing } = await import('./qa/pbeat.mjs');
+const HYB = (await timing()).hybrid_pause || {};
+const PRODUCE_PHASES = new Set(['PRODUCE', 'RECALL', 'BUILD']);
+const producedFr = new Set();
+const hybridBase = (modelDur, isNew) => {
+  let p = modelDur * (HYB.say_back_mult ?? 1.3) + (HYB.think_s ?? 1.0);
+  if (isNew) p *= (HYB.new_item_bonus ?? 1.15);
+  return Math.max(HYB.floor_s ?? 2.0, Math.min(HYB.ceiling_s ?? 4.5, p));
+};
+
 const slides = [];
-let cur = null, clipN = 0;
-for (const b of parsed.beats) {
+let cur = null;
+for (let i = 0; i < parsed.beats.length; i++) {
+  const b = parsed.beats[i];
   if (!cur || cur.segment !== b.segment) {
     cur = { id: slug(b.segment) || `s${slides.length}`, type: STAGE_TYPE[b.stage] || 'method', stage: b.stage, segment: b.segment, visual: null, durationInSeconds: 0, beats: [] };
     slides.push(cur);
-    clipN = 0;
   }
   if (b.visuals && b.visuals.length && !cur.visual) cur.visual = b.visuals.join(' ; ');
-  // spoken beat
   const isFr = b.voice.startsWith('FR');
-  let dur;
-  if (noMedia) {
-    dur = isFr ? Math.max(0.4, b.est_audio_s) : +(wc(b.text) * 0.38 + 0.4).toFixed(2);
-    cur.beats.push({ durationInSeconds: +dur.toFixed(2), phase: b.phase, voice: voiceKey(b.voice), text: b.text, register: registerOf(b.voice, b.text), level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
-  } else {
-    // French renders at real normal speed, then slows to RATE_ATEMPO×; English
-    // stays at normal. atempo is part of the cache key so a rate change re-bakes.
-    const model = isFr ? MODEL_FR : MODEL_EN;
-    const atempo = isFr ? (RATE_ATEMPO[b.rate] ?? 0.75) : 1;
-    // Model is in the FR key only, so switching the French model re-synthesizes
-    // French while English keeps its existing (legacy-keyed) cached clips.
-    const key = isFr
-      ? `${b.voice}|${model}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`
-      : `${b.voice}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`;
-    let hit = clipCache.get(key);
-    if (!hit) {
-      // Stable, content-addressed name so the same utterance always resolves to
-      // the same file regardless of which slide first emitted it.
-      const h = createHash('sha1').update(key).digest('hex').slice(0, 16);
-      const rel = `assets/audio/${id}/method/${h}.mp3`;
-      const abs = path.join(ROOT, 'public', rel);
-      // Disk cache: the filename is content-addressed by (voice·model·rate·atempo·text),
-      // so an existing file IS this exact utterance. Reuse it instead of re-calling
-      // ElevenLabs — a re-bake that only changed pauses (silent gaps) costs nothing
-      // and can't drift the audio (also keeps S-08 byte-identity intact). Changing the
-      // French model changes the key, so only French clips re-synthesize.
-      let d;
-      if (existsSync(abs)) {
-        d = (await parseFile(abs)).format.duration || 1;
-      } else {
-        d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1));
-        clipN++;
-      }
-      hit = { rel, dur: +Number(d).toFixed(2) };
-      clipCache.set(key, hit);
-    }
-    dur = hit.dur;
-    cur.beats.push({ src: hit.rel, durationInSeconds: hit.dur, phase: b.phase, voice: voiceKey(b.voice), text: b.text, register: registerOf(b.voice, b.text), level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
-  }
+  const clip = await clipFor(b);
+  cur.beats.push({ ...(clip.rel ? { src: clip.rel } : {}), durationInSeconds: clip.dur, phase: b.phase, voice: voiceKey(b.voice), text: b.text, register: registerOf(b.voice, b.text), level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
+
   // scripted pause → silent gap beat
-  if (b.pause > 0) cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });
+  if (b.pause > 0) {
+    const nxt = parsed.beats[i + 1];
+    const isProdSlot = !noMedia && PRODUCE_PHASES.has(b.phase) && b.pause >= 2.0 && nxt && nxt.voice.startsWith('FR');
+    if (isProdSlot) {
+      const ans = await clipFor(nxt);                      // MEASURED model duration
+      const isNew = !producedFr.has(nxt.text);
+      const base = +hybridBase(ans.dur, isNew).toFixed(2);
+      producedFr.add(nxt.text);
+      cur.beats.push({ durationInSeconds: base, phase: b.phase, level: b.level, stage: b.stage, _prod: true, _base: base });
+    } else {
+      cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });
+    }
+  }
 }
 // Leading pause — a beat of silence before the first word (after the intro logo),
 // so the goal card lands and settles before the narration starts.
 const first = slides[0];
 if (first?.beats?.length) first.beats.unshift({ durationInSeconds: 1.2, phase: first.beats[0].phase, level: first.beats[0].level, stage: first.stage });
+
+// Opening ramp — production pauses in the first opening_ramp_fraction of the film
+// run longer (the learner is coldest at the start), decaying linearly to 1.0×.
+{
+  const flat = [];
+  for (const s of slides) for (const bt of s.beats) flat.push(bt);
+  const total = flat.reduce((a, x) => a + x.durationInSeconds, 0);
+  const rampFrac = HYB.opening_ramp_fraction ?? 0.17, om = HYB.opening_multiplier ?? 1.35;
+  let cum = 0;
+  for (const bt of flat) {
+    if (bt._prod && total) {
+      const pos = cum / total;
+      if (pos < rampFrac) {
+        const factor = 1 + (om - 1) * (1 - pos / rampFrac);
+        bt.durationInSeconds = +Math.max(HYB.floor_s ?? 2.0, Math.min(HYB.ceiling_s ?? 4.5, bt._base * factor)).toFixed(2);
+      }
+    }
+    cum += bt.durationInSeconds;
+  }
+  for (const bt of flat) { delete bt._prod; delete bt._base; }
+}
 for (const s of slides) s.durationInSeconds = +s.beats.reduce((a, x) => a + x.durationInSeconds, 0).toFixed(2);
 
 // ---- image registry binding (Command 6) ------------------------------------
