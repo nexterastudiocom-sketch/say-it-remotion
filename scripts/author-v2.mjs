@@ -83,6 +83,7 @@ const section = (stage, label) => { w(); w(`## ${String(++seg).padStart(2, '0')}
 w('---');
 w(`lesson: ${num}`);
 w('language: fr');
+w('method_version: 2');
 w(`level: ${brief.level || 'A1'}`);
 if (brief.class) w(`class: ${brief.class}`);
 w(`title: ${JSON.stringify(brief.topic_neutral || brief.title || '')}`);
@@ -120,6 +121,7 @@ const cpThresholds = [0.30, 0.53, 0.83].map((f) => Math.round(totalSlots * f));
 let cpDone = 0;
 section('MICRO_RECALL', 'drills — graduated recall');
 const bySlot = [...sched.schedule].sort((a, b) => a.slot - b.slot);
+let dn = 0;
 for (const appt of bySlot) {
   // checkpoint injection when we cross the next threshold
   if (cpDone < cpThresholds.length && appt.slot >= cpThresholds[cpDone]) {
@@ -133,8 +135,13 @@ for (const appt of bySlot) {
   }
   const it = items.find((x) => x.fr === appt.ref);
   const isFirstProduce = appt.appearance === 1;
-  // cue in English (never says the French word), pause (placeholder → measured at build), confirm
-  beat('EN·MAN', 'PRODUCE', it.level, `Say "${enSafe(it.gloss.split('/')[0].trim())}" in French.`, '3.5');
+  const g = enSafe(it.gloss.split('/')[0].trim());
+  // Varied English cues so 100+ production slots don't read identically. All cues
+  // are V-07 safe — English gloss only, never the French word.
+  const CUES = [`Say "${g}" in French.`, `How do you say "${g}"?`, `Your turn — "${g}".`, `And "${g}"?`, `Give me "${g}".`];
+  const cue = isFirstProduce ? `Say "${g}" in French.` : CUES[dn % CUES.length];
+  dn++;
+  beat('EN·MAN', 'PRODUCE', it.level, cue, '3.5');
   beat(it.core ? 'FR·MAN' : 'FR·WOMAN', 'PRODUCE', it.level, it.fr, '1.0', { rate: isFirstProduce ? 'slow' : 'natural', extra: ['[confirm]'] });
 }
 

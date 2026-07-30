@@ -109,7 +109,7 @@ async function processWorkbook(name) {
   // Lesson id = the workbook filename (minus .xlsx) — named exactly as in Excel.
   const id = name.replace(/\.xlsx$/i, '');
 
-  log(`author ${id}`);           sh('node', ['scripts/author-from-excel.mjs', localWb], { env: { ...process.env, MOSAIC_LESSON_ID: id } });
+  log(`author ${id}`);           sh('node', ['scripts/author-v2.mjs', localWb], { env: { ...process.env, MOSAIC_LESSON_ID: id } });
   // Gate A gates (exit≠0 on BLOCK → loop stops) AND promotes this lesson's words to
   // the lexicon on pass, so the NEXT lesson's V-01 allowed-set includes them. Lessons
   // must therefore run in order (the intake is alphabetical: L01, L02, …).

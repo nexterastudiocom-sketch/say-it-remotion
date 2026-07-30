@@ -300,8 +300,25 @@ def run_static(meta, beats, curriculum):
     sev = {r["id"]: r["severity"] for r in RULES["rules"]}
     lay = {r["id"]: r["layer"] for r in RULES["rules"]}
 
+    # Method v2 (full reschedule) has a different section shape than v1's fixed 12
+    # stages, so the v1 STAGE-STRUCTURE rules do not apply — downgrade them to WARN
+    # for v2 lessons. Universal content rules (vocab V-*, no-French-on-screen I-05/06,
+    # rate R-*, pause P-*, can-do C-*, technical T-*) still BLOCK. v2 pedagogy is
+    # gated instead by the spacing validator (scripts/qa/spacing.mjs).
+    v2 = str(meta.get("method_version", "1")).strip() in ("2", "v2")
+    V1_STRUCTURAL = {"S-01", "S-02", "S-04", "S-05", "S-08", "S-09",
+                     "S-11", "S-13", "S-14", "I-01", "I-03",
+                     # v1 voice-pairing is tied to the v1 stage names.
+                     "VO-01", "VO-03",
+                     # v2 recomputes every production pause from MEASURED audio at
+                     # build time, so authored-pause Gate-A checks don't apply.
+                     "P-01", "P-02"}
+
     def add(rid, msg, line=0, ctx=""):
-        F.append(Finding(rid, sev.get(rid, "WARN"), lay.get(rid, "L0"), msg, line, ctx))
+        s = sev.get(rid, "WARN")
+        if v2 and rid in V1_STRUCTURAL:
+            s = "WARN"
+        F.append(Finding(rid, s, lay.get(rid, "L0"), msg, line, ctx))
 
     items = [norm(i) for i in meta.get("items", [])]
     lesson_n = int(meta.get("lesson", 1))
