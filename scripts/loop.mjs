@@ -127,9 +127,28 @@ async function processWorkbook(name) {
   log(`render ${HQ ? '4K' : '540p'}`);
   const outMp4 = path.join(ROOT, `out/${id}-method-540p.mp4`);
   // --props targets THIS lesson's baked JSON (the composition is generic LessonFilm).
-  // --timeout: fonts/images load over the network per frame; 30s (default) can be
-  // exceeded on a heavy frame. 180s is generous and prevents a stall from failing the run.
-  sh(REMO, ['render', 'Lesson-01-Method', outMp4, `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`, ...(HQ ? ['--scale=1'] : ['--scale=0.25']), '--concurrency=4', '--timeout=300000']);
+  // --timeout guards a single slow frame — the intro/outro are VIDEO components and
+  // Remotion's per-frame seek can stall for minutes under CPU contention. A single
+  // stall must NOT kill a 50-lesson batch, so render is retried with progressively
+  // safer settings (more concurrency→less, longer timeout) before we give up.
+  const propArg = `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`;
+  const scaleArg = HQ ? '--scale=1' : '--scale=0.25';
+  const attempts = [
+    ['--concurrency=4', '--timeout=600000'],   // 10 min/frame
+    ['--concurrency=2', '--timeout=900000'],   // slower, more stable
+    ['--concurrency=1', '--timeout=1200000'],  // last resort: serial, 20 min/frame
+  ];
+  let rendered = false;
+  for (let a = 0; a < attempts.length; a++) {
+    try {
+      if (a) log(`render retry ${a} (${attempts[a].join(' ')})`);
+      sh(REMO, ['render', 'Lesson-01-Method', outMp4, propArg, scaleArg, ...attempts[a]]);
+      rendered = true; break;
+    } catch (e) {
+      console.log(`  render attempt ${a + 1}/${attempts.length} failed: ${String(e.message).split('\n')[0]}`);
+    }
+  }
+  if (!rendered) throw new Error(`render failed after ${attempts.length} attempts — ${id}`);
   const normMp4 = path.join(ROOT, `out/${id}-method-540p-norm.mp4`);
   log('loudnorm');               sh('node', ['scripts/pipeline/normalize.mjs', outMp4, normMp4]);
   // Gate B — POST-render audio/content checks (pronunciation round-trip, AV-sync,

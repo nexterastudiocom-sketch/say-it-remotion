@@ -51,34 +51,49 @@ if (lufs != null && Math.abs(lufs - T.loudness_lufs) > T.loudness_tolerance)
 if (tp != null && tp > T.true_peak_max_dbtp)
   F.push(finding(Y, 'T-06', 0, `true peak ${tp} dBTP (max ${T.true_peak_max_dbtp})`, ''));
 
-// ---- T-07 audio DROPOUTS inside a voice line = a long silence BETWEEN two
-// spoken words that falls inside a voice-line window (not a declared pause, not
-// leading/trailing clip padding). Uses ASR word timestamps if available.
-const asrPath = path.join(ROOT, `build/${id}/asr.json`);
-if (existsSync(P.manifest) && existsSync(asrPath)) {
+// ---- T-07 audio DROPOUTS inside a taught utterance = a long dead-air hole INSIDE
+// a single French SOURCE clip. Scanned on the source clips the bake produced, NOT
+// the render timeline: the manifest's cumulative time drifts tens of seconds from
+// the real render across a 17-min film, so render-position attribution (ASR words
+// vs manifest windows) misfires — a deliberate Method pause BETWEEN two beats gets
+// mislabelled "inside a voice line" (verified: both Marc dialogue clips measure
+// dead-air-free even at −60dB, yet the drifted window flagged them). A clip-internal
+// scan is drift-proof and deterministic: a real dropout is a hole WITHIN one atomic
+// utterance's audio; a pause between two clips lives in neither clip, so it is
+// correctly ignored. Atomic utterances only (≤4.5s) — long narration beats carry
+// legitimate clause pauses; ellipsis beats are scripted trailing silence.
+if (existsSync(P.manifest)) {
   const man = await readJson(P.manifest);
-  const asr = await readJson(asrPath);
-  const GAP = 1.0; // CALIBRATE: spec floor 0.2; raised so natural TTS punctuation pauses ("Oui. Non.") aren't flagged as dropouts
-  // Atomic taught utterances (≤4.5s) — long narration beats have natural clause
-  // pauses that are not dropouts; the Method grammar keeps beats atomic anyway.
-  // Scope to FRENCH lines only: the on-screen caption (X-06) and the P(beat)
-  // atomicity contract are target-language. English scaffolding cues ("Listen.
-  // … Don't say anything yet", "Now you — hi.") carry no synced caption, so a
-  // rhetorical pause at their period/em-dash is narration, not a dropout.
-  const inSpoken = (t) => man.lines.find((r) => r.kind === 'french' && r.audioAsset && r.durationSeconds <= 4.5 && t >= r.videoStart + 0.1 && t <= r.videoEnd - 0.1 && !/\.\.\.|…/.test(r.spokenText || ''));
-  const w = (asr.words || []).filter((x) => x.end > x.start);
-  for (let i = 1; i < w.length; i++) {
-    const gap = w[i].start - w[i - 1].end;
-    if (gap <= GAP) continue;
-    const b = inSpoken(w[i - 1].end + gap / 2); // gap sits inside one voice line
-    // A real intra-line dropout has BOTH words inside the voice line. A gap that
-    // straddles the beat boundary is not a dropout — it is the silence between two
-    // lines, often widened when ASR mis-transcribes a French dialogue turn as
-    // English and skips it entirely (leaving a phantom gap over a clean clip).
-    if (b && w[i - 1].end >= b.videoStart && w[i].start <= b.videoEnd) F.push(finding(Y, 'T-07', b.sourceLine || 0, `${gap.toFixed(2)}s gap between words inside a voice line at ${w[i - 1].end.toFixed(1)}s ("${(b.spokenText || '').slice(0, 30)}")`, ''));
+  const GAP = 1.0;   // interior hole longer than this = dropout (spec floor 0.2, raised for natural sentence pauses)
+  const EDGE = 0.15; // ignore leading/trailing clip padding
+  const seen = new Set();
+  let scanned = 0;
+  for (const r of man.lines) {
+    if (r.kind !== 'french' || !r.audioAsset || !(r.durationSeconds <= 4.5)) continue;
+    if (/\.\.\.|…/.test(r.spokenText || '')) continue;
+    if (seen.has(r.audioAsset)) continue;
+    seen.add(r.audioAsset);
+    const abs = path.join(ROOT, 'public', r.audioAsset);
+    if (!existsSync(abs)) continue;
+    scanned++;
+    const sd = await run(ff, [...ffPre, '-hide_banner', '-nostats', '-i', abs, '-af', 'silencedetect=noise=-40dB:d=0.3', '-f', 'null', '-']);
+    const dm = sd.stderr.match(/Duration:\s*(\d+):(\d+):([\d.]+)/);
+    const clipLen = dm ? (+dm[1]) * 3600 + (+dm[2]) * 60 + (+dm[3]) : (r.durationSeconds || 0);
+    const iv = []; let st = null;
+    for (const mm of sd.stderr.matchAll(/silence_(start|end):\s*(-?[\d.]+)/g)) {
+      if (mm[1] === 'start') st = Number(mm[2]);
+      else if (st != null) { iv.push([st, Number(mm[2])]); st = null; }
+    }
+    for (const [a2, b2] of iv) {
+      const len = b2 - a2;
+      if (len <= GAP) continue;
+      if (b2 <= EDGE) continue;                       // leading padding
+      if (clipLen && a2 >= clipLen - EDGE) continue;  // trailing padding
+      F.push(finding(Y, 'T-07', r.sourceLine || 0, `${len.toFixed(2)}s dead-air inside taught clip at ${a2.toFixed(2)}s ("${(r.spokenText || '').slice(0, 30)}")`, r.audioAsset));
+      break; // one finding per clip
+    }
   }
-} else if (existsSync(P.manifest)) {
-  console.log('  (T-07 skipped — no build/' + id + '/asr.json; run scripts/qa/asr.mjs first)');
+  console.log(`  (T-07 scanned ${scanned} atomic French clips for interior dropouts)`);
 }
 
 // ---- T-08 runtime within the density band ----
