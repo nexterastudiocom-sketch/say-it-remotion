@@ -28,16 +28,17 @@ const hashOf = async (rel) => { const abs = path.join(ROOT, 'public', rel); retu
 const coldH = await Promise.all(cold.map(hashOf));
 const retH = await Promise.all(ret.map(hashOf));
 const F = [];
-// Every replayed clip, in order, must byte-match the cold clip in the same slot.
-const n = Math.min(coldH.length, retH.length);
-let mismatch = -1;
-if (coldH.length !== retH.length) mismatch = n; // length differs → the passage was changed
-else for (let i = 0; i < n; i++) if (!coldH[i] || !retH[i] || coldH[i] !== retH[i]) { mismatch = i; break; }
-if (mismatch >= 0) {
-  const c = coldH[mismatch], r = retH[mismatch];
+// SUBSET identity: every replayed clip must be one of the cold-open recordings —
+// i.e. a faithful re-hearing, never a fresh take. This holds whether INPUT_RETURN
+// replays the passage once (v1: 6 clips) or several times across checkpoints (v2:
+// N×6 clips) — the point is the learner re-hears the SAME audio, not that the count
+// matches. A clip whose hash isn't among the cold set is a different recording.
+const coldSet = new Set(coldH.filter(Boolean));
+const missing = retH.findIndex((h) => !h || !coldSet.has(h));
+if (missing >= 0) {
   F.push(finding(Y, 'S-08', 0,
-    `INPUT_RETURN dialogue is not the same recording as COLD_INPUT (${ret.length} vs ${cold.length} clips${mismatch < n ? `, first differs at clip ${mismatch + 1}` : ''})`,
-    mismatch < n ? `sha256 ${(c || 'MISSING').slice(0, 12)} ≠ ${(r || 'MISSING').slice(0, 12)}` : 'clip count differs'));
+    `INPUT_RETURN dialogue clip ${missing + 1} of ${ret.length} is not one of the COLD_INPUT recordings (a different take)`,
+    `sha256 ${(retH[missing] || 'MISSING').slice(0, 12)} not among the ${coldSet.size} cold-open recordings`));
 }
 await merge(id, ['S-08'], F);
 console.log(`GATE B · S-08 — ${cold.length} cold dialogue clips vs ${ret.length} replayed`);
