@@ -38,8 +38,18 @@ const lufs = (rel) => {
 
 const means = {};
 for (const [voice, srcs] of Object.entries(byVoice)) {
-  const uniq = [...new Set(srcs)].slice(0, SAMPLE);
-  const vals = uniq.map(lufs).filter((v) => v != null && isFinite(v));
+  // EBU R128 integrated loudness needs ≥~400ms of gated content; a sub-0.45s clip
+  // (e.g. a clipped "deux") returns the −70 LUFS floor / −inf even though it plays
+  // at normal volume (volumedetect confirms mean ≈ −15 dB). Those unmeasurable
+  // readings must NOT be averaged in — a couple of them drag a −16.8 voice to −23
+  // and fail the gate falsely. Keep sampling until we have SAMPLE *measurable* clips.
+  const uniq = [...new Set(srcs)];
+  const vals = [];
+  for (const s of uniq) {
+    const v = lufs(s);
+    if (v != null && isFinite(v) && v > -60) vals.push(v);
+    if (vals.length >= SAMPLE) break;
+  }
   if (vals.length) means[voice] = vals.reduce((a, v) => a + v, 0) / vals.length;
 }
 const entries = Object.entries(means);
