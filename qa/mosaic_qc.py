@@ -312,7 +312,12 @@ def run_static(meta, beats, curriculum):
                      "VO-01", "VO-03",
                      # v2 recomputes every production pause from MEASURED audio at
                      # build time, so authored-pause Gate-A checks don't apply.
-                     "P-01", "P-02"}
+                     "P-01", "P-02",
+                     # v2 opens with a natural-speed cold-open HOOK before the slow
+                     # preview teaches each item, so "first utterance is slow" (R-01)
+                     # fires on the hook, not the teaching. Rate is still enforced
+                     # by the measured R-06 band in Gate B.
+                     "R-01"}
 
     def add(rid, msg, line=0, ctx=""):
         s = sev.get(rid, "WARN")

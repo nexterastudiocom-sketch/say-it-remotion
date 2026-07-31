@@ -153,11 +153,14 @@ for (const appt of bySlot) {
 // 4) BUILD LADDER — backward build-up chains (tail-first), one rung per slot.
 if (build.length) {
   section('BUILD_LADDER', 'put it together');
-  for (const b of build.sort((a, c) => a.step - c.step)) {
+  // The EN voice NEVER reads the French sentence (V-07). It gives a French-free
+  // cue; the learner assembles from the pieces already drilled, then the FR model
+  // confirms. The changed chunk is signalled visually (chunk bar), not spoken.
+  build.sort((a, c) => a.step - c.step).forEach((b, i) => {
     img(`CHUNK BAR — HIGHLIGHT ${b.mark || 'new chunk'}`);
-    beat('EN·MAN', 'BUILD', 3, `Now say: ${enSafe(b.sentence)}`, '3.5');
+    beat('EN·MAN', 'BUILD', 3, i === 0 ? 'Now put the pieces together — say the whole line.' : 'Add the next piece — say the whole line.', '3.5');
     beat('FR·MAN', 'BUILD', 3, b.sentence, '1.0', { rate: 'natural', extra: ['[confirm]'] });
-  }
+  });
 }
 
 // 5) FLUENCY — say the whole thing, faster each pass.
