@@ -109,10 +109,18 @@ export const LessonVideo: React.FC<{ lesson: Lesson }> = ({ lesson }) => {
   {
     let c = 0;
     let learned = lesson.chrome.wordsFrom;
+    // Count each UNIQUE word once, on its FIRST appearance. v2 gives every drilled
+    // item its own vocab slide (a word recurs across many slides), so bumping on
+    // every vocab slide overcounted (34/12). Only a word's first slide advances it.
+    const seen = new Set<string>();
     for (const slide of lesson.slides) {
-      if (slide.type === 'vocab') {
-        learned += String(slide.word).split('/').filter((w) => w.trim()).length || 1;
-        learnedMarks.push({ from: secToFrames(c), count: learned });
+      if (slide.type === 'vocab' && slide.word) {
+        const fresh = String(slide.word).split('/').map((w) => w.trim()).filter((w) => w && !seen.has(w.toLowerCase()));
+        if (fresh.length) {
+          fresh.forEach((w) => seen.add(w.toLowerCase()));
+          learned += fresh.length;
+          learnedMarks.push({ from: secToFrames(c), count: learned });
+        }
       }
       c += slide.durationInSeconds;
     }
