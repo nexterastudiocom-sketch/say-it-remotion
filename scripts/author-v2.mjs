@@ -67,6 +67,12 @@ const FR_STOP = new Set(['je', 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'et', '
 const properNouns = (texts) => [...new Set(texts.flatMap((t) => String(t).split(/[.!?—:;,]/).flatMap((seg) => seg.trim().split(/\s+/).map((w, i) => ({ w: w.replace(/[^A-Za-zÀ-ÿ'’-]/g, ''), i })).filter(({ w, i }) => i > 0 && /^[A-ZÀ-Ÿ][a-zà-ÿ]+$/.test(w) && !FR_STOP.has(w.toLowerCase())).map(({ w }) => w))))];
 const names = properNouns([...dialogue.map((d) => d[1]), ...build.map((b) => b.sentence), ...fluency]);
 
+// Teach the words that ARE in the opening conversation FIRST (right after it), so
+// the first drills connect to what the learner just heard; the rest follow. Stable
+// sort keeps each group's original workbook order.
+const dlgBlob = dialogue.map((d) => String(d[1]).toLowerCase()).join(' | ');
+items.sort((a, b) => (dlgBlob.includes(b.fr.toLowerCase()) ? 1 : 0) - (dlgBlob.includes(a.fr.toLowerCase()) ? 1 : 0));
+
 // ---- spacing schedule -------------------------------------------------------
 const schedItems = items.map((i) => ({ ref: i.fr, core: i.core }));
 const sched = scheduleItems(schedItems);
@@ -149,9 +155,21 @@ for (const appt of bySlot) {
   section('ITEM_BLOCK', it.fr);
   img(`ILLUSTRATION — ${it.fr}`);
   if (n === 1) {
-    // Introduce: hear it, then repeat it (slow); the model confirms.
-    beat('EN·MAN', 'ECHO', it.level, 'Listen, then repeat.', '0.5');
-    beat(voice, 'ECHO', it.level, it.fr, '2.0', { rate, extra: ['[confirm]'] });
+    // FIRST encounter — drill it several times with varied cues: hear it, repeat
+    // after the model (twice), then produce it yourself, then once more. Every beat
+    // is the SAME word, so the card matches (I-17) and the learner over-learns it.
+    // Copy/repeat beats are a LOW support-level activity (L1); the produce beat is
+    // higher (L3, no copy support). Levels ramp within the intro.
+    beat('EN·MAN', 'ECHO', 1, 'Listen.', '0.3');
+    beat(voice, 'ECHO', 1, it.fr, '0.5', { rate: 'slow' });
+    beat('EN·MAN', 'ECHO', 1, 'Repeat after me.', '0.3');
+    beat(voice, 'ECHO', 1, it.fr, '2.0', { rate: 'slow', extra: ['[confirm]'] });
+    beat('EN·MAN', 'ECHO', 1, 'Again.', '0.3');
+    beat(voice, 'ECHO', 1, it.fr, '2.0', { rate: 'slow', extra: ['[confirm]'] });
+    beat('EN·MAN', 'PRODUCE', 3, `Now you — say "${g}".`, '3.0');
+    beat(voice, 'PRODUCE', 3, it.fr, '0.5', { rate: 'natural', extra: ['[confirm]'] });
+    beat('EN·MAN', 'PRODUCE', 3, `One more — say "${g}".`, '3.0');
+    beat(voice, 'PRODUCE', 3, it.fr, '0.5', { rate: 'natural', extra: ['[confirm]'] });
   } else {
     // Produce from meaning. Cues lean to "repeat / now you" (never say the French).
     const CUES = [`Your turn — say "${g}".`, `Repeat it in French — "${g}".`, `Now you — "${g}".`, `Say "${g}".`, `Your turn — "${g}".`];

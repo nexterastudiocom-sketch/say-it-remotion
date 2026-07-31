@@ -164,15 +164,22 @@ for (let i = 0; i < parsed.beats.length; i++) {
   const clip = await clipFor(b);
   cur.beats.push({ ...(clip.rel ? { src: clip.rel } : {}), durationInSeconds: clip.dur, phase: b.phase, voice: voiceKey(b.voice), text: b.text, register: registerOf(b.voice, b.text), level: b.level, rate: b.rate || null, stage: b.stage, visuals: b.visuals, line: b.line });
 
-  // scripted pause → silent gap beat
+  // scripted pause → silent gap beat. Two dynamic cases, both timed from MEASURED
+  // audio: (A) EN cue → pause → FR answer = produce; the pause fits the ANSWER clip.
+  // (B) FR model → pause = repeat-after-me; the pause fits the clip JUST HEARD (this
+  // beat's own clip). Everything else keeps its authored value.
   if (b.pause > 0) {
     const nxt = parsed.beats[i + 1];
-    const isProdSlot = !noMedia && PRODUCE_PHASES.has(b.phase) && b.pause >= 2.0 && nxt && nxt.voice.startsWith('FR');
-    if (isProdSlot) {
-      const ans = await clipFor(nxt);                      // MEASURED model duration
+    const isProduce = !noMedia && PRODUCE_PHASES.has(b.phase) && b.pause >= 2.0 && !isFr && nxt && nxt.voice.startsWith('FR');
+    const isRepeat = !noMedia && isFr && b.pause >= 1.5;
+    if (isProduce) {
+      const ans = await clipFor(nxt);                      // MEASURED answer duration
       const isNew = !producedFr.has(nxt.text);
       const base = +hybridBase(ans.dur, isNew).toFixed(2);
       producedFr.add(nxt.text);
+      cur.beats.push({ durationInSeconds: base, phase: b.phase, level: b.level, stage: b.stage, _prod: true, _base: base });
+    } else if (isRepeat) {
+      const base = +hybridBase(clip.dur, false).toFixed(2); // repeat the word just heard
       cur.beats.push({ durationInSeconds: base, phase: b.phase, level: b.level, stage: b.stage, _prod: true, _base: base });
     } else {
       cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });
