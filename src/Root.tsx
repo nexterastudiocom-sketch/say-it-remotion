@@ -1,7 +1,7 @@
 import React from 'react';
 import { Composition } from 'remotion';
 import { FPS } from './LessonVideo';
-import { LessonFilm, getFilmDurationInFrames } from './LessonFilm';
+import { LessonFilm, getFilmDurationInFrames, resolveLesson } from './LessonFilm';
 import { LanguageCode, Lesson } from './deck/types';
 import { getSampleLesson } from './sampleLesson';
 import lesson01Fr from './data/lessons/lesson-01.fr.json';
@@ -142,7 +142,7 @@ export const RemotionRoot: React.FC = () => (
           durationInFrames={getFilmDurationInFrames(lesson)}
           defaultProps={{ lesson }}
           calculateMetadata={({ props }) => ({
-            durationInFrames: getFilmDurationInFrames(props.lesson as unknown as Lesson),
+            durationInFrames: getFilmDurationInFrames(resolveLesson(props)),
           })}
         />
       );
@@ -160,7 +160,7 @@ export const RemotionRoot: React.FC = () => (
           height={2160}
           durationInFrames={getFilmDurationInFrames(lesson)}
           defaultProps={{ lesson }}
-          calculateMetadata={({ props }) => ({ durationInFrames: getFilmDurationInFrames(props.lesson as unknown as Lesson) })}
+          calculateMetadata={({ props }) => ({ durationInFrames: getFilmDurationInFrames(resolveLesson(props)) })}
         />
       );
     })()}

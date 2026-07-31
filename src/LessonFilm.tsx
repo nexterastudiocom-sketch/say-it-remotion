@@ -12,8 +12,19 @@ export const OUTRO_FRAMES = OUTRO_VIDEO_FRAMES; // brand outro end-card (9.97s) 
 export const getFilmDurationInFrames = (lesson: Lesson) =>
   INTRO_FRAMES + getLessonDurationInFrames(lesson) + OUTRO_FRAMES;
 
+// CRITICAL: `--props=<baked json>` passes the RAW lesson object (top-level `slides`).
+// Remotion merges input props ALONGSIDE defaultProps ({lesson: sample}), so
+// `props.lesson` would wrongly stay the build-time sample and every render would be
+// that one sample lesson. Resolve the real lesson: a top-level `slides` array means
+// the raw lesson was supplied via --props; otherwise use the wrapped `lesson` prop.
+export const resolveLesson = (props: unknown): Lesson => {
+  const p = props as { slides?: unknown; lesson?: Lesson };
+  return (p && Array.isArray(p.slides) ? (p as unknown as Lesson) : (p.lesson as Lesson));
+};
+
 /** Full default lesson video: logo intro → lesson → logo outro, one language. */
-export const LessonFilm: React.FC<{ lesson: Lesson }> = ({ lesson }) => {
+export const LessonFilm: React.FC<{ lesson: Lesson }> = (props) => {
+  const lesson = resolveLesson(props);
   const lessonFrames = getLessonDurationInFrames(lesson);
   return (
     <AbsoluteFill style={{ backgroundColor: '#F7F5F0' }}>
