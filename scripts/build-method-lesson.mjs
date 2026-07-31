@@ -112,7 +112,17 @@ async function clipFor(b) {
     const abs = path.join(ROOT, 'public', rel);
     let d;
     if (existsSync(abs)) d = (await parseFile(abs)).format.duration || 1;
-    else { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: 1, atempo }).catch(async () => (existsSync(abs) ? (await parseFile(abs)).format.duration || 1 : 1)); clipN++; }
+    else {
+      // Retry transient TTS failures — a dropped call must NOT leave a dangling
+      // clip reference (missing file → silent gap in the render + S-08 MISSING).
+      clipN++;
+      for (let att = 1; att <= 3; att++) {
+        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: 1, atempo }); }
+        catch (e) { if (att === 3) console.error(`  ✗ TTS failed x3: "${b.text.slice(0, 40)}" — ${String(e.message).split('\n')[0]}`); }
+        if (existsSync(abs)) { d = (await parseFile(abs)).format.duration || d || 1; break; }
+      }
+      if (d == null) d = 1;
+    }
     hit = { rel, dur: +Number(d).toFixed(2) };
     clipCache.set(key, hit);
   }
