@@ -507,13 +507,22 @@ def run_static(meta, beats, curriculum):
     # it — "pardon" read as English is jarringly wrong). Cognates whose own English
     # gloss is the same token are exempt (that word IS English too).
     gloss_by_item = {norm(i): norm(g) for i, g in zip(meta.get("items", []), meta.get("glosses", []))} if meta.get("glosses") else {}
+    # A French word is COGNATE-EXEMPT when it also appears as a word in some English
+    # gloss (then saying it IS English — "France", "Canada", "employee") or is a
+    # declared proper name (identical across languages). Only genuinely French words
+    # the EN voice would MISpronounce (pardon, bonjour) should trip V-07.
+    gloss_words = {w for g in (meta.get("glosses") or []) for w in norm(g).split() if len(w) > 2}
+    name_words = {w for nm in (meta.get("names") or []) for w in norm(nm).split() if len(w) > 2}
+    v07_exempt = gloss_words | name_words
     fr_words = {w for it in items for w in (it.split() if " " in it else [it]) if len(w) > 2}
     for b in beats:
         if not b.is_en or not b.text:
             continue
         t = norm(b.text)
         for fw in fr_words:
-            if re.search(r"(?<![a-z-])" + re.escape(fw) + r"(?![a-z-])", t) and gloss_by_item.get(fw) != fw:
+            if fw in v07_exempt or gloss_by_item.get(fw) == fw:
+                continue
+            if re.search(r"(?<![a-z-])" + re.escape(fw) + r"(?![a-z-])", t):
                 add("V-07", f"English voice says the French word '{fw}'", b.line, b.text[:60])
     for b in beats:
         if not b.is_fr:
