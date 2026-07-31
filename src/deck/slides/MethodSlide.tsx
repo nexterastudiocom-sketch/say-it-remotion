@@ -90,11 +90,19 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
     const b = beats[i];
     if (b.voice && (b.voice || '').startsWith('en') && roleOf(b) === 'instruction') { instruction = b.text || ''; break; }
   }
-  // Recall cue "Now you — goodbye" / "Your turn — goodbye": pull out the cue word
-  // so the band reads just "Your turn" and the word the learner must translate is
-  // shown big + bold on its own line (their job is to say it in French).
-  const recallM = /^(?:now you|your turn)\s*[—–-]\s*(.+?)[.!?]*$/i.exec(instruction.trim());
-  const recallWord = recallM ? recallM[1].trim() : '';
+  // ONE CONSISTENT STRUCTURE (the learner's eye must settle into a routine):
+  //   • instruction band = a pure instruction, NEVER the target word
+  //   • hero            = the word, big — English while asking, French once spoken
+  // Pull the target word OUT of the cue: the quoted "…", else the token after a
+  // dash ("Now you — hello"). The band then reads a fixed instruction per cue verb.
+  const q = /[“"„]([^”"“]+)[”"]/.exec(instruction);
+  const dash = /[—–-]\s*([^—–.:!?]+?)[.:!?]*\s*$/.exec(instruction.trim());
+  const cueWord = (q ? q[1] : (/^(?:now you|your turn|say|repeat)/i.test(instruction.trim()) && dash ? dash[1] : '')).trim();
+  const bandText = cueWord
+    ? (/repeat/i.test(instruction) ? 'Repeat it in French:'
+      : /now you/i.test(instruction) ? 'Now you — say it in French:'
+        : 'Your turn — say it in French:')
+    : instruction;
 
   // The active picture: a per-beat image (recall/scenario) wins, else the slide's.
   const imgRel = spoken.imageSrc || active.imageSrc || slide.imageSrc;
@@ -128,7 +136,7 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
               borderColor: 'transparent transparent transparent var(--accent)', marginLeft: 6 }} />
           </span>
           <span style={{ fontFamily: 'var(--body)', fontWeight: 500, fontSize: 54, lineHeight: 1.24,
-            color: 'var(--ink-2)' }}>{recallWord ? 'Your turn — say it in French:' : renderInstruction(instruction)}</span>
+            color: 'var(--ink-2)' }}>{cueWord ? bandText : renderInstruction(instruction)}</span>
         </div>
       ) : null}
     </div>
@@ -143,9 +151,11 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
       {/* WORD ZONE — the hero. French word + phonetic + English meaning all live
           here in word styling; instructions never enter this zone. */}
       <div style={{ minHeight: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22 }}>
-        {recallWord ? (
-          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 224, lineHeight: 1,
-            letterSpacing: '-0.03em', color: 'var(--ink)', ...fadeUp(frame, fps, 4) }}>{recallWord}</p>
+        {showFrWord ? (
+          // French reveal — the instant the model SPEAKS the French, show it big.
+          // Takes precedence so the answer always appears when it is voiced.
+          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 200, lineHeight: 1,
+            letterSpacing: '-0.02em', color: 'var(--accent)', ...reveal }}>{spoken.text}</p>
         ) : wc ? (
           <div style={{ ...fadeUp(frame, fps, 4) }}>
             <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 176, lineHeight: 1,
@@ -153,9 +163,10 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
             <p style={{ fontFamily: 'var(--body)', fontWeight: 500, fontSize: 54, marginTop: 14,
               letterSpacing: 2, color: 'var(--ink-2)' }}>[{wc[2].trim()}]</p>
           </div>
-        ) : showFrWord ? (
-          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 176, lineHeight: 1,
-            letterSpacing: '-0.02em', color: 'var(--accent)', ...reveal }}>{spoken.text}</p>
+        ) : cueWord ? (
+          // While asking — the English word to translate, big in the SAME hero zone.
+          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 200, lineHeight: 1,
+            letterSpacing: '-0.03em', color: 'var(--ink)', ...fadeUp(frame, fps, 4) }}>{cueWord}</p>
         ) : isEnMeaning ? (
           <p style={{ fontFamily: 'var(--head)', fontWeight: 600, fontSize: 88, lineHeight: 1.12,
             color: 'var(--ink)', maxWidth: 1720, ...reveal }}>{spoken.text}</p>
