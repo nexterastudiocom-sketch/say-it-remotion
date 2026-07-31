@@ -113,12 +113,19 @@ export const LessonVideo: React.FC<{ lesson: Lesson }> = ({ lesson }) => {
     // item its own vocab slide (a word recurs across many slides), so bumping on
     // every vocab slide overcounted (34/12). Only a word's first slide advances it.
     const seen = new Set<string>();
+    // The taught word of a vocab slide: slide.word if set, else its first French
+    // beat's text (v2 drill slides don't set slide.word). One unique word → +1.
+    const wordOf = (slide: Slide): string => {
+      if (slide.word) return String(slide.word);
+      const fr = (slide.beats || []).find((b) => /^fr/i.test(b.voice || ''));
+      return fr ? String(fr.text || '') : '';
+    };
     for (const slide of lesson.slides) {
-      if (slide.type === 'vocab' && slide.word) {
-        const fresh = String(slide.word).split('/').map((w) => w.trim()).filter((w) => w && !seen.has(w.toLowerCase()));
-        if (fresh.length) {
-          fresh.forEach((w) => seen.add(w.toLowerCase()));
-          learned += fresh.length;
+      if (slide.type === 'vocab') {
+        const wtext = wordOf(slide).trim().toLowerCase();
+        if (wtext && !seen.has(wtext)) {
+          seen.add(wtext);
+          learned += 1;
           learnedMarks.push({ from: secToFrames(c), count: learned });
         }
       }
