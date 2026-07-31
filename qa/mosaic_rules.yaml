@@ -570,6 +570,19 @@ rules:
       spoken answer is the defect.
     fix: "Show the spoken French word in the word register while it is voiced and through the pause that follows it."
 
+  - id: I-17
+    layer: L1
+    gate: A
+    severity: BLOCK
+    title: "A word-card teaching slide voices exactly one taught word"
+    detail: >
+      A teaching slide (ITEM_BLOCK / MICRO_RECALL) shows ONE word card, so it must
+      voice only ONE taught item — otherwise the card on screen does not match the
+      word in the audio ("ma'am" on screen while the voice says "hello"). Each drilled
+      item gets its own slide. Dialogue and assembly stages (COLD_INPUT, INPUT_RETURN,
+      BUILD_LADDER, FLUENCY_ROUND) legitimately voice many lines and are exempt.
+    fix: "Give each drilled item its own teaching slide so its word card matches its audio."
+
   # ---------- VOICE ----------
   - id: VO-01
     layer: L0

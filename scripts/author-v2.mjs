@@ -106,53 +106,59 @@ w(`     Drill order = expanding-interval spacing engine. Pauses recomputed from 
 // cached clip across cold-open, checkpoints and close (S-08 byte-identity).
 const dlgVoice = (sp) => (String(sp)[0] === 'A' ? 'FR·WOMAN' : 'FR·MAN');
 
-// 1) COLD OPEN — the target dialogue at natural speed, no pauses (8-12s hook).
-section('COLD_INPUT', 'cold open — hear the goal');
-img('SCENE — two people meet and part');
-beat('EN·MAN', 'INPUT', 3, 'Listen — this is where you are headed. Just take it in.', '0.6');
+// A real, lesson-related image for the cold open — reuse an EXISTING item image.
+// Prefer a greeting/"hello" item (the most on-topic opener), else first core item.
+const coldItem = (items.find((i) => /\b(hello|hi|good (morning|day|evening))\b/i.test(i.gloss)) || items.find((i) => i.core) || items[0]).fr;
+
+// 1) COLD OPEN — one line, a related image, then the dialogue at natural speed.
+section('COLD_INPUT', 'cold open');
+img(`ILLUSTRATION — ${coldItem}`);
+beat('EN·WOMAN', 'INPUT', 3, 'Listen to this conversation.', '0.6');
 for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'INPUT', 3, line, '0.3', { rate: 'natural' });
 
-// 2) PREVIEW — each new item once, micro-gap spacing, no response slots.
-section('ITEM_BLOCK', 'preview — the new words');
-for (const it of items) {
-  img(`ILLUSTRATION — ${it.fr}`);
-  beat('EN·WOMAN', 'MEET', it.level, `${enSafe(it.gloss.split('/')[0].trim())}.`, '0.4');
-  beat(it.core ? 'FR·MAN' : 'FR·WOMAN', 'MEET', it.level, it.fr, '0.6', { rate: 'slow' });
-}
+// (No preview / translation block — words are introduced in the drills below.)
 
-// 3) DRILLS — ordered ENTIRELY by the spacing engine. Each scheduled appearance is
-// a production slot: L1 cue → (pause, recomputed from measured audio) → L2 confirm.
-// Checkpoints are injected at the measured positions 0.30 / 0.53 / 0.83.
+// 2) DRILLS — spacing-engine order. EACH item recall is its OWN slide so the word
+// card on screen ALWAYS matches the word in the voice (the old single-slide drill
+// showed one card while the audio cycled 12 words). First appearance = listen &
+// repeat (introduces it); later = produce from meaning. Checkpoints inject at the
+// measured positions 0.30 / 0.53 / 0.83.
 const totalSlots = sched.slots;
-// Checkpoints at the measured positions 0.30 / 0.53 / 0.83 — fired on THRESHOLD
-// CROSSING (an exact slot index may be skipped by collision resolution).
 const cpThresholds = [0.30, 0.53, 0.83].map((f) => Math.round(totalSlots * f));
 let cpDone = 0;
-section('MICRO_RECALL', 'drills — graduated recall');
 const bySlot = [...sched.schedule].sort((a, b) => a.slot - b.slot);
+const exposures = new Map(); // fr → how many times drilled (rate ramps slow→natural)
 let dn = 0;
 for (const appt of bySlot) {
-  // checkpoint injection when we cross the next threshold
   if (cpDone < cpThresholds.length && appt.slot >= cpThresholds[cpDone]) {
     cpDone++;
     section('INPUT_RETURN', `checkpoint ${cpDone} — the whole exchange, twice`);
     for (let pass = 1; pass <= 2; pass++) {
-      beat('EN·WOMAN', 'RECALL', 3, pass === 1 ? 'The whole conversation. Listen, then say each line back.' : 'Again — say it with them.', '0.6');
+      beat('EN·WOMAN', 'RECALL', 3, pass === 1 ? 'The whole conversation — say each line back.' : 'Again — say it with them.', '0.6');
       // Same voice + natural rate as the cold open → byte-identical clips (S-08).
       for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'RECALL', 3, line, '2.0', { rate: 'natural', extra: ['[confirm]'] });
     }
-    section('MICRO_RECALL', 'drills — graduated recall');
   }
   const it = items.find((x) => x.fr === appt.ref);
-  const isFirstProduce = appt.appearance === 1;
+  const voice = it.core ? 'FR·MAN' : 'FR·WOMAN';
   const g = enSafe(it.gloss.split('/')[0].trim());
-  // Varied English cues so 100+ production slots don't read identically. All cues
-  // are V-07 safe — English gloss only, never the French word.
-  const CUES = [`Say "${g}" in French.`, `How do you say "${g}"?`, `Your turn — "${g}".`, `And "${g}"?`, `Give me "${g}".`];
-  const cue = isFirstProduce ? `Say "${g}" in French.` : CUES[dn % CUES.length];
-  dn++;
-  beat('EN·MAN', 'PRODUCE', it.level, cue, '3.5');
-  beat(it.core ? 'FR·MAN' : 'FR·WOMAN', 'PRODUCE', it.level, it.fr, '1.0', { rate: isFirstProduce ? 'slow' : 'natural', extra: ['[confirm]'] });
+  const n = (exposures.get(it.fr) || 0) + 1;
+  exposures.set(it.fr, n);
+  const rate = n < 3 ? 'slow' : 'natural'; // slow for the first 2 exposures (R-03)
+  // OWN slide per item → the word card is THIS item, matching the FR audio.
+  section('ITEM_BLOCK', it.fr);
+  img(`ILLUSTRATION — ${it.fr}`);
+  if (n === 1) {
+    // Introduce: hear it, then repeat it (slow); the model confirms.
+    beat('EN·MAN', 'ECHO', it.level, 'Listen, then repeat.', '0.5');
+    beat(voice, 'ECHO', it.level, it.fr, '2.0', { rate, extra: ['[confirm]'] });
+  } else {
+    // Produce from meaning. Cues lean to "repeat / now you" (never say the French).
+    const CUES = [`Now you — say "${g}".`, `Repeat that in French — "${g}".`, `Now you — "${g}".`, `Say "${g}".`, `And "${g}"?`];
+    beat('EN·MAN', 'PRODUCE', it.level, CUES[dn % CUES.length], '3.5');
+    beat(voice, 'PRODUCE', it.level, it.fr, '1.0', { rate, extra: ['[confirm]'] });
+    dn++;
+  }
 }
 
 // 4) BUILD LADDER — backward build-up chains (tail-first), one rung per slot.

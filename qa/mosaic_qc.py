@@ -539,6 +539,23 @@ def run_static(meta, beats, curriculum):
                 if not _compose_ok(tok, ok_single):
                     add("V-04", f"COLD_INPUT uses out-of-scope '{tok}'", b.line)
 
+    # ---------- I-17: teaching slide voices ONE word (screen matches voice) ----------
+    # A word-card teaching slide must voice exactly ONE taught item so the card on
+    # screen matches the audio. The full-reschedule drills once put 12 words on a
+    # single card slide → "ma'am" on screen while the voice said "hello". Dialogue and
+    # assembly stages (COLD_INPUT / INPUT_RETURN / BUILD_LADDER / FLUENCY_ROUND)
+    # legitimately voice many lines, so only the word-card stages are checked.
+    item_set = set(items)
+    teach_words = {}
+    for b in beats:
+        if b.stage in ("ITEM_BLOCK", "MICRO_RECALL") and b.is_fr:
+            t = norm(b.text)
+            if t in item_set:
+                teach_words.setdefault(b.segment, set()).add(t)
+    for segkey, ws in teach_words.items():
+        if len(ws) > 1:
+            add("I-17", f"teaching slide '{segkey}' voices {len(ws)} words ({', '.join(sorted(ws))}) but shows one card — screen won't match voice")
+
     # ---------- P rules ----------
     prev_long = False
     for i, b in enumerate(beats):
