@@ -101,10 +101,15 @@ async function clipFor(b) {
     return { rel: null, dur: +dur.toFixed(2) };
   }
   const model = isFr ? MODEL_FR : MODEL_EN;
-  const atempo = isFr ? (RATE_ATEMPO[b.rate] ?? 0.75) : 1;
+  // French is slowed NATIVELY by ElevenLabs speech speed (the model articulates
+  // slowly, cleanly) instead of ffmpeg atempo time-stretch — the stretch smeared
+  // liaisons and made "au revoir" sound separated. Same rate→factor numbers, now
+  // applied as speech speed with NO stretch. FR key changes (nspeed…) so French
+  // re-synthesizes; EN key (atempo1) is unchanged so English audio is preserved.
+  const frSpeed = isFr ? (RATE_ATEMPO[b.rate] ?? 0.75) : 1;
   const key = isFr
-    ? `${b.voice}|${model}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`
-    : `${b.voice}|${b.rate || 'natural'}|atempo${atempo}|${b.text}`;
+    ? `${b.voice}|${model}|${b.rate || 'natural'}|nspeed${frSpeed}|${b.text}`
+    : `${b.voice}|${b.rate || 'natural'}|atempo1|${b.text}`;
   let hit = clipCache.get(key);
   if (!hit) {
     const h = createHash('sha1').update(key).digest('hex').slice(0, 16);
@@ -117,7 +122,7 @@ async function clipFor(b) {
       // clip reference (missing file → silent gap in the render + S-08 MISSING).
       clipN++;
       for (let att = 1; att <= 3; att++) {
-        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: 1, atempo }); }
+        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: frSpeed, atempo: 1 }); }
         catch (e) { if (att === 3) console.error(`  ✗ TTS failed x3: "${b.text.slice(0, 40)}" — ${String(e.message).split('\n')[0]}`); }
         if (existsSync(abs)) { d = (await parseFile(abs)).format.duration || d || 1; break; }
       }

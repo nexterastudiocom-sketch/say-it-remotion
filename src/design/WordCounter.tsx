@@ -11,9 +11,10 @@ export const WordCounter: React.FC<{ language: string; learned: number; total: n
   return (
     <div style={{
       height: w.h, borderRadius: w.radius, background: accent, color: w.text,
-      display: 'inline-flex', alignItems: 'center', padding: '0 30px',
+      boxShadow: hud.shadow,
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: `0 ${w.padX}px`,
       fontFamily: `"${w.font}", system-ui, sans-serif`, fontWeight: w.weight,
-      fontSize: w.size, fontVariantNumeric: 'tabular-nums', letterSpacing: '0.01em',
+      fontSize: w.size, lineHeight: 1, fontVariantNumeric: 'tabular-nums', letterSpacing: `${w.tracking}em`,
     }}>{label}</div>
   );
 };
