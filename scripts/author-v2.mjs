@@ -154,7 +154,7 @@ for (const appt of bySlot) {
     beat(voice, 'ECHO', it.level, it.fr, '2.0', { rate, extra: ['[confirm]'] });
   } else {
     // Produce from meaning. Cues lean to "repeat / now you" (never say the French).
-    const CUES = [`Now you — say "${g}".`, `Repeat that in French — "${g}".`, `Now you — "${g}".`, `Say "${g}".`, `And "${g}"?`];
+    const CUES = [`Your turn — say "${g}".`, `Repeat it in French — "${g}".`, `Now you — "${g}".`, `Say "${g}".`, `Your turn — "${g}".`];
     beat('EN·MAN', 'PRODUCE', it.level, CUES[dn % CUES.length], '3.5');
     beat(voice, 'PRODUCE', it.level, it.fr, '1.0', { rate, extra: ['[confirm]'] });
     dn++;
