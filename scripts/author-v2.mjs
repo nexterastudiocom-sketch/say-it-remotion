@@ -60,7 +60,12 @@ const enSafe = (text) => {
 };
 // Proper names in the dialogue → declared so V-01 allows them.
 const FR_STOP = new Set(['je', 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'et', 'ça', 'va', 'bien', 'comment', 'oui', 'non', 'merci', 'bonjour', 'bonsoir', 'salut', 'madame', 'monsieur', 'pardon', 'le', 'la', 'les', 'un', 'une', 'de', 'du', 'à', 'est', 'moi', 'toi', 'revoir', 'appelle', 'comme', 'ci', 'très', 'aussi']);
-const names = [...new Set(dialogue.flatMap(([, t]) => t.split(/[.!?—:;]/).flatMap((seg) => seg.trim().split(/\s+/).map((w, i) => ({ w: w.replace(/[^A-Za-zÀ-ÿ'’-]/g, ''), i })).filter(({ w, i }) => i > 0 && /^[A-ZÀ-Ÿ][a-zà-ÿ]+$/.test(w) && !FR_STOP.has(w.toLowerCase())).map(({ w }) => w))))];
+// Proper nouns (character names AND place names like Paris/France) appear across
+// dialogue, build-up sentences and fluency lines — scan ALL emitted French so V-01
+// allows them without teaching them. A capitalised, non-sentence-initial token that
+// isn't a common French word is a proper noun.
+const properNouns = (texts) => [...new Set(texts.flatMap((t) => String(t).split(/[.!?—:;,]/).flatMap((seg) => seg.trim().split(/\s+/).map((w, i) => ({ w: w.replace(/[^A-Za-zÀ-ÿ'’-]/g, ''), i })).filter(({ w, i }) => i > 0 && /^[A-ZÀ-Ÿ][a-zà-ÿ]+$/.test(w) && !FR_STOP.has(w.toLowerCase())).map(({ w }) => w))))];
+const names = properNouns([...dialogue.map((d) => d[1]), ...build.map((b) => b.sentence), ...fluency]);
 
 // ---- spacing schedule -------------------------------------------------------
 const schedItems = items.map((i) => ({ ref: i.fr, core: i.core }));
