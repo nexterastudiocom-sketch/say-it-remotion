@@ -136,6 +136,10 @@ def norm(s: str) -> str:
     s = unicodedata.normalize("NFD", s.lower())
     s = "".join(c for c in s if unicodedata.category(c) != "Mn")
     s = s.replace("’", "'")
+    # Ligatures are base letters (not combining marks), so NFD leaves them — expand
+    # them so "sœur" tokenizes as "soeur" and matches the item (else the tokenizer's
+    # a-z filter splits it into "s" + "ur").
+    s = s.replace("œ", "oe").replace("æ", "ae")
     return re.sub(r"\s+", " ", s).strip()
 
 
@@ -332,6 +336,9 @@ def run_static(meta, beats, curriculum):
     # Proper names declared in the lesson (dialogue characters etc.) are not
     # vocabulary to teach, so they are always allowed by V-01 but never taught.
     allowed |= {norm(x) for x in (meta.get("names") or [])}
+    # Structural presentatives — grammar glue that frames vocabulary rather than being
+    # vocabulary itself ("c'est ma sœur" = "this is my sister"). Always allowed.
+    allowed |= {"c'est", "ce", "il y a", "voilà"}
     if curriculum:
         for k, v in (curriculum.get("lessons") or {}).items():
             if int(k) <= lesson_n:
