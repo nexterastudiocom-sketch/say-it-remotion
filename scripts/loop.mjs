@@ -32,7 +32,14 @@ const LIMIT = args.includes('--limit') ? Number(args[args.indexOf('--limit') + 1
 
 const sh = (cmd, a, opts = {}) => execFileSync(cmd, a, { cwd: ROOT, stdio: 'inherit', ...opts });
 const shOut = (cmd, a) => execFileSync(cmd, a, { cwd: ROOT, encoding: 'utf8' });
-const rclone = (a, capture = false) => (capture ? shOut(RCLONE, a) : sh(RCLONE, a));
+// Retry rclone — Drive/network hiccups are transient and must NOT halt a 50-lesson
+// run. Gate blocks are not rclone calls, so this never masks a real failure.
+const rclone = (a, capture = false) => {
+  for (let att = 1; att <= 4; att++) {
+    try { return capture ? shOut(RCLONE, a) : sh(RCLONE, a); }
+    catch (e) { if (att === 4) throw e; execFileSync('sleep', [String(att * 3)]); }
+  }
+};
 const log = (m) => console.log(`\n▶ ${m}`);
 
 // -- intake listing -----------------------------------------------------------
