@@ -52,11 +52,34 @@ const glossOf = (fr) => (items.find((x) => x.fr === fr)?.gloss || fr).split('/')
 
 // EN beats must NEVER say a taught French word (V-07): replace any item with its gloss.
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+// GLOBAL gloss map — every French item across the whole level, keyed by its core
+// (edge punctuation stripped). An English line must gloss words from PRIOR lessons
+// too (else "Bonjour" from L01 leaks into L02's English). Built from the sibling
+// workbooks; falls back to this lesson's items if the folder isn't there.
+const { readdirSync } = await import('node:fs');
+const glossMap = new Map(); // core(lower) → gloss
+const addGloss = (fr, en) => {
+  const core = stripGender(fr).replace(/^[^0-9A-Za-zÀ-ÿ']+|[^0-9A-Za-zÀ-ÿ']+$/g, '').trim().toLowerCase();
+  const g = String(en).split('/')[0].replace(/\([^)]*\)/g, '').trim();
+  if (core && g && !glossMap.has(core)) glossMap.set(core, g);
+};
+for (const it of items) addGloss(it.fr, it.gloss);
+for (const dir of [path.join(ROOT, 'build/_a1dry'), path.dirname(xlsxPath)]) {
+  try {
+    for (const f of readdirSync(dir).filter((f) => /\.xlsx$/i.test(f) && !/-done/i.test(f))) {
+      const w2 = XLSX.readFile(path.join(dir, f));
+      for (const r of (w2.Sheets['Items'] ? XLSX.utils.sheet_to_json(w2.Sheets['Items'], { defval: '' }) : []))
+        if (r.fr) addGloss(String(r.fr), String(r.en));
+    }
+  } catch { /* dir absent — current items already loaded */ }
+}
+// Replace every taught French word in an English line with its gloss (V-07 safe),
+// longest-first, tolerant of trailing punctuation; then tidy doubled punctuation.
 const enSafe = (text) => {
   let t = String(text);
-  for (const o of items.slice().sort((a, b) => b.fr.length - a.fr.length))
-    t = t.replace(new RegExp(`\\b${esc(o.fr)}\\b`, 'gi'), o.gloss.split('/')[0].trim());
-  return t;
+  for (const core of [...glossMap.keys()].sort((a, b) => b.length - a.length))
+    t = t.replace(new RegExp(`(?<![0-9A-Za-zÀ-ÿ])${esc(core)}(?![0-9A-Za-zÀ-ÿ])`, 'gi'), glossMap.get(core));
+  return t.replace(/\s*([!?.,])\s*\1+/g, '$1').replace(/\s+([!?.,])/g, '$1').replace(/\s{2,}/g, ' ').trim();
 };
 // Proper names in the dialogue → declared so V-01 allows them.
 const FR_STOP = new Set(['je', 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'et', 'ça', 'va', 'bien', 'comment', 'oui', 'non', 'merci', 'bonjour', 'bonsoir', 'salut', 'madame', 'monsieur', 'pardon', 'le', 'la', 'les', 'un', 'une', 'de', 'du', 'à', 'est', 'moi', 'toi', 'revoir', 'appelle', 'comme', 'ci', 'très', 'aussi']);
