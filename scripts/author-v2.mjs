@@ -59,9 +59,14 @@ const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const { readdirSync } = await import('node:fs');
 const glossMap = new Map(); // core(lower) → gloss
 const addGloss = (fr, en) => {
-  const core = stripGender(fr).replace(/^[^0-9A-Za-zÀ-ÿ']+|[^0-9A-Za-zÀ-ÿ']+$/g, '').trim().toLowerCase();
-  const g = String(en).split('/')[0].replace(/\([^)]*\)/g, '').trim();
-  if (core && g && !glossMap.has(core)) glossMap.set(core, g);
+  const g = String(en).replace(/\([^)]*\)/g, '').split('/')[0].trim(); // strip "(m/f)" BEFORE the slash split
+  if (!g) return;
+  // A slash-form item ("canadien / canadienne", "français / française") must gloss
+  // EACH variant — the sentence uses only one form. Register every variant as a key.
+  for (const variant of String(fr).split('/')) {
+    const core = stripGender(variant).replace(/^[^0-9A-Za-zÀ-ÿ']+|[^0-9A-Za-zÀ-ÿ']+$/g, '').trim().toLowerCase();
+    if (core && !glossMap.has(core)) glossMap.set(core, g);
+  }
 };
 for (const it of items) addGloss(it.fr, it.gloss);
 for (const dir of [path.join(ROOT, 'build/_a1dry'), path.dirname(xlsxPath)]) {
