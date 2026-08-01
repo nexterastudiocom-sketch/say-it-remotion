@@ -140,7 +140,7 @@ for (const appt of bySlot) {
     cpDone++;
     section('INPUT_RETURN', `checkpoint ${cpDone} — the whole exchange, twice`);
     for (let pass = 1; pass <= 2; pass++) {
-      beat('EN·WOMAN', 'RECALL', 3, pass === 1 ? 'The whole conversation. Say each line back after you hear it.' : 'One more time — try to say each line before they do.', '0.6');
+      beat('EN·WOMAN', 'RECALL', 3, pass === 1 ? 'Here is the whole conversation. Repeat each line after you hear it.' : 'Once more — repeat each line after me.', '0.6');
       // Same voice + natural rate as the cold open → byte-identical clips (S-08).
       for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'RECALL', 3, line, '2.0', { rate: 'natural', extra: ['[confirm]'] });
     }

@@ -145,10 +145,16 @@ const { timing } = await import('./qa/pbeat.mjs');
 const HYB = (await timing()).hybrid_pause || {};
 const PRODUCE_PHASES = new Set(['PRODUCE', 'RECALL', 'BUILD']);
 const producedFr = new Set();
-const hybridBase = (modelDur, isNew) => {
-  let p = modelDur * (HYB.say_back_mult ?? 1.3) + (HYB.think_s ?? 1.0);
+// lineMode = producing a whole SENTENCE (build/fluency/checkpoint line), not a single
+// word. A learner recalling + producing a multi-word line needs a bigger say-back
+// factor AND a bigger think buffer, and a much higher ceiling than a single word.
+const hybridBase = (modelDur, isNew, lineMode = false) => {
+  const mult = lineMode ? (HYB.line_say_back_mult ?? 1.7) : (HYB.say_back_mult ?? 1.3);
+  const think = lineMode ? (HYB.line_think_s ?? 2.0) : (HYB.think_s ?? 1.0);
+  let p = modelDur * mult + think;
   if (isNew) p *= (HYB.new_item_bonus ?? 1.15);
-  return Math.max(HYB.floor_s ?? 2.0, Math.min(HYB.ceiling_s ?? 4.5, p));
+  const ceil = lineMode ? (HYB.line_ceiling_s ?? 8.5) : (HYB.ceiling_s ?? 4.5);
+  return Math.max(HYB.floor_s ?? 2.0, Math.min(ceil, p));
 };
 
 const slides = [];
@@ -175,11 +181,13 @@ for (let i = 0; i < parsed.beats.length; i++) {
     if (isProduce) {
       const ans = await clipFor(nxt);                      // MEASURED answer duration
       const isNew = !producedFr.has(nxt.text);
-      const base = +hybridBase(ans.dur, isNew).toFixed(2);
+      const line = ans.dur > 1.8 || wc(nxt.text) >= 3;     // a whole sentence, not one word
+      const base = +hybridBase(ans.dur, isNew, line).toFixed(2);
       producedFr.add(nxt.text);
       cur.beats.push({ durationInSeconds: base, phase: b.phase, level: b.level, stage: b.stage, _prod: true, _base: base });
     } else if (isRepeat) {
-      const base = +hybridBase(clip.dur, false).toFixed(2); // repeat the word just heard
+      const line = clip.dur > 1.8 || wc(b.text) >= 3;      // repeating a whole line
+      const base = +hybridBase(clip.dur, false, line).toFixed(2); // repeat what was just heard
       cur.beats.push({ durationInSeconds: base, phase: b.phase, level: b.level, stage: b.stage, _prod: true, _base: base });
     } else {
       cur.beats.push({ durationInSeconds: +b.pause.toFixed(2), phase: b.phase, level: b.level, stage: b.stage });
