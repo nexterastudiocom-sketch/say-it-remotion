@@ -58,14 +58,18 @@ const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // workbooks; falls back to this lesson's items if the folder isn't there.
 const { readdirSync } = await import('node:fs');
 const glossMap = new Map(); // core(lower) → gloss
+const clean = (s) => stripGender(s).replace(/^[^0-9A-Za-zÀ-ÿ']+|[^0-9A-Za-zÀ-ÿ']+$/g, '').trim().toLowerCase();
+const dropArticle = (s) => s.replace(/^(un|une|le|la|les|des|du|de|d'|l')\s*/i, '').trim();
 const addGloss = (fr, en) => {
   const g = String(en).replace(/\([^)]*\)/g, '').split('/')[0].trim(); // strip "(m/f)" BEFORE the slash split
   if (!g) return;
-  // A slash-form item ("canadien / canadienne", "français / française") must gloss
-  // EACH variant — the sentence uses only one form. Register every variant as a key.
+  // Register every slash-variant ("canadien / canadienne") AND the bare noun with its
+  // leading article dropped ("un artiste" → "artiste", "l'Espagne" → "espagne"), so
+  // whichever form the sentence uses still glosses.
   for (const variant of String(fr).split('/')) {
-    const core = stripGender(variant).replace(/^[^0-9A-Za-zÀ-ÿ']+|[^0-9A-Za-zÀ-ÿ']+$/g, '').trim().toLowerCase();
-    if (core && !glossMap.has(core)) glossMap.set(core, g);
+    for (const form of [clean(variant), clean(dropArticle(variant))]) {
+      if (form && !glossMap.has(form)) glossMap.set(form, g);
+    }
   }
 };
 for (const it of items) addGloss(it.fr, it.gloss);
@@ -78,6 +82,13 @@ for (const dir of [path.join(ROOT, 'build/_a1dry'), path.dirname(xlsxPath)]) {
     }
   } catch { /* dir absent — current items already loaded */ }
 }
+// French function words (prepositions, articles, connectors) that appear inside the
+// build sentences but are never taught items — gloss them too so no French remains
+// in an English line. Only added if not already a taught item.
+const FUNC = { 'à': 'in', 'de': 'from', "d'": 'from', 'du': 'from', 'des': 'some', 'en': 'in', 'dans': 'in',
+  'avec': 'with', 'pour': 'for', 'et': 'and', 'ne': '', 'pas': 'not', 'le': 'the', 'la': 'the', 'les': 'the',
+  'un': 'a', 'une': 'a', 'ou': 'or', 'où': 'where', 'mais': 'but', 'chez': 'at', 'sur': 'on', 'sous': 'under' };
+for (const [k, v] of Object.entries(FUNC)) if (!glossMap.has(k)) glossMap.set(k, v);
 // Replace every taught French word in an English line with its gloss (V-07 safe),
 // longest-first, tolerant of trailing punctuation; then tidy doubled punctuation.
 const enSafe = (text) => {
