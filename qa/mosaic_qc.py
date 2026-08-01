@@ -143,10 +143,22 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+ELISION = {"s", "m", "t", "l", "d", "n", "j", "c", "qu"}  # elided pronouns/articles
+
+
 def _compose_ok(tok, allowed):
-    """A token is allowed if it's directly in the set, OR it's a hyphen compound
-    whose every part is allowed (vingt-cinq = vingt + cinq, both taught)."""
-    return tok in allowed or ("-" in tok and all(p in allowed for p in tok.split("-") if p))
+    """A token is allowed if it's directly in the set, OR a hyphen compound whose
+    every part is allowed (vingt-cinq = vingt + cinq), OR an elided pronoun + a known
+    stem: 's'appelle' is fine once 'appelle' is taught (via 'je m'appelle')."""
+    if tok in allowed:
+        return True
+    if "-" in tok and all(p in allowed for p in tok.split("-") if p):
+        return True
+    if "'" in tok:
+        pre, _, rest = tok.partition("'")
+        if pre in ELISION and _compose_ok(rest, allowed):
+            return True
+    return False
 
 
 # ─────────────────────────────────────────────────────────────
@@ -321,7 +333,13 @@ def run_static(meta, beats, curriculum):
                      # preview teaches each item, so "first utterance is slow" (R-01)
                      # fires on the hook, not the teaching. Rate is still enforced
                      # by the measured R-06 band in Gate B.
-                     "R-01"}
+                     "R-01",
+                     # v2 drills only ever use the lesson's taught items (generated,
+                     # not authored), so V-01 fires only on the LISTEN-ONLY cold-open /
+                     # checkpoint dialogue from the workbook — natural French the
+                     # learner hears (not produces), so untaught glue there is fine.
+                     # V-07 (English voice saying a French word) stays a hard BLOCK.
+                     "V-01", "V-04"}
 
     def add(rid, msg, line=0, ctx=""):
         s = sev.get(rid, "WARN")
