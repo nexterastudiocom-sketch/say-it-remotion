@@ -63,6 +63,13 @@ const dropArticle = (s) => s.replace(/^(un|une|le|la|les|des|du|de|d'|l')\s*/i, 
 const addGloss = (fr, en) => {
   const g = String(en).replace(/\([^)]*\)/g, '').split('/')[0].trim(); // strip "(m/f)" BEFORE the slash split
   if (!g) return;
+  // Placeholder item ("j'ai ... ans" = "I am ... years old"): pair the fragments on
+  // both sides of the "…" so each piece ('ans' → 'years old') glosses on its own.
+  if (/\.\.\.|…/.test(fr) && /\.\.\.|…/.test(g)) {
+    const ff = fr.split(/\s*(?:\.\.\.|…)\s*/), gf = g.split(/\s*(?:\.\.\.|…)\s*/);
+    ff.forEach((frag, i) => { const core = clean(frag), gg = (gf[i] || '').trim(); if (core && gg && !glossMap.has(core)) glossMap.set(core, gg); });
+    return;
+  }
   // Register every slash-variant ("canadien / canadienne") AND the bare noun with its
   // leading article dropped ("un artiste" → "artiste", "l'Espagne" → "espagne"), so
   // whichever form the sentence uses still glosses.
