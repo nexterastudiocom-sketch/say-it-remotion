@@ -171,8 +171,9 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
           <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: heroSize(cueWord), lineHeight: 1.05,
             letterSpacing: '-0.03em', color: 'var(--ink)', maxWidth: 1680, ...fadeUp(frame, fps, 4) }}>{cueWord}</p>
         ) : isEnMeaning ? (
-          <p style={{ fontFamily: 'var(--head)', fontWeight: 600, fontSize: 88, lineHeight: 1.12,
-            color: 'var(--ink)', maxWidth: 1720, ...reveal }}>{spoken.text}</p>
+          // An English meaning shown as the prompt — same hero treatment as a word.
+          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: heroSize(spoken.text || ''), lineHeight: 1.05,
+            letterSpacing: '-0.02em', color: 'var(--ink)', maxWidth: 1680, ...reveal }}>{spoken.text}</p>
         ) : isFr && !imgRel && !wantsImg ? (
           <div style={{ display: 'flex', gap: 24, opacity: 0.28 }}>
             {[0, 1, 2].map((i) => (

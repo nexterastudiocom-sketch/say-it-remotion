@@ -185,11 +185,14 @@ for (const appt of bySlot) {
 // the countdown runs per step. This is the "produce everything you learned" part.
 if (build.length) {
   section('BUILD_LADDER', 'put it all together');
-  beat('EN·WOMAN', 'RECALL', 3, 'Now put it all together — build the whole line, piece by piece.', '0.6');
+  // Instruction ONCE — then just the growing lines. The EN voice reads the ENGLISH
+  // of each line (the prompt), the learner says it in French, the model confirms.
+  // No "say it in French" repeated on every single step.
+  beat('EN·WOMAN', 'BUILD', 3, 'Now build the whole line, piece by piece. I say it in English, you say it in French.', '0.8');
   build.sort((a, c) => a.step - c.step).forEach((b) => {
     const en = enSafe(b.sentence); // English of the line so far (each item → its gloss)
     img(`CHUNK BAR — ${b.sentence} · HIGHLIGHT ${b.mark || 'the new part'}`);
-    beat('EN·MAN', 'BUILD', 3, `Say this in French: "${en}".`, '3.5');
+    beat('EN·MAN', 'BUILD', 3, en, '3.5');   // just the English line — the prompt
     beat('FR·MAN', 'BUILD', 3, b.sentence, '1.0', { rate: 'natural', extra: ['[confirm]'] });
   });
 }
@@ -205,7 +208,7 @@ if (fluency.length) {
 
 // 6) CLOSE — the dialogue once more, unassisted.
 section('CAN_DO_CHECK', 'close — you can do this now');
-beat('EN·WOMAN', 'RECALL', 3, 'Last time. The whole exchange — say each line before they do.', '0.8');
+beat('EN·WOMAN', 'RECALL', 3, 'Last time. Say the whole conversation with me.', '0.8');
 for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'RECALL', 3, line, '2.0', { rate: 'natural', extra: ['[confirm]'] });
 
 // ---- write ------------------------------------------------------------------
