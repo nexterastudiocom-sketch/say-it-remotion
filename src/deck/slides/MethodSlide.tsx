@@ -103,6 +103,9 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
       : /now you/i.test(instruction) ? 'Now you — say it in French:'
         : 'Your turn — say it in French:')
     : instruction;
+  // Hero font scales down for longer text (a single word is huge; a built line like
+  // "hello, ma'am. thank you" must still fit on one comfortable block).
+  const heroSize = (t: string): number => { const n = (t || '').length; return n > 30 ? 88 : n > 20 ? 116 : n > 12 ? 156 : 200; };
 
   // The active picture: a per-beat image (recall/scenario) wins, else the slide's.
   const imgRel = spoken.imageSrc || active.imageSrc || slide.imageSrc;
@@ -154,8 +157,8 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
         {showFrWord ? (
           // French reveal — the instant the model SPEAKS the French, show it big.
           // Takes precedence so the answer always appears when it is voiced.
-          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 200, lineHeight: 1,
-            letterSpacing: '-0.02em', color: 'var(--accent)', ...reveal }}>{spoken.text}</p>
+          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: heroSize(spoken.text || ''), lineHeight: 1.05,
+            letterSpacing: '-0.02em', color: 'var(--accent)', maxWidth: 1680, ...reveal }}>{spoken.text}</p>
         ) : wc ? (
           <div style={{ ...fadeUp(frame, fps, 4) }}>
             <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 176, lineHeight: 1,
@@ -164,9 +167,9 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
               letterSpacing: 2, color: 'var(--ink-2)' }}>[{wc[2].trim()}]</p>
           </div>
         ) : cueWord ? (
-          // While asking — the English word to translate, big in the SAME hero zone.
-          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 200, lineHeight: 1,
-            letterSpacing: '-0.03em', color: 'var(--ink)', ...fadeUp(frame, fps, 4) }}>{cueWord}</p>
+          // While asking — the English word/line to translate, big in the SAME hero zone.
+          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: heroSize(cueWord), lineHeight: 1.05,
+            letterSpacing: '-0.03em', color: 'var(--ink)', maxWidth: 1680, ...fadeUp(frame, fps, 4) }}>{cueWord}</p>
         ) : isEnMeaning ? (
           <p style={{ fontFamily: 'var(--head)', fontWeight: 600, fontSize: 88, lineHeight: 1.12,
             color: 'var(--ink)', maxWidth: 1720, ...reveal }}>{spoken.text}</p>

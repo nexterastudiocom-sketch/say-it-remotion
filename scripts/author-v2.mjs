@@ -140,7 +140,7 @@ for (const appt of bySlot) {
     cpDone++;
     section('INPUT_RETURN', `checkpoint ${cpDone} — the whole exchange, twice`);
     for (let pass = 1; pass <= 2; pass++) {
-      beat('EN·WOMAN', 'RECALL', 3, pass === 1 ? 'The whole conversation — say each line back.' : 'Again — say it with them.', '0.6');
+      beat('EN·WOMAN', 'RECALL', 3, pass === 1 ? 'The whole conversation. Say each line back after you hear it.' : 'One more time — try to say each line before they do.', '0.6');
       // Same voice + natural rate as the cold open → byte-identical clips (S-08).
       for (const [sp, line] of dialogue) beat(dlgVoice(sp), 'RECALL', 3, line, '2.0', { rate: 'natural', extra: ['[confirm]'] });
     }
@@ -179,15 +179,17 @@ for (const appt of bySlot) {
   }
 }
 
-// 4) BUILD LADDER — backward build-up chains (tail-first), one rung per slot.
+// 4) PUT IT TOGETHER — build each conversation line word by word. Every step shows
+// the ENGLISH of the growing line (never the French — V-07), the learner produces
+// the French, then the model confirms. The chunk bar shows the line assembling and
+// the countdown runs per step. This is the "produce everything you learned" part.
 if (build.length) {
-  section('BUILD_LADDER', 'put it together');
-  // The EN voice NEVER reads the French sentence (V-07). It gives a French-free
-  // cue; the learner assembles from the pieces already drilled, then the FR model
-  // confirms. The changed chunk is signalled visually (chunk bar), not spoken.
-  build.sort((a, c) => a.step - c.step).forEach((b, i) => {
-    img(`CHUNK BAR — HIGHLIGHT ${b.mark || 'new chunk'}`);
-    beat('EN·MAN', 'BUILD', 3, i === 0 ? 'Now put the pieces together — say the whole line.' : 'Add the next piece — say the whole line.', '3.5');
+  section('BUILD_LADDER', 'put it all together');
+  beat('EN·WOMAN', 'RECALL', 3, 'Now put it all together — build the whole line, piece by piece.', '0.6');
+  build.sort((a, c) => a.step - c.step).forEach((b) => {
+    const en = enSafe(b.sentence); // English of the line so far (each item → its gloss)
+    img(`CHUNK BAR — ${b.sentence} · HIGHLIGHT ${b.mark || 'the new part'}`);
+    beat('EN·MAN', 'BUILD', 3, `Say this in French: "${en}".`, '3.5');
     beat('FR·MAN', 'BUILD', 3, b.sentence, '1.0', { rate: 'natural', extra: ['[confirm]'] });
   });
 }
