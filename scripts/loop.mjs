@@ -81,12 +81,14 @@ async function publish(id) {
   await writeFile(noteLocal, note);
 
   // Bundle the reloadable project (everything the video was built from, minus the mp4).
+  // Do NOT include the shared image library (public/assets/images/*) — it is the SAME
+  // 847 files for every lesson (~1.4GB), lives in the repo + registry, and bundling it
+  // per lesson filled the whole Drive. registry.json records which images to use.
   const zip = path.join(ROOT, `build/${id}/${id}-bundle.zip`);
   await rm(zip, { force: true });
   const inZip = [
     `lessons/${id}.md`, `src/data/lessons/${id}.method.json`, `build/${id}/manifest.json`,
     `public/assets/audio/${id}`, `assets/images/registry.json`,
-    `public/assets/images/items`, `public/assets/images/scenes`,
     existsSync(path.join(ROOT, `qa/${id}.json`)) ? `qa/${id}.json` : null,
     existsSync(thumb) ? `out/thumbnails/${id}.png` : null,
   ].filter((p) => p && existsSync(path.join(ROOT, p)));
@@ -100,10 +102,13 @@ async function publish(id) {
   } catch (e) { console.log(`  (youtube metadata skipped: ${e.message})`); ytTxt = null; }
 
   log(`publish ${id} → ${lessonFolder}`);
-  rclone(['copyto', noteLocal, `${lessonFolder}/VIDEO-PATH.txt`]);
-  rclone(['copyto', zip, `${lessonFolder}/${id}-bundle.zip`]);
-  if (existsSync(thumb)) rclone(['copyto', thumb, `${lessonFolder}/${id}-thumbnail.png`]);
-  if (ytTxt && existsSync(ytTxt)) rclone(['copyto', ytTxt, `${lessonFolder}/${id}-youtube.txt`]);
+  // Best-effort Drive publish — small files only (pointer, thumbnail, metadata). The
+  // heavy bundle stays LOCAL (build/<id>/<id>-bundle.zip); the videos are local too.
+  // A Drive error (e.g. quota) warns and continues so the render run never halts on it.
+  const put = (src, dst) => { try { rclone(['copyto', src, dst]); } catch (e) { console.log(`  (Drive publish skipped for ${path.basename(dst)}: ${String(e.message).split('\n')[0].slice(0, 80)})`); } };
+  put(noteLocal, `${lessonFolder}/VIDEO-PATH.txt`);
+  if (existsSync(thumb)) put(thumb, `${lessonFolder}/${id}-thumbnail.png`);
+  if (ytTxt && existsSync(ytTxt)) put(ytTxt, `${lessonFolder}/${id}-youtube.txt`);
 }
 
 // -- full pipeline for one workbook -------------------------------------------
