@@ -102,11 +102,13 @@ async function publish(id) {
   } catch (e) { console.log(`  (youtube metadata skipped: ${e.message})`); ytTxt = null; }
 
   log(`publish ${id} → ${lessonFolder}`);
-  // Best-effort Drive publish — small files only (pointer, thumbnail, metadata). The
-  // heavy bundle stays LOCAL (build/<id>/<id>-bundle.zip); the videos are local too.
-  // A Drive error (e.g. quota) warns and continues so the render run never halts on it.
+  // Best-effort Drive publish — a Drive error (e.g. quota) warns and continues so the
+  // render run never halts on it. The bundle no longer carries the shared 1.4GB image
+  // library, so it (and the video) can go to Drive now that there's storage.
   const put = (src, dst) => { try { rclone(['copyto', src, dst]); } catch (e) { console.log(`  (Drive publish skipped for ${path.basename(dst)}: ${String(e.message).split('\n')[0].slice(0, 80)})`); } };
   put(noteLocal, `${lessonFolder}/VIDEO-PATH.txt`);
+  if (existsSync(videoAbs)) put(videoAbs, `${lessonFolder}/${id}.mp4`);
+  if (existsSync(zip)) put(zip, `${lessonFolder}/${id}-bundle.zip`);
   if (existsSync(thumb)) put(thumb, `${lessonFolder}/${id}-thumbnail.png`);
   if (ytTxt && existsSync(ytTxt)) put(ytTxt, `${lessonFolder}/${id}-youtube.txt`);
 }
