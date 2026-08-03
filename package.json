@@ -37,7 +37,8 @@
     "seo:captions": "node scripts/youtube/captions.mjs",
     "seo:channels": "node scripts/youtube/channels.mjs",
     "seo:series": "node scripts/youtube/series.mjs",
-    "seo:test": "node --test scripts/youtube/metadata.test.mjs scripts/youtube/timing.test.mjs scripts/youtube/captions.test.mjs scripts/youtube/channels.test.mjs scripts/youtube/series.test.mjs"
+    "seo:keywords": "node scripts/youtube/keywords.mjs",
+    "seo:test": "node --test scripts/youtube/metadata.test.mjs scripts/youtube/timing.test.mjs scripts/youtube/captions.test.mjs scripts/youtube/channels.test.mjs scripts/youtube/series.test.mjs scripts/youtube/keywords.test.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",
