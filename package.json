@@ -33,7 +33,9 @@
     "qa:i08": "node scripts/qa/gate-b-i08.mjs",
     "qa:author": "node scripts/qa/author.mjs",
     "qa:pbeat": "node scripts/qa/pbeat.mjs",
-    "publish:yt": "node scripts/youtube/publish.mjs"
+    "publish:yt": "node scripts/youtube/publish.mjs",
+    "seo:captions": "node scripts/youtube/captions.mjs",
+    "seo:test": "node --test scripts/youtube/metadata.test.mjs scripts/youtube/timing.test.mjs scripts/youtube/captions.test.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",

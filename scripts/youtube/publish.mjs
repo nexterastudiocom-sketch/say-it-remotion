@@ -14,30 +14,16 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { buildMetadata, fmtTime } from './metadata.mjs';
+import { buildTimeline, deriveChapters as deriveChaptersFromTimeline } from './timing.mjs';
+import { writeCaptions } from './captions.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 
-// Intro-offset correction (see src/deck/IntroVideo.tsx INTRO_VIDEO_FRAMES=308@30fps).
-// The manifest's videoStart uses a stale 4.5s intro; the real rendered intro is
-// 308/30 = 10.2667s. real = videoStart - STALE_INTRO + REAL_INTRO.
-const STALE_INTRO = 4.5;
-const REAL_INTRO = 308 / 30;
-
-const STAGE_TITLES = {
-  CAN_DO_GOAL: 'Your goal',
-  WARM_UP: 'Warm-up',
-  COLD_INPUT: 'Listen',
-  ITEM_BLOCK: 'Meet the words',
-  MICRO_RECALL: 'Quick check',
-  FRAME_INTRO: 'Build a sentence',
-  BUILD_LADDER: 'Build it',
-  INPUT_RETURN: 'Listen again',
-  MAKE_IT_YOURS: 'Make it yours',
-  TRANSFER_TASK: 'Your turn',
-  FLUENCY_ROUND: 'Fluency',
-  CAN_DO_CHECK: 'Recap',
-};
+// Chapter times come from timing.mjs, which replays the renderer's frame maths.
+// They used to be derived from the build manifest's `videoStart`, which
+// accumulates in seconds against a stale 4.5s intro and drifts up to ~2.5s by
+// the end of a lesson — every chapter after the first was mistimed.
 
 function two(n) {
   return String(n).padStart(2, '0');
@@ -74,48 +60,22 @@ function fail(msg) {
   process.exit(1);
 }
 
-// Derive chapters from the build manifest, applying the intro-offset fix and
-// enforcing YouTube's chapter rules (first at 0, >=3, each >=10s apart, ascending).
-function deriveChapters(manifest) {
-  const lines = manifest.lines || [];
-  const firstByStage = [];
-  const seen = new Set();
-  for (const l of lines) {
-    if (!seen.has(l.stage)) {
-      seen.add(l.stage);
-      firstByStage.push({ stage: l.stage, videoStart: l.videoStart });
-    }
-  }
-
-  // Map to real times.
-  const mapped = firstByStage.map((s) => ({
-    title: STAGE_TITLES[s.stage] || s.stage,
-    start: s.videoStart - STALE_INTRO + REAL_INTRO,
-  }));
-
-  // Prepend the brand Intro (0 -> 10.2667s).
-  const withIntro = [{ title: 'Intro', start: 0 }, ...mapped];
-
-  // Enforce >=10s ascending: keep a chapter only if it is >=10s after the last
-  // kept one. Drops (merges) violators — e.g. BUILD_LADDER right after FRAME_INTRO.
-  const kept = [];
-  for (const c of withIntro) {
-    if (kept.length === 0) {
-      kept.push(c);
-      continue;
-    }
-    const last = kept[kept.length - 1];
-    if (c.start - last.start >= 10) kept.push(c);
-  }
-  return kept;
-}
-
+// The words list is the highest-value block in the description after the hook
+// (docs/youtube-seo-spec.md), so the gloss has to be right.
+//
+// meta.glosses is authored with the lesson and aligned by position with
+// meta.items — that is the authority. The image registry is a side store that
+// merely happens to carry a gloss, and it is runtime state: an item with no
+// generated image yet has no entry, which used to degrade the line to
+// "sept — sept" (useless to a searcher, and it reads as a bug to a viewer).
 function buildWords(meta, registry) {
-  const items = registry.items || {};
-  return meta.items.map((w) => {
+  const items = (registry && registry.items) || {};
+  const glosses = Array.isArray(meta.glosses) ? meta.glosses : [];
+  return meta.items.map((w, i) => {
+    const authored = typeof glosses[i] === 'string' ? glosses[i].trim() : '';
     const entry = items[w];
-    const gloss = entry && entry.gloss ? entry.gloss : w;
-    return { word: w, gloss };
+    const fromRegistry = entry && entry.gloss ? String(entry.gloss).trim() : '';
+    return { word: w, gloss: authored || fromRegistry || w };
   });
 }
 
@@ -138,7 +98,6 @@ function loadResolvedLesson(args) {
   const P = resolveInputs(args.lang, args.lesson, args.id);
 
   if (!existsSync(P.methodJson)) fail(`Lesson JSON missing: ${P.methodJson}`);
-  if (!existsSync(P.manifest)) fail(`Build manifest missing (needed for chapters): ${P.manifest}`);
   if (!existsSync(P.channels)) fail(`Channel config missing: ${P.channels}`);
   if (!existsSync(P.registry)) fail(`Image registry missing (needed for glosses): ${P.registry}`);
 
@@ -151,9 +110,10 @@ function loadResolvedLesson(args) {
   if (!seoConfig) fail(`No channel config for lang "${args.lang}" in config/channels.json`);
 
   const registry = readJson(P.registry);
-  const manifest = readJson(P.manifest);
 
-  const chapters = deriveChapters(manifest);
+  // Chapters come from the lesson JSON the renderer itself consumes, so the
+  // timestamps match the encoded film rather than approximating it.
+  const chapters = deriveChaptersFromTimeline(buildTimeline(method));
   const words = buildWords(meta, registry);
 
   // recordingDate = render date (video mtime if present, else today).
@@ -337,8 +297,21 @@ async function main() {
   const thumb = await setThumbnail(auth, videoId, P.thumbnail);
   console.log(`  thumbnail: ${thumb.ok ? 'set' : thumb.skipped ? 'skipped' : 'FAILED'}${thumb.error ? ' — ' + thumb.error : ''}`);
 
-  // Captions optional — repo has no SRT yet; tolerate missing.
-  const capEn = await insertCaptions(auth, videoId, path.join(outDir, 'captions.en.srt'), 'en', 'English');
+  // Captions are generated here, not assumed. They are the highest-value search
+  // signal we produce (see docs/youtube-seo-spec.md) and writeCaptions refuses to
+  // emit a track whose cues would leak into a retrieval gap.
+  let srtPath = path.join(outDir, 'captions.en.srt');
+  try {
+    const cap = writeCaptions({ id: P.id, lang: args.lang, repoRoot: REPO_ROOT, outDir });
+    srtPath = cap.srtPath;
+    console.log(
+      `  captions built: ${cap.stats.cues} cues, ${cap.stats.targetLangCues} in ${args.lang}, ` +
+      `${cap.stats.characters} indexable chars`
+    );
+  } catch (e) {
+    console.warn(`  ⚠ caption generation failed — uploading without captions: ${(e && e.message) || e}`);
+  }
+  const capEn = await insertCaptions(auth, videoId, srtPath, 'en', 'English');
   console.log(`  captions(en): ${capEn.ok ? 'set' : 'skipped'}${capEn.error ? ' — ' + capEn.error : ''}`);
 
   const playlistId = (seoConfig.playlists && seoConfig.playlists[meta.level]) || '';
