@@ -1,7 +1,28 @@
 # Say It — YouTube Metadata & SEO Spec
 
-Source of truth for every field written by `scripts/youtube/metadata.js`.
+Source of truth for every field written by `scripts/youtube/metadata.mjs`.
 Change this file, not the code, when tuning SEO.
+
+---
+
+## The pipeline
+
+| Step | Command | What it owns |
+|---|---|---|
+| Connect | `npm run seo:channels -- --connect fr` | OAuth, channel id, find-or-create the course playlist, write `config/channels.json`. `--status` reports what is missing. |
+| Captions | `npm run seo:captions -- --id <id>` | SRT/VTT/transcript from the frame-exact timeline. Runs automatically during publish. |
+| Keywords | `npm run seo:keywords -- --id <id>` | Autocomplete research → proposed tags (apply as-is) and titles (editorial). |
+| Localize | `node --env-file=.env scripts/youtube/localize.mjs --id <id>` | Translated title/description per viewer UI language. |
+| Publish | `npm run publish:yt -- --lang fr --lesson N` | Metadata + upload + captions + thumbnail + playlist. |
+| Series | `npm run seo:series -- --lang fr --backfill` | Playlist/NEXT/PREV links across the whole course, including already-published videos. |
+
+Tests: `npm run seo:test`.
+
+**Timing comes from `timing.mjs`, never from the build manifest.** The manifest's
+`videoStart` accumulates in seconds against a stale 4.5s intro; the renderer
+accumulates in frames with a 308-frame intro. They diverge by up to ~2.5s by the
+end of a lesson. `timing.mjs` replays the renderer's own arithmetic and is
+verified against the encoded films.
 
 ---
 
@@ -13,6 +34,7 @@ value:
 1. **Search** — "learn french for beginners", "french greetings lesson". Won by title,
    description, and **caption text**. Captions are indexed and are the most under-used
    lever available; the transcripts already exist, so this is free ranking signal.
+   Now generated — see **Captions** below.
 2. **Suggested / next-video** — won by playlist structure and session duration. A viewer
    who finishes Lesson 3 and rolls into Lesson 4 is worth more than a new impression.
 3. **Browse** — won by CTR on thumbnail + title.
@@ -121,9 +143,34 @@ titles** — chapter text is indexed and gives a second surface for word-level s
 
 ---
 
+## Captions
+
+`scripts/youtube/captions.mjs` writes `out/<lang>/<id>/captions.en.srt` (+ `.vtt` and a
+plain transcript) and `publish.mjs` uploads it. The track is a verbatim transcript of what
+is audible — English narration plus the target-language words as spoken — labelled `en` to
+match `defaultAudioLanguage`. Across the A1 course that is ~170k characters of indexable
+text that previously did not exist.
+
+**The pedagogy constrains the format.** Captions put text on screen, and rules X-06 / I-05
+forbid on-screen French during a retrieval gap. So:
+
+- a cue never outlives the beat that produced it;
+- silent beats produce no cue at all;
+- adjacent beats are never merged, and long narration subdivides its own span;
+- `assertNoGapLeak` re-checks every cue against the timeline and throws.
+
+Do not "improve" captions by extending cues to fill dead air. That dead air is the lesson.
+
+---
+
 ## Tags
 
 **Cap 500 characters total.** ~30–40 tags.
+
+Researched by `scripts/youtube/keywords.mjs` against YouTube autocomplete, then filtered:
+a phrase survives only if every content word in it is justified by the lesson's own
+vocabulary, its topic, or a generic learning lexicon — and numeric claims are checked
+against the numbers the lesson teaches. This is the enforcement risk below, mechanised.
 
 ⚠️ **Enforcement risk.** YouTube documents unrelated or misleading tags as a cause of
 videos being locked private. That outcome is not appealable — the video has to be
@@ -160,9 +207,16 @@ generated. Declaring it is the honest call and costs nothing — the disclosure 
 educational content is unremarkable to viewers, while an undisclosed synthetic voice
 discovered later is a policy problem.
 
-**`localizations`:** worth adding translated titles and descriptions per channel later.
-YouTube serves them by viewer UI language, which opens each course to searches in other
-languages. Defer until the base flow is stable.
+**`localizations`:** built by `scripts/youtube/localize.mjs`. YouTube serves them by
+viewer UI language, which opens each course to searches in other languages. Defaults to
+`es,pt,de,it`.
+
+The taught words, chapter timestamps and URLs are **invariants**: extracted from the
+English original, required verbatim in the translation, and the localization is rejected
+if any went missing. A translation that renders `sept — seven` as `siete — siete` has
+destroyed the lesson; one that renders `7:09` as `7.09` silently disables chapters. A
+model instruction is not a guarantee — the check is. A rejected locale is retried once
+with the failures fed back, then omitted; a partial set beats a wrong one.
 
 ---
 

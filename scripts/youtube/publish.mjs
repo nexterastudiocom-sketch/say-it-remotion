@@ -72,6 +72,20 @@ function loadResolvedLesson(args) {
     fail((e && e.message) || String(e));
   }
 
+  // Translated title/description per viewer UI language, if they have been
+  // generated (scripts/youtube/localize.mjs). Optional — absence is normal.
+  const locPath = path.join(REPO_ROOT, 'out', args.lang, loaded.P.id, 'localizations.json');
+  if (existsSync(locPath)) {
+    try {
+      const localizations = readJson(locPath);
+      if (localizations && Object.keys(localizations).length) {
+        loaded.localizations = localizations;
+      }
+    } catch (e) {
+      console.warn(`⚠ ignoring unreadable ${path.relative(REPO_ROOT, locPath)}: ${e.message}`);
+    }
+  }
+
   // Overrides file (optional) merged LAST inside buildMetadata.
   let overrides = {};
   if (args.metadata) {
@@ -108,6 +122,14 @@ function printDryRun(resource, lesson) {
   console.log(`\nCHAPTERS (${lesson.chapters.length}):`);
   for (const c of lesson.chapters) console.log(`  ${fmtTime(c.start)}  ${c.title}`);
 
+  const locales = Object.keys(resource.localizations || {});
+  if (locales.length) {
+    console.log(`\nLOCALIZATIONS (${locales.length}) — served by the viewer's UI language:`);
+    for (const l of locales) {
+      console.log(`  ${l}: ${resource.localizations[l].title}`);
+    }
+  }
+
   console.log('\nSTRUCTURED FIELDS:');
   console.log(`  categoryId:              ${snippet.categoryId}`);
   console.log(`  defaultLanguage:         ${snippet.defaultLanguage}`);
@@ -134,7 +156,7 @@ async function main() {
     fail('Refusing --privacy public. Upload is always private on insert; going live is a separate manual step.');
   }
 
-  const { P, lesson, seoConfig, overrides, meta } = loadResolvedLesson(args);
+  const { P, lesson, seoConfig, overrides, meta, localizations } = loadResolvedLesson(args);
 
   // Resolution note (current renders are 540p preview) — warn only, never fail.
   if (existsSync(P.video) && /540p/.test(P.video)) {
@@ -148,6 +170,7 @@ async function main() {
   try {
     resource = buildMetadata(lesson, overrides, seoConfig);
     resource.status.privacyStatus = args.privacy || 'private'; // never public (guarded above)
+    if (localizations) resource.localizations = localizations;
   } catch (e) {
     fail(`Metadata failed validation: ${e.message}`);
   }

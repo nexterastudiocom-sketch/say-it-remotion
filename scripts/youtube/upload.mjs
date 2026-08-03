@@ -76,6 +76,17 @@ function clearSession(lang, id) {
   }
 }
 
+// The API only writes the parts it is told about. `localizations` is optional,
+// so it has to be added to the part list when present — naming a part with no
+// matching body is an error, and omitting one silently discards it.
+export function partsFor(resource) {
+  const parts = ['snippet', 'status', 'recordingDetails'];
+  if (resource && resource.localizations && Object.keys(resource.localizations).length) {
+    parts.push('localizations');
+  }
+  return parts;
+}
+
 function statusOf(err) {
   return (err && (err.code || (err.response && err.response.status))) || 0;
 }
@@ -105,7 +116,7 @@ export async function uploadVideo({ lang, lesson, id, videoPath, resource, auth,
   const existing = findLogEntry(lang, lesson);
   if (existing && existing.videoId) {
     const res = await youtube.videos.update({
-      part: ['snippet', 'status', 'recordingDetails'],
+      part: partsFor(resource),
       requestBody: { id: existing.videoId, ...resource },
     });
     const videoId = res.data.id;
@@ -133,7 +144,7 @@ export async function uploadVideo({ lang, lesson, id, videoPath, resource, auth,
       writeSession(lang, id, `in-flight:${new Date().toISOString()}`);
       const res = await youtube.videos.insert(
         {
-          part: ['snippet', 'status', 'recordingDetails'],
+          part: partsFor(resource),
           notifySubscribers: false,
           requestBody: resource,
           media: { body: createReadStream(videoPath) },
