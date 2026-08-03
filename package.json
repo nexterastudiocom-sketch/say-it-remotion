@@ -35,7 +35,9 @@
     "qa:pbeat": "node scripts/qa/pbeat.mjs",
     "publish:yt": "node scripts/youtube/publish.mjs",
     "seo:captions": "node scripts/youtube/captions.mjs",
-    "seo:test": "node --test scripts/youtube/metadata.test.mjs scripts/youtube/timing.test.mjs scripts/youtube/captions.test.mjs"
+    "seo:channels": "node scripts/youtube/channels.mjs",
+    "seo:series": "node scripts/youtube/series.mjs",
+    "seo:test": "node --test scripts/youtube/metadata.test.mjs scripts/youtube/timing.test.mjs scripts/youtube/captions.test.mjs scripts/youtube/channels.test.mjs scripts/youtube/series.test.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",

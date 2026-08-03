@@ -9,13 +9,14 @@
 // needs NO credentials. Default --privacy is "private" (public must be typed).
 // Exits non-zero on any failure so CI can gate on it.
 
-import { readFileSync, existsSync, statSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { buildMetadata, fmtTime } from './metadata.mjs';
-import { buildTimeline, deriveChapters as deriveChaptersFromTimeline } from './timing.mjs';
 import { writeCaptions } from './captions.mjs';
+import { loadLesson } from './lesson.mjs';
+import { resolveLinksForLesson } from './series.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
@@ -24,10 +25,6 @@ const REPO_ROOT = path.resolve(__dirname, '..', '..');
 // They used to be derived from the build manifest's `videoStart`, which
 // accumulates in seconds against a stale 4.5s intro and drifts up to ~2.5s by
 // the end of a lesson — every chapter after the first was mistimed.
-
-function two(n) {
-  return String(n).padStart(2, '0');
-}
 
 function parseArgs(argv) {
   const args = { privacy: 'private', dryRun: false, skipQc: false };
@@ -60,73 +57,20 @@ function fail(msg) {
   process.exit(1);
 }
 
-// The words list is the highest-value block in the description after the hook
-// (docs/youtube-seo-spec.md), so the gloss has to be right.
-//
-// meta.glosses is authored with the lesson and aligned by position with
-// meta.items — that is the authority. The image registry is a side store that
-// merely happens to carry a gloss, and it is runtime state: an item with no
-// generated image yet has no entry, which used to degrade the line to
-// "sept — sept" (useless to a searcher, and it reads as a bug to a viewer).
-function buildWords(meta, registry) {
-  const items = (registry && registry.items) || {};
-  const glosses = Array.isArray(meta.glosses) ? meta.glosses : [];
-  return meta.items.map((w, i) => {
-    const authored = typeof glosses[i] === 'string' ? glosses[i].trim() : '';
-    const entry = items[w];
-    const fromRegistry = entry && entry.gloss ? String(entry.gloss).trim() : '';
-    return { word: w, gloss: authored || fromRegistry || w };
-  });
-}
-
-function resolveInputs(lang, lesson, idOverride) {
-  const id = idOverride || `lesson-${two(lesson)}`;
-  const paths = {
-    id,
-    methodJson: path.join(REPO_ROOT, 'src', 'data', 'lessons', `${id}.method.json`),
-    manifest: path.join(REPO_ROOT, 'build', id, 'manifest.json'),
-    registry: path.join(REPO_ROOT, 'assets', 'images', 'registry.json'),
-    channels: path.join(REPO_ROOT, 'config', 'channels.json'),
-    video: path.join(REPO_ROOT, 'out', `${id}-method-540p-norm.mp4`),
-    thumbnail: path.join(REPO_ROOT, 'out', 'thumbnails', `${id}.png`),
-    transcript: path.join(REPO_ROOT, 'lessons', `${id}.md`),
-  };
-  return paths;
-}
-
 function loadResolvedLesson(args) {
-  const P = resolveInputs(args.lang, args.lesson, args.id);
-
-  if (!existsSync(P.methodJson)) fail(`Lesson JSON missing: ${P.methodJson}`);
-  if (!existsSync(P.channels)) fail(`Channel config missing: ${P.channels}`);
-  if (!existsSync(P.registry)) fail(`Image registry missing (needed for glosses): ${P.registry}`);
-
-  const method = readJson(P.methodJson);
-  const meta = method.meta;
-  if (!meta || !Array.isArray(meta.items)) fail('Lesson JSON has no meta.items');
-
-  const channels = readJson(P.channels);
-  const seoConfig = channels[args.lang];
-  if (!seoConfig) fail(`No channel config for lang "${args.lang}" in config/channels.json`);
-
-  const registry = readJson(P.registry);
-
-  // Chapters come from the lesson JSON the renderer itself consumes, so the
-  // timestamps match the encoded film rather than approximating it.
-  const chapters = deriveChaptersFromTimeline(buildTimeline(method));
-  const words = buildWords(meta, registry);
-
-  // recordingDate = render date (video mtime if present, else today).
-  let recordingDate = new Date();
-  if (existsSync(P.video)) recordingDate = statSync(P.video).mtime;
-
-  const lesson = {
-    meta,
-    chapters,
-    words,
-    recordingDate: recordingDate.toISOString(),
-    links: {}, // playlist/next/prev filled by overrides or later publishing steps
-  };
+  let loaded;
+  try {
+    // Links are resolved from the series ledger so a lesson published today
+    // links to the one published yesterday (see series.mjs).
+    loaded = loadLesson({
+      lang: args.lang,
+      lesson: args.lesson,
+      id: args.id,
+      links: resolveLinksForLesson(args.lang, args.lesson),
+    });
+  } catch (e) {
+    fail((e && e.message) || String(e));
+  }
 
   // Overrides file (optional) merged LAST inside buildMetadata.
   let overrides = {};
@@ -136,7 +80,7 @@ function loadResolvedLesson(args) {
     overrides = readJson(op);
   }
 
-  return { P, lesson, seoConfig, overrides, meta };
+  return { ...loaded, overrides };
 }
 
 function printDryRun(resource, lesson) {
