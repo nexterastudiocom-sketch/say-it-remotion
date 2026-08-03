@@ -643,10 +643,11 @@ def run_static(meta, beats, curriculum):
         n = exposure[item]
         if n == 1 and b.rate not in ("slow", "very_slow"):
             add("R-01", f"first utterance of '{item}' at {b.rate}", b.line)
-        # A syllable split has the ellipsis TOUCHING a word (bon... jour); a free-
-        # standing "..." with spaces both sides is a slot placeholder (j'ai ... ans)
-        # to be spoken normally, not a split — only the former must be very_slow.
-        if re.search(r"\S(?:\.\.\.|…)|(?:\.\.\.|…)\S", b.text):
+        # A syllable split has the ellipsis TOUCHING a letter on the left AND a word
+        # continuing after (bon...jour → bon + jour). A trailing ellipsis (dit-on... ?)
+        # is followed by punctuation, and a free-standing "..." (j'ai ... ans) has a
+        # space before it — neither is a split, both are spoken normally.
+        if re.search(r"[A-Za-zÀ-ÿ](?:\.\.\.|…)\s*[A-Za-zÀ-ÿ]", b.text):
             if b.rate != "very_slow":
                 add("R-02", f"syllable-split line at {b.rate}, must be very_slow", b.line)
         if b.rate == "natural" and n < 3 and b.stage in ("ITEM_BLOCK",):
