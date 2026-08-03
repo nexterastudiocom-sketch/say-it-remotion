@@ -41,6 +41,9 @@ const rclone = (a, capture = false) => {
   }
 };
 const log = (m) => console.log(`\n▶ ${m}`);
+// Drive-side branding: published folders + files read "Mosaic_…" not "Say_It_…"
+// (the workbooks/lesson ids keep their names; only what lands on Drive is rebranded).
+const brand = (s) => String(s).replace(/^Say[ _]?It/i, 'Mosaic');
 
 // -- intake listing -----------------------------------------------------------
 function intakeWorkbooks() {
@@ -58,7 +61,8 @@ if (args.includes('--list')) {
 
 // -- build the reloadable bundle + the video-path note, then push to Drive -----
 async function publish(id) {
-  const lessonFolder = `${BASE}/${id}`;
+  const bid = brand(id);                    // Mosaic_… folder + file names on Drive
+  const lessonFolder = `${BASE}/${bid}`;
   rclone(['mkdir', lessonFolder]);
   const video = path.join(ROOT, `out/${id}-method-540p-norm.mp4`);
   const videoAbs = existsSync(video) ? video : path.join(ROOT, `out/${id}-method-540p.mp4`);
@@ -107,10 +111,10 @@ async function publish(id) {
   // library, so it (and the video) can go to Drive now that there's storage.
   const put = (src, dst) => { try { rclone(['copyto', src, dst]); } catch (e) { console.log(`  (Drive publish skipped for ${path.basename(dst)}: ${String(e.message).split('\n')[0].slice(0, 80)})`); } };
   put(noteLocal, `${lessonFolder}/VIDEO-PATH.txt`);
-  if (existsSync(videoAbs)) put(videoAbs, `${lessonFolder}/${id}.mp4`);
-  if (existsSync(zip)) put(zip, `${lessonFolder}/${id}-bundle.zip`);
-  if (existsSync(thumb)) put(thumb, `${lessonFolder}/${id}-thumbnail.png`);
-  if (ytTxt && existsSync(ytTxt)) put(ytTxt, `${lessonFolder}/${id}-youtube.txt`);
+  if (existsSync(videoAbs)) put(videoAbs, `${lessonFolder}/${bid}.mp4`);
+  if (existsSync(zip)) put(zip, `${lessonFolder}/${bid}-bundle.zip`);
+  if (existsSync(thumb)) put(thumb, `${lessonFolder}/${bid}-thumbnail.png`);
+  if (ytTxt && existsSync(ytTxt)) put(ytTxt, `${lessonFolder}/${bid}-youtube.txt`);
 }
 
 // -- full pipeline for one workbook -------------------------------------------
@@ -181,7 +185,7 @@ async function processWorkbook(name) {
 
   log(`mark done → move ${name} out of intake`);
   const base = name.replace(/\.xlsx$/i, '');
-  rclone(['moveto', `${INTAKE}/${name}`, `${BASE}/${id}/${base}-done.xlsx`]);
+  rclone(['moveto', `${INTAKE}/${name}`, `${BASE}/${brand(id)}/${brand(base)}-done.xlsx`]);
   console.log(`✓ ${id} complete — workbook moved to ${id}/${base}-done.xlsx`);
 }
 
