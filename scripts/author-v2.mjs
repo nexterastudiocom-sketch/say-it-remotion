@@ -106,6 +106,11 @@ const FUNC = { 'à': 'in', 'de': 'from', "d'": 'from', 'du': 'from', 'des': 'som
   'un': 'a', 'une': 'a', 'ou': 'or', 'où': 'where', 'mais': 'but', 'chez': 'at', 'sur': 'on', 'sous': 'under',
   // common A1 words that appear as FRAGMENTS of multi-word items ("avoir mal à" → mal)
   'mal': 'badly', 'bien': 'well', 'très': 'very', 'trop': 'too', 'aussi': 'too', 'beaucoup': 'a lot',
+  // "avoir X" state expressions (avoir faim/soif/…) — the bare noun leaks
+  'faim': 'hungry', 'soif': 'thirsty', 'chaud': 'hot', 'froid': 'cold', 'sommeil': 'sleepy',
+  'raison': 'right', 'tort': 'wrong', 'peur': 'afraid', 'besoin': 'need', 'envie': 'want',
+  // common body parts (health lessons)
+  'tête': 'head', 'dos': 'back', 'gorge': 'throat', 'ventre': 'stomach', 'jambe': 'leg', 'bras': 'arm', 'pied': 'foot',
   'avoir': 'have', 'être': 'be', 'faire': 'do', 'aller': 'go', 'ça': 'it', 'moi': 'me', 'toi': 'you',
   // subject pronouns (appear with conjugated verbs: "tu prends", "il vient")
   'je': 'I', 'tu': 'you', 'il': 'he', 'elle': 'she', 'on': 'we', 'nous': 'we', 'vous': 'you', 'ils': 'they', 'elles': 'they' };
