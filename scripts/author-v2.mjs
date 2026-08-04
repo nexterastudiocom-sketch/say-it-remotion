@@ -77,6 +77,15 @@ const addGloss = (fr, en) => {
     for (const form of [clean(variant), clean(dropArticle(variant))]) {
       if (form && !glossMap.has(form)) glossMap.set(form, g);
     }
+    // Conjugated-verb item ("je prends" = "I take"): also register the bare VERB
+    // ("prends" → "take") so other subjects ("tu prends") gloss. Strip the leading
+    // subject pronoun from both the French and its English gloss.
+    const m = /^\s*(je|j'|tu|il|elle|on|nous|vous|ils|elles)\s+(.+)$/i.exec(variant);
+    if (m) {
+      const verbFr = clean(m[2]);
+      const verbEn = g.replace(/^(i|you|he|she|it|we|they)\s+/i, '').trim();
+      if (verbFr && verbEn && !glossMap.has(verbFr)) glossMap.set(verbFr, verbEn);
+    }
   }
 };
 for (const it of items) addGloss(it.fr, it.gloss);
@@ -97,7 +106,9 @@ const FUNC = { 'à': 'in', 'de': 'from', "d'": 'from', 'du': 'from', 'des': 'som
   'un': 'a', 'une': 'a', 'ou': 'or', 'où': 'where', 'mais': 'but', 'chez': 'at', 'sur': 'on', 'sous': 'under',
   // common A1 words that appear as FRAGMENTS of multi-word items ("avoir mal à" → mal)
   'mal': 'badly', 'bien': 'well', 'très': 'very', 'trop': 'too', 'aussi': 'too', 'beaucoup': 'a lot',
-  'avoir': 'have', 'être': 'be', 'faire': 'do', 'aller': 'go', 'ça': 'it', 'moi': 'me', 'toi': 'you' };
+  'avoir': 'have', 'être': 'be', 'faire': 'do', 'aller': 'go', 'ça': 'it', 'moi': 'me', 'toi': 'you',
+  // subject pronouns (appear with conjugated verbs: "tu prends", "il vient")
+  'je': 'I', 'tu': 'you', 'il': 'he', 'elle': 'she', 'on': 'we', 'nous': 'we', 'vous': 'you', 'ils': 'they', 'elles': 'they' };
 for (const [k, v] of Object.entries(FUNC)) if (!glossMap.has(k)) glossMap.set(k, v);
 // Replace every taught French word in an English line with its gloss (V-07 safe),
 // longest-first, tolerant of trailing punctuation; then tidy doubled punctuation.
