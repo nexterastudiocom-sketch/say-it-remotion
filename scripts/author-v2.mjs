@@ -94,7 +94,10 @@ for (const dir of [path.join(ROOT, 'build/_a1dry'), path.dirname(xlsxPath)]) {
 // in an English line. Only added if not already a taught item.
 const FUNC = { 'à': 'in', 'de': 'from', "d'": 'from', 'du': 'from', 'des': 'some', 'en': 'in', 'dans': 'in',
   'avec': 'with', 'pour': 'for', 'et': 'and', 'ne': '', 'pas': 'not', 'le': 'the', 'la': 'the', 'les': 'the',
-  'un': 'a', 'une': 'a', 'ou': 'or', 'où': 'where', 'mais': 'but', 'chez': 'at', 'sur': 'on', 'sous': 'under' };
+  'un': 'a', 'une': 'a', 'ou': 'or', 'où': 'where', 'mais': 'but', 'chez': 'at', 'sur': 'on', 'sous': 'under',
+  // common A1 words that appear as FRAGMENTS of multi-word items ("avoir mal à" → mal)
+  'mal': 'badly', 'bien': 'well', 'très': 'very', 'trop': 'too', 'aussi': 'too', 'beaucoup': 'a lot',
+  'avoir': 'have', 'être': 'be', 'faire': 'do', 'aller': 'go', 'ça': 'it', 'moi': 'me', 'toi': 'you' };
 for (const [k, v] of Object.entries(FUNC)) if (!glossMap.has(k)) glossMap.set(k, v);
 // Replace every taught French word in an English line with its gloss (V-07 safe),
 // longest-first, tolerant of trailing punctuation; then tidy doubled punctuation.
