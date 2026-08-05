@@ -193,7 +193,14 @@ for (const appt of bySlot) {
   }
   const it = items.find((x) => x.fr === appt.ref);
   const voice = it.core ? 'FR·MAN' : 'FR·WOMAN';
-  const g = enSafe(it.gloss.split('/')[0].trim());
+  // The gloss is ALREADY the authored English — do not run it through enSafe.
+  // enSafe rewrites any token that matches a French core, and an item's own gloss
+  // matches its own entry: "le bus" registers bus → "the bus", so glossing the
+  // gloss produced "the the bus". French/English homographs did the same damage
+  // across items ("tu as" registers as → have, turning "as... que" into
+  // "have. have"; likewise a/on/son/but/car/plus). The learner saw the corrupted
+  // string as their production cue.
+  const g = it.gloss.split('/')[0].trim();
   const n = (exposures.get(it.fr) || 0) + 1;
   exposures.set(it.fr, n);
   const rate = n < 3 ? 'slow' : 'natural'; // slow for the first 2 exposures (R-03)
