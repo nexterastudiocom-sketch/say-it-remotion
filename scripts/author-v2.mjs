@@ -123,6 +123,14 @@ const enSafe = (text) => {
     t = t.replace(new RegExp(`(?<![0-9A-Za-zÀ-ÿ])${esc(core)}(?![0-9A-Za-zÀ-ÿ])`, 'gi'), glossMap.get(core));
   return t.replace(/\s*([!?.,])\s*\1+/g, '$1').replace(/\s+([!?.,])/g, '$1').replace(/\s{2,}/g, ' ').trim();
 };
+// Safety net: does an already-glossed English line STILL contain a taught French
+// word (which V-07 would BLOCK)? Checks each current-lesson item's component words
+// (≥4 chars, to skip cognates/short function words). If it leaks, the build ladder
+// falls back to a French-free cue — the run never halts on an imperfectly-glossable
+// build sentence, and the EN voice still never says French.
+const curItemWords = new Set();
+for (const it of items) for (const wd of stripGender(it.fr).toLowerCase().split(/[^a-zà-ÿ']+/)) if (wd.length >= 4) curItemWords.add(wd);
+const leaksFrench = (en) => [...curItemWords].some((wd) => new RegExp(`(?<![a-zà-ÿ])${esc(wd)}(?![a-zà-ÿ])`, 'i').test(en));
 // Proper names in the dialogue → declared so V-01 allows them.
 const FR_STOP = new Set(['je', 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'et', 'ça', 'va', 'bien', 'comment', 'oui', 'non', 'merci', 'bonjour', 'bonsoir', 'salut', 'madame', 'monsieur', 'pardon', 'le', 'la', 'les', 'un', 'une', 'de', 'du', 'à', 'est', 'moi', 'toi', 'revoir', 'appelle', 'comme', 'ci', 'très', 'aussi']);
 // Proper nouns (character names AND place names like Paris/France) appear across
@@ -256,8 +264,11 @@ if (build.length) {
   beat('EN·WOMAN', 'BUILD', 3, 'Now build the whole line, piece by piece. I say it in English, you say it in French.', '0.8');
   build.sort((a, c) => a.step - c.step).forEach((b) => {
     const en = enSafe(b.sentence); // English of the line so far (each item → its gloss)
+    // If any French word survived glossing, don't speak it — fall back to a clean
+    // French-free cue (V-07 can never fire on the build ladder).
+    const cue = leaksFrench(en) ? 'Now say this whole line in French.' : en;
     img(`CHUNK BAR — ${b.sentence} · HIGHLIGHT ${b.mark || 'the new part'}`);
-    beat('EN·MAN', 'BUILD', 3, en, '3.5');   // just the English line — the prompt
+    beat('EN·MAN', 'BUILD', 3, cue, '3.5');
     beat('FR·MAN', 'BUILD', 3, b.sentence, '1.0', { rate: 'natural', extra: ['[confirm]'] });
   });
 }
