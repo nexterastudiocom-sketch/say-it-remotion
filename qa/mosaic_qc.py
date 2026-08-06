@@ -112,7 +112,10 @@ FR_VOWELS = set("aeiouyàâäéèêëîïôöùûüÿœæ")
 def fr_syllables(text: str) -> int:
     t = text.lower()
     t = re.sub(r"[^a-zà-öø-ÿ'’\s]", " ", t)
-    t = t.replace("'", " ").replace("’", " ")
+    # Elision joins, not splits: "s'il" is one syllable, so the apostrophe is
+    # DELETED (s'il → sil), not turned into a space (which would count s + il = 2
+    # and inflate every P(beat) on an elided item). Matches scripts/qa/pbeat.mjs.
+    t = t.replace("'", "").replace("’", "")
     total = 0
     for word in t.split():
         if not word:
@@ -260,7 +263,7 @@ def est_audio(text: str, rate: str, cfg) -> float:
     return fr_syllables(text) * cfg["syllable_seconds"] * f
 
 
-def beat_role(b: Beat, nxt: Beat | None, cfg) -> str:
+def beat_role(b: Beat, nxt: Beat | None, cfg, prev: Beat | None = None) -> str:
     """Classify a beat's pause for the pause algorithm."""
     tl = [t.lower() for t in b.tags]
     if "written" in tl or ("write" in b.text.lower() and b.is_en):
@@ -272,6 +275,19 @@ def beat_role(b: Beat, nxt: Beat | None, cfg) -> str:
             return {2: "read_aloud", 3: "produce_meaning",
                     4: "produce_situation", 5: "produce_cold"}.get(b.level, "produce_meaning")
         if b.stage in ("MAKE_IT_YOURS", "TRANSFER_TASK"):
+            # A line that only introduces the model answer ("Here is one way…")
+            # is a REVEAL LEAD-IN, not a retrieval gap — the learner already
+            # produced during the [written] pause IMMEDIATELY ABOVE it. Its pause
+            # is just the breath before the FR answer plays, so it must not be
+            # sized as production (that would put 8-14s of dead air before the
+            # reveal). The preceding [written] beat is what makes it a lead-in and
+            # not a prompt: a real prompt ("…Say your reply." → FR confirm) has no
+            # production beat before it and stays produce_situation/produce_cold.
+            if (nxt is not None and nxt.is_fr
+                    and "confirm" in [t.lower() for t in nxt.tags]
+                    and prev is not None and prev.segment == b.segment
+                    and "written" in [t.lower() for t in prev.tags]):
+                return "en_instruction"
             return "produce_situation" if b.level < 5 else "produce_cold"
         if b.phase == "NOTE" or "note" in b.segment.lower():
             return "note"
@@ -284,6 +300,30 @@ def beat_role(b: Beat, nxt: Beat | None, cfg) -> str:
     if b.level <= 1:
         return "copy"
     return "confirm"
+
+
+def production_target(beats, i: int, nxt: Beat | None) -> str:
+    """The FR text a production pause is sized for — what the LEARNER must say.
+
+    Usually the confirm beat that follows. But a block's last self-test ("Now
+    you've heard it. Say it again.") is followed by the NEXT segment's header,
+    so there is no FR beat after it; falling back to the beat's own ENGLISH text
+    would French-syllable-count an English sentence and inflate the pause wildly
+    (every such beat lands on the same bogus value). Resolve to the item this
+    segment actually teaches instead: the nearest preceding FR beat in the same
+    segment, else the item named in the segment header ("04 · ITEM_BLOCK · bonjour").
+    """
+    if nxt is not None and nxt.is_fr:
+        return nxt.text
+    b = beats[i]
+    for prev in reversed(beats[:i]):
+        if prev.segment != b.segment:
+            break
+        if prev.is_fr and prev.text:
+            return prev.text
+    if "·" in b.segment:
+        return b.segment.split("·")[-1].strip()
+    return b.text
 
 
 def is_production(role: str) -> bool:
@@ -514,7 +554,7 @@ def run_static(meta, beats, curriculum):
                 add("C-02", "'your turn' preceded by an FR model in the same step", b.line)
             if b.level >= 0 and b.level < 2:
                 add("C-05", f"produce cue at L{b.level}; produce cues are L2+", b.line)
-        role = beat_role(b, nxt, cfg)
+        role = beat_role(b, nxt, cfg, beats[i - 1] if i else None)
         if is_production(role) and role not in ("written", "fluency") and b.phase != "REPAIR":
             if not (nxt and nxt.is_fr):
                 add("C-03", f"production pause not followed by an FR confirm ({role})", b.line)
@@ -570,10 +610,13 @@ def run_static(meta, beats, curriculum):
     # single card slide → "ma'am" on screen while the voice said "hello". Dialogue and
     # assembly stages (COLD_INPUT / INPUT_RETURN / BUILD_LADDER / FLUENCY_ROUND)
     # legitimately voice many lines, so only the word-card stages are checked.
+    # MICRO_RECALL is NOT one: it bakes to a 'practice' slide with no word card
+    # ("Screen stays blank"), because it is an L3+ retrieval check — showing the
+    # French there is what I-05/X-06 forbid. It may drill several items per slide.
     item_set = set(items)
     teach_words = {}
     for b in beats:
-        if b.stage in ("ITEM_BLOCK", "MICRO_RECALL") and b.is_fr:
+        if b.stage == "ITEM_BLOCK" and b.is_fr:
             t = norm(b.text)
             if t in item_set:
                 teach_words.setdefault(b.segment, set()).add(t)
@@ -585,7 +628,7 @@ def run_static(meta, beats, curriculum):
     prev_long = False
     for i, b in enumerate(beats):
         nxt = beats[i + 1] if i + 1 < len(beats) else None
-        role = beat_role(b, nxt, cfg)
+        role = beat_role(b, nxt, cfg, beats[i - 1] if i else None)
         p = b.pause
         if role == "en_instruction" and p > cfg["en_instruction_max"]:
             add("P-01", f"{p}s pause after EN instruction (max {cfg['en_instruction_max']}s)",
@@ -611,7 +654,7 @@ def run_static(meta, beats, curriculum):
                     add("P-03", f"fluency pass {pas} pause {p}s, expected ≈{need:.1f}s",
                         b.pause_line or b.line)
         elif is_production(role):
-            target_text = nxt.text if (nxt and nxt.is_fr) else b.text
+            target_text = production_target(beats, i, nxt)
             need = max(cfg["pause_floor"][role],
                        cfg["pause_multiplier"][role] * est_audio(target_text, "natural", cfg))
             if p < need - 0.3:
@@ -736,7 +779,7 @@ def run_static(meta, beats, curriculum):
     flagged_mic = set()
     for i, b in enumerate(beats):
         nxt = beats[i + 1] if i + 1 < len(beats) else None
-        if is_production(beat_role(b, nxt, cfg)) and b.segment not in flagged_mic:
+        if is_production(beat_role(b, nxt, cfg, beats[i - 1] if i else None)) and b.segment not in flagged_mic:
             scope = [x for x in beats if x.segment == b.segment
                      and (not b.step or x.step == b.step)]
             seg_v = " ".join(v for x in scope for v in x.visuals).upper()
@@ -813,7 +856,7 @@ def run_aggregates(meta, beats, ctx):
     roles = []
     for i, b in enumerate(beats):
         nxt = beats[i + 1] if i + 1 < len(beats) else None
-        roles.append(beat_role(b, nxt, cfg))
+        roles.append(beat_role(b, nxt, cfg, beats[i - 1] if i else None))
 
     prod = sum(1 for r in roles if is_production(r))
     copy = sum(1 for r in roles if r == "copy")

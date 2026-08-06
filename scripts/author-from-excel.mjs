@@ -169,13 +169,18 @@ for (const it of items) {
   img('MIC — no text on screen');
   beat('EN·MAN', 'PRODUCE', 3, `Your turn. Say "${it.gloss.split('/')[0].trim()}" in French.`, P('produce_meaning', it.fr));
   beat('FR·WOMAN', 'PRODUCE', 3, it.fr, '1.0', { rate: 'natural', extra: ['[confirm]'] });
-  beat('EN·MAN', 'REPAIR', 3, 'Now you’ve heard it. Say it again.', (pBeat('produce_meaning', it.fr, cfg) * 0.8).toFixed(1));
+  // Full P(beat) — this gap is a real retrieval attempt, so it gets the computed
+  // pause. Shaving it to 0.8× put every REPAIR beat ~0.7s under P-03.
+  beat('EN·MAN', 'REPAIR', 3, 'Now you’ve heard it. Say it again.', P('produce_meaning', it.fr));
 }
 
 // 05 MICRO_RECALL (groups of 3)
 for (let g = 0; g < items.length; g += 3) {
   const chunk = items.slice(g, g + 3);
-  seg('05', 'MICRO_RECALL');
+  // The header MUST carry its words: the baker starts a new slide on a segment-text
+  // change, so identical "05 · MICRO_RECALL" headers would collapse every group into
+  // one giant slide (and I-17 would bucket all 12 items under one key).
+  seg('05', 'MICRO_RECALL', chunk.map((c) => c.fr).join(', '));
   beat('EN·WOMAN', 'RECALL', 3, 'Quick check. I’ll say the French, you say the English.', '0.8');
   for (const c of chunk) beat('FR·MAN', 'RECALL', 3, c.fr, '2.0', { rate: 'slow' });
   beat('EN·WOMAN', 'RECALL', 3, 'Now the other way. Screen stays blank.', '0.8');

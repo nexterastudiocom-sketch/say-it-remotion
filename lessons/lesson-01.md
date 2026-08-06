@@ -36,7 +36,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 0.4s
   EN·MAN [INPUT] [L3] → How many people are speaking, and where are they? Answer out loud, in English.
     ⏸ PAUSE 1.2s
-  EN·MAN [NOTE] [L3] → In France bonjour is not optional. Entering a shop and asking a question without it reads as rude. Greet first, then ask.
+  EN·MAN [NOTE] [L3] → In France the greeting is not optional. Entering a shop and asking a question without it reads as rude. Greet first, then ask.
     ⏸ PAUSE 1.2s
 
 ## 04 · ITEM_BLOCK · bonjour
@@ -67,7 +67,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] bonjour
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · salut
   🖼 WORD CARD — salut · [sa-LOO] · illustration: hi / bye, casual · MIC
@@ -97,7 +97,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] salut
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · merci
   🖼 WORD CARD — merci · [mair-SEE] · illustration: thank you · MIC
@@ -127,7 +127,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] merci
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · s'il vous plaît
   🖼 WORD CARD — s'il vous plaît · [seel voo PLEH] · illustration: please · MIC
@@ -157,7 +157,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] s'il vous plaît
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.9s
+    ⏸ PAUSE 3.6s
 
 ## 04 · ITEM_BLOCK · oui
   🖼 WORD CARD — oui · [wee] · illustration: yes · MIC
@@ -187,7 +187,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] oui
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · non
   🖼 WORD CARD — non · [nohn] · illustration: no · MIC
@@ -217,7 +217,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] non
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · au revoir
   🖼 WORD CARD — au revoir · [oh ruh-VWAHR] · illustration: goodbye · MIC
@@ -249,7 +249,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] au revoir
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.9s
+    ⏸ PAUSE 3.6s
 
 ## 04 · ITEM_BLOCK · madame
   🖼 WORD CARD — madame · [ma-DAM] · illustration: ma'am · MIC
@@ -279,7 +279,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] madame
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · monsieur
   🖼 WORD CARD — monsieur · [muh-SYUH] · illustration: sir · MIC
@@ -309,7 +309,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] monsieur
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · bonsoir
   🖼 WORD CARD — bonsoir · [bohn-SWAHR] · illustration: good evening · MIC
@@ -339,7 +339,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] bonsoir
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · pardon
   🖼 WORD CARD — pardon · [par-DOHN] · illustration: excuse me / sorry · MIC
@@ -369,7 +369,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] pardon
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.8s
+    ⏸ PAUSE 3.5s
 
 ## 04 · ITEM_BLOCK · à bientôt
   🖼 WORD CARD — à bientôt · [ah byan-TOH] · illustration: see you soon · MIC
@@ -401,9 +401,9 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·WOMAN [PRODUCE] [L3] [confirm] → [rate: natural] à bientôt
     ⏸ PAUSE 1.0s
   EN·MAN [REPAIR] [L3] → Now you’ve heard it. Say it again.
-    ⏸ PAUSE 2.9s
+    ⏸ PAUSE 3.6s
 
-## 05 · MICRO_RECALL
+## 05 · MICRO_RECALL · bonjour, salut, merci
   EN·WOMAN [RECALL] [L3] → Quick check. I’ll say the French, you say the English.
     ⏸ PAUSE 0.8s
   FR·MAN [RECALL] [L3] → [rate: slow] bonjour
@@ -414,6 +414,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 2.0s
   EN·WOMAN [RECALL] [L3] → Now the other way. Screen stays blank.
     ⏸ PAUSE 0.8s
+  🖼 MIC — no text on screen
   EN·WOMAN [RECALL] [L3] → Now you — hello.
     ⏸ PAUSE 3.5s
   FR·MAN [RECALL] [L3] [confirm] → [rate: natural] bonjour
@@ -427,7 +428,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·MAN [RECALL] [L3] [confirm] → [rate: natural] merci
     ⏸ PAUSE 1.0s
 
-## 05 · MICRO_RECALL
+## 05 · MICRO_RECALL · s'il vous plaît, oui, non
   EN·WOMAN [RECALL] [L3] → Quick check. I’ll say the French, you say the English.
     ⏸ PAUSE 0.8s
   FR·MAN [RECALL] [L3] → [rate: slow] s'il vous plaît
@@ -438,6 +439,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 2.0s
   EN·WOMAN [RECALL] [L3] → Now the other way. Screen stays blank.
     ⏸ PAUSE 0.8s
+  🖼 MIC — no text on screen
   EN·WOMAN [RECALL] [L3] → Now you — please.
     ⏸ PAUSE 3.6s
   FR·MAN [RECALL] [L3] [confirm] → [rate: natural] s'il vous plaît
@@ -451,7 +453,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·MAN [RECALL] [L3] [confirm] → [rate: natural] non
     ⏸ PAUSE 1.0s
 
-## 05 · MICRO_RECALL
+## 05 · MICRO_RECALL · au revoir, madame, monsieur
   EN·WOMAN [RECALL] [L3] → Quick check. I’ll say the French, you say the English.
     ⏸ PAUSE 0.8s
   FR·MAN [RECALL] [L3] → [rate: slow] au revoir
@@ -462,6 +464,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 2.0s
   EN·WOMAN [RECALL] [L3] → Now the other way. Screen stays blank.
     ⏸ PAUSE 0.8s
+  🖼 MIC — no text on screen
   EN·WOMAN [RECALL] [L3] → Now you — goodbye.
     ⏸ PAUSE 3.6s
   FR·MAN [RECALL] [L3] [confirm] → [rate: natural] au revoir
@@ -475,7 +478,7 @@ frame: "[greeting], [person]. [courtesy] !"
   FR·MAN [RECALL] [L3] [confirm] → [rate: natural] monsieur
     ⏸ PAUSE 1.0s
 
-## 05 · MICRO_RECALL
+## 05 · MICRO_RECALL · bonsoir, pardon, à bientôt
   EN·WOMAN [RECALL] [L3] → Quick check. I’ll say the French, you say the English.
     ⏸ PAUSE 0.8s
   FR·MAN [RECALL] [L3] → [rate: slow] bonsoir
@@ -486,6 +489,7 @@ frame: "[greeting], [person]. [courtesy] !"
     ⏸ PAUSE 2.0s
   EN·WOMAN [RECALL] [L3] → Now the other way. Screen stays blank.
     ⏸ PAUSE 0.8s
+  🖼 MIC — no text on screen
   EN·WOMAN [RECALL] [L3] → Now you — good evening.
     ⏸ PAUSE 3.5s
   FR·MAN [RECALL] [L3] [confirm] → [rate: natural] bonsoir
@@ -631,7 +635,7 @@ frame: "[greeting], [person]. [courtesy] !"
 
 ## 12 · CAN_DO_CHECK
   🖼 SCORECARD — capability, not word count · progress
-  EN·WOMAN [NOTE] [L3] → s'il vous plaît takes an apostrophe straight after the s. à bientôt carries two accents.
+  EN·WOMAN [NOTE] [L3] → Check the spelling on screen: the polite phrase takes an apostrophe straight after the s, and the farewell carries two accents.
     ⏸ PAUSE 1.2s
   EN·WOMAN [RECAP] [L3] → The question from the start: can you greet someone and take my leave, choosing the right formality and time of day? Yes or no.
     ⏸ PAUSE 1.0s
