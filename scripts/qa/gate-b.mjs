@@ -17,16 +17,30 @@ if (existsSync(P.video) && existsSync(P.manifest)) { try { await ensureAsr(id); 
 const tPaths = [`lessons/${id}.md`, `curriculum/${id}.md`, `lessons/golden/${id.replace('-', '_')}.md`].map((r) => path.join(ROOT, r)).filter(existsSync);
 if (tPaths[0]) { await run(path.join(ROOT, '.venv-ocr/bin/python'), [path.join(ROOT, 'qa/mosaic_qc.py'), tPaths[0], '--rules', path.join(ROOT, 'qa/mosaic_rules.yaml'), '--emit-vision-rubric', path.join(ROOT, `build/${id}/vision-rubric.json`)]); console.log('  I-07 · vision rubric → build/' + id + '/vision-rubric.json (needs a vision pass)\n'); }
 
+// Sub-check exit convention: 0 = ran clean, 1 = ran and found BLOCKs, 2 = skipped
+// (precondition missing). A CRASH also exits non-zero but writes nothing to stdout —
+// that used to be indistinguishable from "ran and blocked", so gate-b-i05 could die
+// on an unparseable lexicon and the summary would still read PASS. A check that
+// cannot render a verdict is not a pass: record it and fail the gate.
+const crashed = [];
 for (const s of ['gate-b-technical.mjs', 'gate-b-pause.mjs', 'gate-b-rate.mjs', 'gate-b-i05.mjs', 'gate-b-audio-identity.mjs', 'gate-b-i08.mjs', 'gate-b-pronunciation.mjs']) {
   const r = await run('node', [`scripts/qa/${s}`, id]);
   process.stdout.write(r.stdout);
   if (r.code === 2) console.log(`  (skipped: ${r.stderr.trim().split('\n').pop()})`);
+  else if (r.code !== 0 && !r.stdout.trim()) {
+    crashed.push(s);
+    console.log(`  ✗ ${s} CRASHED — no verdict produced:`);
+    for (const ln of r.stderr.trim().split('\n').slice(0, 6)) console.log(`      ${ln}`);
+  }
   console.log('');
 }
 const doc = existsSync(P.qa) ? await readJson(P.qa) : { findings: [] };
 const gb = doc.findings.filter((f) => f.gate === 'B');
 const nb = gb.filter((f) => f.severity === 'BLOCK'), nw = gb.filter((f) => f.severity === 'WARN');
 console.log('── Gate B summary ──');
-console.log(`  ${nb.length} BLOCK, ${nw.length} WARN  →  ${nb.length ? 'FAIL — do not publish' : 'PASS' + (nw.length ? ' with warnings' : '')}`);
+const verdict = nb.length || crashed.length ? 'FAIL — do not publish'
+  : 'PASS' + (nw.length ? ' with warnings' : '');
+console.log(`  ${nb.length} BLOCK, ${nw.length} WARN  →  ${verdict}`);
+if (crashed.length) console.log(`  ${crashed.length} check(s) produced NO verdict: ${crashed.join(', ')}`);
 console.log(`  report: qa/${id}.json`);
-process.exit(nb.length ? 1 : 0);
+process.exit(nb.length || crashed.length ? 1 : 0);

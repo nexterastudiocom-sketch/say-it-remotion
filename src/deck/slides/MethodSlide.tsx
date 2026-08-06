@@ -33,7 +33,7 @@ const STAGE_LABEL: Record<string, string> = {
 
 type Register = 'word' | 'meaning' | 'instruction';
 type Beat = { voice?: string; text?: string; register?: Register; level?: number; durationInSeconds: number; stage?: string; visuals?: string[]; imageSrc?: string; wantsImage?: boolean };
-type SlideT = { stage?: string; visual?: string; imageSrc?: string; item?: string; beats?: Beat[]; wantsImage?: boolean };
+type SlideT = { stage?: string; visual?: string; imageSrc?: string; item?: string; beats?: Beat[]; wantsImage?: boolean; slots?: string[]; canDo?: string; itemCount?: number };
 
 // Beats carry an explicit `register` from the generator (Method §4.2). This
 // heuristic is only the fallback for older JSON without it: French is a word; a
@@ -114,8 +114,26 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
 
   const label = STAGE_LABEL[slide.stage || ''] || slide.stage || '';
   const vis = slide.visual || '';
+  // The directive in force RIGHT NOW. Visuals are per-beat (the build ladder
+  // highlights a different chunk on each step), so the live one wins over the
+  // slide's first-beat visual — otherwise the whole stage renders step 1.
+  const liveVis = (active.visuals && active.visuals[0]) || (spoken.visuals && spoken.visuals[0]) || vis;
   // Teaching word card (below L3): the taught word + phonetic, held on screen.
   const wc = level < 3 ? vis.match(/WORD CARD — ([^·]+?)·\s*\[([^\]]+)\]/) : null;
+
+  // ---- directives that used to render nothing (I-07) -----------------------
+  // CHUNK BAR: the sentence frame as labelled slots, highlighting the chunk this
+  // step changes. Slot labels come from the lesson frame via the baker.
+  const isChunkBar = /CHUNK BAR/i.test(liveVis);
+  const chunkSlots = slide.slots || [];
+  const hlNames = (liveVis.match(/HIGHLIGHT the changed chunk \(([^)]+)\)/i)?.[1] || '')
+    .split('+').map((s) => s.trim().toLowerCase()).filter(Boolean);
+  // SCORECARD: the can-do restated as an achievement, not a word tally.
+  const isScorecard = /SCORECARD/i.test(liveVis);
+  // BLANK: cold production — no picture, no word bank, nothing to lean on.
+  const isBlank = /^\s*BLANK\b/i.test(liveVis);
+  // MIC: the learner is expected to speak. Shown while the retrieval gap is open.
+  const wantsMic = /\bMIC\b/.test(liveVis);
 
   // Retrieval countdown: a ≥2s pause after something was said = "your turn".
   const pauseDur = inPause ? active.durationInSeconds : 0;
@@ -154,7 +172,33 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
       {/* WORD ZONE — the hero. French word + phonetic + English meaning all live
           here in word styling; instructions never enter this zone. */}
       <div style={{ minHeight: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22 }}>
-        {showFrWord ? (
+        {isChunkBar && chunkSlots.length ? (
+          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', ...fadeUp(frame, fps, 4) }}>
+            {chunkSlots.map((s) => {
+              const on = hlNames.includes(s.toLowerCase());
+              return (
+                <span key={s} style={{
+                  padding: '28px 44px', borderRadius: 24, fontFamily: 'var(--head)', fontWeight: 700, fontSize: 64,
+                  color: on ? '#fff' : 'var(--ink-2)',
+                  background: on ? 'var(--accent)' : 'var(--surface)',
+                  border: `3px ${on ? 'solid var(--accent)' : 'dashed var(--line)'}`,
+                  boxShadow: on ? '0 12px 40px rgba(0,0,0,0.20)' : 'none',
+                  transform: on ? `scale(${pulse})` : 'none',
+                }}>{s}</span>
+              );
+            })}
+          </div>
+        ) : isScorecard ? (
+          // No eyebrow here — the stage label above already reads "You can now".
+          <div style={{ ...fadeUp(frame, fps, 4) }}>
+            <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 88, lineHeight: 1.1,
+              letterSpacing: '-0.02em', color: 'var(--ink)', maxWidth: 1680 }}>{slide.canDo || ''}</p>
+            {slide.itemCount ? (
+              <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 120, marginTop: 28,
+                color: 'var(--accent)' }}>{slide.itemCount}<span style={{ fontSize: 56, color: 'var(--ink-2)' }}> / {slide.itemCount} words</span></p>
+            ) : null}
+          </div>
+        ) : showFrWord ? (
           // French reveal — the instant the model SPEAKS the French, show it big.
           // Takes precedence so the answer always appears when it is voiced.
           <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: heroSize(spoken.text || ''), lineHeight: 1.05,
@@ -188,13 +232,30 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 52,
               transform: `scale(${pulse})`, boxShadow: '0 12px 40px rgba(0,0,0,0.22)' }}>{remaining}</span>
             <span style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: 72, color: 'var(--accent)' }}>Your turn</span>
+            {/* MIC — 20+ directives ask for it and nothing ever drew one. It belongs
+                on the open retrieval gap: the cue that the learner speaks NOW. */}
+            {wantsMic ? (
+              <span aria-label="microphone" style={{ width: 96, height: 96, borderRadius: 26, background: 'var(--tint)',
+                border: '3px solid var(--accent)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                transform: `scale(${pulse})` }}>
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.2"
+                  strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="9" y="2" width="6" height="11" rx="3" />
+                  <path d="M5 11a7 7 0 0 0 14 0" />
+                  <line x1="12" y1="18" x2="12" y2="22" />
+                </svg>
+              </span>
+            ) : null}
           </div>
         ) : null}
       </div>
     </div>
   );
 
-  const imgPanel = imgRel ? (
+  // BLANK is a cold-production directive: no picture and no word bank, so the
+  // learner has nothing to lean on. Rendering the illustration anyway handed them
+  // a contextual cue the stage is explicitly designed to withhold.
+  const imgPanel = isBlank ? null : imgRel ? (
     <div style={{ width: 1180, height: 1180, flexShrink: 0, borderRadius: 28, overflow: 'hidden', boxShadow: '0 30px 90px rgba(0,0,0,0.18)', border: '3px solid rgba(0,0,0,0.06)', background: 'var(--tint)', ...fadeUp(frame, fps, 6) }}>
       <Img src={assetSrc(imgRel)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
     </div>

@@ -275,7 +275,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · bonjour",
       "visual": "WORD CARD — bonjour · [bohn-ZHOOR] · illustration: hello / good morning · MIC",
-      "durationInSeconds": 46.82,
+      "durationInSeconds": 46.81,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -312,7 +312,7 @@
           "line": 46
         },
         {
-          "durationInSeconds": 2.99,
+          "durationInSeconds": 2.98,
           "phase": "MEET",
           "level": 0,
           "stage": "ITEM_BLOCK"
@@ -540,7 +540,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · salut",
       "visual": "WORD CARD — salut · [sa-LOO] · illustration: hi / bye, casual · MIC",
-      "durationInSeconds": 40.79,
+      "durationInSeconds": 40.78,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -750,7 +750,7 @@
           "line": 95
         },
         {
-          "durationInSeconds": 2.46,
+          "durationInSeconds": 2.45,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -805,7 +805,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · merci",
       "visual": "WORD CARD — merci · [mair-SEE] · illustration: thank you · MIC",
-      "durationInSeconds": 39.79,
+      "durationInSeconds": 39.77,
       "beats": [
         {
           "src": "assets/audio/lesson-01/method/4f39894fdc5c0ae5.mp3",
@@ -937,7 +937,7 @@
           "line": 116
         },
         {
-          "durationInSeconds": 2.33,
+          "durationInSeconds": 2.32,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1015,7 +1015,7 @@
           "line": 125
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.37,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -4448,6 +4448,11 @@
           "level": 2,
           "stage": "FRAME_INTRO"
         }
+      ],
+      "slots": [
+        "greeting",
+        "person",
+        "courtesy"
       ]
     },
     {
@@ -4755,6 +4760,11 @@
           "level": 1,
           "stage": "BUILD_LADDER"
         }
+      ],
+      "slots": [
+        "greeting",
+        "person",
+        "courtesy"
       ]
     },
     {
@@ -5449,14 +5459,14 @@
       "stage": "CAN_DO_CHECK",
       "segment": "12 · CAN_DO_CHECK",
       "visual": "SCORECARD — capability, not word count · progress",
-      "durationInSeconds": 39.2,
+      "durationInSeconds": 37.52,
       "beats": [
         {
-          "src": "assets/audio/lesson-01/method/c63aa9bb9eae323d.mp3",
-          "durationInSeconds": 11.54,
+          "src": "assets/audio/lesson-01/method/ac295aea4d633cb1.mp3",
+          "durationInSeconds": 9.86,
           "phase": "NOTE",
           "voice": "en_woman",
-          "text": "Check the spelling on screen: the polite phrase takes an apostrophe straight after the s, and the farewell carries two accents.",
+          "text": "Two spelling details worth knowing: the polite phrase takes an apostrophe straight after the s, and the farewell carries two accents.",
           "register": "instruction",
           "level": 3,
           "rate": null,
@@ -5529,7 +5539,9 @@
           "level": 3,
           "stage": "CAN_DO_CHECK"
         }
-      ]
+      ],
+      "canDo": "greet someone and take my leave, choosing the right formality and time of day",
+      "itemCount": 12
     }
   ]
 }

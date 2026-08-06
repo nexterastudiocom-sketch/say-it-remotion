@@ -635,7 +635,7 @@ frame: "[greeting], [person]. [courtesy] !"
 
 ## 12 · CAN_DO_CHECK
   🖼 SCORECARD — capability, not word count · progress
-  EN·WOMAN [NOTE] [L3] → Check the spelling on screen: the polite phrase takes an apostrophe straight after the s, and the farewell carries two accents.
+  EN·WOMAN [NOTE] [L3] → Two spelling details worth knowing: the polite phrase takes an apostrophe straight after the s, and the farewell carries two accents.
     ⏸ PAUSE 1.2s
   EN·WOMAN [RECAP] [L3] → The question from the start: can you greet someone and take my leave, choosing the right formality and time of day? Yes or no.
     ⏸ PAUSE 1.0s
