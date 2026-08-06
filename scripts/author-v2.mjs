@@ -77,6 +77,15 @@ const addGloss = (fr, en) => {
     for (const form of [clean(variant), clean(dropArticle(variant))]) {
       if (form && !glossMap.has(form)) glossMap.set(form, g);
     }
+    // Conjugated-verb item ("je prends" = "I take"): also register the bare VERB
+    // ("prends" → "take") so other subjects ("tu prends") gloss. Strip the leading
+    // subject pronoun from both the French and its English gloss.
+    const m = /^\s*(je|j'|tu|il|elle|on|nous|vous|ils|elles)\s+(.+)$/i.exec(variant);
+    if (m) {
+      const verbFr = clean(m[2]);
+      const verbEn = g.replace(/^(i|you|he|she|it|we|they)\s+/i, '').trim();
+      if (verbFr && verbEn && !glossMap.has(verbFr)) glossMap.set(verbFr, verbEn);
+    }
   }
 };
 for (const it of items) addGloss(it.fr, it.gloss);
@@ -94,7 +103,17 @@ for (const dir of [path.join(ROOT, 'build/_a1dry'), path.dirname(xlsxPath)]) {
 // in an English line. Only added if not already a taught item.
 const FUNC = { 'à': 'in', 'de': 'from', "d'": 'from', 'du': 'from', 'des': 'some', 'en': 'in', 'dans': 'in',
   'avec': 'with', 'pour': 'for', 'et': 'and', 'ne': '', 'pas': 'not', 'le': 'the', 'la': 'the', 'les': 'the',
-  'un': 'a', 'une': 'a', 'ou': 'or', 'où': 'where', 'mais': 'but', 'chez': 'at', 'sur': 'on', 'sous': 'under' };
+  'un': 'a', 'une': 'a', 'ou': 'or', 'où': 'where', 'mais': 'but', 'chez': 'at', 'sur': 'on', 'sous': 'under',
+  // common A1 words that appear as FRAGMENTS of multi-word items ("avoir mal à" → mal)
+  'mal': 'badly', 'bien': 'well', 'très': 'very', 'trop': 'too', 'aussi': 'too', 'beaucoup': 'a lot',
+  // "avoir X" state expressions (avoir faim/soif/…) — the bare noun leaks
+  'faim': 'hungry', 'soif': 'thirsty', 'chaud': 'hot', 'froid': 'cold', 'sommeil': 'sleepy',
+  'raison': 'right', 'tort': 'wrong', 'peur': 'afraid', 'besoin': 'need', 'envie': 'want',
+  // common body parts (health lessons)
+  'tête': 'head', 'dos': 'back', 'gorge': 'throat', 'ventre': 'stomach', 'jambe': 'leg', 'bras': 'arm', 'pied': 'foot',
+  'avoir': 'have', 'être': 'be', 'faire': 'do', 'aller': 'go', 'ça': 'it', 'moi': 'me', 'toi': 'you',
+  // subject pronouns (appear with conjugated verbs: "tu prends", "il vient")
+  'je': 'I', 'tu': 'you', 'il': 'he', 'elle': 'she', 'on': 'we', 'nous': 'we', 'vous': 'you', 'ils': 'they', 'elles': 'they' };
 for (const [k, v] of Object.entries(FUNC)) if (!glossMap.has(k)) glossMap.set(k, v);
 // Replace every taught French word in an English line with its gloss (V-07 safe),
 // longest-first, tolerant of trailing punctuation; then tidy doubled punctuation.
@@ -104,6 +123,14 @@ const enSafe = (text) => {
     t = t.replace(new RegExp(`(?<![0-9A-Za-zÀ-ÿ])${esc(core)}(?![0-9A-Za-zÀ-ÿ])`, 'gi'), glossMap.get(core));
   return t.replace(/\s*([!?.,])\s*\1+/g, '$1').replace(/\s+([!?.,])/g, '$1').replace(/\s{2,}/g, ' ').trim();
 };
+// Safety net: does an already-glossed English line STILL contain a taught French
+// word (which V-07 would BLOCK)? Checks each current-lesson item's component words
+// (≥4 chars, to skip cognates/short function words). If it leaks, the build ladder
+// falls back to a French-free cue — the run never halts on an imperfectly-glossable
+// build sentence, and the EN voice still never says French.
+const curItemWords = new Set();
+for (const it of items) for (const wd of stripGender(it.fr).toLowerCase().split(/[^a-zà-ÿ']+/)) if (wd.length >= 4) curItemWords.add(wd);
+const leaksFrench = (en) => [...curItemWords].some((wd) => new RegExp(`(?<![a-zà-ÿ])${esc(wd)}(?![a-zà-ÿ])`, 'i').test(en));
 // Proper names in the dialogue → declared so V-01 allows them.
 const FR_STOP = new Set(['je', 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'et', 'ça', 'va', 'bien', 'comment', 'oui', 'non', 'merci', 'bonjour', 'bonsoir', 'salut', 'madame', 'monsieur', 'pardon', 'le', 'la', 'les', 'un', 'une', 'de', 'du', 'à', 'est', 'moi', 'toi', 'revoir', 'appelle', 'comme', 'ci', 'très', 'aussi']);
 // Proper nouns (character names AND place names like Paris/France) appear across
@@ -244,8 +271,11 @@ if (build.length) {
   beat('EN·WOMAN', 'BUILD', 3, 'Now build the whole line, piece by piece. I say it in English, you say it in French.', '0.8');
   build.sort((a, c) => a.step - c.step).forEach((b) => {
     const en = enSafe(b.sentence); // English of the line so far (each item → its gloss)
+    // If any French word survived glossing, don't speak it — fall back to a clean
+    // French-free cue (V-07 can never fire on the build ladder).
+    const cue = leaksFrench(en) ? 'Now say this whole line in French.' : en;
     img(`CHUNK BAR — ${b.sentence} · HIGHLIGHT ${b.mark || 'the new part'}`);
-    beat('EN·MAN', 'BUILD', 3, en, '3.5');   // just the English line — the prompt
+    beat('EN·MAN', 'BUILD', 3, cue, '3.5');
     beat('FR·MAN', 'BUILD', 3, b.sentence, '1.0', { rate: 'natural', extra: ['[confirm]'] });
   });
 }
