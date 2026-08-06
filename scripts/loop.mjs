@@ -8,6 +8,7 @@
 //   node --env-file=.env scripts/loop.mjs            # process every workbook in intake
 //   node --env-file=.env scripts/loop.mjs --publish lesson-01   # just (re)publish one already-built lesson
 //   node --env-file=.env scripts/loop.mjs --list     # show what's waiting in intake
+//   node --env-file=.env scripts/loop.mjs --rebuild <id> …   # re-run finished lesson(s)
 //
 // Requires: rclone remote `gdrive:` (nexterastudio) — env MOSAIC_GDRIVE_REMOTE
 // overrides. Render quality: 540p preview by default (fast); --hq for 4K.
@@ -68,12 +69,16 @@ async function publish(id) {
   const videoAbs = existsSync(video) ? video : path.join(ROOT, `out/${id}-method-540p.mp4`);
   const thumb = path.join(ROOT, `out/thumbnails/${id}.png`);
 
-  // VIDEO-PATH.txt — the render stays local (too big/slow to upload); this is the pointer.
+  // VIDEO-PATH.txt — where the render came from. It used to say the video was NOT
+  // uploaded, which was true only during the Drive quota crunch; the mp4 is published
+  // to this same folder now, so a note claiming otherwise sits next to the file it
+  // denies and sends anyone reading it hunting for a local machine.
   let meta = '';
   try { meta = shOut(REMO, ['ffprobe', videoAbs]).match(/Duration: [0-9:.]+/)?.[0] || ''; } catch { /* ignore */ }
   const note = [
     `Mosaic lesson: ${id}`,
-    `Rendered video (LOCAL — not uploaded, too large):`,
+    `Video: ${bid}.mp4 (in this folder)`,
+    `Rendered locally from:`,
     `  ${videoAbs}`,
     meta && `  ${meta}`,
     `Thumbnail: ${id}-thumbnail.png (in this folder)`,
@@ -118,20 +123,34 @@ async function publish(id) {
 }
 
 // -- full pipeline for one workbook -------------------------------------------
-async function processWorkbook(name) {
-  const localWb = path.join(ROOT, `build/_intake/${name}`);
-  await mkdir(path.dirname(localWb), { recursive: true });
-  log(`download ${name}`);
-  rclone(['copyto', `${INTAKE}/${name}`, localWb]);
-
+// rebuild = re-run an ALREADY-COMPLETED lesson (e.g. to pick up an authoring fix).
+// Two things must not happen on a rebuild:
+//   - the workbook is no longer in the intake (it was moved to …-done.xlsx), so the
+//     local copy under build/_a1dry is the source;
+//   - its words are already in the lexicon, and gate-a --promote-lexicon REFUSES a
+//     duplicate lesson, which would exit non-zero and halt the batch.
+async function processWorkbook(name, { rebuild = false } = {}) {
   // Lesson id = the workbook filename (minus .xlsx) — named exactly as in Excel.
   const id = name.replace(/\.xlsx$/i, '');
+
+  let localWb;
+  if (rebuild) {
+    localWb = path.join(ROOT, `build/_a1dry/${name}`);
+    if (!existsSync(localWb)) throw new Error(`rebuild: workbook not found locally — ${localWb}`);
+    log(`rebuild ${id} (local workbook; lexicon already promoted)`);
+  } else {
+    localWb = path.join(ROOT, `build/_intake/${name}`);
+    await mkdir(path.dirname(localWb), { recursive: true });
+    log(`download ${name}`);
+    rclone(['copyto', `${INTAKE}/${name}`, localWb]);
+  }
 
   log(`author ${id}`);           sh('node', ['scripts/author-v2.mjs', localWb], { env: { ...process.env, MOSAIC_LESSON_ID: id } });
   // Gate A gates (exit≠0 on BLOCK → loop stops) AND promotes this lesson's words to
   // the lexicon on pass, so the NEXT lesson's V-01 allowed-set includes them. Lessons
   // must therefore run in order (the intake is alphabetical: L01, L02, …).
-  log('Gate A + promote');       sh('node', ['scripts/qa/gate-a.mjs', id, '--promote-lexicon']);
+  log(rebuild ? 'Gate A (no promote — already in lexicon)' : 'Gate A + promote');
+  sh('node', ['scripts/qa/gate-a.mjs', id, ...(rebuild ? [] : ['--promote-lexicon'])]);
   log('registry');               sh('node', ['scripts/images/registry.mjs', localWb]);
   log('images: generate');       try { sh('node', ['scripts/images/generate.mjs']); } catch { console.log('  (generation skipped/failed — placeholders will show)'); }
   log(`bake audio ${id}`);       sh('node', ['scripts/build-method-lesson.mjs', id]);
@@ -183,6 +202,11 @@ async function processWorkbook(name) {
 
   await publish(id);
 
+  if (rebuild) {
+    console.log(`✓ ${id} rebuilt and republished (workbook already marked done)`);
+    return;
+  }
+
   log(`mark done → move ${name} out of intake`);
   const base = name.replace(/\.xlsx$/i, '');
   rclone(['moveto', `${INTAKE}/${name}`, `${BASE}/${brand(id)}/${brand(base)}-done.xlsx`]);
@@ -190,7 +214,20 @@ async function processWorkbook(name) {
 }
 
 // -- entry --------------------------------------------------------------------
-if (args.includes('--publish')) {
+if (args.includes('--rebuild')) {
+  // node --env-file=.env scripts/loop.mjs --rebuild <id> [<id> …]
+  const ids = args.slice(args.indexOf('--rebuild') + 1).filter((a) => !a.startsWith('--'));
+  if (!ids.length) { console.error('--rebuild needs at least one lesson id'); process.exit(2); }
+  console.log(`rebuilding ${ids.length} lesson(s): ${ids.join(', ')}`);
+  const failed = [];
+  for (const id of ids) {
+    // One bad lesson must not strand the rest of the batch — collect and report.
+    try { await processWorkbook(`${id}.xlsx`, { rebuild: true }); }
+    catch (e) { console.error(`\n✗ ${id}: ${(e && e.message) || e}`); failed.push(id); }
+  }
+  console.log(`\n${ids.length - failed.length}/${ids.length} rebuilt${failed.length ? ` — FAILED: ${failed.join(', ')}` : ''}`);
+  process.exit(failed.length ? 1 : 0);
+} else if (args.includes('--publish')) {
   const id = args[args.indexOf('--publish') + 1];
   await publish(id);
   console.log(`✓ published ${id}`);
