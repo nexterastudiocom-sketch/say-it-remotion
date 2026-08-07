@@ -5,7 +5,7 @@
 
 import { existsSync, statSync } from 'node:fs';
 import path from 'node:path';
-import { paths, readJson, writeJson, run, ROOT } from './lib.mjs';
+import { paths, readJson, readJsonOrYaml, writeJson, run, ROOT } from './lib.mjs';
 
 const QA_PY = process.env.QA_PY || path.join(ROOT, '.venv-ocr/bin/python');
 let _rules = null;
@@ -60,7 +60,7 @@ export async function allowedSet(id) {
   const P = paths(id);
   const set = new Set();
   if (existsSync(P.lexicon)) {
-    const lx = await readJson(P.lexicon);
+    const lx = await readJsonOrYaml(P.lexicon);
     const n = Number(String(id).replace(/\D/g, '')) || 1;
     for (const [k, items] of Object.entries(lx.lessons || {})) {
       if (Number(k) <= n) for (const it of items || []) set.add(it);

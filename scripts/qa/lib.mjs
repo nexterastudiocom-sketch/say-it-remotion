@@ -3,7 +3,7 @@
 // qa/<id>.json finding writer. Each gate script imports only what it needs.
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { execFile } from 'node:child_process';
 import { createRequire } from 'node:module';
 import path from 'node:path';
@@ -12,10 +12,22 @@ import { fileURLToPath } from 'node:url';
 export const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const require = createRequire(import.meta.url);
 
-// Render timeline facts (from src/LessonFilm.tsx) — the film prepends an intro.
+// Render timeline facts — the film prepends an intro, so every manifest timestamp
+// is offset by it. These were hardcoded at 135/90 frames (4.5s/3s) while the film
+// actually renders 308/299 (10.267s/9.97s); the resulting 5.77s skew made I-05 read
+// the wrong frames (12 false "French on screen" blocks) and pushed all 144 P-07
+// deltas negative. Read the real values from the components so they cannot drift again.
 export const FPS = 30;
-export const INTRO_SECONDS = 135 / FPS; // 4.5s logo intro before the lesson
-export const OUTRO_SECONDS = 90 / FPS; // 3s outro after the lesson
+function videoFrames(file, constName, fallback) {
+  try {
+    const src = readFileSync(path.join(ROOT, 'src/deck', file), 'utf8');
+    const m = src.match(new RegExp(`${constName}\\s*=\\s*(\\d+)`));
+    if (m) return Number(m[1]);
+  } catch { /* fall through */ }
+  return fallback;
+}
+export const INTRO_SECONDS = videoFrames('IntroVideo.tsx', 'INTRO_VIDEO_FRAMES', 308) / FPS;
+export const OUTRO_SECONDS = videoFrames('OutroVideo.tsx', 'OUTRO_VIDEO_FRAMES', 299) / FPS;
 
 // Tools
 export const REMOTION = path.join(ROOT, 'node_modules/.bin/remotion'); // ffprobe
@@ -44,6 +56,19 @@ export function run(cmd, args, opts = {}) {
 }
 
 export const readJson = async (p) => JSON.parse(await readFile(p, 'utf8'));
+
+// state/lexicon.json is written as YAML despite the .json name, so a plain
+// JSON.parse throws — and that throw used to kill gate-b-i05 outright (the OCR
+// check silently never ran). Read it tolerantly: JSON first, then YAML via the
+// QA venv's pyyaml. Never rewrite the file — only --promote-lexicon may.
+export async function readJsonOrYaml(p) {
+  const raw = await readFile(p, 'utf8');
+  try { return JSON.parse(raw); } catch { /* fall through to YAML */ }
+  const py = process.env.QA_PY || path.join(ROOT, '.venv-ocr/bin/python');
+  const r = await run(py, ['-c', 'import sys,yaml,json; json.dump(yaml.safe_load(open(sys.argv[1])), sys.stdout)', p]);
+  if (r.code !== 0) throw new Error(`cannot parse ${p} as JSON or YAML: ${r.stderr.trim().slice(0, 200)}`);
+  return JSON.parse(r.stdout);
+}
 export const writeJson = async (p, obj) => { await mkdir(path.dirname(p), { recursive: true }); await writeFile(p, JSON.stringify(obj, null, 2) + '\n'); };
 
 // ---- qa/<id>.json findings: {gate, severity, timestamp, issue, evidence, suggested_fix}

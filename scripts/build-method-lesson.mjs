@@ -157,12 +157,24 @@ const hybridBase = (modelDur, isNew, lineMode = false) => {
   return Math.max(HYB.floor_s ?? 2.0, Math.min(ceil, p));
 };
 
+// Sentence-frame slot labels ("[greeting], [person]. [courtesy] !" → the three
+// chunk names) — what the CHUNK BAR draws and highlights step by step.
+const FRAME_SLOTS = [...String(parsed.meta.frame || '').matchAll(/\[([^\]]+)\]/g)].map((m) => m[1].trim());
+
 const slides = [];
 let cur = null;
 for (let i = 0; i < parsed.beats.length; i++) {
   const b = parsed.beats[i];
   if (!cur || cur.segment !== b.segment) {
     cur = { id: slug(b.segment) || `s${slides.length}`, type: STAGE_TYPE[b.stage] || 'method', stage: b.stage, segment: b.segment, visual: null, durationInSeconds: 0, beats: [] };
+    // Data the CHUNK BAR and SCORECARD directives need to actually draw. Without
+    // these the slide fell through to the generic layout and rendered nothing —
+    // the build ladder showed its cue text ("you build it") as if it were the word.
+    if (b.stage === 'FRAME_INTRO' || b.stage === 'BUILD_LADDER') cur.slots = FRAME_SLOTS;
+    if (b.stage === 'CAN_DO_CHECK') {
+      cur.canDo = (parsed.meta.can_do || '').replace(/^I can /i, '').replace(/\.$/, '');
+      cur.itemCount = (parsed.meta.items || []).length;
+    }
     slides.push(cur);
   }
   if (b.visuals && b.visuals.length && !cur.visual) cur.visual = b.visuals.join(' ; ');
