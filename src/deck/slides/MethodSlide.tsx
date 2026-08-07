@@ -117,17 +117,63 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
   // The directive in force RIGHT NOW. Visuals are per-beat (the build ladder
   // highlights a different chunk on each step), so the live one wins over the
   // slide's first-beat visual — otherwise the whole stage renders step 1.
-  const liveVis = (active.visuals && active.visuals[0]) || (spoken.visuals && spoken.visuals[0]) || vis;
+  // A 🖼 directive stays in force until the NEXT one replaces it, so the live visual
+  // is the most recent one at or before this beat — not the slide's first. Falling
+  // back to the slide's first froze the build ladder on step 1 ("Bonjour.") for every
+  // beat that carried no visual of its own.
+  const liveVis = (() => {
+    for (let k = Math.max(ai, si); k >= 0; k--) {
+      const v = beats[k]?.visuals?.[0];
+      if (v) return v;
+    }
+    return vis;
+  })();
   // Teaching word card (below L3): the taught word + phonetic, held on screen.
   const wc = level < 3 ? vis.match(/WORD CARD — ([^·]+?)·\s*\[([^\]]+)\]/) : null;
 
   // ---- directives that used to render nothing (I-07) -----------------------
-  // CHUNK BAR: the sentence frame as labelled slots, highlighting the chunk this
-  // step changes. Slot labels come from the lesson frame via the baker.
+  // CHUNK BAR comes in two grammars and BOTH ship in the corpus:
+  //   v1  CHUNK BAR — [ greeting ][ person ][ courtesy ] · empty slots
+  //       CHUNK BAR — English slot labels · HIGHLIGHT the changed chunk (greeting)
+  //   v2  CHUNK BAR — Bonjour ! Je m'appelle Claire. · HIGHLIGHT name
+  // v1 draws empty labelled slots; v2 draws the sentence as it ACCUMULATES, with
+  // the chunk this step just added emphasised. Reading v2 with the v1 regex drew a
+  // slot bar with nothing lit — worse than the old fallback — so they're split.
   const isChunkBar = /CHUNK BAR/i.test(liveVis);
+  const chunkBody = (liveVis.match(/CHUNK BAR\s*—\s*([^]*?)(?:\s*·\s*HIGHLIGHT|\s*·\s*empty slots|$)/i)?.[1] || '').trim();
+  const isV1Bar = /\[[^\]]+\]/.test(chunkBody) || /English slot labels/i.test(chunkBody);
   const chunkSlots = slide.slots || [];
   const hlNames = (liveVis.match(/HIGHLIGHT the changed chunk \(([^)]+)\)/i)?.[1] || '')
     .split('+').map((s) => s.trim().toLowerCase()).filter(Boolean);
+  // v2: the growing sentence. The emphasised part is whatever this step ADDED, so
+  // find the previous CHUNK BAR line on this slide and keep the common prefix plain.
+  const prevBarText = (() => {
+    if (!isChunkBar || isV1Bar) return '';
+    for (let k = ai - 1; k >= 0; k--) {
+      const v = beats[k]?.visuals?.[0] || '';
+      if (!/CHUNK BAR/i.test(v)) continue;
+      const b = (v.match(/CHUNK BAR\s*—\s*([^]*?)(?:\s*·\s*HIGHLIGHT|$)/i)?.[1] || '').trim();
+      if (b && b !== chunkBody) return b;
+    }
+    return '';
+  })();
+  // Diff prev→now on WORD boundaries, from both ends: the build ladder both APPENDS
+  // ("Bonjour." → "Bonjour ! Je m'appelle Claire.") and SUBSTITUTES a slot
+  // ("…Claire. Ça va bien !" → "…Marc. Ça va bien !"). Matching a common prefix AND
+  // a common suffix lights exactly the chunk that changed in either case; a plain
+  // startsWith would light the whole tail of every substitution.
+  const [barPre, barChanged, barPost] = (() => {
+    const now = chunkBody.split(/\s+/).filter(Boolean);
+    const was = prevBarText.split(/\s+/).filter(Boolean);
+    if (!was.length) return ['', chunkBody, ''];
+    const bare = (w: string) => w.replace(/[.,!?;:…]+$/g, '').toLowerCase();
+    let p = 0;
+    while (p < now.length && p < was.length && bare(now[p]) === bare(was[p])) p++;
+    let s = 0;
+    while (s < now.length - p && s < was.length - p && bare(now[now.length - 1 - s]) === bare(was[was.length - 1 - s])) s++;
+    const join = (a: string[]) => a.join(' ');
+    return [join(now.slice(0, p)), join(now.slice(p, now.length - s)), join(now.slice(now.length - s))];
+  })();
   // SCORECARD: the can-do restated as an achievement, not a word tally.
   const isScorecard = /SCORECARD/i.test(liveVis);
   // BLANK: cold production — no picture, no word bank, nothing to lean on.
@@ -172,7 +218,15 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
       {/* WORD ZONE — the hero. French word + phonetic + English meaning all live
           here in word styling; instructions never enter this zone. */}
       <div style={{ minHeight: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22 }}>
-        {isChunkBar && chunkSlots.length ? (
+        {isChunkBar && !isV1Bar && chunkBody ? (
+          // v2 — the sentence so far, with this step's new chunk in accent.
+          <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: heroSize(chunkBody),
+            lineHeight: 1.08, letterSpacing: '-0.02em', maxWidth: 1680, ...fadeUp(frame, fps, 4) }}>
+            {barPre ? <span style={{ color: 'var(--ink-2)' }}>{barPre} </span> : null}
+            <span style={{ color: 'var(--accent)' }}>{barChanged}</span>
+            {barPost ? <span style={{ color: 'var(--ink-2)' }}> {barPost}</span> : null}
+          </p>
+        ) : isChunkBar && chunkSlots.length ? (
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', ...fadeUp(frame, fps, 4) }}>
             {chunkSlots.map((s) => {
               const on = hlNames.includes(s.toLowerCase());
