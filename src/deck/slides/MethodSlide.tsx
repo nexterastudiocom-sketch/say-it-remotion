@@ -184,6 +184,13 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
   // Retrieval countdown: a ≥2s pause after something was said = "your turn".
   const pauseDur = inPause ? active.durationInSeconds : 0;
   const isResponse = inPause && pauseDur >= 2 && si >= 0;
+  // X-06/I-05: NOTHING French may be on screen while an L3+ retrieval gap is open —
+  // the learner must produce from memory, not read the answer. The French reveal
+  // already respects this (it waits until the word is spoken); the v2 CHUNK BAR is
+  // French too, and carries forward across beats, so it must hide for the gap and
+  // come back on the reveal. Without this the build ladder showed the whole answer
+  // ("Au revoir, madame. Merci !") under a "3 · Your turn" countdown.
+  const hideFrenchInGap = isResponse && level >= 3;
   const remaining = isResponse ? Math.max(1, Math.ceil(pauseDur - (frame - (starts[ai] ?? 0)) / fps)) : 0;
 
   // WORD reveal: show the spoken French whenever French is the current/last voice
@@ -218,7 +225,7 @@ export const MethodSlide: React.FC<{ slide: SlideT }> = ({ slide }) => {
       {/* WORD ZONE — the hero. French word + phonetic + English meaning all live
           here in word styling; instructions never enter this zone. */}
       <div style={{ minHeight: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22 }}>
-        {isChunkBar && !isV1Bar && chunkBody ? (
+        {isChunkBar && !isV1Bar && chunkBody && !hideFrenchInGap ? (
           // v2 — the sentence so far, with this step's new chunk in accent.
           <p style={{ fontFamily: 'var(--head)', fontWeight: 700, fontSize: heroSize(chunkBody),
             lineHeight: 1.08, letterSpacing: '-0.02em', maxWidth: 1680, ...fadeUp(frame, fps, 4) }}>
