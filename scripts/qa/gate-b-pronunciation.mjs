@@ -26,14 +26,44 @@ const RATE_ATEMPO = { very_slow: 0.7, slow: 0.75, natural: 0.85, fast: 0.95 };
 const Y = await rules();
 const pron = (severity, timestamp, issue, evidence) => ({ gate: 'B', rule: 'PRON', severity, layer: 'L2', line: 0, issue: `[${timestamp}s] ${issue}`, evidence, suggested_fix: 'Listen to the clip; regenerate only if genuinely wrong.' });
 
-const despace = (s) => normFr(s).replace(/\s/g, '');
+// ASR writes spoken numbers as DIGITS ("4, 9, 17") while the script writes them as
+// WORDS ("Quatre, neuf, dix-sept !"), which scores 0 similarity on every line of a
+// numbers lesson — L03 came back 83% flagged with correct audio. Canonicalise both
+// sides to digits before comparing. French 0-99 sums its parts (dix-sept = 10+7,
+// soixante-dix-sept = 60+10+7), the one exception being quatre-vingt = 4x20.
+const NUM = { zero: 0, un: 1, une: 1, deux: 2, trois: 3, quatre: 4, cinq: 5, six: 6,
+  sept: 7, huit: 8, neuf: 9, dix: 10, onze: 11, douze: 12, treize: 13, quatorze: 14,
+  quinze: 15, seize: 16, vingt: 20, vingts: 20, trente: 30, quarante: 40,
+  cinquante: 50, soixante: 60, cent: 100, cents: 100 };
+function numCanon(s) {
+  // Split on punctuation FIRST: it is what separates a LIST of numbers from a
+  // COMPOUND one. normFr flattens commas to spaces, so accumulating after it turns
+  // "Quatre, neuf, dix-sept !" into 4+9+10+7 = 30 instead of "4 9 17". Hyphens and
+  // spaces stay inside a segment, since those join compounds (dix-sept, vingt et un).
+  return String(s || '').split(/[,.;:!?]+/).map((seg) => {
+    const w = normFr(seg).split(' ').filter(Boolean);
+    const out = [];
+    for (let i = 0; i < w.length;) {
+      if (!(w[i] in NUM)) { out.push(w[i]); i++; continue; }
+      let sum = 0;
+      while (i < w.length && (w[i] in NUM || w[i] === 'et')) {
+        if (w[i] === 'et') { i++; continue; }                     // "vingt et un"
+        if (w[i] === 'quatre' && (w[i + 1] === 'vingt' || w[i + 1] === 'vingts')) { sum += 80; i += 2; continue; }
+        sum += NUM[w[i]]; i++;
+      }
+      out.push(String(sum));
+    }
+    return out.join(' ');
+  }).filter(Boolean).join(' ');
+}
+const despace = (s) => normFr(numCanon(s)).replace(/\s/g, '');
 function charSim(a, b) {
   const ca = despace(a).split(''), cb = despace(b).split('');
   if (!ca.length && !cb.length) return 1;
   if (!ca.length || !cb.length) return 0;
   return Math.max(0, 1 - levenshtein(ca, cb) / Math.max(ca.length, cb.length));
 }
-const lineSim = (a, b) => Math.max(similarity(a, b), charSim(a, b));
+const lineSim = (a, b) => Math.max(similarity(numCanon(a), numCanon(b)), charSim(a, b));
 
 const id = process.argv[2] || 'lesson-01';
 const P = paths(id);
