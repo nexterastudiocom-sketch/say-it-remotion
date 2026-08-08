@@ -11,7 +11,7 @@
 // just been spoken, so the word legitimately stays on screen (the reveal). Those
 // are NOT retrieval gaps and are not checked — the blackout guards recall-from-
 // memory, not the reinforcement that follows it.
-import { existsSync, mkdirSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { paths, readJson, run, ffmpegStatic, REMOTION, ROOT } from './lib.mjs';
 import { rules, finding, merge, allowedSet } from './gateb.mjs';
@@ -23,7 +23,25 @@ if (!existsSync(P.video) || !existsSync(P.manifest)) { console.error('✗ need r
 if (!existsSync(OCR_PY)) { console.error('✗ .venv-ocr missing (rapidocr)'); process.exit(2); }
 const Y = await rules();
 const man = await readJson(P.manifest);
-const allowed = [...await allowedSet(id)].map((s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')).filter((s) => s.length >= 2);
+const deacc = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+// COGNATE EXEMPTION — the same rule Gate A's V-07 applies. A French item spelled
+// like its own English gloss ("six", "zéro"→zero, "pardon", "orange") is
+// indistinguishable on screen: the English CUE for that item is the identical
+// string, so OCR cannot tell a leaked answer from a legitimate English prompt.
+// Flagging them made L04 (a numbers lesson) report 11 blocks on correct frames
+// showing the English word "six" under "Now you — say it in French:".
+// Glosses are collected from every baked lesson, because allowedSet spans 1..n.
+const cognates = new Set();
+try {
+  const dir = path.join(ROOT, 'src/data/lessons');
+  for (const f of readdirSync(dir).filter((n) => n.endsWith('.method.json'))) {
+    const m = (await readJson(path.join(dir, f))).meta || {};
+    const its = m.items || [], gls = m.glosses || [];
+    its.forEach((it, k) => { if (gls[k] && deacc(it) === deacc(gls[k])) cognates.add(deacc(it)); });
+  }
+} catch { /* no baked lessons — no exemptions, fail loud rather than silent */ }
+const allowed = [...await allowedSet(id)].map(deacc)
+  .filter((s) => s.length >= 2 && !cognates.has(s));
 
 // Stages where the learner PRODUCES FROM MEMORY — the only place a visible French
 // word is a leaked answer. Elsewhere (COLD_INPUT/notes, FRAME_INTRO, INPUT_RETURN,
