@@ -625,8 +625,17 @@ def run_static(meta, beats, curriculum):
             add("I-17", f"teaching slide '{segkey}' voices {len(ws)} words ({', '.join(sorted(ws))}) but shows one card — screen won't match voice")
 
     # ---------- P rules ----------
+    # method_version 2 authors PLACEHOLDER pauses: scripts/author-v2.mjs states that
+    # build-method-lesson recomputes every production pause from the MEASURED model
+    # clip, so the numbers in the transcript are provisional by design. Judging them
+    # pre-bake produced ~146 warnings per lesson (P-01 "3.0s after an EN instruction"
+    # ×47, P-02 ×47, P-03 ×52) about values nothing will ever play. P-07 re-checks the
+    # pauses post-render against the real audio, which is where they become real.
+    v2_placeholder_pauses = int(meta.get("method_version") or 1) >= 2
     prev_long = False
     for i, b in enumerate(beats):
+        if v2_placeholder_pauses:
+            break
         nxt = beats[i + 1] if i + 1 < len(beats) else None
         role = beat_role(b, nxt, cfg, beats[i - 1] if i else None)
         p = b.pause
