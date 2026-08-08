@@ -120,6 +120,21 @@ async function publish(id) {
   if (existsSync(zip)) put(zip, `${lessonFolder}/${bid}-bundle.zip`);
   if (existsSync(thumb)) put(thumb, `${lessonFolder}/${bid}-thumbnail.png`);
   if (ytTxt && existsSync(ytTxt)) put(ytTxt, `${lessonFolder}/${bid}-youtube.txt`);
+
+  // The reviewer's folder should be readable WITHOUT unzipping. These four are
+  // already inside the bundle, but a human checking the video wants the gate report
+  // and the transcript open in a browser tab, not extracted from a 1.5GB archive.
+  const alsoPublish = [
+    [`qa/${id}.json`, `${bid}-gate-report.json`],              // every finding, both gates
+    [`lessons/${id}.md`, `${bid}-transcript.md`],              // the authored Method transcript
+    [`src/data/lessons/${id}.method.json`, `${bid}-lesson.json`], // baked lesson (slides + beats)
+    [`build/${id}/manifest.json`, `${bid}-manifest.json`],     // per-beat timing the gates measured
+  ];
+  for (const [rel, name] of alsoPublish) {
+    const abs = path.join(ROOT, rel);
+    if (existsSync(abs)) put(abs, `${lessonFolder}/${name}`);
+    else console.log(`  (not published — missing ${rel})`);
+  }
 }
 
 // -- full pipeline for one workbook -------------------------------------------
