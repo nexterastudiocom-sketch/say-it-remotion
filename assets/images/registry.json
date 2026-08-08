@@ -4913,14 +4913,6 @@
       "status": "generated",
       "first_lesson": 50,
       "approved_at": null
-    },
-    "enchanté": {
-      "image_id": "img_fr_enchante_01",
-      "file": "assets/images/items/img_fr_enchante_01.png",
-      "brief": "Two adults meeting for the first time at a friendly gathering, shaking hands warmly with genuine pleased smiles as a mutual friend introduces them, other guests chatting in the background, warm indoor light through tall windows.",
-      "gloss": "pleased to meet you",
-      "status": "generated",
-      "first_lesson": 2
     }
   },
   "scenes": {

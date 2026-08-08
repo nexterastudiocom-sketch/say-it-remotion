@@ -14,7 +14,15 @@ export async function bindImages(slides, lessonNum, ROOT, { strict = false } = {
   const RENDERABLE = strict ? new Set(['approved']) : new Set(['approved', 'generated']);
   const Lkey = `L${String(lessonNum).padStart(2, '0')}`;
   const fileOf = (e) => (e && RENDERABLE.has(e.status) && existsSync(path.join(ROOT, 'public', e.file)) ? e.file : null);
-  const itemImg = (fr) => fileOf(reg.items[fr]);
+  // Registry keys carry the optional feminine ending — "enchanté(e)", "espagnol(e)" —
+  // while a lesson declares the plain item "enchanté". An exact-key lookup misses,
+  // and the slide renders a No-Credit placeholder although the image and its registry
+  // entry both exist. Fall back to a parenthetical-stripped, accent-folded match.
+  const bare = (s) => sslug(String(s).replace(/\([^)]*\)/g, ''));
+  const byBare = new Map();
+  for (const k of Object.keys(reg.items)) { const b = bare(k); if (b && !byBare.has(b)) byBare.set(b, k); }
+  const itemKey = (fr) => (reg.items[fr] ? fr : byBare.get(bare(fr)) || fr);
+  const itemImg = (fr) => fileOf(reg.items[itemKey(fr)]);
   const sceneImg = (setting) => fileOf(reg.scenes[`${Lkey}_${sslug(setting)}`]);
 
   // `wantsImage` marks a slot that SHOULD carry an illustration; when the file
@@ -26,7 +34,7 @@ export async function bindImages(slides, lessonNum, ROOT, { strict = false } = {
       const fr = String(s.segment).split('·').pop().trim();
       s.wantsImage = true; s.item = fr; wanted++;
       const f = itemImg(fr);
-      if (f) { s.imageSrc = f; s.imageId = reg.items[fr].image_id; bound++; }
+      if (f) { s.imageSrc = f; s.imageId = reg.items[itemKey(fr)].image_id; bound++; }
     } else if (s.stage === 'MICRO_RECALL') {
       for (const b of s.beats || []) if (b.voice && b.voice.startsWith('fr')) { b.wantsImage = true; wanted++; const f = itemImg(b.text); if (f) { b.imageSrc = f; bound++; } }
     } else if (s.stage === 'COLD_INPUT' || s.stage === 'INPUT_RETURN') {
