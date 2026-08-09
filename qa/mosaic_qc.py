@@ -579,7 +579,13 @@ def run_static(meta, beats, curriculum):
     gloss_words = {w for g in (meta.get("glosses") or []) for w in norm(g).split() if len(w) > 2}
     name_words = {w for nm in (meta.get("names") or []) for w in norm(nm).split() if len(w) > 2}
     v07_exempt = gloss_words | name_words
-    fr_words = {w for it in items for w in (it.split() if " " in it else [it]) if len(w) > 2}
+    # A token with no letters is punctuation, not a word the EN voice can mispronounce.
+    # Frame items carry a slot placeholder — "où est ... ?" splits to ["ou","est","...","?"]
+    # and "..." is 3 chars, so it passed the length test and then matched every English
+    # line containing an ellipsis: L18 blocked 5 times on `say "where is ...?"`, whose
+    # ellipsis is the SAME placeholder, correctly glossed.
+    fr_words = {w for it in items for w in (it.split() if " " in it else [it])
+                if len(w) > 2 and any(c.isalpha() for c in w)}
     for b in beats:
         if not b.is_en or not b.text:
             continue

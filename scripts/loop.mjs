@@ -185,11 +185,15 @@ async function processWorkbook(name, { rebuild = false } = {}) {
   // safer settings (more concurrency→less, longer timeout) before we give up.
   const propArg = `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`;
   const scaleArg = HQ ? '--scale=1' : '--scale=0.25';
-  const attempts = [
-    ['--concurrency=4', '--timeout=600000'],   // 10 min/frame
-    ['--concurrency=2', '--timeout=900000'],   // slower, more stable
-    ['--concurrency=1', '--timeout=1200000'],  // last resort: serial, 20 min/frame
-  ];
+  // MOSAIC_RENDER_CONCURRENCY pins the STARTING concurrency. The ladder below only
+  // helps when a render fails and returns; it cannot help when the whole node process
+  // is killed mid-render (five runs died at 8483/8494/8603/8630/8646 frames — a
+  // 163-frame band across five different films — taking the loop down with them, so
+  // no retry ever ran). Lowering the start cuts the peak memory a render holds.
+  const startConc = Number(process.env.MOSAIC_RENDER_CONCURRENCY) || 4;
+  const ladder = [[4, 600000], [2, 900000], [1, 1200000]].filter(([c]) => c <= startConc);
+  const attempts = (ladder.length ? ladder : [[startConc, 1200000]])
+    .map(([c, t]) => [`--concurrency=${c}`, `--timeout=${t}`]);
   let rendered = false;
   for (let a = 0; a < attempts.length; a++) {
     try {
