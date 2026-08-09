@@ -97,7 +97,13 @@ async function tts(text, voiceId, model = MODEL, speed = 1) {
  * retries once on Multilingual v2 with the tag stripped — so a lack of v3 access
  * degrades gracefully instead of aborting the whole lesson.
  */
-export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1, atempo = 1 }) {
+// `trim` exists for the v3 model, which pads short clips with up to ~2s of silence.
+// multilingual_v2 (French) does not do that, and the trim actively HARMS French:
+// measured on "oui" at native speed, it cut 0.84s → 0.55s, removing 35% of a
+// one-syllable glide. Even at -60dB/0.20s it still took 19%. Human QA heard the
+// result as mispronunciation on exactly the fragile words — glides and nasals
+// (oui, non, au revoir, monsieur, pardon, à bientôt). Pass trim:false for French.
+export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1, atempo = 1, trim = true }) {
   await mkdir(path.dirname(outAbs), { recursive: true });
   let buf;
   try {
@@ -108,7 +114,7 @@ export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1,
     } else throw e;
   }
   await writeFile(outAbs, buf);
-  await trimSilence(outAbs);
+  if (trim) await trimSilence(outAbs);
   // Slow the clip to `atempo`× real speed (comprehension pacing) after trimming,
   // so the reported duration reflects the stretched clip.
   await atempoStretch(outAbs, atempo);

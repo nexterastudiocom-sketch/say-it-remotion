@@ -24,12 +24,14 @@ const args = process.argv.slice(2);
 const id = args.find((a) => !a.startsWith('--')) || 'lesson-01';
 const noMedia = args.includes('--no-media');
 
-// FR rate → fraction of REAL (conversational) speed. French is generated at
-// ElevenLabs speed 1.0 (real normal) then time-stretched by atempo, because
-// learners need it slow: "normal" plays at 0.75× real, the slower tags near 0.5×.
-// (ElevenLabs' own speed param floors at 0.7, so the slowdown is done in ffmpeg.)
-// FR woman ran too slow — nudged up: normal 0.75→0.85 (+0.1), the slower tags +0.2.
-const RATE_ATEMPO = { very_slow: 0.7, slow: 0.75, natural: 0.85, fast: 0.95 };
+// FRENCH IS NEVER SLOWED (v5). It was, two ways in turn — ffmpeg atempo stretch,
+// then the model's own speed param — and both damaged articulation. Human QA on
+// lesson 1 flagged 19 pronunciation defects, all on short glides and nasals: oui,
+// non, au, au revoir, monsieur, pardon, à bientôt. Gate B caught 6 of the 19,
+// because an ASR round-trip asks "is this word recognisable", and a badly
+// articulated "oui" still recognises as "oui". The [rate: …] tags remain in the
+// transcript as pedagogical intent and still drive P(beat) pause length; they no
+// longer alter how the audio is spoken.
 const VOICES = {
   'EN·MAN': process.env.ELEVENLABS_VOICE_EN_MAN || 'uh5qBlKfjqFl7XXhFnJi',
   'EN·WOMAN': process.env.ELEVENLABS_VOICE_EN_WOMAN || 'Bn9xWp6PwkrqKRbq8cX2',
@@ -106,9 +108,16 @@ async function clipFor(b) {
   // liaisons and made "au revoir" sound separated. Same rate→factor numbers, now
   // applied as speech speed with NO stretch. FR key changes (nspeed…) so French
   // re-synthesizes; EN key (atempo1) is unchanged so English audio is preserved.
-  const frSpeed = isFr ? (RATE_ATEMPO[b.rate] ?? 0.75) : 1;
+  // NATIVE SPEED, NEVER SLOWED. Slowing French — by ffmpeg stretch or by the
+  // model's own speed param — is what human QA heard as mispronunciation: at 0.85
+  // the articulation of short glides and nasals (oui, non, au revoir, monsieur,
+  // pardon, à bientôt) comes out wrong, and no ASR check catches it because the
+  // word stays recognisable. Every French clip is now generated at speed 1.0.
+  // Key changes (nspeed1|notrim) so all French re-synthesizes; the EN key is
+  // untouched, so English audio stays cached and costs nothing.
+  const frSpeed = 1;
   const key = isFr
-    ? `${b.voice}|${model}|${b.rate || 'natural'}|nspeed${frSpeed}|${b.text}`
+    ? `${b.voice}|${model}|${b.rate || 'natural'}|nspeed1|notrim|${b.text}`
     : `${b.voice}|${b.rate || 'natural'}|atempo1|${b.text}`;
   let hit = clipCache.get(key);
   if (!hit) {
@@ -122,7 +131,7 @@ async function clipFor(b) {
       // clip reference (missing file → silent gap in the render + S-08 MISSING).
       clipN++;
       for (let att = 1; att <= 3; att++) {
-        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: frSpeed, atempo: 1 }); }
+        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: frSpeed, atempo: 1, trim: !isFr }); }
         catch (e) { if (att === 3) console.error(`  ✗ TTS failed x3: "${b.text.slice(0, 40)}" — ${String(e.message).split('\n')[0]}`); }
         if (existsSync(abs)) { d = (await parseFile(abs)).format.duration || d || 1; break; }
       }
