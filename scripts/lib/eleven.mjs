@@ -17,14 +17,21 @@ try { FFMPEG = require('ffmpeg-static'); } catch { /* trimming becomes a no-op *
 // leading) silence — especially when the line carries an audio tag. That dead
 // air inflates the beat duration and desyncs P(beat) timing, so trim near-silent
 // heads/tails from every clip, keeping a small 80ms cushion so nothing clips.
-async function trimSilence(fileAbs) {
+// `minSilence` is the length of quiet that counts as padding. 0.08s was too greedy
+// for single French words: measured on "oui" it removed 35% of the clip, eating the
+// soft /w/ onset, and human QA heard the result as mispronunciation. But dropping
+// the trim entirely is worse now that French is on v3 — Gate B's T-07 caught 1-2s
+// of dead air INSIDE taught clips ("au revoir", "non", "madame"). 0.35s is the
+// middle: long enough to leave a word's own onset and release alone, short enough
+// to strip v3's padding.
+async function trimSilence(fileAbs, { minSilence = 0.08, threshold = '-40dB' } = {}) {
   if (!FFMPEG) return;
   const tmp = fileAbs.replace(/\.mp3$/i, '.trim.mp3');
-  const th = '-40dB';
+  const th = threshold;
   const filt =
-    `silenceremove=start_periods=1:start_silence=0.08:start_threshold=${th}:detection=peak,` +
+    `silenceremove=start_periods=1:start_silence=${minSilence}:start_threshold=${th}:detection=peak,` +
     `areverse,` +
-    `silenceremove=start_periods=1:start_silence=0.08:start_threshold=${th}:detection=peak,` +
+    `silenceremove=start_periods=1:start_silence=${minSilence}:start_threshold=${th}:detection=peak,` +
     `areverse`;
   try {
     execFileSync(FFMPEG, ['-y', '-hide_banner', '-nostats', '-i', fileAbs, '-af', filt, tmp], { stdio: 'pipe' });
@@ -103,7 +110,7 @@ async function tts(text, voiceId, model = MODEL, speed = 1) {
 // one-syllable glide. Even at -60dB/0.20s it still took 19%. Human QA heard the
 // result as mispronunciation on exactly the fragile words — glides and nasals
 // (oui, non, au revoir, monsieur, pardon, à bientôt). Pass trim:false for French.
-export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1, atempo = 1, trim = true }) {
+export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1, atempo = 1, trim = true, trimOpts = {} }) {
   await mkdir(path.dirname(outAbs), { recursive: true });
   let buf;
   try {
@@ -114,7 +121,7 @@ export async function ttsClip({ text, voiceId, model = MODEL, outAbs, speed = 1,
     } else throw e;
   }
   await writeFile(outAbs, buf);
-  if (trim) await trimSilence(outAbs);
+  if (trim) await trimSilence(outAbs, trimOpts);
   // Slow the clip to `atempo`× real speed (comprehension pacing) after trimming,
   // so the reported duration reflects the stretched clip.
   await atempoStretch(outAbs, atempo);

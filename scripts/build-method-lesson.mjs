@@ -136,7 +136,7 @@ async function clipFor(b) {
       // clip reference (missing file → silent gap in the render + S-08 MISSING).
       clipN++;
       for (let att = 1; att <= 3; att++) {
-        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: frSpeed, atempo: 1, trim: !isFr }); }
+        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: frSpeed, atempo: 1, trim: true, trimOpts: isFr ? { minSilence: 0.35, threshold: '-45dB' } : {} }); }
         catch (e) { if (att === 3) console.error(`  ✗ TTS failed x3: "${b.text.slice(0, 40)}" — ${String(e.message).split('\n')[0]}`); }
         if (existsSync(abs)) { d = (await parseFile(abs)).format.duration || d || 1; break; }
       }
