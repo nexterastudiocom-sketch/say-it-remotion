@@ -36,16 +36,21 @@ const VOICES = {
   'EN·MAN': process.env.ELEVENLABS_VOICE_EN_MAN || 'uh5qBlKfjqFl7XXhFnJi',
   'EN·WOMAN': process.env.ELEVENLABS_VOICE_EN_WOMAN || 'Bn9xWp6PwkrqKRbq8cX2',
   'FR·WOMAN': process.env.ELEVENLABS_VOICE_FR_WOMAN || 'Y54PWsHC8udAjARe8URQ',
-  'FR·MAN': process.env.ELEVENLABS_VOICE_FR_MAN || 'kKgyAHjGAbeWHCNd7qoC',
+  'FR·MAN': process.env.ELEVENLABS_VOICE_FR_MAN || '93nuHbke4dTER9x2pDwE',
 };
 const voiceKey = (v) => v.toLowerCase().replace('·', '_'); // FR·WOMAN → fr_woman
-// French vocab must be spoken CLEANLY. The expressive v3 model intermittently
-// appends hums/filler after a word ("mmm", or whole tags like "C'est ça ?"), which
-// is wrong for single-word teaching. multilingual_v2 reads the text literally.
-// English narration keeps v3. Model is part of the clip cache key (below), so
-// switching it re-synthesizes only the affected voice.
+// French is on v3 (v5 change). It used to be multilingual_v2, chosen because v3
+// intermittently appended hums/filler after a word — but v2 turned out to
+// mispronounce French systematically when given a bare word with no context: it
+// applied spelling/English rules, sounding silent finals (comment→t, vingt→t,
+// douze/onze/quatre/quinze→e), reading x as /ks/ in dix/six, an English r in
+// quatorze, "un" as "une", "seize" ending /s/. Human QA found 30+ instances; no
+// ASR check caught any, because the words stayed recognisable. Confirmed by ear
+// that v3 does not have the defect. Eleven voices were tested on v2 and all failed
+// identically, which is what ruled out the voice as the cause.
+// Model is part of the clip cache key (below), so this re-synthesizes French only.
 const MODEL_EN = process.env.ELEVENLABS_MODEL || 'eleven_v3';
-const MODEL_FR = process.env.ELEVENLABS_MODEL_FR || 'eleven_multilingual_v2';
+const MODEL_FR = process.env.ELEVENLABS_MODEL_FR || 'eleven_v3';
 
 // stage → a Remotion slide type (render components map from this; unbuilt stages
 // fall back to a generic 'method' slide that still carries all the data).
