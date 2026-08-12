@@ -120,7 +120,10 @@ async function clipFor(b) {
   // word stays recognisable. Every French clip is now generated at speed 1.0.
   // Key changes (nspeed1|notrim) so all French re-synthesizes; the EN key is
   // untouched, so English audio stays cached and costs nothing.
-  const FR_TRIM = { minSilence: 0.35, threshold: '-45dB' };
+  // Threshold MUST match T-07's detector (-40dB). At -45dB the trim left audio in
+    // the -45..-40 band that the gate then counts as dead air: 'bien' kept 1.36s and
+    // 'zéro' 1.04s, blocking L02 and L04 while L01/L03/L05 happened to pass.
+    const FR_TRIM = { minSilence: 0.35, threshold: '-40dB' };
   const FR_TRIM_KEY = `trim${FR_TRIM.minSilence}@${FR_TRIM.threshold}`;
   const frSpeed = 1;
   const key = isFr
