@@ -120,9 +120,11 @@ async function clipFor(b) {
   // word stays recognisable. Every French clip is now generated at speed 1.0.
   // Key changes (nspeed1|notrim) so all French re-synthesizes; the EN key is
   // untouched, so English audio stays cached and costs nothing.
+  const FR_TRIM = { minSilence: 0.35, threshold: '-45dB' };
+  const FR_TRIM_KEY = `trim${FR_TRIM.minSilence}@${FR_TRIM.threshold}`;
   const frSpeed = 1;
   const key = isFr
-    ? `${b.voice}|${model}|${b.rate || 'natural'}|nspeed1|notrim|${b.text}`
+    ? `${b.voice}|${model}|${b.rate || 'natural'}|nspeed1|${FR_TRIM_KEY}|${b.text}`
     : `${b.voice}|${b.rate || 'natural'}|atempo1|${b.text}`;
   let hit = clipCache.get(key);
   if (!hit) {
@@ -136,7 +138,7 @@ async function clipFor(b) {
       // clip reference (missing file → silent gap in the render + S-08 MISSING).
       clipN++;
       for (let att = 1; att <= 3; att++) {
-        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: frSpeed, atempo: 1, trim: true, trimOpts: isFr ? { minSilence: 0.35, threshold: '-45dB' } : {} }); }
+        try { d = await ttsClip({ text: b.text, voiceId: VOICES[b.voice], model, outAbs: abs, speed: frSpeed, atempo: 1, trim: true, trimOpts: isFr ? FR_TRIM : {} }); }
         catch (e) { if (att === 3) console.error(`  ✗ TTS failed x3: "${b.text.slice(0, 40)}" — ${String(e.message).split('\n')[0]}`); }
         if (existsSync(abs)) { d = (await parseFile(abs)).format.duration || d || 1; break; }
       }
