@@ -262,7 +262,7 @@ async function processLesson(ref, cfg, { dry }) {
 // existing OneDrive path). Configure once:
 //   rclone config           # create a remote named "gdrive" (Google Drive, OAuth)
 //   export MOSAIC_GDRIVE_REMOTE=gdrive
-//   export MOSAIC_GDRIVE_BASE="ClaudeAI/Youtube/French"   # optional; this is the default
+//   export MOSAIC_GDRIVE_BASE="Mosaic New folder/v5"   # optional; this is the default
 // Without a remote we still BUILD the bundle + stage the video locally and print
 // exactly what to upload — nothing is silently skipped.
 async function publishLesson(ref, { dry }) {
@@ -281,7 +281,7 @@ async function publishLesson(ref, { dry }) {
   console.log(`  ✓ staged: ${stageDir.replace(ROOT + '/', '')}${stagedVideo ? ' (incl. video)' : ' (video not rendered yet)'}`);
 
   const remote = process.env.MOSAIC_GDRIVE_REMOTE;
-  const base = process.env.MOSAIC_GDRIVE_BASE || 'ClaudeAI/Youtube/French';
+  const base = process.env.MOSAIC_GDRIVE_BASE || 'Mosaic New folder/v5';
   // Resolve rclone robustly — $RCLONE_BIN, then PATH, then the stable ~/.local/bin
   // copy (survives nvm switching node versions). All read the same ~/.config/rclone.
   const rcloneBin = await resolveRclone();

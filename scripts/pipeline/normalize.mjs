@@ -41,7 +41,9 @@ export async function normalizeLoudness(inAbs, outAbs, cfg) {
     `offset=${meas.offset}`, 'linear=true', 'print_format=summary',
   ].join(':');
   const r = await run(REMOTION, ['ffmpeg', '-hide_banner', '-nostats', '-y', '-i', inAbs,
-    '-map', '0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '320k', '-ar', String(cfg.video.sampleRate),
+    // 384k, not 320k — T-04 wants AAC at 384 kbps and this pass is the last thing to
+    // touch the audio, so anything lower here is what the gate measures on delivery.
+    '-map', '0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '384k', '-ar', String(cfg.video.sampleRate),
     '-ac', String(cfg.video.channels), '-af', apply, outAbs]);
   if (r.code !== 0) throw new Error('loudnorm apply failed: ' + r.stderr.trim().split('\n').slice(-3).join(' '));
   return { before: meas.measured_I, target: target.I };

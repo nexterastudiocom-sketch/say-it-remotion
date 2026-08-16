@@ -11,7 +11,13 @@
 //   node --env-file=.env scripts/loop.mjs --rebuild <id> …   # re-run finished lesson(s)
 //
 // Requires: rclone remote `gdrive:` (nexterastudio) — env MOSAIC_GDRIVE_REMOTE
-// overrides. Render quality: 540p preview by default (fast); --hq for 4K.
+// overrides.
+//
+// v5 (2026-08-16) is the canonical config and DELIVERS 4K. A 4K pass measured
+// ~25 min/lesson on this machine, so there is no reason to ship 540p and re-render
+// later: full quality is the default and --preview is the opt-out for a fast look.
+// The 46-lesson batch under ClaudeAI/Youtube/French predates v5 and is abandoned;
+// v5 publishes to "Mosaic New folder/v5" and that root is permanent.
 
 import { execFileSync } from 'node:child_process';
 import { readFile, writeFile, mkdir, rm, readdir } from 'node:fs/promises';
@@ -22,12 +28,19 @@ import XLSX from 'xlsx';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const REMOTE = process.env.MOSAIC_GDRIVE_REMOTE || 'gdrive';
-const BASE = `${REMOTE}:${process.env.MOSAIC_GDRIVE_BASE || 'ClaudeAI/Youtube/French'}`;
+const BASE = `${REMOTE}:${process.env.MOSAIC_GDRIVE_BASE || 'Mosaic New folder/v5'}`;
 const INTAKE = `${BASE}/_INTAKE`;
 const RCLONE = process.env.RCLONE || `${process.env.HOME}/.local/bin/rclone`;
 const REMO = path.join(ROOT, 'node_modules/.bin/remotion');
 const args = process.argv.slice(2);
-const HQ = args.includes('--hq');
+// 4K is the deliverable, so it is the default. --preview renders 960x540 for a quick
+// look; --hq is kept as a no-op alias so older notes/scripts don't silently downgrade.
+const HQ = !args.includes('--preview');
+// The render name must state what it IS. This file used to write every render to
+// "…-method-540p.mp4" even under --hq, so a 4K master sat on disk claiming to be a
+// preview and publish() shipped it under that name.
+const QUALITY = HQ ? '4k' : '540p';
+const renderPath = (id, suffix = '') => path.join(ROOT, `out/${id}-method-${QUALITY}${suffix}.mp4`);
 const MATCH = args.includes('--match') ? new RegExp(args[args.indexOf('--match') + 1]) : null;
 const LIMIT = args.includes('--limit') ? Number(args[args.indexOf('--limit') + 1]) : Infinity;
 
@@ -65,8 +78,8 @@ async function publish(id) {
   const bid = brand(id);                    // Mosaic_… folder + file names on Drive
   const lessonFolder = `${BASE}/${bid}`;
   rclone(['mkdir', lessonFolder]);
-  const video = path.join(ROOT, `out/${id}-method-540p-norm.mp4`);
-  const videoAbs = existsSync(video) ? video : path.join(ROOT, `out/${id}-method-540p.mp4`);
+  const video = renderPath(id, '-norm');
+  const videoAbs = existsSync(video) ? video : renderPath(id);
   const thumb = path.join(ROOT, `out/thumbnails/${id}.png`);
 
   // VIDEO-PATH.txt — where the render came from. It used to say the video was NOT
@@ -177,7 +190,7 @@ async function processWorkbook(name, { rebuild = false } = {}) {
   log('loudness balance');       sh('node', ['scripts/qa/loudness-balance.mjs', id]);
   log('manifest');               sh('node', ['scripts/qa/manifest.mjs', id]);
   log(`render ${HQ ? '4K' : '540p'}`);
-  const outMp4 = path.join(ROOT, `out/${id}-method-540p.mp4`);
+  const outMp4 = renderPath(id);
   // --props targets THIS lesson's baked JSON (the composition is generic LessonFilm).
   // --timeout guards a single slow frame — the intro/outro are VIDEO components and
   // Remotion's per-frame seek can stall for minutes under CPU contention. A single
@@ -185,12 +198,18 @@ async function processWorkbook(name, { rebuild = false } = {}) {
   // safer settings (more concurrency→less, longer timeout) before we give up.
   const propArg = `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`;
   const scaleArg = HQ ? '--scale=1' : '--scale=0.25';
+  // Remotion's default CRF put the first 4K master at 4.4 Mbps, which trips T-03
+  // (spec wants >=45 Mbps H.264) and is thin for what YouTube re-encodes. Pin the
+  // rate explicitly on the delivery render; a preview is disposable, so leave it.
+  const rateArgs = HQ ? ['--video-bitrate=50M', '--audio-bitrate=384k'] : [];
   // MOSAIC_RENDER_CONCURRENCY pins the STARTING concurrency. The ladder below only
   // helps when a render fails and returns; it cannot help when the whole node process
   // is killed mid-render (five runs died at 8483/8494/8603/8630/8646 frames — a
   // 163-frame band across five different films — taking the loop down with them, so
   // no retry ever ran). Lowering the start cuts the peak memory a render holds.
-  const startConc = Number(process.env.MOSAIC_RENDER_CONCURRENCY) || 4;
+  // A 4K frame is 16x the pixels of the 540p preview, so the same concurrency holds
+  // 16x the peak memory — which is what killed those five runs. Start 4K at 2.
+  const startConc = Number(process.env.MOSAIC_RENDER_CONCURRENCY) || (HQ ? 2 : 4);
   const ladder = [[4, 600000], [2, 900000], [1, 1200000]].filter(([c]) => c <= startConc);
   const attempts = (ladder.length ? ladder : [[startConc, 1200000]])
     .map(([c, t]) => [`--concurrency=${c}`, `--timeout=${t}`]);
@@ -198,23 +217,25 @@ async function processWorkbook(name, { rebuild = false } = {}) {
   for (let a = 0; a < attempts.length; a++) {
     try {
       if (a) log(`render retry ${a} (${attempts[a].join(' ')})`);
-      sh(REMO, ['render', 'Lesson-01-Method', outMp4, propArg, scaleArg, ...attempts[a]]);
+      sh(REMO, ['render', 'Lesson-01-Method', outMp4, propArg, scaleArg, ...rateArgs, ...attempts[a]]);
       rendered = true; break;
     } catch (e) {
       console.log(`  render attempt ${a + 1}/${attempts.length} failed: ${String(e.message).split('\n')[0]}`);
     }
   }
   if (!rendered) throw new Error(`render failed after ${attempts.length} attempts — ${id}`);
-  const normMp4 = path.join(ROOT, `out/${id}-method-540p-norm.mp4`);
+  const normMp4 = renderPath(id, '-norm');
   log('loudnorm');               sh('node', ['scripts/pipeline/normalize.mjs', outMp4, normMp4]);
   // Gate B — POST-render audio/content checks (pronunciation round-trip, AV-sync,
   // input-return identity, rate). Runs whisper on the render (~2-3 min). T-01
   // (resolution) and T-05 (loudness) BLOCK at 540p by design, so they're tolerated
-  // in the preview batch; any OTHER Gate-B block stops the loop (do not publish).
+  // in a --preview run ONLY. A 4K delivery render tolerates nothing: T-01 there means
+  // the master really is the wrong size, which is exactly what must not ship.
   log('Gate B (audio/content)');
   try { execFileSync('node', ['scripts/qa/gate-b.mjs', id], { cwd: ROOT, stdio: 'inherit', env: { ...process.env, MOSAIC_QA_VIDEO: normMp4 } }); } catch { /* exit 1 on any block — inspect below */ }
   const gbDoc = existsSync(path.join(ROOT, `qa/${id}.json`)) ? JSON.parse(await readFile(path.join(ROOT, `qa/${id}.json`), 'utf8')) : { findings: [] };
-  const gbBlocks = (gbDoc.findings || []).filter((f) => f.severity === 'BLOCK' && !['T-01', 'T-05'].includes(f.rule));
+  const tolerated = HQ ? [] : ['T-01', 'T-05'];
+  const gbBlocks = (gbDoc.findings || []).filter((f) => f.severity === 'BLOCK' && !tolerated.includes(f.rule));
   if (gbBlocks.length) throw new Error(`Gate B blocks (${[...new Set(gbBlocks.map((f) => f.rule))].join(', ')}) — do not publish ${id}`);
 
   log('thumbnail');              sh('node', ['scripts/thumbnail.mjs', id]);

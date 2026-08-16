@@ -126,7 +126,7 @@ When a lesson reaches `completed`, the loop runs `publish` automatically (skip w
    cover, and config, at repo-relative paths. Unzip it at the repo root on any
    machine, add `.env`, and `npm run studio` reopens the lesson for editing.
 2. Stages the loudness-normalized video alongside it.
-3. Uploads both to **Google Drive → `ClaudeAI/Youtube/French/<id>/`** (a new folder
+3. Uploads both to **Google Drive → `Mosaic New folder/v5/<id>/`** (a new folder
    per lesson).
 
 **The upload needs rclone** — a plain Node script can't use the session's Drive
@@ -136,7 +136,7 @@ tools, and a 185 MB 4K video can't go through them anyway. One-time setup:
 brew install rclone          # or https://rclone.org/downloads/
 rclone config                # create a Google Drive remote named e.g. "gdrive"
 export MOSAIC_GDRIVE_REMOTE=gdrive
-export MOSAIC_GDRIVE_BASE="ClaudeAI/Youtube/French"   # optional; this is the default
+export MOSAIC_GDRIVE_BASE="Mosaic New folder/v5"   # optional; this is the default
 ```
 
 Without rclone the bundle + video are still built and staged in

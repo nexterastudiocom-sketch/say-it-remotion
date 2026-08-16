@@ -40,7 +40,7 @@ Answer the prompts:
 
 Verify it sees your Drive:
 ```bash
-rclone lsd gdrive:ClaudeAI/Youtube/French     # should list your lesson folders
+rclone lsd gdrive:Mosaic New folder/v5     # should list your lesson folders
 ```
 
 ## 3. Point the pipeline at it
@@ -48,7 +48,7 @@ rclone lsd gdrive:ClaudeAI/Youtube/French     # should list your lesson folders
 Add these to your shell (e.g. `~/.zshrc`) or prefix a command with them:
 ```bash
 export MOSAIC_GDRIVE_REMOTE=gdrive
-# MOSAIC_GDRIVE_BASE defaults to "ClaudeAI/Youtube/French" — only set to override
+# MOSAIC_GDRIVE_BASE defaults to "Mosaic New folder/v5" — only set to override
 ```
 
 ## 4. Upload
@@ -60,7 +60,7 @@ npm run lessons -- publish lesson-01
 ```
 Expected tail:
 ```
-✓ uploaded → gdrive:ClaudeAI/Youtube/French/lesson-01 (video + lesson-01-project.zip + manifest)
+✓ uploaded → gdrive:Mosaic New folder/v5/lesson-01 (video + lesson-01-project.zip + manifest)
 ```
 
 Without rclone or the env var, `publish` still builds + stages everything in
