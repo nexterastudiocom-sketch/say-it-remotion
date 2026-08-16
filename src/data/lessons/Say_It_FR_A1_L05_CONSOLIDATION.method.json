@@ -25,7 +25,7 @@
       "dix-sept"
     ],
     "glosses": [
-      "ma'am",
+      "maam",
       "please",
       "ten",
       "nine",
@@ -60,7 +60,7 @@
       "stage": "COLD_INPUT",
       "segment": "01 · COLD_INPUT · cold open",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 16.71,
+      "durationInSeconds": 18.4,
       "beats": [
         {
           "durationInSeconds": 1.2,
@@ -90,8 +90,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -109,8 +109,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -128,8 +128,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -147,8 +147,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -166,8 +166,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -185,8 +185,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -213,7 +213,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "02 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 24.75,
+      "durationInSeconds": 24.21,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -237,8 +237,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fa1afdb17b9ffa88.mp3",
-          "durationInSeconds": 1.03,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d51f618cb425e682.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "madame",
@@ -275,8 +275,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fa1afdb17b9ffa88.mp3",
-          "durationInSeconds": 1.03,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d51f618cb425e682.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "madame",
@@ -288,7 +288,7 @@
           "line": 42
         },
         {
-          "durationInSeconds": 3.07,
+          "durationInSeconds": 2.71,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -313,8 +313,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fa1afdb17b9ffa88.mp3",
-          "durationInSeconds": 1.03,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d51f618cb425e682.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "madame",
@@ -326,17 +326,17 @@
           "line": 46
         },
         {
-          "durationInSeconds": 3.04,
+          "durationInSeconds": 2.7,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/190a27ad001b1004.mp3",
-          "durationInSeconds": 1.8,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8301c52cec3bb129.mp3",
+          "durationInSeconds": 1.49,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Now you — say \"ma'am\".",
+          "text": "Now you — say \"maam\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
@@ -345,14 +345,14 @@
           "line": 48
         },
         {
-          "durationInSeconds": 2.74,
+          "durationInSeconds": 3.12,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -370,11 +370,11 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/54f189c3ecd769de.mp3",
-          "durationInSeconds": 2.11,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b05c1ce68c44a410.mp3",
+          "durationInSeconds": 2.33,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"ma'am\".",
+          "text": "One more — say \"maam\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
@@ -383,14 +383,14 @@
           "line": 52
         },
         {
-          "durationInSeconds": 2.56,
+          "durationInSeconds": 2.68,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -419,14 +419,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "03 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 7.18,
+      "durationInSeconds": 6.38,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b99442d301e8afd.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7abb51a557581ae4.mp3",
+          "durationInSeconds": 1.92,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Your turn — say \"ma'am\".",
+          "text": "Your turn — say \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -437,14 +437,14 @@
           "line": 59
         },
         {
-          "durationInSeconds": 2.97,
+          "durationInSeconds": 2.64,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fa1afdb17b9ffa88.mp3",
-          "durationInSeconds": 1.03,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d51f618cb425e682.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -473,7 +473,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 30.66,
+      "durationInSeconds": 32.06,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -497,8 +497,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/23c518a97d0aca80.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8d93ba9947178aa1.mp3",
+          "durationInSeconds": 0.96,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -535,8 +535,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/23c518a97d0aca80.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8d93ba9947178aa1.mp3",
+          "durationInSeconds": 0.96,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -548,7 +548,7 @@
           "line": 72
         },
         {
-          "durationInSeconds": 4.45,
+          "durationInSeconds": 4.5,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -573,8 +573,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/23c518a97d0aca80.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8d93ba9947178aa1.mp3",
+          "durationInSeconds": 0.96,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -586,7 +586,7 @@
           "line": 76
         },
         {
-          "durationInSeconds": 4.4,
+          "durationInSeconds": 4.5,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -611,8 +611,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -643,14 +643,14 @@
           "line": 82
         },
         {
-          "durationInSeconds": 4.02,
+          "durationInSeconds": 4.5,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -679,7 +679,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "05 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 21.34,
+      "durationInSeconds": 23.45,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -703,8 +703,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d7e46e0e17075ee4.mp3",
-          "durationInSeconds": 0.7,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/aa6693923f961d80.mp3",
+          "durationInSeconds": 0.91,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "dix",
@@ -741,8 +741,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d7e46e0e17075ee4.mp3",
-          "durationInSeconds": 0.7,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/aa6693923f961d80.mp3",
+          "durationInSeconds": 0.91,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "dix",
@@ -754,7 +754,7 @@
           "line": 95
         },
         {
-          "durationInSeconds": 2.39,
+          "durationInSeconds": 2.62,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -779,8 +779,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d7e46e0e17075ee4.mp3",
-          "durationInSeconds": 0.7,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/aa6693923f961d80.mp3",
+          "durationInSeconds": 0.91,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "dix",
@@ -792,7 +792,7 @@
           "line": 99
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.6,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -811,14 +811,14 @@
           "line": 101
         },
         {
-          "durationInSeconds": 2.42,
+          "durationInSeconds": 2.86,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -849,14 +849,14 @@
           "line": 105
         },
         {
-          "durationInSeconds": 2.35,
+          "durationInSeconds": 2.46,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -885,7 +885,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "06 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 8.18,
+      "durationInSeconds": 8.33,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/9e1aa0d0bdff526b.mp3",
@@ -903,14 +903,14 @@
           "line": 112
         },
         {
-          "durationInSeconds": 4.13,
+          "durationInSeconds": 4.23,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/23c518a97d0aca80.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8d93ba9947178aa1.mp3",
+          "durationInSeconds": 0.96,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -939,14 +939,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "07 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 5.73,
+      "durationInSeconds": 6,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cfdd7dcfc6ba5574.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/4c761335b724c7bf.mp3",
+          "durationInSeconds": 1.75,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Now you — \"ma'am\".",
+          "text": "Now you — \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -957,14 +957,14 @@
           "line": 119
         },
         {
-          "durationInSeconds": 2.3,
+          "durationInSeconds": 2.41,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -993,7 +993,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "08 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 4.82,
+      "durationInSeconds": 5.24,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a27415fa28bb82b6.mp3",
@@ -1011,14 +1011,14 @@
           "line": 126
         },
         {
-          "durationInSeconds": 2.28,
+          "durationInSeconds": 2.49,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d7e46e0e17075ee4.mp3",
-          "durationInSeconds": 0.7,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/aa6693923f961d80.mp3",
+          "durationInSeconds": 0.91,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -1047,7 +1047,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "09 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 19.98,
+      "durationInSeconds": 22.39,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -1071,8 +1071,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/31f17af1b07f64f1.mp3",
-          "durationInSeconds": 0.5,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ba7e9dada2fad61.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "neuf",
@@ -1109,8 +1109,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/31f17af1b07f64f1.mp3",
-          "durationInSeconds": 0.5,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ba7e9dada2fad61.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "neuf",
@@ -1122,7 +1122,7 @@
           "line": 139
         },
         {
-          "durationInSeconds": 2.25,
+          "durationInSeconds": 2.33,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1147,8 +1147,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/31f17af1b07f64f1.mp3",
-          "durationInSeconds": 0.5,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ba7e9dada2fad61.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "neuf",
@@ -1160,7 +1160,7 @@
           "line": 143
         },
         {
-          "durationInSeconds": 2.24,
+          "durationInSeconds": 2.32,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1179,14 +1179,14 @@
           "line": 145
         },
         {
-          "durationInSeconds": 2.22,
+          "durationInSeconds": 2.65,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -1217,14 +1217,14 @@
           "line": 149
         },
         {
-          "durationInSeconds": 2.2,
+          "durationInSeconds": 2.28,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -1253,7 +1253,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "10 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 6.95,
+      "durationInSeconds": 7.84,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/91cd2f034e98f8a7.mp3",
@@ -1271,14 +1271,14 @@
           "line": 156
         },
         {
-          "durationInSeconds": 3.62,
+          "durationInSeconds": 4.2,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -1307,7 +1307,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "11 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 5.48,
+      "durationInSeconds": 5.88,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/840d01e5558345b6.mp3",
@@ -1325,14 +1325,14 @@
           "line": 163
         },
         {
-          "durationInSeconds": 2.16,
+          "durationInSeconds": 2.24,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/31f17af1b07f64f1.mp3",
-          "durationInSeconds": 0.5,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ba7e9dada2fad61.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -1361,7 +1361,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "12 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 23.26,
+      "durationInSeconds": 22.02,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -1385,8 +1385,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96d7bee0c6f89f63.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/942da4226de2892f.mp3",
+          "durationInSeconds": 0.84,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "quatre",
@@ -1423,8 +1423,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96d7bee0c6f89f63.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/942da4226de2892f.mp3",
+          "durationInSeconds": 0.84,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "quatre",
@@ -1436,7 +1436,7 @@
           "line": 176
         },
         {
-          "durationInSeconds": 2.55,
+          "durationInSeconds": 2.23,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1461,8 +1461,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96d7bee0c6f89f63.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/942da4226de2892f.mp3",
+          "durationInSeconds": 0.84,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "quatre",
@@ -1474,7 +1474,7 @@
           "line": 180
         },
         {
-          "durationInSeconds": 2.53,
+          "durationInSeconds": 2.21,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1493,14 +1493,14 @@
           "line": 182
         },
         {
-          "durationInSeconds": 2.37,
+          "durationInSeconds": 2.42,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -1531,14 +1531,14 @@
           "line": 186
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.08,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -1567,7 +1567,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "13 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 5.91,
+      "durationInSeconds": 6.26,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6bebaa33be0489dd.mp3",
@@ -1585,14 +1585,14 @@
           "line": 193
         },
         {
-          "durationInSeconds": 2.05,
+          "durationInSeconds": 2.16,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -1621,7 +1621,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "14 · ITEM_BLOCK · au revoir",
       "visual": "ILLUSTRATION — au revoir",
-      "durationInSeconds": 22.17,
+      "durationInSeconds": 22.79,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -1645,8 +1645,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/adb0970f6a6ffad1.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6faf008f91c817ff.mp3",
+          "durationInSeconds": 1.03,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -1683,8 +1683,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/adb0970f6a6ffad1.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6faf008f91c817ff.mp3",
+          "durationInSeconds": 1.03,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -1696,7 +1696,7 @@
           "line": 206
         },
         {
-          "durationInSeconds": 2.4,
+          "durationInSeconds": 2.38,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1721,8 +1721,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/adb0970f6a6ffad1.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6faf008f91c817ff.mp3",
+          "durationInSeconds": 1.03,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -1734,7 +1734,7 @@
           "line": 210
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.36,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1753,14 +1753,14 @@
           "line": 212
         },
         {
-          "durationInSeconds": 2.23,
+          "durationInSeconds": 2.48,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/92031aba85957515.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/099a310e942cfb20.mp3",
+          "durationInSeconds": 0.89,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -1791,14 +1791,14 @@
           "line": 216
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.16,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/92031aba85957515.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/099a310e942cfb20.mp3",
+          "durationInSeconds": 0.89,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -1827,7 +1827,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "15 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 6.76,
+      "durationInSeconds": 6.21,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c464859ba70e654f.mp3",
@@ -1845,14 +1845,14 @@
           "line": 223
         },
         {
-          "durationInSeconds": 2.4,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96d7bee0c6f89f63.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/942da4226de2892f.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -1881,7 +1881,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "16 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 4.34,
+      "durationInSeconds": 4.8,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ec27f9a740a5f936.mp3",
@@ -1899,14 +1899,14 @@
           "line": 230
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -1935,14 +1935,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "17 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 5.14,
+      "durationInSeconds": 5.63,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d9a59ead9eda1015.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/9355cb723078fa5c.mp3",
+          "durationInSeconds": 1.7,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Your turn — \"ma'am\".",
+          "text": "Your turn — \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -1953,14 +1953,14 @@
           "line": 237
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -1989,7 +1989,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "18 · ITEM_BLOCK · non",
       "visual": "ILLUSTRATION — non",
-      "durationInSeconds": 20.71,
+      "durationInSeconds": 19.65,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -2013,8 +2013,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/43043b1197f61e2f.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/56bd2b6d18d362f6.mp3",
+          "durationInSeconds": 0.58,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "non",
@@ -2051,8 +2051,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/43043b1197f61e2f.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/56bd2b6d18d362f6.mp3",
+          "durationInSeconds": 0.58,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "non",
@@ -2089,8 +2089,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/43043b1197f61e2f.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/56bd2b6d18d362f6.mp3",
+          "durationInSeconds": 0.58,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "non",
@@ -2121,14 +2121,14 @@
           "line": 256
         },
         {
-          "durationInSeconds": 2.26,
+          "durationInSeconds": 2.05,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0f6a02f09fd613e5.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/347eab01b132ce58.mp3",
+          "durationInSeconds": 0.6,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "non",
@@ -2165,8 +2165,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0f6a02f09fd613e5.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/347eab01b132ce58.mp3",
+          "durationInSeconds": 0.6,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "non",
@@ -2195,7 +2195,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "19 · ITEM_BLOCK · au revoir",
       "visual": "ILLUSTRATION — au revoir",
-      "durationInSeconds": 6.48,
+      "durationInSeconds": 6.41,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1ecf30f3b1a95fe4.mp3",
@@ -2213,14 +2213,14 @@
           "line": 267
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.34,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/adb0970f6a6ffad1.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6faf008f91c817ff.mp3",
+          "durationInSeconds": 1.03,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -2249,7 +2249,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "20 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 5.95,
+      "durationInSeconds": 5.98,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/699380a0d4803267.mp3",
@@ -2273,8 +2273,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -2303,7 +2303,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "21 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 20.23,
+      "durationInSeconds": 20.73,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -2327,8 +2327,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/4175d2aaa722bb34.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/835d3b0a0b23d5f4.mp3",
+          "durationInSeconds": 0.5,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bien",
@@ -2365,8 +2365,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/4175d2aaa722bb34.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/835d3b0a0b23d5f4.mp3",
+          "durationInSeconds": 0.5,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bien",
@@ -2403,8 +2403,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/4175d2aaa722bb34.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/835d3b0a0b23d5f4.mp3",
+          "durationInSeconds": 0.5,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "bien",
@@ -2435,14 +2435,14 @@
           "line": 293
         },
         {
-          "durationInSeconds": 2.08,
+          "durationInSeconds": 2.41,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ef80d244e712258a.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5eaddecb2323ddb3.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "bien",
@@ -2473,14 +2473,14 @@
           "line": 297
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ef80d244e712258a.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5eaddecb2323ddb3.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "bien",
@@ -2509,7 +2509,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "22 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 6.9,
+      "durationInSeconds": 7.74,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/27eb704f654bab82.mp3",
@@ -2527,14 +2527,14 @@
           "line": 304
         },
         {
-          "durationInSeconds": 3.31,
+          "durationInSeconds": 3.84,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -2563,7 +2563,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "23 · ITEM_BLOCK · non",
       "visual": "ILLUSTRATION — non",
-      "durationInSeconds": 5.09,
+      "durationInSeconds": 4.9,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ee1a6b333b50ce79.mp3",
@@ -2587,8 +2587,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/43043b1197f61e2f.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/56bd2b6d18d362f6.mp3",
+          "durationInSeconds": 0.58,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "non",
@@ -2617,7 +2617,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "24 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 5.14,
+      "durationInSeconds": 5.47,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f64214a21c8577a5.mp3",
@@ -2635,14 +2635,14 @@
           "line": 318
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -2671,7 +2671,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "25 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 24.69,
+      "durationInSeconds": 22.65,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -2695,8 +2695,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.1,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a8b87156fc400f62.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2733,8 +2733,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.1,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a8b87156fc400f62.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2746,7 +2746,7 @@
           "line": 331
         },
         {
-          "durationInSeconds": 2.43,
+          "durationInSeconds": 2.07,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -2771,8 +2771,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.1,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a8b87156fc400f62.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2784,7 +2784,7 @@
           "line": 335
         },
         {
-          "durationInSeconds": 2.43,
+          "durationInSeconds": 2.07,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -2803,14 +2803,14 @@
           "line": 337
         },
         {
-          "durationInSeconds": 2.59,
+          "durationInSeconds": 2.44,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.96,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/80fca91de1b388f5.mp3",
+          "durationInSeconds": 0.86,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2841,14 +2841,14 @@
           "line": 341
         },
         {
-          "durationInSeconds": 2.25,
+          "durationInSeconds": 2.12,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.96,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/80fca91de1b388f5.mp3",
+          "durationInSeconds": 0.86,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2877,7 +2877,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "26 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.32,
+      "durationInSeconds": 5.2,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/3e95477a8f80f93b.mp3",
@@ -2901,8 +2901,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/4175d2aaa722bb34.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/835d3b0a0b23d5f4.mp3",
+          "durationInSeconds": 0.5,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "bien",
@@ -2931,7 +2931,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "27 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 19.55,
+      "durationInSeconds": 23.21,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -2955,7 +2955,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1325cf5ef75a83a1.mp3",
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f9835a4eb0ebe216.mp3",
           "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
@@ -2993,7 +2993,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1325cf5ef75a83a1.mp3",
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f9835a4eb0ebe216.mp3",
           "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
@@ -3031,7 +3031,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1325cf5ef75a83a1.mp3",
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f9835a4eb0ebe216.mp3",
           "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
@@ -3063,14 +3063,14 @@
           "line": 367
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 3.12,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.41,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/571621627fbada9e.mp3",
+          "durationInSeconds": 1.32,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -3101,14 +3101,14 @@
           "line": 371
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.72,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.41,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/571621627fbada9e.mp3",
+          "durationInSeconds": 1.32,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -3137,7 +3137,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "28 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 5.33,
+      "durationInSeconds": 5.79,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2b853426be08bf41.mp3",
@@ -3155,14 +3155,14 @@
           "line": 378
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -3191,7 +3191,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "29 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 6.71,
+      "durationInSeconds": 6.07,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8a004ca6f735adc1.mp3",
@@ -3209,14 +3209,14 @@
           "line": 385
         },
         {
-          "durationInSeconds": 2.43,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.1,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a8b87156fc400f62.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -3245,7 +3245,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "30 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 22.01,
+      "durationInSeconds": 22.33,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -3269,8 +3269,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.84,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fc14e2efd10ec0b8.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "ça va",
@@ -3307,8 +3307,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.84,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fc14e2efd10ec0b8.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "ça va",
@@ -3320,7 +3320,7 @@
           "line": 398
         },
         {
-          "durationInSeconds": 2.09,
+          "durationInSeconds": 2.07,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -3345,8 +3345,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.84,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fc14e2efd10ec0b8.mp3",
+          "durationInSeconds": 0.82,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "ça va",
@@ -3358,7 +3358,7 @@
           "line": 402
         },
         {
-          "durationInSeconds": 2.09,
+          "durationInSeconds": 2.07,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -3377,14 +3377,14 @@
           "line": 404
         },
         {
-          "durationInSeconds": 2.02,
+          "durationInSeconds": 2.2,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.58,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d14e062fee42a247.mp3",
+          "durationInSeconds": 0.7,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -3421,8 +3421,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.58,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d14e062fee42a247.mp3",
+          "durationInSeconds": 0.7,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -3451,7 +3451,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "31 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 4.72,
+      "durationInSeconds": 4.75,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/aa30d007548ace3d.mp3",
@@ -3475,8 +3475,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -3529,7 +3529,7 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1325cf5ef75a83a1.mp3",
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f9835a4eb0ebe216.mp3",
           "durationInSeconds": 0.65,
           "phase": "PRODUCE",
           "voice": "fr_woman",
@@ -3559,7 +3559,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "33 · ITEM_BLOCK · au revoir",
       "visual": "ILLUSTRATION — au revoir",
-      "durationInSeconds": 5.76,
+      "durationInSeconds": 6.09,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1ecf30f3b1a95fe4.mp3",
@@ -3577,14 +3577,14 @@
           "line": 429
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.16,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/92031aba85957515.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/099a310e942cfb20.mp3",
+          "durationInSeconds": 0.89,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -3613,7 +3613,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "34 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 23.23,
+      "durationInSeconds": 23.89,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8c063a8e2a33b390.mp3",
@@ -3637,8 +3637,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d027ccd263f719f2.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cc926b3d7932e598.mp3",
+          "durationInSeconds": 1.06,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -3675,8 +3675,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d027ccd263f719f2.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cc926b3d7932e598.mp3",
+          "durationInSeconds": 1.06,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -3688,7 +3688,7 @@
           "line": 442
         },
         {
-          "durationInSeconds": 2.4,
+          "durationInSeconds": 2.38,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -3713,8 +3713,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d027ccd263f719f2.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cc926b3d7932e598.mp3",
+          "durationInSeconds": 1.06,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -3726,7 +3726,7 @@
           "line": 446
         },
         {
-          "durationInSeconds": 2.4,
+          "durationInSeconds": 2.38,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -3745,14 +3745,14 @@
           "line": 448
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.62,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -3783,14 +3783,14 @@
           "line": 452
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -3819,14 +3819,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "35 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 5.79,
+      "durationInSeconds": 5.99,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1a74b9152ecb4529.mp3",
-          "durationInSeconds": 2.14,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f6cc587043d0426b.mp3",
+          "durationInSeconds": 2.06,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Repeat it in French — \"ma'am\".",
+          "text": "Repeat it in French — \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -3837,14 +3837,14 @@
           "line": 459
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -3873,7 +3873,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "36 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 5.83,
+      "durationInSeconds": 5.79,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1526a7889d1aab65.mp3",
@@ -3891,14 +3891,14 @@
           "line": 466
         },
         {
-          "durationInSeconds": 2.09,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.84,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fc14e2efd10ec0b8.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -3927,7 +3927,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "37 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 5.99,
+      "durationInSeconds": 5.95,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/adcb81def3f9766b.mp3",
@@ -3945,14 +3945,14 @@
           "line": 473
         },
         {
-          "durationInSeconds": 2.4,
+          "durationInSeconds": 2.38,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d027ccd263f719f2.mp3",
-          "durationInSeconds": 1.08,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cc926b3d7932e598.mp3",
+          "durationInSeconds": 1.06,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -3981,7 +3981,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "38 · ITEM_BLOCK · non",
       "visual": "ILLUSTRATION — non",
-      "durationInSeconds": 5.3,
+      "durationInSeconds": 5.16,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b62f88d20c532018.mp3",
@@ -4005,8 +4005,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0f6a02f09fd613e5.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/347eab01b132ce58.mp3",
+          "durationInSeconds": 0.6,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "non",
@@ -4035,7 +4035,7 @@
       "stage": "INPUT_RETURN",
       "segment": "39 · INPUT_RETURN · checkpoint 1 — the whole exchange, twice",
       "visual": null,
-      "durationInSeconds": 95.58,
+      "durationInSeconds": 104.72,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d5761a1110f715b7.mp3",
@@ -4057,8 +4057,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -4070,14 +4070,14 @@
           "line": 488
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -4089,14 +4089,14 @@
           "line": 490
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -4108,14 +4108,14 @@
           "line": 492
         },
         {
-          "durationInSeconds": 5.14,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -4127,14 +4127,14 @@
           "line": 494
         },
         {
-          "durationInSeconds": 5.26,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -4146,14 +4146,14 @@
           "line": 496
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -4165,7 +4165,7 @@
           "line": 498
         },
         {
-          "durationInSeconds": 4.53,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
@@ -4190,8 +4190,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -4203,14 +4203,14 @@
           "line": 502
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -4222,14 +4222,14 @@
           "line": 504
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -4241,14 +4241,14 @@
           "line": 506
         },
         {
-          "durationInSeconds": 5.14,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -4260,14 +4260,14 @@
           "line": 508
         },
         {
-          "durationInSeconds": 5.26,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -4279,14 +4279,14 @@
           "line": 510
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -4298,7 +4298,7 @@
           "line": 512
         },
         {
-          "durationInSeconds": 4.53,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
@@ -4313,7 +4313,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "40 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 7.05,
+      "durationInSeconds": 7.89,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b44dacc007c39f22.mp3",
@@ -4331,14 +4331,14 @@
           "line": 517
         },
         {
-          "durationInSeconds": 3.31,
+          "durationInSeconds": 3.84,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -4367,7 +4367,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "41 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 6.02,
+      "durationInSeconds": 6.33,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cd040723cdf7508d.mp3",
@@ -4385,14 +4385,14 @@
           "line": 524
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ef80d244e712258a.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5eaddecb2323ddb3.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "bien",
@@ -4421,7 +4421,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "42 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 5.35,
+      "durationInSeconds": 5.68,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d3d64b460828abec.mp3",
@@ -4439,14 +4439,14 @@
           "line": 531
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -4475,7 +4475,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "43 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 5.4,
+      "durationInSeconds": 5.76,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/adcb81def3f9766b.mp3",
@@ -4493,14 +4493,14 @@
           "line": 538
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -4529,7 +4529,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "44 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 6.49,
+      "durationInSeconds": 6.26,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/afa15af055416794.mp3",
@@ -4547,14 +4547,14 @@
           "line": 545
         },
         {
-          "durationInSeconds": 2.25,
+          "durationInSeconds": 2.12,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.96,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/80fca91de1b388f5.mp3",
+          "durationInSeconds": 0.86,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -4583,7 +4583,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "45 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 5.25,
+      "durationInSeconds": 5.71,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/840d01e5558345b6.mp3",
@@ -4601,14 +4601,14 @@
           "line": 552
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -4637,7 +4637,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "46 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 5.47,
+      "durationInSeconds": 7.1,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0c615813c37dac6d.mp3",
@@ -4655,14 +4655,14 @@
           "line": 559
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.72,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.41,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/571621627fbada9e.mp3",
+          "durationInSeconds": 1.32,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -4691,7 +4691,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "47 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 6.02,
+      "durationInSeconds": 6.05,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c464859ba70e654f.mp3",
@@ -4715,8 +4715,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -4745,7 +4745,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "48 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 4.54,
+      "durationInSeconds": 4.66,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2b8f4e638a2fce85.mp3",
@@ -4769,8 +4769,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.58,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d14e062fee42a247.mp3",
+          "durationInSeconds": 0.7,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -4799,7 +4799,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "49 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 5.76,
+      "durationInSeconds": 6.12,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f75a5481954f9226.mp3",
@@ -4817,14 +4817,14 @@
           "line": 580
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -4853,7 +4853,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "50 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 6.03,
+      "durationInSeconds": 6.39,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0982b5a52f7bd4e4.mp3",
@@ -4871,14 +4871,14 @@
           "line": 587
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -4907,7 +4907,7 @@
       "stage": "INPUT_RETURN",
       "segment": "51 · INPUT_RETURN · checkpoint 2 — the whole exchange, twice",
       "visual": null,
-      "durationInSeconds": 95.58,
+      "durationInSeconds": 104.72,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d5761a1110f715b7.mp3",
@@ -4929,8 +4929,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -4942,14 +4942,14 @@
           "line": 595
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -4961,14 +4961,14 @@
           "line": 597
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -4980,14 +4980,14 @@
           "line": 599
         },
         {
-          "durationInSeconds": 5.14,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -4999,14 +4999,14 @@
           "line": 601
         },
         {
-          "durationInSeconds": 5.26,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -5018,14 +5018,14 @@
           "line": 603
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -5037,7 +5037,7 @@
           "line": 605
         },
         {
-          "durationInSeconds": 4.53,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
@@ -5062,8 +5062,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -5075,14 +5075,14 @@
           "line": 609
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -5094,14 +5094,14 @@
           "line": 611
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -5113,14 +5113,14 @@
           "line": 613
         },
         {
-          "durationInSeconds": 5.14,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -5132,14 +5132,14 @@
           "line": 615
         },
         {
-          "durationInSeconds": 5.26,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -5151,14 +5151,14 @@
           "line": 617
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -5170,7 +5170,7 @@
           "line": 619
         },
         {
-          "durationInSeconds": 4.53,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
@@ -5185,7 +5185,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "52 · ITEM_BLOCK · au revoir",
       "visual": "ILLUSTRATION — au revoir",
-      "durationInSeconds": 6.07,
+      "durationInSeconds": 6.4,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2ce94ff32e7e9118.mp3",
@@ -5203,14 +5203,14 @@
           "line": 624
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.16,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/92031aba85957515.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/099a310e942cfb20.mp3",
+          "durationInSeconds": 0.89,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "au revoir",
@@ -5239,14 +5239,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "53 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 5.43,
+      "durationInSeconds": 5.68,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cfdd7dcfc6ba5574.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/4c761335b724c7bf.mp3",
+          "durationInSeconds": 1.75,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Now you — \"ma'am\".",
+          "text": "Now you — \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -5257,14 +5257,14 @@
           "line": 631
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -5293,7 +5293,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "54 · ITEM_BLOCK · non",
       "visual": "ILLUSTRATION — non",
-      "durationInSeconds": 5.06,
+      "durationInSeconds": 4.92,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ee1a6b333b50ce79.mp3",
@@ -5317,8 +5317,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0f6a02f09fd613e5.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/347eab01b132ce58.mp3",
+          "durationInSeconds": 0.6,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "non",
@@ -5347,7 +5347,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "55 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 6.64,
+      "durationInSeconds": 7.48,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/91cd2f034e98f8a7.mp3",
@@ -5365,14 +5365,14 @@
           "line": 645
         },
         {
-          "durationInSeconds": 3.31,
+          "durationInSeconds": 3.84,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -5401,7 +5401,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "56 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.32,
+      "durationInSeconds": 5.63,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/3e95477a8f80f93b.mp3",
@@ -5419,14 +5419,14 @@
           "line": 652
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ef80d244e712258a.mp3",
-          "durationInSeconds": 0.62,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5eaddecb2323ddb3.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "bien",
@@ -5455,7 +5455,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "57 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 5.86,
+      "durationInSeconds": 6.19,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6bebaa33be0489dd.mp3",
@@ -5473,14 +5473,14 @@
           "line": 659
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -5509,7 +5509,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "58 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 6.39,
+      "durationInSeconds": 6.16,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8a004ca6f735adc1.mp3",
@@ -5527,14 +5527,14 @@
           "line": 666
         },
         {
-          "durationInSeconds": 2.25,
+          "durationInSeconds": 2.12,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.96,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/80fca91de1b388f5.mp3",
+          "durationInSeconds": 0.86,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -5563,7 +5563,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "59 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 4.34,
+      "durationInSeconds": 4.8,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ec27f9a740a5f936.mp3",
@@ -5581,14 +5581,14 @@
           "line": 673
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -5617,14 +5617,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "60 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 5.14,
+      "durationInSeconds": 5.63,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d9a59ead9eda1015.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/9355cb723078fa5c.mp3",
+          "durationInSeconds": 1.7,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Your turn — \"ma'am\".",
+          "text": "Your turn — \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -5635,14 +5635,14 @@
           "line": 680
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -5671,7 +5671,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "61 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 5.47,
+      "durationInSeconds": 7.1,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/bda90a5f19d002bf.mp3",
@@ -5689,14 +5689,14 @@
           "line": 687
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.72,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.41,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/571621627fbada9e.mp3",
+          "durationInSeconds": 1.32,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -5725,7 +5725,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "62 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 5.95,
+      "durationInSeconds": 5.98,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/699380a0d4803267.mp3",
@@ -5749,8 +5749,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -5779,7 +5779,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "63 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 6.9,
+      "durationInSeconds": 7.74,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/27eb704f654bab82.mp3",
@@ -5797,14 +5797,14 @@
           "line": 701
         },
         {
-          "durationInSeconds": 3.31,
+          "durationInSeconds": 3.84,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -5833,7 +5833,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "64 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 4.54,
+      "durationInSeconds": 4.66,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2b8f4e638a2fce85.mp3",
@@ -5857,8 +5857,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.58,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d14e062fee42a247.mp3",
+          "durationInSeconds": 0.7,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -5887,7 +5887,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "65 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 5.14,
+      "durationInSeconds": 5.47,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f64214a21c8577a5.mp3",
@@ -5905,14 +5905,14 @@
           "line": 715
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -5941,7 +5941,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "66 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 5.25,
+      "durationInSeconds": 5.71,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/840d01e5558345b6.mp3",
@@ -5959,14 +5959,14 @@
           "line": 722
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -5995,7 +5995,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "67 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 5.95,
+      "durationInSeconds": 5.98,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/699380a0d4803267.mp3",
@@ -6019,8 +6019,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -6049,14 +6049,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "68 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 5.43,
+      "durationInSeconds": 5.68,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/cfdd7dcfc6ba5574.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/4c761335b724c7bf.mp3",
+          "durationInSeconds": 1.75,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Now you — \"ma'am\".",
+          "text": "Now you — \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -6067,14 +6067,14 @@
           "line": 736
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -6103,7 +6103,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "69 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 6.3,
+      "durationInSeconds": 7.14,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/71d469941552c9fa.mp3",
@@ -6121,14 +6121,14 @@
           "line": 743
         },
         {
-          "durationInSeconds": 3.31,
+          "durationInSeconds": 3.84,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -6157,7 +6157,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "70 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 5.14,
+      "durationInSeconds": 5.47,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f64214a21c8577a5.mp3",
@@ -6175,14 +6175,14 @@
           "line": 750
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -6211,7 +6211,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "71 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 6.03,
+      "durationInSeconds": 6.39,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0982b5a52f7bd4e4.mp3",
@@ -6229,14 +6229,14 @@
           "line": 757
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -6265,7 +6265,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "72 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 5.33,
+      "durationInSeconds": 5.79,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2b853426be08bf41.mp3",
@@ -6283,14 +6283,14 @@
           "line": 764
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -6319,7 +6319,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "73 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 6.02,
+      "durationInSeconds": 6.05,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c464859ba70e654f.mp3",
@@ -6343,8 +6343,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -6373,7 +6373,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "74 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 5.4,
+      "durationInSeconds": 5.76,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/adcb81def3f9766b.mp3",
@@ -6391,14 +6391,14 @@
           "line": 778
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -6427,7 +6427,7 @@
       "stage": "INPUT_RETURN",
       "segment": "75 · INPUT_RETURN · checkpoint 3 — the whole exchange, twice",
       "visual": null,
-      "durationInSeconds": 95.58,
+      "durationInSeconds": 104.72,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d5761a1110f715b7.mp3",
@@ -6449,8 +6449,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -6462,14 +6462,14 @@
           "line": 786
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -6481,14 +6481,14 @@
           "line": 788
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -6500,14 +6500,14 @@
           "line": 790
         },
         {
-          "durationInSeconds": 5.14,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -6519,14 +6519,14 @@
           "line": 792
         },
         {
-          "durationInSeconds": 5.26,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -6538,14 +6538,14 @@
           "line": 794
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -6557,7 +6557,7 @@
           "line": 796
         },
         {
-          "durationInSeconds": 4.53,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
@@ -6582,8 +6582,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -6595,14 +6595,14 @@
           "line": 800
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -6614,14 +6614,14 @@
           "line": 802
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -6633,14 +6633,14 @@
           "line": 804
         },
         {
-          "durationInSeconds": 5.14,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -6652,14 +6652,14 @@
           "line": 806
         },
         {
-          "durationInSeconds": 5.26,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -6671,14 +6671,14 @@
           "line": 808
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -6690,7 +6690,7 @@
           "line": 810
         },
         {
-          "durationInSeconds": 4.53,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
@@ -6705,14 +6705,14 @@
       "stage": "ITEM_BLOCK",
       "segment": "76 · ITEM_BLOCK · madame",
       "visual": "ILLUSTRATION — madame",
-      "durationInSeconds": 5.14,
+      "durationInSeconds": 5.63,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d9a59ead9eda1015.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/9355cb723078fa5c.mp3",
+          "durationInSeconds": 1.7,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Your turn — \"ma'am\".",
+          "text": "Your turn — \"maam\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
@@ -6723,14 +6723,14 @@
           "line": 815
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f2a3a1954da6dd4e.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8ea39215ce98c7a8.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "madame",
@@ -6759,7 +6759,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "77 · ITEM_BLOCK · s'il vous plaît",
       "visual": "ILLUSTRATION — s'il vous plaît",
-      "durationInSeconds": 7.05,
+      "durationInSeconds": 7.89,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/b44dacc007c39f22.mp3",
@@ -6777,14 +6777,14 @@
           "line": 822
         },
         {
-          "durationInSeconds": 3.31,
+          "durationInSeconds": 3.84,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b472ed495616813.mp3",
-          "durationInSeconds": 0.77,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6112855060807107.mp3",
+          "durationInSeconds": 1.08,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "s'il vous plaît",
@@ -6813,7 +6813,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "78 · ITEM_BLOCK · dix",
       "visual": "ILLUSTRATION — dix",
-      "durationInSeconds": 5.86,
+      "durationInSeconds": 6.19,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6bebaa33be0489dd.mp3",
@@ -6831,14 +6831,14 @@
           "line": 829
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/2f6f3ea554beed04.mp3",
-          "durationInSeconds": 0.6,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb5a7771f48c8b42.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix",
@@ -6867,7 +6867,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "79 · ITEM_BLOCK · neuf",
       "visual": "ILLUSTRATION — neuf",
-      "durationInSeconds": 5.23,
+      "durationInSeconds": 5.69,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e6dd272a34485a0d.mp3",
@@ -6885,14 +6885,14 @@
           "line": 836
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.07,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c87f0427bc815383.mp3",
-          "durationInSeconds": 0.43,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fbfd24f962c49d4d.mp3",
+          "durationInSeconds": 0.82,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "neuf",
@@ -6921,7 +6921,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "80 · ITEM_BLOCK · quatre",
       "visual": "ILLUSTRATION — quatre",
-      "durationInSeconds": 4.72,
+      "durationInSeconds": 4.75,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/aa30d007548ace3d.mp3",
@@ -6945,8 +6945,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/c0ce2dabf511df23.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/fd1fab4a6f4e37ce.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "quatre",
@@ -6975,7 +6975,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "81 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 5.76,
+      "durationInSeconds": 6.12,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f75a5481954f9226.mp3",
@@ -6993,14 +6993,14 @@
           "line": 850
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -7029,7 +7029,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "82 · ITEM_BLOCK · dix-sept",
       "visual": "ILLUSTRATION — dix-sept",
-      "durationInSeconds": 6.03,
+      "durationInSeconds": 6.39,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0982b5a52f7bd4e4.mp3",
@@ -7047,14 +7047,14 @@
           "line": 857
         },
         {
-          "durationInSeconds": 2.07,
+          "durationInSeconds": 2.27,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/09c8500fb3b25436.mp3",
-          "durationInSeconds": 0.82,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/1807cd3b35f84d96.mp3",
+          "durationInSeconds": 0.98,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "dix-sept",
@@ -7083,7 +7083,7 @@
       "stage": "BUILD_LADDER",
       "segment": "83 · BUILD_LADDER · put it all together",
       "visual": "CHUNK BAR — Bonjour. · HIGHLIGHT frame",
-      "durationInSeconds": 85.58,
+      "durationInSeconds": 92.73,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ebb194d416884846.mp3",
@@ -7120,14 +7120,14 @@
           "line": 866
         },
         {
-          "durationInSeconds": 2.2,
+          "durationInSeconds": 2.62,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f422315a6f9d0ffa.mp3",
-          "durationInSeconds": 0.7,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f92b24608006c01b.mp3",
+          "durationInSeconds": 0.98,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour.",
@@ -7145,11 +7145,11 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f4d79da48ed4d6e2.mp3",
-          "durationInSeconds": 0.96,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/6302d7edd98ab0e3.mp3",
+          "durationInSeconds": 0.94,
           "phase": "BUILD",
           "voice": "en_man",
-          "text": "hello, ma'am.",
+          "text": "hello, maam.",
           "register": "meaning",
           "level": 3,
           "rate": null,
@@ -7160,14 +7160,14 @@
           "line": 871
         },
         {
-          "durationInSeconds": 2.62,
+          "durationInSeconds": 2.87,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d6a77dc34e10b6dc.mp3",
-          "durationInSeconds": 0.98,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/d67f3d90a969ec7c.mp3",
+          "durationInSeconds": 1.15,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour, madame.",
@@ -7185,11 +7185,11 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/dbf080715357523f.mp3",
-          "durationInSeconds": 2.16,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/9349c3d3d5aa7bee.mp3",
+          "durationInSeconds": 2.3,
           "phase": "BUILD",
           "voice": "en_man",
-          "text": "hello, ma'am. four.",
+          "text": "hello, maam. four.",
           "register": "meaning",
           "level": 3,
           "rate": null,
@@ -7200,14 +7200,14 @@
           "line": 876
         },
         {
-          "durationInSeconds": 5.21,
+          "durationInSeconds": 6.43,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -7225,11 +7225,11 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f6dbf112bfea29de.mp3",
-          "durationInSeconds": 3.14,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/f16cf9259ff68a4b.mp3",
+          "durationInSeconds": 3.36,
           "phase": "BUILD",
           "voice": "en_man",
-          "text": "hello, ma'am. four, thank you!",
+          "text": "hello, maam. four, thank you!",
           "register": "meaning",
           "level": 3,
           "rate": null,
@@ -7240,14 +7240,14 @@
           "line": 881
         },
         {
-          "durationInSeconds": 6.01,
+          "durationInSeconds": 7.23,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -7280,14 +7280,14 @@
           "line": 886
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 7.23,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -7305,11 +7305,11 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/da10ec6e187cea3e.mp3",
-          "durationInSeconds": 2.52,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/0b30302d33530d31.mp3",
+          "durationInSeconds": 2.59,
           "phase": "BUILD",
           "voice": "en_man",
-          "text": "hello, ma'am. nine, thank you!",
+          "text": "hello, maam. nine, thank you!",
           "register": "meaning",
           "level": 3,
           "rate": null,
@@ -7320,14 +7320,14 @@
           "line": 891
         },
         {
-          "durationInSeconds": 5.92,
+          "durationInSeconds": 6.29,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -7345,11 +7345,11 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/9280dc231e14ae38.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e097790e9a84ee81.mp3",
+          "durationInSeconds": 2.59,
           "phase": "BUILD",
           "voice": "en_man",
-          "text": "hello, ma'am. ten, thank you!",
+          "text": "hello, maam. ten, thank you!",
           "register": "meaning",
           "level": 3,
           "rate": null,
@@ -7360,14 +7360,14 @@
           "line": 896
         },
         {
-          "durationInSeconds": 5.96,
+          "durationInSeconds": 6.43,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -7385,11 +7385,11 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/440085c5a972e853.mp3",
-          "durationInSeconds": 1.66,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/3459a05822bc4d87.mp3",
+          "durationInSeconds": 1.85,
           "phase": "BUILD",
           "voice": "en_man",
-          "text": "hello, ma'am. four, please!",
+          "text": "hello, maam. four, please!",
           "register": "meaning",
           "level": 3,
           "rate": null,
@@ -7400,14 +7400,14 @@
           "line": 901
         },
         {
-          "durationInSeconds": 6.95,
+          "durationInSeconds": 5.82,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -7437,7 +7437,7 @@
       "stage": "FLUENCY_ROUND",
       "segment": "84 · FLUENCY_ROUND · fluency",
       "visual": null,
-      "durationInSeconds": 51.67,
+      "durationInSeconds": 51.62,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/43610b70201cde46.mp3",
@@ -7459,8 +7459,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/eb417c3546a05606.mp3",
-          "durationInSeconds": 2.33,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7991622e7bf6212a.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -7472,14 +7472,14 @@
           "line": 909
         },
         {
-          "durationInSeconds": 5.96,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7eef3060de6c261d.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/db064103998d452e.mp3",
+          "durationInSeconds": 1.87,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Neuf, s'il vous plaît !",
@@ -7491,14 +7491,14 @@
           "line": 911
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.18,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e02c8c5d100cf14e.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e6ec1eaea565a49f.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -7510,7 +7510,7 @@
           "line": 913
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
@@ -7535,8 +7535,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -7548,14 +7548,14 @@
           "line": 917
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/95651b9dd6ea0508.mp3",
-          "durationInSeconds": 2.09,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/75b8d79fd796ea1e.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Neuf, s'il vous plaît !",
@@ -7567,14 +7567,14 @@
           "line": 919
         },
         {
-          "durationInSeconds": 5.55,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -7586,7 +7586,7 @@
           "line": 921
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
@@ -7599,7 +7599,7 @@
       "stage": "CAN_DO_CHECK",
       "segment": "85 · CAN_DO_CHECK · close — you can do this now",
       "visual": null,
-      "durationInSeconds": 47.22,
+      "durationInSeconds": 51.79,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/291f26bb108315d3.mp3",
@@ -7621,8 +7621,8 @@
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/48581a48a9426141.mp3",
-          "durationInSeconds": 2.38,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/a034c7720231f200.mp3",
+          "durationInSeconds": 1.8,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, s'il vous plaît !",
@@ -7634,14 +7634,14 @@
           "line": 927
         },
         {
-          "durationInSeconds": 6.05,
+          "durationInSeconds": 5.06,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/11630ea1c5f71e99.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/5ea8071e987626ec.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Dix, merci !",
@@ -7653,14 +7653,14 @@
           "line": 929
         },
         {
-          "durationInSeconds": 5.18,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8bb4dc4b00b0b6de.mp3",
-          "durationInSeconds": 1.85,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/e067eac4175655ce.mp3",
+          "durationInSeconds": 2.04,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Neuf, merci !",
@@ -7672,14 +7672,14 @@
           "line": 931
         },
         {
-          "durationInSeconds": 5.14,
+          "durationInSeconds": 5.47,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/8b49535b88edbb21.mp3",
-          "durationInSeconds": 1.92,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/59d137a70a47315d.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, monsieur. Quatre, merci !",
@@ -7691,14 +7691,14 @@
           "line": 933
         },
         {
-          "durationInSeconds": 5.26,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/7ecdeada7865fddd.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/ff5e994b58a0c581.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre, merci !",
@@ -7710,14 +7710,14 @@
           "line": 935
         },
         {
-          "durationInSeconds": 5.23,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/96fa92c87a50a589.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L05_CONSOLIDATION/method/86fb24e3544b4106.mp3",
+          "durationInSeconds": 2.11,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour, madame. Quatre.",
@@ -7729,7 +7729,7 @@
           "line": 937
         },
         {
-          "durationInSeconds": 4.53,
+          "durationInSeconds": 5.59,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"

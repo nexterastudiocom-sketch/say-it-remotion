@@ -62,7 +62,7 @@
       "stage": "COLD_INPUT",
       "segment": "01 · COLD_INPUT · cold open",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 20.95,
+      "durationInSeconds": 20.7,
       "beats": [
         {
           "durationInSeconds": 1.2,
@@ -92,8 +92,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -111,8 +111,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -130,8 +130,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -149,8 +149,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -168,8 +168,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -187,8 +187,8 @@
           "stage": "COLD_INPUT"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "INPUT",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
@@ -215,7 +215,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "02 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 22.18,
+      "durationInSeconds": 23.46,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -239,8 +239,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6ec8ea59b0f59dd2.mp3",
-          "durationInSeconds": 0.53,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c0f296a878a3690c.mp3",
+          "durationInSeconds": 0.67,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "bien",
@@ -277,8 +277,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6ec8ea59b0f59dd2.mp3",
-          "durationInSeconds": 0.53,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c0f296a878a3690c.mp3",
+          "durationInSeconds": 0.67,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "bien",
@@ -315,8 +315,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6ec8ea59b0f59dd2.mp3",
-          "durationInSeconds": 0.53,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c0f296a878a3690c.mp3",
+          "durationInSeconds": 0.67,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "bien",
@@ -347,14 +347,14 @@
           "line": 49
         },
         {
-          "durationInSeconds": 2.58,
+          "durationInSeconds": 2.92,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -391,8 +391,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -421,7 +421,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "03 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 6.25,
+      "durationInSeconds": 6.39,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3e95477a8f80f93b.mp3",
@@ -445,8 +445,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6ec8ea59b0f59dd2.mp3",
-          "durationInSeconds": 0.53,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c0f296a878a3690c.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -475,7 +475,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 33.99,
+      "durationInSeconds": 34.37,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -499,8 +499,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/bf452f4af6427491.mp3",
-          "durationInSeconds": 1.3,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/252b7913194fc045.mp3",
+          "durationInSeconds": 1.22,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -537,8 +537,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/bf452f4af6427491.mp3",
-          "durationInSeconds": 1.3,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/252b7913194fc045.mp3",
+          "durationInSeconds": 1.22,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -575,8 +575,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/bf452f4af6427491.mp3",
-          "durationInSeconds": 1.3,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/252b7913194fc045.mp3",
+          "durationInSeconds": 1.22,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -613,8 +613,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -651,8 +651,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -681,7 +681,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "05 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 9.13,
+      "durationInSeconds": 9.05,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a26eb6ffbab63045.mp3",
@@ -705,8 +705,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/bf452f4af6427491.mp3",
-          "durationInSeconds": 1.3,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/252b7913194fc045.mp3",
+          "durationInSeconds": 1.22,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -735,7 +735,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "06 · ITEM_BLOCK · comment",
       "visual": "ILLUSTRATION — comment",
-      "durationInSeconds": 22.68,
+      "durationInSeconds": 21.56,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -759,8 +759,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e71d7b16ebd883e6.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0688a7ec489c19eb.mp3",
+          "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "comment",
@@ -797,8 +797,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e71d7b16ebd883e6.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0688a7ec489c19eb.mp3",
+          "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "comment",
@@ -810,7 +810,7 @@
           "line": 103
         },
         {
-          "durationInSeconds": 2.73,
+          "durationInSeconds": 2.36,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -835,8 +835,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e71d7b16ebd883e6.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0688a7ec489c19eb.mp3",
+          "durationInSeconds": 0.65,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "comment",
@@ -848,7 +848,7 @@
           "line": 107
         },
         {
-          "durationInSeconds": 2.71,
+          "durationInSeconds": 2.35,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -867,14 +867,14 @@
           "line": 109
         },
         {
-          "durationInSeconds": 2.33,
+          "durationInSeconds": 2.64,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e84f80e487bbf6e7.mp3",
-          "durationInSeconds": 0.55,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/281a5ec8839ca3a1.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "comment",
@@ -911,8 +911,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e84f80e487bbf6e7.mp3",
-          "durationInSeconds": 0.55,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/281a5ec8839ca3a1.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "comment",
@@ -941,7 +941,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "07 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.62,
+      "durationInSeconds": 5.88,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2a9434410d851c17.mp3",
@@ -965,8 +965,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -995,7 +995,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "08 · ITEM_BLOCK · et toi ?",
       "visual": "ILLUSTRATION — et toi ?",
-      "durationInSeconds": 29.03,
+      "durationInSeconds": 29.66,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1019,8 +1019,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ed28afba6dc13e96.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8a9a0c990fbc3823.mp3",
+          "durationInSeconds": 0.77,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -1057,8 +1057,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ed28afba6dc13e96.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8a9a0c990fbc3823.mp3",
+          "durationInSeconds": 0.77,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -1070,7 +1070,7 @@
           "line": 133
         },
         {
-          "durationInSeconds": 3.69,
+          "durationInSeconds": 3.75,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1095,8 +1095,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ed28afba6dc13e96.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8a9a0c990fbc3823.mp3",
+          "durationInSeconds": 0.77,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -1108,7 +1108,7 @@
           "line": 137
         },
         {
-          "durationInSeconds": 3.66,
+          "durationInSeconds": 3.72,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1127,14 +1127,14 @@
           "line": 139
         },
         {
-          "durationInSeconds": 3.97,
+          "durationInSeconds": 4.12,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fb465895cf440176.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a744855e313599bb.mp3",
+          "durationInSeconds": 0.72,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -1165,14 +1165,14 @@
           "line": 143
         },
         {
-          "durationInSeconds": 3.4,
+          "durationInSeconds": 3.53,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fb465895cf440176.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a744855e313599bb.mp3",
+          "durationInSeconds": 0.72,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -1201,7 +1201,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "09 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 7.54,
+      "durationInSeconds": 8.04,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0f08fe770e672b63.mp3",
@@ -1219,14 +1219,14 @@
           "line": 150
         },
         {
-          "durationInSeconds": 4.31,
+          "durationInSeconds": 4.5,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -1255,7 +1255,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "10 · ITEM_BLOCK · comment",
       "visual": "ILLUSTRATION — comment",
-      "durationInSeconds": 6.03,
+      "durationInSeconds": 5.33,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/981855d0ae201caf.mp3",
@@ -1273,14 +1273,14 @@
           "line": 157
         },
         {
-          "durationInSeconds": 2.48,
+          "durationInSeconds": 2.14,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e71d7b16ebd883e6.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0688a7ec489c19eb.mp3",
+          "durationInSeconds": 0.65,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "comment",
@@ -1309,7 +1309,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "11 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 25.18,
+      "durationInSeconds": 25.57,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1333,8 +1333,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/230f3bd8d3306be6.mp3",
-          "durationInSeconds": 0.98,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/83f20a510149bf24.mp3",
+          "durationInSeconds": 0.96,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -1371,8 +1371,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/230f3bd8d3306be6.mp3",
-          "durationInSeconds": 0.98,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/83f20a510149bf24.mp3",
+          "durationInSeconds": 0.96,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -1384,7 +1384,7 @@
           "line": 170
         },
         {
-          "durationInSeconds": 2.4,
+          "durationInSeconds": 2.38,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1409,8 +1409,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/230f3bd8d3306be6.mp3",
-          "durationInSeconds": 0.98,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/83f20a510149bf24.mp3",
+          "durationInSeconds": 0.96,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -1422,7 +1422,7 @@
           "line": 174
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.36,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1441,14 +1441,14 @@
           "line": 176
         },
         {
-          "durationInSeconds": 2.61,
+          "durationInSeconds": 2.77,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -1479,14 +1479,14 @@
           "line": 180
         },
         {
-          "durationInSeconds": 2.24,
+          "durationInSeconds": 2.37,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -1515,7 +1515,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "12 · ITEM_BLOCK · et toi ?",
       "visual": "ILLUSTRATION — et toi ?",
-      "durationInSeconds": 8.36,
+      "durationInSeconds": 8.44,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/54fb204c09d2644d.mp3",
@@ -1533,14 +1533,14 @@
           "line": 187
         },
         {
-          "durationInSeconds": 3.31,
+          "durationInSeconds": 3.36,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ed28afba6dc13e96.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8a9a0c990fbc3823.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -1569,7 +1569,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "13 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 22.28,
+      "durationInSeconds": 21.2,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1593,8 +1593,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.94,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1436a9b87c91d87.mp3",
+          "durationInSeconds": 0.79,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "ça va",
@@ -1631,8 +1631,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.94,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1436a9b87c91d87.mp3",
+          "durationInSeconds": 0.79,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "ça va",
@@ -1644,7 +1644,7 @@
           "line": 200
         },
         {
-          "durationInSeconds": 2.22,
+          "durationInSeconds": 2.03,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1669,8 +1669,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.94,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1436a9b87c91d87.mp3",
+          "durationInSeconds": 0.79,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "ça va",
@@ -1682,7 +1682,7 @@
           "line": 204
         },
         {
-          "durationInSeconds": 2.22,
+          "durationInSeconds": 2.03,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1701,14 +1701,14 @@
           "line": 206
         },
         {
-          "durationInSeconds": 2.26,
+          "durationInSeconds": 2.15,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3709da7308c660c4.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -1745,8 +1745,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3709da7308c660c4.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -1775,7 +1775,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "14 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.72,
+      "durationInSeconds": 6.68,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d06ca3d1f06dc685.mp3",
@@ -1793,14 +1793,14 @@
           "line": 217
         },
         {
-          "durationInSeconds": 2.27,
+          "durationInSeconds": 2.25,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/230f3bd8d3306be6.mp3",
-          "durationInSeconds": 0.98,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/83f20a510149bf24.mp3",
+          "durationInSeconds": 0.96,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -1829,7 +1829,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "15 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.33,
+      "durationInSeconds": 5.59,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2a9434410d851c17.mp3",
@@ -1853,8 +1853,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -1883,7 +1883,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "16 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 24.29,
+      "durationInSeconds": 23.11,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1907,8 +1907,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/878b88ae905dc99c.mp3",
+          "durationInSeconds": 0.94,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -1945,8 +1945,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/878b88ae905dc99c.mp3",
+          "durationInSeconds": 0.94,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -1958,7 +1958,7 @@
           "line": 237
         },
         {
-          "durationInSeconds": 2.31,
+          "durationInSeconds": 2.22,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1983,8 +1983,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/878b88ae905dc99c.mp3",
+          "durationInSeconds": 0.94,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -1996,7 +1996,7 @@
           "line": 241
         },
         {
-          "durationInSeconds": 2.31,
+          "durationInSeconds": 2.22,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -2015,14 +2015,14 @@
           "line": 243
         },
         {
-          "durationInSeconds": 2.44,
+          "durationInSeconds": 2.15,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/205cbd7ea6675599.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2053,14 +2053,14 @@
           "line": 247
         },
         {
-          "durationInSeconds": 2.12,
+          "durationInSeconds": 2,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/205cbd7ea6675599.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2089,7 +2089,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "17 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 5.62,
+      "durationInSeconds": 5.28,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2b8f4e638a2fce85.mp3",
@@ -2107,14 +2107,14 @@
           "line": 254
         },
         {
-          "durationInSeconds": 2.22,
+          "durationInSeconds": 2.03,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b7851ddb7b64d204.mp3",
-          "durationInSeconds": 0.94,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1436a9b87c91d87.mp3",
+          "durationInSeconds": 0.79,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -2143,7 +2143,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "18 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.13,
+      "durationInSeconds": 6.36,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61cbeaaeebd333e2.mp3",
@@ -2161,14 +2161,14 @@
           "line": 261
         },
         {
-          "durationInSeconds": 2.18,
+          "durationInSeconds": 2.31,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -2197,7 +2197,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "19 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 8.51,
+      "durationInSeconds": 9.34,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/32504fbee9aba5bd.mp3",
@@ -2215,14 +2215,14 @@
           "line": 268
         },
         {
-          "durationInSeconds": 3.96,
+          "durationInSeconds": 4.48,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -2251,7 +2251,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "20 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 20.06,
+      "durationInSeconds": 22.18,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -2275,8 +2275,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1325cf5ef75a83a1.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6e039826afc352cc.mp3",
+          "durationInSeconds": 1.22,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "moi",
@@ -2313,8 +2313,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1325cf5ef75a83a1.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6e039826afc352cc.mp3",
+          "durationInSeconds": 1.22,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "moi",
@@ -2326,7 +2326,7 @@
           "line": 281
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.59,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -2351,8 +2351,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1325cf5ef75a83a1.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6e039826afc352cc.mp3",
+          "durationInSeconds": 1.22,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "moi",
@@ -2364,7 +2364,7 @@
           "line": 285
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.59,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -2383,14 +2383,14 @@
           "line": 287
         },
         {
-          "durationInSeconds": 2.26,
+          "durationInSeconds": 2.02,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84e5f32ff7c7cae1.mp3",
+          "durationInSeconds": 0.58,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -2427,8 +2427,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84e5f32ff7c7cae1.mp3",
+          "durationInSeconds": 0.58,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -2457,7 +2457,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "21 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 6.62,
+      "durationInSeconds": 6.46,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b874828fa603e879.mp3",
@@ -2475,14 +2475,14 @@
           "line": 298
         },
         {
-          "durationInSeconds": 2.31,
+          "durationInSeconds": 2.22,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c022fa606b49f544.mp3",
-          "durationInSeconds": 1.01,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/878b88ae905dc99c.mp3",
+          "durationInSeconds": 0.94,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -2511,7 +2511,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "22 · ITEM_BLOCK · comment",
       "visual": "ILLUSTRATION — comment",
-      "durationInSeconds": 5.18,
+      "durationInSeconds": 5.37,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/720e900f85651f01.mp3",
@@ -2535,8 +2535,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e84f80e487bbf6e7.mp3",
-          "durationInSeconds": 0.55,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/281a5ec8839ca3a1.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "comment",
@@ -2565,7 +2565,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "23 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 21.41,
+      "durationInSeconds": 22.19,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -2589,8 +2589,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4bd2f50dab5fcd85.mp3",
-          "durationInSeconds": 0.79,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c68a63b2ae2b0da4.mp3",
+          "durationInSeconds": 0.84,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "très bien",
@@ -2627,8 +2627,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4bd2f50dab5fcd85.mp3",
-          "durationInSeconds": 0.79,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c68a63b2ae2b0da4.mp3",
+          "durationInSeconds": 0.84,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "très bien",
@@ -2640,7 +2640,7 @@
           "line": 318
         },
         {
-          "durationInSeconds": 2.03,
+          "durationInSeconds": 2.09,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -2665,8 +2665,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4bd2f50dab5fcd85.mp3",
-          "durationInSeconds": 0.79,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c68a63b2ae2b0da4.mp3",
+          "durationInSeconds": 0.84,
           "phase": "ECHO",
           "voice": "fr_man",
           "text": "très bien",
@@ -2678,7 +2678,7 @@
           "line": 322
         },
         {
-          "durationInSeconds": 2.03,
+          "durationInSeconds": 2.09,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -2697,14 +2697,14 @@
           "line": 324
         },
         {
-          "durationInSeconds": 2.23,
+          "durationInSeconds": 2.41,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -2735,14 +2735,14 @@
           "line": 328
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -2771,7 +2771,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "24 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 4.87,
+      "durationInSeconds": 5.96,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/5179f3b216fe66d8.mp3",
@@ -2789,14 +2789,14 @@
           "line": 335
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.59,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1325cf5ef75a83a1.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6e039826afc352cc.mp3",
+          "durationInSeconds": 1.22,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -2825,7 +2825,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "25 · ITEM_BLOCK · et toi ?",
       "visual": "ILLUSTRATION — et toi ?",
-      "durationInSeconds": 7.15,
+      "durationInSeconds": 7.34,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/602d6bbf475d3a22.mp3",
@@ -2843,14 +2843,14 @@
           "line": 342
         },
         {
-          "durationInSeconds": 3.1,
+          "durationInSeconds": 3.22,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fb465895cf440176.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a744855e313599bb.mp3",
+          "durationInSeconds": 0.72,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -2879,7 +2879,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "26 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 6.08,
+      "durationInSeconds": 6.19,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c44973915ad0f33c.mp3",
@@ -2897,14 +2897,14 @@
           "line": 349
         },
         {
-          "durationInSeconds": 2.03,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4bd2f50dab5fcd85.mp3",
-          "durationInSeconds": 0.79,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c68a63b2ae2b0da4.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -2933,7 +2933,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "27 · ITEM_BLOCK · voici",
       "visual": "ILLUSTRATION — voici",
-      "durationInSeconds": 23.96,
+      "durationInSeconds": 22.01,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -2957,8 +2957,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c36644c38da3228.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa9f6af53c9fbd46.mp3",
+          "durationInSeconds": 0.79,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "voici",
@@ -2995,8 +2995,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c36644c38da3228.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa9f6af53c9fbd46.mp3",
+          "durationInSeconds": 0.79,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "voici",
@@ -3008,7 +3008,7 @@
           "line": 362
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.03,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -3033,8 +3033,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c36644c38da3228.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa9f6af53c9fbd46.mp3",
+          "durationInSeconds": 0.79,
           "phase": "ECHO",
           "voice": "fr_woman",
           "text": "voici",
@@ -3046,7 +3046,7 @@
           "line": 366
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.03,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -3065,14 +3065,14 @@
           "line": 368
         },
         {
-          "durationInSeconds": 2.44,
+          "durationInSeconds": 2.3,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6d8c71c7cbddb81e.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f4f787320fdbe836.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "voici",
@@ -3103,14 +3103,14 @@
           "line": 372
         },
         {
-          "durationInSeconds": 2.12,
+          "durationInSeconds": 2,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6d8c71c7cbddb81e.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f4f787320fdbe836.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "voici",
@@ -3139,7 +3139,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "28 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.56,
+      "durationInSeconds": 6.79,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d06ca3d1f06dc685.mp3",
@@ -3157,14 +3157,14 @@
           "line": 379
         },
         {
-          "durationInSeconds": 2.18,
+          "durationInSeconds": 2.31,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -3193,7 +3193,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "29 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 6.31,
+      "durationInSeconds": 6.52,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/74f2267243182308.mp3",
@@ -3211,14 +3211,14 @@
           "line": 386
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -3247,7 +3247,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "30 · ITEM_BLOCK · voici",
       "visual": "ILLUSTRATION — voici",
-      "durationInSeconds": 5.83,
+      "durationInSeconds": 5.21,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/23a11f7017ac77ee.mp3",
@@ -3265,14 +3265,14 @@
           "line": 393
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.03,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c36644c38da3228.mp3",
-          "durationInSeconds": 1.06,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa9f6af53c9fbd46.mp3",
+          "durationInSeconds": 0.79,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "voici",
@@ -3301,7 +3301,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "31 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.11,
+      "durationInSeconds": 5.37,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fc6015c23c92b231.mp3",
@@ -3325,8 +3325,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -3355,7 +3355,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "32 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 5.92,
+      "durationInSeconds": 5.85,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/af5c6ae89c4d59c0.mp3",
@@ -3379,8 +3379,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3709da7308c660c4.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -3409,7 +3409,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "33 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 8.44,
+      "durationInSeconds": 9.27,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a26eb6ffbab63045.mp3",
@@ -3427,14 +3427,14 @@
           "line": 414
         },
         {
-          "durationInSeconds": 3.96,
+          "durationInSeconds": 4.48,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -3463,7 +3463,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "34 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 6.16,
+      "durationInSeconds": 5.85,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8a004ca6f735adc1.mp3",
@@ -3481,14 +3481,14 @@
           "line": 421
         },
         {
-          "durationInSeconds": 2.12,
+          "durationInSeconds": 2,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/205cbd7ea6675599.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -3517,7 +3517,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "35 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 4.89,
+      "durationInSeconds": 4.73,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/5179f3b216fe66d8.mp3",
@@ -3541,8 +3541,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84e5f32ff7c7cae1.mp3",
+          "durationInSeconds": 0.58,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -3571,7 +3571,7 @@
       "stage": "INPUT_RETURN",
       "segment": "36 · INPUT_RETURN · checkpoint 1 — the whole exchange, twice",
       "visual": null,
-      "durationInSeconds": 116.88,
+      "durationInSeconds": 116.58,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d5761a1110f715b7.mp3",
@@ -3593,8 +3593,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -3606,14 +3606,14 @@
           "line": 436
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -3625,14 +3625,14 @@
           "line": 438
         },
         {
-          "durationInSeconds": 4.69,
+          "durationInSeconds": 4.48,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -3644,14 +3644,14 @@
           "line": 440
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -3663,14 +3663,14 @@
           "line": 442
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -3682,14 +3682,14 @@
           "line": 444
         },
         {
-          "durationInSeconds": 5.03,
+          "durationInSeconds": 4.65,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
@@ -3726,8 +3726,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -3739,14 +3739,14 @@
           "line": 450
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -3758,14 +3758,14 @@
           "line": 452
         },
         {
-          "durationInSeconds": 4.69,
+          "durationInSeconds": 4.48,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -3777,14 +3777,14 @@
           "line": 454
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -3796,14 +3796,14 @@
           "line": 456
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -3815,14 +3815,14 @@
           "line": 458
         },
         {
-          "durationInSeconds": 5.03,
+          "durationInSeconds": 4.65,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
@@ -3849,7 +3849,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "37 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 5.76,
+      "durationInSeconds": 5.97,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84205b29858e82c4.mp3",
@@ -3867,14 +3867,14 @@
           "line": 465
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -3903,7 +3903,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "38 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.49,
+      "durationInSeconds": 6.72,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d54468396db9ca0a.mp3",
@@ -3921,14 +3921,14 @@
           "line": 472
         },
         {
-          "durationInSeconds": 2.18,
+          "durationInSeconds": 2.31,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -3957,7 +3957,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "39 · ITEM_BLOCK · voici",
       "visual": "ILLUSTRATION — voici",
-      "durationInSeconds": 6.36,
+      "durationInSeconds": 6.15,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/25e9e173b06818a5.mp3",
@@ -3975,14 +3975,14 @@
           "line": 479
         },
         {
-          "durationInSeconds": 2.12,
+          "durationInSeconds": 2,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6d8c71c7cbddb81e.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f4f787320fdbe836.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "voici",
@@ -4011,7 +4011,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "40 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 6.31,
+      "durationInSeconds": 6.52,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/74f2267243182308.mp3",
@@ -4029,14 +4029,14 @@
           "line": 486
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -4065,7 +4065,7 @@
       "stage": "INPUT_RETURN",
       "segment": "41 · INPUT_RETURN · checkpoint 2 — the whole exchange, twice",
       "visual": null,
-      "durationInSeconds": 116.88,
+      "durationInSeconds": 116.58,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d5761a1110f715b7.mp3",
@@ -4087,8 +4087,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -4100,14 +4100,14 @@
           "line": 494
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -4119,14 +4119,14 @@
           "line": 496
         },
         {
-          "durationInSeconds": 4.69,
+          "durationInSeconds": 4.48,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -4138,14 +4138,14 @@
           "line": 498
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -4157,14 +4157,14 @@
           "line": 500
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -4176,14 +4176,14 @@
           "line": 502
         },
         {
-          "durationInSeconds": 5.03,
+          "durationInSeconds": 4.65,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
@@ -4220,8 +4220,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -4233,14 +4233,14 @@
           "line": 508
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -4252,14 +4252,14 @@
           "line": 510
         },
         {
-          "durationInSeconds": 4.69,
+          "durationInSeconds": 4.48,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -4271,14 +4271,14 @@
           "line": 512
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -4290,14 +4290,14 @@
           "line": 514
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -4309,14 +4309,14 @@
           "line": 516
         },
         {
-          "durationInSeconds": 5.03,
+          "durationInSeconds": 4.65,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
@@ -4343,7 +4343,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "42 · ITEM_BLOCK · comment",
       "visual": "ILLUSTRATION — comment",
-      "durationInSeconds": 4.53,
+      "durationInSeconds": 4.72,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3a49c83738fbfc7f.mp3",
@@ -4367,8 +4367,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e84f80e487bbf6e7.mp3",
-          "durationInSeconds": 0.55,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/281a5ec8839ca3a1.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "comment",
@@ -4397,7 +4397,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "43 · ITEM_BLOCK · et toi ?",
       "visual": "ILLUSTRATION — et toi ?",
-      "durationInSeconds": 7.15,
+      "durationInSeconds": 7.34,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/602d6bbf475d3a22.mp3",
@@ -4415,14 +4415,14 @@
           "line": 530
         },
         {
-          "durationInSeconds": 3.1,
+          "durationInSeconds": 3.22,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fb465895cf440176.mp3",
-          "durationInSeconds": 0.65,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a744855e313599bb.mp3",
+          "durationInSeconds": 0.72,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "et toi ?",
@@ -4451,7 +4451,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "44 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.66,
+      "durationInSeconds": 5.92,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3e95477a8f80f93b.mp3",
@@ -4475,8 +4475,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -4505,7 +4505,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "45 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 6.26,
+      "durationInSeconds": 6.19,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8beb1df63a00daa2.mp3",
@@ -4529,8 +4529,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/dc66c57da77f4cca.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3709da7308c660c4.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "ça va",
@@ -4559,7 +4559,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "46 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 8.01,
+      "durationInSeconds": 8.84,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/7baf0f9c5c9ff3e9.mp3",
@@ -4577,14 +4577,14 @@
           "line": 551
         },
         {
-          "durationInSeconds": 3.96,
+          "durationInSeconds": 4.48,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -4613,7 +4613,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "47 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 5.37,
+      "durationInSeconds": 5.06,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/de702a352703696e.mp3",
@@ -4631,14 +4631,14 @@
           "line": 558
         },
         {
-          "durationInSeconds": 2.12,
+          "durationInSeconds": 2,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ce46e356989b5a9b.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/205cbd7ea6675599.mp3",
+          "durationInSeconds": 0.67,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "enchanté",
@@ -4667,7 +4667,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "48 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 5.3,
+      "durationInSeconds": 5.14,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/dc6a41e70a9d44b6.mp3",
@@ -4691,8 +4691,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d91ee6f0fabe7e2e.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84e5f32ff7c7cae1.mp3",
+          "durationInSeconds": 0.58,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "moi",
@@ -4721,7 +4721,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "49 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.66,
+      "durationInSeconds": 5.92,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3e95477a8f80f93b.mp3",
@@ -4745,8 +4745,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -4775,7 +4775,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "50 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.56,
+      "durationInSeconds": 6.79,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d06ca3d1f06dc685.mp3",
@@ -4793,14 +4793,14 @@
           "line": 579
         },
         {
-          "durationInSeconds": 2.18,
+          "durationInSeconds": 2.31,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -4829,7 +4829,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "51 · ITEM_BLOCK · voici",
       "visual": "ILLUSTRATION — voici",
-      "durationInSeconds": 5.71,
+      "durationInSeconds": 5.5,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/590716e1b13ccb49.mp3",
@@ -4847,14 +4847,14 @@
           "line": 586
         },
         {
-          "durationInSeconds": 2.12,
+          "durationInSeconds": 2,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6d8c71c7cbddb81e.mp3",
-          "durationInSeconds": 0.86,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f4f787320fdbe836.mp3",
+          "durationInSeconds": 0.77,
           "phase": "PRODUCE",
           "voice": "fr_woman",
           "text": "voici",
@@ -4883,7 +4883,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "52 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 7.19,
+      "durationInSeconds": 8.02,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0f08fe770e672b63.mp3",
@@ -4901,14 +4901,14 @@
           "line": 593
         },
         {
-          "durationInSeconds": 3.96,
+          "durationInSeconds": 4.48,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -4937,7 +4937,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "53 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.13,
+      "durationInSeconds": 6.36,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61cbeaaeebd333e2.mp3",
@@ -4955,14 +4955,14 @@
           "line": 600
         },
         {
-          "durationInSeconds": 2.18,
+          "durationInSeconds": 2.31,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -4991,7 +4991,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "54 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 5.98,
+      "durationInSeconds": 6.19,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c44973915ad0f33c.mp3",
@@ -5009,14 +5009,14 @@
           "line": 607
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -5045,7 +5045,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "55 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.59,
+      "durationInSeconds": 5.85,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cd040723cdf7508d.mp3",
@@ -5069,8 +5069,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -5099,7 +5099,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "56 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 8.01,
+      "durationInSeconds": 8.84,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/7baf0f9c5c9ff3e9.mp3",
@@ -5117,14 +5117,14 @@
           "line": 621
         },
         {
-          "durationInSeconds": 3.96,
+          "durationInSeconds": 4.48,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -5153,7 +5153,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "57 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 4.63,
+      "durationInSeconds": 4.84,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8e29897471f2f8d0.mp3",
@@ -5171,14 +5171,14 @@
           "line": 628
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -5207,7 +5207,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "58 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.13,
+      "durationInSeconds": 6.36,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61cbeaaeebd333e2.mp3",
@@ -5225,14 +5225,14 @@
           "line": 635
         },
         {
-          "durationInSeconds": 2.18,
+          "durationInSeconds": 2.31,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -5261,7 +5261,7 @@
       "stage": "INPUT_RETURN",
       "segment": "59 · INPUT_RETURN · checkpoint 3 — the whole exchange, twice",
       "visual": null,
-      "durationInSeconds": 116.88,
+      "durationInSeconds": 116.58,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d5761a1110f715b7.mp3",
@@ -5283,8 +5283,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -5296,14 +5296,14 @@
           "line": 643
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -5315,14 +5315,14 @@
           "line": 645
         },
         {
-          "durationInSeconds": 4.69,
+          "durationInSeconds": 4.48,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -5334,14 +5334,14 @@
           "line": 647
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -5353,14 +5353,14 @@
           "line": 649
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -5372,14 +5372,14 @@
           "line": 651
         },
         {
-          "durationInSeconds": 5.03,
+          "durationInSeconds": 4.65,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
@@ -5416,8 +5416,8 @@
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -5429,14 +5429,14 @@
           "line": 657
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -5448,14 +5448,14 @@
           "line": 659
         },
         {
-          "durationInSeconds": 4.69,
+          "durationInSeconds": 4.48,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -5467,14 +5467,14 @@
           "line": 661
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -5486,14 +5486,14 @@
           "line": 663
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -5505,14 +5505,14 @@
           "line": 665
         },
         {
-          "durationInSeconds": 5.03,
+          "durationInSeconds": 4.65,
           "phase": "RECALL",
           "level": 3,
           "stage": "INPUT_RETURN"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
@@ -5539,7 +5539,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "60 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.66,
+      "durationInSeconds": 5.92,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3e95477a8f80f93b.mp3",
@@ -5563,8 +5563,8 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ca6240a59f55d6c8.mp3",
-          "durationInSeconds": 0.48,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "bien",
@@ -5593,7 +5593,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "61 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 8.44,
+      "durationInSeconds": 9.27,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a26eb6ffbab63045.mp3",
@@ -5611,14 +5611,14 @@
           "line": 679
         },
         {
-          "durationInSeconds": 3.96,
+          "durationInSeconds": 4.48,
           "phase": "PRODUCE",
           "level": 5,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9c7104d3030df6bc.mp3",
-          "durationInSeconds": 1.15,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "comme ci comme ça",
@@ -5647,7 +5647,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "62 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 6.31,
+      "durationInSeconds": 6.52,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/74f2267243182308.mp3",
@@ -5665,14 +5665,14 @@
           "line": 686
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -5701,7 +5701,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "63 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 5.39,
+      "durationInSeconds": 5.62,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/17759fc895ea1612.mp3",
@@ -5719,14 +5719,14 @@
           "line": 693
         },
         {
-          "durationInSeconds": 2.18,
+          "durationInSeconds": 2.31,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d70a6f724d871059.mp3",
-          "durationInSeconds": 0.91,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "je m'appelle",
@@ -5755,7 +5755,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "64 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 5.76,
+      "durationInSeconds": 5.97,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84205b29858e82c4.mp3",
@@ -5773,14 +5773,14 @@
           "line": 700
         },
         {
-          "durationInSeconds": 2,
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cc1f92c19a0a95c6.mp3",
-          "durationInSeconds": 0.72,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
           "phase": "PRODUCE",
           "voice": "fr_man",
           "text": "très bien",
@@ -5809,7 +5809,7 @@
       "stage": "BUILD_LADDER",
       "segment": "65 · BUILD_LADDER · put it all together",
       "visual": "CHUNK BAR — Bonjour. · HIGHLIGHT frame",
-      "durationInSeconds": 125.76,
+      "durationInSeconds": 125.7,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ebb194d416884846.mp3",
@@ -5846,14 +5846,14 @@
           "line": 709
         },
         {
-          "durationInSeconds": 2.15,
+          "durationInSeconds": 2.62,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f422315a6f9d0ffa.mp3",
-          "durationInSeconds": 0.67,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/09039444db059d49.mp3",
+          "durationInSeconds": 0.98,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour.",
@@ -5886,14 +5886,14 @@
           "line": 714
         },
         {
-          "durationInSeconds": 6.01,
+          "durationInSeconds": 5.49,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/48e578aa8ae79add.mp3",
-          "durationInSeconds": 1.9,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/5142050a51844eff.mp3",
+          "durationInSeconds": 1.63,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire.",
@@ -5926,14 +5926,14 @@
           "line": 719
         },
         {
-          "durationInSeconds": 6.89,
+          "durationInSeconds": 7.36,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2d444caacb010c17.mp3",
-          "durationInSeconds": 2.35,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/589401fcf22a5aa4.mp3",
+          "durationInSeconds": 2.59,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Ça va bien.",
@@ -5972,8 +5972,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8774dd34b8851fcd.mp3",
-          "durationInSeconds": 3.36,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a4d99fa0f5c2032c.mp3",
+          "durationInSeconds": 3.31,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Ça va bien ! Et toi ?",
@@ -6012,8 +6012,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdb9be710ca6d0e5.mp3",
-          "durationInSeconds": 3.79,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/62422f05635e0f30.mp3",
+          "durationInSeconds": 3.31,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va bien ! Et toi ?",
@@ -6046,14 +6046,14 @@
           "line": 734
         },
         {
-          "durationInSeconds": 8.5,
+          "durationInSeconds": 8.3,
           "phase": "BUILD",
           "level": 3,
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ff95c25a24f495ea.mp3",
-          "durationInSeconds": 3.65,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/72f01a134120b5e1.mp3",
+          "durationInSeconds": 3.07,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa. Ça va bien ! Et toi ?",
@@ -6092,8 +6092,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0e73146d76b4393a.mp3",
-          "durationInSeconds": 3.7,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/27a3d97765fea131.mp3",
+          "durationInSeconds": 4.2,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Ça va très bien ! Et toi ?",
@@ -6132,8 +6132,8 @@
           "stage": "BUILD_LADDER"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/941973b88765e4b2.mp3",
-          "durationInSeconds": 3.67,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/23de4f924c30567c.mp3",
+          "durationInSeconds": 3.72,
           "phase": "BUILD",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Ça va comme ci comme ça ! Et toi ?",
@@ -6162,7 +6162,7 @@
       "stage": "FLUENCY_ROUND",
       "segment": "66 · FLUENCY_ROUND · fluency",
       "visual": null,
-      "durationInSeconds": 79.58,
+      "durationInSeconds": 74.57,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/43610b70201cde46.mp3",
@@ -6184,8 +6184,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/01441511b0174e3c.mp3",
-          "durationInSeconds": 4.51,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0435a526f33d539f.mp3",
+          "durationInSeconds": 3.07,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Ça va bien ! Et toi ?",
@@ -6197,14 +6197,14 @@
           "line": 752
         },
         {
-          "durationInSeconds": 8.5,
+          "durationInSeconds": 7.22,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c391e59f2c71be4a.mp3",
-          "durationInSeconds": 3.5,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b3ff08c42ebbdc07.mp3",
+          "durationInSeconds": 3.31,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va très bien ! Et toi ?",
@@ -6216,14 +6216,14 @@
           "line": 754
         },
         {
-          "durationInSeconds": 7.95,
+          "durationInSeconds": 7.63,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/75f47a38b44da108.mp3",
-          "durationInSeconds": 4.66,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/13b90a71866e08b3.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa. Ça va comme ci comme ça ! Et toi ?",
@@ -6235,7 +6235,7 @@
           "line": 756
         },
         {
-          "durationInSeconds": 8.5,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
@@ -6260,8 +6260,8 @@
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8774dd34b8851fcd.mp3",
-          "durationInSeconds": 3.36,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a4d99fa0f5c2032c.mp3",
+          "durationInSeconds": 3.31,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Ça va bien ! Et toi ?",
@@ -6273,14 +6273,14 @@
           "line": 760
         },
         {
-          "durationInSeconds": 7.71,
+          "durationInSeconds": 7.63,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/73f2332c4217857d.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3dd958454cfe9ef4.mp3",
+          "durationInSeconds": 3.79,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va très bien ! Et toi ?",
@@ -6292,14 +6292,14 @@
           "line": 762
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 8.44,
           "phase": "RECALL",
           "level": 3,
           "stage": "FLUENCY_ROUND"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b478822ff6eb4bfb.mp3",
-          "durationInSeconds": 4.75,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/671922c2cb9b6848.mp3",
+          "durationInSeconds": 4.3,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa. Ça va comme ci comme ça ! Et toi ?",
@@ -6324,7 +6324,7 @@
       "stage": "CAN_DO_CHECK",
       "segment": "67 · CAN_DO_CHECK · close — you can do this now",
       "visual": null,
-      "durationInSeconds": 57.42,
+      "durationInSeconds": 57.27,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/291f26bb108315d3.mp3",
@@ -6346,8 +6346,8 @@
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3fd828af73d79507.mp3",
-          "durationInSeconds": 3.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
@@ -6359,14 +6359,14 @@
           "line": 770
         },
         {
-          "durationInSeconds": 8.09,
+          "durationInSeconds": 7.92,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4c8c3b9e2a447aea.mp3",
-          "durationInSeconds": 1.58,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc.",
@@ -6378,14 +6378,14 @@
           "line": 772
         },
         {
-          "durationInSeconds": 4.69,
+          "durationInSeconds": 4.48,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9e3d2cc92fd06dc2.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
@@ -6397,14 +6397,14 @@
           "line": 774
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c866541f4620543a.mp3",
-          "durationInSeconds": 2.18,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Comment ça va ? — Ça va bien, merci !",
@@ -6416,14 +6416,14 @@
           "line": 776
         },
         {
-          "durationInSeconds": 5.71,
+          "durationInSeconds": 6.28,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a1166bde043e59b1.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Léa.",
@@ -6435,14 +6435,14 @@
           "line": 778
         },
         {
-          "durationInSeconds": 5.03,
+          "durationInSeconds": 4.65,
           "phase": "RECALL",
           "level": 3,
           "stage": "CAN_DO_CHECK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e598f2f86cbadeb3.mp3",
-          "durationInSeconds": 4.42,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
           "phase": "RECALL",
           "voice": "fr_man",
           "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",

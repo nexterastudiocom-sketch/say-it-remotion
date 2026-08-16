@@ -1,16 +1,615 @@
-_note: allowed_set(n) source for Gate A rule V-01. lessons.<n> = items taught in lesson
-  n. Only --promote-lexicon writes here, and only after Gate A passes with zero BLOCK.
 lessons:
   1:
-  - bonjour
-  - salut
-  - merci
-  - s'il vous plaît
-  - oui
-  - non
   - au revoir
-  - madame
-  - monsieur
+  - bonjour
   - bonsoir
+  - madame
+  - merci
+  - monsieur
+  - non
+  - oui
   - pardon
+  - s'il vous plaît
+  - salut
   - à bientôt
+  2:
+  - bien
+  - comme ci comme ça
+  - comment
+  - et toi ?
+  - je m'appelle
+  - ça va
+  - enchanté
+  - moi
+  - très bien
+  - voici
+  3:
+  - cinq
+  - dix
+  - dix-sept
+  - douze
+  - huit
+  - neuf
+  - onze
+  - quatorze
+  - quatre
+  - deux
+  - dix-huit
+  - dix-neuf
+  4:
+  - sept
+  - six
+  - treize
+  - trois
+  - un
+  - vingt
+  - zéro
+  - quinze
+  - seize
+  - elle est
+  - elles sont
+  - il est
+  5:
+  - madame
+  - s'il vous plaît
+  - dix
+  - neuf
+  - quatre
+  - au revoir
+  - non
+  - bien
+  - enchanté
+  - moi
+  - ça va
+  - dix-sept
+  6:
+  - je suis
+  - nous sommes
+  - tu es
+  - ils sont
+  - vous êtes
+  - canadien / canadienne
+  - espagnol
+  - français / française
+  - iranien / iranienne
+  - italien / italienne
+  - j'habite à
+  - je viens de
+  7:
+  - je travaille comme
+  - l'Espagne
+  - l'Iran
+  - l'Italie
+  - la France
+  - le Canada
+  - un pays
+  - une ville
+  - le travail
+  - un artiste
+  - un cuisinier / une cuisinière
+  - un employé / une employée
+  8:
+  - j'ai
+  - un ingénieur
+  - un médecin
+  - un professeur
+  - un serveur / une serveuse
+  - un étudiant / une étudiante
+  - il a / elle a
+  - ils ont / elles ont
+  - j'ai ... ans
+  - nous avons
+  - quel âge as-tu ?
+  - tu as
+  - vous avez
+  9:
+  - la famille
+  - la femme
+  - la fille
+  - la mère
+  - la sœur
+  - le fils
+  - le frère
+  - le mari
+  - le père
+  - les enfants
+  - les parents
+  - mon / ma / mes
+  10:
+  - c'est
+  - aussi
+  - il s'appelle / elle s'appelle
+  - mon ami / mon amie
+  - aimer
+  - donner
+  - habiter
+  - jouer
+  - manger
+  - parler
+  - regarder
+  - travailler
+  - écouter
+  - étudier
+  11:
+  - je parle
+  - tu parles
+  - l'après-midi
+  - la nuit
+  - le matin
+  - il / elle parle
+  - ils / elles parlent
+  - nous parlons
+  - vous parlez
+  - et demie
+  - et quart
+  - il est ... heures
+  12:
+  - midi
+  - minuit
+  - quelle heure est-il ?
+  - aujourd'hui
+  - demain
+  - hier
+  - le soir
+  - moins le quart
+  - dimanche
+  - jeudi
+  - la semaine
+  - le week-end
+  13:
+  - lundi
+  - mardi
+  - samedi
+  - la pomme
+  - le fromage
+  - le pain
+  - mercredi
+  - vendredi
+  - la viande
+  - le gâteau
+  - le petit-déjeuner
+  - le poisson
+  14:
+  - chaud
+  - froid
+  - le café
+  - le jus
+  - le lait
+  - le poulet
+  - le riz
+  - les fruits
+  - les légumes
+  - les pâtes
+  - l'eau
+  - la bière
+  15:
+  - lundi
+  - vendredi
+  - le gâteau
+  - le poulet
+  - la bière
+  - il / elle parle
+  - tu parles
+  - il est ... heures
+  - le soir
+  - quelle heure est-il ?
+  - hier
+  - les pâtes
+  16:
+  - le thé
+  - le vin
+  - un verre
+  - c'est combien ?
+  - encore
+  - je voudrais
+  - pour moi
+  - une bouteille
+  - délicieux
+  - l'addition
+  - la carte
+  - une table
+  17:
+  - du
+  - un peu de
+  - l'hôtel
+  - la banque
+  - la boulangerie
+  - beaucoup de
+  - de l'
+  - de la
+  - des
+  - l'hôpital
+  - l'école
+  - la gare
+  18:
+  - la maison
+  - la rue
+  - le magasin
+  - le parc
+  - le restaurant
+  - je vais
+  - le marché
+  - il / elle va
+  - ils / elles vont
+  - loin de
+  - nous allons
+  - où est ... ?
+  19:
+  - près de
+  - tout droit
+  - à droite
+  - à gauche
+  - combien ça coûte ?
+  - tu vas
+  - vous allez
+  - acheter
+  - cher / chère
+  - faire les courses
+  - l'argent
+  - l'euro
+  20:
+  - continuez
+  - excusez-moi
+  - tournez
+  - pas cher
+  - payer
+  - trop
+  - un kilo
+  - comment aller à ... ?
+  - chanter
+  - danser
+  - j'adore
+  - j'aime
+  21:
+  - je déteste
+  - la musique
+  - le football
+  - le sport
+  - lire
+  - voyager
+  - ce week-end
+  - je préfère
+  - le cinéma
+  - bientôt
+  - ce soir
+  - faire des projets
+  - je vais + verbe
+  - la semaine prochaine
+  22:
+  - Je ne comprends pas
+  - bravo
+  - félicitations
+  - j'ai fini
+  - je peux parler
+  - Comment dit-on... ?
+  - l'élève
+  - la feuille
+  - la professeure
+  - la salle de classe
+  - le cahier
+  - le crayon
+  23:
+  - le livre
+  - le stylo
+  - de rien
+  - le professeur
+  - le tableau
+  - lever la main
+  - Répétez, s'il vous plaît
+  - écrire
+  - après vous
+  - avec plaisir
+  - C'est gentil
+  - déranger
+  24:
+  - je vous en prie
+  - allemand
+  - italien
+  - remercier
+  - s'il te plaît
+  - tenir la porte
+  - Ça ne fait rien
+  - allemande
+  - espagnol
+  - italienne
+  - l'avocat
+  - l'avocate
+  25:
+  - j'ai fini
+  - écrire
+  - s'il te plaît
+  - je déteste
+  - le football
+  - bientôt
+  - je vais + verbe
+  - l'élève
+  - le cahier
+  - le stylo
+  - de rien
+  - allemande
+  26:
+  - décembre
+  - en avance
+  - en retard
+  - janvier
+  - juillet
+  - l'infirmier
+  - l'infirmière
+  - l'ingénieur
+  - le médecin
+  - l'automne
+  - l'hiver
+  - l'été
+  27:
+  - la date
+  - le printemps
+  - la robe
+  - le manteau
+  - la saison
+  - le mois
+  - un rendez-vous
+  - à l'heure
+  - bleu
+  - bleue
+  - essayer
+  - la chemise
+  28:
+  - le pantalon
+  - les chaussures
+  - noir
+  - noire
+  - rouge
+  - vert
+  - verte
+  - cent
+  - porter
+  - cinquante
+  - deux cents
+  - deuxième
+  29:
+  - mille
+  - premier
+  - soixante
+  - trente
+  - première
+  - quarante
+  - quatre-vingt-dix
+  - quatre-vingts
+  - soixante-dix
+  - un million
+  - vingt et un
+  30:
+  - la gorge
+  - la pharmacie
+  - la tête
+  - le dos
+  - avoir mal à
+  - la fièvre
+  - la jambe
+  - la main
+  - le bras
+  - le médicament
+  - le pied
+  - le ventre
+  - être malade
+  31:
+  - la cuisine
+  - la table
+  - le canapé
+  - le lit
+  - le salon
+  - l'appartement
+  - la chaise
+  - la chambre
+  - la fenêtre
+  - la porte
+  - la salle de bains
+  32:
+  - il fait beau
+  - il fait chaud
+  - il fait froid
+  - il pleut
+  - un parapluie
+  - il neige
+  - la pluie
+  - la température
+  - le nuage
+  - le soleil
+  - le vent
+  33:
+  - le bus
+  - le métro
+  - le train
+  - un billet
+  - l'arrêt de bus
+  - l'avion
+  - la voiture
+  - le taxi
+  - le vélo
+  - prendre
+  34:
+  - derrière
+  - sous
+  - sur
+  - à côté de
+  - beau
+  - dans
+  - devant
+  - en face de
+  - entre
+  - belle
+  - content
+  - contente
+  35:
+  - l'appartement
+  - la cuisine
+  - il fait chaud
+  - il pleut
+  - la voiture
+  - le taxi
+  - la salle de bains
+  - le lit
+  - le nuage
+  - un parapluie
+  - prendre
+  - derrière
+  36:
+  - facile
+  - fatigué
+  - grand
+  - grande
+  - jeune
+  - petit
+  - petite
+  - difficile
+  - fatiguée
+  - nouveau
+  - nouvelle
+  - triste
+  - vieille
+  - vieux
+  37:
+  - prendre le petit-déjeuner
+  - s'habiller
+  - se coucher
+  - se doucher
+  - se laver
+  - se lever
+  - se réveiller
+  - il/elle fait
+  - il/elle prend
+  - je dois
+  - je fais
+  - je peux
+  38:
+  - tu fais
+  - où
+  - pourquoi
+  - qu'est-ce que
+  - qui
+  - je prends
+  - je veux
+  - je viens
+  - nous faisons
+  - combien
+  - quand
+  - quel
+  - quelle
+  39:
+  - jamais
+  - souvent
+  - toujours
+  - déjà
+  - maintenant
+  - parfois
+  - pas encore
+  - rarement
+  - avoir chaud
+  - avoir faim
+  - avoir froid
+  - avoir peur
+  40:
+  - le chat
+  - avoir soif
+  - avoir sommeil
+  - être en colère
+  - être heureuse
+  - être heureux
+  - être surpris
+  - l'oiseau
+  - l'oncle
+  - la cousine
+  - la grand-mère
+  - la tante
+  41:
+  - en espèces
+  - la caisse
+  - la carte bancaire
+  - le reçu
+  - le chien
+  - le cousin
+  - le grand-père
+  - les grands-parents
+  - cher
+  - chère
+  - coûter
+  - rendre la monnaie
+  42:
+  - appeler
+  - envoyer un message
+  - internet
+  - l'e-mail
+  - l'ordinateur
+  - le mot de passe
+  - le téléphone
+  - répondre
+  - télécharger
+  - aller au Canada
+  - aller aux États-Unis
+  - aller en France
+  43:
+  - l'Allemagne
+  - le Japon
+  - le Maroc
+  - les États-Unis
+  - venir de
+  - Asseyez-vous !
+  - Assieds-toi !
+  - Attends !
+  - Ferme la porte !
+  - Levez-vous !
+  - Lève-toi !
+  - Ne t'inquiète pas !
+  44:
+  - Ouvre la fenêtre !
+  - Regarde !
+  - Écoute !
+  - Écoutez !
+  - faire de la natation
+  - faire du sport
+  - faire du vélo
+  - jouer au football
+  - jouer au tennis
+  - jouer aux cartes
+  - lire un livre
+  - peindre
+  - regarder la télé
+  - écouter de la musique
+  45:
+  - cher
+  - Ferme la porte !
+  - Ouvre la fenêtre !
+  - le chien
+  - la caisse
+  - appeler
+  - l'ordinateur
+  - télécharger
+  - l'Allemagne
+  - venir de
+  - faire de la natation
+  - jouer au tennis
+  46:
+  - frais
+  - fraîche
+  - la banane
+  - la carotte
+  - la tomate
+  - l'oignon
+  - l'orange
+  - la fraise
+  - la pomme de terre
+  - la salade
+  - le raisin
+  47:
+  - Dommage !
+  - donc
+  - Génial !
+  - mais
+  - parce que
+  - Super !
+  - alors
+  - et
+  - Quelle horreur !
+  - aussi... que
+  - le moins
+  - le plus
