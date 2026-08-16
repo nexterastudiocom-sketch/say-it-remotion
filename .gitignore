@@ -3,6 +3,10 @@ out/
 .DS_Store
 .env
 .env.local
+# .env is ignored but its BACKUPS were not, and they hold the same live keys —
+# .env.bak-v5voices etc. sat untracked, one `git add -A` from a public push.
+.env.bak*
+.env.*.bak
 public/assets/audio/
 scripts/style-references/
 public/assets/covers/
