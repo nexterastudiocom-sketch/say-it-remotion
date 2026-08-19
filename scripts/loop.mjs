@@ -198,10 +198,14 @@ async function processWorkbook(name, { rebuild = false } = {}) {
   // safer settings (more concurrency→less, longer timeout) before we give up.
   const propArg = `--props=${path.join(ROOT, `src/data/lessons/${id}.method.json`)}`;
   const scaleArg = HQ ? '--scale=1' : '--scale=0.25';
-  // Remotion's default CRF put the first 4K master at 4.4 Mbps, which trips T-03
-  // (spec wants >=45 Mbps H.264) and is thin for what YouTube re-encodes. Pin the
-  // rate explicitly on the delivery render; a preview is disposable, so leave it.
-  const rateArgs = HQ ? ['--video-bitrate=50M', '--audio-bitrate=384k'] : [];
+  // Audio only. --video-bitrate is deliberately NOT set: measured on the L01 4K
+  // master, 50M and the default CRF produce the same file (2802 vs 2810 kb/s on an
+  // identical segment), because flat ligne-claire art at 4K hits its quality ceiling
+  // around 13 Mbps and cannot spend more. The flag does work — forcing 400K yielded
+  // 279 kb/s — so a target above the ceiling is simply inert, and asking for 50 Mbps
+  // in code would claim a bitrate the encoder never delivers. T-03 (>=45 Mbps) is a
+  // photographic-content threshold this material cannot reach; it WARNs by design.
+  const rateArgs = HQ ? ['--audio-bitrate=384k'] : [];
   // MOSAIC_RENDER_CONCURRENCY pins the STARTING concurrency. The ladder below only
   // helps when a render fails and returns; it cannot help when the whole node process
   // is killed mid-render (five runs died at 8483/8494/8603/8630/8646 frames — a

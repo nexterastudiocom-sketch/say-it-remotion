@@ -154,14 +154,25 @@ const val = validateSchedule(sched, schedItems);
 // ---- emit -------------------------------------------------------------------
 const out = [];
 const w = (s = '') => out.push(s);
-const img = (t) => w(`  🖼 ${t}`);
+// Track the section's current directive so the MIC cue below can extend it rather
+// than replace it (see beat()).
+let lastVis = null;
+const img = (t) => { lastVis = t; w(`  🖼 ${t}`); };
+// A pause of 2s or more IS the open retrieval gap — the moment the learner speaks.
+// MethodSlide draws its pulsing microphone only when the LIVE visual matches /\bMIC\b/,
+// and author-v2 never emitted one, so no v2 lesson has ever shown the mic (I-04: 274
+// findings, one per segment). Emit the directive on the beat that owns the pause,
+// carrying the section's current directive forward: a bare "MIC" would become the
+// live visual and stop the CHUNK BAR drawing on the build ladder.
+const MIC_GAP_S = 2;
 const beat = (voice, phase, level, text, pause, { rate, extra } = {}) => {
+  if (pause != null && Number(pause) >= MIC_GAP_S) w(`  🖼 ${lastVis ? `${lastVis} · MIC` : 'MIC — learner speaks'}`);
   const tags = [`[${phase}]`, `[L${level}]`, ...(extra || [])].join(' ');
   w(`  ${voice} ${tags} → ${voice.startsWith('FR') && rate ? `[rate: ${rate}] ${text}` : text}`);
   if (pause != null) w(`    ⏸ PAUSE ${pause}s`);
 };
 let seg = 0;
-const section = (stage, label) => { w(); w(`## ${String(++seg).padStart(2, '0')} · ${stage}${label ? ' · ' + label : ''}`); };
+const section = (stage, label) => { lastVis = null; w(); w(`## ${String(++seg).padStart(2, '0')} · ${stage}${label ? ' · ' + label : ''}`); };
 
 // frontmatter
 w('---');
@@ -244,11 +255,15 @@ for (const appt of bySlot) {
     beat(voice, 'ECHO', 1, it.fr, '0.5', { rate: 'slow' });
     beat('EN·MAN', 'ECHO', 1, 'Repeat after me.', '0.3');
     beat(voice, 'ECHO', 1, it.fr, '2.0', { rate: 'slow', extra: ['[confirm]'] });
-    beat('EN·MAN', 'ECHO', 1, 'Again.', '0.3');
+    // C-04: "again" and "one more" are unapproved cue phrasing unless the line also
+    // carries an approved cue — copy is "repeat after me", produce is "your turn" /
+    // "now you". The repetition is the point pedagogically, so keep it and say it in
+    // the approved register rather than dropping the beat.
+    beat('EN·MAN', 'ECHO', 1, 'Once more — repeat after me.', '0.3');
     beat(voice, 'ECHO', 1, it.fr, '2.0', { rate: 'slow', extra: ['[confirm]'] });
     beat('EN·MAN', 'PRODUCE', 3, `Now you — say "${g}".`, '3.0');
     beat(voice, 'PRODUCE', 3, it.fr, '0.5', { rate: 'natural', extra: ['[confirm]'] });
-    beat('EN·MAN', 'PRODUCE', 3, `One more — say "${g}".`, '3.0');
+    beat('EN·MAN', 'PRODUCE', 3, `Your turn again — say "${g}".`, '3.0');
     beat(voice, 'PRODUCE', 3, it.fr, '0.5', { rate: 'natural', extra: ['[confirm]'] });
   } else {
     // Produce from meaning. Cues lean to "repeat / now you" (never say the French).

@@ -215,7 +215,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "02 · ITEM_BLOCK · bien",
       "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 23.46,
+      "durationInSeconds": 24.9,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -286,8 +286,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 43
+          "visuals": [
+            "ILLUSTRATION — bien · MIC"
+          ],
+          "line": 44
         },
         {
           "durationInSeconds": 2.61,
@@ -296,17 +298,17 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 45
+          "line": 46
         },
         {
           "durationInSeconds": 0.3,
@@ -324,8 +326,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 47
+          "visuals": [
+            "ILLUSTRATION — bien · MIC"
+          ],
+          "line": 49
         },
         {
           "durationInSeconds": 2.6,
@@ -343,11 +347,13 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 49
+          "visuals": [
+            "ILLUSTRATION — bien · MIC"
+          ],
+          "line": 52
         },
         {
-          "durationInSeconds": 2.92,
+          "durationInSeconds": 2.91,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -363,7 +369,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 51
+          "line": 54
         },
         {
           "durationInSeconds": 0.5,
@@ -372,17 +378,19 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0755664634496d2e.mp3",
-          "durationInSeconds": 1.87,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/28d530d2708b5350.mp3",
+          "durationInSeconds": 2.09,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"well\".",
+          "text": "Your turn again — say \"well\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 53
+          "visuals": [
+            "ILLUSTRATION — bien · MIC"
+          ],
+          "line": 57
         },
         {
           "durationInSeconds": 2.56,
@@ -401,7 +409,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 55
+          "line": 59
         },
         {
           "durationInSeconds": 0.5,
@@ -420,7 +428,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "03 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
       "durationInSeconds": 6.39,
       "beats": [
         {
@@ -434,9 +442,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — bien"
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
           ],
-          "line": 60
+          "line": 65
         },
         {
           "durationInSeconds": 2.54,
@@ -455,7 +464,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 62
+          "line": 67
         },
         {
           "durationInSeconds": 1,
@@ -475,7 +484,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "04 · ITEM_BLOCK · comme ci comme ça",
       "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 34.37,
+      "durationInSeconds": 35.74,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -490,7 +499,7 @@
           "visuals": [
             "ILLUSTRATION — comme ci comme ça"
           ],
-          "line": 67
+          "line": 72
         },
         {
           "durationInSeconds": 0.3,
@@ -509,7 +518,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 69
+          "line": 74
         },
         {
           "durationInSeconds": 0.5,
@@ -528,7 +537,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 71
+          "line": 76
         },
         {
           "durationInSeconds": 0.3,
@@ -546,8 +555,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 73
+          "visuals": [
+            "ILLUSTRATION — comme ci comme ça · MIC"
+          ],
+          "line": 79
         },
         {
           "durationInSeconds": 4.5,
@@ -556,17 +567,17 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 75
+          "line": 81
         },
         {
           "durationInSeconds": 0.3,
@@ -584,8 +595,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 77
+          "visuals": [
+            "ILLUSTRATION — comme ci comme ça · MIC"
+          ],
+          "line": 84
         },
         {
           "durationInSeconds": 4.5,
@@ -603,8 +616,10 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 79
+          "visuals": [
+            "ILLUSTRATION — comme ci comme ça · MIC"
+          ],
+          "line": 87
         },
         {
           "durationInSeconds": 4.5,
@@ -623,7 +638,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 81
+          "line": 89
         },
         {
           "durationInSeconds": 0.5,
@@ -632,17 +647,19 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/644dc9caa6798768.mp3",
-          "durationInSeconds": 2.4,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8ea70bb6b6603750.mp3",
+          "durationInSeconds": 2.54,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"so-so\".",
+          "text": "Your turn again — say \"so-so\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 83
+          "visuals": [
+            "ILLUSTRATION — comme ci comme ça · MIC"
+          ],
+          "line": 92
         },
         {
           "durationInSeconds": 4.5,
@@ -661,7 +678,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 85
+          "line": 94
         },
         {
           "durationInSeconds": 0.5,
@@ -680,7 +697,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "05 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
       "durationInSeconds": 9.05,
       "beats": [
         {
@@ -694,9 +711,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
           ],
-          "line": 90
+          "line": 100
         },
         {
           "durationInSeconds": 4.5,
@@ -715,7 +733,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 92
+          "line": 102
         },
         {
           "durationInSeconds": 1,
@@ -735,7 +753,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "06 · ITEM_BLOCK · comment",
       "visual": "ILLUSTRATION — comment",
-      "durationInSeconds": 21.56,
+      "durationInSeconds": 22.95,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -750,7 +768,7 @@
           "visuals": [
             "ILLUSTRATION — comment"
           ],
-          "line": 97
+          "line": 107
         },
         {
           "durationInSeconds": 0.3,
@@ -769,7 +787,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 99
+          "line": 109
         },
         {
           "durationInSeconds": 0.5,
@@ -788,7 +806,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 101
+          "line": 111
         },
         {
           "durationInSeconds": 0.3,
@@ -806,27 +824,29 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 103
+          "visuals": [
+            "ILLUSTRATION — comment · MIC"
+          ],
+          "line": 114
         },
         {
-          "durationInSeconds": 2.36,
+          "durationInSeconds": 2.35,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 105
+          "line": 116
         },
         {
           "durationInSeconds": 0.3,
@@ -844,11 +864,13 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 107
+          "visuals": [
+            "ILLUSTRATION — comment · MIC"
+          ],
+          "line": 119
         },
         {
-          "durationInSeconds": 2.35,
+          "durationInSeconds": 2.34,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -863,11 +885,13 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 109
+          "visuals": [
+            "ILLUSTRATION — comment · MIC"
+          ],
+          "line": 122
         },
         {
-          "durationInSeconds": 2.64,
+          "durationInSeconds": 2.62,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -883,7 +907,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 111
+          "line": 124
         },
         {
           "durationInSeconds": 0.5,
@@ -892,20 +916,22 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f247cfb465646727.mp3",
-          "durationInSeconds": 1.78,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0dda4a6ec2844c1c.mp3",
+          "durationInSeconds": 1.99,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"how\".",
+          "text": "Your turn again — say \"how\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 113
+          "visuals": [
+            "ILLUSTRATION — comment · MIC"
+          ],
+          "line": 127
         },
         {
-          "durationInSeconds": 2.31,
+          "durationInSeconds": 2.3,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -921,7 +947,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 115
+          "line": 129
         },
         {
           "durationInSeconds": 0.5,
@@ -940,8 +966,8 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "07 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.88,
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
+      "durationInSeconds": 5.87,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2a9434410d851c17.mp3",
@@ -954,12 +980,13 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — bien"
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
           ],
-          "line": 120
+          "line": 135
         },
         {
-          "durationInSeconds": 2.29,
+          "durationInSeconds": 2.28,
           "phase": "PRODUCE",
           "level": 4,
           "stage": "ITEM_BLOCK"
@@ -975,7 +1002,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 122
+          "line": 137
         },
         {
           "durationInSeconds": 1,
@@ -995,7 +1022,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "08 · ITEM_BLOCK · et toi ?",
       "visual": "ILLUSTRATION — et toi ?",
-      "durationInSeconds": 29.66,
+      "durationInSeconds": 30.71,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1010,7 +1037,7 @@
           "visuals": [
             "ILLUSTRATION — et toi ?"
           ],
-          "line": 127
+          "line": 142
         },
         {
           "durationInSeconds": 0.3,
@@ -1029,7 +1056,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 129
+          "line": 144
         },
         {
           "durationInSeconds": 0.5,
@@ -1048,7 +1075,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 131
+          "line": 146
         },
         {
           "durationInSeconds": 0.3,
@@ -1066,27 +1093,29 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 133
+          "visuals": [
+            "ILLUSTRATION — et toi ? · MIC"
+          ],
+          "line": 149
         },
         {
-          "durationInSeconds": 3.75,
+          "durationInSeconds": 3.73,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 135
+          "line": 151
         },
         {
           "durationInSeconds": 0.3,
@@ -1104,11 +1133,13 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 137
+          "visuals": [
+            "ILLUSTRATION — et toi ? · MIC"
+          ],
+          "line": 154
         },
         {
-          "durationInSeconds": 3.72,
+          "durationInSeconds": 3.69,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1123,11 +1154,13 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 139
+          "visuals": [
+            "ILLUSTRATION — et toi ? · MIC"
+          ],
+          "line": 157
         },
         {
-          "durationInSeconds": 4.12,
+          "durationInSeconds": 4.1,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -1143,7 +1176,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 141
+          "line": 159
         },
         {
           "durationInSeconds": 0.5,
@@ -1152,20 +1185,22 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8251e859fc187205.mp3",
-          "durationInSeconds": 3.14,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/b0650ec1ce354b7c.mp3",
+          "durationInSeconds": 3.05,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"and you? (informal)\".",
+          "text": "Your turn again — say \"and you? (informal)\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 143
+          "visuals": [
+            "ILLUSTRATION — et toi ? · MIC"
+          ],
+          "line": 162
         },
         {
-          "durationInSeconds": 3.53,
+          "durationInSeconds": 3.51,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -1181,7 +1216,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 145
+          "line": 164
         },
         {
           "durationInSeconds": 0.5,
@@ -1200,7 +1235,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "09 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
       "durationInSeconds": 8.04,
       "beats": [
         {
@@ -1214,9 +1249,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
           ],
-          "line": 150
+          "line": 170
         },
         {
           "durationInSeconds": 4.5,
@@ -1235,7 +1271,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 152
+          "line": 172
         },
         {
           "durationInSeconds": 1,
@@ -1254,8 +1290,8 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "10 · ITEM_BLOCK · comment",
-      "visual": "ILLUSTRATION — comment",
-      "durationInSeconds": 5.33,
+      "visual": "ILLUSTRATION — comment ; ILLUSTRATION — comment · MIC",
+      "durationInSeconds": 5.32,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/981855d0ae201caf.mp3",
@@ -1268,12 +1304,13 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comment"
+            "ILLUSTRATION — comment",
+            "ILLUSTRATION — comment · MIC"
           ],
-          "line": 157
+          "line": 178
         },
         {
-          "durationInSeconds": 2.14,
+          "durationInSeconds": 2.13,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -1289,7 +1326,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 159
+          "line": 180
         },
         {
           "durationInSeconds": 1,
@@ -1309,7 +1346,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "11 · ITEM_BLOCK · je m'appelle",
       "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 25.57,
+      "durationInSeconds": 27.29,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1324,7 +1361,7 @@
           "visuals": [
             "ILLUSTRATION — je m'appelle"
           ],
-          "line": 164
+          "line": 185
         },
         {
           "durationInSeconds": 0.3,
@@ -1343,7 +1380,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 166
+          "line": 187
         },
         {
           "durationInSeconds": 0.5,
@@ -1362,7 +1399,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 168
+          "line": 189
         },
         {
           "durationInSeconds": 0.3,
@@ -1380,27 +1417,29 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 170
+          "visuals": [
+            "ILLUSTRATION — je m'appelle · MIC"
+          ],
+          "line": 192
         },
         {
-          "durationInSeconds": 2.38,
+          "durationInSeconds": 2.37,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 172
+          "line": 194
         },
         {
           "durationInSeconds": 0.3,
@@ -1418,11 +1457,13 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 174
+          "visuals": [
+            "ILLUSTRATION — je m'appelle · MIC"
+          ],
+          "line": 197
         },
         {
-          "durationInSeconds": 2.36,
+          "durationInSeconds": 2.34,
           "phase": "ECHO",
           "level": 1,
           "stage": "ITEM_BLOCK"
@@ -1437,11 +1478,13 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 176
+          "visuals": [
+            "ILLUSTRATION — je m'appelle · MIC"
+          ],
+          "line": 200
         },
         {
-          "durationInSeconds": 2.77,
+          "durationInSeconds": 2.75,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -1457,7 +1500,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 178
+          "line": 202
         },
         {
           "durationInSeconds": 0.5,
@@ -1466,20 +1509,22 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61707132d057bf29.mp3",
-          "durationInSeconds": 2.83,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/98fe3b6c7a52a3b6.mp3",
+          "durationInSeconds": 3.38,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"my name is\".",
+          "text": "Your turn again — say \"my name is\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 180
+          "visuals": [
+            "ILLUSTRATION — je m'appelle · MIC"
+          ],
+          "line": 205
         },
         {
-          "durationInSeconds": 2.37,
+          "durationInSeconds": 2.36,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -1495,7 +1540,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 182
+          "line": 207
         },
         {
           "durationInSeconds": 0.5,
@@ -1514,8 +1559,8 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "12 · ITEM_BLOCK · et toi ?",
-      "visual": "ILLUSTRATION — et toi ?",
-      "durationInSeconds": 8.44,
+      "visual": "ILLUSTRATION — et toi ? ; ILLUSTRATION — et toi ? · MIC",
+      "durationInSeconds": 8.41,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/54fb204c09d2644d.mp3",
@@ -1528,12 +1573,13 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — et toi ?"
+            "ILLUSTRATION — et toi ?",
+            "ILLUSTRATION — et toi ? · MIC"
           ],
-          "line": 187
+          "line": 213
         },
         {
-          "durationInSeconds": 3.36,
+          "durationInSeconds": 3.33,
           "phase": "PRODUCE",
           "level": 3,
           "stage": "ITEM_BLOCK"
@@ -1549,7 +1595,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 189
+          "line": 215
         },
         {
           "durationInSeconds": 1,
@@ -1569,7 +1615,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "13 · ITEM_BLOCK · ça va",
       "visual": "ILLUSTRATION — ça va",
-      "durationInSeconds": 21.2,
+      "durationInSeconds": 22.57,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1584,7 +1630,7 @@
           "visuals": [
             "ILLUSTRATION — ça va"
           ],
-          "line": 194
+          "line": 220
         },
         {
           "durationInSeconds": 0.3,
@@ -1603,7 +1649,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 196
+          "line": 222
         },
         {
           "durationInSeconds": 0.5,
@@ -1622,7 +1668,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 198
+          "line": 224
         },
         {
           "durationInSeconds": 0.3,
@@ -1640,8 +1686,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 200
+          "visuals": [
+            "ILLUSTRATION — ça va · MIC"
+          ],
+          "line": 227
         },
         {
           "durationInSeconds": 2.03,
@@ -1650,17 +1698,17 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 202
+          "line": 229
         },
         {
           "durationInSeconds": 0.3,
@@ -1678,8 +1726,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 204
+          "visuals": [
+            "ILLUSTRATION — ça va · MIC"
+          ],
+          "line": 232
         },
         {
           "durationInSeconds": 2.03,
@@ -1697,8 +1747,10 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 206
+          "visuals": [
+            "ILLUSTRATION — ça va · MIC"
+          ],
+          "line": 235
         },
         {
           "durationInSeconds": 2.15,
@@ -1717,7 +1769,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 208
+          "line": 237
         },
         {
           "durationInSeconds": 0.5,
@@ -1726,17 +1778,19 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cd1c3cc484a442d6.mp3",
-          "durationInSeconds": 2.28,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/76055dabb693b3e5.mp3",
+          "durationInSeconds": 2.42,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"I'm fine\".",
+          "text": "Your turn again — say \"I'm fine\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 210
+          "visuals": [
+            "ILLUSTRATION — ça va · MIC"
+          ],
+          "line": 240
         },
         {
           "durationInSeconds": 2,
@@ -1755,7 +1809,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 212
+          "line": 242
         },
         {
           "durationInSeconds": 0.5,
@@ -1774,7 +1828,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "14 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
       "durationInSeconds": 6.68,
       "beats": [
         {
@@ -1788,9 +1842,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — je m'appelle"
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
           ],
-          "line": 217
+          "line": 248
         },
         {
           "durationInSeconds": 2.25,
@@ -1809,7 +1864,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 219
+          "line": 250
         },
         {
           "durationInSeconds": 1,
@@ -1828,7 +1883,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "15 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
       "durationInSeconds": 5.59,
       "beats": [
         {
@@ -1842,9 +1897,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — bien"
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
           ],
-          "line": 224
+          "line": 256
         },
         {
           "durationInSeconds": 2,
@@ -1863,7 +1919,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 226
+          "line": 258
         },
         {
           "durationInSeconds": 1,
@@ -1883,7 +1939,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "16 · ITEM_BLOCK · enchanté",
       "visual": "ILLUSTRATION — enchanté",
-      "durationInSeconds": 23.11,
+      "durationInSeconds": 24.01,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -1898,7 +1954,7 @@
           "visuals": [
             "ILLUSTRATION — enchanté"
           ],
-          "line": 231
+          "line": 263
         },
         {
           "durationInSeconds": 0.3,
@@ -1917,7 +1973,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 233
+          "line": 265
         },
         {
           "durationInSeconds": 0.5,
@@ -1936,7 +1992,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 235
+          "line": 267
         },
         {
           "durationInSeconds": 0.3,
@@ -1954,8 +2010,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 237
+          "visuals": [
+            "ILLUSTRATION — enchanté · MIC"
+          ],
+          "line": 270
         },
         {
           "durationInSeconds": 2.22,
@@ -1964,17 +2022,17 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 239
+          "line": 272
         },
         {
           "durationInSeconds": 0.3,
@@ -1992,8 +2050,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 241
+          "visuals": [
+            "ILLUSTRATION — enchanté · MIC"
+          ],
+          "line": 275
         },
         {
           "durationInSeconds": 2.22,
@@ -2011,8 +2071,10 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 243
+          "visuals": [
+            "ILLUSTRATION — enchanté · MIC"
+          ],
+          "line": 278
         },
         {
           "durationInSeconds": 2.15,
@@ -2031,7 +2093,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 245
+          "line": 280
         },
         {
           "durationInSeconds": 0.5,
@@ -2040,17 +2102,19 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d84eef64c0bd65e0.mp3",
-          "durationInSeconds": 2.83,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6dbf0a86869b2244.mp3",
+          "durationInSeconds": 2.5,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"nice to meet you\".",
+          "text": "Your turn again — say \"nice to meet you\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 247
+          "visuals": [
+            "ILLUSTRATION — enchanté · MIC"
+          ],
+          "line": 283
         },
         {
           "durationInSeconds": 2,
@@ -2069,7 +2133,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 249
+          "line": 285
         },
         {
           "durationInSeconds": 0.5,
@@ -2088,7 +2152,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "17 · ITEM_BLOCK · ça va",
-      "visual": "ILLUSTRATION — ça va",
+      "visual": "ILLUSTRATION — ça va ; ILLUSTRATION — ça va · MIC",
       "durationInSeconds": 5.28,
       "beats": [
         {
@@ -2102,9 +2166,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — ça va"
+            "ILLUSTRATION — ça va",
+            "ILLUSTRATION — ça va · MIC"
           ],
-          "line": 254
+          "line": 291
         },
         {
           "durationInSeconds": 2.03,
@@ -2123,7 +2188,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 256
+          "line": 293
         },
         {
           "durationInSeconds": 1,
@@ -2142,7 +2207,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "18 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
       "durationInSeconds": 6.36,
       "beats": [
         {
@@ -2156,9 +2221,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — je m'appelle"
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
           ],
-          "line": 261
+          "line": 299
         },
         {
           "durationInSeconds": 2.31,
@@ -2177,7 +2243,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 263
+          "line": 301
         },
         {
           "durationInSeconds": 1,
@@ -2196,7 +2262,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "19 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
       "durationInSeconds": 9.34,
       "beats": [
         {
@@ -2210,9 +2276,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
           ],
-          "line": 268
+          "line": 307
         },
         {
           "durationInSeconds": 4.48,
@@ -2231,7 +2298,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 270
+          "line": 309
         },
         {
           "durationInSeconds": 1,
@@ -2251,7 +2318,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "20 · ITEM_BLOCK · moi",
       "visual": "ILLUSTRATION — moi",
-      "durationInSeconds": 22.18,
+      "durationInSeconds": 23.94,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -2266,7 +2333,7 @@
           "visuals": [
             "ILLUSTRATION — moi"
           ],
-          "line": 275
+          "line": 314
         },
         {
           "durationInSeconds": 0.3,
@@ -2285,7 +2352,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 277
+          "line": 316
         },
         {
           "durationInSeconds": 0.5,
@@ -2304,7 +2371,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 279
+          "line": 318
         },
         {
           "durationInSeconds": 0.3,
@@ -2322,8 +2389,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 281
+          "visuals": [
+            "ILLUSTRATION — moi · MIC"
+          ],
+          "line": 321
         },
         {
           "durationInSeconds": 2.59,
@@ -2332,17 +2401,17 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 283
+          "line": 323
         },
         {
           "durationInSeconds": 0.3,
@@ -2360,8 +2429,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 285
+          "visuals": [
+            "ILLUSTRATION — moi · MIC"
+          ],
+          "line": 326
         },
         {
           "durationInSeconds": 2.59,
@@ -2379,8 +2450,10 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 287
+          "visuals": [
+            "ILLUSTRATION — moi · MIC"
+          ],
+          "line": 329
         },
         {
           "durationInSeconds": 2.02,
@@ -2399,7 +2472,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 289
+          "line": 331
         },
         {
           "durationInSeconds": 0.5,
@@ -2408,17 +2481,19 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/7b46494211ea23bb.mp3",
-          "durationInSeconds": 1.49,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a37bbd87e3514c74.mp3",
+          "durationInSeconds": 2.02,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"me\".",
+          "text": "Your turn again — say \"me\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 291
+          "visuals": [
+            "ILLUSTRATION — moi · MIC"
+          ],
+          "line": 334
         },
         {
           "durationInSeconds": 2,
@@ -2437,7 +2512,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 293
+          "line": 336
         },
         {
           "durationInSeconds": 0.5,
@@ -2456,7 +2531,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "21 · ITEM_BLOCK · enchanté",
-      "visual": "ILLUSTRATION — enchanté",
+      "visual": "ILLUSTRATION — enchanté ; ILLUSTRATION — enchanté · MIC",
       "durationInSeconds": 6.46,
       "beats": [
         {
@@ -2470,9 +2545,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — enchanté"
+            "ILLUSTRATION — enchanté",
+            "ILLUSTRATION — enchanté · MIC"
           ],
-          "line": 298
+          "line": 342
         },
         {
           "durationInSeconds": 2.22,
@@ -2491,7 +2567,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 300
+          "line": 344
         },
         {
           "durationInSeconds": 1,
@@ -2510,7 +2586,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "22 · ITEM_BLOCK · comment",
-      "visual": "ILLUSTRATION — comment",
+      "visual": "ILLUSTRATION — comment ; ILLUSTRATION — comment · MIC",
       "durationInSeconds": 5.37,
       "beats": [
         {
@@ -2524,9 +2600,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comment"
+            "ILLUSTRATION — comment",
+            "ILLUSTRATION — comment · MIC"
           ],
-          "line": 305
+          "line": 350
         },
         {
           "durationInSeconds": 2,
@@ -2545,7 +2622,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 307
+          "line": 352
         },
         {
           "durationInSeconds": 1,
@@ -2565,7 +2642,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "23 · ITEM_BLOCK · très bien",
       "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 22.19,
+      "durationInSeconds": 23.78,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -2580,7 +2657,7 @@
           "visuals": [
             "ILLUSTRATION — très bien"
           ],
-          "line": 312
+          "line": 357
         },
         {
           "durationInSeconds": 0.3,
@@ -2599,7 +2676,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 314
+          "line": 359
         },
         {
           "durationInSeconds": 0.5,
@@ -2618,7 +2695,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 316
+          "line": 361
         },
         {
           "durationInSeconds": 0.3,
@@ -2636,8 +2713,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 318
+          "visuals": [
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 364
         },
         {
           "durationInSeconds": 2.09,
@@ -2646,17 +2725,17 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 320
+          "line": 366
         },
         {
           "durationInSeconds": 0.3,
@@ -2674,8 +2753,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 322
+          "visuals": [
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 369
         },
         {
           "durationInSeconds": 2.09,
@@ -2693,8 +2774,10 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 324
+          "visuals": [
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 372
         },
         {
           "durationInSeconds": 2.41,
@@ -2713,7 +2796,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 326
+          "line": 374
         },
         {
           "durationInSeconds": 0.5,
@@ -2722,17 +2805,19 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fafc5652a8ff8ac5.mp3",
-          "durationInSeconds": 2.4,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/4f246a547e990eb3.mp3",
+          "durationInSeconds": 2.76,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"very well\".",
+          "text": "Your turn again — say \"very well\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 328
+          "visuals": [
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 377
         },
         {
           "durationInSeconds": 2.09,
@@ -2751,7 +2836,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 330
+          "line": 379
         },
         {
           "durationInSeconds": 0.5,
@@ -2770,7 +2855,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "24 · ITEM_BLOCK · moi",
-      "visual": "ILLUSTRATION — moi",
+      "visual": "ILLUSTRATION — moi ; ILLUSTRATION — moi · MIC",
       "durationInSeconds": 5.96,
       "beats": [
         {
@@ -2784,9 +2869,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — moi"
+            "ILLUSTRATION — moi",
+            "ILLUSTRATION — moi · MIC"
           ],
-          "line": 335
+          "line": 385
         },
         {
           "durationInSeconds": 2.59,
@@ -2805,7 +2891,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 337
+          "line": 387
         },
         {
           "durationInSeconds": 1,
@@ -2824,7 +2910,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "25 · ITEM_BLOCK · et toi ?",
-      "visual": "ILLUSTRATION — et toi ?",
+      "visual": "ILLUSTRATION — et toi ? ; ILLUSTRATION — et toi ? · MIC",
       "durationInSeconds": 7.34,
       "beats": [
         {
@@ -2838,9 +2924,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — et toi ?"
+            "ILLUSTRATION — et toi ?",
+            "ILLUSTRATION — et toi ? · MIC"
           ],
-          "line": 342
+          "line": 393
         },
         {
           "durationInSeconds": 3.22,
@@ -2859,7 +2946,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 344
+          "line": 395
         },
         {
           "durationInSeconds": 1,
@@ -2878,7 +2965,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "26 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
       "durationInSeconds": 6.19,
       "beats": [
         {
@@ -2892,9 +2979,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — très bien"
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
           ],
-          "line": 349
+          "line": 401
         },
         {
           "durationInSeconds": 2.09,
@@ -2913,7 +3001,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 351
+          "line": 403
         },
         {
           "durationInSeconds": 1,
@@ -2933,7 +3021,7 @@
       "stage": "ITEM_BLOCK",
       "segment": "27 · ITEM_BLOCK · voici",
       "visual": "ILLUSTRATION — voici",
-      "durationInSeconds": 22.01,
+      "durationInSeconds": 23.46,
       "beats": [
         {
           "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8c063a8e2a33b390.mp3",
@@ -2948,7 +3036,7 @@
           "visuals": [
             "ILLUSTRATION — voici"
           ],
-          "line": 356
+          "line": 408
         },
         {
           "durationInSeconds": 0.3,
@@ -2967,7 +3055,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 358
+          "line": 410
         },
         {
           "durationInSeconds": 0.5,
@@ -2986,7 +3074,7 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 360
+          "line": 412
         },
         {
           "durationInSeconds": 0.3,
@@ -3004,8 +3092,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 362
+          "visuals": [
+            "ILLUSTRATION — voici · MIC"
+          ],
+          "line": 415
         },
         {
           "durationInSeconds": 2.03,
@@ -3014,17 +3104,17 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cdc18e5a26933f47.mp3",
-          "durationInSeconds": 0.74,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/e8e080bf2fceea75.mp3",
+          "durationInSeconds": 1.97,
           "phase": "ECHO",
           "voice": "en_man",
-          "text": "Again.",
+          "text": "Once more — repeat after me.",
           "register": "instruction",
           "level": 1,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 364
+          "line": 417
         },
         {
           "durationInSeconds": 0.3,
@@ -3042,8 +3132,10 @@
           "level": 1,
           "rate": "slow",
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 366
+          "visuals": [
+            "ILLUSTRATION — voici · MIC"
+          ],
+          "line": 420
         },
         {
           "durationInSeconds": 2.03,
@@ -3061,8 +3153,10 @@
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 368
+          "visuals": [
+            "ILLUSTRATION — voici · MIC"
+          ],
+          "line": 423
         },
         {
           "durationInSeconds": 2.3,
@@ -3081,7 +3175,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 370
+          "line": 425
         },
         {
           "durationInSeconds": 0.5,
@@ -3090,17 +3184,19 @@
           "stage": "ITEM_BLOCK"
         },
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/ef3226ba44fed292.mp3",
-          "durationInSeconds": 2.3,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/08a4f8cb52644eae.mp3",
+          "durationInSeconds": 2.52,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "One more — say \"here is\".",
+          "text": "Your turn again — say \"here is\".",
           "register": "instruction",
           "level": 3,
           "rate": null,
           "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 372
+          "visuals": [
+            "ILLUSTRATION — voici · MIC"
+          ],
+          "line": 428
         },
         {
           "durationInSeconds": 2,
@@ -3119,7 +3215,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 374
+          "line": 430
         },
         {
           "durationInSeconds": 0.5,
@@ -3138,7 +3234,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "28 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
       "durationInSeconds": 6.79,
       "beats": [
         {
@@ -3152,9 +3248,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — je m'appelle"
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
           ],
-          "line": 379
+          "line": 436
         },
         {
           "durationInSeconds": 2.31,
@@ -3173,7 +3270,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 381
+          "line": 438
         },
         {
           "durationInSeconds": 1,
@@ -3192,7 +3289,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "29 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
       "durationInSeconds": 6.52,
       "beats": [
         {
@@ -3206,9 +3303,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — très bien"
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
           ],
-          "line": 386
+          "line": 444
         },
         {
           "durationInSeconds": 2.09,
@@ -3227,7 +3325,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 388
+          "line": 446
         },
         {
           "durationInSeconds": 1,
@@ -3246,7 +3344,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "30 · ITEM_BLOCK · voici",
-      "visual": "ILLUSTRATION — voici",
+      "visual": "ILLUSTRATION — voici ; ILLUSTRATION — voici · MIC",
       "durationInSeconds": 5.21,
       "beats": [
         {
@@ -3260,9 +3358,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — voici"
+            "ILLUSTRATION — voici",
+            "ILLUSTRATION — voici · MIC"
           ],
-          "line": 393
+          "line": 452
         },
         {
           "durationInSeconds": 2.03,
@@ -3281,7 +3380,7 @@
           "rate": "slow",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 395
+          "line": 454
         },
         {
           "durationInSeconds": 1,
@@ -3300,7 +3399,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "31 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
       "durationInSeconds": 5.37,
       "beats": [
         {
@@ -3314,9 +3413,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — bien"
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
           ],
-          "line": 400
+          "line": 460
         },
         {
           "durationInSeconds": 2,
@@ -3335,7 +3435,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 402
+          "line": 462
         },
         {
           "durationInSeconds": 1,
@@ -3354,7 +3454,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "32 · ITEM_BLOCK · ça va",
-      "visual": "ILLUSTRATION — ça va",
+      "visual": "ILLUSTRATION — ça va ; ILLUSTRATION — ça va · MIC",
       "durationInSeconds": 5.85,
       "beats": [
         {
@@ -3368,9 +3468,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — ça va"
+            "ILLUSTRATION — ça va",
+            "ILLUSTRATION — ça va · MIC"
           ],
-          "line": 407
+          "line": 468
         },
         {
           "durationInSeconds": 2,
@@ -3389,7 +3490,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 409
+          "line": 470
         },
         {
           "durationInSeconds": 1,
@@ -3408,7 +3509,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "33 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
       "durationInSeconds": 9.27,
       "beats": [
         {
@@ -3422,9 +3523,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
           ],
-          "line": 414
+          "line": 476
         },
         {
           "durationInSeconds": 4.48,
@@ -3443,7 +3545,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 416
+          "line": 478
         },
         {
           "durationInSeconds": 1,
@@ -3462,7 +3564,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "34 · ITEM_BLOCK · enchanté",
-      "visual": "ILLUSTRATION — enchanté",
+      "visual": "ILLUSTRATION — enchanté ; ILLUSTRATION — enchanté · MIC",
       "durationInSeconds": 5.85,
       "beats": [
         {
@@ -3476,9 +3578,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — enchanté"
+            "ILLUSTRATION — enchanté",
+            "ILLUSTRATION — enchanté · MIC"
           ],
-          "line": 421
+          "line": 484
         },
         {
           "durationInSeconds": 2,
@@ -3497,7 +3600,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 423
+          "line": 486
         },
         {
           "durationInSeconds": 1,
@@ -3516,7 +3619,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "35 · ITEM_BLOCK · moi",
-      "visual": "ILLUSTRATION — moi",
+      "visual": "ILLUSTRATION — moi ; ILLUSTRATION — moi · MIC",
       "durationInSeconds": 4.73,
       "beats": [
         {
@@ -3530,9 +3633,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — moi"
+            "ILLUSTRATION — moi",
+            "ILLUSTRATION — moi · MIC"
           ],
-          "line": 428
+          "line": 492
         },
         {
           "durationInSeconds": 2,
@@ -3551,7 +3655,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 430
+          "line": 494
         },
         {
           "durationInSeconds": 1,
@@ -3570,7 +3674,7 @@
       "type": "dialogue",
       "stage": "INPUT_RETURN",
       "segment": "36 · INPUT_RETURN · checkpoint 1 — the whole exchange, twice",
-      "visual": null,
+      "visual": "MIC — learner speaks",
       "durationInSeconds": 116.58,
       "beats": [
         {
@@ -3584,7 +3688,7 @@
           "rate": null,
           "stage": "INPUT_RETURN",
           "visuals": [],
-          "line": 434
+          "line": 498
         },
         {
           "durationInSeconds": 0.6,
@@ -3602,8 +3706,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 436
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 501
         },
         {
           "durationInSeconds": 7.92,
@@ -3621,8 +3727,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 438
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 504
         },
         {
           "durationInSeconds": 4.48,
@@ -3640,8 +3748,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 440
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 507
         },
         {
           "durationInSeconds": 6,
@@ -3659,8 +3769,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 442
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 510
         },
         {
           "durationInSeconds": 6.28,
@@ -3678,8 +3790,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 444
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 513
         },
         {
           "durationInSeconds": 4.65,
@@ -3697,8 +3811,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 446
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 516
         },
         {
           "durationInSeconds": 8.5,
@@ -3717,7 +3833,7 @@
           "rate": null,
           "stage": "INPUT_RETURN",
           "visuals": [],
-          "line": 448
+          "line": 518
         },
         {
           "durationInSeconds": 0.6,
@@ -3735,8 +3851,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 450
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 521
         },
         {
           "durationInSeconds": 7.92,
@@ -3754,8 +3872,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 452
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 524
         },
         {
           "durationInSeconds": 4.48,
@@ -3773,8 +3893,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 454
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 527
         },
         {
           "durationInSeconds": 6,
@@ -3792,8 +3914,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 456
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 530
         },
         {
           "durationInSeconds": 6.28,
@@ -3811,8 +3935,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 458
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 533
         },
         {
           "durationInSeconds": 4.65,
@@ -3830,8 +3956,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 460
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 536
         },
         {
           "durationInSeconds": 8.5,
@@ -3848,7 +3976,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "37 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
       "durationInSeconds": 5.97,
       "beats": [
         {
@@ -3862,9 +3990,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — très bien"
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
           ],
-          "line": 465
+          "line": 542
         },
         {
           "durationInSeconds": 2.09,
@@ -3883,7 +4012,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 467
+          "line": 544
         },
         {
           "durationInSeconds": 1,
@@ -3902,7 +4031,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "38 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
       "durationInSeconds": 6.72,
       "beats": [
         {
@@ -3916,9 +4045,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — je m'appelle"
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
           ],
-          "line": 472
+          "line": 550
         },
         {
           "durationInSeconds": 2.31,
@@ -3937,7 +4067,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 474
+          "line": 552
         },
         {
           "durationInSeconds": 1,
@@ -3956,7 +4086,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "39 · ITEM_BLOCK · voici",
-      "visual": "ILLUSTRATION — voici",
+      "visual": "ILLUSTRATION — voici ; ILLUSTRATION — voici · MIC",
       "durationInSeconds": 6.15,
       "beats": [
         {
@@ -3970,9 +4100,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — voici"
+            "ILLUSTRATION — voici",
+            "ILLUSTRATION — voici · MIC"
           ],
-          "line": 479
+          "line": 558
         },
         {
           "durationInSeconds": 2,
@@ -3991,7 +4122,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 481
+          "line": 560
         },
         {
           "durationInSeconds": 1,
@@ -4010,7 +4141,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "40 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
       "durationInSeconds": 6.52,
       "beats": [
         {
@@ -4024,9 +4155,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — très bien"
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
           ],
-          "line": 486
+          "line": 566
         },
         {
           "durationInSeconds": 2.09,
@@ -4045,7 +4177,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 488
+          "line": 568
         },
         {
           "durationInSeconds": 1,
@@ -4064,7 +4196,7 @@
       "type": "dialogue",
       "stage": "INPUT_RETURN",
       "segment": "41 · INPUT_RETURN · checkpoint 2 — the whole exchange, twice",
-      "visual": null,
+      "visual": "MIC — learner speaks",
       "durationInSeconds": 116.58,
       "beats": [
         {
@@ -4078,7 +4210,7 @@
           "rate": null,
           "stage": "INPUT_RETURN",
           "visuals": [],
-          "line": 492
+          "line": 572
         },
         {
           "durationInSeconds": 0.6,
@@ -4096,8 +4228,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 494
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 575
         },
         {
           "durationInSeconds": 7.92,
@@ -4115,8 +4249,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 496
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 578
         },
         {
           "durationInSeconds": 4.48,
@@ -4134,8 +4270,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 498
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 581
         },
         {
           "durationInSeconds": 6,
@@ -4153,8 +4291,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 500
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 584
         },
         {
           "durationInSeconds": 6.28,
@@ -4172,8 +4312,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 502
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 587
         },
         {
           "durationInSeconds": 4.65,
@@ -4191,8 +4333,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 504
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 590
         },
         {
           "durationInSeconds": 8.5,
@@ -4211,7 +4355,7 @@
           "rate": null,
           "stage": "INPUT_RETURN",
           "visuals": [],
-          "line": 506
+          "line": 592
         },
         {
           "durationInSeconds": 0.6,
@@ -4229,8 +4373,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 508
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 595
         },
         {
           "durationInSeconds": 7.92,
@@ -4248,8 +4394,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 510
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 598
         },
         {
           "durationInSeconds": 4.48,
@@ -4267,8 +4415,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 512
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 601
         },
         {
           "durationInSeconds": 6,
@@ -4286,8 +4436,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 514
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 604
         },
         {
           "durationInSeconds": 6.28,
@@ -4305,8 +4457,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 516
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 607
         },
         {
           "durationInSeconds": 4.65,
@@ -4324,8 +4478,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 518
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 610
         },
         {
           "durationInSeconds": 8.5,
@@ -4342,7 +4498,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "42 · ITEM_BLOCK · comment",
-      "visual": "ILLUSTRATION — comment",
+      "visual": "ILLUSTRATION — comment ; ILLUSTRATION — comment · MIC",
       "durationInSeconds": 4.72,
       "beats": [
         {
@@ -4356,9 +4512,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comment"
+            "ILLUSTRATION — comment",
+            "ILLUSTRATION — comment · MIC"
           ],
-          "line": 523
+          "line": 616
         },
         {
           "durationInSeconds": 2,
@@ -4377,7 +4534,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 525
+          "line": 618
         },
         {
           "durationInSeconds": 1,
@@ -4396,7 +4553,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "43 · ITEM_BLOCK · et toi ?",
-      "visual": "ILLUSTRATION — et toi ?",
+      "visual": "ILLUSTRATION — et toi ? ; ILLUSTRATION — et toi ? · MIC",
       "durationInSeconds": 7.34,
       "beats": [
         {
@@ -4410,9 +4567,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — et toi ?"
+            "ILLUSTRATION — et toi ?",
+            "ILLUSTRATION — et toi ? · MIC"
           ],
-          "line": 530
+          "line": 624
         },
         {
           "durationInSeconds": 3.22,
@@ -4431,7 +4589,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 532
+          "line": 626
         },
         {
           "durationInSeconds": 1,
@@ -4450,7 +4608,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "44 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
       "durationInSeconds": 5.92,
       "beats": [
         {
@@ -4464,9 +4622,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — bien"
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
           ],
-          "line": 537
+          "line": 632
         },
         {
           "durationInSeconds": 2,
@@ -4485,7 +4644,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 539
+          "line": 634
         },
         {
           "durationInSeconds": 1,
@@ -4504,7 +4663,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "45 · ITEM_BLOCK · ça va",
-      "visual": "ILLUSTRATION — ça va",
+      "visual": "ILLUSTRATION — ça va ; ILLUSTRATION — ça va · MIC",
       "durationInSeconds": 6.19,
       "beats": [
         {
@@ -4518,9 +4677,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — ça va"
+            "ILLUSTRATION — ça va",
+            "ILLUSTRATION — ça va · MIC"
           ],
-          "line": 544
+          "line": 640
         },
         {
           "durationInSeconds": 2,
@@ -4539,7 +4699,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 546
+          "line": 642
         },
         {
           "durationInSeconds": 1,
@@ -4558,7 +4718,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "46 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
       "durationInSeconds": 8.84,
       "beats": [
         {
@@ -4572,9 +4732,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
           ],
-          "line": 551
+          "line": 648
         },
         {
           "durationInSeconds": 4.48,
@@ -4593,7 +4754,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 553
+          "line": 650
         },
         {
           "durationInSeconds": 1,
@@ -4612,7 +4773,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "47 · ITEM_BLOCK · enchanté",
-      "visual": "ILLUSTRATION — enchanté",
+      "visual": "ILLUSTRATION — enchanté ; ILLUSTRATION — enchanté · MIC",
       "durationInSeconds": 5.06,
       "beats": [
         {
@@ -4626,9 +4787,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — enchanté"
+            "ILLUSTRATION — enchanté",
+            "ILLUSTRATION — enchanté · MIC"
           ],
-          "line": 558
+          "line": 656
         },
         {
           "durationInSeconds": 2,
@@ -4647,7 +4809,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 560
+          "line": 658
         },
         {
           "durationInSeconds": 1,
@@ -4666,7 +4828,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "48 · ITEM_BLOCK · moi",
-      "visual": "ILLUSTRATION — moi",
+      "visual": "ILLUSTRATION — moi ; ILLUSTRATION — moi · MIC",
       "durationInSeconds": 5.14,
       "beats": [
         {
@@ -4680,9 +4842,10 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — moi"
+            "ILLUSTRATION — moi",
+            "ILLUSTRATION — moi · MIC"
           ],
-          "line": 565
+          "line": 664
         },
         {
           "durationInSeconds": 2,
@@ -4701,7 +4864,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 567
+          "line": 666
         },
         {
           "durationInSeconds": 1,
@@ -4720,7 +4883,7 @@
       "type": "vocab",
       "stage": "ITEM_BLOCK",
       "segment": "49 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
       "durationInSeconds": 5.92,
       "beats": [
         {
@@ -4734,825 +4897,8 @@
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — bien"
-          ],
-          "line": 572
-        },
-        {
-          "durationInSeconds": 2,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
-          "durationInSeconds": 0.74,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "bien",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 574
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "bien",
-      "imageSrc": "assets/images/items/img_fr_bien_01.png",
-      "imageId": "img_fr_bien_01"
-    },
-    {
-      "id": "50-item-block-je-m-appelle",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "50 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.79,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d06ca3d1f06dc685.mp3",
-          "durationInSeconds": 2.47,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Repeat it in French — \"my name is\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — je m'appelle"
-          ],
-          "line": 579
-        },
-        {
-          "durationInSeconds": 2.31,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
-          "durationInSeconds": 1.01,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "je m'appelle",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 581
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "je m'appelle",
-      "imageSrc": "assets/images/items/img_fr_je_m_appelle_01.png",
-      "imageId": "img_fr_je_m_appelle_01"
-    },
-    {
-      "id": "51-item-block-voici",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "51 · ITEM_BLOCK · voici",
-      "visual": "ILLUSTRATION — voici",
-      "durationInSeconds": 5.5,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/590716e1b13ccb49.mp3",
-          "durationInSeconds": 1.73,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Now you — \"here is\".",
-          "register": "instruction",
-          "level": 3,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — voici"
-          ],
-          "line": 586
-        },
-        {
-          "durationInSeconds": 2,
-          "phase": "PRODUCE",
-          "level": 3,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f4f787320fdbe836.mp3",
-          "durationInSeconds": 0.77,
-          "phase": "PRODUCE",
-          "voice": "fr_woman",
-          "text": "voici",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 588
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 3,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "voici",
-      "imageSrc": "assets/images/items/img_fr_voici_01.png",
-      "imageId": "img_fr_voici_01"
-    },
-    {
-      "id": "52-item-block-comme-ci-comme-a",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "52 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 8.02,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0f08fe770e672b63.mp3",
-          "durationInSeconds": 1.08,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Say \"so-so\".",
-          "register": "instruction",
-          "level": 5,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
-          ],
-          "line": 593
-        },
-        {
-          "durationInSeconds": 4.48,
-          "phase": "PRODUCE",
-          "level": 5,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
-          "durationInSeconds": 1.46,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "comme ci comme ça",
-          "register": "word",
-          "level": 5,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 595
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 5,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "comme ci comme ça",
-      "imageSrc": "assets/images/items/img_fr_comme_ci_comme_ca_01.png",
-      "imageId": "img_fr_comme_ci_comme_ca_01"
-    },
-    {
-      "id": "53-item-block-je-m-appelle",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "53 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.36,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61cbeaaeebd333e2.mp3",
-          "durationInSeconds": 2.04,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Your turn — \"my name is\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — je m'appelle"
-          ],
-          "line": 600
-        },
-        {
-          "durationInSeconds": 2.31,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
-          "durationInSeconds": 1.01,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "je m'appelle",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 602
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "je m'appelle",
-      "imageSrc": "assets/images/items/img_fr_je_m_appelle_01.png",
-      "imageId": "img_fr_je_m_appelle_01"
-    },
-    {
-      "id": "54-item-block-tr-s-bien",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "54 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 6.19,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c44973915ad0f33c.mp3",
-          "durationInSeconds": 2.26,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Your turn — say \"very well\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — très bien"
-          ],
-          "line": 607
-        },
-        {
-          "durationInSeconds": 2.09,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
-          "durationInSeconds": 0.84,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "très bien",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 609
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "très bien",
-      "imageSrc": "assets/images/items/img_fr_tres_bien_01.png",
-      "imageId": "img_fr_tres_bien_01"
-    },
-    {
-      "id": "55-item-block-bien",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "55 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.85,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cd040723cdf7508d.mp3",
-          "durationInSeconds": 2.11,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Repeat it in French — \"well\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — bien"
-          ],
-          "line": 614
-        },
-        {
-          "durationInSeconds": 2,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
-          "durationInSeconds": 0.74,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "bien",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 616
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "bien",
-      "imageSrc": "assets/images/items/img_fr_bien_01.png",
-      "imageId": "img_fr_bien_01"
-    },
-    {
-      "id": "56-item-block-comme-ci-comme-a",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "56 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 8.84,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/7baf0f9c5c9ff3e9.mp3",
-          "durationInSeconds": 1.9,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Now you — \"so-so\".",
-          "register": "instruction",
-          "level": 5,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
-          ],
-          "line": 621
-        },
-        {
-          "durationInSeconds": 4.48,
-          "phase": "PRODUCE",
-          "level": 5,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
-          "durationInSeconds": 1.46,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "comme ci comme ça",
-          "register": "word",
-          "level": 5,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 623
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 5,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "comme ci comme ça",
-      "imageSrc": "assets/images/items/img_fr_comme_ci_comme_ca_01.png",
-      "imageId": "img_fr_comme_ci_comme_ca_01"
-    },
-    {
-      "id": "57-item-block-tr-s-bien",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "57 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 4.84,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8e29897471f2f8d0.mp3",
-          "durationInSeconds": 0.91,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Say \"very well\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — très bien"
-          ],
-          "line": 628
-        },
-        {
-          "durationInSeconds": 2.09,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
-          "durationInSeconds": 0.84,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "très bien",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 630
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "très bien",
-      "imageSrc": "assets/images/items/img_fr_tres_bien_01.png",
-      "imageId": "img_fr_tres_bien_01"
-    },
-    {
-      "id": "58-item-block-je-m-appelle",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "58 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 6.36,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61cbeaaeebd333e2.mp3",
-          "durationInSeconds": 2.04,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Your turn — \"my name is\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — je m'appelle"
-          ],
-          "line": 635
-        },
-        {
-          "durationInSeconds": 2.31,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
-          "durationInSeconds": 1.01,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "je m'appelle",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 637
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "je m'appelle",
-      "imageSrc": "assets/images/items/img_fr_je_m_appelle_01.png",
-      "imageId": "img_fr_je_m_appelle_01"
-    },
-    {
-      "id": "59-input-return-checkpoint-3-the-whole-e",
-      "type": "dialogue",
-      "stage": "INPUT_RETURN",
-      "segment": "59 · INPUT_RETURN · checkpoint 3 — the whole exchange, twice",
-      "visual": null,
-      "durationInSeconds": 116.58,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d5761a1110f715b7.mp3",
-          "durationInSeconds": 5.23,
-          "phase": "RECALL",
-          "voice": "en_woman",
-          "text": "Here is the whole conversation. Repeat each line after you hear it.",
-          "register": "instruction",
-          "level": 3,
-          "rate": null,
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 641
-        },
-        {
-          "durationInSeconds": 0.6,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
-          "durationInSeconds": 3.48,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 643
-        },
-        {
-          "durationInSeconds": 7.92,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
-          "durationInSeconds": 1.46,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Marc.",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 645
-        },
-        {
-          "durationInSeconds": 4.48,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
-          "durationInSeconds": 2.35,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 647
-        },
-        {
-          "durationInSeconds": 6,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
-          "durationInSeconds": 2.52,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Comment ça va ? — Ça va bien, merci !",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 649
-        },
-        {
-          "durationInSeconds": 6.28,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
-          "durationInSeconds": 1.56,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Léa.",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 651
-        },
-        {
-          "durationInSeconds": 4.65,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
-          "durationInSeconds": 4.1,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 653
-        },
-        {
-          "durationInSeconds": 8.5,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0ae9bad8453b6c05.mp3",
-          "durationInSeconds": 3.55,
-          "phase": "RECALL",
-          "voice": "en_woman",
-          "text": "Once more — repeat each line after me.",
-          "register": "instruction",
-          "level": 3,
-          "rate": null,
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 655
-        },
-        {
-          "durationInSeconds": 0.6,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
-          "durationInSeconds": 3.48,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 657
-        },
-        {
-          "durationInSeconds": 7.92,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
-          "durationInSeconds": 1.46,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Marc.",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 659
-        },
-        {
-          "durationInSeconds": 4.48,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
-          "durationInSeconds": 2.35,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 661
-        },
-        {
-          "durationInSeconds": 6,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
-          "durationInSeconds": 2.52,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Comment ça va ? — Ça va bien, merci !",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 663
-        },
-        {
-          "durationInSeconds": 6.28,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
-          "durationInSeconds": 1.56,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Léa.",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 665
-        },
-        {
-          "durationInSeconds": 4.65,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
-          "durationInSeconds": 4.1,
-          "phase": "RECALL",
-          "voice": "fr_man",
-          "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
-          "register": "word",
-          "level": 3,
-          "rate": "natural",
-          "stage": "INPUT_RETURN",
-          "visuals": [],
-          "line": 667
-        },
-        {
-          "durationInSeconds": 8.5,
-          "phase": "RECALL",
-          "level": 3,
-          "stage": "INPUT_RETURN"
-        }
-      ],
-      "wantsImage": true,
-      "imageSrc": "assets/images/scenes/img_fr_scene_l02_cold_dialogue.png"
-    },
-    {
-      "id": "60-item-block-bien",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "60 · ITEM_BLOCK · bien",
-      "visual": "ILLUSTRATION — bien",
-      "durationInSeconds": 5.92,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3e95477a8f80f93b.mp3",
-          "durationInSeconds": 2.18,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Your turn — say \"well\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — bien"
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
           ],
           "line": 672
         },
@@ -5588,135 +4934,28 @@
       "imageId": "img_fr_bien_01"
     },
     {
-      "id": "61-item-block-comme-ci-comme-a",
+      "id": "50-item-block-je-m-appelle",
       "type": "vocab",
       "stage": "ITEM_BLOCK",
-      "segment": "61 · ITEM_BLOCK · comme ci comme ça",
-      "visual": "ILLUSTRATION — comme ci comme ça",
-      "durationInSeconds": 9.27,
+      "segment": "50 · ITEM_BLOCK · je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
+      "durationInSeconds": 6.79,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a26eb6ffbab63045.mp3",
-          "durationInSeconds": 2.33,
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d06ca3d1f06dc685.mp3",
+          "durationInSeconds": 2.47,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Repeat it in French — \"so-so\".",
-          "register": "instruction",
-          "level": 5,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — comme ci comme ça"
-          ],
-          "line": 679
-        },
-        {
-          "durationInSeconds": 4.48,
-          "phase": "PRODUCE",
-          "level": 5,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
-          "durationInSeconds": 1.46,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "comme ci comme ça",
-          "register": "word",
-          "level": 5,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 681
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 5,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "comme ci comme ça",
-      "imageSrc": "assets/images/items/img_fr_comme_ci_comme_ca_01.png",
-      "imageId": "img_fr_comme_ci_comme_ca_01"
-    },
-    {
-      "id": "62-item-block-tr-s-bien",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "62 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 6.52,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/74f2267243182308.mp3",
-          "durationInSeconds": 2.59,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Now you — \"very well\".",
+          "text": "Repeat it in French — \"my name is\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — très bien"
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
           ],
-          "line": 686
-        },
-        {
-          "durationInSeconds": 2.09,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        },
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
-          "durationInSeconds": 0.84,
-          "phase": "PRODUCE",
-          "voice": "fr_man",
-          "text": "très bien",
-          "register": "word",
-          "level": 4,
-          "rate": "natural",
-          "stage": "ITEM_BLOCK",
-          "visuals": [],
-          "line": 688
-        },
-        {
-          "durationInSeconds": 1,
-          "phase": "PRODUCE",
-          "level": 4,
-          "stage": "ITEM_BLOCK"
-        }
-      ],
-      "wantsImage": true,
-      "item": "très bien",
-      "imageSrc": "assets/images/items/img_fr_tres_bien_01.png",
-      "imageId": "img_fr_tres_bien_01"
-    },
-    {
-      "id": "63-item-block-je-m-appelle",
-      "type": "vocab",
-      "stage": "ITEM_BLOCK",
-      "segment": "63 · ITEM_BLOCK · je m'appelle",
-      "visual": "ILLUSTRATION — je m'appelle",
-      "durationInSeconds": 5.62,
-      "beats": [
-        {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/17759fc895ea1612.mp3",
-          "durationInSeconds": 1.3,
-          "phase": "PRODUCE",
-          "voice": "en_man",
-          "text": "Say \"my name is\".",
-          "register": "instruction",
-          "level": 4,
-          "rate": null,
-          "stage": "ITEM_BLOCK",
-          "visuals": [
-            "ILLUSTRATION — je m'appelle"
-          ],
-          "line": 693
+          "line": 680
         },
         {
           "durationInSeconds": 2.31,
@@ -5735,7 +4974,7 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 695
+          "line": 682
         },
         {
           "durationInSeconds": 1,
@@ -5750,27 +4989,193 @@
       "imageId": "img_fr_je_m_appelle_01"
     },
     {
-      "id": "64-item-block-tr-s-bien",
+      "id": "51-item-block-voici",
       "type": "vocab",
       "stage": "ITEM_BLOCK",
-      "segment": "64 · ITEM_BLOCK · très bien",
-      "visual": "ILLUSTRATION — très bien",
-      "durationInSeconds": 5.97,
+      "segment": "51 · ITEM_BLOCK · voici",
+      "visual": "ILLUSTRATION — voici ; ILLUSTRATION — voici · MIC",
+      "durationInSeconds": 5.5,
       "beats": [
         {
-          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84205b29858e82c4.mp3",
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/590716e1b13ccb49.mp3",
+          "durationInSeconds": 1.73,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Now you — \"here is\".",
+          "register": "instruction",
+          "level": 3,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — voici",
+            "ILLUSTRATION — voici · MIC"
+          ],
+          "line": 688
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/f4f787320fdbe836.mp3",
+          "durationInSeconds": 0.77,
+          "phase": "PRODUCE",
+          "voice": "fr_woman",
+          "text": "voici",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 690
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 3,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "voici",
+      "imageSrc": "assets/images/items/img_fr_voici_01.png",
+      "imageId": "img_fr_voici_01"
+    },
+    {
+      "id": "52-item-block-comme-ci-comme-a",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "52 · ITEM_BLOCK · comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
+      "durationInSeconds": 8.02,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0f08fe770e672b63.mp3",
+          "durationInSeconds": 1.08,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Say \"so-so\".",
+          "register": "instruction",
+          "level": 5,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
+          ],
+          "line": 696
+        },
+        {
+          "durationInSeconds": 4.48,
+          "phase": "PRODUCE",
+          "level": 5,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "comme ci comme ça",
+          "register": "word",
+          "level": 5,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 698
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 5,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "comme ci comme ça",
+      "imageSrc": "assets/images/items/img_fr_comme_ci_comme_ca_01.png",
+      "imageId": "img_fr_comme_ci_comme_ca_01"
+    },
+    {
+      "id": "53-item-block-je-m-appelle",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "53 · ITEM_BLOCK · je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
+      "durationInSeconds": 6.36,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61cbeaaeebd333e2.mp3",
           "durationInSeconds": 2.04,
           "phase": "PRODUCE",
           "voice": "en_man",
-          "text": "Your turn — \"very well\".",
+          "text": "Your turn — \"my name is\".",
           "register": "instruction",
           "level": 4,
           "rate": null,
           "stage": "ITEM_BLOCK",
           "visuals": [
-            "ILLUSTRATION — très bien"
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
           ],
-          "line": 700
+          "line": 704
+        },
+        {
+          "durationInSeconds": 2.31,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "je m'appelle",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 706
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "je m'appelle",
+      "imageSrc": "assets/images/items/img_fr_je_m_appelle_01.png",
+      "imageId": "img_fr_je_m_appelle_01"
+    },
+    {
+      "id": "54-item-block-tr-s-bien",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "54 · ITEM_BLOCK · très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
+      "durationInSeconds": 6.19,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/c44973915ad0f33c.mp3",
+          "durationInSeconds": 2.26,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn — say \"very well\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 712
         },
         {
           "durationInSeconds": 2.09,
@@ -5789,7 +5194,804 @@
           "rate": "natural",
           "stage": "ITEM_BLOCK",
           "visuals": [],
-          "line": 702
+          "line": 714
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "très bien",
+      "imageSrc": "assets/images/items/img_fr_tres_bien_01.png",
+      "imageId": "img_fr_tres_bien_01"
+    },
+    {
+      "id": "55-item-block-bien",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "55 · ITEM_BLOCK · bien",
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
+      "durationInSeconds": 5.85,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/cd040723cdf7508d.mp3",
+          "durationInSeconds": 2.11,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Repeat it in French — \"well\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
+          ],
+          "line": 720
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "bien",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 722
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "bien",
+      "imageSrc": "assets/images/items/img_fr_bien_01.png",
+      "imageId": "img_fr_bien_01"
+    },
+    {
+      "id": "56-item-block-comme-ci-comme-a",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "56 · ITEM_BLOCK · comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
+      "durationInSeconds": 8.84,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/7baf0f9c5c9ff3e9.mp3",
+          "durationInSeconds": 1.9,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Now you — \"so-so\".",
+          "register": "instruction",
+          "level": 5,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
+          ],
+          "line": 728
+        },
+        {
+          "durationInSeconds": 4.48,
+          "phase": "PRODUCE",
+          "level": 5,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "comme ci comme ça",
+          "register": "word",
+          "level": 5,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 730
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 5,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "comme ci comme ça",
+      "imageSrc": "assets/images/items/img_fr_comme_ci_comme_ca_01.png",
+      "imageId": "img_fr_comme_ci_comme_ca_01"
+    },
+    {
+      "id": "57-item-block-tr-s-bien",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "57 · ITEM_BLOCK · très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
+      "durationInSeconds": 4.84,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/8e29897471f2f8d0.mp3",
+          "durationInSeconds": 0.91,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Say \"very well\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 736
+        },
+        {
+          "durationInSeconds": 2.09,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "très bien",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 738
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "très bien",
+      "imageSrc": "assets/images/items/img_fr_tres_bien_01.png",
+      "imageId": "img_fr_tres_bien_01"
+    },
+    {
+      "id": "58-item-block-je-m-appelle",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "58 · ITEM_BLOCK · je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
+      "durationInSeconds": 6.36,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/61cbeaaeebd333e2.mp3",
+          "durationInSeconds": 2.04,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn — \"my name is\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
+          ],
+          "line": 744
+        },
+        {
+          "durationInSeconds": 2.31,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "je m'appelle",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 746
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "je m'appelle",
+      "imageSrc": "assets/images/items/img_fr_je_m_appelle_01.png",
+      "imageId": "img_fr_je_m_appelle_01"
+    },
+    {
+      "id": "59-input-return-checkpoint-3-the-whole-e",
+      "type": "dialogue",
+      "stage": "INPUT_RETURN",
+      "segment": "59 · INPUT_RETURN · checkpoint 3 — the whole exchange, twice",
+      "visual": "MIC — learner speaks",
+      "durationInSeconds": 116.58,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/d5761a1110f715b7.mp3",
+          "durationInSeconds": 5.23,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Here is the whole conversation. Repeat each line after you hear it.",
+          "register": "instruction",
+          "level": 3,
+          "rate": null,
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 750
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 753
+        },
+        {
+          "durationInSeconds": 7.92,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Marc.",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 756
+        },
+        {
+          "durationInSeconds": 4.48,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 759
+        },
+        {
+          "durationInSeconds": 6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Comment ça va ? — Ça va bien, merci !",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 762
+        },
+        {
+          "durationInSeconds": 6.28,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Léa.",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 765
+        },
+        {
+          "durationInSeconds": 4.65,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 768
+        },
+        {
+          "durationInSeconds": 8.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0ae9bad8453b6c05.mp3",
+          "durationInSeconds": 3.55,
+          "phase": "RECALL",
+          "voice": "en_woman",
+          "text": "Once more — repeat each line after me.",
+          "register": "instruction",
+          "level": 3,
+          "rate": null,
+          "stage": "INPUT_RETURN",
+          "visuals": [],
+          "line": 770
+        },
+        {
+          "durationInSeconds": 0.6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/1fc00929c6bd5f89.mp3",
+          "durationInSeconds": 3.48,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Chloé. Ça va bien. Et toi ?",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 773
+        },
+        {
+          "durationInSeconds": 7.92,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/fa1807d60fa226bc.mp3",
+          "durationInSeconds": 1.46,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Marc.",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 776
+        },
+        {
+          "durationInSeconds": 4.48,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/67caa70ad19724fe.mp3",
+          "durationInSeconds": 2.35,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Claire. Et toi ?",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 779
+        },
+        {
+          "durationInSeconds": 6,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3035b5fc2e1ee451.mp3",
+          "durationInSeconds": 2.52,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Comment ça va ? — Ça va bien, merci !",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 782
+        },
+        {
+          "durationInSeconds": 6.28,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/2827e440dd185829.mp3",
+          "durationInSeconds": 1.56,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Léa.",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 785
+        },
+        {
+          "durationInSeconds": 4.65,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/79bbf51e5ef02bba.mp3",
+          "durationInSeconds": 4.1,
+          "phase": "RECALL",
+          "voice": "fr_man",
+          "text": "Bonjour ! Je m'appelle Marc. Ça va comme ci comme ça ! Et toi ?",
+          "register": "word",
+          "level": 3,
+          "rate": "natural",
+          "stage": "INPUT_RETURN",
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 788
+        },
+        {
+          "durationInSeconds": 8.5,
+          "phase": "RECALL",
+          "level": 3,
+          "stage": "INPUT_RETURN"
+        }
+      ],
+      "wantsImage": true,
+      "imageSrc": "assets/images/scenes/img_fr_scene_l02_cold_dialogue.png"
+    },
+    {
+      "id": "60-item-block-bien",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "60 · ITEM_BLOCK · bien",
+      "visual": "ILLUSTRATION — bien ; ILLUSTRATION — bien · MIC",
+      "durationInSeconds": 5.92,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/3e95477a8f80f93b.mp3",
+          "durationInSeconds": 2.18,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn — say \"well\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — bien",
+            "ILLUSTRATION — bien · MIC"
+          ],
+          "line": 794
+        },
+        {
+          "durationInSeconds": 2,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/0da0b878ebca339d.mp3",
+          "durationInSeconds": 0.74,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "bien",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 796
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "bien",
+      "imageSrc": "assets/images/items/img_fr_bien_01.png",
+      "imageId": "img_fr_bien_01"
+    },
+    {
+      "id": "61-item-block-comme-ci-comme-a",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "61 · ITEM_BLOCK · comme ci comme ça",
+      "visual": "ILLUSTRATION — comme ci comme ça ; ILLUSTRATION — comme ci comme ça · MIC",
+      "durationInSeconds": 9.27,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/a26eb6ffbab63045.mp3",
+          "durationInSeconds": 2.33,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Repeat it in French — \"so-so\".",
+          "register": "instruction",
+          "level": 5,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — comme ci comme ça",
+            "ILLUSTRATION — comme ci comme ça · MIC"
+          ],
+          "line": 802
+        },
+        {
+          "durationInSeconds": 4.48,
+          "phase": "PRODUCE",
+          "level": 5,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/9b9d835439541c80.mp3",
+          "durationInSeconds": 1.46,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "comme ci comme ça",
+          "register": "word",
+          "level": 5,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 804
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 5,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "comme ci comme ça",
+      "imageSrc": "assets/images/items/img_fr_comme_ci_comme_ca_01.png",
+      "imageId": "img_fr_comme_ci_comme_ca_01"
+    },
+    {
+      "id": "62-item-block-tr-s-bien",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "62 · ITEM_BLOCK · très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
+      "durationInSeconds": 6.52,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/74f2267243182308.mp3",
+          "durationInSeconds": 2.59,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Now you — \"very well\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 810
+        },
+        {
+          "durationInSeconds": 2.09,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "très bien",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 812
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "très bien",
+      "imageSrc": "assets/images/items/img_fr_tres_bien_01.png",
+      "imageId": "img_fr_tres_bien_01"
+    },
+    {
+      "id": "63-item-block-je-m-appelle",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "63 · ITEM_BLOCK · je m'appelle",
+      "visual": "ILLUSTRATION — je m'appelle ; ILLUSTRATION — je m'appelle · MIC",
+      "durationInSeconds": 5.62,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/17759fc895ea1612.mp3",
+          "durationInSeconds": 1.3,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Say \"my name is\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — je m'appelle",
+            "ILLUSTRATION — je m'appelle · MIC"
+          ],
+          "line": 818
+        },
+        {
+          "durationInSeconds": 2.31,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/6b13e6c837150304.mp3",
+          "durationInSeconds": 1.01,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "je m'appelle",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 820
+        },
+        {
+          "durationInSeconds": 1,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        }
+      ],
+      "wantsImage": true,
+      "item": "je m'appelle",
+      "imageSrc": "assets/images/items/img_fr_je_m_appelle_01.png",
+      "imageId": "img_fr_je_m_appelle_01"
+    },
+    {
+      "id": "64-item-block-tr-s-bien",
+      "type": "vocab",
+      "stage": "ITEM_BLOCK",
+      "segment": "64 · ITEM_BLOCK · très bien",
+      "visual": "ILLUSTRATION — très bien ; ILLUSTRATION — très bien · MIC",
+      "durationInSeconds": 5.97,
+      "beats": [
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/84205b29858e82c4.mp3",
+          "durationInSeconds": 2.04,
+          "phase": "PRODUCE",
+          "voice": "en_man",
+          "text": "Your turn — \"very well\".",
+          "register": "instruction",
+          "level": 4,
+          "rate": null,
+          "stage": "ITEM_BLOCK",
+          "visuals": [
+            "ILLUSTRATION — très bien",
+            "ILLUSTRATION — très bien · MIC"
+          ],
+          "line": 826
+        },
+        {
+          "durationInSeconds": 2.09,
+          "phase": "PRODUCE",
+          "level": 4,
+          "stage": "ITEM_BLOCK"
+        },
+        {
+          "src": "assets/audio/Say_It_FR_A1_L02_CALIBRATION/method/aabbb75ebe000831.mp3",
+          "durationInSeconds": 0.84,
+          "phase": "PRODUCE",
+          "voice": "fr_man",
+          "text": "très bien",
+          "register": "word",
+          "level": 4,
+          "rate": "natural",
+          "stage": "ITEM_BLOCK",
+          "visuals": [],
+          "line": 828
         },
         {
           "durationInSeconds": 1,
@@ -5808,7 +6010,7 @@
       "type": "buildbar",
       "stage": "BUILD_LADDER",
       "segment": "65 · BUILD_LADDER · put it all together",
-      "visual": "CHUNK BAR — Bonjour. · HIGHLIGHT frame",
+      "visual": "CHUNK BAR — Bonjour. · HIGHLIGHT frame ; CHUNK BAR — Bonjour. · HIGHLIGHT frame · MIC",
       "durationInSeconds": 125.7,
       "beats": [
         {
@@ -5822,7 +6024,7 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 706
+          "line": 832
         },
         {
           "durationInSeconds": 0.8,
@@ -5841,9 +6043,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour. · HIGHLIGHT frame"
+            "CHUNK BAR — Bonjour. · HIGHLIGHT frame",
+            "CHUNK BAR — Bonjour. · HIGHLIGHT frame · MIC"
           ],
-          "line": 709
+          "line": 836
         },
         {
           "durationInSeconds": 2.62,
@@ -5862,7 +6065,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 711
+          "line": 838
         },
         {
           "durationInSeconds": 1,
@@ -5881,9 +6084,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour ! Je m'appelle Claire. · HIGHLIGHT name"
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. · HIGHLIGHT name",
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. · HIGHLIGHT name · MIC"
           ],
-          "line": 714
+          "line": 842
         },
         {
           "durationInSeconds": 5.49,
@@ -5902,7 +6106,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 716
+          "line": 844
         },
         {
           "durationInSeconds": 1,
@@ -5921,9 +6125,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va bien. · HIGHLIGHT state"
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va bien. · HIGHLIGHT state",
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va bien. · HIGHLIGHT state · MIC"
           ],
-          "line": 719
+          "line": 848
         },
         {
           "durationInSeconds": 7.36,
@@ -5942,7 +6147,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 721
+          "line": 850
         },
         {
           "durationInSeconds": 1,
@@ -5961,9 +6166,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va bien ! Et toi ? · HIGHLIGHT state"
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va bien ! Et toi ? · HIGHLIGHT state",
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va bien ! Et toi ? · HIGHLIGHT state · MIC"
           ],
-          "line": 724
+          "line": 854
         },
         {
           "durationInSeconds": 8.5,
@@ -5982,7 +6188,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 726
+          "line": 856
         },
         {
           "durationInSeconds": 1,
@@ -6001,9 +6207,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour ! Je m'appelle Marc. Ça va bien ! Et toi ? · HIGHLIGHT name"
+            "CHUNK BAR — Bonjour ! Je m'appelle Marc. Ça va bien ! Et toi ? · HIGHLIGHT name",
+            "CHUNK BAR — Bonjour ! Je m'appelle Marc. Ça va bien ! Et toi ? · HIGHLIGHT name · MIC"
           ],
-          "line": 729
+          "line": 860
         },
         {
           "durationInSeconds": 8.5,
@@ -6022,7 +6229,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 731
+          "line": 862
         },
         {
           "durationInSeconds": 1,
@@ -6041,9 +6248,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour ! Je m'appelle Léa. Ça va bien ! Et toi ? · HIGHLIGHT name"
+            "CHUNK BAR — Bonjour ! Je m'appelle Léa. Ça va bien ! Et toi ? · HIGHLIGHT name",
+            "CHUNK BAR — Bonjour ! Je m'appelle Léa. Ça va bien ! Et toi ? · HIGHLIGHT name · MIC"
           ],
-          "line": 734
+          "line": 866
         },
         {
           "durationInSeconds": 8.3,
@@ -6062,7 +6270,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 736
+          "line": 868
         },
         {
           "durationInSeconds": 1,
@@ -6081,9 +6289,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va très bien ! Et toi ? · HIGHLIGHT state"
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va très bien ! Et toi ? · HIGHLIGHT state",
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va très bien ! Et toi ? · HIGHLIGHT state · MIC"
           ],
-          "line": 739
+          "line": 872
         },
         {
           "durationInSeconds": 8.5,
@@ -6102,7 +6311,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 741
+          "line": 874
         },
         {
           "durationInSeconds": 1,
@@ -6121,9 +6330,10 @@
           "rate": null,
           "stage": "BUILD_LADDER",
           "visuals": [
-            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va comme ci comme ça ! Et toi ? · HIGHLIGHT state"
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va comme ci comme ça ! Et toi ? · HIGHLIGHT state",
+            "CHUNK BAR — Bonjour ! Je m'appelle Claire. Ça va comme ci comme ça ! Et toi ? · HIGHLIGHT state · MIC"
           ],
-          "line": 744
+          "line": 878
         },
         {
           "durationInSeconds": 8.5,
@@ -6142,7 +6352,7 @@
           "rate": "natural",
           "stage": "BUILD_LADDER",
           "visuals": [],
-          "line": 746
+          "line": 880
         },
         {
           "durationInSeconds": 1,
@@ -6161,7 +6371,7 @@
       "type": "practice",
       "stage": "FLUENCY_ROUND",
       "segment": "66 · FLUENCY_ROUND · fluency",
-      "visual": null,
+      "visual": "MIC — learner speaks",
       "durationInSeconds": 74.57,
       "beats": [
         {
@@ -6175,7 +6385,7 @@
           "rate": null,
           "stage": "FLUENCY_ROUND",
           "visuals": [],
-          "line": 750
+          "line": 884
         },
         {
           "durationInSeconds": 0.6,
@@ -6193,8 +6403,10 @@
           "level": 3,
           "rate": "slow",
           "stage": "FLUENCY_ROUND",
-          "visuals": [],
-          "line": 752
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 887
         },
         {
           "durationInSeconds": 7.22,
@@ -6212,8 +6424,10 @@
           "level": 3,
           "rate": "slow",
           "stage": "FLUENCY_ROUND",
-          "visuals": [],
-          "line": 754
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 890
         },
         {
           "durationInSeconds": 7.63,
@@ -6231,8 +6445,10 @@
           "level": 3,
           "rate": "slow",
           "stage": "FLUENCY_ROUND",
-          "visuals": [],
-          "line": 756
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 893
         },
         {
           "durationInSeconds": 7.92,
@@ -6251,7 +6467,7 @@
           "rate": null,
           "stage": "FLUENCY_ROUND",
           "visuals": [],
-          "line": 758
+          "line": 895
         },
         {
           "durationInSeconds": 0.6,
@@ -6269,8 +6485,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "FLUENCY_ROUND",
-          "visuals": [],
-          "line": 760
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 898
         },
         {
           "durationInSeconds": 7.63,
@@ -6288,8 +6506,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "FLUENCY_ROUND",
-          "visuals": [],
-          "line": 762
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 901
         },
         {
           "durationInSeconds": 8.44,
@@ -6307,8 +6527,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "FLUENCY_ROUND",
-          "visuals": [],
-          "line": 764
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 904
         },
         {
           "durationInSeconds": 8.5,
@@ -6323,7 +6545,7 @@
       "type": "score",
       "stage": "CAN_DO_CHECK",
       "segment": "67 · CAN_DO_CHECK · close — you can do this now",
-      "visual": null,
+      "visual": "MIC — learner speaks",
       "durationInSeconds": 57.27,
       "beats": [
         {
@@ -6337,7 +6559,7 @@
           "rate": null,
           "stage": "CAN_DO_CHECK",
           "visuals": [],
-          "line": 768
+          "line": 908
         },
         {
           "durationInSeconds": 0.8,
@@ -6355,8 +6577,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "CAN_DO_CHECK",
-          "visuals": [],
-          "line": 770
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 911
         },
         {
           "durationInSeconds": 7.92,
@@ -6374,8 +6598,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "CAN_DO_CHECK",
-          "visuals": [],
-          "line": 772
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 914
         },
         {
           "durationInSeconds": 4.48,
@@ -6393,8 +6619,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "CAN_DO_CHECK",
-          "visuals": [],
-          "line": 774
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 917
         },
         {
           "durationInSeconds": 6,
@@ -6412,8 +6640,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "CAN_DO_CHECK",
-          "visuals": [],
-          "line": 776
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 920
         },
         {
           "durationInSeconds": 6.28,
@@ -6431,8 +6661,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "CAN_DO_CHECK",
-          "visuals": [],
-          "line": 778
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 923
         },
         {
           "durationInSeconds": 4.65,
@@ -6450,8 +6682,10 @@
           "level": 3,
           "rate": "natural",
           "stage": "CAN_DO_CHECK",
-          "visuals": [],
-          "line": 780
+          "visuals": [
+            "MIC — learner speaks"
+          ],
+          "line": 926
         },
         {
           "durationInSeconds": 8.5,
